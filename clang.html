@@ -23,6 +23,29 @@
         예제 -----</h2>
 
     <pre>
+
+
+        #include <stdio.h>
+        int main()
+        {
+          char *p = "KOREA";
+          printf("%s\n", p);
+          printf("%s\n", p+3);
+          printf("%c\n", *p);
+          printf("%c\n", *(p+3));
+          printf("%c\n", *p+2);
+        }
+        
+        출력 결과
+        KOREA
+        EA
+        K
+        E
+        M
+
+        ------
+
+        
         #include <stdio.h>
         int r1(){
         return 4;
