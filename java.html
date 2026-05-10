@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 실기 java</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>정보처리기사 실기 java</h1>
+    <ul>
+        <li><a href="./iron.html">이론 공부하기</a></li>
+        <li><a href="./clang.html">c언어 공부하기</a></li>
+        <li><a href="./java.html">java 공부하기</a></li>
+        <li><a href="./sql.html">sql 공부하기</a></li>
+        <li><a href="./python.html">python 공부하기</a></li>
+    </ul>
+
+    <h2>Java----------------------------------------
+
+        예제 -----
+    </h2>
+    <pre>
+        public class Groomi{
+        public static void main(String[] args){
+            int i = 0;
+            int sum = 0;
+            while(i < 10){
+            i++;
+            if(i % 2 == 1)
+                continue;
+            sum +=i;
+            }
+            System.out.print(sum);
+        }
+        }
+
+        답 30
+
+        -----
+
+        class A {
+        int a;
+        public A(int n){
+            a = n;
+        }
+        public void print(){
+            System.out.println("a="+a);
+        }
+        }
+
+        class B extends A {
+        public B(int n){
+            super(n);
+            super.print();
+        }
+        }
+
+        public class Gisafirst {
+        public static void main(String[] args){
+            B obj = new B(10); 
+        }
+        }
+
+        답은 a=10
+
+        ->
+
+        선언 방법: public 클래스명(매개변수){...}
+
+        -----
+
+
+        /* import java.util.*; */
+
+        public class Gisafirst {
+        static int nSize = 4;
+
+        public static void main(String[] args) {
+            int[] arr = new int[nSize];
+            makeArray(arr);
+            
+            for(int i = 0; i < nSize; i++){
+                System.out.print(arr[i] + " ");
+            }
+        }
+            
+        public static void makeArray(int [] arr) {
+            for(int i = 0; i < nSize; i++){
+            arr[i] = i;
+            }
+        }  
+        }
+
+        결과 0 1 2 3
+
+        -----
+
+        class Parent {
+        public void print(){
+            System.out.println("Parent"); 
+        }
+        }
+
+        class Child extends Parent {
+        public void print() {
+            System.out.println("Child"); 
+        }
+        }
+
+        public class Gisafirst {
+        public static void main(String[] args){
+            Parent pa = new Child();
+            pa.print();
+        }
+        }
+
+        결과 Child
+
+        -----
+
+
+    </pre>
+
+    <h3>추상 클래스 -----</h3>
+
+    <pre>추상 클래스 (Abstract class) -> 미완성 설계도
+    클래스들의 공토오디는 필드와 메소드를 정의한 구체적이지 않은 클래스
+    상위 클래스에는 메소드의 시근니쳐만 정의해 놓고 그 메소드의 실제 동작 방법은 이 메소드를 상속받은 하위 클래스의 책임으로 위임한다.
+
+    형식 abstract class 클래스명 {
+    ,,,,
+    }
+
+    추상 클래스 객체는 생성할 수 없다. -> 실체성이 없고 구체적이지 않으므로.
+    추상 클래스와 실체 클래스는 상속 관계(extends)를 가진다.
+
+    -----</pre>
+
+    <h3>class -----</h3>
+
+    <pre>public class Cat {
+
+    // 멤버 변수(인스턴스 변수)
+    String name;
+    int age;
+    String color;
+
+    // 생성자(Constructor)
+    public Cat(String name, int age, String color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+    }
+
+    // 메서드(Method)
+    public void meow() {
+    System.out.println("냐옹");
+    }
+
+    // Getter 메서드
+    public String getName() {
+    return name;
+    }
+
+    public int getAge() {
+    return age;
+    }
+
+    public String getColor() {
+    return color;
+    }
+
+    // Setter 메서드
+    public void setName(String name) {
+    this.name = name;
+    }
+
+    public void setAge(int age) {
+    this.age = age;
+    }
+
+    public void setColor(String color) {
+    this.color = color;
+    }
+    }
+    멤버 변수(인스턴스 변수): 객체의 특성을 나타내는 변수입니다. 이 클래스에서는 고양이의 이름, 나이, 색깔이며, 이 변수들은 객체가 생성될 때 초기화됩니다.
+    생성자(Constructor): 객체를 생성할 때 호출되는 메서드입니다. 이 클래스에서는 이름, 나이, 색깔을 인자로 받아 객체를 초기화합니다.
+    메서드(Method): 객체의 동작을 정의하는 메서드입니다. 이 클래스에서는 "냐옹" 소리를 내는 meow() 메서드가 있습니다.
+    Getter 메서드: 멤버 변수의 값을 반환하는 메서드입니다. 이 클래스에서는 getName(), getAge(), getColor() 메서드가 있습니다.
+    Setter 메서드: 멤버 변수의 값을 설정하는 메서드입니다. 이 클래스에서는 setName(), setAge(), setColor() 메서드가 있습니다.
+
+    자바에서 클래스는 객체 지향 프로그래밍의 기본적인 개념 중 하나입니다.
+
+    클래스는 프로그램에서 사용될 객체의 틀을 정의하며, 객체를 생성하기 위한 설계도 역할을 합니다.
+
+    클래스는 여러 가지 멤버 변수와 메서드를 포함하며, 이들을 적절히 구성하여 객체의 동작을 정의합니다.
+
+    자바에서 클래스를 사용하는 이유는 다음과 같습니다.
+
+    코드의 재사용성 : 클래스를 사용하면 유사한 기능을 하는 코드를 여러 곳에서 쉽게 재사용할 수 있습니다. 클래스를 이용하여 작성된 코드를 다른 프로그램에서도 활용할 수 있어 개발 시간을 단축시키고 코드의
+    일관성을 유지할 수 있습니다.
+    유지보수성의 향상 : 클래스를 사용하면 관련 있는 코드를 논리적으로 그룹화하여 구조적으로 정리할 수 있습니다. 이렇게 구조화된 코드는 유지보수가 쉬워집니다. 즉, 클래스를 사용하면 코드의 가독성과 유지보수성이
+    향상됩니다.
+    코드의 안정성 : 각 클래스는 자체적으로 캡슐화되어 있어 다른 클래스와 독립적으로 작동합니다. 클래스는 자신의 메서드와 속성만을 외부에서 접근할 수 있게 제한할 수 있기 때문에, 코드의 안정성이 향상됩니다.
+
+    -----</pre>
+
+    <h3>main 함수(메서드) -----</h3>
+
+    <pre>JVM(Java Virtual Machine)이 프로그램을 실행할 때 가장 먼저 호출하는 필수 시작점입니다. public static void main(String[] args) 구조를 가지며, 객체 생성
+    없이 실행되고 프로그램의 전체 흐름을 제어하는 진입점 역할을 합니다.주요 특징 및 의미프로그램 시작점: main 메서드가 없으면 자바 어플리케이션은 실행되지 않습니다.JVM에 의한 호출: 프로그램 실행 시
+    JVM은 제일 먼저 이 메서드를 찾아 실행합니다.public: 외부(JVM)에서 어디서든 호출 가능해야 하므로 접근 제한자가 public입니다.static: 객체를 생성하지 않아도 메모리에 올라가, JVM이
+    인스턴스화 없이 바로 호출할 수 있습니다.void: 실행 후 종료 시 호출자(JVM)에게 반환할 값이 없음을 의미합니다.String[] args: 실행 시 외부에서 매개변수(인자)를 받을 수 있는 문자열
+    배열입니다.
+
+    -----</pre>
+
+    <h3>new -----</h3>
+
+    <pre>키워드는 힙(Heap) 메모리 영역에 새로운 배열 객체를 생성하라는 핵심적인 지시어입니다.
+    생성자(Constructor): new 연산자를 통해서 객체를 생성할 때 반드시 호출이 되고 제일 먼저 실행되는 일종의 메소드
+
+    -----</pre>
+
+    <h3>public -----</h3>
+
+    <pre>접근 제한자(Access Modifier)의 일종으로, 클래스, 메서드, 변수를 어디서든(같은 패키지, 다른 패키지, 외부 클래스 등) 자유롭게 접근할 수 있도록 완전 공개하는 것을 의미합니다. 패키지 제한
+    없이 사용 가능하므로 주로 외부로 노출되어야 하는 API나 메서드에 사용됩니다.
+
+    -----</pre>
+
+    <h3>static -----</h3>
+
+    <pre>"클래스에 소속된", "공통적인", "정적인"이라는 의미를 가지며, 인스턴스(객체)를 생성하지 않고도 클래스 이름으로 멤버(변수/메소드)에 바로 접근할 수 있게 합니다. 프로그램 시작 시 메모리(Static
+    영역)에 고정되어 프로그램 종료 시까지 유지되며, 모든 인스턴스가 하나의 값을 공유합니다
+
+    -----</pre>
+
+    <h3>super -----</h3>
+
+    <pre>상위 클래스를 호출하는 예약어
+
+    -----</pre>
+
+    <h3>void -----</h3>
+
+    <pre>메서드의 반환 타입(Return Type) 자리에 위치하여, 해당 메서드가 호출된 곳으로 어떤 값도 반환하지 않음을 의미하는 키워드입니다. 메서드가 작업을 수행한 후 결과값을 돌려줄 필요가 없을 때 사용하며,
+    return 문을 생략하거나 return;으로 종료할 수 있습니다.
+
+    -----</pre>
+    <script src="./script.js"></script>
+</body>
+
+</html>

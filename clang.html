@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 실기 c언어</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>정보처리기사 실기 c언어</h1>
+    <ul>
+        <li><a href="./iron.html">이론 공부하기</a></li>
+        <li><a href="./clang.html">c언어 공부하기</a></li>
+        <li><a href="./java.html">java 공부하기</a></li>
+        <li><a href="./sql.html">sql 공부하기</a></li>
+        <li><a href="./python.html">python 공부하기</a></li>
+    </ul>
+
+    <h2>c언어 --------------------------
+
+        예제 -----</h2>
+
+    <pre>
+        #include <stdio.h>
+        int r1(){
+        return 4;
+        }
+        int r10(){
+        return(30+r1());
+        }
+        int r100(){
+        return(200+r10());
+        }
+        int main(){
+        printf("%d", r100());
+        return 0;
+        }
+
+        답은 234
+
+
+        --------
+
+        #include <stdio.h>
+        int main()
+        {
+        int i, c = 0;
+        while(i < 10) {
+            i++;
+            c *= i;
+        }
+        printf("%d", c);
+        }
+
+        답은 0
+
+
+        ------
+
+
+        #include <stdio.h>
+        #define SIZE 5
+
+        int main(void)
+        {
+        int arr[SIZE] = {75, 100, 95, 50, 85};
+        int i, j, temp;
+        for(i = 1; i < SIZE; i++){
+            for(j = 0; j < SIZE - i; j++){
+            if(arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+            }
+        }
+        for (i = 1; i < SIZE; i++) {
+            printf("%d", arr[i]);
+        }
+        }
+
+        ->
+
+        i = 1
+        j = 0; j < 4; j++
+        0 1 2 3 뒤에꺼랑 비교해서
+        75 95 50 85 100 만들기
+
+        i = 2
+        j = 0; j < 3; j++
+        0 1 2 뒤에꺼랑 비교해서
+        75 50 85 95 100 만들기
+
+        i = 3
+        j = 0; j < 2; j++
+        0 1 뒤에꺼랑 비교해서
+        50 75 85 95 100 만들기
+
+        i = 4
+        j = 0; j < 1; j++
+        0 뒤에꺼랑 비교해서
+        50 75 85 95 100 만들기
+
+        최종 출력 50 75 85 95 100
+
+
+
+
+        ------
+
+                       </pre>
+
+
+    <h3>쉼표 연산자</h3>
+    <pre>C언어에서 쉼표(comma, ,) 연산자는
+    하나의 문장이 필요한 위치에 여러 개의 표현식(expression)을 순차적으로 실행하기 위해 사용합니다. 왼쪽 식부터 차례대로 계산하고 최종적으로 가장 오른쪽 식의
+    결과값을 전체의 값으로 반환하는 특성을 활용해, 주로 반복문(for)이나 함수 호출 등에서 코드를 간결하게 줄일 때 사용됩니다. 
+
+    예제 
+    #include <stdio.h>
+
+    int main() {
+    int c = 10, b = 20, d = 30;
+    int r;
+
+    r = (c++, ++b, d++);
+
+    printf("r: %d\n", r); // r = 30 (d의 이전 값)
+    printf("c: %d, b: %d, d: %d\n", c, b, d); // c=11, b=21, d=31
+    return 0;
+    }
+
+
+
+                            -----</pre>
+
+    <h3>C++ 생성자 -----</h3>
+
+    <pre>객체 생성시 초기화 작업을 위한 함수. 객체를 생성할 때 자동으로 호출되고 제일 먼저 실행됨. new 연산자를 통해서 갤체를 생성할 때 반드시 호출되고 제일 먼저
+    실행되는 일종의 메소드.
+
+    -----</pre>
+
+    <h3>#define</h3>
+
+    <pre>컴파일 전, 코드 내의 특정 문자열을 정의된 값이나 식(매크로)으로 단순 치환하는 전처리기 지시자입니다.
+
+    예시: #define SIZE 5
+    -----
+
+    -----------------------------------------------</pre>
+    <script src="./script.js"></script>
+</body>
+
+</html>
