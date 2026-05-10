@@ -23,6 +23,79 @@
         예제 -----
     </h2>
     <pre>
+
+
+public class groomi {
+  public static void main(String[] args){
+    int [][] array = new int [3][5];
+    int n = 1;
+    for (int i = 0; i < 3; i++){
+      for (int j = 0; j < 5; j++){
+        array[i][j] = j*3 + (i+1);
+        System.out.print(array[i][j] + " ");
+      }
+    }
+  }
+}
+
+결과: 
+1 4 7 10 13
+2 5 8 11 14
+3 6 9 12 15 
+
+--------------------
+
+public class groomgroom{
+  public static void main(String[] args){
+    int a[] = new int[8];
+    int i = 0, n = 10;
+    while(n > 0){ // n >= 1, i < 8, i <= 7 등도 가능.
+      a[i++] = n % 2;
+      n /= 2;
+    }
+    for(i = 7; i >= 0; i--){
+      System.out.printf("%d", a[i]);
+    }
+  }
+}
+
+출력값
+00001010
+
+
+-----
+
+class Parent {
+  int compute(int num){
+    if (num <= 1)
+      return num;
+    return compute(num - 1) + compute(num - 2);
+  }
+}
+
+class Child extends Parent {
+  int compute(int num){
+    if(num <= 1)
+      return num;
+    return compute(num - 1) + compute(num - 3);
+  }
+}
+
+public class Groomgroom {
+  public static void main(String[] args){
+    Parent obj = new Child();
+    System.out.print(obj.compute(4));
+  }
+}
+
+결과 1
+
+https://www.youtube.com/watch?v=TCwfzag23G8&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7OXgj&index=8
+
+18번
+
+-----
+        
         public class Groomi{
         public static void main(String[] args){
             int i = 0;
