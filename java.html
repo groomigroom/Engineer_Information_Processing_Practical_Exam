@@ -324,6 +324,115 @@ https://www.youtube.com/watch?v=TCwfzag23G8&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7O
     return 문을 생략하거나 return;으로 종료할 수 있습니다.
 
     -----</pre>
+
+<pre>
+
+public class Groomi {
+public static void main(String []args){
+int a[][] = {{45, 50, 75}, {89}};
+System.out.println(a[0].length);
+System.out.println(a[1].length);
+System.out.println(a[0][0]);
+System.out.println(a[0][1]);
+System.out.println(a[1][0]);
+}
+}
+
+답안: 3
+1
+45
+50
+89
+
+-----
+
+https://www.youtube.com/watch?v=xK3UlibfjaM&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7OXgj&index=11
+
+34분 24초 17번
+
+-----
+
+public class FirstGroomi {
+  public static void printPart(String text, String stTwo){
+    System.out.println(stTwo);
+    System.out.println(text);
+    System.out.println(text);
+  }
+  
+  public static String groomi(){
+    return "구름이";
+  }
+  
+  public static int inout(){
+    return 11;
+  }
+  
+  public static String groomiTwo(String grootext, String delimiter){
+    String outPart = "";
+    outPart = outPart + delimiter + "\n";
+    outPart = outPart + grootext + "\n";
+    outPart = outPart + grootext + "\n";
+    return outPart;
+  }
+  
+  public static void main(String[] args){
+    System.out.println(groomi());
+    System.out.println(groomiTwo("기임구름", "kimgoorem"));
+    System.out.println(inout());
+    printPart("구름", "김");
+    printPart("구름", "김씨");
+    printPart("김김", "구름");
+    //Email.send("groomgroom@groom.com", "Math floor", Math.floor(1.1));
+    System.out.println("Hello Method");
+    System.out.println(Math.floor(1.1));
+  }
+}
+
+/*
+public static void (String text, String delimiter) throw I0Exception
+FileWirter fw = new FileWriter("output.txt");
+fw.write(delimiter + "\n");
+fw.write(text + "\n");
+fw.write(text + "\n");
+fw.close();
+*/
+
+-----
+
+
+정보처리기사 실기 java 부분에서 ------------
+
+Parent obj = new Child()
+
+하위 클래스 생성자로 객체 변수를 생성하고, 자료형은 상위 클래스로 지정.
+-> 오버라이딩.
+
+System.out.print(obj.compute(4));
+
+obj 객체의 getName() 함수 호출
+
+오버라이딩: 하위 클래스에서 상위 클래스의 메소드를 재정의하는 과정. 오버라이딩 메소드는 부모 클래스 메소드보다 우선 순위가 높음.
+
+int compute(int num)
+
+compute() 함수 실행 num = 4
+
+if (num <= 1)
+
+if ( 4 <= 1) -> FALSE
+
+return compute(num - 1) + compute(num - 3)
+return compute(3) + compute(1)
+
+compute() 함수 호출 -> 재귀 함수
+
+
+------------
+
+</pre>
+
+
+                
     <script src="./script.js"></script>
 </body>
 
