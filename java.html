@@ -482,6 +482,492 @@ fw.close();
     
 </pre>
 
+https://www.youtube.com/watch?v=xK3UlibfjaM&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7OXgj&index=11
+
+17번 34분 6초
+
+
+-------
+
+package javas;
+
+public class javas {
+
+   public static void main(String[] args) {
+      System.out.println("1 ~ 10 = " + calcSum(1, 10));
+      System.out.println("2 ~ 10 = " + calcSum(2, 10));
+
+   }
+   
+   static int calcSum(int from, int to) {
+      int sum = 0;
+      for(int i = from; i <= to; i++) {
+         sum += i;
+      }
+      return sum;
+   }
+
+}
+
+
+-------
+
+package javas;
+
+public class javas {
+
+   public static void main(String[] args) {
+      int year = 2026;
+      int month = 12;
+      
+      int days = getMonthDays(year, month);
+      System.out.println(year + "년도" + month + "월은" + days + "일까지 이다.");
+   }
+   
+   static int getMonthDays(int year, int month) {
+      int[] arDays = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+      
+      if(month == 2) {
+         if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            return 29;
+         }
+         return 28;
+      } else {
+         return arDays[month];
+      }
+   }
+}
+
+
+-------
+
+#####
+
+import java.time.LocalDate;
+
+package javas;
+
+public class javas {
+
+   public static void main(String[] args) {
+      System.out.println("오늘은 " + getDate() + "일입니다.");
+   }
+   static int getDate() {
+      java.time.LocalDate today = java.time.LocalDate.now();
+      int day = today.getDayOfMonth();
+      return day;
+   }
+}
+
+
+------
+
+package javas;
+
+public class javas {
+
+   public static void main(String[] args) {
+      System.out.println("1 ~ 10 = " + calcSum(1, 10));
+      System.out.println("1 ~ 10 = " + calcSum(15, 100));
+   }
+   static int calcSum(int from, int to) {
+      if (from > to) {
+         return 0;
+      }
+      int sum = 0;
+      for (int i = from; i <= to; i++) {
+         sum += i;
+      }
+      return sum;
+   }
+}
+
+
+----------------------------
+
+package javas;
+
+public class javas {
+
+   public static void main(String[] args) {
+      printSum(1, 10);
+      printSum(15, 100);
+   }
+   static void printSum(int from, int to) {
+      int sum = 0;
+      for (int i = from; i <= to; i++) {
+         sum += i;
+      }
+      System.out.println(from + "~" + to + "=" + sum);
+   }
+}
+----------------------------
+
+package java_prac;
+
+public class prac {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 10; i++) {
+			outStar(i);
+			System.out.println();
+		}
+	}
+
+	static void outStar(int num) {
+		for (int i = 0; i < num; i++) {
+			System.out.print("공부합시다");
+		}
+	}
+}
+
+
+--------------
+
+package java_prac;
+
+public class prac {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 10; i++) {
+			outStar("　　", 10 - i);
+			//전각 공백 (ㄱ + 한자 + 1번)
+			outStar("공부", i);
+			System.out.println();
+		}
+	}
+
+	static void outStar(String ch, int num) {
+		for (int i = 0; i < num; i++) {
+			System.out.print(ch);
+		}
+	}
+}
+
+
+---------------
+
+
+package java_prac;
+
+public class prac {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 10; i++) {
+			outStar("　　", 10 - i, false);
+			//전각 공백 (ㄱ + 한자 + 1번)
+			outStar("공부", i, true);
+		}
+	}
+
+	static void outStar(String ch, int num, boolean newLine) {
+		for (int i = 0; i < num; i++) {
+			System.out.print(ch);
+		}
+		if (newLine) {
+			System.out.println();
+		}
+	}
+}
+
+
+
+-------
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      for (int i = 1; i <= 10; i++) {
+        outChars(' ', 10-i);
+        outCharsln('*', i);
+      }
+    }
+
+    static void outChars(char ch, int num){
+      for (int i = 0; i < num; i++) {
+        System.out.print(ch);
+      }
+    }
+    
+    static void outCharsln(char ch, int num) {
+      outChars(ch, num);
+      System.out.println();
+    }
+}
+
+
+
+--------------------------------
+
+
+class GroomiString {
+  public static void main(String[] args){
+    outCharsln('김', 5 + 4);
+    System.out.println("구름이");
+     outCharsln('김', 5 + 4);
+  }
+  
+  static void outChars(char ch, int num){
+    for (int i = 0; i < num; i++){
+      System.out.print(ch);
+    }
+  }
+  static void outCharsln(char ch, int num){
+    outChars(ch, num);
+      System.out.println();
+  }
+}
+
+
+----------------------
+
+class GroomiString {
+  public static void main(String[] args){
+    String str = "김구름";
+    String result = str.repeat(3);
+    //repeat는 문자열을 횟수만큼 반복 출력하는거.
+    System.out.println(result);
+  }
+ 
+}
+
+
+-----------------------
+
+class GroomiString {
+  public static void main(String[] args){
+    outBox("김구름");
+    outBox("김구름구름구름멍멍멍");
+  }
+  
+  static void outBox(String message){
+    outCharsln('-', message.length() + 4);
+    System.out.println("구름" + message + "구름");
+    outCharsln('-', message.length() + 4);
+  }
+  
+  static void outChars(char ch, int num){
+    for (int i = 0; i < num; i++){
+      System.out.print(ch);
+    }
+  }
+  
+  static void outCharsln(char ch, int num){
+    outChars(ch, num);
+    System.out.println();
+  }
+}
+
+---------
+
+class Groomgroomi{
+  public static void main(String[] args){
+    int num = 4;
+    getDouble(num);
+    //num에다가 위 함수를 대입 안해줘서 값이 그대로 4가 출력됨.
+    //num = getDouble(num);
+    System.out.println("num = " + num);
+  }
+  
+  static int getDouble(int value){
+    value *= 2;
+    return value;
+  }
+}
+
+---------------------
+
+class Groomjava {
+  public static void main(String[] args){
+    int[] num = {2, 4, 6};
+    getDouble(num);
+    System.out.println(num[0]);
+  }
+  
+  static void getDouble(int[] value) {
+    value[0] *= 2;
+  }
+}
+
+/* #####
+class Groomjava {
+  public static void main(String[] args){
+    int[] num = {2, 4, 6};
+    int num2 = getDouble(num);
+    System.out.println(num2);
+  }
+  
+  static void getDouble(int[] vlaue) {
+    value[0] *= 2;
+  }
+}
+*/
+
+------------------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println(getSum(1, 2));
+      System.out.println(getSum(1, 2, 3, 4));
+      System.out.println(getSum(8, 9, 6, 2, 9));
+    }
+    
+    static int getSum(int... a){
+      int sum = 0;
+      for (int i : a) {
+        sum += i;
+      }
+      return sum;
+    }
+}
+
+---------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println(getSum(1, 2));
+      System.out.println(getSum(1, 2, 3, 4));
+      System.out.println(getSum(8, 9, 6, 2, 9));
+    }
+    
+    static int getSum(int... a){
+      /*
+      int... a는 가변 인자(Variable Arguments, Varargs)를 의미하며, 해당 메서드가 int 타입의 인자를 0개부터 여러 개(개수 제한 없이) 받을 수 있다는 뜻입니다. 내부적으로는 int[] a 배열로 처리되어, 메서드 내부에서 배열처럼 사용할 수 있습니다.
+      */
+      int sum = 0;
+      for (int i : a) {
+        /*
+        for (int i : a)는 향상된 for문(Enhanced for loop, for-each문)이라 불리며, 배열이나 컬렉션(a)의 요소를 처음부터 끝까지 하나씩 꺼내어 변수(i)에 담아 반복 처리하는 구문입니다. 인덱스(\(i\))를 직접 관리하지 않아도 되어 코드가 간결하고 안전하다는 장점이 있습니다.
+        */
+        sum += i;
+      }
+      return sum;
+    }
+}
+
+----------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("[3, 5] = " + getMax(3, 5));
+    }
+    
+    static int getMax(int a, int b){
+      if (a > b) {
+        return a;
+      } else {
+        return b;
+      }
+    }
+}
+
+---------------------
+
+파일명 -> Groompart.java
+
+class Groom {
+  String dogname;
+  boolean gansik;
+  
+  void run(){
+    if(gansik){
+      System.out.println("간식이 좋아요");
+    } else {
+      System.out.println("간식 먹기 싫어요");
+    }
+  }
+  void stop(){
+    System.out.println(dogname + " 멍멍이");
+  }
+}
+
+class Groompart {
+  public static void main(String[] args){
+    Groom groomi = new Groom();
+    groomi.dogname = "김구름";
+    groomi.gansik = true;
+    
+    groomi.run();
+    groomi.stop();
+  }
+}
+
+-----------------
+파일명 -> Groompart.java
+
+class Groom {
+  String dogname;
+  boolean gansik;
+  
+  void run(){
+    if(gansik){
+      System.out.println("간식이 좋아요");
+    } else {
+      System.out.println("간식 먹기 싫어요");
+    }
+  }
+  void stop(){
+    System.out.println(dogname + " 멍멍이");
+  }
+}
+
+class Groompart {
+  public static void main(String[] args){
+    Groom groomi = new Groom();
+    groomi.dogname = "김구름";
+    groomi.gansik = true;
+    
+    groomi.run();
+    groomi.stop();
+    
+    Groom guumi = new Groom();
+    guumi.dogname = "굴흠이";
+    guumi.gansik = false;
+    
+    guumi.run();
+    guumi.stop();
+  }
+}
+
+---------------------
+
+
+
+class Outer {
+  public static void main(String[] args){
+    Time now = new Time();
+    now.am = true;
+    now.hour = 12;
+    now.minute = 34;
+    now.second = 56;
+    
+    now.whatTime();
+  }
+}
+
+class Time {
+  boolean am;
+  int hour;
+  int minute;
+  int second;
+  
+  void whatTime() {
+    System.out.print(am ? "오전 " : "오후 ");
+    System.out.print(hour + "시 " + minute + "분 " + second + "초 ");
+  }
+}
+
+-----------------------
+
+
 
                 
     <script src="./script.js"></script>
