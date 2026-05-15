@@ -11,6 +11,7 @@ int main() {
   struct student *p;
   //주소 값을 받는 변수?
   p = &s[0];
+  //주소 값을 대입??
   
   (p + 1) -> sum = (p + 1) -> kor + (p + 2) -> math;
   (p + 1) -> total = (p + 1) -> sum + p -> kor + p -> math;
