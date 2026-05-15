@@ -14,6 +14,7 @@ int main() {
   //주소 값을 대입??
   
   (p + 1) -> sum = (p + 1) -> kor + (p + 2) -> math;
+  //p + 1이면 s[1]의 값을 불러오는 식
   (p + 1) -> total = (p + 1) -> sum + p -> kor + p -> math;
   
   printf("%d\n", (p + 1) -> sum + (p + 1) -> total);
