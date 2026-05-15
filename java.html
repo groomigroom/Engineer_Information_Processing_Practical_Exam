@@ -25,6 +25,32 @@
     <pre>
 
 
+//c언어 예제 보고 만든거
+class rr {
+  int r1() {
+    return 4;
+  }
+  
+  int r10() {
+    return 30 + r1();
+  }
+  
+  int r100() {
+    return 200 + r10();
+  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      rr newbo = new rr();
+      System.out.println(newbo.r100());
+    }
+}
+
+출력값 234
+
+------
+
 public class groomi {
   public static void main(String[] args){
     int [][] array = new int [3][5];
