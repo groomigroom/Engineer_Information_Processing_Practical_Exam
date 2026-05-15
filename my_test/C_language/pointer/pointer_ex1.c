@@ -13,4 +13,5 @@ int main() {
   (p + 1) -> sum = (p + 1) -> kor + (p + 2) -> math;
   (p + 1) -> total = (p + 1) -> sum + p -> kor + p -> math;
   
+  printf("%d\n", (p + 1) -> sum + (p + 1) -> total);
 }
