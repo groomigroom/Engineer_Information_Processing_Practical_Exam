@@ -7,6 +7,7 @@ struct student {
 
 int main() {
   struct student s[3] = {{"김구름", 80, 92}, {"김구구", 72, 99}, {"김구루움", 12, 44}};
+  //s[0], s[1], s[2]로 3가지 구조체를 받음??
   struct student *p;
   p = &s[0];
   
