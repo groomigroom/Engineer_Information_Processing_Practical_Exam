@@ -40,6 +40,17 @@ for i in range(3) :
         print(array[i][j], end = " ")
     print()
 
+
+-------
+
+array = [[j * 3 + (i + 1) for j in range(5)] for i in range(3)]
+
+for row in array:
+    print(*(row))
+#*이 공백으로 구분되는 배열 모양으로 출력해주는거 애스터리스크이다.
+
+위에꺼랑 같은데, 코드는 더 간략하게
+
 ------------
 
 #c언어 예제 보고 만든거
