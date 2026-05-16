@@ -296,10 +296,24 @@ int main() {
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-//28분 30초
-//typedef https://www.youtube.com/watch?v=xK3UlibfjaM&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7OXgj&index=12
+typedef struct PERSO {
+  //typedef 시에는 구조체 이름 PERSO로 된거 생략 가능
+  char name[50];
+  int age;
+  char address[100];
+} PERSON;
 
+int main() {
+  PERSON p4 = {"김구름", 9, "광주광역시"};
+  
+  typedef unsigned int KWS;
+  KWS temp = 1;
+  
+  printf("%d\n", p4.age);
+  printf("%u", temp);
+  
+  
+  return 0;
 }
 
 </pre>
