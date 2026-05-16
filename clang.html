@@ -25,6 +25,23 @@
     <pre>
 
 
+#include <stdio.h>
+int main()
+{
+  char* str[] = {"Babo", "Train", "Pasta"};
+  char** q;
+  q = str;
+  printf("%c\n", **q);
+  //B
+  printf("%c\n", *(*(q + 1)));
+  //T [1]번 인덱스인 Train의 첫번째 글자
+  printf("%c\n", *(*(q + 2) + 2));
+  //s [2]번 인덱스인 Pasta의 첫번째 글자에서 부터 2칸 뒤
+}
+        
+-----
+
+
 자바 예제 보고 만든거
 
 #include <stdio.h>
