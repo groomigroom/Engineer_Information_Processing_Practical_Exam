@@ -253,6 +253,43 @@ https://www.youtube.com/watch?v=xK3UlibfjaM&list=PLz95GL3y9Hv0fbwTxWqc3dni3hCA7O
         
     </pre>
 
+<pre>
+
+구조체 예제 --------------
+
+    
+
+#include <stdio.h>
+#include <string.h>
+
+struct PERSON {
+  char name[50];
+  int age;
+};
+
+int main() {
+  struct PERSON p1 = {"김구름", 9};
+  struct PERSON p2;
+  strcpy(p2.name, "김구름름");
+  p2.age = 8;
+  struct PERSON p3[2] = {
+    {"김구룸", 7},
+    {"김름구", 6}
+  };
+  printf("이름: %s 나이: %d\n", p1.name, p1.age);
+  printf("이름: %s 나이: %d\n", p2.name, p2.age);
+  printf("이름: %s 나이: %d\n", p3[0].name, p3[0].age);
+  printf("이름: %s 나이: %d\n", p3[1].name, p3[1].age);
+}
+
+출력값
+
+이름: 김구름 나이: 9
+이름: 김구름름 나이: 8
+이름: 김구룸 나이: 7
+이름: 김름구 나이: 6
+
+</pre>
             
     <script src="./script.js"></script>
 </body>
