@@ -24,6 +24,45 @@
 
     <pre>
 
+-----
+
+#include <stdio.h>
+int main(int argc, char *argv[])
+/*
+int argc (Argument Count)프로그램에 전달된 인자의 총 개수를 나타내는 정수입니다.프로그램의 이름도 인자에 포함되므로, 인자를 아무것도 넘기지 않고 실행해도 argc는 기본적으로 1이 됩니다.char *argv[] (Argument Vector)전달된 실제 인자들의 문자열 배열입니다.argv[0]에는 항상 실행하는 프로그램의 이름이나 경로가 들어갑니다.argv[1]부터 argv[argc - 1]까지는 사용자가 프로그램 실행 시 공백으로 구분하여 입력한 문자열들이 차례대로 저장됩니다.
+프로그램 실행 시 외부 인자(명령행 인수)를 전달받을 필요가 없다면 int argc, char *argv[]를 생략하고 int main(void) 형태로 작성해도 됩니다.C언어 표준은 매개변수가 없는 main() 형태를 허용하며, 인자가 불필요한 단순 프로그램에서는 생략하는 것이 코드를 더 간결하게 만듭니다.
+*/
+{
+  int a = 6;
+  int s = 0;
+  int sum = 0;
+  
+  while (a < 10) {
+    a++;
+    /*
+    a++한 후에 값이
+    7
+    8
+    9
+    10이 된다.*/
+    if (a % 2 == 0) continue;
+    sum += a;
+    //sum은 16이 된다.
+  }
+  
+  switch (a % 2) {
+    case 2: s++;
+    case 3: a += s;
+    default: a++;
+  }
+  
+  printf("%d %d", s, a);
+  //최종 결과값은 0 11 입니다.
+  return;
+}
+
+-----
+
 
 
 #####
