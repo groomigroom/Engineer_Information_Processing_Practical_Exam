@@ -24,6 +24,39 @@
 
     <pre>
 
+
+------
+
+#include <stdio.h>
+int cnt = 0;
+int f1(int);
+
+int main()
+{
+  int k;
+  f1(5);
+  printf("%d", cnt);
+}
+
+int f1(int n) {
+  if (n == 0) {
+    return 0;
+  }
+  if (n == 1) {
+    cnt++;
+    return 1;
+  }
+  return(f1(n - 1) + f1(n - 2));
+  /*
+  return값에 함수가 들어가면 재귀함수로
+  f(5) -> f(4) + f(3)
+  f(4) + f(3) -> f(3) + f(2) + f(2) + f(1)
+  f(3) + f(2) + f(2) + f(1) -> f(2) + f(1) + f(1) + f(0) + f(1) + f(0) + f(1)
+  f(2) + f(1) + f(1) + f(0) + f(1) + f(0) + f(1) -> f(1)이 5개
+  따라서 5가 return 됨.
+  */
+}
+
 ------
 
 #include <stdio.h>
