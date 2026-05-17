@@ -29,6 +29,27 @@
 
     <pre>
 
+
+-----
+
+a, b, c, d = 5, 10, 122, 11
+
+target = [a, b, c, d]
+ok = []
+no = []
+correct =[5, 'a', 123, 12, 11, c]
+#correct == [a, 'a', 123, 12, d, c]
+
+for a in target :
+  if a in correct :
+    ok.append(a)
+    #ok == [5, 122, 11]
+  else :
+    no.append(a)
+    #no == [10]
+print(ok)
+print(no)
+
 -----
 
 def test (*v, n = 2) :
