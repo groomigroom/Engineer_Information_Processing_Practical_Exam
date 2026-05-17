@@ -128,9 +128,8 @@ public class Groom {
 		
 ------
 
-#####
-
 abstract class Vehicle {
+  //자바에서 abstract는 "미완성"을 의미하는 제어자(Modifier)입니다. [1] 클래스와 메서드에 사용할 수 있으며, 핵심은 "구체적인 내용은 하위 클래스(자식)에서 반드시 직접 구현하라"고 강제하는 것입니다.
   String name;
   abstract public String getName(String val);
   
@@ -141,8 +140,10 @@ abstract class Vehicle {
 
 class Car extends Vehicle {
   private String name;
+  //private은 해당 변수, 메서드, 또는 생성자를 선언된 클래스 내부에서만 접근할 수 있도록 제한하는 가장 강력한 접근 제어자입니다. 외부 클래스나 자식 클래스에서는 직접 접근할 수 없습니다.
   public Car(String val) {
     name = super.name = val;
+    //super.name은 "자식 클래스(Car)에서 부모 클래스(Vehicle)에 선언된 name 변수를 가리키는 표현
   }
   
   public String getName(String val) {
@@ -150,6 +151,7 @@ class Car extends Vehicle {
   }
   
   public String getName(byte val[]) {
+    //byte val[]은 byte 타입의 데이터들을 저장하는 배열(Array)을 뜻하며, 메서드의 매개변수(Parameter)로 선언되었습니다.
     return "Car name: " + val;
   }
 }
@@ -158,11 +160,16 @@ public class Main {
   public static void main(String[] args) {
     Vehicle obj = new Car("Spark");
     System.out.println(obj.getName("good"));
+    //public String getName(String val)이 작동함.
+    System.out.println(obj.getName());
+    //public String getName()이 작동함.
   }
 }
 
-//출력값 Car name: good
-
+/*출력값
+Car name: good
+Vehicle name: Spark
+*/
 
 -----
 
