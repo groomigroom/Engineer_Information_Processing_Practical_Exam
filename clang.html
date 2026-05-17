@@ -24,7 +24,39 @@
 
     <pre>
 
+------
 
+#include <stdio.h>
+int str_cmp(const char* s1, const char* s2, int c) {
+  //const는 변수의 값을 변경하지 못하도록 상수화(Constant) 시키는 키워드입니다. 
+  if (!c)
+  //c가 0일 때만 유효함.
+    return 0;
+  while(--c && *s1 && *s1 == *s2) {
+    //*s1만 있는거는 null 문자인지 아닌지 판단하는 거
+    printf("*");
+    s1++;
+    s2++;
+    //abc까지만 같으므로, *** 출력됨.
+  }
+  return *s1 - *s2;
+  //0이 아니므로
+}
+int main() {
+  int result = str_cmp("abcd", "abcD", 10);
+  switch (result) {
+    case 0 :
+      printf("equal");
+      break;
+    default :
+      printf("difference");
+      break;
+      //이거 출력됨.
+  }
+  return 0;
+}
+
+        
 -------
 
 #include <stdio.h>
