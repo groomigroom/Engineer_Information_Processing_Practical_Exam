@@ -25,6 +25,30 @@
     <pre>
 
 -----
+
+#include <stdio.h>
+int main()
+{
+  int a = 5, b = 1, c = 0;
+  if (!c) {
+    int b = 5;
+    //b == 5
+    //int b를 if문 내에서 선언을 따로 했으므로, 최종 출력값에 b 값에 영향을 미치지 않습니다.
+    while(b) {
+      c += b;
+      b--;
+      //b가 4 3 2 1 0 순으로 작아지다가, 0이 된 이후에는 while문이 안돌아감.
+    }
+    //c는 4 + 3 + 2 + 1이므로 15입니다.
+    a = c - b;
+  }
+  printf("%d %d %d", a, b, c);
+  return 0;
+}
+
+//출력값 15 1 15
+
+-----
         
 #include <stdio.h>
 
