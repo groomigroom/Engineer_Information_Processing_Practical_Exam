@@ -24,6 +24,47 @@
     </h2>
     <pre>
 
+
+------
+
+class Parent {
+  void printNumbers() {
+    System.out.println("Parent class");
+    for(int i = 1; i <= 5; i++) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
+  }
+}
+
+class Child extends Parent {
+  void printNumbers() {
+    System.out.println("Child class: ");
+    for(int i = 5; i >= 1; i--) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
+  }
+}
+public class OverridingExample {
+  public static void main(String[] args) {
+    Parent parent = new Parent();
+    parent.printNumbers();
+    
+    Child child = new Child();
+    child.printNumbers();
+  }
+}
+
+/*
+출력값
+Parent class
+1 2 3 4 5
+Child class:
+5 4 3 2 1
+*/
+
+		
 -----
 		
 class A {
