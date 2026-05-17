@@ -15,7 +15,8 @@ values
 (3, "구구미", "3부", 4),
 (4, "구우", "2부", 5);
 
-select groo_part, sum(groo_id_two) id_two_hap
+select groo_part, sum(groo_id_two) id_two_hap, grouping(groo_part)
 from groomi
 group by groo_part with rollup;
 -- with rollup으로 총계도 구하는거
+-- grouping() 함수로 총계는 1로 보여지게 하는거 
