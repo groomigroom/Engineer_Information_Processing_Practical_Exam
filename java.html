@@ -25,6 +25,42 @@
     <pre>
 
 
+------ #####
+
+class Parent {
+  protected int value = 10;
+  
+  public void printValue() {
+    System.out.println("Parent value: " + value);
+  }
+}
+
+class Child extends Parent {
+  protected int value = 20;
+  
+  public void updateValue(int n) {
+    this.value = n;
+  }
+  public void printValue() {
+    System.out.println("Child value: " + value);
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Parent parent = new Parent();
+    Child child = new Child();
+    
+    parent.printValue();
+    child.printValue();
+    
+    child.updateValue(30);
+    
+    parent.printValue();
+    child.printValue();
+  }
+}
+
 
 ----- #####
 
