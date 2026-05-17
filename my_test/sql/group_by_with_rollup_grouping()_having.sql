@@ -20,3 +20,9 @@ from groomi
 group by groo_part with rollup;
 -- with rollup으로 총계도 구하는거
 -- grouping() 함수로 총계는 1로 보여지게 하는거 
+
+select groo_part, sum(groo_id_two) id_two_hap, grouping(groo_part)
+from groomi
+group by groo_part with rollup
+having id_two_hap >= 5;
+-- having은 group by에서 where 느낌으로 쓰는 거.
