@@ -27,6 +27,39 @@
 -----
 
 #include <stdio.h>
+int result = 10;
+int mul(int a, int b) {
+  int result;
+  result = a + b;
+  return result;
+} 
+void main()
+{
+  mul(5, 6);
+  printf("%d", result);
+}
+
+//지역변수와 전역변수로 인해서, 11이
+//값으로 안나오고, 10이 결과값
+//아래와 같이 바꾸면 값이 11나옴.
+
+#include <stdio.h>
+int result = 10;
+int mul(int a, int b) {
+  int result;
+  result = a + b;
+  return result;
+} 
+void main()
+{
+//
+  result = mul(5, 6);
+  printf("%d", result);
+}
+
+-----
+
+#include <stdio.h>
 int main(int argc, char *argv[])
 /*
 int argc (Argument Count)프로그램에 전달된 인자의 총 개수를 나타내는 정수입니다.프로그램의 이름도 인자에 포함되므로, 인자를 아무것도 넘기지 않고 실행해도 argc는 기본적으로 1이 됩니다.char *argv[] (Argument Vector)전달된 실제 인자들의 문자열 배열입니다.argv[0]에는 항상 실행하는 프로그램의 이름이나 경로가 들어갑니다.argv[1]부터 argv[argc - 1]까지는 사용자가 프로그램 실행 시 공백으로 구분하여 입력한 문자열들이 차례대로 저장됩니다.
