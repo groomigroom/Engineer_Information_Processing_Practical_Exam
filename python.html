@@ -30,6 +30,31 @@
     <pre>
 
 -----
+
+li = ["groom", "kim", "mnung"]
+cnt = 0
+str = ' '
+for i in li :
+    for j in i :
+        str += j[0]
+        cnt = cnt + 1        
+        if cnt > 5 : 
+            break 
+
+print(str)
+"""
+g
+gr
+gro
+groo
+groom
+groomk
+groomkm
+이런식으로 str에 쌓임. 
+
+"""
+
+-----
         
 t = [1, 2, '1', '2', '3', '4']
 t[2:] = 'abc'
