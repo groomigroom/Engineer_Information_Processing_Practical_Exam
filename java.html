@@ -24,6 +24,29 @@
     </h2>
     <pre>
 
+
+-----
+
+public class Groom {
+  public static void main(String[] args) {
+    String base = "Hello Groom";
+    char ch = 'o';
+    for (int i = 0; i < base.length(); i++) {
+      if (ch == base.charAt(i))
+        base = base.substring(0, i) + '*' + base.substring(i + 1);
+      else
+        base = base.substring(0, i) + '-' + base.substring(i + 1);
+    }
+    System.out.println(base);
+  }
+}
+
+//출력값 ----*---**-
+//base.substring(0, i)은 0에서 i - 1 인덱스까지 base.substring(i + 1)는 i + 1에서부터 끝까지
+/*
+처음 시작할 때 base는 "Hello Groom"이 맞습니다. 하지만 반복문(for)이 한 바퀴 돌 때마다 base 변수 자체를 새로 바뀐 문자열로 계속 덮어씁니다(base = ...).i=2부터 i=4까지 변하는 과정을 눈으로 따라가 보겠습니다.① 2번째 바퀴 (i = 2, 'l'을 바꾸는 차례)바꾸기 전 base 상태: "--llo Groom" (앞의 2글자는 이미 이전 바퀴에서 --로 바뀐 상태)코드 실행: substring(0, 2) + '-' + substring(3)앞부분: "--"바꿀 글자: "-"뒷부분: "lo Groom" (여기에 원래 글자가 아직 남아있음!)바뀐 후 base 상태:  "---lo Groom"② 3번째 바퀴 (i = 3, 다음 'l'을 바꾸는 차례)바꾸기 전 base 상태: "---lo Groom" (방금 만든 따끈따끈한 문자열을 가져옴)코드 실행: substring(0, 3) + '-' + substring(4)앞부분: "---"바꿀 글자: "-"뒷부분: "o Groom" (원래 글자가 한 칸 더 줄어듦)바뀐 후 base 상태: "----o Groom"③ 4번째 바퀴 (i = 4, 'o'를 바꾸는 차례)바꾸기 전 base 상태: "----o Groom"코드 실행: substring(0, 4) + '*' + substring(5)앞부분: "----"바꿀 글자: "*" (조건이 참이므로 * 삽입)뒷부분: " Groom" (이제 'H, e, l, l, o'는 흔적도 없이 사라짐)바뀐 후 base 상태: "----* Groom"
+*/
+
 ------
 
 class Parent {
