@@ -28,3 +28,9 @@ from groom
 join groom2
 -- inner join groom2로도 가능함.
 on groom.col1 = groom2.col1;
+
+-- where절 이용해서 한거
+select groom.col1, groom.col2, groom2.col2
+from groom
+join groom2
+where groom.col1 = groom2.col1;
