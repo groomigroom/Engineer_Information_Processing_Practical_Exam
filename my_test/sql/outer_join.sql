@@ -29,3 +29,8 @@ from groom
 left join groom2
 -- left outer join groom2도 가능함.
 on groom.col1 = groom2.col1;
+
+select groom.col1, groom2.col1, groom.col2, groom2.col2
+from groom
+right outer join groom2
+on groom.col1 = groom2.col1;
