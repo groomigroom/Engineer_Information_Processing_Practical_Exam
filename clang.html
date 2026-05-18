@@ -24,6 +24,26 @@
 
     <pre>
 
+
+        
+------
+
+#include <stdio.h>
+int main(void)
+{
+  char data[5] = {'f', 'i', 'g', 'h', 't'};
+  char* p1 = data;
+  char* p2 = data;
+  char first, second;
+  
+  first = *++p1;
+  //f에서 i로 됨
+  second = ++*p2;
+  //f값 자체에 1을 더해서 g가 됨.
+  printf("%c%c", first, second);
+  //출력값 : ig
+}
+
 ------
 
 #include <stdio.h>
