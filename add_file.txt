@@ -47,7 +47,7 @@ int main() {
 		
 		
 c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G	
-파이썬	https://youtube.com/shorts/RjpYmck9_eE?si=cb0TGxsjkAZz_SiS	https://share.google/aim$ode/xRfl7FCNkHrT63kI1
+		
 		
 		
 		
@@ -71,53 +71,8 @@ int main(void)
   return 0;
 }"
 		
-java	https://www.youtube.com/watch?v=IxO1tw0ZUP8&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=4	"class Animal {
-  public void speak() {
-    System.out.println(""Animal"");
-  }
-}
-class Dog extends Animal {
-  public void speak() {
-    System.out.println(""barking"");
-  }
-}
-class Cat extends Animal {
-  public void speak() {
-    System.out.println(""meowing"");
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Animal a;
-    //빈칸 채우기 문제
-    a = new Dog();
-    a.speak();
-    //빈칸 채우기 문제
-    a = new Cat();
-    a.speak();
-  }
-}
-
-/*
-출력값
-barking
-meowing
-*/"
-java	https://www.youtube.com/watch?v=qQCJWmbH9ew&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=6	"public class Groom {
-  public static void main(String[] args) {
-    int[] digit = new int[8];
-    int i = 0; int n = 10;
-    
-    while(n >= 1) {
-      digit[i++] = n % 2;
-      n /= 2;
-    }
-    
-    for (i = 7; i >= 0; i--) {
-      System.out.print(digit[i]);
-    }
-  }
-}"
+		
+		
 java	https://www.youtube.com/watch?v=QQ_dJEeFMKM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=7	"public class Groom {
   public static void main(String[] args) {
     int[] result = new int[5];
@@ -142,39 +97,8 @@ print(new_text) # 출력: HELLO
 numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
 print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"
-java	https://www.youtube.com/watch?v=8MKr-mvDiEY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=8	"public class Main {
-    public static void main(String[] args) {
-      int a[][] = {{1, 2, 3, 4, 5}, {6, 7}};
-      
-      System.out.println(a[0].length);
-      System.out.println(a[1].length);
-      System.out.println(a[0][0]);
-      System.out.println(a[0][1]);
-      System.out.println(a[1][1]);
-    }
-}"
-java	https://www.youtube.com/watch?v=Z0ZLeEhOM1w&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=9	"class Parent {
-  int func(int n) {
-    if (n <= 1)
-      return n;
-    return func(n - 1) + func(n - 2);
-  }
-}
-
-class Child extends Parent {
-  int func(int n) {
-    if (n <= 1) {
-      return n;
-    }
-    return func(n - 1) + func(n - 3);
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Parent obj = new Child();
-    System.out.print(obj.func(7));
-  }
-}"
+		
+		
 java	https://www.youtube.com/watch?v=SdYpdH_HsGI&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=10	"public class Main {
     public static void main(String[] args) {
       int i = 0;
@@ -188,30 +112,10 @@ java	https://www.youtube.com/watch?v=SdYpdH_HsGI&list=PLYdThbnQN0eKKUh6eUbuqzD1M
       System.out.println(sum);
     }
 }"
-python	https://www.youtube.com/watch?v=TdkTBfXorfI&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=5	"family = {'엄마', '아빠'}
-family.add('나')
-family.update({'나', '동생', '댕댕이'})
-family.remove('댕댕이')
-print(family)"
-python	https://www.youtube.com/watch?v=wh8MrZsgddI&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=6	"mylist = [1, 2, 3, 4, 5]
-mylist = list(map(lambda x: x * 2, mylist))
-print(mylist)"
-python	https://www.youtube.com/watch?v=-gWSjXWxPOo&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=7	"lst = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
-print(lst[2])
-print(lst[1][1])
-for sub in lst :
-  for item in sub :
-    print(item, end="""")
-  print()"
-python	https://www.youtube.com/watch?v=kqTsjIPy2B0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=8	"class Groom :
-  a = [""Mon"", ""Tue"", ""Wed"", ""Thu"", ""Fri"", ""Sat"", ""Sun""]
-  
-Na = Groom()
-str = ' '
-for k in Na.a :
-  str = str + k[0]
-  
-print(str)"
+		
+		
+		
+		
 python	https://www.youtube.com/watch?v=uJdaY4xnn0Q&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=9	"a = [3, 4, 10, 5, 1]
 
 for i in range(0, 5) :
@@ -235,22 +139,7 @@ class child(parent) :
 a = child()
 a.show()
 del a"
-java	https://www.youtube.com/watch?v=P07hmXhKy6M&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=11	"public class Mypro1 {
-  public static void main(String[] args) {
-    Mypro1 a = new Mypro2();
-    Mypro1 b = new Mypro2();
-    System.out.println(a.compute(5, 3) + b.compute(5, 3));
-  }
-  int compute(int x, int y) {
-    return x + y;
-  }
-}
-
-class Mypro2 extends Mypro1 {
-  int compute(int x, int y) {
-    return x - y + super.compute(x, y);
-  }
-}"
+		
 java	https://www.youtube.com/watch?v=9xWyt2Mox5Q&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=12	"public class Groom {
   public static void main(String[] args) {
     A b = new B();
@@ -308,63 +197,10 @@ java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     }
   }
 }"
-clang	https://www.youtube.com/watch?v=OL4eDiPrmCo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=5	"#include <stdio.h>
-int main(void)
-{
-  int *p[3];
-  int h = 12, m = 60, s = 59;
-  p[0] = &h;
-  p[1] = &m;
-  p[2] = &s;
-  printf(""%d\n"", *p[1] + **p+1);
-}"
-clang	https://www.youtube.com/watch?v=WwaWIVlcinY&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=6	"#include <stdio.h>
-int length(char *c);
-int main(void)
-{
-  char *c1 = ""C language"";
-  char *c2 = ""program"";
-  printf(""%d"", length(c1) + length(c2));
-}
-
-int length(char *c) {
-  int result = 0;
-  while (*c != '\0') {
-    result++;
-    c++;
-  }
-  return result;
-}"
-clang	https://www.youtube.com/watch?v=Jntp3faS2VM&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=7	"#include <stdio.h>
-int f1(); int f2(); int f3();
-
-int main() {
-  printf(""%d\n"", f3());
-  return 0;
-}
-
-int f1() {
-  return 10;
-}
-
-int f2() {
-  return (50 + f1());
-}
-
-int f3() {
-  return (100 + f2());
-}"
-clang	https://www.youtube.com/watch?v=RrPpyg2axCo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=8	"#include <stdio.h>
-
-void main() {
-  char* p = ""GRNWOO"";
-  printf(""%s\n"", p);
-  printf(""%s\n"", p + 3);
-  printf(""%c\n"", *p);
-  printf(""%c\n"", *(p + 3));
-  printf(""%c\n"", *p + 2);
-  printf(""%d\n"", sizeof(p));
-}"
+		
+		
+		
+		
 clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
 struct Student {
   char name[20];
