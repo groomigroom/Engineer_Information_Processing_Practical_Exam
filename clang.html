@@ -24,6 +24,32 @@
 
     <pre>
 
+
+------
+        
+#include <stdio.h>
+int f1(); int f2(); int f3();
+
+int main() {
+  printf("%d\n", f3());
+  return 0;
+  //160
+}
+
+int f1() {
+  return 10;
+}
+
+int f2() {
+  return (50 + f1());
+  //60
+}
+
+int f3() {
+  return (100 + f2());
+  //160
+}
+
 ------
 
         
