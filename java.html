@@ -24,6 +24,40 @@
     </h2>
     <pre>
 
+------
+
+class Animal {
+  public void speak() {
+    System.out.println("Animal");
+  }
+}
+class Dog extends Animal {
+  public void speak() {
+    System.out.println("barking");
+  }
+}
+class Cat extends Animal {
+  public void speak() {
+    System.out.println("meowing");
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Animal a;
+    //빈칸 채우기 문제
+    a = new Dog();
+    a.speak();
+    //빈칸 채우기 문제
+    a = new Cat();
+    a.speak();
+  }
+}
+
+/*
+출력값
+barking
+meowing
+*/
 
 -----
 
