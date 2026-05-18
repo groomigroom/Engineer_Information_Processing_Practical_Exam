@@ -28,6 +28,24 @@
 
 ------
 
+public class Main {
+    public static void main(String[] args) {
+      int i = 0;
+      int sum = 0;
+      while (i < 1) {
+        i++;
+        if (i % 2 == 1)
+          continue;
+        sum += i;
+        //i가 0만 가능하므로, sum == 0
+      }
+      System.out.println(sum);
+    }
+}
+
+
+------
+
 public class Groom {
   public static void main(String[] args) {
     int[] result = new int[5];
