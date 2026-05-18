@@ -1,0 +1,397 @@
+c	https://youtu.be/DFBcfRSk39U?si=iIhKCy86DEAEfb2N	"#include <stdio.h>
+char n[20];
+char* getname() {
+  printf(""input data : "");
+  gets(n);
+  return n;
+}
+int main() {
+  char* n1 = getname();
+  char* n2 = getname();
+  char* n3 = getname();
+  printf(""$s"", n1);
+  printf(""$s"", n2);
+  printf(""$s"", n3);
+  return 0;
+}
+
+/*
+char* getname()의 의미이 코드는 함수의 정의를 나타냅니다.char* (반환 타입): 이 함수가 실행을 마치고 자신을 호출한 곳으로 문자열(정확히는 char형 배열)의 첫 번째 주소를 돌려주겠다는 의미입니다.getname (함수 이름): 개발자가 임의로 지정한 함수의 이름입니다.작동 원리: 함수 내부에서 전역 변수 n에 이름을 입력받은 뒤, return n;을 통해 전역 변수 배열 n이 저장된 메모리의 주소(char*)를 리턴합니다.2. gets(n)의 의미이 코드는 표준 입력(키보드)으로 문자열을 받는 함수 호출입니다.의미: 키보드로 글자를 입력받아 배열 n에 저장합니다.특징: scanf와 달리 공백(스페이스바)을 포함한 한 줄 전체를 입력받을 수 있으며, 엔터키(\n)를 입력할 때까지의 모든 문자를 가져옵니다.
+#include <stdio.h>
+
+// 매번 새로운 메모리에 입력받기 위해 main 안으로 배열을 분리하거나 복사해야 합니다.
+void getname(char* dest, int size) {
+  printf(""input data : "");
+  // gets 대신 안전한 fgets 사용 (엔터값 제거 로직 생략)
+  fgets(dest, size, stdin); 
+}
+
+int main() {
+  char n1[20], n2[20], n3[20]; // 3개의 독립된 공간 확보
+  
+  getname(n1, sizeof(n1));
+  getname(n2, sizeof(n2));
+  getname(n3, sizeof(n3));
+  
+  // $s를 %s로 수정
+  printf(""%s"", n1);
+  printf(""%s"", n2);
+  printf(""%s"", n3);
+  
+  return 0;
+}
+
+요즘 구조는 위와 같음. #####
+
+*/"
+		
+		
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G	
+파이썬	https://youtube.com/shorts/RjpYmck9_eE?si=cb0TGxsjkAZz_SiS	https://share.google/aim$ode/xRfl7FCNkHrT63kI1
+		
+		
+		
+		
+		
+		
+		
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM	
+		
+clang	https://www.youtube.com/watch?v=dSLuyf7Vd4s&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=2	"#include <stdio.h>
+struct STUDENT {
+  char check;
+  double score;
+  int math;
+};
+int main(void)
+{
+  struct STUDENT form;
+  printf(""%d"", sizeof(struct STUDENT));
+  printf(""%d"", sizeof(form));
+  return 0;
+}"
+		
+java	https://www.youtube.com/watch?v=IxO1tw0ZUP8&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=4	"class Animal {
+  public void speak() {
+    System.out.println(""Animal"");
+  }
+}
+class Dog extends Animal {
+  public void speak() {
+    System.out.println(""barking"");
+  }
+}
+class Cat extends Animal {
+  public void speak() {
+    System.out.println(""meowing"");
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Animal a;
+    //빈칸 채우기 문제
+    a = new Dog();
+    a.speak();
+    //빈칸 채우기 문제
+    a = new Cat();
+    a.speak();
+  }
+}
+
+/*
+출력값
+barking
+meowing
+*/"
+java	https://www.youtube.com/watch?v=qQCJWmbH9ew&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=6	"public class Groom {
+  public static void main(String[] args) {
+    int[] digit = new int[8];
+    int i = 0; int n = 10;
+    
+    while(n >= 1) {
+      digit[i++] = n % 2;
+      n /= 2;
+    }
+    
+    for (i = 7; i >= 0; i--) {
+      System.out.print(digit[i]);
+    }
+  }
+}"
+java	https://www.youtube.com/watch?v=QQ_dJEeFMKM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=7	"public class Groom {
+  public static void main(String[] args) {
+    int[] result = new int[5];
+    int[] arr = {20, 80, 10, 70, 50};
+    for(int i = 0; i < 5; i++) {
+      result[i] = 1;
+      for(int j = 0; j < 5; j++) {
+        if(arr[i] < arr[j]) result[i]++;
+      }
+    }
+    for (int i = 0; i < 5; i++) {
+      System.out.print(result[i]);
+    }
+  }
+}"
+파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
+new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
+
+print(text)     # 출력: hello (원본 유지)
+print(new_text) # 출력: HELLO
+코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
+numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
+
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"
+java	https://www.youtube.com/watch?v=8MKr-mvDiEY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=8	"public class Main {
+    public static void main(String[] args) {
+      int a[][] = {{1, 2, 3, 4, 5}, {6, 7}};
+      
+      System.out.println(a[0].length);
+      System.out.println(a[1].length);
+      System.out.println(a[0][0]);
+      System.out.println(a[0][1]);
+      System.out.println(a[1][1]);
+    }
+}"
+java	https://www.youtube.com/watch?v=Z0ZLeEhOM1w&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=9	"class Parent {
+  int func(int n) {
+    if (n <= 1)
+      return n;
+    return func(n - 1) + func(n - 2);
+  }
+}
+
+class Child extends Parent {
+  int func(int n) {
+    if (n <= 1) {
+      return n;
+    }
+    return func(n - 1) + func(n - 3);
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Parent obj = new Child();
+    System.out.print(obj.func(7));
+  }
+}"
+java	https://www.youtube.com/watch?v=SdYpdH_HsGI&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=10	"public class Main {
+    public static void main(String[] args) {
+      int i = 0;
+      int sum = 0;
+      while (i < 1) {
+        i++;
+        if (i % 2 == 1)
+          continue;
+        sum += i;
+      }
+      System.out.println(sum);
+    }
+}"
+python	https://www.youtube.com/watch?v=TdkTBfXorfI&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=5	"family = {'엄마', '아빠'}
+family.add('나')
+family.update({'나', '동생', '댕댕이'})
+family.remove('댕댕이')
+print(family)"
+python	https://www.youtube.com/watch?v=wh8MrZsgddI&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=6	"mylist = [1, 2, 3, 4, 5]
+mylist = list(map(lambda x: x * 2, mylist))
+print(mylist)"
+python	https://www.youtube.com/watch?v=-gWSjXWxPOo&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=7	"lst = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+print(lst[2])
+print(lst[1][1])
+for sub in lst :
+  for item in sub :
+    print(item, end="""")
+  print()"
+python	https://www.youtube.com/watch?v=kqTsjIPy2B0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=8	"class Groom :
+  a = [""Mon"", ""Tue"", ""Wed"", ""Thu"", ""Fri"", ""Sat"", ""Sun""]
+  
+Na = Groom()
+str = ' '
+for k in Na.a :
+  str = str + k[0]
+  
+print(str)"
+python	https://www.youtube.com/watch?v=uJdaY4xnn0Q&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=9	"a = [3, 4, 10, 5, 1]
+
+for i in range(0, 5) :
+  for j in range(i + 1, 5) :
+    if a[i] < a[j] :
+      a[i], a[j] = a[j], a[i]
+for k in a :
+  print(k, end = "" "")"
+python	https://www.youtube.com/watch?v=RlcGz9-9XN0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=10	"class parent :
+  def __init__(self) :
+    print(""parent 생성자"")
+  def __del__(self) :
+    print(""parent 소멸자"")
+  def show(self) :
+    print(""sunny"")
+
+class child(parent) :
+  def show(self) :
+    print(""snow"")
+    
+a = child()
+a.show()
+del a"
+java	https://www.youtube.com/watch?v=P07hmXhKy6M&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=11	"public class Mypro1 {
+  public static void main(String[] args) {
+    Mypro1 a = new Mypro2();
+    Mypro1 b = new Mypro2();
+    System.out.println(a.compute(5, 3) + b.compute(5, 3));
+  }
+  int compute(int x, int y) {
+    return x + y;
+  }
+}
+
+class Mypro2 extends Mypro1 {
+  int compute(int x, int y) {
+    return x - y + super.compute(x, y);
+  }
+}"
+java	https://www.youtube.com/watch?v=9xWyt2Mox5Q&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=12	"public class Groom {
+  public static void main(String[] args) {
+    A b = new B();
+    b.top();
+    b.bottom();
+  }
+}
+
+class A {
+  public void top() {
+    System.out.print(""A"");
+    bottom();
+  }
+  public void bottom() {
+    System.out.print(""B"");
+    bottom();
+  }
+}
+
+class B extends A {
+  public void top() {
+    super.bottom();
+    System.out.print(""C"");
+    this.bottom();
+  }
+  public void bottom() {
+    System.out.print(""D"");
+  }
+}"
+java	https://www.youtube.com/watch?v=_CP_TQAMq3c&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=13	"public class Groom {
+  public static void main(String[] args) {
+    int[][] a =new int[3][5];
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 5; j++) {
+        a[i][j] = j * 2 + (i + 1);
+        System.out.print(a[i][j] + "" "");
+      }
+      System.out.println();
+    }
+  }
+}"
+java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=15	"public class Groomie {
+  public static void main(String[] args) {
+    int i, j;
+    for(j = 1, i = 1; i <= 5; i++) {
+      j *= i;
+      System.out.print(i);
+      if (i == 5) {
+        System.out.print(""="");
+        System.out.print(j);
+      }
+      else {
+        System.out.print(""*"");
+      }
+    }
+  }
+}"
+clang	https://www.youtube.com/watch?v=OL4eDiPrmCo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=5	"#include <stdio.h>
+int main(void)
+{
+  int *p[3];
+  int h = 12, m = 60, s = 59;
+  p[0] = &h;
+  p[1] = &m;
+  p[2] = &s;
+  printf(""%d\n"", *p[1] + **p+1);
+}"
+clang	https://www.youtube.com/watch?v=WwaWIVlcinY&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=6	"#include <stdio.h>
+int length(char *c);
+int main(void)
+{
+  char *c1 = ""C language"";
+  char *c2 = ""program"";
+  printf(""%d"", length(c1) + length(c2));
+}
+
+int length(char *c) {
+  int result = 0;
+  while (*c != '\0') {
+    result++;
+    c++;
+  }
+  return result;
+}"
+clang	https://www.youtube.com/watch?v=Jntp3faS2VM&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=7	"#include <stdio.h>
+int f1(); int f2(); int f3();
+
+int main() {
+  printf(""%d\n"", f3());
+  return 0;
+}
+
+int f1() {
+  return 10;
+}
+
+int f2() {
+  return (50 + f1());
+}
+
+int f3() {
+  return (100 + f2());
+}"
+clang	https://www.youtube.com/watch?v=RrPpyg2axCo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=8	"#include <stdio.h>
+
+void main() {
+  char* p = ""GRNWOO"";
+  printf(""%s\n"", p);
+  printf(""%s\n"", p + 3);
+  printf(""%c\n"", *p);
+  printf(""%c\n"", *(p + 3));
+  printf(""%c\n"", *p + 2);
+  printf(""%d\n"", sizeof(p));
+}"
+clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
+struct Student {
+  char name[20];
+  int ca, ds, sum, avr;
+};
+
+void main() {
+  struct Student s[3] = {{""강아지"", 90, 90},{""고양이"", 100, 90}, {""병아리"", 80, 80}};
+  struct Student* p;
+  int i = 0;
+  p = &s[0];
+  for (i = 0; i < 3; i++) {
+    (p + i)->sum = (p + i)->ca + (p + i)->ds;
+    (p + i)->avr = (p + i)->sum / 2;
+  }
+  printf(""%d"", (p + 1)->sum + (p + 2)->avr);
+}"
+clang	https://www.youtube.com/watch?v=icwEcPnRT6k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=10	"#include <stdio.h>
+void main() {
+  int array[3] = { 3 };
+  int s = 0;
+  int i = 0;
+  
+  array[1] = *(array + 0) + 2;
+  array[2] = *array + 4;
+  for (i = 0; i < 3; i++) {
+    s = s + array[i];
+  }
+  printf(""%d"", s);
+}"
