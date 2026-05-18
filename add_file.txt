@@ -1,129 +1,3 @@
-c	https://youtu.be/DFBcfRSk39U?si=iIhKCy86DEAEfb2N	"#include <stdio.h>
-char n[20];
-char* getname() {
-  printf(""input data : "");
-  gets(n);
-  return n;
-}
-int main() {
-  char* n1 = getname();
-  char* n2 = getname();
-  char* n3 = getname();
-  printf(""$s"", n1);
-  printf(""$s"", n2);
-  printf(""$s"", n3);
-  return 0;
-}
-
-/*
-char* getname()의 의미이 코드는 함수의 정의를 나타냅니다.char* (반환 타입): 이 함수가 실행을 마치고 자신을 호출한 곳으로 문자열(정확히는 char형 배열)의 첫 번째 주소를 돌려주겠다는 의미입니다.getname (함수 이름): 개발자가 임의로 지정한 함수의 이름입니다.작동 원리: 함수 내부에서 전역 변수 n에 이름을 입력받은 뒤, return n;을 통해 전역 변수 배열 n이 저장된 메모리의 주소(char*)를 리턴합니다.2. gets(n)의 의미이 코드는 표준 입력(키보드)으로 문자열을 받는 함수 호출입니다.의미: 키보드로 글자를 입력받아 배열 n에 저장합니다.특징: scanf와 달리 공백(스페이스바)을 포함한 한 줄 전체를 입력받을 수 있으며, 엔터키(\n)를 입력할 때까지의 모든 문자를 가져옵니다.
-#include <stdio.h>
-
-// 매번 새로운 메모리에 입력받기 위해 main 안으로 배열을 분리하거나 복사해야 합니다.
-void getname(char* dest, int size) {
-  printf(""input data : "");
-  // gets 대신 안전한 fgets 사용 (엔터값 제거 로직 생략)
-  fgets(dest, size, stdin); 
-}
-
-int main() {
-  char n1[20], n2[20], n3[20]; // 3개의 독립된 공간 확보
-  
-  getname(n1, sizeof(n1));
-  getname(n2, sizeof(n2));
-  getname(n3, sizeof(n3));
-  
-  // $s를 %s로 수정
-  printf(""%s"", n1);
-  printf(""%s"", n2);
-  printf(""%s"", n3);
-  
-  return 0;
-}
-
-요즘 구조는 위와 같음. #####
-
-*/"
-		
-		
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G	
-		
-		
-		
-		
-		
-		
-		
-		
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM	
-		
-clang	https://www.youtube.com/watch?v=dSLuyf7Vd4s&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=2	"#include <stdio.h>
-struct STUDENT {
-  char check;
-  double score;
-  int math;
-};
-int main(void)
-{
-  struct STUDENT form;
-  printf(""%d"", sizeof(struct STUDENT));
-  printf(""%d"", sizeof(form));
-  return 0;
-}"
-		
-		
-		
-java	https://www.youtube.com/watch?v=QQ_dJEeFMKM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=7	"public class Groom {
-  public static void main(String[] args) {
-    int[] result = new int[5];
-    int[] arr = {20, 80, 10, 70, 50};
-    for(int i = 0; i < 5; i++) {
-      result[i] = 1;
-      for(int j = 0; j < 5; j++) {
-        if(arr[i] < arr[j]) result[i]++;
-      }
-    }
-    for (int i = 0; i < 5; i++) {
-      System.out.print(result[i]);
-    }
-  }
-}"
-파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
-new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
-
-print(text)     # 출력: hello (원본 유지)
-print(new_text) # 출력: HELLO
-코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
-numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
-
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"
-		
-		
-java	https://www.youtube.com/watch?v=SdYpdH_HsGI&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=10	"public class Main {
-    public static void main(String[] args) {
-      int i = 0;
-      int sum = 0;
-      while (i < 1) {
-        i++;
-        if (i % 2 == 1)
-          continue;
-        sum += i;
-      }
-      System.out.println(sum);
-    }
-}"
-		
-		
-		
-		
-python	https://www.youtube.com/watch?v=uJdaY4xnn0Q&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=9	"a = [3, 4, 10, 5, 1]
-
-for i in range(0, 5) :
-  for j in range(i + 1, 5) :
-    if a[i] < a[j] :
-      a[i], a[j] = a[j], a[i]
-for k in a :
-  print(k, end = "" "")"
 python	https://www.youtube.com/watch?v=RlcGz9-9XN0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=10	"class parent :
   def __init__(self) :
     print(""parent 생성자"")
@@ -138,8 +12,30 @@ class child(parent) :
     
 a = child()
 a.show()
-del a"
-		
+del a"	"class parent :
+  def __init__(self) :
+    print(""parent 생성자"")
+  def __del__(self) :
+    print(""parent 소멸자"")
+  def show(self) :
+    print(""sunny"")
+
+class child(parent) :
+  def show(self) :
+    print(""snow"")
+    
+a = child()
+a.show()
+del a
+
+""""""
+제시해주신 파이썬 코드는 클래스 상속, 메서드 오버라이딩, 객체 생명주기(생성자와 소멸자)의 원리로 작동합니다.실행 순서에 따른 구체적인 원리는 다음과 같습니다.1. 객체 생성 및 상속 (a = child())메모리 할당: child()가 호출되면 메모리에 child 클래스의 인스턴스(객체)가 만들어집니다.부모 생성자 호출: child 클래스 내부에는 생성자(__init__)가 정의되어 있지 않습니다. 파이썬은 상속 관계인 부모(parent) 클래스로 올라가 parent.__init__(self)를 대신 실행합니다.출력: ""parent 생성자""가 화면에 출력됩니다.2. 메서드 오버라이딩 (a.show())메서드 탐색: a.show()를 호출하면 파이썬은 먼저 자식인 child 클래스에서 show 메서드를 찾습니다.재정의(Overriding) 적용: child 클래스에 show가 이미 정의되어 있으므로, 부모의 show는 무시하고 자식의 메서드를 실행합니다. 이를 메서드 오버라이딩이라고 합니다.출력: ""snow""가 화면에 출력됩니다. (""sunny""는 출력되지 않음)3. 객체 소멸 (del a)참조 횟수 감소: del a는 변수 a와 메모리 상의 객체 사이의 연결(참조)을 끊습니다. 이 객체를 가리키는 다른 변수가 없으므로, 객체의 참조 횟수(Reference Count)가 0이 됩니다.부모 소멸자 호출: 파이썬 가비지 컬렉터가 객체를 메모리에서 제거하기 전 소멸자(__del__)를 실행합니다. child 클래스에 소멸자가 없으므로, 부모(parent)의 __del__을 찾아 실행합니다.출력: ""parent 소멸자""가 화면에 출력됩니다.
+
+__init__은 객체가 생성될 때 자동으로 실행되는 생성자(Constructor) 역할을 하는 메서드가 맞습니다.정확하게 표현하면 객체를 초기화하는 역할을 담당하며, 다음과 같은 특징을 가집니다.__init__의 핵심 역할초기화: 객체가 메모리에 만들어진 직후, 객체의 초기 상태(속성/변수)를 설정합니다.자동 호출: 사용자가 직접 이름을 불러 실행하지 않고, 인스턴스 = 클래스명()과 같이 객체를 만들 때 자동으로 실행됩니다.💡 파이썬의 엄밀한 개념 차이 (참고용)파이썬에는 사실 __init__ 외에 __new__라는 메서드가 하나 더 있습니다. 엄밀히 따지면 파이썬 내부에서의 진짜 생성과 초기화 단계는 다음과 같이 나뉩니다.__new__ (실제 생성자): 메모리에 객체를 실제로 공간을 잡아 생성하는 역할을 합니다.__init__ (초기화 메서드): 이미 생성된 객체에 변수 값을 넣는 등 초기화를 합니다.하지만 일반적인 프로그래밍을 할 때는 __new__를 직접 수정할 일이 거의 없기 때문에, 관례적으로 __init__을 파이썬의 생성자라고 부릅니다.혹시 이전에 작성하신 코드에서 __init__을 사용해 매개변수(인자)를 전달받아 객체 변수를 설정하는 방법이나, 자식 클래스에서 부모의 __init__을 호출하는 super() 사용법에 대해 더 알아보고 싶으신가요?
+
+__del__은 객체가 메모리에서 완전히 소멸할 때 자동 실행되는 소멸자(Destructor) 역할을 하는 메서드가 맞습니다.주로 파일 닫기나 네트워크 연결 종료처럼 객체가 사라지기 전에 정리해야 하는 작업을 처리할 때 사용합니다.__del__의 작동 원리 (참조 횟수 계산)파이썬은 참조 횟수 계산(Reference Counting) 방식으로 메모리를 관리합니다. [가비지 컬렉션] 기술의 일종으로, 객체를 가리키는 변수의 수가 0이 되는 순간 __del__이 자동으로 호출되며 메모리에서 지워집니다.
+"""""""
+			
 java	https://www.youtube.com/watch?v=9xWyt2Mox5Q&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=12	"public class Groom {
   public static void main(String[] args) {
     A b = new B();
@@ -168,19 +64,41 @@ class B extends A {
   public void bottom() {
     System.out.print(""D"");
   }
-}"
-java	https://www.youtube.com/watch?v=_CP_TQAMq3c&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=13	"public class Groom {
+}"	"public class Groom {
   public static void main(String[] args) {
-    int[][] a =new int[3][5];
-    for (int i = 0; i < 3; i++) {
-      for (int j = 0; j < 5; j++) {
-        a[i][j] = j * 2 + (i + 1);
-        System.out.print(a[i][j] + "" "");
-      }
-      System.out.println();
-    }
+    A b = new B();
+    b.top();
+    b.bottom();
+    //출력값 BDCDD
+  }
+}
+
+class A {
+  public void top() {
+    System.out.print(""A"");
+    bottom();
+  }
+  public void bottom() {
+    System.out.print(""B"");
+    bottom();
+    //이거는 오버라이딩 된거 따라가는거. 아래꺼
+    //##### 오버라이딩
+  }
+}
+
+class B extends A {
+  public void top() {
+    super.bottom();
+    System.out.print(""C"");
+    this.bottom();
+    //BDCD
+  }
+  public void bottom() {
+    System.out.print(""D"");
+    //D
   }
 }"
+			
 java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=15	"public class Groomie {
   public static void main(String[] args) {
     int i, j;
@@ -196,11 +114,32 @@ java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M
       }
     }
   }
+}"	"public class Groomie {
+  public static void main(String[] args) {
+    int i, j;
+    for(j = 1, i = 1; i <= 5; i++) {
+      j *= i;
+      //i == 1 ===> j == 1
+      //i == 2 ===> j == 2
+      //i == 3 ===> j == 6
+      //i == 4 ===> j == 24
+      //i == 5 ===> j == 120
+      System.out.print(i); //잘보기 이거
+      //1*2*3*4*5=120
+      if (i == 5) {
+        System.out.print(""="");
+        System.out.print(j);
+      }
+      else {
+        System.out.print(""*"");
+      }
+    }
+  }
 }"
-		
-		
-		
-		
+			
+			
+			
+			
 clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
 struct Student {
   char name[20];
@@ -217,17 +156,23 @@ void main() {
     (p + i)->avr = (p + i)->sum / 2;
   }
   printf(""%d"", (p + 1)->sum + (p + 2)->avr);
-}"
-clang	https://www.youtube.com/watch?v=icwEcPnRT6k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=10	"#include <stdio.h>
+}"	"#include <stdio.h>
+struct Student {
+  char name[20];
+  int ca, ds, sum, avr;
+};
+
 void main() {
-  int array[3] = { 3 };
-  int s = 0;
+  struct Student s[3] = {{""강아지"", 90, 90},{""고양이"", 100, 90}, {""병아리"", 80, 80}};
+  struct Student* p;
   int i = 0;
-  
-  array[1] = *(array + 0) + 2;
-  array[2] = *array + 4;
+  p = &s[0];
   for (i = 0; i < 3; i++) {
-    s = s + array[i];
+    (p + i)->sum = (p + i)->ca + (p + i)->ds;
+    //i == 1 ===> 190
+    (p + i)->avr = (p + i)->sum / 2;
+    //i == 2 ===> 80
   }
-  printf(""%d"", s);
+  printf(""%d"", (p + 1)->sum + (p + 2)->avr);
+  //270
 }"
