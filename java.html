@@ -25,7 +25,7 @@
     <pre>
 
 
------- #####
+------
 
 class Parent {
   protected int value = 10;
@@ -53,13 +53,25 @@ public class Main {
     
     parent.printValue();
     child.printValue();
+    /*
+    Parent value: 10
+    Child value: 20
+    */
     
     child.updateValue(30);
+    //이거로 인해서 class Child의 value가 30이 된다.
     
     parent.printValue();
     child.printValue();
+    /*
+    Parent value: 10
+    Child value: 30
+    */
+    
   }
 }
+
+
 
 
 -----
