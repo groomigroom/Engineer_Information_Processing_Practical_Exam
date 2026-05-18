@@ -25,6 +25,28 @@
     <pre>
 
 
+        
+------
+
+#include <stdio.h>
+
+void main() {
+  char* p = "GRNWOO";
+  printf("%s\n", p);
+  //GRNWOO
+  printf("%s\n", p + 3);
+  //WOO
+  printf("%c\n", *p);
+  //G
+  printf("%c\n", *(p + 3));
+  //W
+  printf("%c\n", *p + 2);
+  //I
+  printf("%d\n", sizeof(p));
+  //모든 포인터(주소)의 크기가 8바이트로 고정됩니다.
+}
+
+
 ------
         
 #include <stdio.h>
