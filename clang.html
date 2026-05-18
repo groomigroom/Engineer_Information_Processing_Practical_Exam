@@ -25,6 +25,25 @@
     <pre>
 
 
+------
+
+#include <stdio.h>
+void main() {
+  int array[3] = { 3 };
+  int s = 0;
+  int i = 0;
+  
+  array[1] = *(array + 0) + 2;
+  //[1] == 5
+  array[2] = *array + 4;
+  //[2] == 7
+  for (i = 0; i < 3; i++) {
+    s = s + array[i];
+    //s == 3 + 5 + 7 == 15
+  }
+  printf("%d", s);
+}
+
         
 ------
 
