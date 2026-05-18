@@ -26,6 +26,31 @@
 
 ------
 
+        
+#include <stdio.h>
+int length(char *c);
+int main(void)
+{
+  char *c1 = "C language";
+  char *c2 = "program";
+  printf("%d", length(c1) + length(c2));
+  //최종 값은 17
+}
+
+int length(char *c) {
+  int result = 0;
+  while (*c != '\0') {
+    //null이 아니라면을 의미?
+    result++;
+    c++;
+    //null값이 나오기까지 c1은 result를 10으로 만들고,
+    //c2는 result를 7로 만듦
+  }
+  return result;
+}
+
+------
+
 #include <stdio.h>
 int main(void)
 {
