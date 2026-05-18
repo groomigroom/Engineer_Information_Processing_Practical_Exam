@@ -24,6 +24,33 @@
     </h2>
     <pre>
 
+
+-----
+
+class Point {
+  int x;
+  int y;
+}
+public class Groom {
+  public static void main(String[] args) {
+    Point m = new Point();
+    m.x = 1000;
+    //Point의 x는 1000
+    calc(m);
+    //1000 / 10 == 100
+    getValue(m);
+    //100 위에꺼가 100이니, 받아서
+    System.out.printf("%d", m.y);
+    //최종 출력값이 100
+  }
+  static void calc(Point s) {
+    s.x /= 10;
+  }
+  static void getValue(Point p) {
+    p.y = p.x;
+  }
+}
+
 -----
 
 public class test {
