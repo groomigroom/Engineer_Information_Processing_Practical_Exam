@@ -34,3 +34,21 @@ select groom.col1, groom2.col1, groom.col2, groom2.col2
 from groom
 right outer join groom2
 on groom.col1 = groom2.col1;
+
+create table groom3 (
+  col1 integer,
+  col3 varchar(50)
+);
+
+insert into groom3
+values
+(1, "groom"),
+(2, "kimgroom"),
+(3, "kimgoogooroom"),
+(4, "kimgromroom"),
+(5, "gugu");
+
+
+select groom.col1, groom.col2, groom3.col3
+from groom
+natural join groom3;
