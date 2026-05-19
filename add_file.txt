@@ -105,161 +105,12 @@ public class Groom {
   }
 }
 "	
-자바	https://www.youtube.com/watch?v=LWFlxwfDD6I&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=16	"public class Groom {
-  static int[] MakeArray() {
-    int[] tempArr = new int[5];
-    for (int i = 0; i < tempArr.length; i++) {
-      tempArr[i] = i;
-    }
-    return tempArr;
-  }
-  public static void main(String[] args) {
-    int[] myArr;
-    myArr =MakeArray();
-    
-    for (int i = 0; i < myArr.length; i++) {
-      System.out.print(myArr[i]);
-    }
-  }
-}"	
-python	https://www.youtube.com/watch?v=RlcGz9-9XN0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=10	"class parent :
-  def __init__(self) :
-    print(""parent 생성자"")
-  def __del__(self) :
-    print(""parent 소멸자"")
-  def show(self) :
-    print(""sunny"")
-
-class child(parent) :
-  def show(self) :
-    print(""snow"")
-    
-a = child()
-a.show()
-del a"	"class parent :
-  def __init__(self) :
-    print(""parent 생성자"")
-  def __del__(self) :
-    print(""parent 소멸자"")
-  def show(self) :
-    print(""sunny"")
-
-class child(parent) :
-  def show(self) :
-    print(""snow"")
-    
-a = child()
-a.show()
-del a
-
-""""""
-제시해주신 파이썬 코드는 클래스 상속, 메서드 오버라이딩, 객체 생명주기(생성자와 소멸자)의 원리로 작동합니다.실행 순서에 따른 구체적인 원리는 다음과 같습니다.1. 객체 생성 및 상속 (a = child())메모리 할당: child()가 호출되면 메모리에 child 클래스의 인스턴스(객체)가 만들어집니다.부모 생성자 호출: child 클래스 내부에는 생성자(__init__)가 정의되어 있지 않습니다. 파이썬은 상속 관계인 부모(parent) 클래스로 올라가 parent.__init__(self)를 대신 실행합니다.출력: ""parent 생성자""가 화면에 출력됩니다.2. 메서드 오버라이딩 (a.show())메서드 탐색: a.show()를 호출하면 파이썬은 먼저 자식인 child 클래스에서 show 메서드를 찾습니다.재정의(Overriding) 적용: child 클래스에 show가 이미 정의되어 있으므로, 부모의 show는 무시하고 자식의 메서드를 실행합니다. 이를 메서드 오버라이딩이라고 합니다.출력: ""snow""가 화면에 출력됩니다. (""sunny""는 출력되지 않음)3. 객체 소멸 (del a)참조 횟수 감소: del a는 변수 a와 메모리 상의 객체 사이의 연결(참조)을 끊습니다. 이 객체를 가리키는 다른 변수가 없으므로, 객체의 참조 횟수(Reference Count)가 0이 됩니다.부모 소멸자 호출: 파이썬 가비지 컬렉터가 객체를 메모리에서 제거하기 전 소멸자(__del__)를 실행합니다. child 클래스에 소멸자가 없으므로, 부모(parent)의 __del__을 찾아 실행합니다.출력: ""parent 소멸자""가 화면에 출력됩니다.
-
-__init__은 객체가 생성될 때 자동으로 실행되는 생성자(Constructor) 역할을 하는 메서드가 맞습니다.정확하게 표현하면 객체를 초기화하는 역할을 담당하며, 다음과 같은 특징을 가집니다.__init__의 핵심 역할초기화: 객체가 메모리에 만들어진 직후, 객체의 초기 상태(속성/변수)를 설정합니다.자동 호출: 사용자가 직접 이름을 불러 실행하지 않고, 인스턴스 = 클래스명()과 같이 객체를 만들 때 자동으로 실행됩니다.💡 파이썬의 엄밀한 개념 차이 (참고용)파이썬에는 사실 __init__ 외에 __new__라는 메서드가 하나 더 있습니다. 엄밀히 따지면 파이썬 내부에서의 진짜 생성과 초기화 단계는 다음과 같이 나뉩니다.__new__ (실제 생성자): 메모리에 객체를 실제로 공간을 잡아 생성하는 역할을 합니다.__init__ (초기화 메서드): 이미 생성된 객체에 변수 값을 넣는 등 초기화를 합니다.하지만 일반적인 프로그래밍을 할 때는 __new__를 직접 수정할 일이 거의 없기 때문에, 관례적으로 __init__을 파이썬의 생성자라고 부릅니다.혹시 이전에 작성하신 코드에서 __init__을 사용해 매개변수(인자)를 전달받아 객체 변수를 설정하는 방법이나, 자식 클래스에서 부모의 __init__을 호출하는 super() 사용법에 대해 더 알아보고 싶으신가요?
-
-__del__은 객체가 메모리에서 완전히 소멸할 때 자동 실행되는 소멸자(Destructor) 역할을 하는 메서드가 맞습니다.주로 파일 닫기나 네트워크 연결 종료처럼 객체가 사라지기 전에 정리해야 하는 작업을 처리할 때 사용합니다.__del__의 작동 원리 (참조 횟수 계산)파이썬은 참조 횟수 계산(Reference Counting) 방식으로 메모리를 관리합니다. [가비지 컬렉션] 기술의 일종으로, 객체를 가리키는 변수의 수가 0이 되는 순간 __del__이 자동으로 호출되며 메모리에서 지워집니다.
-"""""""
 			
-java	https://www.youtube.com/watch?v=9xWyt2Mox5Q&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=12	"public class Groom {
-  public static void main(String[] args) {
-    A b = new B();
-    b.top();
-    b.bottom();
-  }
-}
-
-class A {
-  public void top() {
-    System.out.print(""A"");
-    bottom();
-  }
-  public void bottom() {
-    System.out.print(""B"");
-    bottom();
-  }
-}
-
-class B extends A {
-  public void top() {
-    super.bottom();
-    System.out.print(""C"");
-    this.bottom();
-  }
-  public void bottom() {
-    System.out.print(""D"");
-  }
-}"	"public class Groom {
-  public static void main(String[] args) {
-    A b = new B();
-    b.top();
-    b.bottom();
-    //출력값 BDCDD
-  }
-}
-
-class A {
-  public void top() {
-    System.out.print(""A"");
-    bottom();
-  }
-  public void bottom() {
-    System.out.print(""B"");
-    bottom();
-    //이거는 오버라이딩 된거 따라가는거. 아래꺼
-    //##### 오버라이딩
-  }
-}
-
-class B extends A {
-  public void top() {
-    super.bottom();
-    System.out.print(""C"");
-    this.bottom();
-    //BDCD
-  }
-  public void bottom() {
-    System.out.print(""D"");
-    //D
-  }
-}"
 			
-java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=15	"public class Groomie {
-  public static void main(String[] args) {
-    int i, j;
-    for(j = 1, i = 1; i <= 5; i++) {
-      j *= i;
-      System.out.print(i);
-      if (i == 5) {
-        System.out.print(""="");
-        System.out.print(j);
-      }
-      else {
-        System.out.print(""*"");
-      }
-    }
-  }
-}"	"public class Groomie {
-  public static void main(String[] args) {
-    int i, j;
-    for(j = 1, i = 1; i <= 5; i++) {
-      j *= i;
-      //i == 1 ===> j == 1
-      //i == 2 ===> j == 2
-      //i == 3 ===> j == 6
-      //i == 4 ===> j == 24
-      //i == 5 ===> j == 120
-      System.out.print(i); //잘보기 이거
-      //1*2*3*4*5=120
-      if (i == 5) {
-        System.out.print(""="");
-        System.out.print(j);
-      }
-      else {
-        System.out.print(""*"");
-      }
-    }
-  }
-}"
+			
+			
+			
+			
 java	https://www.youtube.com/watch?v=pdI0vfUo6Hc&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=18	"public class Groom {
   static void change(char arr[]) {
     for (int i = 0; i < arr.length; i++) {
@@ -300,42 +151,7 @@ java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M
 }"	
 			
 			
-clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
-struct Student {
-  char name[20];
-  int ca, ds, sum, avr;
-};
-
-void main() {
-  struct Student s[3] = {{""강아지"", 90, 90},{""고양이"", 100, 90}, {""병아리"", 80, 80}};
-  struct Student* p;
-  int i = 0;
-  p = &s[0];
-  for (i = 0; i < 3; i++) {
-    (p + i)->sum = (p + i)->ca + (p + i)->ds;
-    (p + i)->avr = (p + i)->sum / 2;
-  }
-  printf(""%d"", (p + 1)->sum + (p + 2)->avr);
-}"	"#include <stdio.h>
-struct Student {
-  char name[20];
-  int ca, ds, sum, avr;
-};
-
-void main() {
-  struct Student s[3] = {{""강아지"", 90, 90},{""고양이"", 100, 90}, {""병아리"", 80, 80}};
-  struct Student* p;
-  int i = 0;
-  p = &s[0];
-  for (i = 0; i < 3; i++) {
-    (p + i)->sum = (p + i)->ca + (p + i)->ds;
-    //i == 1 ===> 190
-    (p + i)->avr = (p + i)->sum / 2;
-    //i == 2 ===> 80
-  }
-  printf(""%d"", (p + 1)->sum + (p + 2)->avr);
-  //270
-}"
+			
 java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=20	"public class Groom {
   public static void main(String[] args) {
     int a[] = {1, 2, 4, 6, 8};
@@ -373,41 +189,9 @@ python	https://www.youtube.com/watch?v=4uXIj5LGW-I&list=PLYdThbnQN0eLz3T8dzOhfXP
     
 k = calc(1, 1, 2, 3, 4, 1, 2)
 print(k)"	에러 뜸
-python	https://www.youtube.com/watch?v=1J81qkLVGx0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=14	"def func1 (num1, num2 = 10) :
-  print('a=', num1, 'b=', num2)
-  
-def func2 (num1 = 10, num2 =10) :
-  print('a=', num1, 'b=', num2)
-  
-func1(5)
-func2(5, 5)
-func2()"	
-clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11	"def func1 (num1, num2 = 10) :
-  print('a=', num1, 'b=', num2)
-  
-def func2 (num1 = 10, num2 =10) :
-  print('a=', num1, 'b=', num2)
-  
-func1(5)
-func2(5, 5)
-func2()"	
-clang	https://www.youtube.com/watch?v=vyx5mktYdpA&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=12	"#include <stdio.h>
-struct student {
-  int a, b;
-};
-int main() {
-  struct student s[2];
-  int i = 0;
-  for (i; i < 2; i++) {
-    s[i].a = i;
-    s[i].b = i + 5;
-  }
-  while (i) {
-    i--;
-    printf(""%d\n"", s[i].a + s[i].b);
-  }
-  return 0;
-}"	
+			
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
+			
 clang	https://www.youtube.com/watch?v=W8mLfjs8bDw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=13	"#include <stdio.h>
 int main(void) {
   int a[5];
@@ -422,18 +206,7 @@ int main(void) {
   }
   return 0;
 }"	빈칸채우기
-clang	https://www.youtube.com/watch?v=t8MEAAtpYqI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=14	"#include <stdio.h>
-int Decimal(int base, int exp) {
-  int i;
-  int result = 1;
-  for (i = 0; i < exp; i++) {
-    result *= base;
-  }
-  return result;
-}
-void main() {
-  printf(""%d"", Decimal(2, 10));
-}"	
+			
 clang	https://www.youtube.com/watch?v=ZED903GthUc&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=15	"#include <stdio.h>
 void digit(int a[]) {
   int temp;
@@ -458,9 +231,18 @@ a, b = input()._____()
 c = ""멍멍이""
 c = c + "","" + a + "","" + b
 c = c.____(""멍멍이"", ""멍이"")
-print(c)"	
-python	https://www.youtube.com/watch?v=vu5cUC_zDX4&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=17	"text = ['Seoul', 'Kyeonggi', 'incheon', 'Daejun', 'Daegu', 'Pusan']
-str01 = ""S""
-for i in text :
-  str01 = str01 + i[1]
-print(str01)"	
+print(c)"	빈칸입력
+			
+			
+python	https://www.youtube.com/watch?v=UPj9loa59Js&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=20	"def add(x, y) :
+  return x + y
+  
+def sub(a, b) :
+  return a - b
+  
+number1 = [1, 2, 3, 4]
+number2 = [5, 6, 7, 8]
+result1 = map(add, number1, number2)
+result2 = map(sub, number1, number2)
+print(list(result1))
+print(list(result2))"	
