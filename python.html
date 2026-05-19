@@ -33,24 +33,6 @@
 
 -----
 
-#include <stdio.h>
-int Decimal(int base, int exp) {
-  int i;
-  int result = 1;
-  for (i = 0; i < exp; i++) {
-    //exp == 10
-    result *= base;
-    //2를 10번 곱하면 됨.
-  }
-  return result;
-}
-void main() {
-  printf("%d", Decimal(2, 10));
-  //2, 4, 8, 16, 32, 64, 128, 256, 512, 1024
-}
-
------
-
 class Tiger :
   def speak(self) :
     print("I am tiger")
