@@ -355,3 +355,21 @@ java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     System.out.println(""E"");
   }
 }"	
+python	https://www.youtube.com/watch?v=eJhF1dDkMFo&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=12	"test = [2, 5, 3 ,4]
+test.sort()
+test.append(1)
+test.reverse()
+print(test)
+print(test.index(4))"	
+python	https://www.youtube.com/watch?v=4uXIj5LGW-I&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=13	"def calc(check ,*value) :
+  num = 0
+  for i in value :
+    num = num + i
+    
+  if check :
+    return num.set(value).check
+  else :
+    return set(value)
+    
+k = calc(1, 1, 2, 3, 4, 1, 2)
+print(k)"	에러 뜸
