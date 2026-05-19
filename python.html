@@ -34,6 +34,36 @@
 
 -----
 
+
+class Calc :
+  result = 0
+  def setdata(self, fir, sec) :
+    self.fir = fir
+    self.sec = sec
+  def add(self) :
+    Calc.result += 1
+    self.result = self.fir + self.sec
+  def getdata(self) :
+    print(self.result, end= " ")
+    #15
+    print(Calc.result)
+    #1
+    
+a = Calc()
+b = Calc()
+a.setdata(5, 10)
+b.setdata(5, 10)
+a.add()
+a.getdata()
+#15 1
+b.add()
+b.getdata()
+#15 2
+#Calc.result에 이미 += 1이 되어있어서 최종적으로 2가됨.
+
+
+-----
+
 def add(x, y) :
   return x + y
   
