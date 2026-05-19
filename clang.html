@@ -28,6 +28,33 @@
 
 ------
 
+
+#include <stdio.h>
+struct student {
+  int a, b;
+};
+int main() {
+  struct student s[2];
+  int i = 0;
+  for (i; i < 2; i++) {
+    s[i].a = i;
+    //0, 1
+    s[i].b = i + 5;
+    //5, 6
+  }
+  //i == 2
+  while (i) {
+    i--;
+    printf("%d\n", s[i].a + s[i].b);
+    //i--로 인해서, 1이 되고, 1 + 6 == 7
+    //i--로 인해서, 0이 되고, 0 + 5 == 5
+  }
+  return 0;
+}
+
+        
+------
+
 #include <stdio.h>
 struct Student {
   char name[20];
