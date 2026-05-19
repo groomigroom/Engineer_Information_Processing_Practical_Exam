@@ -111,25 +111,7 @@ public class Groom {
 			
 			
 			
-java	https://www.youtube.com/watch?v=pdI0vfUo6Hc&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=18	"public class Groom {
-  static void change(char arr[]) {
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == 'b') arr[i] = 'c';
-      else if (i == arr.length - 1) arr[i] = arr[i - 1];
-      else arr[i] = arr[i + 1];
-    }
-  }
-  static void prtarr(char arr[]) {
-    for (int i = 0; i < arr.length; i++) {
-      System.out.print(arr[i]);
-    }
-  }
-  public static void main(String[] args) {
-    char[] a = {'a', 'b', 'c', 'b', 'c', 'd', 'a'};
-    change(a);
-    prtarr(a);
-  }
-}"	
+			
 java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=19	"public class Groom {
   public static void main(String[] args) {
     int a[] = {1, 2, 3, 4};
@@ -171,12 +153,7 @@ java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     System.out.println(""E"");
   }
 }"	
-python	https://www.youtube.com/watch?v=eJhF1dDkMFo&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=12	"test = [2, 5, 3 ,4]
-test.sort()
-test.append(1)
-test.reverse()
-print(test)
-print(test.index(4))"	
+			
 python	https://www.youtube.com/watch?v=4uXIj5LGW-I&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=13	"def calc(check ,*value) :
   num = 0
   for i in value :
@@ -366,3 +343,96 @@ public class Groom {
     System.out.println(b2);
   }
 }"	
+자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
+  int x, y;
+  Parent(int x, int y) { //1.
+    this.x = x;
+    this.y = y;
+  }
+  int getArea() { //2.
+    return x * y;
+  }
+}
+
+class Child extends Parent {
+  int x;
+  Child(int x) { //3.
+    super(x, x);
+  }
+  int getArea(int x) { //4.
+    return x;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Parent one = new Child(10);
+    System.out.println(one.getArea());
+  }
+}"	순서
+자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
+  private int x, y;
+  Parent(int x, int y) {
+    this.x = x;
+    this.y = y;
+    System.out.print(""A"");
+  }
+  int getValue() {
+    System.out.print(""B"");
+    return x + y;
+  }
+}
+
+"	
+자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
+  private int x, y;
+  Parent(int x, int y) {
+    this.x = x;
+    this.y = y;
+    System.out.print(""A"");
+  }
+  int getValue() {
+    System.out.print(""B"");
+    return x + y;
+  }
+}
+class Child extends Parent {
+  int x;
+  Child(int x) {
+    super(x, x);
+    System.out.print(""C"");
+  }
+  Child(int x, int y) {
+    super(x, y);
+    System.out.print(""D"");
+  }
+  int getValue(int x, int y) {
+    System.out.print(""E"");
+    return x * y;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Parent a = new Child(5);
+    System.out.println(a.getValue());
+  }
+}
+"	
+자바	https://www.youtube.com/watch?v=MOQzkhx5n-o&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=32	"class A {int x;}
+public class Groom {
+  public static void main(String[] args) {
+    A a = new A();
+    a.x = 50;
+    Change1(a.x);
+    System.out.println(a.x);
+    Change2(a);
+    System.out.println(a.x);
+  }
+  static void change1(int x) {
+    x = 100;
+    System.out.println(x);
+  }
+  static void change2(A a) {
+    a.x = 100;
+    System.out.println(a.x);
+  }
+}"	에러뜸
