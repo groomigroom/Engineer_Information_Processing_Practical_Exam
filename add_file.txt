@@ -391,3 +391,20 @@ def func2 (num1 = 10, num2 =10) :
 func1(5)
 func2(5, 5)
 func2()"	
+clang	https://www.youtube.com/watch?v=vyx5mktYdpA&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=12	"#include <stdio.h>
+struct student {
+  int a, b;
+};
+int main() {
+  struct student s[2];
+  int i = 0;
+  for (i; i < 2; i++) {
+    s[i].a = i;
+    s[i].b = i + 5;
+  }
+  while (i) {
+    i--;
+    printf(""%d\n"", s[i].a + s[i].b);
+  }
+  return 0;
+}"	
