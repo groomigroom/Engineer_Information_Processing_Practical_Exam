@@ -284,10 +284,20 @@ java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     int a[] = {1, 2, 3, 4};
     try {
       for (int i = 0; i <= 4; i++)
-        
+        System.out.print(a[i]);
+      System.out.println();
+    }
+    catch(ArithmeticException e) {
+      System.out.print(""A"");
+    }
+    catch(ArrayIndexOutOfBoundsException e) {
+      System.out.print(""B"");
+    }
+    finally {
+      System.out.print(""C"");
     }
   }
-}"	이거하기
+}"	
 			
 			
 clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
@@ -326,3 +336,22 @@ void main() {
   printf(""%d"", (p + 1)->sum + (p + 2)->avr);
   //270
 }"
+java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=20	"public class Groom {
+  public static void main(String[] args) {
+    int a[] = {1, 2, 4, 6, 8};
+    int k = 0;
+    for (int i = a.length - 1; i >= 0; i--) {
+      try {
+        k = i % 2;
+        System.out.print(a[i] / k);
+      }
+      catch (ArithmeticException e) {
+        System.out.print(""A"");
+      }
+      catch (Exception e) {
+        System.out.print(""B"");
+      }
+    }
+    System.out.println(""E"");
+  }
+}"	
