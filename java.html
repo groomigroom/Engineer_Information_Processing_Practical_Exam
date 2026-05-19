@@ -25,6 +25,44 @@
     <pre>
 
 
+
+------
+
+public class Groom {
+  public static void main(String[] args) {
+    A b = new B();
+    b.top();
+    b.bottom();
+    //출력값 BDCDD
+  }
+}
+
+class A {
+  public void top() {
+    System.out.print("A");
+    bottom();
+  }
+  public void bottom() {
+    System.out.print("B");
+    bottom();
+    //이거는 오버라이딩 된거 따라가는거. 아래꺼
+    //##### 오버라이딩
+  }
+}
+
+class B extends A {
+  public void top() {
+    super.bottom();
+    System.out.print("C");
+    this.bottom();
+    //BDCD
+  }
+  public void bottom() {
+    System.out.print("D");
+    //D
+  }
+}
+
 ------
 
 public class Groom {
