@@ -28,6 +28,33 @@
 
 ------
 
+
+public class Groomie {
+  public static void main(String[] args) {
+    int i, j;
+    for(j = 1, i = 1; i <= 5; i++) {
+      j *= i;
+      //i == 1 ===> j == 1
+      //i == 2 ===> j == 2
+      //i == 3 ===> j == 6
+      //i == 4 ===> j == 24
+      //i == 5 ===> j == 120
+      System.out.print(i); //잘보기 이거
+      //1*2*3*4*5=120
+      if (i == 5) {
+        System.out.print("=");
+        System.out.print(j);
+      }
+      else {
+        System.out.print("*");
+      }
+    }
+  }
+}
+
+
+------
+
 public class Groom {
   public static void main(String[] args) {
     A b = new B();
