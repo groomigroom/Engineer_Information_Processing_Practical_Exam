@@ -33,6 +33,29 @@
 
 -----
 
+def calc(check ,*value) :
+  #별하고 매개변수하면 가변 파라미터
+  num = 0
+  for i in value :
+    num = num + i
+    #13
+    
+  if check :
+    return num, set(value), check
+    #set()은 수학의 집합(Set) 개념을 구현한 자료형입니다. 중복을 허용하지 않고 순서가 없는 데이터의 모음이며
+    #{1, 2, 3, 4}
+  else :
+    return set(value)
+    
+k = calc(1, 1, 2, 3, 4, 1, 2)
+print(k)
+#(13, {1, 2, 3, 4}, 1) 여러개의 값을 한번에 출력해서 ()가 나옴. 튜플 형태
+#튜플(Tuple)은 여러 개의 값을 하나의 변수에 저장할 수 있는 순차적 자료형입니다. 리스트(List)와 비슷하지만, 한 번 생성된 값을 변경할 수 없는(Immutable) 불변성을 가지고 있습니다.
+
+
+
+-----
+
 test = [2, 5, 3 ,4]
 test.sort()
 #오름차순으로 정렬해주는거.
