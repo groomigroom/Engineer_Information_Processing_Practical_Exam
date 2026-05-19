@@ -408,3 +408,29 @@ int main() {
   }
   return 0;
 }"	
+clang	https://www.youtube.com/watch?v=W8mLfjs8bDw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=13	"#include <stdio.h>
+int main(void) {
+  int a[5];
+  int i;
+  
+  for (i = 0; i < 5; i++) {
+    printf(""숫자 입력 : "");
+    scanf(""%d"", &a[i]);
+  }
+  for (i = 0; i < 5; i++) {
+    printf(""%d"", a[]);
+  }
+  return 0;
+}"	빈칸채우기
+clang	https://www.youtube.com/watch?v=t8MEAAtpYqI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=14	"#include <stdio.h>
+int Decimal(int base, int exp) {
+  int i;
+  int result = 1;
+  for (i = 0; i < exp; i++) {
+    result *= base;
+  }
+  return result;
+}
+void main() {
+  printf(""%d"", Decimal(2, 10));
+}"	
