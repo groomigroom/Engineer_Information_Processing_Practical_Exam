@@ -26,6 +26,29 @@
 
 
 
+-----
+
+class ClassA {
+  int a = 10;
+  int funcAdd(int x, int y) {
+    return x + y + a;
+    // 3 + 6 + 10 == 19
+  }
+}
+public class Test {
+  //public은 클래스, 변수, 메서드 등에 부여하는 접근 제어자(Access Modifier)로, "어디서든 누구나 접근할 수 있다"는 완전 공개의 의미를 가집니다.
+  public static void main(String[] args) {
+    //static은 '클래스에 속한' 또는 '공통적인'이라는 의미를 가집니다. 객체(인스턴스)를 생성하지 않고도 메모리에 고정되어 변수나 메서드를 바로 사용할 수 있게 해주는 키워드입니다.
+    //void는 메서드가 실행을 마치고 호출한 곳으로 반환(return)할 결과값이 전혀 없음을 의미하는 키워드입니다.
+    int x = 3, y = 6, r;
+    ClassA cal = new ClassA();
+    r = cal.funcAdd(x, y);
+    System.out.print(r);
+  }
+}
+
+-----
+
 public class Test {
   public static void main(String[] args) {
     String str = "agile";
