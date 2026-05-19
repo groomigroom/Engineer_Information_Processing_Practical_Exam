@@ -434,3 +434,22 @@ int Decimal(int base, int exp) {
 void main() {
   printf(""%d"", Decimal(2, 10));
 }"	
+clang	https://www.youtube.com/watch?v=ZED903GthUc&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=15	"#include <stdio.h>
+void digit(int a[]) {
+  int temp;
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4 - i; j++) {
+      if (a[j] > a[j + 1]) {
+        temp = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = temp;
+      }
+    }
+  }
+}
+
+void main() {
+  int a[] = {89, 71, 69, 99, 91};
+  digit(a);
+  for (int i = 0; i < 5; i++) printf(""%d"", a[i]);
+}"	
