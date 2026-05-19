@@ -453,3 +453,9 @@ void main() {
   digit(a);
   for (int i = 0; i < 5; i++) printf(""%d"", a[i]);
 }"	
+python	https://www.youtube.com/watch?v=fKO7n8th7eg&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=16	"print(""강아지 이름 입력"");
+a, b = input()._____()
+c = ""멍멍이""
+c = c + "","" + a + "","" + b
+c = c.____(""멍멍이"", ""멍이"")
+print(c)"	
