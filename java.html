@@ -26,6 +26,31 @@
 
 
 
+public class Test {
+  public static void main(String[] args) {
+    String str = "agile";
+    int x[] = {1, 2, 3, 4, 5};
+    char y[] = new char[5];
+    int i = 0;
+    while (i < str.length()) {
+      y[i] = str.charAt(i);
+      //.charAt(i)은 i번째 있는 문자를 저장하는 거.
+      i++;
+      //y[] ===> {"a", "g", "i", "l", "e"}
+    }
+    // i == 5
+    for (int p : x) {
+      //for (int p : x) 구문은 배열이나 컬렉션의 모든 요소를 순회할 때 사용하는 '향상된 for문(Enhanced for loop)' 또는 'for-each문'입니다.
+      //x: 순회할 대상 (배열 또는 List와 같은 컬렉션)int p: x에서 꺼낸 요소를 임시로 담을 변수 (반복문 안에서 p를 사용해 요소에 접근)동작 방식: 루프가 돌 때마다 x[0], x[1], x[2] 등의 값이 자동으로 p에 할당되며, 요소의 개수만큼 반복하고 끝납니다.
+      i--;
+      System.out.print(y[i]);
+      System.out.print(p + " ");
+      //출력값 e1 l2 i3 g4 a5
+    }
+  }
+}
+
+
 ------
 
 public class Groom {
