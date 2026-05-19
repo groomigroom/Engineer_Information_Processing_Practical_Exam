@@ -246,3 +246,123 @@ result1 = map(add, number1, number2)
 result2 = map(sub, number1, number2)
 print(list(result1))
 print(list(result2))"	
+python	https://www.youtube.com/watch?v=Qu4SgwMNL5I&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=21	"class Calc :
+  result = 0
+  def setdata(self, fir, sec) :
+    self.fir = fir
+    self.sec = sec
+  def add(self) :
+    Calc.result += 1
+    self.result = self.fir + self.sec
+  def getdata(self) :
+    print(self.result, end= "" "")
+    print(Calc.result)
+    
+a = Calc()
+b = Calc()
+a.setdata(5, 10)
+b.setdata(5, 10)
+a.add()
+a.getdata()
+b.add()
+b.getdata()"	
+자바	https://www.youtube.com/watch?v=n9ANc5uS6yQ&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=21	"class Student {
+  private int no;
+  private String name;
+  private int score;
+  static int count = 0;
+
+  public Student(String name, int score) {
+    no = ++count;
+    this.name = name;
+    this.score = score;
+    System.out.println(this.name + "" "" + this.score);
+  }
+}
+
+public class Groom {
+    public static void main(String[] args) {
+      Student s1 = new Student(""goo"", 90);
+      Student s2 = new Student(""rem"", 88);
+      Student s3 = new Student(""eee"", 95);
+      System.out.println(Student.count);
+    }
+}"	
+자바	https://www.youtube.com/watch?v=6KrZPPxKxBY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=22	"import java.util.LinkedList;
+import java.util.List;
+public class Groom {
+  public static void main(String[] args) {
+    List<String> list = new LinkedList<String>();
+    list.add(""Seoul"");
+    list.add(""Busan"");
+    list.add(""Gwangju"");
+    list.add(2, ""Jeonju"");
+    System.out.print(list);
+  }
+}"	
+자바	https://www.youtube.com/watch?v=tXCB43Uncgk&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=23	"public class Groom {
+  public static void main(String[] args) {
+    int i;
+    double f;
+    i = (int)10.8 + (int)20.2;
+    System.out.println(i);
+    f = 10 / 2;
+    System.out.println(f);
+    f = (double) 9 / 2;
+    System.out.println(f);
+  }
+}"	
+자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
+  int value = 0;
+  void count(MyObj c) {
+    c.value = c.value + 100;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    MyObj test = new MyObj();
+    System.out.println(test.value);
+    _________;
+    System.out.println(test.value);
+  }
+} _________"	
+자바	https://www.youtube.com/watch?v=EQkPho3NRfY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=25	"class Date {
+  private int year;
+  private String month;
+  private int day;
+  public Date() {
+    this(2023, ""04"", 3);
+  }
+  public Date(String month) {
+    this(2023, month, 25);
+  }
+  public Date(int year, String month, int day) {
+    this.year = year;
+    this.month = month;
+    this.day = day;
+  }
+  @Override
+  public String toString() {
+    return year + ""-"" + month + ""-"" + day;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Date d1 = new Date();
+    Date d2 = new Date(""12"");
+    System.out.println(d1);
+    System.out.println(d2);
+  }
+}"	
+자바	https://www.youtube.com/watch?v=nJz11AaqhZw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=26	"public class Groom {
+  public static void main(String[] args) {
+    String a1 = ""abcd"";
+    String a2 = ""abcd"";
+    String a3 = new String(""abcd"");
+    Boolean b1, b2;
+    b1 = (a1 == a2) && (a1 == a3);
+    b2 = (a1.equals(a2)||a2.equals(a3));
+    System.out.println(b1);
+    System.out.println(b2);
+  }
+}"	
