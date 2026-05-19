@@ -154,18 +154,7 @@ java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M
   }
 }"	
 			
-python	https://www.youtube.com/watch?v=4uXIj5LGW-I&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=13	"def calc(check ,*value) :
-  num = 0
-  for i in value :
-    num = num + i
-    
-  if check :
-    return num.set(value).check
-  else :
-    return set(value)
-    
-k = calc(1, 1, 2, 3, 4, 1, 2)
-print(k)"	에러 뜸
+			
 			
 clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
 			
@@ -436,3 +425,57 @@ public class Groom {
     System.out.println(a.x);
   }
 }"	에러뜸
+자바	책 86쪽	"class ClassA {
+  ClassA() {
+    System.out.print('A');
+    this.prn();
+  }
+  void prn() {
+    System.out.print('B');
+  }
+}
+class ClassB extends ClassA {
+  ClassB() {
+    super();
+    System.out.print('D');
+  }
+  void prn() {
+    System.out.print('E');
+  }
+  void prn(int x) {
+    System.out.print(x);
+  }
+}
+
+public class Test {
+  public static void main(String[] args){
+    //static은 공통적인 값을 유지해야할때 선언한다.
+    int x = 7;
+    ClassB cal = new ClassB();
+    cal.prn(x);
+  }
+}"	
+자바	책 89쪽	"abstract class Animal {
+  String a = "" is animal"";
+  abstract void look();
+  void show() {
+    System.out.println(""Zoo"");
+  }
+}
+class Chicken extends Animal {
+  Chicken() {
+    look();
+  }
+  void look() {
+    System.out.println(""Chicken"" + a);
+  }
+  void display() {
+    System.out.println(""two wings"");
+  }
+}
+public class Test {
+  public static void main(String[] args) {
+    Animal a = new Chicken();
+    a.show();
+  }
+}"	
