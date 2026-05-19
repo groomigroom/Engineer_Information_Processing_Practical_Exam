@@ -173,25 +173,7 @@ int main(void) {
   return 0;
 }"	빈칸채우기
 			
-clang	https://www.youtube.com/watch?v=ZED903GthUc&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=15	"#include <stdio.h>
-void digit(int a[]) {
-  int temp;
-  for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 4 - i; j++) {
-      if (a[j] > a[j + 1]) {
-        temp = a[j];
-        a[j] = a[j + 1];
-        a[j + 1] = temp;
-      }
-    }
-  }
-}
-
-void main() {
-  int a[] = {89, 71, 69, 99, 91};
-  digit(a);
-  for (int i = 0; i < 5; i++) printf(""%d"", a[i]);
-}"	
+			
 python	https://www.youtube.com/watch?v=fKO7n8th7eg&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=16	"print(""강아지 이름 입력"");
 a, b = input()._____()
 c = ""멍멍이""
@@ -200,38 +182,8 @@ c = c.____(""멍멍이"", ""멍이"")
 print(c)"	빈칸입력
 			
 			
-python	https://www.youtube.com/watch?v=UPj9loa59Js&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=20	"def add(x, y) :
-  return x + y
-  
-def sub(a, b) :
-  return a - b
-  
-number1 = [1, 2, 3, 4]
-number2 = [5, 6, 7, 8]
-result1 = map(add, number1, number2)
-result2 = map(sub, number1, number2)
-print(list(result1))
-print(list(result2))"	
-python	https://www.youtube.com/watch?v=Qu4SgwMNL5I&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=21	"class Calc :
-  result = 0
-  def setdata(self, fir, sec) :
-    self.fir = fir
-    self.sec = sec
-  def add(self) :
-    Calc.result += 1
-    self.result = self.fir + self.sec
-  def getdata(self) :
-    print(self.result, end= "" "")
-    print(Calc.result)
-    
-a = Calc()
-b = Calc()
-a.setdata(5, 10)
-b.setdata(5, 10)
-a.add()
-a.getdata()
-b.add()
-b.getdata()"	
+			
+			
 자바	https://www.youtube.com/watch?v=n9ANc5uS6yQ&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=21	"class Student {
   private int no;
   private String name;
@@ -477,5 +429,38 @@ public class Test {
   public static void main(String[] args) {
     Animal a = new Chicken();
     a.show();
+  }
+}"	
+자바	https://www.youtube.com/watch?v=Xb4Kjy6lF-4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=33	"public class Groom {
+  public static void main(String[] args) {
+    int a = 10, b = 15, c = 10, d = 20;
+    if ((a != b | a == c) & (c > d)) {
+      a = b + c;
+      b = b - c;
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+      }
+    }
+    else {
+      a = c + d;
+      d = d - c;
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+      }
+    }
+  }
+}"	
+자바	https://www.youtube.com/watch?v=0lQ3NCwXRLo&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=34	"public class Groom {
+  public static void main(String[] args) {
+    int a = 20, b = 100;
+    System.out.printf(""%d %d\n"", a, b);
+    System.out.printf(""%b\n"", a >= 20 || ++b == 100);
+    System.out.printf(""%d %d\n"", a, b);
   }
 }"	
