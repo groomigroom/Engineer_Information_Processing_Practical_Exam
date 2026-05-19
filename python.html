@@ -30,6 +30,32 @@
     <pre>
 
 
+-----
+
+class Tiger :
+  def speak(self) :
+    print("I am tiger")
+    
+class Lion :
+  def speak(self) :
+    print("I am Lion")
+    
+def speak(animal) :
+  animal.speak()
+  
+def main() :
+  tiger = Tiger()
+  lion = Lion()
+  speak(tiger)
+  #speak(Tiger())
+  speak(lion)
+  #speak(Lion())
+  
+main()
+"""
+I am tiger
+I am Lion
+"""
 
 
 -----
