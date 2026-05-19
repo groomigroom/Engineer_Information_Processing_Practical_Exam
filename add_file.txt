@@ -373,3 +373,21 @@ python	https://www.youtube.com/watch?v=4uXIj5LGW-I&list=PLYdThbnQN0eLz3T8dzOhfXP
     
 k = calc(1, 1, 2, 3, 4, 1, 2)
 print(k)"	에러 뜸
+python	https://www.youtube.com/watch?v=1J81qkLVGx0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=14	"def func1 (num1, num2 = 10) :
+  print('a=', num1, 'b=', num2)
+  
+def func2 (num1 = 10, num2 =10) :
+  print('a=', num1, 'b=', num2)
+  
+func1(5)
+func2(5, 5)
+func2()"	
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11	"def func1 (num1, num2 = 10) :
+  print('a=', num1, 'b=', num2)
+  
+def func2 (num1 = 10, num2 =10) :
+  print('a=', num1, 'b=', num2)
+  
+func1(5)
+func2(5, 5)
+func2()"	
