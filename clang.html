@@ -28,6 +28,35 @@
 
 -----
 
+
+#include <stdio.h>
+void digit(int a[]) {
+  //void는 "비어 있음" 또는 "아무것도 없음(무형)"을 의미하는 키워드입니다. 주로 함수의 반환값이나 매개변수가 없음을 명시하거나, 데이터 타입이 정해지지 않은 범용 포인터를 선언할 때 사용됩니다.
+  int temp;
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4 - i; j++) {
+      if (a[j] > a[j + 1]) {
+        temp = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = temp;
+        //71 69 89 91 99
+        //69 71 89 91 99
+        
+      }
+    }
+  }
+}
+
+void main() {
+  int a[] = {89, 71, 69, 99, 91};
+  digit(a);
+  for (int i = 0; i < 5; i++) printf("%d", a[i]);
+  //6971899199
+        //끝
+}
+
+-----
+
 #include <stdio.h>
 int factorial (int n);
 
