@@ -31,6 +31,28 @@
 
 
 
+
+-----
+
+def add(x, y) :
+  return x + y
+  
+def sub(a, b) :
+  return a - b
+  
+number1 = [1, 2, 3, 4]
+number2 = [5, 6, 7, 8]
+result1 = map(add, number1, number2)
+#map()은 리스트나 튜플 같은 반복 가능한 데이터(Iterable)의 모든 요소에 특정 함수를 일괄적으로 적용해 주는 내장 함수입니다.
+#6, 8, 10, 12
+result2 = map(sub, number1, number2)
+#-4, -4, -4, -4
+print(list(result1))
+print(list(result2))
+#list()로 변환하지 않고 result1을 그대로 출력하면 데이터 값이 아닌 <map object at 0x...>라는 메모리 주소(객체 형태)만 출력되기 때문입니다.
+#[6, 8, 10, 12]
+#[-4, -4, -4, -4]
+
 -----
 
 def calc(check ,*value) :
