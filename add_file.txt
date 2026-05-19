@@ -464,3 +464,34 @@ public class Test {
     System.out.printf(""%d %d\n"", a, b);
   }
 }"	
+파이	91쪽	"x, y = input('입력 : ').split('-')
+a = ['abc123', 'def456', 'ghi789']
+a.append(x)
+a.append(y)
+a.remove('def456')
+print(a[1][-3:], a[2][:-3], sep = ',')
+for i in range (3, 6) :
+  print(i, end = ' ')
+#xyz321-opq654를 입력"	
+파이	93쪽	"a = {'groom', 'kimgo', 'gooru'}
+a.update({'kookoo', 'gooru'})
+a.remove('kimgo')
+a.add('groom')
+for i in a :
+  print(""구름이 : %s"" % i)"	
+파이	94쪽	"def func(x) :
+  return x * x - 3
+print(func(10))
+
+func = lambda x : x * x - 3
+print(func(10))"	
+파이	94쪽	"class Cls :
+  x, y = 10, 20
+  def chg(self) :
+    temp = self.x
+    self.x = self.y
+    self.y = temp
+a = Cls()
+print(a.x, a.y)
+a.chg()
+print(a.x, a.y)"	
