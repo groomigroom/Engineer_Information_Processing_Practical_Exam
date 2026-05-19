@@ -1,3 +1,127 @@
+c	https://youtu.be/DFBcfRSk39U?si=iIhKCy86DEAEfb2N	"#include <stdio.h>
+char n[20];
+char* getname() {
+  printf(""input data : "");
+  gets(n);
+  return n;
+}
+int main() {
+  char* n1 = getname();
+  char* n2 = getname();
+  char* n3 = getname();
+  printf(""$s"", n1);
+  printf(""$s"", n2);
+  printf(""$s"", n3);
+  return 0;
+}
+
+/*
+char* getname()의 의미이 코드는 함수의 정의를 나타냅니다.char* (반환 타입): 이 함수가 실행을 마치고 자신을 호출한 곳으로 문자열(정확히는 char형 배열)의 첫 번째 주소를 돌려주겠다는 의미입니다.getname (함수 이름): 개발자가 임의로 지정한 함수의 이름입니다.작동 원리: 함수 내부에서 전역 변수 n에 이름을 입력받은 뒤, return n;을 통해 전역 변수 배열 n이 저장된 메모리의 주소(char*)를 리턴합니다.2. gets(n)의 의미이 코드는 표준 입력(키보드)으로 문자열을 받는 함수 호출입니다.의미: 키보드로 글자를 입력받아 배열 n에 저장합니다.특징: scanf와 달리 공백(스페이스바)을 포함한 한 줄 전체를 입력받을 수 있으며, 엔터키(\n)를 입력할 때까지의 모든 문자를 가져옵니다.
+#include <stdio.h>
+
+// 매번 새로운 메모리에 입력받기 위해 main 안으로 배열을 분리하거나 복사해야 합니다.
+void getname(char* dest, int size) {
+  printf(""input data : "");
+  // gets 대신 안전한 fgets 사용 (엔터값 제거 로직 생략)
+  fgets(dest, size, stdin); 
+}
+
+int main() {
+  char n1[20], n2[20], n3[20]; // 3개의 독립된 공간 확보
+  
+  getname(n1, sizeof(n1));
+  getname(n2, sizeof(n2));
+  getname(n3, sizeof(n3));
+  
+  // $s를 %s로 수정
+  printf(""%s"", n1);
+  printf(""%s"", n2);
+  printf(""%s"", n3);
+  
+  return 0;
+}
+
+요즘 구조는 위와 같음. #####
+
+*/"	모두다 출력 같게 됨.
+			
+			
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G		
+			
+			
+			
+			
+			
+			
+			
+			
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM		
+			
+			
+			
+			
+			
+			
+파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
+new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
+
+print(text)     # 출력: hello (원본 유지)
+print(new_text) # 출력: HELLO
+코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
+numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
+
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"	
+			
+			
+			
+			
+			
+			
+자바	https://www.youtube.com/watch?v=hQ87DE75Bgw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=17	"abstract class Animal {
+  private String name;
+  abstract public String getName(String val);
+  public String getName() {
+    return ""Animal name:"" + name;
+  }
+  public void setName(String val) {
+    name = val;
+  }
+}
+class Dog extends Animal {
+  public Dog(String val) {
+    setName(val);
+  }
+  public String getName(String val) {
+    return ""Dog name :"" + val;
+  }
+  public String getName(byte val[]) {
+    return ""Dog name :"" + val;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Animal obj = new Dog(""Sarng"");
+    System.out.print(obj.getName());
+  }
+}
+"	
+자바	https://www.youtube.com/watch?v=LWFlxwfDD6I&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=16	"public class Groom {
+  static int[] MakeArray() {
+    int[] tempArr = new int[5];
+    for (int i = 0; i < tempArr.length; i++) {
+      tempArr[i] = i;
+    }
+    return tempArr;
+  }
+  public static void main(String[] args) {
+    int[] myArr;
+    myArr =MakeArray();
+    
+    for (int i = 0; i < myArr.length; i++) {
+      System.out.print(myArr[i]);
+    }
+  }
+}"	
 python	https://www.youtube.com/watch?v=RlcGz9-9XN0&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=10	"class parent :
   def __init__(self) :
     print(""parent 생성자"")
@@ -136,8 +260,34 @@ java	https://www.youtube.com/watch?v=9zjOuOjQrDM&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     }
   }
 }"
-			
-			
+java	https://www.youtube.com/watch?v=pdI0vfUo6Hc&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=18	"public class Groom {
+  static void change(char arr[]) {
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == 'b') arr[i] = 'c';
+      else if (i == arr.length - 1) arr[i] = arr[i - 1];
+      else arr[i] = arr[i + 1];
+    }
+  }
+  static void prtarr(char arr[]) {
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i]);
+    }
+  }
+  public static void main(String[] args) {
+    char[] a = {'a', 'b', 'c', 'b', 'c', 'd', 'a'};
+    change(a);
+    prtarr(a);
+  }
+}"	
+java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=19	"public class Groom {
+  public static void main(String[] args) {
+    int a[] = {1, 2, 3, 4};
+    try {
+      for (int i = 0; i <= 4; i++)
+        
+    }
+  }
+}"	이거하기
 			
 			
 clang	https://www.youtube.com/watch?v=kije6KFjX9A&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=9	"#include <stdio.h>
