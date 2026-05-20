@@ -569,3 +569,14 @@ void main() {
   printf(""%x\n"", a ^ b);
   pprintf(""%x"", a & b);
 }"	오류뜸
+clang	https://www.youtube.com/watch?v=O4jH52Sj5ig&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=21	"#include <stdio.h>
+void main() {
+  char str1[12] = ""tulip"";
+  char str2[5] = ""Lily"";
+  char* p1, * p2;
+  p1 = str1;
+  p2 = str2;
+  str2[0] = p1[2];
+  str1[3] = p2[1];
+  while 
+}"	
