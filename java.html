@@ -31,6 +31,31 @@
 
 
 public class Groom {
+  //public은 '어디서든 접근할 수 있다'는 의미를 가진 접근 제어자(Access Modifier)입니다. 클래스, 메서드, 변수 앞에 붙여 외부 패키지나 다른 클래스에서도 해당 요소를 자유롭게 사용할 수 있도록 허용합니다.
+  public static void main(String[] args) {
+    //String[] args는 프로그램 실행 시 외부에서 명령줄 인자(값)를 전달받아 처리하기 위해 사용되는 문자열 배열 매개변수입니다.
+	//String[]: 문자열 타입의 배열을 의미합니다.args: 변수의 이름입니다. arguments(인자)의 줄임말로 꼭 args가 아니어도 되지만, 관례적으로 이 이름을 사용합니다.
+    String a1 = "abcd";
+    String a2 = "abcd";
+    String a3 = new String("abcd");
+    Boolean b1, b2;
+    b1 = (a1 == a2) && (a1 == a3);
+    b2 = (a1.equals(a2)||a2.equals(a3));
+    System.out.println(b1);
+    System.out.println(b2);
+    //false
+    //true
+  }
+}
+/*
+a1 == a2 는 true 입니다 (리터럴 생성)a1과 a2는 ""를 이용한 리터럴 방식으로 생성되었습니다.자바는 메모리 절약을 위해 **문자열 상수 풀(String Constant Pool)**이라는 공간을 씁니다.a1이 만든 "abcd"가 이미 풀에 있으므로, a2는 새로 만들지 않고 a1과 같은 주소를 가리킵니다.주소가 같으므로 a1 == a2는 **true**입니다.2. a1 == a3 가 false 입니다 (new 연산자 생성)반면 a3는 new String("abcd")을 사용해 생성되었습니다.new 키워드는 상수 풀을 무시하고 **힙(Heap) 메모리에 무조건 새로운 객체(새 주소)**를 만듭니다.내용물("abcd")은 같을지라도, a1과 a3가 가리키는 메모리 주소는 완전히 다릅니다.따라서 주소를 비교하는 a1 == a3는 **false**가 됩니다.
+*/
+
+
+-----
+
+
+public class Groom {
   public static void main(String[] args) {
     int i;
     double f;
