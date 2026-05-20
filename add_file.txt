@@ -205,7 +205,35 @@ public class Groom {
       Student s3 = new Student(""eee"", 95);
       System.out.println(Student.count);
     }
-}"	
+}"	"------13번
+
+
+class Student {
+  private int no;
+  private String name;
+  private int score;
+  static int count = 0;
+
+  public Student(String name, int score) {
+    no = ++count;
+    this.name = name;
+    this.score = score;
+    System.out.println(this.name + "" "" + this.score);
+  }
+}
+
+public class Groom {
+    public static void main(String[] args) {
+      Student s1 = new Student(""goo"", 90);
+      //goo 90
+      Student s2 = new Student(""rem"", 88);
+      //rem 88
+      Student s3 = new Student(""eee"", 95);
+      //eee 95
+      System.out.println(Student.count);
+      //3
+    }
+}"
 자바	https://www.youtube.com/watch?v=6KrZPPxKxBY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=22	"import java.util.LinkedList;
 import java.util.List;
 public class Groom {
@@ -229,7 +257,24 @@ public class Groom {
     f = (double) 9 / 2;
     System.out.println(f);
   }
-}"	
+}"	"------12번
+
+
+public class Groom {
+  public static void main(String[] args) {
+    int i;
+    double f;
+    i = (int)10.8 + (int)20.2;
+    //30
+    System.out.println(i);
+    f = 10 / 2;
+    //5.0
+    System.out.println(f);
+    f = (double) 9 / 2;
+    //4.5
+    System.out.println(f);
+  }
+}"
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -283,7 +328,23 @@ public class Groom {
     System.out.println(b1);
     System.out.println(b2);
   }
-}"	
+}"	"------11번
+
+
+public class Groom {
+  public static void main(String[] args) {
+    String a1 = ""abcd"";
+    String a2 = ""abcd"";
+    String a3 = new String(""abcd"");
+    Boolean b1, b2;
+    b1 = (a1 == a2) && (a1 == a3);
+    b2 = (a1.equals(a2)||a2.equals(a3));
+    System.out.println(b1);
+    System.out.println(b2);
+    //true 
+    //true
+  }
+}"
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -406,7 +467,40 @@ public class Test {
     ClassB cal = new ClassB();
     cal.prn(x);
   }
-}"	
+}"	"------14번
+
+
+class ClassA {
+  ClassA() {
+    System.out.print('A');
+    this.prn();
+  }
+  void prn() {
+    System.out.print('B');
+  }
+}
+class ClassB extends ClassA {
+  ClassB() {
+    super();
+    System.out.print('D');
+  }
+  void prn() {
+    System.out.print('E');
+  }
+  void prn(int x) {
+    System.out.print(x);
+  }
+}
+
+public class Test {
+  public static void main(String[] args){
+    //static은 공통적인 값을 유지해야할때 선언한다.
+    int x = 7;
+    ClassB cal = new ClassB();
+    cal.prn(x);
+    //ABD7
+  }
+}"
 자바	책 89쪽	"abstract class Animal {
   String a = "" is animal"";
   abstract void look();
@@ -430,7 +524,35 @@ public class Test {
     Animal a = new Chicken();
     a.show();
   }
-}"	
+}"	"------10번
+
+
+
+abstract class Animal {
+  String a = "" is animal"";
+  abstract void look();
+  void show() {
+    System.out.println(""Zoo"");
+  }
+}
+class Chicken extends Animal {
+  Chicken() {
+    look();
+  }
+  void look() {
+    System.out.println(""Chicken"" + a);
+  }
+  void display() {
+    System.out.println(""two wings"");
+  }
+}
+public class Test {
+  public static void main(String[] args) {
+    Animal a = new Chicken();
+    a.show();
+  }
+}
+//Zoo"
 자바	https://www.youtube.com/watch?v=Xb4Kjy6lF-4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=33	"public class Groom {
   public static void main(String[] args) {
     int a = 10, b = 15, c = 10, d = 20;
@@ -455,7 +577,36 @@ public class Test {
       }
     }
   }
-}"	
+}"	"------9번
+
+public class Groom {
+  public static void main(String[] args) {
+    int a = 10, b = 15, c = 10, d = 20;
+    if ((a != b | a == c) & (c > d)) {
+      a = b + c;
+      b = b - c;
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+      }
+    }
+    else {
+      a = c + d;
+      //30
+      d = d - c;
+      //10
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+        //15
+      }
+    }
+  }
+}"
 자바	https://www.youtube.com/watch?v=0lQ3NCwXRLo&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=34	"public class Groom {
   public static void main(String[] args) {
     int a = 20, b = 100;
@@ -463,7 +614,19 @@ public class Test {
     System.out.printf(""%b\n"", a >= 20 || ++b == 100);
     System.out.printf(""%d %d\n"", a, b);
   }
-}"	
+}"	"------8번
+
+public class Groom {
+  public static void main(String[] args) {
+    int a = 20, b = 100;
+    System.out.printf(""%d %d\n"", a, b);
+    //20 100
+    System.out.printf(""%b\n"", a >= 20 || ++b == 100);
+    //true
+    System.out.printf(""%d %d\n"", a, b);
+    //20 100
+  }
+}"
 파이	91쪽	"x, y = input('입력 : ').split('-')
 a = ['abc123', 'def456', 'ghi789']
 a.append(x)
@@ -472,19 +635,54 @@ a.remove('def456')
 print(a[1][-3:], a[2][:-3], sep = ',')
 for i in range (3, 6) :
   print(i, end = ' ')
-#xyz321-opq654를 입력"	
+#xyz321-opq654를 입력"	"------7번
+
+
+x, y = input('입력 : ').split('-')
+a = ['abc123', 'def456', 'ghi789']
+a.append(x)
+a.append(y)
+#abc123 def456 ghi789 xyz321 opq654
+a.remove('def456')
+#abc123 ghi789 xyz321 opq654
+print(a[1][-3:], a[2][:-3], sep = ',')
+#789,xyz
+for i in range (3, 6) :
+  print(i, end = ' ')
+#3 4 5
+#xyz321-opq654를 입력"
 파이	93쪽	"a = {'groom', 'kimgo', 'gooru'}
 a.update({'kookoo', 'gooru'})
 a.remove('kimgo')
 a.add('groom')
 for i in a :
-  print(""구름이 : %s"" % i)"	
+  print(""구름이 : %s"" % i)"	"------6번
+
+a = {'groom', 'kimgo', 'gooru'}
+a.update({'kookoo', 'gooru'})
+#groom kimgo gooru kookoo
+a.remove('kimgo')
+#groom gooru kookoo
+a.add('groom')
+#groom gooru kookoo
+for i in a :
+  print(""구름이 : %s"" % i)"
 파이	94쪽	"def func(x) :
   return x * x - 3
 print(func(10))
 
 func = lambda x : x * x - 3
-print(func(10))"	
+print(func(10))"	"------5번
+
+
+def func(x) :
+  return x * x - 3
+print(func(10))
+#97
+
+func = lambda x : x * x - 3
+print(func(10))
+#97"
 파이	94쪽	"class Cls :
   x, y = 10, 20
   def chg(self) :
@@ -494,7 +692,20 @@ print(func(10))"
 a = Cls()
 print(a.x, a.y)
 a.chg()
-print(a.x, a.y)"	
+print(a.x, a.y)"	"------4번
+
+class Cls :
+  x, y = 10, 20
+  def chg(self) :
+    temp = self.x
+    self.x = self.y
+    self.y = temp
+a = Cls()
+print(a.x, a.y)
+#20 10
+a.chg()
+print(a.x, a.y)
+#10 20"
 파이	96쪽	"def calc(x, y) :
   x *= 3
   y /= 3
@@ -503,7 +714,20 @@ print(a.x, a.y)"
   
 a, b = 3, 12
 a = calc(a, b)
-print(a, b)"	
+print(a, b)"	"------3번
+
+
+def calc(x, y) :
+  x *= 3
+  y /= 3
+  print(x, y)
+  return x
+  
+a, b = 3, 12
+a = calc(a, b)
+# a == 9
+# b == 4
+print(a, b)"
 clang	https://www.youtube.com/watch?v=LOmemFIvTGw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=16	"#include <stdio.h>
 int main()
 {
@@ -561,7 +785,22 @@ int main(int argc, char* argv[]) {
   p = a;
   printf(""%d"", *(p[2] + 1) - *(p[0] + 3));
   return 0;
-}"	
+}"	"------2번
+
+
+#include <stdio.h>
+int main(int argc, char* argv[]) {
+  int a[3][3] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+  /*
+  10 20 30
+  40 50 60
+  70 80 90
+  */
+  int(*p)[3];
+  p = a;
+  printf(""%d"", *(p[2] + 1) - *(p[0] + 3));
+  return 0;
+}"
 clang	https://www.youtube.com/watch?v=91HfRzf5P9Q&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=20	"#include <stdio.h>
 void main() {
   int a = 0xB4;
@@ -585,7 +824,29 @@ void main() {
   *p1 = '-';
   strcat(str1, str2);
   printf(""%s\n"", str1);
-}"	
+}"	"------1번
+
+#include <stdio.h>
+#include <string.h>
+void main() {
+  char str1[12] = ""tulip"";
+  char str2[5] = ""Lily"";
+  char* p1, * p2;
+  p1 = str1;
+  //tulip
+  p2 = str2;
+  //Lily
+  str2[0] = p1[2];
+  //lily
+  str1[3] = p2[1];
+  //lily
+  while (*p1 != 0) {
+    p1++;
+  }
+  *p1 = '-';
+  strcat(str1, str2);
+  printf(""%s\n"", str1);
+}"
 clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
 #include <string.h>
 int length(char a[], char s) {
@@ -679,3 +940,354 @@ int main(int argc, char* argv[]) {
   }
   return 0;
 }"	
+clang	https://www.youtube.com/watch?v=8W4q-5Exg3k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=27	"#include <stdio.h>
+int main()
+{
+  char a[] = ""abcdefg"";
+  char* p = a;
+  while (*p != ____) {
+    printf(""%c"", ____);
+  }
+  return 0;
+}"	빈칸채우기
+clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
+int len(_______);
+int main()
+{
+  char* s1 = ""1234"";
+  char* s2 = ""abcdef"";
+  printf(""%d"", len(s1), len(s2));
+}
+int len(char* p) {
+  int cnt = 0;
+  while (*p != 0) {
+    p++;
+    _______;
+  }
+  return cnt;
+}"	빈칸채우기
+clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
+int calc(int (*q)(int, int)) {
+  int result;
+  result = (q)(3, 5);
+  printf(""%d"", result);
+  return 0;
+}
+int p(int a, int b) {
+  return (a + b);
+}
+int q(int a, int b) {
+  return (a - b);
+}
+int main() {
+  calc(p);
+  return 0;
+}
+"	
+sql		"
+
+mysql-----
+
+create table plus_minus (
+    int_type integer,
+    int_type2 integer,
+    int_type3 integer
+);
+
+insert into plus_minus
+values
+(1, 2, 3),
+(4, 5, 6),
+(7, 8, 9);
+
+select int_type + 3 - 2, int_type2 * 4 / 2, int_type3 MOD 2
+from plus_minus;
+
+/*
+2  4    1
+5  10  0
+8  16  1
+*/
+
+select int_type DIV 3
+from plus_minus;
+
+
+/*
+0
+1
+2
+*/"	
+sql		"create table numbers (
+    num_1 integer,
+    num_2 integer,
+    num_3 integer,
+    num_4 float
+-- ??
+);
+
+insert into numbers
+values
+(1, 2, 3, 3.6),
+(-4, 5, 6, 4.3),
+(-7, 8, 9, 5.7);
+
+select abs(num_1), ceil(num_4), floor(num_4), mod(20, num_1), pow(num_1, num_2)
+from numbers;
+
+select log(3, num_3)
+from numbers
+where num_3 == 9;
+
+ABS(x) x의 절댓값 ABS(-3) → 3
+CEIL(x), CEILING(
+x) x보다 큰 최소 정수 CEIL(6.5) → 7
+FLOOR(x) x보다 작은 최대 정수 FLOOR(6.5) → 6
+EXP(x) 자연로그의 밑 e의 x승 EXP(2) → 7.38905609893065LN(x) 밑이 e인 x의 로그 LN(2) → 0.6931471805599453
+LOG(b, x) 밑이 b인 x의 로그, b 생략 시 밑
+은 e
+LOG(3, 9) → 2
+LOG10() 밑이 10인 x의 로그 LOG10(100) → 2
+LOG2() 밑이 2인 x의 로그 LOG2(8) → 3
+MOD(n, m) n을 m으로 나눈 나머지 MOD(21, 5) → 1
+POW(x, y),
+POWER(x, y) x의 y승 POWER(2, 3) → 8"	
+sql		"create table numbers (
+    num_1 integer,
+    num_2 integer,
+    num_3 integer,
+    num_4 float
+-- ??
+);
+
+insert into numbers
+values
+(1, 2, 3, 3.633),
+(-4, 5, 6, 4.356),
+(-7, 8, 9, 5.765);
+
+
+
+select round(num_4, 1), sqrt(num_3), truncate(num_4, 1)
+from numbers;
+
+
+RAND([n])
+0보다 크거나 같고 1보다 작은 난수(실수) 반환RAND 함수를 실행할 때마다 반환되는 값(난수)은달라지지만, 매개변수 n(생략 가능)을 명시하면여러 번 실행해도 같은 값 반환
+RAND() → 0.14949947330122765
+ROUND(x, d)
+x를 소수점 이하 d 자리까지 반올림
+d 생략 시 0을 적용해 정수 반환
+d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
+ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
+TRUNCATE(x, d
+) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3"	
+sql		"create table groomi
+(
+    groom1 varchar(50),
+    groom2 varchar(50),
+    groom3 varchar(50),
+    groom4 varchar(50),
+    gromm5 float
+);
+
+
+insert into groomi
+values
+(""김구름"", ""멍멍"", ""구름구름"", ""구우름"", 123454.33344),
+(""groom"", ""mung"", ""구름구름이"", ""구름"", 3434.556664),
+(""gugu"", ""mong"", ""구름구름이이"", ""구우우름"", 55434.556664);
+
+select char_length(groom1), length(groom1), concat(groom1, groom2), concat_ws(""groom"", groom1, groom2), format(groom5, 3), instr(groom1, ""구""), locate(""름"", groom3, 4), position(""름"" in groom3), locate(""름"", groom4) 
+from groomi;
+
+
+
+
+
+
+
+
+
+
+
+CHAR_LENGTH(str)
+CHARACTER_LENGTH(str
+)
+str 문자열의 문자 개수 반환 CHAR_LENGTH('AB')→ 2
+LENGTH(str) str 문자열의 바이트(Byte) 수 반환 LENGTH('AB') → 2CONCAT(s1, s2...) s1, s2 등의 문자열을 하나로 이어 붙여반환 CONCAT('A', 'B') → ABCONCAT_WS(sep, s1, s2,
+... ) s1, s2 등의 문자열을 sep로 연결해 반환CONCAT_WS('-', 'A', '
+B') → A-BFORMAT(x, d)
+숫자 x의 정수 부분 3자리마다 콤마를 추가해 문자열로 반환, 소수점 이하 d자리기준으로 반올림
+FORMAT(123456.13457, 3) → 123,456.135INSTR(str, substr) str 문자열에서 substr 문자(열)를 찾아시작 위치 반환 INSTR('ABC', 'C') → 3LOCATE(substr, str, pos)
+POSITION(substr IN str)
+str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
+LOCATE('C', 'ABCDEFG') → 3"	
+sql		"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50),
+    chacha3 varchar(50),
+);
+
+insert into groomi
+values
+(""GROOMI"", ""groomi"",),
+(""GRULD"", ""clude"",),
+
+
+select lower(chacha), lcase(chacha), upper(chacha2), ucase(chacha2), lpad(chacha, 8, ""구""), rpad(chacha2, 10, ""름""), left(chacha, 3), right(chacha2, 4), repeat(chacha, 3)
+from groomi;
+
+
+
+
+
+
+LOWER(str)
+LCASE(str) str 문자열을 소문자로 반환 LOWER('ABC') → 'abc'
+UPPER(str)
+UCASE(str) str 문자열을 대문자로 반환 UPPER('abc') → 'ABC'
+LPAD(str, len, pads
+tr)
+str 문자열을 len 길이만큼 반환하는데, 자리가남으면 왼쪽을 padstr 문자로 채움
+LPAD('ABC', 5, '*') → '
+**ABC'
+RPAD(str, len, pads
+tr)
+str 문자열을 len 길이만큼 반환하는데, 자리가남으면 오른쪽을 padstr 문자로 채움
+RPAD('ABC', 5, '*') → '
+ABC**'
+LTRIM(str) str 문자열에서 왼쪽 공백 제거 LTRIM(' ABC ') → 'ABC' RTRIM(str) str 문자열에서 오른쪽 공백 제거 RTRIM(' ABC ') → ' ABC'
+LEFT(str, len) str 문자열을 len 길이만큼 왼쪽에서 잘라 반환LEFT('ABCDE', 2) → 'AB'
+RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반환
+RIGHT('ABCDE', 2) → '
+DE'
+REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'"	
+sql		"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50),
+    chacha3 varchar(50)
+);
+
+insert into groomi
+values
+(""groom"", ""oogroomoo"", ""groom""),
+(""grooom"", ""oogroooomooo"", ""grooom""),
+(""gruoom"", ""oogruuumoo"", ""gruuum"");
+
+select replace(chacha, ""o"", ""e""), reverse(chacha), substr(chacha, 3, 3), substring(chacha, 2, 2), mid(chacha, 3, 3), trim(leading 'o' from chacha2), trim(trailing 'o' from chacha2), trim(both 'o' from chacha2), strcmp(chacha, chacha3);
+
+
+
+
+
+
+
+
+
+REPLACE(str, from_str, to_
+str)
+str 문자열에서 from_str 문자열을 찾아to
+_str로 변경
+REPLACE('NaNaNa', 'a', 'b') → 'NbNbNb'
+REVERSE(str) str 문자열을 거꾸로 반환 REVERSE('abcdefg') →'gfedcba'
+SPACE(N) N개의 공백 문자 반환 SPACE(3) → ' '
+SUBSTR(str, pos, len)
+SUBSTRING(str, pos, len)
+MID(str, pos, len)
+str 문자열의 pos 위치에서 len 길이만큼 문자를 잘라서 반환
+SUBSTR('ABCD', 3, 1)→ 'C'
+TRIM([{BOTH|LEADING|T
+RAILING} [remstr] FROM]
+str)
+str 문자열에서 remstr 문자를 앞(LEADIN
+G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
+에서 제거
+TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
+STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
+1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
+"	
+sql		"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50),
+    chacha3 varchar(50),
+    chadate date,
+    chatime time,
+-- #####
+    chadatime expr
+);
+
+insert into groomi
+values
+(""groom"", ""oogroomoo"", ""groom"", ""2017-01-09""),
+(""grooom"", ""oogroooomooo"", ""grooom"", ""2022-01-01""),
+(""gruoom"", ""oogruuumoo"", ""gruuum"", ""2020-01-07"");
+
+select year(chadate), weekofyear(chadate), hour(chatime), date(chadatime), time(chadatime), date_add(chadate, interval 10 day), adddate(chadate, 11)
+from groomi;
+
+
+
+
+
+
+
+
+YEAR(date) date에서 연 반환 YEAR('2021-01-02') → 2021MONTH(date) date에서 월 반환 MONTH('2021-02-02') → 2QUARTER(date) date의 분기 반환 QUARTER('2021-02-02') → 1WEEKOFYEAR(date) date가 몇 주차인지 반환
+(1~53주)
+WEEKOFYEAR('2021-02-22') →8
+HOUR(time) time에서 시간 반환 HOUR('10:53:24') → 10MINUTE(time) time에서 분 반환 MINUTE('10:53:24') → 53SECOND(time) time에서 초 반환 SECOND('10:53:24') → 24DATE(expr) expr에서 날짜 부분 반환 DATE('2021-01-02 12:32:10') →2021-01-02
+TIME(expr) expr에서 시간 부분 반환 TIME('2021-01-02 12:32:10') →12:32:10
+DATE_ADD(date, INTERVAL expr
+unit)
+ADDDATE(date, INTERVAL expr u
+nit)
+date에 expr unit을 더한 날
+짜
+반환
+DATE_ADD('2021-01-10', INTERVAL 10 DAY) → 2021-01-20ADDDATE(expr, days) expr에 days를 더한 날짜 반
+환
+ADDDATE('2021-01-10', 10) → 2021-01-20"	
+sql		"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50),
+    chacha3 varchar(50),
+    chadate date,
+    chatime time,
+-- #####
+    chadatime expr
+);
+
+insert into groomi
+values
+(""groom"", ""oogroomoo"", ""groom"", ""2017-01-09""),
+(""grooom"", ""oogroooomooo"", ""grooom"", ""2022-01-01""),
+(""gruoom"", ""oogruuumoo"", ""gruuum"", ""2020-01-07"");
+
+select date_sub(chadate, 10 day), subdate(chadate, 20 day), subdate(chadate, 5), extract(year_month from chadate), datediff(chadate, '2021-01-01'), makedate(year(chadate), 41), week(chadate, 1)
+from groomi;
+
+
+
+
+
+DATE_SUB(date, INTERVAL expr
+unit)
+SUBDATE(date, INTERVAL expr u
+nit)
+date에 expr unit을 뺀 날짜 반환DATE_SUB('2021-01-10', INTERVAL 5 DAY) → 2021-01-05
+SUBDATE(expr, days) expr에서 days를 뺀 날짜 반환 SUBDATE('2021-01-10', 5)→ 2021-01-05
+EXTRACT(unit FROM date) date에서 unit으로 지정된 부분반환
+EXTRACT(YEAR_MONTH FROM '2021-01-31') → 202101
+DATEDIFF(expr1, expr2) expr1에서 expr2를 뺀 날짜를 일수로 반환
+DATEDIFF('2021-01-31','2021-01-21') → 10DATE_FORMAT(date, format) date를 format에 명시된 형태로변환해 반환
+DATE_FORMAT('2021-01-31',%y %) → 21/01/31STR_TO_DATE(str, format) str을 format에 맞게 날짜로 변환STR_TO_DATE('21,1,2021',
+'%d,%m,%Y') → 2021-01-21
+MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날짜 반환
+MAKEDATE(2021,100) → 2021-04-10
+SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
+WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"	
