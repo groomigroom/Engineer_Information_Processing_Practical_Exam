@@ -26,6 +26,37 @@
 
 
 
+
+-----
+
+class Student {
+  private int no;
+  //private은 변수, 메서드, 생성자 등의 멤버를 선언한 해당 클래스 안에서만 접근할 수 있도록 제한하는 가장 강력한 접근 제어자입니다. 클래스 외부에서는 직접 접근하거나 변경할 수 없습니다.
+  private String name;
+  private int score;
+  static int count = 0;
+
+  public Student(String name, int score) {
+    no = ++count;
+    this.name = name;
+    this.score = score;
+    System.out.println(this.name + " " + this.score);
+  }
+}
+
+public class Groom {
+    public static void main(String[] args) {
+      Student s1 = new Student("goo", 90);
+      //goo 90
+      Student s2 = new Student("rem", 88);
+      //rem 88
+      Student s3 = new Student("eee", 95);
+      //eee 95
+      System.out.println(Student.count);
+      //3
+    }
+}
+
 -----
 
 class ClassA {
