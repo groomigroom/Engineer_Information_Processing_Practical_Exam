@@ -570,6 +570,7 @@ void main() {
   pprintf(""%x"", a & b);
 }"	오류뜸
 clang	https://www.youtube.com/watch?v=O4jH52Sj5ig&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=21	"#include <stdio.h>
+#include <string.h>
 void main() {
   char str1[12] = ""tulip"";
   char str2[5] = ""Lily"";
@@ -578,5 +579,103 @@ void main() {
   p2 = str2;
   str2[0] = p1[2];
   str1[3] = p2[1];
-  while 
+  while (*p1 != 0) {
+    p1++;
+  }
+  *p1 = '-';
+  strcat(str1, str2);
+  printf(""%s\n"", str1);
+}"	
+clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
+#include <string.h>
+int length(char a[], char s) {
+  char* p;
+  int len = 0;
+  p = strchr(a, s);
+  printf(""%s"", p);
+  while (*p != '\0') {
+    len++;
+    p++;
+  }
+  return len;
+}
+void main() {
+  char a[] = ""selfcontrol"";
+  int i = 0;
+  i = length(a, 'c');
+  printf(""%d\n"", i);
+}"	
+clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
+#define MAX_SIZE 5
+int stack[MAX_SIZE];
+int p = -1;
+int isEmpty() {
+  if (p == -1) return 1;
+  return 0;
+}
+int isFull() {
+  if(p == MAX_SIZE - 1) return 1;
+  return 0;
+}
+void push(int num) {
+  if (isFull()) {
+    printf(""Full"");
+    return;
+  }
+  stack[++p] = num;
+}
+int pop() {
+  if (isEmpty() == 1) {
+    printf(""Empty"");
+    return;
+  }
+  return stack[p--];
+}
+int main(int argc, char const* argv[]) {
+  push(1); push(2);
+  while (!isEmpty()) {
+    printf(""%d"", pop());
+    push(3); push(4); push(5);
+    printf(""%d"", pop());
+    printf(""%d"", pop()); printf(""%d"", pop());
+    push(6); printf(""%d"", pop()); printf(""%d"", pop());
+  }
+  return 0;
+}"	
+clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
+void calc(int A[]) {
+  for (int i = 1; i < 6; i++) {
+    int key = A[i];
+    int j;
+    for (j = i - 1; j >= 0 && A[j] > key; j--) {
+      A[j + 1] = A[j];
+    }
+    A[j + 1] = key;
+  }
+}
+int main() {
+  int arr[] = {6, 4, 5, 1, 2, 7};
+  calc(arr);
+  for (int i = 0; i < 6; i++)
+    printf(""%d"", arr[i]);
+  return 0;
+}"	
+clang	https://www.youtube.com/watch?v=NTvSTbXTYV4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=25	"#include <stdio.h>
+void sf(int* x, int* y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+int main(int argc, char* argv[]) {
+  int a[] = {5, 3, 8, 1, 2, 7};
+  for (int i = 0; i < 5; i++) {
+    int least = i;
+    for (int j = i + 1; j < 6; j++)
+      if (a[i] < a[least]) least = j;
+    sf(&a[i], &a[least]);
+  }
+  for (int k = 0; k <= 5; k++) {
+    printf(""%d"", a[k]);
+  }
+  return 0;
 }"	
