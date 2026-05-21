@@ -26,6 +26,34 @@
 
 
 
+-----
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String name = sc.next();
+      int age = sc.nextInt();
+      double weight = sc.nextDouble();
+      boolean single = sc.nextBoolean();
+      sc.nextLine();
+      String addr = sc.nextLine();
+      System.out.printf("%d세인 %s님은 %.2f이고 %s에 삽니다.", age, name, weight, addr);
+    }
+}
+
+/*
+입력값
+김구름
+9
+5.5
+true
+광주광역시
+
+출력값
+9세인 김구름님은 5.50이고 광주광역시에 삽니다.
+*/
 
 -----
 
