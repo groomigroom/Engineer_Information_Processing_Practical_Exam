@@ -43,25 +43,25 @@ int main() {
 
 요즘 구조는 위와 같음. #####
 
-*/"	모두다 출력 같게 됨.	
-				
-				
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G			
-				
-				
-				
-				
-				
-				
-				
-				
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM			
-				
-				
-				
-				
-				
-				
+*/"	모두다 출력 같게 됨.
+			
+			
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G		
+			
+			
+			
+			
+			
+			
+			
+			
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM		
+			
+			
+			
+			
+			
+			
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -70,13 +70,13 @@ print(new_text) # 출력: HELLO
 코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
 numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"		
-				
-				
-				
-				
-				
-				
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"	
+			
+			
+			
+			
+			
+			
 자바	https://www.youtube.com/watch?v=hQ87DE75Bgw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=17	"abstract class Animal {
   private String name;
   abstract public String getName(String val);
@@ -132,10 +132,10 @@ public class Groom {
     //Dog name :Sarng
   }
 }
-"	
-				
-				
-clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11			
+"
+			
+			
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
 clang	https://www.youtube.com/watch?v=W8mLfjs8bDw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=13	"#include <stdio.h>
 int main(void) {
   int a[5];
@@ -150,7 +150,7 @@ int main(void) {
   }
   return 0;
 }"	"12345를 입력했을 때,
-차례데로 34512가 출력되게 빈칸채우기"	
+차례데로 34512가 출력되게 빈칸채우기"
 python	https://www.youtube.com/watch?v=fKO7n8th7eg&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=16	"print(""강아지 이름 입력"");
 a, b = input()._____()
 c = ""멍멍이""
@@ -160,8 +160,8 @@ print(c)"	"구름이, 구우름
 멍이, 구름이, 구우름
 위에꺼가 출력결과
 입력은 
-구름이, 구우름"	
-				
+구름이, 구우름"
+			
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -178,7 +178,7 @@ public class Groom {
 } _________"	"출력결과
 0
 100
-이 나오도록"	
+이 나오도록"
 자바	https://www.youtube.com/watch?v=EQkPho3NRfY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=25	"class Date {
   private int year;
   private String month;
@@ -207,7 +207,7 @@ public class Groom {
     System.out.println(d1);
     System.out.println(d2);
   }
-}"		
+}"	
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -233,7 +233,7 @@ public class Groom {
     Parent one = new Child(10);
     System.out.println(one.getArea());
   }
-}"	실행순서 맞추기	
+}"	실행순서 맞추기
 자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
   private int x, y;
   Parent(int x, int y) {
@@ -280,7 +280,7 @@ public class Groom {
     System.out.println(a.getValue());
   }
 }
-"	
+"
 자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
   private int x, y;
   Parent(int x, int y) {
@@ -348,7 +348,7 @@ public class Groom {
     //ABCE
   }
 }
-"	
+"
 자바	https://www.youtube.com/watch?v=MOQzkhx5n-o&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=32	"class A {int x;}
 //class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
 public class Groom {
@@ -395,7 +395,7 @@ public class Groom {
 100
 100
 */
-"	
+"
 자바	책 86쪽	"class ClassA {
   ClassA() {
     System.out.print('A');
@@ -456,7 +456,7 @@ public class Test {
     //ABD7
     //값AED7
   }
-}"	
+}"
 자바	책 89쪽	"abstract class Animal {
   String a = "" is animal"";
   abstract void look();
@@ -507,7 +507,7 @@ public class Test {
   }
 }
 //출력값 Chicken is animal
-//Zoo"	
+//Zoo"
 자바		"/*
 %b 논리형식으로 출력
 %d 정수형식 출력
@@ -518,7 +518,7 @@ public class Test {
 %s 문자열 형식 출력
 %n 줄바꿈?
 %e 또는 %E 지수 표현식의 형식으로 출력
-*/"		
+*/"	
 파이	93쪽	"a = {'groom', 'kimgo', 'gooru'}
 a.update({'kookoo', 'gooru'})
 #.update() 메서드는 여러 개의 값을 한 번에 추가하여 집합을 확장할 때 사용합니다. 단 하나의 값만 추가할 수 있는 .add() 메서드와 달리, 리스트나 튜플, 다른 집합 등 반복 가능한(iterable) 객체를 인자로 받아 원소들을 일괄적으로 집합에 추가합니다.자세한 특징과 사용 방법은 아래와 같습니다.핵심 특징중복 제거: 이미 존재하는 값은 추가되지 않고 무시됩니다 (집합의 고유 특성).원본 변경: 새로운 집합을 반환하지 않고, 호출한 기존 집합 자체를 수정합니다.다양한 형태 입력: 리스트, 튜플, 문자열 등을 넣어도 내부 요소들을 각각 분리하여 추가합니다.
@@ -536,7 +536,7 @@ a.remove('kimgo')
 a.add('groom')
 #groom gooru kookoo
 for i in a :
-  print(""구름이 : %s"" % i)"	
+  print(""구름이 : %s"" % i)"
 파이	94쪽	"class Cls :
   x, y = 10, 20
   def chg(self) :
@@ -559,8 +559,8 @@ print(a.x, a.y)
 #20 10
 a.chg()
 print(a.x, a.y)
-#10 20"	
-				
+#10 20"
+			
 clang	https://www.youtube.com/watch?v=LOmemFIvTGw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=16	"#include <stdio.h>
 int main()
 {
@@ -580,7 +580,7 @@ int main()
   }
   printf(""%s"", str);
 }"	"출력결과
-EDCBAFFF"	
+EDCBAFFF"
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -593,7 +593,7 @@ void main()
     number = number __ div;
   }
   printf(""%d"", result);
-}"	정수의 역순 출력 프로그램	
+}"	정수의 역순 출력 프로그램
 clang	https://www.youtube.com/watch?v=pk1dEuEbybk&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=19	"#include <stdio.h>
 int isprime (int number) {
   int i;
@@ -608,7 +608,7 @@ int main() {
     cnt = cnt + isprime(i);
   printf(""소수는 개수 : %d개\n"", cnt);
   return 0;
-}"	소수의 개수를 구하는 프로그램	
+}"	소수의 개수를 구하는 프로그램
 clang	https://www.youtube.com/watch?v=91HfRzf5P9Q&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=20	"#include <stdio.h>
 void main() {
   int a = 0xB4;
@@ -627,7 +627,7 @@ void main() {
   //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
   printf(""%x"", a & b);
   //0
-}"	
+}"
 clang	https://www.youtube.com/watch?v=O4jH52Sj5ig&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=21	"#include <stdio.h>
 #include <string.h>
 void main() {
@@ -666,7 +666,7 @@ void main() {
   *p1 = '-';
   strcat(str1, str2);
   printf(""%s\n"", str1);
-}"	
+}"
 clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
 #include <string.h>
 int length(char a[], char s) {
@@ -685,7 +685,7 @@ void main() {
   int i = 0;
   i = length(a, 'c');
   printf(""%d\n"", i);
-}"		
+}"	
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -760,7 +760,7 @@ int main(int argc, char const* argv[]) {
   }
   return 0;
 }
-"	
+"
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -805,7 +805,7 @@ int main() {
     //666666
   return 0;
 }
-"	
+"
 clang	https://www.youtube.com/watch?v=NTvSTbXTYV4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=25	"#include <stdio.h>
 void sf(int* x, int* y) {
   int temp = *x;
@@ -846,10 +846,10 @@ int main(int argc, char* argv[]) {
     printf(""%d"", a[k]);
   }
   return 0;
-}"	
-				
-				
-				
+}"
+			
+			
+			
 clang	https://www.youtube.com/watch?v=8W4q-5Exg3k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=27	"#include <stdio.h>
 int main()
 {
@@ -859,7 +859,7 @@ int main()
     printf(""%c"", ____);
   }
   return 0;
-}"		
+}"	
 clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
 int len(_______);
 int main()
@@ -875,7 +875,7 @@ int len(char* p) {
     _______;
   }
   return cnt;
-}"		
+}"	
 clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
 int calc(int (*q)(int, int)) {
   int result;
@@ -893,7 +893,7 @@ int main() {
   calc(p);
   return 0;
 }
-"		
+"	
 sql		"
 
 mysql-----
@@ -927,8 +927,8 @@ from plus_minus;
 0
 1
 2
-*/"		
-				
+*/"	
+			
 sql		"create table numbers (
     num_1 integer,
     num_2 integer,
@@ -993,7 +993,7 @@ d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
 ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
 TRUNCATE(x, d
 ) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3
-"	
+"
 sql		"create table groomi
 (
     groom1 varchar(50),
@@ -1076,7 +1076,7 @@ POSITION(substr IN str)
 str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
 LOCATE('C', 'ABCDEFG') → 3
 
-"	
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1147,7 +1147,7 @@ RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반�
 RIGHT('ABCDE', 2) → '
 DE'
 REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'
-"	
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1228,7 +1228,7 @@ G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
 TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
 STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
 1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"	
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1270,7 +1270,7 @@ date에 expr unit을 더한 날
 반환
 DATE_ADD('2021-01-10', INTERVAL 10 DAY) → 2021-01-20ADDDATE(expr, days) expr에 days를 더한 날짜 반
 환
-ADDDATE('2021-01-10', 10) → 2021-01-20"		
+ADDDATE('2021-01-10', 10) → 2021-01-20"	
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1310,7 +1310,7 @@ DATE_FORMAT('2021-01-31',%y %) → 21/01/31STR_TO_DATE(str, format) str을 forma
 MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날짜 반환
 MAKEDATE(2021,100) → 2021-04-10
 SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
-WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"		
+WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"	
 자바		"public class Main {
     public static void main(String[] args) {
       int inum1, inum2, inum3, inum4, inum5;
@@ -1365,7 +1365,7 @@ WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"
 21 24 27 30 33
 36 39 42 45 48
 48
-*/"	
+*/"
 자바		"abstract class groom {
   String name;
   abstract public String getName(String val);
@@ -1415,7 +1415,7 @@ public class groomgroom {
     System.out.print(obj.getName());
   }
 }
-//Car name:Spark"	
+//Car name:Spark"
 파이썬		"students = []
 
 def add_data(stud) :
@@ -1467,7 +1467,7 @@ add_data(""구름음"")
 add_data(""름"")
 
 print(students)
-#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"	
+#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"
 java		"class Human {
     int age;
     String name;
@@ -1504,7 +1504,7 @@ class JavaLast {
 
 /*
 안녕9살김구름이다.
-*/"	
+*/"
 java		"class Groom {
   String name;
   boolean favorite;
@@ -1568,7 +1568,7 @@ class JavaLast {
 /*
 김구름 멍멍
 구르음
-*/"	
+*/"
 java		"class Time {
   boolean am;
   int hour;
@@ -1607,7 +1607,7 @@ now.whatTime(); // 인자(Argument)를 아무것도 전달하지 않음!
 }
 코드를 사용할 때는 주의가 필요합니다.이렇게 작성하면 객체가 생성될 때 저장한 now 객체의 데이터(true, 12, 34, 56)를 출력하는 것이 아니라, 메서드를 호출할 때 괄호 안에 넣는 새로운 인자값에 의존하게 됩니다. 객체지향 프로그래밍 관점에서 객체 내부 속성을 스스로 출력한다는 whatTime() 본연의 역할과 어긋나게 됩니다.이 문제를 해결하고 코드를 올바르게 수정하는 방향에 대해 더 알고 싶으시다면, 아래 항목 중 원하시는 것을 알려주세요:main 메서드에서 새로운 whatTime 메서드를 올바르게 호출하는 코드 수정법객체의 본래 데이터를 유지하면서 외부 데이터도 출력할 수 있게 하는 올바른 메서드 오버로딩 구현법
 --->의 문제 때문에 this 사용함.
-*/"		
+*/"	
 java		"class Time {
   boolean am;
   int hour;
@@ -1652,7 +1652,7 @@ class JavaTest {
     Time toto = new Time(14, 14);
     toto.whatTime();
   }
-}"		
+}"	
 자바	https://roadtofree.tistory.com/entry/31	"public class Groom {
   public static void main(String[] args){
     int[] a = {0, 1, 2, 3};
@@ -1661,7 +1661,7 @@ class JavaTest {
       System.out.print(a[i] + "" "");
     }
   }
-}"		
+}"	
 자바		"class A {
   private int a;
   
@@ -1686,7 +1686,7 @@ public class Groom {
   public static void main(String[] args) {
     B obj = new B(10);
   }
-}"		
+}"	
 자바		"class Parent {
   public void show() {
     System.out.println(""Parent"");
@@ -1708,7 +1708,7 @@ public class Groom {
 /*
 빈칸 채우기
 출력갑 Child
-*/"		
+*/"	
 자바		"public class Groom {
   public static void main(String[] args) {
     int i = 0;
@@ -1722,8 +1722,8 @@ public class Groom {
     }
     System.out.println(sum);
   }
-}"		
-자바	2020년 3회차 부터 문제 적기 abstract class vehicle	https://roadtofree.tistory.com/entry/31		
+}"	
+자바	2020년 3회차 부터 문제 적기 abstract class vehicle	https://roadtofree.tistory.com/entry/31	
 파이썬	"a = [10, 11, 12, 13]
 a.pop(1)
 #해당 위치에 있는 값을 삭제하는게 .pop()
@@ -1741,7 +1741,7 @@ print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
 d.add(4)
 print(d)
 e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"			
+print(e.values()) #dict_values(['구름', 9])로 나옴? #####"		
 자바		"public class Groom {
   public static void main(String[] args) {
     int a = 3;
@@ -1754,7 +1754,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 /*
 출력값
 10.0
-*/"		
+*/"	
 자바		"public class Groom {
   public static void main(String[] args) {
     float a = (float)100;
@@ -1766,7 +1766,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 /*
 출력값
 10.0
-*/"		
+*/"	
 자바		"public class Groom {
   public static void main(String[] args) {
     int[] Data = {1, 2, 3, 4, 5};
@@ -1777,7 +1777,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 
 /*
 12345
-*/"		
+*/"	
 sql		"create table groomi
 (
     groo1 integer,
@@ -1808,4 +1808,113 @@ where groo2 = 5;
 delete from groomi
 where groo2 = 5;
 
-"		
+"	
+java		"public class Main {
+  public static void main(String[] args) {
+    int[] Evens = {0, 2, 4, 6, 8};
+    System.out.println(Evens[3]);
+    String[] Spring = {""March"", ""April"", ""May""};
+    
+    for (int i = 0; i < Spring.length; i++)
+      System.out.println(Spring[i]);
+  }
+}
+/*
+6
+March
+April
+May
+*/"	
+java		"public class Main {
+  public static void main(String[] args) {
+    int[][] Data = {{1, 2, 3}, {4, 5, 6}};
+    
+    for (int y = 0; y < 2; y++)
+      for (int x = 0; x < 3; x++)
+        System.out.printf(""%d"", Data[y][x]);
+        
+    System.out.println();
+        
+    int Datalen = Data.length;
+    System.out.println(Datalen);
+    int DataZero = Data[0].length;
+    System.out.println(DataZero);
+  }
+}
+/*
+123456
+2
+3
+*/"	
+java		"public class Main {
+  public static void main(String[] args) {
+    int[][] Data = {{1, 2, 3}, {4, 5}, {6}, {8, 9, 10, 11}};
+    for (int y = 0; y < Data.length; y++) {
+      for (int x = 0; x < Data[y].length; x++)
+        System.out.printf(""%d"", Data[y][x]);
+      System.out.printf(""\n"");
+    }
+  }
+}
+/*
+
+*/"	
+java		"public class Main {
+  public static void main(String[] args) {
+    String[] weAreAt = {""김"", ""구"", ""름""};
+    for (String now: weAreAt) 
+      System.out.println(now);
+  }
+}
+/*
+김
+구
+름
+*/"	
+java		"public class Main {
+  static String say() {
+    return ""김구름"";
+  }
+  public static void main(String[] args) {
+    String a = say();
+    System.out.println(a);
+  }
+}
+
+//출력값 == 김구름"	
+java		"public class Main {
+  static void printThis() {
+    int i = 1;
+    while (i < 4) {
+      System.out.printf(""%d"", i);
+      i++;
+    }
+  }
+  public static void main(String[] args) {
+   printThis(); 
+  }
+}
+
+//출력값 == 123"	
+java		"public class Main {
+  static void printThis() {
+    int i = 1;
+    while (i < 4) {
+      System.out.printf(""%d"", i);
+      i++;
+    }
+    System.out.printf(""\n"");
+  }
+  public static void main(String[] args) {
+   printThis(); 
+   printThis(); 
+   printThis(); 
+  }
+}
+
+/*
+출력값
+123
+123
+123
+*/"	
