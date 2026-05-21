@@ -35,6 +35,28 @@
 -----
 
 
+x, y = input('입력 : ').split('-')
+a = ['abc123', 'def456', 'ghi789']
+a.append(x)
+a.append(y)
+#abc123 def456 ghi789 xyz321 opq654
+a.remove('def456')
+#abc123 ghi789 xyz321 opq654
+print(a[1][-3:], a[2][:-3], sep = ',')
+#789,xyz
+for i in range (3, 6) :
+  print(i, end = ' ')
+#3 4 5
+#xyz321-opq654를 입력시 출력값은
+"""
+789,xyz
+3 4 5 
+"""
+
+
+-----
+
+
 class Calc :
   result = 0
   def setdata(self, fir, sec) :
