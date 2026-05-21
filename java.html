@@ -27,6 +27,29 @@
 
 
 
+-----
+
+
+import java.util.LinkedList;
+//import java.util.LinkedList;는 자바 프로그램에서 데이터를 효율적으로 추가하고 삭제하기 위한 연결 리스트(Linked List) 자료구조 클래스를 사용하겠다고 선언하는 것입니다.
+import java.util.List;
+//import java.util.List;는 자바 표준 라이브러리(java.util 패키지)에 포함된 List 인터페이스를 현재 코드에서 사용할 수 있도록 불러오겠다는 선언입니다.
+public class Groom {
+  public static void main(String[] args) {
+    List<String> list = new LinkedList<String>();
+    //List<String> list = new LinkedList<String>();는 문자열(String) 데이터를 순서대로 저장할 수 있는 '연결 리스트' 구조의 객체를 생성하고, 이를 List 인터페이스 타입의 변수 list에 담겠다는 의미입니다.코드의 각 구성 요소가 의미하는 바를 구체적으로 살펴보면 다음과 같습니다.List<String>: 변수 list가 List 인터페이스 타입임을 선언하며, 이 리스트 안에는 문자열(String) 데이터만 들어갈 수 있음을 의미합니다.list: 생성된 객체를 가리키는 변수의 이름입니다.= new LinkedList<String>();: 실제 메모리에 데이터가 저장될 공간을 LinkedList 클래스(이중 연결 리스트)의 인스턴스로 생성합니다.
+    list.add("Seoul");
+    list.add("Busan");
+    list.add("Gwangju");
+    //.add()는 주로 List, Set, Queue 같은 컬렉션(Collection) 객체에 새로운 데이터를 추가할 때 사용하는 메서드입니다.
+    list.add(2, "Jeonju");
+    //.add(2, "Jeonju");는 List 객체의 2번 인덱스(세 번째 위치)에 "Jeonju"라는 문자열을 삽입한다는 의미입니다.
+    System.out.print(list);
+    //[Seoul, Busan, Jeonju, Gwangju]
+  }
+}
+
+
 
 -----
 
