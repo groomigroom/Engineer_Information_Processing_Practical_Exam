@@ -33,6 +33,26 @@
 
 
 
+-----
+
+
+a = {'groom', 'kimgo', 'gooru'}
+a.update({'kookoo', 'gooru'})
+#groom kimgo gooru kookoo
+a.remove('kimgo')
+#groom gooru kookoo
+a.add('groom')
+#groom gooru kookoo
+for i in a :
+  print("구름이 : %s" % i)
+##"문자열 %s" % i는 변수 i의 값을 문자열 안의 %s 위치에 삽입하여 하나의 문자열로 결합하는 문자열 포매팅(String Formatting) 기법입니다.
+"""
+출력값
+구름이 : groom
+구름이 : gooru
+구름이 : kookoo
+"""
+
 
 -----
 
