@@ -104,7 +104,35 @@ public class Groom {
     System.out.print(obj.getName());
   }
 }
-"	
+"	"abstract class Animal {
+  private String name;
+  abstract public String getName(String val);
+  public String getName() {
+    return ""Animal name:"" + name;
+  }
+  public void setName(String val) {
+    name = val;
+  }
+}
+class Dog extends Animal {
+  public Dog(String val) {
+    setName(val);
+  }
+  public String getName(String val) {
+    return ""Dog name :"" + val;
+  }
+  public String getName(byte val[]) {
+    return ""Dog name :"" + val;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Animal obj = new Dog(""Sarng"");
+    System.out.print(obj.getName());
+    //Dog name :Sarng
+  }
+}
+"
 java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=19	"public class Groom {
   public static void main(String[] args) {
     int a[] = {1, 2, 3, 4};
@@ -128,7 +156,38 @@ java	https://www.youtube.com/watch?v=rj4k3cD9Krg&list=PLYdThbnQN0eKKUh6eUbuqzD1M
       System.out.print(""C"");
     }
   }
-}"	
+}"	"public class Groom {
+  public static void main(String[] args) {
+    int a[] = {1, 2, 3, 4};
+    try {
+      //try는 예외가 발생할 가능성이 있는 코드를 의미
+      for (int i = 0; i <= 4; i++)
+        System.out.print(a[i]);
+      System.out.println();
+    }
+    catch(ArithmeticException e) {
+      //ArithmeticException은 정수 산술 연산에서 수학적으로 예외적인 상황이 발생할 때(예: 어떤 수를 \(0\)으로 나눌 때) 던져지는 런타임 예외(실행 시간 오류)입니다.
+      System.out.print(""A"");
+    }
+    catch(ArrayIndexOutOfBoundsException e) {
+      //배열의 범위를 벗어난 접근을 시도한 경우
+      //e는 예외(Exception) 객체를 담는 변수 이름입니다. e는 'Exception'의 첫 글자를 딴 관용적인 이름으로, Exception 클래스 또는 그 하위 클래스의 인스턴스를 참조합니다.
+      System.out.print(""B"");
+    }
+    finally {
+      //예외의 발생 여부와 관계없이 무조건 처리되는 코드;
+      System.out.print(""C"");
+    }
+  }
+}
+/*
+B
+1
+2
+3
+4
+*/
+"
 java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=20	"public class Groom {
   public static void main(String[] args) {
     int a[] = {1, 2, 4, 6, 8};
@@ -149,7 +208,32 @@ java	https://www.youtube.com/watch?v=IDDgAXsYuf0&list=PLYdThbnQN0eKKUh6eUbuqzD1M
     }
     System.out.println(""E"");
   }
-}"	
+}"	"public class Groom {
+  public static void main(String[] args) {
+    int a[] = {1, 2, 4, 6, 8};
+    int k = 0;
+    for (int i = a.length - 1; i >= 0; i--) {
+      //a.length - 1 == 4, 43210
+      try {
+        k = i % 2;
+        System.out.print(a[i] / k);
+        //0 1 0 1
+        //
+      }
+      catch (ArithmeticException e) {
+        //ArithmeticException은 정수 산술 연산에서 수학적으로 예외적인 상황이 발생할 때(예: 어떤 수를 \(0\)으로 나눌 때) 던져지는 런타임 예외(실행 시간 오류)입니다.
+        System.out.print(""A"");
+      }
+      //A6A2A
+      catch (Exception e) {
+        //Exception e는 앞에 작성된 ArithmeticException을 제외한 나머지 모든 예외(에러)를 안전하게 잡아내기 위한 최종 방어막을 의미합니다.상황별로 쪼개어 세부 의미를 설명해 드립니다.1. 두 번째 catch 블록의 Exception e 의미Exception (타입): 자바 예외 클래스의 '조상'입니다. 배열 범위 초과(ArrayIndexOutOfBoundsException), 데이터 변환 오류 등 거의 모든 종류의 예외를 처리할 수 있습니다.e (변수명): 첫 번째 catch문과 두 번째 catch문은 서로 다른 구역(블록)이므로, 똑같이 e라는 이름을 사용할 수 있습니다.
+        System.out.print(""B"");
+      }
+    }
+    System.out.println(""E"");
+  }
+}
+"
 clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
 clang	https://www.youtube.com/watch?v=W8mLfjs8bDw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=13	"#include <stdio.h>
 int main(void) {
@@ -192,7 +276,25 @@ public class Groom {
     //.add(2, ""Jeonju"");는 List 객체의 2번 인덱스(세 번째 위치)에 ""Jeonju""라는 문자열을 삽입한다는 의미입니다.
     System.out.print(list);
   }
-}"	
+}"	"import java.util.LinkedList;
+//import java.util.LinkedList;는 자바 프로그램에서 데이터를 효율적으로 추가하고 삭제하기 위한 연결 리스트(Linked List) 자료구조 클래스를 사용하겠다고 선언하는 것입니다.
+import java.util.List;
+//import java.util.List;는 자바 표준 라이브러리(java.util 패키지)에 포함된 List 인터페이스를 현재 코드에서 사용할 수 있도록 불러오겠다는 선언입니다.
+public class Groom {
+  public static void main(String[] args) {
+    List<String> list = new LinkedList<String>();
+    //List<String> list = new LinkedList<String>();는 문자열(String) 데이터를 순서대로 저장할 수 있는 '연결 리스트' 구조의 객체를 생성하고, 이를 List 인터페이스 타입의 변수 list에 담겠다는 의미입니다.코드의 각 구성 요소가 의미하는 바를 구체적으로 살펴보면 다음과 같습니다.List<String>: 변수 list가 List 인터페이스 타입임을 선언하며, 이 리스트 안에는 문자열(String) 데이터만 들어갈 수 있음을 의미합니다.list: 생성된 객체를 가리키는 변수의 이름입니다.= new LinkedList<String>();: 실제 메모리에 데이터가 저장될 공간을 LinkedList 클래스(이중 연결 리스트)의 인스턴스로 생성합니다.
+    list.add(""Seoul"");
+    list.add(""Busan"");
+    list.add(""Gwangju"");
+    //.add()는 주로 List, Set, Queue 같은 컬렉션(Collection) 객체에 새로운 데이터를 추가할 때 사용하는 메서드입니다.
+    list.add(2, ""Jeonju"");
+    //.add(2, ""Jeonju"");는 List 객체의 2번 인덱스(세 번째 위치)에 ""Jeonju""라는 문자열을 삽입한다는 의미입니다.
+    System.out.print(list);
+    //{""Seoul"", ""Busan"", ""Jeonju"", ""Gwangju""}
+  }
+}
+"
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -312,7 +414,41 @@ public class Groom {
     System.out.println(a.getValue());
   }
 }
-"	
+"	"class Parent {
+  private int x, y;
+  Parent(int x, int y) {
+    this.x = x;
+    this.y = y;
+    System.out.print(""A"");
+  }
+  int getValue() {
+    System.out.print(""B"");
+    return x + y;
+  }
+}
+class Child extends Parent {
+  int x;
+  Child(int x) {
+    super(x, x);
+    System.out.print(""C"");
+  }
+  Child(int x, int y) {
+    super(x, y);
+    System.out.print(""D"");
+  }
+  int getValue(int x, int y) {
+    System.out.print(""E"");
+    return x * y;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Parent a = new Child(5);
+    System.out.println(a.getValue());
+    //ABCE
+  }
+}
+"
 자바	https://www.youtube.com/watch?v=MOQzkhx5n-o&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=32	"class A {int x;}
 //class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
 public class Groom {
@@ -333,7 +469,32 @@ public class Groom {
     a.x = 100;
     System.out.println(a.x);
   }
-}"	
+}"	"class A {int x;}
+//class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
+public class Groom {
+  public static void main(String[] args) {
+    //static은 '정적인' 또는 '고정된'이라는 뜻으로, 모든 객체가 공유해야 하는 변수나 객체 생성 없이 호출할 때 사용하는 키워드입니다.💡 static의 주요 특징객체(인스턴스) 생성 없이 사용: new 키워드로 객체를 만들지 않아도 클래스 이름으로 바로 변수나 메서드에 접근할 수 있습니다.메모리의 공유: static으로 선언된 변수와 메서드는 프로그램 실행 시 메모리에 단 한 번만 생성되며, 해당 클래스의 모든 객체가 메모리를 공유합니다.프로그램 종료 시까지 유지:
+    A a = new A();
+    a.x = 50;
+    Change1(a.x);
+    System.out.println(a.x);
+    Change2(a);
+    System.out.println(a.x);
+  }
+  static void change1(int x) {
+    x = 100;
+    System.out.println(x);
+  }
+  static void change2(A a) {
+    a.x = 100;
+    System.out.println(a.x);
+  }
+}
+/*
+100
+100
+*/
+"
 자바	책 86쪽	"class ClassA {
   ClassA() {
     System.out.print('A');
@@ -682,7 +843,17 @@ void main() {
   printf(""%x\n"", a ^ b);
   //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
   printf(""%x"", a & b);
-}"	
+}"	"#include <stdio.h>
+void main() {
+  int a = 0xB4;
+  //0x는 16진수를 나타내며, B4는 값 자체를 의미합니다.
+  int b = 0xF0;
+  printf(""%x\n"", a ^ b);
+  //11 * 16 ^ 2 + 4 #####
+  //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
+  printf(""%x"", a & b);
+  //0
+}"
 clang	https://www.youtube.com/watch?v=O4jH52Sj5ig&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=21	"#include <stdio.h>
 #include <string.h>
 void main() {
@@ -777,7 +948,45 @@ int main(int argc, char const* argv[]) {
     push(6); printf(""%d"", pop()); printf(""%d"", pop());
   }
   return 0;
-}"	
+}"	"#include <stdio.h>
+#define MAX_SIZE 5
+int stack[MAX_SIZE];
+int p = -1;
+int isEmpty() {
+  if (p == -1) return 1;
+  return 0;
+}
+int isFull() {
+  if(p == MAX_SIZE - 1) return 1;
+  return 0;
+}
+void push(int num) {
+  if (isFull()) {
+    printf(""Full"");
+    return;
+  }
+  stack[++p] = num;
+}
+int pop() {
+  if (isEmpty() == 1) {
+    printf(""Empty"");
+    return;
+  }
+  return stack[p--];
+}
+int main(int argc, char const* argv[]) {
+  push(1); push(2);
+  //stack[0] == 1, stack[1] == 2
+  while (!isEmpty()) {
+    printf(""%d"", pop());
+    push(3); push(4); push(5);
+    printf(""%d"", pop());
+    printf(""%d"", pop()); printf(""%d"", pop());
+    push(6); printf(""%d"", pop()); printf(""%d"", pop());
+  }
+  return 0;
+}
+"
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -795,7 +1004,34 @@ int main() {
   for (int i = 0; i < 6; i++)
     printf(""%d"", arr[i]);
   return 0;
-}"	
+}"	"#include <stdio.h>
+void calc(int A[]) {
+  for (int i = 1; i < 6; i++) {
+    int key = A[i];
+    //key == 4
+    //key == 5, i == 2
+    //key == 1, i == 3
+    int j;
+    for (j = i - 1; j >= 0 && A[j] > key; j--) {
+      //j == 0, 6 > 4, 
+      //j == 1, 6 > 5, //j == 0,  
+      
+      A[j + 1] = A[j];
+      //A[0] == 6, A[1] == 6
+      //A[2] == 6, A[1] == 6
+    }
+    A[j + 1] = key;
+  }
+}
+int main() {
+  int arr[] = {6, 4, 5, 1, 2, 7};
+  calc(arr);
+  for (int i = 0; i < 6; i++)
+    printf(""%d"", arr[i]);
+    //666666
+  return 0;
+}
+"
 clang	https://www.youtube.com/watch?v=NTvSTbXTYV4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=25	"#include <stdio.h>
 void sf(int* x, int* y) {
   int temp = *x;
@@ -814,7 +1050,29 @@ int main(int argc, char* argv[]) {
     printf(""%d"", a[k]);
   }
   return 0;
-}"	
+}"	"#include <stdio.h>
+void sf(int* x, int* y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+int main(int argc, char* argv[]) {
+  int a[] = {5, 3, 8, 1, 2, 7};
+  for (int i = 0; i < 5; i++) {
+    int least = i;
+    //i == 0
+    for (int j = i + 1; j < 6; j++)
+    //j == 1, j == 2,
+    
+      if (a[i] < a[least]) least = j;
+    sf(&a[i], &a[least]);
+    //3 5 8 1 2 7
+  }
+  for (int k = 0; k <= 5; k++) {
+    printf(""%d"", a[k]);
+  }
+  return 0;
+}"
 clang	https://www.youtube.com/watch?v=8W4q-5Exg3k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=27	"#include <stdio.h>
 int main()
 {
@@ -926,7 +1184,37 @@ LOG10() 밑이 10인 x의 로그 LOG10(100) → 2
 LOG2() 밑이 2인 x의 로그 LOG2(8) → 3
 MOD(n, m) n을 m으로 나눈 나머지 MOD(21, 5) → 1
 POW(x, y),
-POWER(x, y) x의 y승 POWER(2, 3) → 8"	
+POWER(x, y) x의 y승 POWER(2, 3) → 8"	"create table numbers (
+    num_1 integer,
+    num_2 integer,
+    num_3 integer,
+    num_4 float
+-- decimal을 추천한다고 함. decimal(총 자릿수, 소수점 자릿수) 형태로
+);
+
+insert into numbers
+values
+(1, 2, 3, 3.6),
+(-4, 5, 6, 4.3),
+(-7, 8, 9, 5.7);
+
+select abs(num_1), ceil(num_4), floor(num_4), mod(20, num_1), pow(num_1, num_2)
+from numbers;
+
+/*
+abs(num_1) | ceil(num_4) | floor(num_4) | mod(20, num_1) | pow(num_1, num_2) |
+1               | 4               | 3                 | 0                     | 1                           |
+4               | 5               | 4                 | 0                     | 1024                      |
+7               | 6               | 5                 | 6                     | 5764801                 |
+                 -- 최소 정수
+*/
+
+select log(3, num_3)
+from numbers
+where num_3 == 9;
+
+log(3, num_3)
+2"
 sql		"create table numbers (
     num_1 integer,
     num_2 integer,
@@ -956,7 +1244,42 @@ d 생략 시 0을 적용해 정수 반환
 d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
 ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
 TRUNCATE(x, d
-) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3"	
+) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3"	"reate table numbers (
+    num_1 integer,
+    num_2 integer,
+    num_3 integer,
+    num_4 float
+);
+
+insert into numbers
+values
+(1, 2, 3, 3.633),
+(-4, 5, 6, 4.356),
+(-7, 8, 9, 5.765);
+
+
+
+select round(num_4, 1), sqrt(num_3), truncate(num_4, 1)
+from numbers;
+
+round(num_4, 1)                    | sqrt(num_3) | truncate(num_4, 1) |
+3.6                                       | 루트3         | 3.6                       |
+4.4                                       | 루트6         | 4.3                       |
+5.8                                       | 3               | 5.7                       |
+-- 소수점 이하 자리까지 반올림                    --소수점 몇자리로 잘라냄
+
+
+RAND([n])
+0보다 크거나 같고 1보다 작은 난수(실수) 반환RAND 함수를 실행할 때마다 반환되는 값(난수)은달라지지만, 매개변수 n(생략 가능)을 명시하면여러 번 실행해도 같은 값 반환
+RAND() → 0.14949947330122765
+ROUND(x, d)
+x를 소수점 이하 d 자리까지 반올림
+d 생략 시 0을 적용해 정수 반환
+d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
+ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
+TRUNCATE(x, d
+) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3
+"
 sql		"create table groomi
 (
     groom1 varchar(50),
@@ -997,7 +1320,49 @@ B') → A-BFORMAT(x, d)
 FORMAT(123456.13457, 3) → 123,456.135INSTR(str, substr) str 문자열에서 substr 문자(열)를 찾아시작 위치 반환 INSTR('ABC', 'C') → 3LOCATE(substr, str, pos)
 POSITION(substr IN str)
 str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
-LOCATE('C', 'ABCDEFG') → 3"	
+LOCATE('C', 'ABCDEFG') → 3"	"create table groomi
+(
+    groom1 varchar(50),
+    groom2 varchar(50),
+    groom3 varchar(50),
+    groom4 varchar(50),
+    gromm5 float
+);
+
+
+insert into groomi
+values
+(""김구름"", ""멍멍"", ""구름구름"", ""구우름"", 123454.33344),
+(""groom"", ""mung"", ""구름구름이"", ""구름"", 3434.556664),
+(""gugu"", ""mong"", ""구름구름이이"", ""구우우름"", 55434.556664);
+
+select char_length(groom1), length(groom1), concat(groom1, groom2), concat_ws(""groom"", groom1, groom2), format(groom5, 3), instr(groom1, ""구""), locate(""름"", groom3, 4), position(""름"" in groom3), locate(""름"", groom4) 
+from groomi;
+
+char_length(groom1) | length(groom1) | concat(groom1, groom2) | concat_ws(""groom"", groom1, groom2) | 
+3                            | 9                     | 김구름멍멍                    | 김구름groom멍멍                            |
+5                            | 5                     | groommung                  | groomgroommung                          |
+4                            | 4                     | gugumong                    | gugugroommong                            |
+-- 문자열 개수 반환    바이트 수 반환
+
+format(groom5, 3) | instr(groom1, ""구"") | locate(""름"", groom3, 4) | position(""름"" in groom3) | 
+123,454.333          | 2                         | 4                               | 2                                |
+3,434.557             | null                      | 4                               | 2                                |
+55,434.557            | null                      | 4                              | 2                                |
+
+locate(""름"", groom4) |
+3                           |
+2                           |
+4                           |
+
+
+
+INSTR(str, substr) str 문자열에서 substr 문자(열)를 찾아시작 위치 반환 INSTR('ABC', 'C') → 3LOCATE(substr, str, pos)
+POSITION(substr IN str)
+str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
+LOCATE('C', 'ABCDEFG') → 3
+
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1038,7 +1403,37 @@ LEFT(str, len) str 문자열을 len 길이만큼 왼쪽에서 잘라 반환LEFT(
 RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반환
 RIGHT('ABCDE', 2) → '
 DE'
-REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'"	오류뜸
+REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'"	"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50)
+);
+
+insert into groomi
+values
+(""GROOMI"", ""groomi"",),
+(""GRULD"", ""clude"",),
+
+
+select lower(chacha), lcase(chacha), upper(chacha2), ucase(chacha2), lpad(chacha, 8, ""구""), rpad(chacha2, 10, ""름""), left(chacha, 3), right(chacha2, 4), repeat(chacha, 3)
+from groomi;
+
+lower(chacha) | lcase(chacha) | upper(chacha2) | ucase(chacha2) | lpad(chacha, 8, ""구"") | 
+groomi          | groomi          | GROOMI          | GROOMI         | 구구GROOMI          |
+gruld             | gruld            | GRULD             | GRULD           | 구구구GRULD          |
+
+rpad(chacha2, 10, ""름"") | left(chacha, 3) | right(chacha2, 4) | repeat(chacha, 3)               |
+groomi름름름름           | GRO             | oomi                 | GROOMIGROOMIGROOMI |
+clude름름름름름          | GRU              | lude                  | GRULDGRULDGRULD         |
+
+
+LTRIM(str) str 문자열에서 왼쪽 공백 제거 LTRIM(' ABC ') → 'ABC' RTRIM(str) str 문자열에서 오른쪽 공백 제거 RTRIM(' ABC ') → ' ABC'
+LEFT(str, len) str 문자열을 len 길이만큼 왼쪽에서 잘라 반환LEFT('ABCDE', 2) → 'AB'
+RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반환
+RIGHT('ABCDE', 2) → '
+DE'
+REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -1083,7 +1478,43 @@ G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
 TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
 STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
 1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"	
+"	"create table groomi
+(
+    chacha varchar(50),
+    chacha2 varchar(50),
+    chacha3 varchar(50)
+);
+
+insert into groomi
+values
+(""groom"", ""oogroomoo"", ""groom""),
+(""grooom"", ""oogroooomooo"", ""grooom""),
+(""gruoom"", ""oogruuumoo"", ""gruuum"");
+
+select replace(chacha, ""o"", ""e""), reverse(chacha), substr(chacha, 3, 3), substring(chacha, 2, 2), mid(chacha, 3, 3), trim(leading 'o' from chacha2), trim(trailing 'o' from chacha2), trim(both 'o' from chacha2), strcmp(chacha, chacha3);
+
+replace(chacha, ""o"", ""e"") | reverse(chacha) | substr(chacha, 3, 3)
+greem                         | moorg             | oom
+greeem                        | mooorg           | ooo
+grueem                        | moourg           | uoo
+                                                            -- SUBSTR(str, pos, len) SUBSTRING(str, pos, len)
+
+SPACE(N) N개의 공백 문자 반환 SPACE(3) → ' '
+SUBSTR(str, pos, len)
+
+MID(str, pos, len)
+str 문자열의 pos 위치에서 len 길이만큼 문자를 잘라서 반환
+SUBSTR('ABCD', 3, 1)→ 'C'
+TRIM([{BOTH|LEADING|T
+RAILING} [remstr] FROM]
+str)
+str 문자열에서 remstr 문자를 앞(LEADIN
+G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
+에서 제거
+TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
+STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
+1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
+"
 sql		"create table groomi
 (
     chacha varchar(50),
