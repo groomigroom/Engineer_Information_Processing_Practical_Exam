@@ -25,6 +25,40 @@
     <pre>
 
 
+-----
+
+#include <stdio.h>
+int main(void) {
+  int a[5];
+  int i;
+  
+  for (i = 0; i < 5; i++) {
+    printf("숫자 입력 : ");
+    scanf("%d", &a[i]);
+    //12345
+  }
+  for (i = 0; i < 5; i++) {
+    printf("%d", a[(i + 2) % 5]);
+  }
+  return 0;
+}
+//빈칸 채우기
+/*
+#include <stdio.h>
+int main(void) {
+  int a[5];
+  int i;
+  
+  for (i = 0; i < 5; i++) {
+    printf("숫자 입력 : ");
+    scanf("%d", &a[i]);
+  }
+  for (i = 0; i < 5; i++) {
+    printf("%d", a[_____]);
+  }
+  return 0;
+}
+*/
 
 -----
 
