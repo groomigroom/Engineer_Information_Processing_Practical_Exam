@@ -27,6 +27,40 @@
 
 
 
+
+-----
+
+
+public class Groom {
+  public static void main(String[] args) {
+    int a = 10, b = 15, c = 10, d = 20;
+    if ((a != b | a == c) & (c > d)) {
+      a = b + c;
+      b = b - c;
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+      }
+    }
+    else {
+      a = c + d;
+      //30
+      d = d - c;
+      //10
+      if((15 == b ^ c != a)) {
+        System.out.println(a);
+      }
+      else {
+        System.out.println(b);
+        //15
+      }
+    }
+  }
+}
+
+
 -----
 
 
