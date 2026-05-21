@@ -32,6 +32,36 @@
 
 public class Groom {
   public static void main(String[] args) {
+    int a[] = {1, 2, 4, 6, 8};
+    int k = 0;
+    for (int i = a.length - 1; i >= 0; i--) {
+      //a.length - 1 == 4, 43210
+      try {
+        k = i % 2;
+        System.out.print(a[i] / k);
+        //0 1 0 1
+        //
+      }
+      catch (ArithmeticException e) {
+        //ArithmeticException은 정수 산술 연산에서 수학적으로 예외적인 상황이 발생할 때(예: 어떤 수를 \(0\)으로 나눌 때) 던져지는 런타임 예외(실행 시간 오류)입니다.
+        System.out.print("A");
+      }
+      //A6A2A
+      catch (Exception e) {
+        //Exception e는 앞에 작성된 ArithmeticException을 제외한 나머지 모든 예외(에러)를 안전하게 잡아내기 위한 최종 방어막을 의미합니다.상황별로 쪼개어 세부 의미를 설명해 드립니다.1. 두 번째 catch 블록의 Exception e 의미Exception (타입): 자바 예외 클래스의 '조상'입니다. 배열 범위 초과(ArrayIndexOutOfBoundsException), 데이터 변환 오류 등 거의 모든 종류의 예외를 처리할 수 있습니다.e (변수명): 첫 번째 catch문과 두 번째 catch문은 서로 다른 구역(블록)이므로, 똑같이 e라는 이름을 사용할 수 있습니다.
+        System.out.print("B");
+      }
+    }
+    System.out.println("E");
+    //A6A2AE
+  }
+}
+
+
+-----
+
+public class Groom {
+  public static void main(String[] args) {
     int a[] = {1, 2, 3, 4};
     try {
       //try는 예외가 발생할 가능성이 있는 코드를 의미
