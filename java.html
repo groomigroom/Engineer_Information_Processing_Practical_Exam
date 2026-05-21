@@ -27,6 +27,39 @@
 
 
 
+
+-----
+
+public class Groom {
+  public static void main(String[] args) {
+    int a[] = {1, 2, 3, 4};
+    try {
+      //try는 예외가 발생할 가능성이 있는 코드를 의미
+      for (int i = 0; i <= 4; i++)
+        System.out.print(a[i]);
+      System.out.println();
+    }
+    catch(ArithmeticException e) {
+      //ArithmeticException은 정수 산술 연산에서 수학적으로 예외적인 상황이 발생할 때(예: 어떤 수를 \(0\)으로 나눌 때) 던져지는 런타임 예외(실행 시간 오류)입니다.
+      System.out.print("A");
+    }
+    catch(ArrayIndexOutOfBoundsException e) {
+      //배열의 범위를 벗어난 접근을 시도한 경우
+      //e는 예외(Exception) 객체를 담는 변수 이름입니다. e는 'Exception'의 첫 글자를 딴 관용적인 이름으로, Exception 클래스 또는 그 하위 클래스의 인스턴스를 참조합니다.
+      System.out.print("B");
+    }
+    finally {
+      //예외의 발생 여부와 관계없이 무조건 처리되는 코드;
+      System.out.print("C");
+    }
+  }
+}
+
+/*
+1234BC 최종값으로
+System.out.println();이 실행되지 않는 이유는 그전에 배열 예외가 발생하여 catch 블록으로 즉시 탈출했기 때문입니다.자바의 try-catch 작동 원리를 바탕으로 한 단계씩 설명해 드리겠습니다.1. 실제 실행 흐름 분석int a[] = {1, 2, 3, 4}; 배열의 크기는 4이며, 인덱스는 0, 1, 2, 3만 존재합니다.i = 0, 1, 2, 3 일 때: System.out.print(a[i]);가 정상 실행되어 화면에 1234가 차례대로 출력됩니다.i = 4 일 때: for 문의 조건(i <= 4)을 만족하므로 반복문 내부로 진입하여 a[4]에 접근을 시도합니다.예외 발생: 존재하지 않는 인덱스인 4에 접근했으므로 그 즉시 ArrayIndexOutOfBoundsException이 발생합니다.2. System.out.println();이 실행되지 않는 이유즉시 중단 및 탈출: try 블록 안에서 예외가 발생하는 순간, 그 아래에 있는 나머지 코드들은 전부 무시되고 실행이 중단됩니다.따라서 for 문 바로 다음에 있는 System.out.println();까지 코드가 도달하지 못하고 곧바로 catch 블록으로 건너뛰게 됩니다.3. 올바른 최종 출력 결과: 1234BC1234: 예외가 발생하기 전 for 문에서 출력된 값입니다.B: ArrayIndexOutOfBoundsException을 잡아낸 catch 블록이 실행되면서 출력됩니다.C: 예외 발생 여부와 상관없이 무조건 실행되는 finally 블록의 코드입니다.만약 System.out.println();을 정상적으로 실행시키고 싶다면, for 문의 반복 조건을 i < 4로 수정하여 예외가 발생하지 않도록 해야 합니다.
+*/
+
 -----
 
 public class Groom {
