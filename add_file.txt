@@ -122,10 +122,8 @@ public class Groom {
     Parent one = new Child(10);
     System.out.println(one.getArea());
   }
-}"	실행순서 맞추기
-			
-			
-			
+}"	"실행순서 맞추기 312
+567도 "
 자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
   private int x, y;
   Parent(int x, int y) {
@@ -145,6 +143,7 @@ public class Groom {
     this.x = x;
     this.y = y;
     System.out.print(""A"");
+    //1번 현재 출력값 A
   }
   int getValue() {
     System.out.print(""B"");
@@ -154,7 +153,9 @@ public class Groom {
 class Child extends Parent {
   int x;
   Child(int x) {
+    //1번--->Child(int x) 생성자가 호출됩니다.
     super(x, x);
+    //super
     System.out.print(""C"");
   }
   Child(int x, int y) {
@@ -169,63 +170,16 @@ class Child extends Parent {
 public class Groom {
   public static void main(String[] args) {
     Parent a = new Child(5);
+    //Parent 부모타입 참조 변수 a에 new Child(5)를 자식 객체를 생성 후 대입하기. Child(int x) 생성자가 호출됩니다.
     System.out.println(a.getValue());
   }
 }
 
 /*
-이 코드의 실행 결과는 ACB10입니다.자바의 생성자 상속, 매개변수에 따른 생성자 선택, 그리고 메서드 오버로딩(Overloading) 규칙에 따라 동작합니다. 단계별 동작 원리는 다음과 같습니다.1. 객체 생성과 생성자 실행 (Parent a = new Child(5);)부모 타입 참조 변수 a에 new Child(5)로 자식 객체를 생성하여 대입합니다. 매개변수가 1개(정수)이므로 Child(int x) 생성자가 호출됩니다.부모 생성자 호출 (super(x, x);)Child(5) 내부에서 가장 먼저 super(5, 5);가 실행됩니다.부모 클래스의 Parent(int x, int y) 생성자로 이동하여 부모의 private 변수 x와 y에 각각 5를 저장합니다.부모 생성자 안의 System.out.print(""A"");가 실행되어 화면에 A가 출력됩니다.자식 생성자 나머지 실행부모 생성자가 끝나고 다시 Child(int x) 생성자로 돌아와 System.out.print(""C"");를 실행합니다. 화면에 C가 출력됩니다.주의: Child 내부의 인스턴스 변수 int x;는 이 과정에서 명시적으로 초기화되지 않아 기본값 0 상태입니다.2. 메서드 호출 (a.getValue())매개변수가 없는 getValue() 메서드를 호출합니다.참조 변수 타입의 한계변수 a는 Parent 타입입니다. 따라서 a를 통해서는 Parent 클래스에 정의되어 있거나 자식 클래스에서 오버라이딩(재정의)한 메서드만 호출할 수 있습니다.오버라이딩 여부 확인자식 클래스 Child에는 getValue(int x, int y)라는 매개변수가 2개인 메서드만 있습니다.이는 이름만 같고 형태가 다른 오버로딩(Overloading)입니다. 매개변수가 없는 원래의 getValue()를 오버라이딩한 것이 아닙니다.부모 메서드 실행자식 클래스에 오버라이딩된 getValue()가 없으므로, JVM은 부모 클래스(Parent)의 getValue()를 실행합니다.System.out.print(""B"");가 실행되어 화면에 B가 출력됩니다.부모의 private 변수 x(5)와 y(5)를 더한 값인 10을 반환합니다.3. 최종 출력 (System.out.println(...))a.getValue()가 반환한 값 10이 최종적으로 출력됩니다.앞서 출력된 A, C, B 뒤에 10이 붙어 최종 결과는 ACB10이 됩니다.
+이 코드의 실행 결과는 ACB10입니다.자바의 생성자 상속, 매개변수에 따른 생성자 선택, 그리고 메서드 오버로딩(Overloading) 규칙에 따라 동작합니다. 단계별 동작 원리는 다음과 같습니다.
+
+부모 생성자 호출 (super(x, x);)Child(5) 내부에서 가장 먼저 super(5, 5);가 실행됩니다.부모 클래스의 Parent(int x, int y) 생성자로 이동하여 부모의 private 변수 x와 y에 각각 5를 저장합니다.부모 생성자 안의 System.out.print(""A"");가 실행되어 화면에 A가 출력됩니다.자식 생성자 나머지 실행부모 생성자가 끝나고 다시 Child(int x) 생성자로 돌아와 System.out.print(""C"");를 실행합니다. 화면에 C가 출력됩니다.주의: Child 내부의 인스턴스 변수 int x;는 이 과정에서 명시적으로 초기화되지 않아 기본값 0 상태입니다.2. 메서드 호출 (a.getValue())매개변수가 없는 getValue() 메서드를 호출합니다.참조 변수 타입의 한계변수 a는 Parent 타입입니다. 따라서 a를 통해서는 Parent 클래스에 정의되어 있거나 자식 클래스에서 오버라이딩(재정의)한 메서드만 호출할 수 있습니다.오버라이딩 여부 확인자식 클래스 Child에는 getValue(int x, int y)라는 매개변수가 2개인 메서드만 있습니다.이는 이름만 같고 형태가 다른 오버로딩(Overloading)입니다. 매개변수가 없는 원래의 getValue()를 오버라이딩한 것이 아닙니다.부모 메서드 실행자식 클래스에 오버라이딩된 getValue()가 없으므로, JVM은 부모 클래스(Parent)의 getValue()를 실행합니다.System.out.print(""B"");가 실행되어 화면에 B가 출력됩니다.부모의 private 변수 x(5)와 y(5)를 더한 값인 10을 반환합니다.3. 최종 출력 (System.out.println(...))a.getValue()가 반환한 값 10이 최종적으로 출력됩니다.앞서 출력된 A, C, B 뒤에 10이 붙어 최종 결과는 ACB10이 됩니다.
 */"
-			
-자바	https://www.youtube.com/watch?v=MOQzkhx5n-o&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=32	"class A {int x;}
-//class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
-public class Groom {
-  public static void main(String[] args) {
-    //static은 '정적인' 또는 '고정된'이라는 뜻으로, 모든 객체가 공유해야 하는 변수나 객체 생성 없이 호출할 때 사용하는 키워드입니다.💡 static의 주요 특징객체(인스턴스) 생성 없이 사용: new 키워드로 객체를 만들지 않아도 클래스 이름으로 바로 변수나 메서드에 접근할 수 있습니다.메모리의 공유: static으로 선언된 변수와 메서드는 프로그램 실행 시 메모리에 단 한 번만 생성되며, 해당 클래스의 모든 객체가 메모리를 공유합니다.프로그램 종료 시까지 유지:
-    A a = new A();
-    a.x = 50;
-    Change1(a.x);
-    System.out.println(a.x);
-    Change2(a);
-    System.out.println(a.x);
-  }
-  static void change1(int x) {
-    x = 100;
-    System.out.println(x);
-  }
-  static void change2(A a) {
-    a.x = 100;
-    System.out.println(a.x);
-  }
-}"	"class A {int x;}
-//class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
-public class Groom {
-  public static void main(String[] args) {
-    //static은 '정적인' 또는 '고정된'이라는 뜻으로, 모든 객체가 공유해야 하는 변수나 객체 생성 없이 호출할 때 사용하는 키워드입니다.💡 static의 주요 특징객체(인스턴스) 생성 없이 사용: new 키워드로 객체를 만들지 않아도 클래스 이름으로 바로 변수나 메서드에 접근할 수 있습니다.메모리의 공유: static으로 선언된 변수와 메서드는 프로그램 실행 시 메모리에 단 한 번만 생성되며, 해당 클래스의 모든 객체가 메모리를 공유합니다.프로그램 종료 시까지 유지:
-    A a = new A();
-    a.x = 50;
-    Change1(a.x);
-    System.out.println(a.x);
-    Change2(a);
-    System.out.println(a.x);
-  }
-  static void Change1(int x) {
-    x = 100;
-    System.out.println(x);
-  }
-  static void Change2(A a) {
-    a.x = 100;
-    System.out.println(a.x);
-  }
-}
-/*
-100
-100
-*/
-/*
-제시해주신 자바 코드의 핵심 동작 원리는 자바의 데이터 전달 방식인 '값에 의한 호출(Call by Value)'과 메모리(스택과 힙)의 구조에 있습니다.프로그램의 실행 순서에 따라 메모리가 어떻게 움직이는지 단계별로 명확하게 설명해 드리겠습니다.1. A a = new A(); a.x = 50; (객체 생성 및 초기화)메모리 할당: new A()가 실행되면서 힙(Heap) 메모리에 실제 x 공간을 가진 객체가 생성됩니다.참조 변수: 스택(Stack) 메모리에 있는 변수 a는 힙에 있는 객체의 주소값(예: 0x100)을 가집니다.값 대입: a.x = 50;에 의해 주소 0x100에 있는 x의 값이 50이 됩니다.2. Change1(a.x); 실행 (기본형 타입 전달)동작 원리 (값 복사): a.x는 정수 변수이므로 실제 데이터인 50이라는 ""값 자체""가 Change1 메서드의 매개변수 x로 복사됩니다.메서드 내부 (x = 100;): Change1 내부에 선언된 로컬 변수 x가 100으로 바뀔 뿐입니다. 이는 힙 메모리에 있는 원래 객체 a.x와는 아무런 연관이 없는 별개의 공간입니다.첫 번째 출력 (System.out.println(x);): 메서드 내부의 변수 x를 출력하므로 100이 나옵니다.메서드 종료 후 (System.out.println(a.x);): Change1이 끝나면 메서드 내 로컬 변수들은 메모리(스택)에서 사라집니다. 원래 a.x는 전혀 오염되지 않았으므로 50이 출력됩니다.(※ 주석에 적어주신 출력 결과 '100, 100' 중 첫 번째 100은 Change1 내부의 출력이며, 메인 함수에서의 a.x 출력은 여전히 50입니다.)3. Change2(a); 실행 (참조형 타입 전달)동작 원리 (주소 복사): 변수 a는 객체의 ""주소값(0x100)""을 가지고 있습니다. Change2(a)를 호출하면 이 주소값이 매개변수 a로 복사됩니다.메서드 내부 (a.x = 100;): Change2 내부의 a도 원본과 똑같은 주소(0x100)를 가리키고 있습니다. 따라서 a.x = 100;을 실행하면 실제 힙 메모리에 있는 객체의 x 값이 100으로 바뀝니다.두 번째 출력 (System.out.println(a.x);): 힙 메모리의 값이 바뀌었으므로 당연히 100이 출력됩니다.메서드 종료 후 (System.out.println(a.x);): Change2가 종료되어 메서드 내 참조 변수는 사라지지만, 힙 메모리의 객체 값은 이미 변경된 상태입니다. 따라서 메인 함수에서 다시 a.x를 출력해도 100이 나옵니다.💡 핵심 요약자바는 언제나 값을 복사해서 넘겨주는 Call by Value로만 동작합니다.기본형(Primitive) 변수를 넘기면 실제 데이터 값이 복사되므로 원본이 안전합니다.참조형(Reference) 변수를 넘기면 객체의 주소 값이 복사되므로, 메서드 내부에서 주소를 타고 들어가 원본 객체를 수정할 수 있습니다.이 메모리 구조와 전달 방식에 대해 더 시각적인 예시나 추가로 궁금한 점이 있으시면 편하게 말씀해 주세요!
-*/
-"
 clang	https://www.youtube.com/watch?v=LOmemFIvTGw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=16	"#include <stdio.h>
 int main()
 {
@@ -244,10 +198,70 @@ int main()
     i--;
   }
   printf(""%s"", str);
-}"	"출력결과
+}
+/*
+제시해주신 코드는 문자열 ""ABCDEFFF""에서 처음으로 나타나는 문자 'F'의 직전까지(즉, ""ABCDE"")만 선택하여 순서를 반대로 뒤집는(Reverse) 프로그램입니다.
+코드가 작동하는 원리를 단계별로 나누어 설명해 드리겠습니다.
+------------------------------
+## 1단계: 첫 번째 'F'의 위치 찾기 (탐색)
+
+for (i = 0; i < 8; i++) {
+  ch = str[i];
+  if (ch == 'F')
+    break;
+}
+
+
+* 배열의 0번 인덱스부터 차례대로 문자를 검사합니다.
+* i = 5가 되었을 때, str[5]의 값이 처음으로 'F'가 되므로 if (ch == 'F') 조건이 참이 되어 break로 반복문을 빠져나옵니다.
+* 결과: 이 반복문이 끝난 시점의 i 값은 5입니다.
+
+------------------------------
+## 2단계: 뒤집을 대상의 마지막 인덱스 설정
+
+i--;
+
+
+* i 값을 1 감소시켜 5에서 4로 만듭니다.
+* str[4]는 문자 'E'를 가리키며, 이는 뒤집을 영역(""ABCDE"")의 마지막 글자 인덱스가 됩니다.
+
+------------------------------
+## 3단계: 양방향에서 접근하여 문자 교환 (뒤집기)
+
+for(j = 0; j < i; j++) {
+  ch = str[j];
+  str[j] = str[i];
+  str[i] = ch;
+  i--;
+}
+
+이 반복문은 시작점(j)은 앞으로 나아가고, 끝점(i)은 뒤로 오면서 두 위치의 문자를 서로 맞바꿉니다. ch 변수는 값을 임시로 저장하는 컵 역할을 합니다.
+
+* 1회전 (j = 0, i = 4)
+* j(0) < i(4)이므로 조건 만족.
+   * str[0]('A')과 str[4]('E')의 위치를 바꿉니다.
+   * 문자열 상태: ""EBCDAFFF""
+   * 루프 끝에서 i--가 실행되어 i = 3이 되고, for문의 증감식에 의해 j++가 되어 j = 1이 됩니다.
+* 2회전 (j = 1, i = 3)
+* j(1) < i(3)이므로 조건 만족.
+   * str[1]('B')과 str[3]('D')의 위치를 바꿉니다.
+   * 문자열 상태: ""EDCBAFFF""
+   * 루프 끝에서 i--로 i = 2, 증감식 j++로 j = 2가 됩니다.
+* 루프 종료 (j = 2, i = 2)
+* j(2) < i(2) 조건을 만족하지 않으므로(거짓) 반복문이 종료됩니다. 가운데 글자인 'C'는 제자리에 남습니다.
+
+------------------------------
+## 4단계: 출력
+
+printf(""%s"", str);
+
+최종적으로 변환된 배열 str을 출력하여 화면에는 EDCBAFFF가 나타나게 됩니다.
+------------------------------
+이 코드의 작동 원리 중에서 문자 교환(Swap) 메커니즘이나 for문 안에서 i--와 j++가 동시에 변하는 구조에 대해 더 궁금한 점이 있으신가요?
+
+
+*/"	"출력결과
 EDCBAFFF"
-			
-			
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -299,7 +313,8 @@ void main() {
 44
 b0
 다시 계산해 보기
-*/ "
+*/ 
+C언어에서 ^ 기호는 수학에서의 거듭제곱(제곱)이 아니라, 비트 단위 XOR(배타적 논리합) 연산자입니다.두 숫자의 같은 자리 비트를 비교하여 값이 서로 다르면 1, 같으면 0을 반환합니다.💡 XOR 연산의 기본 규칙0 ^ 0 = 01 ^ 1 = 0 (같으면 0)1 ^ 0 = 10 ^ 1 = 1 (다르면 1)"
 clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
 #include <string.h>
 int length(char a[], char s) {
@@ -318,12 +333,27 @@ void main() {
   int i = 0;
   i = length(a, 'c');
   printf(""%d\n"", i);
-}"	다시 계산하기
-			
-			
-			
-			
-			
+}"	"#include <stdio.h>
+#include <string.h>
+int length(char a[], char s) {
+ char* p;
+ int len = 0;
+ p = strchr(a, s);
+//
+ printf(""%s"", p);
+ while (*p != '\0') {
+ len++;
+ p++;
+ }
+ return len;
+}
+void main() {
+ char a[] = ""selfcontrol"";
+ int i = 0;
+ i = length(a, 'c');
+ printf(""%d\n"", i);
+}
+//strchr은 C언어 표준 라이브러리(<string.h>)에서 제공하는 함수로, 문자열 안에서 특정 문자가 처음으로 나타나는 위치(포인터)를 찾을 때 사용합니다. (이름의 유래: string + character)"
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -443,7 +473,60 @@ int main() {
     //666666
   return 0;
 }
-//다시 계산하기"
+//다시 계산하기
+제시해주신 C언어 코드는 삽입 정렬(Insertion Sort) 알고리즘을 구현한 것으로, 배열의 무작위 숫자들이 오름차순(작은 순서부터 큰 순서로) 정렬되는 동작 원리를 가지고 있습니다.
+프로그램의 핵심 실행 과정을 단계별로 알기 쉽게 설명해 드리겠습니다.
+------------------------------
+## 💡 핵심 동작 원리 (요약)
+이 알고리즘은 **""이미 정렬된 앞부분""**과 **""아직 정렬되지 않은 뒷부분""**으로 배열을 나누어 생각합니다.
+아직 정렬되지 않은 영역의 첫 번째 값(key)을 선택한 뒤, 앞의 정렬된 값들과 뒤에서부터 하나씩 비교하며 **자신의 알맞은 자리를 찾아 '삽입'**하는 방식입니다.
+------------------------------
+## 🔍 루프(Loop)별 상세 추적 (Trace)
+처음 배열 상태는 [6, 4, 5, 1, 2, 7] 입니다. calc 함수 내부의 바깥쪽 반복문(i가 1부터 5까지 증가)이 돌면서 어떻게 변하는지 보겠습니다.
+## 1단계: i = 1 일 때 (key = A[1]인 4)
+
+* 비교 대상: 앞의 A[0]인 6
+* 원리: 6이 4보다 크므로, 6을 오른쪽으로 한 칸 밀어냅니다. ([6, 6, 5, 1, 2, 7])
+* 삽입: 비어 있는 맨 앞자리에 key 값인 4를 넣습니다.
+* 결과: [4, 6, 5, 1, 2, 7] (앞의 2개 정렬 완료)
+
+## 2단계: i = 2 일 때 (key = A[2]인 5)
+
+* 비교 대상: 앞의 6, 4
+* 원리: 6은 5보다 크므로 오른쪽으로 밀어냅니다. 그 앞의 4는 5보다 작으므로 멈춥니다.
+* 삽입: 6이 있던 자리에 key 값인 5를 넣습니다.
+* 결과: [4, 5, 6, 1, 2, 7] (앞의 3개 정렬 완료)
+
+## 3단계: i = 3 일 때 (key = A[3]인 1)
+
+* 비교 대상: 앞의 6, 5, 4
+* 원리: 6, 5, 4 모두 1보다 크므로 전부 오른쪽으로 한 칸씩 밀려납니다. ([4, 4, 5, 6, 2, 7] 형태로 연쇄 이동)
+* 삽입: 가장 앞에 key 값인 1을 넣습니다.
+* 결과: [1, 4, 5, 6, 2, 7] (앞의 4개 정렬 완료)
+
+## 4단계: i = 4 일 때 (key = A[4]인 2)
+
+* 비교 대상: 앞의 6, 5, 4, 1
+* 원리: 6, 5, 4는 2보다 크므로 오른쪽으로 밀어내고, 1은 2보다 작으므로 1 바로 뒷자리에서 멈춥니다.
+* 삽입: 4가 있던 자리에 key 값인 2를 넣습니다.
+* 결과: [1, 2, 4, 5, 6, 7] (앞의 5개 정렬 완료)
+
+## 5단계: i = 5 일 때 (key = A[5]인 7)
+
+* 비교 대상: 앞의 6, 5, 4, 2, 1
+* 원리: 직전 값인 A[4]인 6이 이미 7보다 작습니다. 안쪽 for문의 조건(A[j] > key)이 처음부터 거짓이 되므로 아무것도 밀어내지 않고 루프가 곧바로 종료됩니다.
+* 삽입: 제자리에 그대로 7이 유지됩니다.
+* 결과: [1, 2, 4, 5, 6, 7] (전체 정렬 완료)
+
+------------------------------
+## 🖥️ 최종 출력 결과
+main 함수의 마지막 반복문이 정렬된 배열을 처음부터 끝까지 공백 없이 출력하므로 화면에는 다음과 같이 나타납니다.
+
+124567
+
+혹시 이 알고리즘의 **시간 복잡도(성능)**나 안쪽 for문에서 **값이 밀려나는 코드(A[j + 1] = A[j])**의 세부적인 메커니즘에 대해 더 궁금한 점이 있으신가요?
+
+"
 clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
 int len(_______);
 int main()
@@ -460,6 +543,18 @@ int len(char* p) {
   }
   return cnt;
 }"	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
 int calc(int (*q)(int, int)) {
   int result;
