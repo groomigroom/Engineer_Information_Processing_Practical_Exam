@@ -27,6 +27,60 @@
 
 
 
+
+
+
+class Time {
+  boolean am;
+  int hour;
+  int minute;
+  int second;
+
+  Time(boolean am, int hour, int minute, int second) {
+    this.am = am;
+    this.hour = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+
+//this(am, hour, minute, second);
+  
+  Time(boolean am, int hour, int minute) {
+    this.am = am;
+    this.hour = hour;
+    this.minute = minute;
+    this.second = 0;
+  }
+
+  Time(int hour24, int minute) {
+    this.am = hour24 < 12;
+    this.hour = hour24 % 12;
+    this.minute = minute;
+    this.second = 0;
+  }
+
+  void whatTime() {
+    System.out.print(am ? "오전" : "오후");
+    System.out.println(hour + "시" + minute + "분" + second + "초");
+  }
+}
+
+class JavaTest {
+  public static void main(String[] args) {
+    Time now = new Time(true, 12, 34, 56);
+    now.whatTime();
+    //오전12시34분56초
+    Time today = new Time(true, 12, 12);
+    today.whatTime();
+    //오전12시12분0초
+    Time toto = new Time(14, 14);
+    toto.whatTime();
+    //오후2시14분0초
+  }
+}
+
+------
+
 abstract class groom {
   String name;
   abstract public String getName(String val);
