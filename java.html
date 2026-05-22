@@ -29,6 +29,51 @@
 
 
 
+------
+
+class Parent {
+  private int x, y;
+  Parent(int x, int y) {
+    this.x = x;
+    this.y = y;
+    System.out.print("A");
+    //2번 현재 출력값 A
+    //x, y에 5랑 5 저장함.
+  }
+  int getValue() {
+    //4번: a.getValue()의 매개변수가 없는 getValue() 매서드 호출하기. 
+    System.out.print("B");
+    //5번 현재 출력값 ACB
+    return x + y;
+    //6번 현재 출력값은 ACB 이며, 반환값은 위에 Parent의 x, y 값에 따라서 10이됨.
+  }
+}
+class Child extends Parent {
+  int x;
+  Child(int x) {
+    //1번--->Child(int x) 생성자가 호출됩니다.
+    super(x, x);
+    System.out.print("C");
+    //3번-->현재 출력값 AC
+    //이 과정에서 int x가 명시적으로 초기화되지 않아서 기본값 0 상태.
+  }
+  Child(int x, int y) {
+    super(x, y);
+    System.out.print("D");
+  }
+  int getValue(int x, int y) {
+    System.out.print("E");
+    return x*y;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Parent a = new Child(5);
+    //Parent 부모타입 참조 변수 a에 new Child(5)를 자식 객체를 생성 후 대입하기. Child(int x) 생성자가 호출됩니다.
+    System.out.println(a.getValue());
+    //7번 ---> 최종 출력값 ACB10 반환값까지 출력하기
+  }
+}
 
 
 
