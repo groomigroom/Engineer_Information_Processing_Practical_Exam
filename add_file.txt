@@ -132,36 +132,32 @@ public class Groom {
     //Dog name :Sarng
   }
 }
-"
-			
+/*
+1. 객체 생성과 데이터 저장Animal obj = new Dog(""Sarng""); 문장이 실행되면서 Dog 객체가 생성됩니다.생성자 안에서 setName(""Sarng"")이 호출됩니다.이 메서드는 부모 클래스(Animal)에 정의된 메서드이므로, 부모의 private String name 변수에 **""Sarng""**이 저장됩니다.2. 매개변수 없는 getName()의 호출obj.getName()을 호출할 때, 호출된 메서드는 **매개변수가 없는 getName()**입니다.3. 오버라이딩(재정의) 여부 확인부모 클래스 Animal에는 getName()과 getName(String val) 두 가지 메서드가 있습니다.자식 클래스 Dog에는 getName(String val)과 getName(byte val[])만 정의되어 있습니다.즉, 자식 클래스 Dog는 매개변수가 없는 getName() 메서드를 오버라이딩(재정의)하지 않았습니다.4. 최종 메서드 실행자식 클래스에 오버라이딩된 메서드가 없기 때문에, 자바 가상머신(JVM)은 부모 클래스 Animal에 있는 오버라이딩되지 않은 원본 메서드 public String getName()을 그대로 실행합니다.따라서 부모 클래스의 메서드 로직에 따라 ""Animal name:"" + name이 계산되어 **Animal name:Sarng**이 출력됩니다.
+*/"
+		강좌	"abstract class A {
+    //추상클래스는 반드시 상속을 해서 사용을 해야함.
+    public abstract int b();
+    public abstract int c(){
+        System.out.println(""Hello"");
+    };
+    public void d() {
+        System.out.println(""world"");
+    }
+}
+class B extends A {
+    public int b() {
+        return 1;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+    }
+}"
 			
 clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
-clang	https://www.youtube.com/watch?v=W8mLfjs8bDw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=13	"#include <stdio.h>
-int main(void) {
-  int a[5];
-  int i;
-  
-  for (i = 0; i < 5; i++) {
-    printf(""숫자 입력 : "");
-    scanf(""%d"", &a[i]);
-  }
-  for (i = 0; i < 5; i++) {
-    printf(""%d"", a[_____]);
-  }
-  return 0;
-}"	"12345를 입력했을 때,
-차례데로 34512가 출력되게 빈칸채우기"
-python	https://www.youtube.com/watch?v=fKO7n8th7eg&list=PLYdThbnQN0eLz3T8dzOhfXPKHG1RF3Ese&index=16	"print(""강아지 이름 입력"");
-a, b = input()._____()
-c = ""멍멍이""
-c = c + "","" + a + "","" + b
-c = c.____(""멍멍이"", ""멍이"")
-print(c)"	"구름이, 구우름
-멍이, 구름이, 구우름
-위에꺼가 출력결과
-입력은 
-구름이, 구우름"
-			
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -234,6 +230,9 @@ public class Groom {
     System.out.println(one.getArea());
   }
 }"	실행순서 맞추기
+			
+			
+			
 자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
   private int x, y;
   Parent(int x, int y) {
@@ -508,17 +507,7 @@ public class Test {
 }
 //출력값 Chicken is animal
 //Zoo"
-자바		"/*
-%b 논리형식으로 출력
-%d 정수형식 출력
-%o 8진수 형식 출력
-%x 또는 %X 16진수 형식 출력
-%f 실수 출력
-%c 문자형식 출력
-%s 문자열 형식 출력
-%n 줄바꿈?
-%e 또는 %E 지수 표현식의 형식으로 출력
-*/"	
+			
 			
 파이	94쪽	"class Cls :
   x, y = 10, 20
