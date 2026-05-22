@@ -33,6 +33,22 @@
 
 -----
 
+class Cls :
+  x, y = 10, 20
+  def chg(self) :
+    temp = self.x
+    self.x = self.y
+    self.y = temp
+a = Cls()
+print(a.x, a.y)
+#아직은 chg()가 실행 안됨.
+#10 20
+a.chg()
+print(a.x, a.y)
+#20 10
+
+-----
+
 print("강아지 이름 입력");
 a, b = input().split()
 #.split()은 문자열을 특정 기준에 따라 쪼개어 리스트로 반환하는 함수. result = text.split(",") ===> 특정 문자를 기준으로 나눌 때
