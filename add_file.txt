@@ -43,9 +43,9 @@ int main() {
 
 요즘 구조는 위와 같음. #####
 
-*/"	모두다 출력 같게 됨.	
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G			
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM			
+*/"	모두다 출력 같게 됨.
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G		
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM		
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -54,8 +54,8 @@ print(new_text) # 출력: HELLO
 코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
 numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"		
-자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1		
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"	
+자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1	
 		강좌	"abstract class A {
     //추상클래스는 반드시 상속을 해서 사용을 해야함.
     public abstract int b();
@@ -76,9 +76,9 @@ public class Main {
     public static void main(String[] args) {
         B obj = new B();
     }
-}"	
-clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11			
-				
+}"
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
+			
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -95,8 +95,8 @@ public class Groom {
 } _________"	"출력결과
 0
 100
-이 나오도록"	
-				
+이 나오도록"
+			
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -123,9 +123,9 @@ public class Groom {
     System.out.println(one.getArea());
   }
 }"	"실행순서 맞추기 312
-567도 "	
-				
-				
+567도 "
+			
+			
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -138,7 +138,7 @@ void main()
     number = number __ div;
   }
   printf(""%d"", result);
-}"	정수의 역순 출력 프로그램	
+}"	정수의 역순 출력 프로그램
 clang	https://www.youtube.com/watch?v=pk1dEuEbybk&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=19	"#include <stdio.h>
 int isprime (int number) {
   int i;
@@ -153,9 +153,9 @@ int main() {
     cnt = cnt + isprime(i);
   printf(""소수는 개수 : %d개\n"", cnt);
   return 0;
-}"	소수의 개수를 구하는 프로그램	
-				
-				
+}"	소수의 개수를 구하는 프로그램
+			
+			
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -230,7 +230,7 @@ int main(int argc, char const* argv[]) {
   }
   return 0;
 }
-다시 계산하기"	
+다시 계산하기"
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -328,7 +328,7 @@ main 함수의 마지막 반복문이 정렬된 배열을 처음부터 끝까지
 
 혹시 이 알고리즘의 **시간 복잡도(성능)**나 안쪽 for문에서 **값이 밀려나는 코드(A[j + 1] = A[j])**의 세부적인 메커니즘에 대해 더 궁금한 점이 있으신가요?
 
-"	
+"
 clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
 int len(_______);
 int main()
@@ -344,7 +344,7 @@ int len(char* p) {
     _______;
   }
   return cnt;
-}"		
+}"	
 clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
 int calc(int (*q)(int, int)) {
   int result;
@@ -362,10 +362,10 @@ int main() {
   calc(p);
   return 0;
 }
-"		
-				
-				
-				
+"	
+			
+			
+			
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -446,7 +446,7 @@ G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
 TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
 STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
 1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"	
+"
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -488,7 +488,7 @@ date에 expr unit을 더한 날
 반환
 DATE_ADD('2021-01-10', INTERVAL 10 DAY) → 2021-01-20ADDDATE(expr, days) expr에 days를 더한 날짜 반
 환
-ADDDATE('2021-01-10', 10) → 2021-01-20"		
+ADDDATE('2021-01-10', 10) → 2021-01-20"	
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -528,7 +528,7 @@ DATE_FORMAT('2021-01-31',%y %) → 21/01/31STR_TO_DATE(str, format) str을 forma
 MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날짜 반환
 MAKEDATE(2021,100) → 2021-04-10
 SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
-WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"		
+WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"	
 파이썬		"students = []
 
 def add_data(stud) :
@@ -580,7 +580,7 @@ add_data(""구름음"")
 add_data(""름"")
 
 print(students)
-#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"	
+#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"
 java		"class Human {
     int age;
     String name;
@@ -617,7 +617,7 @@ class JavaLast {
 
 /*
 안녕9살김구름이다.
-*/"	
+*/"
 java		"class Groom {
   String name;
   boolean favorite;
@@ -681,7 +681,7 @@ class JavaLast {
 /*
 김구름 멍멍
 구르음
-*/"	
+*/"
 java		"class Time {
   boolean am;
   int hour;
@@ -720,7 +720,7 @@ now.whatTime(); // 인자(Argument)를 아무것도 전달하지 않음!
 }
 코드를 사용할 때는 주의가 필요합니다.이렇게 작성하면 객체가 생성될 때 저장한 now 객체의 데이터(true, 12, 34, 56)를 출력하는 것이 아니라, 메서드를 호출할 때 괄호 안에 넣는 새로운 인자값에 의존하게 됩니다. 객체지향 프로그래밍 관점에서 객체 내부 속성을 스스로 출력한다는 whatTime() 본연의 역할과 어긋나게 됩니다.이 문제를 해결하고 코드를 올바르게 수정하는 방향에 대해 더 알고 싶으시다면, 아래 항목 중 원하시는 것을 알려주세요:main 메서드에서 새로운 whatTime 메서드를 올바르게 호출하는 코드 수정법객체의 본래 데이터를 유지하면서 외부 데이터도 출력할 수 있게 하는 올바른 메서드 오버로딩 구현법
 --->의 문제 때문에 this 사용함.
-*/"		
+*/"	
 자바	https://roadtofree.tistory.com/entry/31	"public class Groom {
   public static void main(String[] args){
     int[] a = {0, 1, 2, 3};
@@ -729,7 +729,7 @@ now.whatTime(); // 인자(Argument)를 아무것도 전달하지 않음!
       System.out.print(a[i] + "" "");
     }
   }
-}"	0 1 2 3	
+}"	0 1 2 3
 자바		"class A {
   private int a;
   
@@ -779,7 +779,7 @@ public class Groom {
  public static void main(String[] args) {
  B obj = new B(10);
  }
-}"	
+}"
 자바		"class Parent {
   public void show() {
     System.out.println(""Parent"");
@@ -801,7 +801,7 @@ public class Groom {
 /*
 빈칸 채우기
 출력갑 Child
-*/"	빈칸	
+*/"	빈칸
 자바		"public class Groom {
   public static void main(String[] args) {
     int i = 0;
@@ -815,8 +815,8 @@ public class Groom {
     }
     System.out.println(sum);
   }
-}"		
-				
+}"	
+			
 파이썬	"a = [10, 11, 12, 13]
 a.pop(1)
 #해당 위치에 있는 값을 삭제하는게 .pop()
@@ -834,7 +834,7 @@ print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
 d.add(4)
 print(d)
 e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"			
+print(e.values()) #dict_values(['구름', 9])로 나옴? #####"		
 자바		"public class Groom {
   public static void main(String[] args) {
     int a = 3;
@@ -847,7 +847,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 /*
 출력값
 10.0
-*/"		
+*/"	
 자바		"public class Groom {
   public static void main(String[] args) {
     int[] Data = {1, 2, 3, 4, 5};
@@ -858,7 +858,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 
 /*
 12345
-*/"		
+*/"	
 sql		"create table groomi
 (
     groo1 integer,
@@ -889,7 +889,7 @@ where groo2 = 5;
 delete from groomi
 where groo2 = 5;
 
-"		
+"	
 java		"public class Main {
   public static void main(String[] args) {
     int[] Evens = {0, 2, 4, 6, 8};
@@ -905,7 +905,7 @@ java		"public class Main {
 March
 April
 May
-*/"		
+*/"	
 java		"public class Main {
   public static void main(String[] args) {
     int[][] Data = {{1, 2, 3}, {4, 5, 6}};
@@ -926,7 +926,7 @@ java		"public class Main {
 123456
 2
 3
-*/"		
+*/"	
 java		"public class Main {
   public static void main(String[] args) {
     int[][] Data = {{1, 2, 3}, {4, 5}, {6}, {8, 9, 10, 11}};
@@ -939,7 +939,7 @@ java		"public class Main {
 }
 /*
 
-*/"		
+*/"	
 java		"public class Main {
   public static void main(String[] args) {
     String[] weAreAt = {""김"", ""구"", ""름""};
@@ -951,7 +951,7 @@ java		"public class Main {
 김
 구
 름
-*/"		
+*/"	
 java		"public class Main {
   static String say() {
     return ""김구름"";
@@ -962,7 +962,7 @@ java		"public class Main {
   }
 }
 
-//출력값 == 김구름"		
+//출력값 == 김구름"	
 java		"public class Main {
   static void printThis() {
     int i = 1;
@@ -976,7 +976,7 @@ java		"public class Main {
   }
 }
 
-//출력값 == 123"		
+//출력값 == 123"	
 java		"public class Main {
   static void printThis() {
     int i = 1;
@@ -998,7 +998,7 @@ java		"public class Main {
 123
 123
 123
-*/"		
+*/"	
 java		"import java.util.Scanner;
 
 public class Main {
@@ -1012,7 +1012,7 @@ public class Main {
       System.out.print(N1 + ""부터"" + N2 + ""까지의"");
       System.out.println(""정수의 합은"" + SUM + ""이다."");
     }
-}"		
+}"	
 자바			"abstract class vehicle
 {
     private String name;
@@ -1042,8 +1042,8 @@ public class good {
         vehicle obj = new Car(""Spark"");
         System.out.print(obj.getName());
     }
-}"	
-자바	7. 2020년 4회차 abstract class vehicle	https://roadtofree.tistory.com/entry/31	"class Parent {
+}"
+자바			"class Parent {
     public int compute (int num) {
         if (num <= 1) return num;
         return compute(num - 1) + compute(num - 2);
@@ -1063,4 +1063,306 @@ public class good {
         Parent obj = new Child();
         System.out.print(obj.compute(4));
     }
-}"	
+}"
+자바			"public class Good {
+    public static void main(String[] args) {
+        int[][] a = new int[___(1)___][___(2)___];  // (1.), (2.) → 3행 5열로 수정
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 5; j++) {
+                a[i][j] = j * 3 + (i + 1);
+                System.out.print(a[i][j] + "" "");
+            }
+            System.out.println();
+        }
+    }
+}
+[출력결과]
+
+1 4 7 10 13
+
+2 5 8 11 14
+
+3 6 9 12 15 
+
+답 3 5"
+자바			"class Good {
+    public static void main(String[] args) {
+        int[] a = new int[8];
+        int i = 0;
+        int n = 10;
+
+        while (_____(1)______) {           // (1.)
+            a[i++] = ______(2)_______;       // (2.)
+            n /= 2;
+        }
+
+        for (i = 7; i >= 0; i--) {
+            System.out.print(a[i]);
+        }
+    }
+}
+출력결과 : 00001010
+
+ 
+
+답) 
+(1) n>0 or n>= 1 or i<8 or i <=7 (넷중 아무거나 써도 정답)
+
+(2) n%2"
+자바	10. 2020년 4회차 abstract class vehicle		"public class Main {
+    public static void main(String[] args) {
+        int i, j;
+        for (j = 0, i = 0; i <= 5; i++) {
+            j += i;
+            System.out.print(i);
+            if (i == 5) {
+                System.out.print(""="");
+                System.out.print(j);
+            }
+            else {
+                System.out.print(""+"");
+            }
+        }
+    }
+}"
+자바			"public class Main {
+    public static void main(String[] args) {
+        int[][] arr = new int[][]{{45, 50, 75}, {89}};
+        
+        System.out.println(arr[0].length);
+        System.out.println(arr[1].length);
+        System.out.println(arr[0][0]);
+        System.out.println(arr[0][1]);
+        System.out.println(arr[1][0]);
+    }
+}"
+자바	11		"class ovr {
+    int sun (int x, int y) {
+        return x + y;
+    }
+}
+
+class ovr1 extends ovr {
+    int sun (int x, int y) {
+        return x + y;
+    }
+}
+
+class ovr2 extends ovr1 {
+    int sun (int x, int y) {
+        return x - y + super.sun(x, y);
+    }
+}
+
+public class Groom {
+    public static void main(String[] args) {
+        ovr a1 = new ovr1();
+        ovr a2 = new ovr2();
+        System.out.println(a1.sun(3, 2) + a2.sun(3, 2));
+    }
+}"
+자바	12		"public class Test {
+    public static void main(String[] args) {
+        System.out.print(Test.check(1));
+    }
+
+   (_____________) String check(int num) {
+        return (num >= 0) ? ""positive"" : ""negative"";
+    }
+}
+[출력결과] positive
+
+ 
+
+답) public static"
+자바	13		"public class Groom {
+    public static void main(String[] args) {
+        int a = 3, b = 4, c = 3, d = 5;
+        
+        if ((a == 2 | a == c) & !(c > d) & (1 == b ^ c != d)) {
+            a = b + c;
+            if (7 == b ^ c != a) {
+                System.out.println(a);
+            }
+            else {
+                System.out.println(b);
+            }
+        }
+        else {
+            a = c + d;
+            if (7 == c ^ d != a) {
+               System.out.println(a); 
+            }
+            else {
+                System.out.println(d);
+            }
+        }
+    }
+}"
+자바	14		"class Connection {
+    private static Connection _inst = null;
+    private int count = 0;
+    
+    public static Connection get() {
+        if (_inst == null) {
+            _inst = new Connection();
+        }
+        return _inst;
+    }
+    
+    public void count() {
+        count++;
+    }
+    public int getCount() {
+        return count;
+    }
+}
+
+public class Groom {
+    public static void main(String[] args) {
+        Connection conn1 = Connection.get();
+        conn1.count();
+        
+        Connection conn2 = Connection.get();
+        conn2.count();
+        
+        Connection conn3 = Connection.get();
+        conn3.count();
+        
+        System.out.print(conn3.getCount());
+    }
+}"
+자바	15		"class Car implements Runnable {
+    int a;
+
+    public void run() {
+        System.out.println(""message""); 
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Thread t1 = new Thread(new _________________());  
+        t1.start();
+    }
+}
+답) Car"
+자바	16		"class A {
+    int a;
+    int b;
+}
+
+public class Groom {
+    static void func1(A m) {
+        m.a *= 10;  // a = a * 10
+    }
+
+    static void func2(A m) {
+        m.a += m.b; // a = a + b
+    }
+
+    public static void main(String args[]) {
+        A m = new A();  // 객체 생성 (a=0, b=0)
+
+        m.a = 100;      // a = 100
+        func1(m);       // a = 100 * 10 = 1000
+        m.b = m.a;      // b = 1000
+        func2(m);       // a = 1000 + 1000 = 2000
+
+        System.out.printf(""%d"", m.a);  // 출력: 2000
+    }
+}"
+자바	17		"public class Groom {
+    int a;
+
+    public Groom(int a) {
+        this.a = a;
+    }
+
+    int func() {
+        int b = 1;
+        for (int i = 1; i < a; i++) {
+            b = a * i + b;
+        }
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Groom obj = new Groom(3);
+        obj.a = 5; 
+        int b = obj.func();
+        System.out.print(obj.a + b); 
+    }
+}"
+씨언어	18		"#include <stdio.h>
+
+struct A {
+    int n;
+    int g;
+};
+
+int main() {
+    struct A a[2]; 
+    int i;
+
+    for (i = 0; i < 2; i++) {
+        a[i].n = i;
+        a[i].g = i + 1;
+    }
+
+    printf(""%d\n"", a[0].n + a[1].g); 
+
+    return 0;
+}"
+자바	19		"public static void main(String args[]) { 
+    int i = 3;
+    int k = 1;
+
+    switch (i) {
+        case 1: k += 1;
+        case 2: k++;
+        case 3: k = 0;
+        case 4: k += 3;
+        case 5: k -= 10;
+        default: k--;
+    }
+
+    System.out.print(k);
+}"
+자바	20		"public class Main {
+    static int[] MakeArray() {
+        int[] tempArr = new int[4];
+
+        for (int i = 0; i < tempArr.length; i++) {  
+            tempArr[i] = i;
+        }
+
+        return tempArr;
+    }
+
+    public static void main(String[] args) {
+        int[] intArr;
+        intArr = MakeArray();
+
+        for (int i = 0; i < intArr.length; i++) {   
+            System.out.print(intArr[i]);
+        }
+    }
+}"
+		https://roadtofree.tistory.com/entry/31	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		https://youtu.be/ilH0irP5VQo?si=nN5hK1PoZt8UaYMO	
