@@ -44,24 +44,8 @@ int main() {
 요즘 구조는 위와 같음. #####
 
 */"	모두다 출력 같게 됨.
-			
-			
 c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G		
-			
-			
-			
-			
-			
-			
-			
-			
 자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM		
-			
-			
-			
-			
-			
-			
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -72,109 +56,6 @@ numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
 print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"	
 자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1	
-		"abstract class Pet {
-    abstract public void walk();
-    //추상 메소드
-    //추상 메소드(Abstract Method)는 '껍데기만 있는 메소드'입니다. 메소드의 이름, 매개변수, 리턴 타입 같은 선언부만 있고 실행 내용(중괄호)이 없는 메소드를 의미합니다.1. 주요 특징abstract 키워드 사용: 메소드 선언 시 abstract 키워드를 붙입니다.중괄호 {} 대신 세미콜론 ;: 실행 블록 없이 선언을 마칩니다.상속 및 구현 필수: 추상 메소드를 포함하는 클래스는 반드시 추상 클래스로 선언되어야 하며, 해당 클래스를 상속받는 자식(하위) 클래스는 이 추상 메소드를 반드시 오버라이딩(재정의)하여 실행 내용을 구현해야 합니다.
-    abstract public void eat();
-    //추상 메소드
-    
-    public int health;
-    //인스턴스 필드
-    //인스턴스 필드(Instance Field)란 클래스 내부에 선언된 변수 중 static 키워드가 붙지 않은 객체 고유의 데이터 저장 공간(멤버 변수)을 의미합니다.객체(인스턴스)가 생성될 때마다 메모리(Heap 영역)에 독립적으로 할당되며, 객체마다 다른 값을 가질 수 있는 것이 핵심입니다.고유한 상태 유지: 예를 들어 사람 클래스에 이름이라는 인스턴스 필드가 있다면, A라는 사람 객체와 B라는 사람 객체는 서로 다른 이름을 가질 수 있습니다.생명 주기: 객체가 생성될 때 만들어지고, 객체가 메모리에서 사라질 때 함께 소멸합니다.사용 방법: 클래스로부터 객체를 생성한 후, 참조 변수를 통해 접근합니다(예: 객체명.필드명).
-    public void run() {
-        //인스턴스 메소드
-        System.out.println(""run run"");
-    }
-    //자바에서 추상 클래스 내의 인스턴스 필드는 ""하위 클래스들이 공통으로 가져야 할 상태(데이터)를 미리 정의하고 물려주기 위한 목적""을 가집니다.추상 클래스 내 인스턴스 필드의 핵심적인 의미와 역할은 다음과 같습니다.1. 공통 상태의 코드 중복 방지여러 하위 클래스에서 공통으로 사용하는 변수(예: name, id, createdAt)를 추상 클래스에 한 번만 선언해 두면, 하위 클래스에서 일일이 선언할 필요 없이 상속받아 사용할 수 있습니다.2. 하위 클래스 인스턴스에 종속된 데이터추상 클래스는 직접 new 키워드로 객체를 생성할 수 없지만, extends를 통해 하위 클래스가 인스턴스화될 때 하위 클래스 객체의 내부 메모리(Heap)에 함께 생성됩니다. 즉, 추상 클래스의 인스턴스 필드는 하위 클래스 객체의 고유한 상태값을 저장하는 데 사용됩니다.3. 상속(is-a) 관계에서의 캡슐화private 접근 제어자를 사용하면 하위 클래스에서도 직접 접근할 수 없으므로, 추상 클래스 내의 생성자나 getter/setter 메서드
-}
-
-class Dog extends Pet {
-    //상속 받은 부모(추상) 메소드를 직접 구현
-    public void walk() {
-        System.out.println(""Dog walk"");
-    }
-    public void eat() {
-        System.out.println(""Dog eat"");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat(); //추상 클래스로부터 상속받은 추상 메소드를 실행
-        d.walk();
-        d.run(); // 추상 클래스의 인스턴스 메소드 실행
-    }
-}
-/*
-출력값
-Dog eat
-Dog walk
-run run
-*/"	
-			
-			
-			
-			
-자바	https://www.youtube.com/watch?v=hQ87DE75Bgw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=17	"abstract class Animal {
-  private String name;
-  abstract public String getName(String val);
-  public String getName() {
-    return ""Animal name:"" + name;
-  }
-  public void setName(String val) {
-    name = val;
-  }
-}
-class Dog extends Animal {
-  public Dog(String val) {
-    setName(val);
-  }
-  public String getName(String val) {
-    return ""Dog name :"" + val;
-  }
-  public String getName(byte val[]) {
-    return ""Dog name :"" + val;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Animal obj = new Dog(""Sarng"");
-    System.out.print(obj.getName());
-  }
-}
-"	"abstract class Animal {
-  private String name;
-  abstract public String getName(String val);
-  public String getName() {
-    return ""Animal name:"" + name;
-  }
-  public void setName(String val) {
-    name = val;
-  }
-}
-class Dog extends Animal {
-  public Dog(String val) {
-    setName(val);
-  }
-  public String getName(String val) {
-    return ""Dog name :"" + val;
-  }
-  public String getName(byte val[]) {
-    return ""Dog name :"" + val;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Animal obj = new Dog(""Sarng"");
-    System.out.print(obj.getName());
-    //Dog name :Sarng
-  }
-}
-/*
-1. 객체 생성과 데이터 저장Animal obj = new Dog(""Sarng""); 문장이 실행되면서 Dog 객체가 생성됩니다.생성자 안에서 setName(""Sarng"")이 호출됩니다.이 메서드는 부모 클래스(Animal)에 정의된 메서드이므로, 부모의 private String name 변수에 **""Sarng""**이 저장됩니다.2. 매개변수 없는 getName()의 호출obj.getName()을 호출할 때, 호출된 메서드는 **매개변수가 없는 getName()**입니다.3. 오버라이딩(재정의) 여부 확인부모 클래스 Animal에는 getName()과 getName(String val) 두 가지 메서드가 있습니다.자식 클래스 Dog에는 getName(String val)과 getName(byte val[])만 정의되어 있습니다.즉, 자식 클래스 Dog는 매개변수가 없는 getName() 메서드를 오버라이딩(재정의)하지 않았습니다.4. 최종 메서드 실행자식 클래스에 오버라이딩된 메서드가 없기 때문에, 자바 가상머신(JVM)은 부모 클래스 Animal에 있는 오버라이딩되지 않은 원본 메서드 public String getName()을 그대로 실행합니다.따라서 부모 클래스의 메서드 로직에 따라 ""Animal name:"" + name이 계산되어 **Animal name:Sarng**이 출력됩니다.
-*/"
 		강좌	"abstract class A {
     //추상클래스는 반드시 상속을 해서 사용을 해야함.
     public abstract int b();
@@ -196,8 +77,8 @@ public class Main {
         B obj = new B();
     }
 }"
-			
 clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
+			
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -215,35 +96,7 @@ public class Groom {
 0
 100
 이 나오도록"
-자바	https://www.youtube.com/watch?v=EQkPho3NRfY&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=25	"class Date {
-  private int year;
-  private String month;
-  private int day;
-  public Date() {
-    this(2023, ""04"", 3);
-  }
-  public Date(String month) {
-    this(2023, month, 25);
-  }
-  public Date(int year, String month, int day) {
-    this.year = year;
-    this.month = month;
-    this.day = day;
-  }
-  @Override
-  //@Override는 상속받은 부모 클래스의 메서드를 자식 클래스에서 재정의(오버라이딩)할 때, 컴파일러에게 이 메서드가 부모 메서드를 정확히 재정의하고 있는지 확인하도록 지시하는 애너테이션입니다.
-  public String toString() {
-    return year + ""-"" + month + ""-"" + day;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Date d1 = new Date();
-    Date d2 = new Date(""12"");
-    System.out.println(d1);
-    System.out.println(d2);
-  }
-}"	
+			
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -319,75 +172,11 @@ public class Groom {
     System.out.println(a.getValue());
   }
 }
-"
-자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
-  private int x, y;
-  Parent(int x, int y) {
-    this.x = x;
-    this.y = y;
-    System.out.print(""A"");
-  }
-  int getValue() {
-    System.out.print(""B"");
-    return x + y;
-  }
-}
-class Child extends Parent {
-  int x;
-  Child(int x) {
-    super(x, x);
-    System.out.print(""C"");
-  }
-  Child(int x, int y) {
-    super(x, y);
-    System.out.print(""D"");
-  }
-  int getValue(int x, int y) {
-    System.out.print(""E"");
-    return x * y;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Parent a = new Child(5);
-    System.out.println(a.getValue());
-  }
-}
-"	"class Parent {
-  private int x, y;
-  Parent(int x, int y) {
-    this.x = x;
-    this.y = y;
-    System.out.print(""A"");
-  }
-  int getValue() {
-    System.out.print(""B"");
-    return x + y;
-  }
-}
-class Child extends Parent {
-  int x;
-  Child(int x) {
-    super(x, x);
-    System.out.print(""C"");
-  }
-  Child(int x, int y) {
-    super(x, y);
-    System.out.print(""D"");
-  }
-  int getValue(int x, int y) {
-    System.out.print(""E"");
-    return x * y;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Parent a = new Child(5);
-    System.out.println(a.getValue());
-    //ABCE
-  }
-}
-"
+
+/*
+이 코드의 실행 결과는 ACB10입니다.자바의 생성자 상속, 매개변수에 따른 생성자 선택, 그리고 메서드 오버로딩(Overloading) 규칙에 따라 동작합니다. 단계별 동작 원리는 다음과 같습니다.1. 객체 생성과 생성자 실행 (Parent a = new Child(5);)부모 타입 참조 변수 a에 new Child(5)로 자식 객체를 생성하여 대입합니다. 매개변수가 1개(정수)이므로 Child(int x) 생성자가 호출됩니다.부모 생성자 호출 (super(x, x);)Child(5) 내부에서 가장 먼저 super(5, 5);가 실행됩니다.부모 클래스의 Parent(int x, int y) 생성자로 이동하여 부모의 private 변수 x와 y에 각각 5를 저장합니다.부모 생성자 안의 System.out.print(""A"");가 실행되어 화면에 A가 출력됩니다.자식 생성자 나머지 실행부모 생성자가 끝나고 다시 Child(int x) 생성자로 돌아와 System.out.print(""C"");를 실행합니다. 화면에 C가 출력됩니다.주의: Child 내부의 인스턴스 변수 int x;는 이 과정에서 명시적으로 초기화되지 않아 기본값 0 상태입니다.2. 메서드 호출 (a.getValue())매개변수가 없는 getValue() 메서드를 호출합니다.참조 변수 타입의 한계변수 a는 Parent 타입입니다. 따라서 a를 통해서는 Parent 클래스에 정의되어 있거나 자식 클래스에서 오버라이딩(재정의)한 메서드만 호출할 수 있습니다.오버라이딩 여부 확인자식 클래스 Child에는 getValue(int x, int y)라는 매개변수가 2개인 메서드만 있습니다.이는 이름만 같고 형태가 다른 오버로딩(Overloading)입니다. 매개변수가 없는 원래의 getValue()를 오버라이딩한 것이 아닙니다.부모 메서드 실행자식 클래스에 오버라이딩된 getValue()가 없으므로, JVM은 부모 클래스(Parent)의 getValue()를 실행합니다.System.out.print(""B"");가 실행되어 화면에 B가 출력됩니다.부모의 private 변수 x(5)와 y(5)를 더한 값인 10을 반환합니다.3. 최종 출력 (System.out.println(...))a.getValue()가 반환한 값 10이 최종적으로 출력됩니다.앞서 출력된 A, C, B 뒤에 10이 붙어 최종 결과는 ACB10이 됩니다.
+*/"
+			
 자바	https://www.youtube.com/watch?v=MOQzkhx5n-o&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=32	"class A {int x;}
 //class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
 public class Groom {
@@ -408,8 +197,7 @@ public class Groom {
     a.x = 100;
     System.out.println(a.x);
   }
-}"	"//에러뜸
-class A {int x;}
+}"	"class A {int x;}
 //class A {int x;}는 'A'라는 이름의 객체를 만들기 위한 기본 설계도(틀)를 정의하는 자바 문법입니다.구체적인 의미는 다음과 같습니다:class A: 'A'라는 이름의 새로운 클래스(Class)를 선언합니다.{ ... }: 클래스의 내부 범위(scope)로, 클래스가 가져야 할 속성(데이터)과 기능(메서드)을 정의하//는 공간입니다.int x;: 클래스 내부에 선언된 변수로, '정수형(int) 데이터를 담을 수 있는 x라는 이름의 공간(필드)'을 의미합니다.
 public class Groom {
   public static void main(String[] args) {
@@ -421,11 +209,11 @@ public class Groom {
     Change2(a);
     System.out.println(a.x);
   }
-  static void change1(int x) {
+  static void Change1(int x) {
     x = 100;
     System.out.println(x);
   }
-  static void change2(A a) {
+  static void Change2(A a) {
     a.x = 100;
     System.out.println(a.x);
   }
@@ -434,145 +222,10 @@ public class Groom {
 100
 100
 */
+/*
+제시해주신 자바 코드의 핵심 동작 원리는 자바의 데이터 전달 방식인 '값에 의한 호출(Call by Value)'과 메모리(스택과 힙)의 구조에 있습니다.프로그램의 실행 순서에 따라 메모리가 어떻게 움직이는지 단계별로 명확하게 설명해 드리겠습니다.1. A a = new A(); a.x = 50; (객체 생성 및 초기화)메모리 할당: new A()가 실행되면서 힙(Heap) 메모리에 실제 x 공간을 가진 객체가 생성됩니다.참조 변수: 스택(Stack) 메모리에 있는 변수 a는 힙에 있는 객체의 주소값(예: 0x100)을 가집니다.값 대입: a.x = 50;에 의해 주소 0x100에 있는 x의 값이 50이 됩니다.2. Change1(a.x); 실행 (기본형 타입 전달)동작 원리 (값 복사): a.x는 정수 변수이므로 실제 데이터인 50이라는 ""값 자체""가 Change1 메서드의 매개변수 x로 복사됩니다.메서드 내부 (x = 100;): Change1 내부에 선언된 로컬 변수 x가 100으로 바뀔 뿐입니다. 이는 힙 메모리에 있는 원래 객체 a.x와는 아무런 연관이 없는 별개의 공간입니다.첫 번째 출력 (System.out.println(x);): 메서드 내부의 변수 x를 출력하므로 100이 나옵니다.메서드 종료 후 (System.out.println(a.x);): Change1이 끝나면 메서드 내 로컬 변수들은 메모리(스택)에서 사라집니다. 원래 a.x는 전혀 오염되지 않았으므로 50이 출력됩니다.(※ 주석에 적어주신 출력 결과 '100, 100' 중 첫 번째 100은 Change1 내부의 출력이며, 메인 함수에서의 a.x 출력은 여전히 50입니다.)3. Change2(a); 실행 (참조형 타입 전달)동작 원리 (주소 복사): 변수 a는 객체의 ""주소값(0x100)""을 가지고 있습니다. Change2(a)를 호출하면 이 주소값이 매개변수 a로 복사됩니다.메서드 내부 (a.x = 100;): Change2 내부의 a도 원본과 똑같은 주소(0x100)를 가리키고 있습니다. 따라서 a.x = 100;을 실행하면 실제 힙 메모리에 있는 객체의 x 값이 100으로 바뀝니다.두 번째 출력 (System.out.println(a.x);): 힙 메모리의 값이 바뀌었으므로 당연히 100이 출력됩니다.메서드 종료 후 (System.out.println(a.x);): Change2가 종료되어 메서드 내 참조 변수는 사라지지만, 힙 메모리의 객체 값은 이미 변경된 상태입니다. 따라서 메인 함수에서 다시 a.x를 출력해도 100이 나옵니다.💡 핵심 요약자바는 언제나 값을 복사해서 넘겨주는 Call by Value로만 동작합니다.기본형(Primitive) 변수를 넘기면 실제 데이터 값이 복사되므로 원본이 안전합니다.참조형(Reference) 변수를 넘기면 객체의 주소 값이 복사되므로, 메서드 내부에서 주소를 타고 들어가 원본 객체를 수정할 수 있습니다.이 메모리 구조와 전달 방식에 대해 더 시각적인 예시나 추가로 궁금한 점이 있으시면 편하게 말씀해 주세요!
+*/
 "
-자바	책 86쪽	"class ClassA {
-  ClassA() {
-    System.out.print('A');
-    this.prn();
-  }
-  void prn() {
-    System.out.print('B');
-  }
-}
-class ClassB extends ClassA {
-  ClassB() {
-    super();
-    System.out.print('D');
-  }
-  void prn() {
-    System.out.print('E');
-  }
-  void prn(int x) {
-    System.out.print(x);
-  }
-}
-
-public class Test {
-  public static void main(String[] args){
-    //static은 공통적인 값을 유지해야할때 선언한다.
-    int x = 7;
-    ClassB cal = new ClassB();
-    cal.prn(x);
-  }
-}"	"class ClassA {
-  ClassA() {
-    System.out.print('A');
-    this.prn();
-  }
-  void prn() {
-    System.out.print('B');
-  }
-}
-class ClassB extends ClassA {
-  ClassB() {
-    super();
-    System.out.print('D');
-  }
-  void prn() {
-    System.out.print('E');
-  }
-  void prn(int x) {
-    System.out.print(x);
-  }
-}
-
-public class Test {
-  public static void main(String[] args){
-    //static은 공통적인 값을 유지해야할때 선언한다.
-    int x = 7;
-    ClassB cal = new ClassB();
-    cal.prn(x);
-    //ABD7
-    //값AED7
-  }
-}"
-자바	책 89쪽	"abstract class Animal {
-  String a = "" is animal"";
-  abstract void look();
-  //abstract 키워드는 '미완성'을 의미합니다. 공통적인 특성을 묶어 틀을 제공하지만, 직접 객체를 생성할 수는 없으며 상속을 통해 구체화하도록 강제하는 문법입니다. 주로 클래스와 메서드에 사용됩니다.
-  void show() {
-    System.out.println(""Zoo"");
-  }
-}
-class Chicken extends Animal {
-  Chicken() {
-    look();
-  }
-  void look() {
-    System.out.println(""Chicken"" + a);
-  }
-  void display() {
-    System.out.println(""two wings"");
-  }
-}
-public class Test {
-  public static void main(String[] args) {
-    Animal a = new Chicken();
-    a.show();
-  }
-}"	"abstract class Animal {
-  //abstract 키워드는 '미완성'을 의미하며, 객체를 직접 생성할 수 없고 반드시 상속(또는 구현)을 통해 완성해야 하는 추상 클래스와 추상 메서드를 만드는 데 사용됩니다.1. 주요 특징객체 생성 불가: new 키워드를 사용해 직접 인스턴스화할 수 없습니다.오버라이딩 강제: 자식 클래스는 부모의 추상 메서드를 반드시 재정의(Override)해야 합니다.다형성 제공: 부모 타입으로 자식 객체들을 묶어 관리할 수 있습니다.2. 문법 및 사용법🔹 추상 메서드 (Abstract Method)메서드의 선언부만 있고 구현부(중괄호 {})가 없는 메서드입니다. 자식 클래스가 반드시 동작을 구체화해야 할 때 사용합니다.
-  String a = "" is animal"";
-  abstract void look();
-  void show() {
-    System.out.println(""Zoo"");
-  }
-}
-class Chicken extends Animal {
-  Chicken() {
-    look();
-  }
-  void look() {
-    System.out.println(""Chicken"" + a);
-  }
-  void display() {
-    System.out.println(""two wings"");
-  }
-}
-public class Test {
-  public static void main(String[] args) {
-    Animal a = new Chicken();
-    a.show();
-  }
-}
-//출력값 Chicken is animal
-//Zoo"
-			
-			
-파이	94쪽	"class Cls :
-  x, y = 10, 20
-  def chg(self) :
-    temp = self.x
-    self.x = self.y
-    self.y = temp
-a = Cls()
-print(a.x, a.y)
-a.chg()
-print(a.x, a.y)"	"------4번
-
-class Cls :
-  x, y = 10, 20
-  def chg(self) :
-    temp = self.x
-    self.x = self.y
-    self.y = temp
-a = Cls()
-print(a.x, a.y)
-#20 10
-a.chg()
-print(a.x, a.y)
-#10 20"
-			
 clang	https://www.youtube.com/watch?v=LOmemFIvTGw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=16	"#include <stdio.h>
 int main()
 {
@@ -593,6 +246,8 @@ int main()
   printf(""%s"", str);
 }"	"출력결과
 EDCBAFFF"
+			
+			
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -639,46 +294,12 @@ void main() {
   //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
   printf(""%x"", a & b);
   //0
-}"
-clang	https://www.youtube.com/watch?v=O4jH52Sj5ig&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=21	"#include <stdio.h>
-#include <string.h>
-void main() {
-  char str1[12] = ""tulip"";
-  char str2[5] = ""Lily"";
-  char* p1, * p2;
-  p1 = str1;
-  p2 = str2;
-  str2[0] = p1[2];
-  str1[3] = p2[1];
-  while (*p1 != 0) {
-    p1++;
-  }
-  *p1 = '-';
-  strcat(str1, str2);
-  printf(""%s\n"", str1);
-}"	"------1번
-
-#include <stdio.h>
-#include <string.h>
-void main() {
-  char str1[12] = ""tulip"";
-  char str2[5] = ""Lily"";
-  char* p1, * p2;
-  p1 = str1;
-  //tulip
-  p2 = str2;
-  //Lily
-  str2[0] = p1[2];
-  //lily
-  str1[3] = p2[1];
-  //lily
-  while (*p1 != 0) {
-    p1++;
-  }
-  *p1 = '-';
-  strcat(str1, str2);
-  printf(""%s\n"", str1);
-}"
+}
+/*
+44
+b0
+다시 계산해 보기
+*/ "
 clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
 #include <string.h>
 int length(char a[], char s) {
@@ -697,7 +318,12 @@ void main() {
   int i = 0;
   i = length(a, 'c');
   printf(""%d\n"", i);
-}"	
+}"	다시 계산하기
+			
+			
+			
+			
+			
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -756,7 +382,7 @@ void push(int num) {
 int pop() {
   if (isEmpty() == 1) {
     printf(""Empty"");
-    return;
+    return 0;
   }
   return stack[p--];
 }
@@ -772,7 +398,7 @@ int main(int argc, char const* argv[]) {
   }
   return 0;
 }
-"
+다시 계산하기"
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -817,70 +443,7 @@ int main() {
     //666666
   return 0;
 }
-"
-clang	https://www.youtube.com/watch?v=NTvSTbXTYV4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=25	"#include <stdio.h>
-void sf(int* x, int* y) {
-  int temp = *x;
-  *x = *y;
-  *y = temp;
-}
-int main(int argc, char* argv[]) {
-  int a[] = {5, 3, 8, 1, 2, 7};
-  for (int i = 0; i < 5; i++) {
-    int least = i;
-    for (int j = i + 1; j < 6; j++)
-      if (a[i] < a[least]) least = j;
-    sf(&a[i], &a[least]);
-  }
-  for (int k = 0; k <= 5; k++) {
-    printf(""%d"", a[k]);
-  }
-  return 0;
-}"	"#include <stdio.h>
-void sf(int* x, int* y) {
-  int temp = *x;
-  *x = *y;
-  *y = temp;
-}
-int main(int argc, char* argv[]) {
-  int a[] = {5, 3, 8, 1, 2, 7};
-  for (int i = 0; i < 5; i++) {
-    int least = i;
-    //i == 0
-    for (int j = i + 1; j < 6; j++)
-    //j == 1, j == 2,
-    
-      if (a[i] < a[least]) least = j;
-    sf(&a[i], &a[least]);
-    //3 5 8 1 2 7
-  }
-  for (int k = 0; k <= 5; k++) {
-    printf(""%d"", a[k]);
-  }
-  return 0;
-}"
-			
-			
-			
-clang	https://www.youtube.com/watch?v=8W4q-5Exg3k&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=27	"#include <stdio.h>
-int main()
-{
-  char a[] = ""abcdefg"";
-  char* p = a;
-  while (*p != ____) {
-    printf(""%c"", ____);
-  }
-  return 0;
-}"	"#include <stdio.h>
-int main()
-{
- char a[] = ""abcdefg"";
- char* p = a;
- while (*p != ____) {  //""\0""
- printf(""%c"", ____); //a[]
- }
- return 0;
-}"
+//다시 계산하기"
 clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
 int len(_______);
 int main()
@@ -915,41 +478,6 @@ int main() {
   return 0;
 }
 "	
-sql		"
-
-mysql-----
-
-create table plus_minus (
-    int_type integer,
-    int_type2 integer,
-    int_type3 integer
-);
-
-insert into plus_minus
-values
-(1, 2, 3),
-(4, 5, 6),
-(7, 8, 9);
-
-select int_type + 3 - 2, int_type2 * 4 / 2, int_type3 MOD 2
-from plus_minus;
-
-/*
-2  4    1
-5  10  0
-8  16  1
-*/
-
-select int_type DIV 3
-from plus_minus;
-
-
-/*
-0
-1
-2
-*/"	
-			
 sql		"create table numbers (
     num_1 integer,
     num_2 integer,
@@ -1098,6 +626,13 @@ str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력
 LOCATE('C', 'ABCDEFG') → 3
 
 "
+			
+			
+			
+			
+			
+			
+			
 sql		"create table groomi
 (
     chacha varchar(50),
