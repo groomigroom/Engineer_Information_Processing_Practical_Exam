@@ -43,9 +43,9 @@ int main() {
 
 요즘 구조는 위와 같음. #####
 
-*/"	모두다 출력 같게 됨.
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G		
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM		
+*/"	모두다 출력 같게 됨.	
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G			
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM			
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -54,8 +54,8 @@ print(new_text) # 출력: HELLO
 코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
 numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"	
-자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1	
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"		
+자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1		
 		강좌	"abstract class A {
     //추상클래스는 반드시 상속을 해서 사용을 해야함.
     public abstract int b();
@@ -76,9 +76,9 @@ public class Main {
     public static void main(String[] args) {
         B obj = new B();
     }
-}"
-clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11		
-			
+}"	
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11			
+				
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -95,8 +95,8 @@ public class Groom {
 } _________"	"출력결과
 0
 100
-이 나오도록"
-			
+이 나오도록"	
+				
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -123,145 +123,9 @@ public class Groom {
     System.out.println(one.getArea());
   }
 }"	"실행순서 맞추기 312
-567도 "
-자바	https://www.youtube.com/watch?v=pKVIqIbn4hw&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=30	"class Parent {
-  private int x, y;
-  Parent(int x, int y) {
-    this.x = x;
-    this.y = y;
-    System.out.print(""A"");
-  }
-  int getValue() {
-    System.out.print(""B"");
-    return x + y;
-  }
-}
-
-"	"class Parent {
-  private int x, y;
-  Parent(int x, int y) {
-    this.x = x;
-    this.y = y;
-    System.out.print(""A"");
-    //1번 현재 출력값 A
-  }
-  int getValue() {
-    System.out.print(""B"");
-    return x + y;
-  }
-}
-class Child extends Parent {
-  int x;
-  Child(int x) {
-    //1번--->Child(int x) 생성자가 호출됩니다.
-    super(x, x);
-    //super
-    System.out.print(""C"");
-  }
-  Child(int x, int y) {
-    super(x, y);
-    System.out.print(""D"");
-  }
-  int getValue(int x, int y) {
-    System.out.print(""E"");
-    return x*y;
-  }
-}
-public class Groom {
-  public static void main(String[] args) {
-    Parent a = new Child(5);
-    //Parent 부모타입 참조 변수 a에 new Child(5)를 자식 객체를 생성 후 대입하기. Child(int x) 생성자가 호출됩니다.
-    System.out.println(a.getValue());
-  }
-}
-
-/*
-이 코드의 실행 결과는 ACB10입니다.자바의 생성자 상속, 매개변수에 따른 생성자 선택, 그리고 메서드 오버로딩(Overloading) 규칙에 따라 동작합니다. 단계별 동작 원리는 다음과 같습니다.
-
-부모 생성자 호출 (super(x, x);)Child(5) 내부에서 가장 먼저 super(5, 5);가 실행됩니다.부모 클래스의 Parent(int x, int y) 생성자로 이동하여 부모의 private 변수 x와 y에 각각 5를 저장합니다.부모 생성자 안의 System.out.print(""A"");가 실행되어 화면에 A가 출력됩니다.자식 생성자 나머지 실행부모 생성자가 끝나고 다시 Child(int x) 생성자로 돌아와 System.out.print(""C"");를 실행합니다. 화면에 C가 출력됩니다.주의: Child 내부의 인스턴스 변수 int x;는 이 과정에서 명시적으로 초기화되지 않아 기본값 0 상태입니다.2. 메서드 호출 (a.getValue())매개변수가 없는 getValue() 메서드를 호출합니다.참조 변수 타입의 한계변수 a는 Parent 타입입니다. 따라서 a를 통해서는 Parent 클래스에 정의되어 있거나 자식 클래스에서 오버라이딩(재정의)한 메서드만 호출할 수 있습니다.오버라이딩 여부 확인자식 클래스 Child에는 getValue(int x, int y)라는 매개변수가 2개인 메서드만 있습니다.이는 이름만 같고 형태가 다른 오버로딩(Overloading)입니다. 매개변수가 없는 원래의 getValue()를 오버라이딩한 것이 아닙니다.부모 메서드 실행자식 클래스에 오버라이딩된 getValue()가 없으므로, JVM은 부모 클래스(Parent)의 getValue()를 실행합니다.System.out.print(""B"");가 실행되어 화면에 B가 출력됩니다.부모의 private 변수 x(5)와 y(5)를 더한 값인 10을 반환합니다.3. 최종 출력 (System.out.println(...))a.getValue()가 반환한 값 10이 최종적으로 출력됩니다.앞서 출력된 A, C, B 뒤에 10이 붙어 최종 결과는 ACB10이 됩니다.
-*/"
-clang	https://www.youtube.com/watch?v=LOmemFIvTGw&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=16	"#include <stdio.h>
-int main()
-{
-  char ch, str[] = ""ABCDEFFF"";
-  int i, j;
-  for (i = 0; i < 8; i++) {
-    ch = str[i];
-    if (____)
-      break;
-  }
-  i--;
-  for(j = 0; j < i; j++) {
-    ch = str[j];
-    str[j] = str[i];
-    str[i] = ch;
-    i--;
-  }
-  printf(""%s"", str);
-}
-/*
-제시해주신 코드는 문자열 ""ABCDEFFF""에서 처음으로 나타나는 문자 'F'의 직전까지(즉, ""ABCDE"")만 선택하여 순서를 반대로 뒤집는(Reverse) 프로그램입니다.
-코드가 작동하는 원리를 단계별로 나누어 설명해 드리겠습니다.
-------------------------------
-## 1단계: 첫 번째 'F'의 위치 찾기 (탐색)
-
-for (i = 0; i < 8; i++) {
-  ch = str[i];
-  if (ch == 'F')
-    break;
-}
-
-
-* 배열의 0번 인덱스부터 차례대로 문자를 검사합니다.
-* i = 5가 되었을 때, str[5]의 값이 처음으로 'F'가 되므로 if (ch == 'F') 조건이 참이 되어 break로 반복문을 빠져나옵니다.
-* 결과: 이 반복문이 끝난 시점의 i 값은 5입니다.
-
-------------------------------
-## 2단계: 뒤집을 대상의 마지막 인덱스 설정
-
-i--;
-
-
-* i 값을 1 감소시켜 5에서 4로 만듭니다.
-* str[4]는 문자 'E'를 가리키며, 이는 뒤집을 영역(""ABCDE"")의 마지막 글자 인덱스가 됩니다.
-
-------------------------------
-## 3단계: 양방향에서 접근하여 문자 교환 (뒤집기)
-
-for(j = 0; j < i; j++) {
-  ch = str[j];
-  str[j] = str[i];
-  str[i] = ch;
-  i--;
-}
-
-이 반복문은 시작점(j)은 앞으로 나아가고, 끝점(i)은 뒤로 오면서 두 위치의 문자를 서로 맞바꿉니다. ch 변수는 값을 임시로 저장하는 컵 역할을 합니다.
-
-* 1회전 (j = 0, i = 4)
-* j(0) < i(4)이므로 조건 만족.
-   * str[0]('A')과 str[4]('E')의 위치를 바꿉니다.
-   * 문자열 상태: ""EBCDAFFF""
-   * 루프 끝에서 i--가 실행되어 i = 3이 되고, for문의 증감식에 의해 j++가 되어 j = 1이 됩니다.
-* 2회전 (j = 1, i = 3)
-* j(1) < i(3)이므로 조건 만족.
-   * str[1]('B')과 str[3]('D')의 위치를 바꿉니다.
-   * 문자열 상태: ""EDCBAFFF""
-   * 루프 끝에서 i--로 i = 2, 증감식 j++로 j = 2가 됩니다.
-* 루프 종료 (j = 2, i = 2)
-* j(2) < i(2) 조건을 만족하지 않으므로(거짓) 반복문이 종료됩니다. 가운데 글자인 'C'는 제자리에 남습니다.
-
-------------------------------
-## 4단계: 출력
-
-printf(""%s"", str);
-
-최종적으로 변환된 배열 str을 출력하여 화면에는 EDCBAFFF가 나타나게 됩니다.
-------------------------------
-이 코드의 작동 원리 중에서 문자 교환(Swap) 메커니즘이나 for문 안에서 i--와 j++가 동시에 변하는 구조에 대해 더 궁금한 점이 있으신가요?
-
-
-*/"	"출력결과
-EDCBAFFF"
+567도 "	
+				
+				
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -274,7 +138,7 @@ void main()
     number = number __ div;
   }
   printf(""%d"", result);
-}"	정수의 역순 출력 프로그램
+}"	정수의 역순 출력 프로그램	
 clang	https://www.youtube.com/watch?v=pk1dEuEbybk&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=19	"#include <stdio.h>
 int isprime (int number) {
   int i;
@@ -289,71 +153,9 @@ int main() {
     cnt = cnt + isprime(i);
   printf(""소수는 개수 : %d개\n"", cnt);
   return 0;
-}"	소수의 개수를 구하는 프로그램
-clang	https://www.youtube.com/watch?v=91HfRzf5P9Q&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=20	"#include <stdio.h>
-void main() {
-  int a = 0xB4;
-  //0x는 16진수를 나타내며, B4는 값 자체를 의미합니다.
-  int b = 0xF0;
-  printf(""%x\n"", a ^ b);
-  //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
-  printf(""%x"", a & b);
-}"	"#include <stdio.h>
-void main() {
-  int a = 0xB4;
-  //0x는 16진수를 나타내며, B4는 값 자체를 의미합니다.
-  int b = 0xF0;
-  printf(""%x\n"", a ^ b);
-  //11 * 16 ^ 2 + 4 #####
-  //%x는 정수(10진수)를 16진수(Hexadecimal) 문자열로 변환하여 출력하는 서식 지정자입니다. 소문자로 출력됩니다.
-  printf(""%x"", a & b);
-  //0
-}
-/*
-44
-b0
-다시 계산해 보기
-*/ 
-C언어에서 ^ 기호는 수학에서의 거듭제곱(제곱)이 아니라, 비트 단위 XOR(배타적 논리합) 연산자입니다.두 숫자의 같은 자리 비트를 비교하여 값이 서로 다르면 1, 같으면 0을 반환합니다.💡 XOR 연산의 기본 규칙0 ^ 0 = 01 ^ 1 = 0 (같으면 0)1 ^ 0 = 10 ^ 1 = 1 (다르면 1)"
-clang	https://www.youtube.com/watch?v=OsmP_dpxgXI&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=22	"#include <stdio.h>
-#include <string.h>
-int length(char a[], char s) {
-  char* p;
-  int len = 0;
-  p = strchr(a, s);
-  printf(""%s"", p);
-  while (*p != '\0') {
-    len++;
-    p++;
-  }
-  return len;
-}
-void main() {
-  char a[] = ""selfcontrol"";
-  int i = 0;
-  i = length(a, 'c');
-  printf(""%d\n"", i);
-}"	"#include <stdio.h>
-#include <string.h>
-int length(char a[], char s) {
- char* p;
- int len = 0;
- p = strchr(a, s);
-//
- printf(""%s"", p);
- while (*p != '\0') {
- len++;
- p++;
- }
- return len;
-}
-void main() {
- char a[] = ""selfcontrol"";
- int i = 0;
- i = length(a, 'c');
- printf(""%d\n"", i);
-}
-//strchr은 C언어 표준 라이브러리(<string.h>)에서 제공하는 함수로, 문자열 안에서 특정 문자가 처음으로 나타나는 위치(포인터)를 찾을 때 사용합니다. (이름의 유래: string + character)"
+}"	소수의 개수를 구하는 프로그램	
+				
+				
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -428,7 +230,7 @@ int main(int argc, char const* argv[]) {
   }
   return 0;
 }
-다시 계산하기"
+다시 계산하기"	
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -526,7 +328,7 @@ main 함수의 마지막 반복문이 정렬된 배열을 처음부터 끝까지
 
 혹시 이 알고리즘의 **시간 복잡도(성능)**나 안쪽 for문에서 **값이 밀려나는 코드(A[j + 1] = A[j])**의 세부적인 메커니즘에 대해 더 궁금한 점이 있으신가요?
 
-"
+"	
 clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
 int len(_______);
 int main()
@@ -542,19 +344,7 @@ int len(char* p) {
     _______;
   }
   return cnt;
-}"	
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+}"		
 clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
 int calc(int (*q)(int, int)) {
   int result;
@@ -572,233 +362,10 @@ int main() {
   calc(p);
   return 0;
 }
-"	
-sql		"create table numbers (
-    num_1 integer,
-    num_2 integer,
-    num_3 integer,
-    num_4 float
--- ??
-);
-
-insert into numbers
-values
-(1, 2, 3, 3.633),
-(-4, 5, 6, 4.356),
-(-7, 8, 9, 5.765);
-
-
-
-select round(num_4, 1), sqrt(num_3), truncate(num_4, 1)
-from numbers;
-
-
-RAND([n])
-0보다 크거나 같고 1보다 작은 난수(실수) 반환RAND 함수를 실행할 때마다 반환되는 값(난수)은달라지지만, 매개변수 n(생략 가능)을 명시하면여러 번 실행해도 같은 값 반환
-RAND() → 0.14949947330122765
-ROUND(x, d)
-x를 소수점 이하 d 자리까지 반올림
-d 생략 시 0을 적용해 정수 반환
-d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
-ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
-TRUNCATE(x, d
-) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3"	"reate table numbers (
-    num_1 integer,
-    num_2 integer,
-    num_3 integer,
-    num_4 float
-);
-
-insert into numbers
-values
-(1, 2, 3, 3.633),
-(-4, 5, 6, 4.356),
-(-7, 8, 9, 5.765);
-
-
-
-select round(num_4, 1), sqrt(num_3), truncate(num_4, 1)
-from numbers;
-
-round(num_4, 1)                    | sqrt(num_3) | truncate(num_4, 1) |
-3.6                                       | 루트3         | 3.6                       |
-4.4                                       | 루트6         | 4.3                       |
-5.8                                       | 3               | 5.7                       |
--- 소수점 이하 자리까지 반올림                    --소수점 몇자리로 잘라냄
-
-
-RAND([n])
-0보다 크거나 같고 1보다 작은 난수(실수) 반환RAND 함수를 실행할 때마다 반환되는 값(난수)은달라지지만, 매개변수 n(생략 가능)을 명시하면여러 번 실행해도 같은 값 반환
-RAND() → 0.14949947330122765
-ROUND(x, d)
-x를 소수점 이하 d 자리까지 반올림
-d 생략 시 0을 적용해 정수 반환
-d가 음수이면 소수점 기준 왼쪽(정수 부분)으로기준점 이동
-ROUND(2.354,1) → 2.4SIGN() 매개변수가 0보다 크면 1, 0이면 0, 0보다 작으면-1 SIGN(-5) → -1SQRT() 제곱근 SQRT(3) → 1.7320508075688772
-TRUNCATE(x, d
-) x를 소수점 이하 d 자리에서 잘라냄 TRUNCATE(2.354,1) →2.3
-"
-sql		"create table groomi
-(
-    groom1 varchar(50),
-    groom2 varchar(50),
-    groom3 varchar(50),
-    groom4 varchar(50),
-    gromm5 float
-);
-
-
-insert into groomi
-values
-(""김구름"", ""멍멍"", ""구름구름"", ""구우름"", 123454.33344),
-(""groom"", ""mung"", ""구름구름이"", ""구름"", 3434.556664),
-(""gugu"", ""mong"", ""구름구름이이"", ""구우우름"", 55434.556664);
-
-select char_length(groom1), length(groom1), concat(groom1, groom2), concat_ws(""groom"", groom1, groom2), format(groom5, 3), instr(groom1, ""구""), locate(""름"", groom3, 4), position(""름"" in groom3), locate(""름"", groom4) 
-from groomi;
-
-
-
-
-
-
-
-
-
-
-
-CHAR_LENGTH(str)
-CHARACTER_LENGTH(str
-)
-str 문자열의 문자 개수 반환 CHAR_LENGTH('AB')→ 2
-LENGTH(str) str 문자열의 바이트(Byte) 수 반환 LENGTH('AB') → 2CONCAT(s1, s2...) s1, s2 등의 문자열을 하나로 이어 붙여반환 CONCAT('A', 'B') → ABCONCAT_WS(sep, s1, s2,
-... ) s1, s2 등의 문자열을 sep로 연결해 반환CONCAT_WS('-', 'A', '
-B') → A-BFORMAT(x, d)
-숫자 x의 정수 부분 3자리마다 콤마를 추가해 문자열로 반환, 소수점 이하 d자리기준으로 반올림
-FORMAT(123456.13457, 3) → 123,456.135INSTR(str, substr) str 문자열에서 substr 문자(열)를 찾아시작 위치 반환 INSTR('ABC', 'C') → 3LOCATE(substr, str, pos)
-POSITION(substr IN str)
-str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
-LOCATE('C', 'ABCDEFG') → 3"	"create table groomi
-(
-    groom1 varchar(50),
-    groom2 varchar(50),
-    groom3 varchar(50),
-    groom4 varchar(50),
-    gromm5 float
-);
-
-
-insert into groomi
-values
-(""김구름"", ""멍멍"", ""구름구름"", ""구우름"", 123454.33344),
-(""groom"", ""mung"", ""구름구름이"", ""구름"", 3434.556664),
-(""gugu"", ""mong"", ""구름구름이이"", ""구우우름"", 55434.556664);
-
-select char_length(groom1), length(groom1), concat(groom1, groom2), concat_ws(""groom"", groom1, groom2), format(groom5, 3), instr(groom1, ""구""), locate(""름"", groom3, 4), position(""름"" in groom3), locate(""름"", groom4) 
-from groomi;
-
-char_length(groom1) | length(groom1) | concat(groom1, groom2) | concat_ws(""groom"", groom1, groom2) | 
-3                            | 9                     | 김구름멍멍                    | 김구름groom멍멍                            |
-5                            | 5                     | groommung                  | groomgroommung                          |
-4                            | 4                     | gugumong                    | gugugroommong                            |
--- 문자열 개수 반환    바이트 수 반환
-
-format(groom5, 3) | instr(groom1, ""구"") | locate(""름"", groom3, 4) | position(""름"" in groom3) | 
-123,454.333          | 2                         | 4                               | 2                                |
-3,434.557             | null                      | 4                               | 2                                |
-55,434.557            | null                      | 4                              | 2                                |
-
-locate(""름"", groom4) |
-3                           |
-2                           |
-4                           |
-
-
-
-INSTR(str, substr) str 문자열에서 substr 문자(열)를 찾아시작 위치 반환 INSTR('ABC', 'C') → 3LOCATE(substr, str, pos)
-POSITION(substr IN str)
-str 문자열에서 substr 문자(열)를 찾아시작 위치 반환, pos 입력 시 해당 위치부터 검색
-LOCATE('C', 'ABCDEFG') → 3
-
-"
-			
-			
-			
-			
-			
-			
-			
-sql		"create table groomi
-(
-    chacha varchar(50),
-    chacha2 varchar(50),
-    chacha3 varchar(50),
-);
-
-insert into groomi
-values
-(""GROOMI"", ""groomi"",),
-(""GRULD"", ""clude"",),
-
-
-select lower(chacha), lcase(chacha), upper(chacha2), ucase(chacha2), lpad(chacha, 8, ""구""), rpad(chacha2, 10, ""름""), left(chacha, 3), right(chacha2, 4), repeat(chacha, 3)
-from groomi;
-
-
-
-
-
-
-LOWER(str)
-LCASE(str) str 문자열을 소문자로 반환 LOWER('ABC') → 'abc'
-UPPER(str)
-UCASE(str) str 문자열을 대문자로 반환 UPPER('abc') → 'ABC'
-LPAD(str, len, pads
-tr)
-str 문자열을 len 길이만큼 반환하는데, 자리가남으면 왼쪽을 padstr 문자로 채움
-LPAD('ABC', 5, '*') → '
-**ABC'
-RPAD(str, len, pads
-tr)
-str 문자열을 len 길이만큼 반환하는데, 자리가남으면 오른쪽을 padstr 문자로 채움
-RPAD('ABC', 5, '*') → '
-ABC**'
-LTRIM(str) str 문자열에서 왼쪽 공백 제거 LTRIM(' ABC ') → 'ABC' RTRIM(str) str 문자열에서 오른쪽 공백 제거 RTRIM(' ABC ') → ' ABC'
-LEFT(str, len) str 문자열을 len 길이만큼 왼쪽에서 잘라 반환LEFT('ABCDE', 2) → 'AB'
-RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반환
-RIGHT('ABCDE', 2) → '
-DE'
-REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'"	"create table groomi
-(
-    chacha varchar(50),
-    chacha2 varchar(50)
-);
-
-insert into groomi
-values
-(""GROOMI"", ""groomi"",),
-(""GRULD"", ""clude"",),
-
-
-select lower(chacha), lcase(chacha), upper(chacha2), ucase(chacha2), lpad(chacha, 8, ""구""), rpad(chacha2, 10, ""름""), left(chacha, 3), right(chacha2, 4), repeat(chacha, 3)
-from groomi;
-
-lower(chacha) | lcase(chacha) | upper(chacha2) | ucase(chacha2) | lpad(chacha, 8, ""구"") | 
-groomi          | groomi          | GROOMI          | GROOMI         | 구구GROOMI          |
-gruld             | gruld            | GRULD             | GRULD           | 구구구GRULD          |
-
-rpad(chacha2, 10, ""름"") | left(chacha, 3) | right(chacha2, 4) | repeat(chacha, 3)               |
-groomi름름름름           | GRO             | oomi                 | GROOMIGROOMIGROOMI |
-clude름름름름름          | GRU              | lude                  | GRULDGRULDGRULD         |
-
-
-LTRIM(str) str 문자열에서 왼쪽 공백 제거 LTRIM(' ABC ') → 'ABC' RTRIM(str) str 문자열에서 오른쪽 공백 제거 RTRIM(' ABC ') → ' ABC'
-LEFT(str, len) str 문자열을 len 길이만큼 왼쪽에서 잘라 반환LEFT('ABCDE', 2) → 'AB'
-RIGHT(str, len) str 문자열에서 len 길이만큼 오른쪽에서 잘라 반환
-RIGHT('ABCDE', 2) → '
-DE'
-REPEAT(str, count) str 문자열을 count만큼 반복 REPEAT('Ya', 3) → 'YaYaYa'
-"
+"		
+				
+				
+				
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -879,7 +446,7 @@ G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
 TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
 STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
 1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"
+"	
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -921,7 +488,7 @@ date에 expr unit을 더한 날
 반환
 DATE_ADD('2021-01-10', INTERVAL 10 DAY) → 2021-01-20ADDDATE(expr, days) expr에 days를 더한 날짜 반
 환
-ADDDATE('2021-01-10', 10) → 2021-01-20"	
+ADDDATE('2021-01-10', 10) → 2021-01-20"		
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -961,112 +528,7 @@ DATE_FORMAT('2021-01-31',%y %) → 21/01/31STR_TO_DATE(str, format) str을 forma
 MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날짜 반환
 MAKEDATE(2021,100) → 2021-04-10
 SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
-WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"	
-자바		"public class Main {
-    public static void main(String[] args) {
-      int inum1, inum2, inum3, inum4, inum5;
-      inum3 = 0;
-      int [][] iarr = new int[3][5];
-      for (inum1 = 0; inum1 < 3; inum1++)
-      {
-        for (inum2 = 0; inum2 < 5; inum2++)
-        {
-            inum3 += 3;
-            iarr[inum1][inum2] = inum3;
-        }
-      }
-
-      for (inum4 = 0; inum4 < 3; inum4++)
-      {
-        for (inum5 = 0; inum5 < 5; inum5++)
-        {
-          System.out.print(iarr[inum4][inum5] + "" "");
-        }
-        System.out.println();
-      }
-      System.out.println(inum3);
-    }
-}"	"public class Main {
-    public static void main(String[] args) {
-      int inum1, inum2, inum3, inum4, inum5;
-      inum3 = 0;
-      int [][] iarr = new int[3][5];
-      for (inum1 = 0; inum1 < 3; inum1++)
-      {
-        for (inum2 = 0; inum2 < 5; inum2++)
-        {
-            inum3 += 3;
-            iarr[inum1][inum2] = inum3;
-        }
-      }
-
-      for (inum4 = 0; inum4 < 3; inum4++)
-      {
-        for (inum5 = 0; inum5 < 5; inum5++)
-        {
-          System.out.print(iarr[inum4][inum5] + "" "");
-        }
-        System.out.println();
-      }
-      System.out.println(inum3);
-    }
-}
-/*
-3 6 9 12 15
-21 24 27 30 33
-36 39 42 45 48
-48
-*/"
-자바		"abstract class groom {
-  String name;
-  abstract public String getName(String val);
-  public String getName(){
-    return ""Vehicle name:"" + name;
-  }
-}
-class Car extends groom {
-  String name;
-  public Car(String val){
-    name = super.name = val;
-  }
-  public String getName(String val){
-    return ""Car name:""+val;
-  }
-  public String getName(byte val[]){
-    return ""Car name:""+val;
-  }
-}
-public class groomgroom {
-  public static void main(String args[]){
-    groom obj = new Car(""Spark"");
-    System.out.print(obj.getName());
-  }
-}"	"abstract class groom {
-  String name;
-  abstract public String getName(String val);
-  public String getName(){
-    return ""Vehicle name:"" + name;
-  }
-}
-class Car extends groom {
-  String name;
-  public Car(String val){
-    name = super.name = val;
-  }
-  public String getName(String val){
-    return ""Car name:""+val;
-  }
-  public String getName(byte val[]){
-    return ""Car name:""+val;
-  }
-}
-public class groomgroom {
-  public static void main(String args[]){
-    groom obj = new Car(""Spark"");
-    System.out.print(obj.getName());
-  }
-}
-//Car name:Spark"
+WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"		
 파이썬		"students = []
 
 def add_data(stud) :
@@ -1118,7 +580,7 @@ add_data(""구름음"")
 add_data(""름"")
 
 print(students)
-#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"
+#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"	
 java		"class Human {
     int age;
     String name;
@@ -1155,7 +617,7 @@ class JavaLast {
 
 /*
 안녕9살김구름이다.
-*/"
+*/"	
 java		"class Groom {
   String name;
   boolean favorite;
@@ -1219,7 +681,7 @@ class JavaLast {
 /*
 김구름 멍멍
 구르음
-*/"
+*/"	
 java		"class Time {
   boolean am;
   int hour;
@@ -1258,52 +720,7 @@ now.whatTime(); // 인자(Argument)를 아무것도 전달하지 않음!
 }
 코드를 사용할 때는 주의가 필요합니다.이렇게 작성하면 객체가 생성될 때 저장한 now 객체의 데이터(true, 12, 34, 56)를 출력하는 것이 아니라, 메서드를 호출할 때 괄호 안에 넣는 새로운 인자값에 의존하게 됩니다. 객체지향 프로그래밍 관점에서 객체 내부 속성을 스스로 출력한다는 whatTime() 본연의 역할과 어긋나게 됩니다.이 문제를 해결하고 코드를 올바르게 수정하는 방향에 대해 더 알고 싶으시다면, 아래 항목 중 원하시는 것을 알려주세요:main 메서드에서 새로운 whatTime 메서드를 올바르게 호출하는 코드 수정법객체의 본래 데이터를 유지하면서 외부 데이터도 출력할 수 있게 하는 올바른 메서드 오버로딩 구현법
 --->의 문제 때문에 this 사용함.
-*/"	
-java		"class Time {
-  boolean am;
-  int hour;
-  int minute;
-  int second;
-
-  Time(boolean am, int hour, int minute, int second) {
-    this.am = am;
-    this.hour = hour;
-    this.minute = minute;
-    this.second = second;
-  }
-
-//this(am, hour, minute, second);
-  
-  Time(boolean am, int hour, int minute) {
-    this.am = am;
-    this.hour = hour;
-    this.minute = minute;
-    this.second = 0;
-  }
-
-  Time(int hour24, int minute) {
-    this.am = hour24 < 12;
-    this.hour = hour24 % 12;
-    this.minute = minute;
-    this.second = 0;
-  }
-
-  void whatTime() {
-    System.out.print(am ? ""오전"" : ""오후"");
-    System.out.println(hour + ""시"" + minute + ""분"" + second + ""초"");
-  }
-}
-
-class JavaTest {
-  public static void main(String[] args) {
-    Time now = new Time(true, 12, 34, 56);
-    now.whatTime();
-    Time today = new Time(true, 12, 12);
-    today.whatTime();
-    Time toto = new Time(14, 14);
-    toto.whatTime();
-  }
-}"	
+*/"		
 자바	https://roadtofree.tistory.com/entry/31	"public class Groom {
   public static void main(String[] args){
     int[] a = {0, 1, 2, 3};
@@ -1312,7 +729,7 @@ class JavaTest {
       System.out.print(a[i] + "" "");
     }
   }
-}"	0 1 2 3
+}"	0 1 2 3	
 자바		"class A {
   private int a;
   
@@ -1362,7 +779,7 @@ public class Groom {
  public static void main(String[] args) {
  B obj = new B(10);
  }
-}"
+}"	
 자바		"class Parent {
   public void show() {
     System.out.println(""Parent"");
@@ -1384,7 +801,7 @@ public class Groom {
 /*
 빈칸 채우기
 출력갑 Child
-*/"	빈칸
+*/"	빈칸	
 자바		"public class Groom {
   public static void main(String[] args) {
     int i = 0;
@@ -1398,8 +815,8 @@ public class Groom {
     }
     System.out.println(sum);
   }
-}"	
-자바	2020년 3회차 부터 문제 적기 abstract class vehicle	https://roadtofree.tistory.com/entry/31	
+}"		
+				
 파이썬	"a = [10, 11, 12, 13]
 a.pop(1)
 #해당 위치에 있는 값을 삭제하는게 .pop()
@@ -1417,7 +834,7 @@ print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
 d.add(4)
 print(d)
 e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"		
+print(e.values()) #dict_values(['구름', 9])로 나옴? #####"			
 자바		"public class Groom {
   public static void main(String[] args) {
     int a = 3;
@@ -1430,8 +847,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 /*
 출력값
 10.0
-*/"	
-			
+*/"		
 자바		"public class Groom {
   public static void main(String[] args) {
     int[] Data = {1, 2, 3, 4, 5};
@@ -1442,7 +858,7 @@ print(e.values()) #dict_values(['구름', 9])로 나옴? #####"
 
 /*
 12345
-*/"	
+*/"		
 sql		"create table groomi
 (
     groo1 integer,
@@ -1473,7 +889,7 @@ where groo2 = 5;
 delete from groomi
 where groo2 = 5;
 
-"	
+"		
 java		"public class Main {
   public static void main(String[] args) {
     int[] Evens = {0, 2, 4, 6, 8};
@@ -1489,7 +905,7 @@ java		"public class Main {
 March
 April
 May
-*/"	
+*/"		
 java		"public class Main {
   public static void main(String[] args) {
     int[][] Data = {{1, 2, 3}, {4, 5, 6}};
@@ -1510,7 +926,7 @@ java		"public class Main {
 123456
 2
 3
-*/"	
+*/"		
 java		"public class Main {
   public static void main(String[] args) {
     int[][] Data = {{1, 2, 3}, {4, 5}, {6}, {8, 9, 10, 11}};
@@ -1523,7 +939,7 @@ java		"public class Main {
 }
 /*
 
-*/"	
+*/"		
 java		"public class Main {
   public static void main(String[] args) {
     String[] weAreAt = {""김"", ""구"", ""름""};
@@ -1535,7 +951,7 @@ java		"public class Main {
 김
 구
 름
-*/"	
+*/"		
 java		"public class Main {
   static String say() {
     return ""김구름"";
@@ -1546,7 +962,7 @@ java		"public class Main {
   }
 }
 
-//출력값 == 김구름"	
+//출력값 == 김구름"		
 java		"public class Main {
   static void printThis() {
     int i = 1;
@@ -1560,7 +976,7 @@ java		"public class Main {
   }
 }
 
-//출력값 == 123"	
+//출력값 == 123"		
 java		"public class Main {
   static void printThis() {
     int i = 1;
@@ -1582,7 +998,7 @@ java		"public class Main {
 123
 123
 123
-*/"	
+*/"		
 java		"import java.util.Scanner;
 
 public class Main {
@@ -1595,5 +1011,56 @@ public class Main {
         SUM = SUM + N;
       System.out.print(N1 + ""부터"" + N2 + ""까지의"");
       System.out.println(""정수의 합은"" + SUM + ""이다."");
+    }
+}"		
+자바			"abstract class vehicle
+{
+    private String name;
+    abstract public String getName(String val);
+    public String getName() {
+        return ""vehicle name:"" + name;
+    }
+    public void setName(String val) {
+        name = val;    
+    }
+}
+
+class Car extends vehicle {
+    public Car(String val) {
+        setName(val);
+    }
+    public String getName(String val) {
+        return ""Car name : "" + val;
+    }
+    public String getName(byte val[]) {
+        return ""Car name : "" + val;
+    }
+}
+
+public class good {
+    public static void main(String[] args) {
+        vehicle obj = new Car(""Spark"");
+        System.out.print(obj.getName());
+    }
+}"	
+자바	7. 2020년 4회차 abstract class vehicle	https://roadtofree.tistory.com/entry/31	"class Parent {
+    public int compute (int num) {
+        if (num <= 1) return num;
+        return compute(num - 1) + compute(num - 2);
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public int compute(int num) {
+        if (num <= 1) return num;
+        return compute(num - 1) + compute(num - 3);
+    }
+}
+
+public class good {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        System.out.print(obj.compute(4));
     }
 }"	
