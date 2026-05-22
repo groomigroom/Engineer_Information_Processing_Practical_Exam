@@ -28,6 +28,43 @@
 
 
 
+
+
+------
+
+abstract class Animal {
+  private String name;
+  abstract public String getName(String val);
+  public String getName() {
+    return "Animal name:" + name;
+  }
+  public void setName(String val) {
+    name = val;
+  }
+}
+class Dog extends Animal {
+  public Dog(String val) {
+    setName(val);
+  }
+  public String getName(String val) {
+    return "Dog name :" + val;
+  }
+  public String getName(byte val[]) {
+    return "Dog name :" + val;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Animal obj = new Dog("Sarng");
+    //Dog 개체의 String val에 넣는 값이 "Sarng"
+    System.out.print(obj.getName());
+    //Animal name:Sarng
+  }
+}
+/*
+1. 객체 생성과 데이터 저장Animal obj = new Dog("Sarng"); 문장이 실행되면서 Dog 객체가 생성됩니다.생성자 안에서 setName("Sarng")이 호출됩니다.이 메서드는 부모 클래스(Animal)에 정의된 메서드이므로, 부모의 private String name 변수에 **"Sarng"**이 저장됩니다.2. 매개변수 없는 getName()의 호출obj.getName()을 호출할 때, 호출된 메서드는 **매개변수가 없는 getName()**입니다.3. 오버라이딩(재정의) 여부 확인부모 클래스 Animal에는 getName()과 getName(String val) 두 가지 메서드가 있습니다.자식 클래스 Dog에는 getName(String val)과 getName(byte val[])만 정의되어 있습니다.즉, 자식 클래스 Dog는 매개변수가 없는 getName() 메서드를 오버라이딩(재정의)하지 않았습니다.4. 최종 메서드 실행자식 클래스에 오버라이딩된 메서드가 없기 때문에, 자바 가상머신(JVM)은 부모 클래스 Animal에 있는 오버라이딩되지 않은 원본 메서드 public String getName()을 그대로 실행합니다.따라서 부모 클래스의 메서드 로직에 따라 "Animal name:" + name이 계산되어 **Animal name:Sarng**이 출력됩니다.
+*/
+
 ------
 
 class Date {
