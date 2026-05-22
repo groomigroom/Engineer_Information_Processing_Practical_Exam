@@ -25,6 +25,36 @@
     <pre>
 
 
+
+
+-----
+
+#include <stdio.h>
+#include <string.h>
+void main() {
+  char str1[12] = "tulip";
+  char str2[5] = "Lily";
+  char* p1, * p2;
+  p1 = str1;
+  //tulip
+  p2 = str2;
+  //Lily
+  str2[0] = p1[2];
+  //lily
+  str1[3] = p2[1];
+  //tulip
+  while (*p1 != 0) {
+    p1++;
+  }
+  //널문자 위치가 될 때까지 *p1 이동하기.
+  *p1 = '-';
+  //여기에 -를 넣기
+  strcat(str1, str2);
+  //strcat은 두 개의 문자열을 하나로 이어 붙여주는 함수입니다.문자열(string)을 연결하다(concatenate)라는 단어에서 유래했으며, <string.h> 헤더 파일에 정의되어 있습니다
+  printf("%s\n", str1);
+  //tulip-lily
+}
+
 -----
 
 #include <stdio.h>
