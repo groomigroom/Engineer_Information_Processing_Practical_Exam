@@ -28,7 +28,39 @@
 
 
 
+------
 
+class Date {
+  private int year;
+  private String month;
+  private int day;
+  public Date() {
+    this(2023, "04", 3);
+  }
+  public Date(String month) {
+    this(2023, month, 25);
+  }
+  public Date(int year, String month, int day) {
+    this.year = year;
+    this.month = month;
+    this.day = day;
+  }
+  @Override
+  //@Override는 상속받은 부모 클래스의 메서드를 자식 클래스에서 재정의(오버라이딩)할 때, 컴파일러에게 이 메서드가 부모 메서드를 정확히 재정의하고 있는지 확인하도록 지시하는 애너테이션입니다.
+  public String toString() {
+    return year + "-" + month + "-" + day;
+  }
+}
+public class Groom {
+  public static void main(String[] args) {
+    Date d1 = new Date();
+    Date d2 = new Date("12");
+    System.out.println(d1);
+    //2023-04-3
+    System.out.println(d2);
+    //2023-12-25
+  }
+}
 
 
 ------
