@@ -27,6 +27,34 @@
 
 
 
+
+-----
+
+#include <stdio.h>
+int main()
+{
+ char a[] = "abcdefg";
+ char* p = a;
+ while (*p != "\0") {  //"\0"
+ printf("%c", *p++); //*p++
+ }
+ return 0;
+}
+
+//출력값 abcdefg
+/*
+#include <stdio.h>
+int main()
+{
+ char a[] = "abcdefg";
+ char* p = a;
+ while (*p != ____) {  //"\0"
+ printf("%c", ____); //*p++
+ }
+ return 0;
+}
+*/
+
 -----
 
 #include <stdio.h>
