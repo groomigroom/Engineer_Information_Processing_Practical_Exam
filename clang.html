@@ -27,6 +27,32 @@
 
 
 
+
+
+#include <stdio.h>
+int main()
+{
+  char ch, str[] = "ABCDEFFF";
+  int i, j;
+  for (i = 0; i < 8; i++) {
+    ch = str[i];
+    if (ch = 'F') //여기가 빈칸 채우기 문제
+      break;
+  }
+  i--;
+  //ABCDE까지 뽑아내기
+  for(j = 0; j < i; j++) {
+    ch = str[j];
+    str[j] = str[i];
+    str[i] = ch;
+    i--;
+    //EDCBA로 순서 바꾸기
+  }
+  printf("%s", str);
+  //EDCBAFFF
+}
+
+
 -----
 
 
