@@ -32,6 +32,52 @@
 
 
 
+
+
+
+-------
+
+
+class Groom {
+  String name;
+  boolean favorite;
+
+  Groom(String aName, boolean aFavorite) {
+    name = aName;
+    favorite = aFavorite;
+  }
+
+  void run() {
+    if (favorite) {
+      System.out.println("김구름 멍멍");
+    } else {
+      System.out.println("멍멍 김구름");
+    }
+  }
+
+  void stop() {
+    System.out.println("구르음");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Groom groomii = new Groom("김구름", true);
+
+    groomii.run();
+    groomii.stop();
+  }
+}
+
+/*
+김구름 멍멍
+구르음
+*/
+
+
+-------
+
+
 class Human {
     int age;
     String name;
