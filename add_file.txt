@@ -43,9 +43,9 @@ int main() {
 
 요즘 구조는 위와 같음. #####
 
-*/"	모두다 출력 같게 됨.	
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G			
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM			
+*/"	모두다 출력 같게 됨.		
+c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G				
+자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM				
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -54,8 +54,8 @@ print(new_text) # 출력: HELLO
 코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
 numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
 
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"		
-자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1		
+print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"			
+자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1			
 		강좌	"abstract class A {
     //추상클래스는 반드시 상속을 해서 사용을 해야함.
     public abstract int b();
@@ -76,9 +76,9 @@ public class Main {
     public static void main(String[] args) {
         B obj = new B();
     }
-}"	
-clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11			
-				
+}"		
+clang	https://www.youtube.com/watch?v=hEpXOdBXs58&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=11				
+					
 자바	https://www.youtube.com/watch?v=cvgwaBQADfg&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=24	"class MyObj {
   int value = 0;
   void count(MyObj c) {
@@ -95,8 +95,8 @@ public class Groom {
 } _________"	"출력결과
 0
 100
-이 나오도록"	
-				
+이 나오도록"		
+					
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -123,9 +123,9 @@ public class Groom {
     System.out.println(one.getArea());
   }
 }"	"실행순서 맞추기 312
-567도 "	
-				
-				
+567도 "		
+					
+					
 clang	https://www.youtube.com/watch?v=mvbRyqfevR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=17	"#include <stdio.h>
 void main()
 {
@@ -138,7 +138,7 @@ void main()
     number = number __ div;
   }
   printf(""%d"", result);
-}"	정수의 역순 출력 프로그램	
+}"	정수의 역순 출력 프로그램		
 clang	https://www.youtube.com/watch?v=pk1dEuEbybk&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=19	"#include <stdio.h>
 int isprime (int number) {
   int i;
@@ -153,9 +153,9 @@ int main() {
     cnt = cnt + isprime(i);
   printf(""소수는 개수 : %d개\n"", cnt);
   return 0;
-}"	소수의 개수를 구하는 프로그램	
-				
-				
+}"	소수의 개수를 구하는 프로그램		
+					
+					
 clang	https://www.youtube.com/watch?v=giO8CrDSYVo&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=23	"#include <stdio.h>
 #define MAX_SIZE 5
 int stack[MAX_SIZE];
@@ -230,7 +230,7 @@ int main(int argc, char const* argv[]) {
   }
   return 0;
 }
-다시 계산하기"	
+다시 계산하기"		
 clang	https://www.youtube.com/watch?v=KYvYTi9Cujg&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=24	"#include <stdio.h>
 void calc(int A[]) {
   for (int i = 1; i < 6; i++) {
@@ -276,7 +276,8 @@ int main() {
   return 0;
 }
 //다시 계산하기
-제시해주신 C언어 코드는 삽입 정렬(Insertion Sort) 알고리즘을 구현한 것으로, 배열의 무작위 숫자들이 오름차순(작은 순서부터 큰 순서로) 정렬되는 동작 원리를 가지고 있습니다.
+제시해주신 C언어 코드는 삽입 정렬(Insertion Sort) 알고리즘을 구현한 것으로, 
+배열의 무작위 숫자들이 오름차순(작은 순서부터 큰 순서로) 정렬되는 동작 원리를 가지고 있습니다.
 프로그램의 핵심 실행 과정을 단계별로 알기 쉽게 설명해 드리겠습니다.
 ------------------------------
 ## 💡 핵심 동작 원리 (요약)
@@ -328,70 +329,14 @@ main 함수의 마지막 반복문이 정렬된 배열을 처음부터 끝까지
 
 혹시 이 알고리즘의 **시간 복잡도(성능)**나 안쪽 for문에서 **값이 밀려나는 코드(A[j + 1] = A[j])**의 세부적인 메커니즘에 대해 더 궁금한 점이 있으신가요?
 
-"	
-clang	https://www.youtube.com/watch?v=N-IetvqdUf0&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=28	"#include <stdio.h>
-int len(_______);
-int main()
-{
-  char* s1 = ""1234"";
-  char* s2 = ""abcdef"";
-  printf(""%d"", len(s1), len(s2));
-}
-int len(char* p) {
-  int cnt = 0;
-  while (*p != 0) {
-    p++;
-    _______;
-  }
-  return cnt;
-}"		
-				
-				
-				
-				
-				
-sql		"create table groomi
-(
-    chacha varchar(50),
-    chacha2 varchar(50),
-    chacha3 varchar(50),
-    chadate date,
-    chatime time,
--- #####
-    chadatime expr
-);
-
-insert into groomi
-values
-(""groom"", ""oogroomoo"", ""groom"", ""2017-01-09""),
-(""grooom"", ""oogroooomooo"", ""grooom"", ""2022-01-01""),
-(""gruoom"", ""oogruuumoo"", ""gruuum"", ""2020-01-07"");
-
-select year(chadate), weekofyear(chadate), hour(chatime), date(chadatime), time(chadatime), date_add(chadate, interval 10 day), adddate(chadate, 11)
-from groomi;
-
-
-
-
-
-
-
-
-YEAR(date) date에서 연 반환 YEAR('2021-01-02') → 2021MONTH(date) date에서 월 반환 MONTH('2021-02-02') → 2QUARTER(date) date의 분기 반환 QUARTER('2021-02-02') → 1WEEKOFYEAR(date) date가 몇 주차인지 반환
-(1~53주)
-WEEKOFYEAR('2021-02-22') →8
-HOUR(time) time에서 시간 반환 HOUR('10:53:24') → 10MINUTE(time) time에서 분 반환 MINUTE('10:53:24') → 53SECOND(time) time에서 초 반환 SECOND('10:53:24') → 24DATE(expr) expr에서 날짜 부분 반환 DATE('2021-01-02 12:32:10') →2021-01-02
-TIME(expr) expr에서 시간 부분 반환 TIME('2021-01-02 12:32:10') →12:32:10
-DATE_ADD(date, INTERVAL expr
-unit)
-ADDDATE(date, INTERVAL expr u
-nit)
-date에 expr unit을 더한 날
-짜
-반환
-DATE_ADD('2021-01-10', INTERVAL 10 DAY) → 2021-01-20ADDDATE(expr, days) expr에 days를 더한 날짜 반
-환
-ADDDATE('2021-01-10', 10) → 2021-01-20"		
+"		
+					
+					
+					
+					
+					
+					
+					
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -431,72 +376,7 @@ DATE_FORMAT('2021-01-31',%y %) → 21/01/31STR_TO_DATE(str, format) str을 forma
 MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날짜 반환
 MAKEDATE(2021,100) → 2021-04-10
 SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
-WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"		
-자바		"class Parent {
-  public void show() {
-    System.out.println(""Parent"");
-  }
-}
-
-class Child extends Parent {
-  public void show() {
-    System.out.println(""Child"");
-  }
-}
-
-public class Groom {
-  public static void main(String[] args) {
-    Parent pa = ____ Child();
-    pa.show();
-  }
-}
-/*
-빈칸 채우기
-출력갑 Child
-*/"	빈칸	
-파이썬	"a = [10, 11, 12, 13]
-a.pop(1)
-#해당 위치에 있는 값을 삭제하는게 .pop()
-print(a)
-print(len(a))
-a.extend([14])
-a.extend([15, 16])
-print(a)
-#####
-b = a.reverse()
-print(b)
-c = [1, 2, 1, 1, 3, 1]
-d = set(c)
-print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
-d.add(4)
-print(d)
-e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"	"a = [10, 11, 12, 13]
-a.pop(1)
-#해당 위치에 있는 값을 삭제하는게 .pop()
-print(a)
-#10 12 13
-print(len(a))
-#3
-a.extend([14])
-#10 12 13 14
-a.extend([15, 16])
-#10 12 13 14 15 16
-print(a)
-#####
-b = a.reverse()
-print(b)
-#16 15 14 13 12 10
-c = [1, 2, 1, 1, 3, 1]
-d = set(c)
-print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
-d.add(4)
-print(d)
-#1 2 3 4
-e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"		
-				
-				
+WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"			
 sql		"create table groomi
 (
     groo1 integer,
@@ -527,37 +407,7 @@ where groo2 = 5;
 delete from groomi
 where groo2 = 5;
 
-"		
-자바		"abstract class vehicle
-{
-    private String name;
-    abstract public String getName(String val);
-    public String getName() {
-        return ""vehicle name:"" + name;
-    }
-    public void setName(String val) {
-        name = val;    
-    }
-}
-
-class Car extends vehicle {
-    public Car(String val) {
-        setName(val);
-    }
-    public String getName(String val) {
-        return ""Car name : "" + val;
-    }
-    public String getName(byte val[]) {
-        return ""Car name : "" + val;
-    }
-}
-
-public class good {
-    public static void main(String[] args) {
-        vehicle obj = new Car(""Spark"");
-        System.out.print(obj.getName());
-    }
-}"	vehiclr name spark	
+"			
 자바			"class Parent {
     public int compute (int num) {
         if (num <= 1) return num;
@@ -578,7 +428,7 @@ public class good {
         Parent obj = new Child();
         System.out.print(obj.compute(4));
     }
-}"	
+}"		
 자바			"public class Good {
     public static void main(String[] args) {
         int[][] a = new int[___(1)___][___(2)___];  // (1.), (2.) → 3행 5열로 수정
@@ -600,7 +450,7 @@ public class good {
 
 3 6 9 12 15 
 
-답 3 5"	
+답 3 5"		
 자바			"class Good {
     public static void main(String[] args) {
         int[] a = new int[8];
@@ -624,7 +474,7 @@ public class good {
 답) 
 (1) n>0 or n>= 1 or i<8 or i <=7 (넷중 아무거나 써도 정답)
 
-(2) n%2"	
+(2) n%2"		
 자바	10. 2020년 4회차 abstract class vehicle		"public class Main {
     public static void main(String[] args) {
         int i, j;
@@ -640,7 +490,7 @@ public class good {
             }
         }
     }
-}"	
+}"		
 자바			"public class Main {
     public static void main(String[] args) {
         int[][] arr = new int[][]{{45, 50, 75}, {89}};
@@ -651,7 +501,7 @@ public class good {
         System.out.println(arr[0][1]);
         System.out.println(arr[1][0]);
     }
-}"	
+}"		
 자바	11		"class ovr {
     int sun (int x, int y) {
         return x + y;
@@ -676,7 +526,7 @@ public class Groom {
         ovr a2 = new ovr2();
         System.out.println(a1.sun(3, 2) + a2.sun(3, 2));
     }
-}"	
+}"		
 자바	12		"public class Test {
     public static void main(String[] args) {
         System.out.print(Test.check(1));
@@ -690,7 +540,7 @@ public class Groom {
 
  
 
-답) public static"	
+답) public static"		
 자바	13		"public class Groom {
     public static void main(String[] args) {
         int a = 3, b = 4, c = 3, d = 5;
@@ -714,7 +564,7 @@ public class Groom {
             }
         }
     }
-}"	
+}"		
 자바	14		"class Connection {
     private static Connection _inst = null;
     private int count = 0;
@@ -747,7 +597,7 @@ public class Groom {
         
         System.out.print(conn3.getCount());
     }
-}"	
+}"		
 자바	15		"class Car implements Runnable {
     int a;
 
@@ -762,7 +612,7 @@ public class Main {
         t1.start();
     }
 }
-답) Car"	
+답) Car"		
 자바	16		"class A {
     int a;
     int b;
@@ -787,7 +637,12 @@ public class Groom {
 
         System.out.printf(""%d"", m.a);  // 출력: 2000
     }
-}"	
+}"		
+					
+					
+					
+					
+					
 자바	17		"public class Groom {
     int a;
 
@@ -809,7 +664,7 @@ public class Groom {
         int b = obj.func();
         System.out.print(obj.a + b); 
     }
-}"	
+}"		
 씨언어	18		"#include <stdio.h>
 
 struct A {
@@ -829,7 +684,7 @@ int main() {
     printf(""%d\n"", a[0].n + a[1].g); 
 
     return 0;
-}"	
+}"		
 자바	19		"public static void main(String args[]) { 
     int i = 3;
     int k = 1;
@@ -844,7 +699,7 @@ int main() {
     }
 
     System.out.print(k);
-}"	
+}"		
 자바	20		"public class Main {
     static int[] MakeArray() {
         int[] tempArr = new int[4];
@@ -864,7 +719,7 @@ int main() {
             System.out.print(intArr[i]);
         }
     }
-}"	
+}"		
 자바			"public class Main {
     public static void main(String[] args) {
 
@@ -876,7 +731,7 @@ int main() {
 
         System.out.print(a);
     }
-}"	
+}"		
 자바			"class Static {
     public int a = 20;     
     static int b = 0;    
@@ -895,7 +750,7 @@ public class Main {
         System.out.println(a);         
         System.out.print(st.a);        
     }
-}"	
+}"		
 자바			"class Parent {
     int x = 100;
 
@@ -929,7 +784,7 @@ public class Main {
         Child obj = new Child();
         System.out.println(obj.getX()); 
     }
-}"	
+}"		
 자바			"public class Sort {
 
     public static void swap(int[] arr, int idx1, int idx2){
@@ -962,7 +817,7 @@ public class Main {
 
 (1) idx2
 
-(2) nx"	
+(2) nx"		
 자바			"abstract class Vehicle {  // (오타) abstact → abstract 로 수정
 
     String name;
@@ -997,7 +852,7 @@ public class Main {
         Vehicle obj = new Car(""Spark"");
         System.out.println(obj.getName());  // 인자 없는 메서드 호출
     }
-}"	
+}"		
 자바			"public class Problem{
     public static void main(String[] args){
  m = 4620;
@@ -1018,7 +873,7 @@ public class Main {
  int a = m / 1000;            // 천원짜리 개수: 4620 / 1000 = 4
  int b = (m % 1000) / 500;    // 오백원: 남은 620 / 500 = 1
  int c = (m % 500) / 100;     // 백원: 남은 120 / 100 = 1
- int d = (m % 100) / 10;      // 십원: 남은 20 / 10 = 2"	
+ int d = (m % 100) / 10;      // 십원: 남은 20 / 10 = 2"		
 자바			"public class Main {
     public static void main(String[] args) {
 
@@ -1031,7 +886,7 @@ public class Main {
         System.out.println(str1.equals(str3));    // true (내용은 같음)
         System.out.print(str2.equals(str3));      // true (내용은 같음)
     }
-}"	
+}"		
 자바			"class Connection {
  
     private static Connection _inst = null;
@@ -1072,7 +927,7 @@ public class Main {
         System.out.print(conn1.getCount());
     }
  
-}"	
+}"		
 자바			"class Parent {
     int x, y;
 
@@ -1105,7 +960,7 @@ class Main {
         System.out.println(parent.getT());    // 7.
     }
 }
-답) ⑤ → ⑥ → ③ → ① → ⑦ → ②"	
+답) ⑤ → ⑥ → ③ → ① → ⑦ → ②"		
 자바			"class classOne {
     int a, b;
 
@@ -1137,7 +992,7 @@ public class Main {
         classOne one = new classTwo(10);
         one.print();
     }
-}"	
+}"		
 자바			"class Main {
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 3, 4};
@@ -1156,7 +1011,7 @@ public class Main {
             System.out.print(""N"");
         }
     }
-}"	
+}"		
 자바			"interface Number {
     int sum(int[] a, boolean odd); // odd가 true면 홀수 합, false면 짝수 합
 }
@@ -1180,7 +1035,7 @@ public class Main {
 
         System.out.print(OE.sum(a, true) + "", "" + OE.sum(a, false));
     }
-}"	
+}"		
 자바			"class Main {
     public static void main(String[] args) {
         String str = ""abacabcd"";
@@ -1201,14 +1056,14 @@ public class Main {
 
         return result;
     }
-}"	
+}"		
 자바			"class Main {
     public static void main(String[] args) {
         String str = ""ITISTESTSTRING"";
         String[] result = str.split(""T"");
         System.out.print(result[3]);
     }
-}"	
+}"		
 자바			"public class Main {
     static String[] s = new String[3];
 
@@ -1232,7 +1087,7 @@ public class Main {
 
         func(s, 3);
     }
-}"	
+}"		
 자바			"public class Main {
     public static void main(String[] args) {
         Base a = new Derivate();  // 업캐스팅 (다형성)
@@ -1256,7 +1111,7 @@ class Derivate extends Base {
     int getX() {
         return x * 3;
     }
-}"	
+}"		
 자바			"public class Main {
     public static void main(String[] args) {
         int sum = 0;
@@ -1275,7 +1130,7 @@ class Derivate extends Base {
     static void func() throws Exception {
         throw new NullPointerException(); 
     }
-}"	
+}"		
 자바			"class Main {
 
     public static class Collection<T> {
@@ -1307,7 +1162,7 @@ class Derivate extends Base {
     public static void main(String[] args) {
         new Collection<>(0).print();
     }
-}"	
+}"		
 씨언어	https://youtu.be/ilH0irP5VQo?si=nN5hK1PoZt8UaYMO	14분 43초꺼	"#include <stdio.h>
 #include <stdlib.h>
 
@@ -1357,7 +1212,7 @@ int main()
     }
     return 0;
 }
-"	
+"		
 씨언어	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	1분 41초꺼	"#include <stdio.h>
 double arr1(int p[], int len) {
     double av = 0;
@@ -1379,7 +1234,7 @@ int main() {
     printf(""%.2f"", arr1(arr, len) + arr2(arr, len));
     return 0;
 }
-    "	
+    "		
 씨언어	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	9분 13초	"class A {
     String f(Object x) { return ""1""; }
     String g() { return f(""a""); }
@@ -1393,7 +1248,7 @@ public class Main {
         A a = new B();
         System.out.println(a.g());
     }
-}"	
+}"		
 파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	문제 오류 14분 21초	"i = input()
 x = []
 
@@ -1402,7 +1257,7 @@ for word in i.split() :
     
 y = "".join(x)
 z = "".join(c for c in y[::-1] if c not in 'ong')
-print(z)"	
+print(z)"		
 씨언어	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	19min1s	"#include <stdio.h>
 
 struct fns {
@@ -1419,19 +1274,19 @@ int main() {
     mine.fn = dummy;
     printf(""%x"", *mine.fn(n));
     return 0;
-}"	
+}"		
 파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	22min57s	"ist = list(range(10))
 
 for c in ist[::-2] :
     print(c, end='A')
-print()"	
+print()"		
 파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	24min21s	"def f(a) :
     m = [[x] for x in a]
     b = m[:]
     for i in range(len(b) - 1) :
         b[i + 1] += b[i]
     return sum(len(x) for x in m)
-print(f([1, 2, 3, 4]))"	
+print(f([1, 2, 3, 4]))"		
 jajva	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	28min4sec	"class Cal{
     int cc(int a, int b) {
         return a + b;
@@ -1450,4 +1305,4 @@ public class Main {
         
         System.out.println(x1 + x2 + ""2"" + x3);
     }
-}"	
+}"		
