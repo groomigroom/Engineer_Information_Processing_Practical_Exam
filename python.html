@@ -31,6 +31,42 @@
 
 
 
+
+
+
+
+
+-----
+
+
+students = []
+
+def add_data(stud) :
+    students.append(stud)
+    stu_len = len(students)
+    students[stu_len - 1] = stud
+
+def del_data(position) :
+    if position < 0 or position >= len(students) :
+        print("데이터 삭제 범위 초과함")
+        return
+    #함수 내부에서 사용된 return은 "현재 실행 중인 함수를 즉시 종료하고 호출한 곳으로 돌아가라"는 의미입니다.
+    
+    stu_len = len(students)
+    students[position] = None
+
+    
+
+
+add_data("김구름")
+add_data("구름김")
+add_data("김구르음")
+add_data("구름음")
+add_data("름")
+
+print(students)
+#["김구름", "구름김", "김구르음", "구름음", "름"]
+
 -----
 
 class Cls :
