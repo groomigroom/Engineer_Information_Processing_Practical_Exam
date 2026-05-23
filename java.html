@@ -31,6 +31,31 @@
 
 
 
+
+
+
+
+
+-------
+
+public class Main {
+  public static void main(String[] args) {
+    int i = 0;
+    int sum = 0;
+    
+    while (i < 10) {
+      i++;
+      //i가 9일 때도 진입 가능하니 10까지 sum에 더함
+      if (i % 2 == 1)
+        continue;
+      sum += i;
+      //2 4 6 8 10 다 더한거 30
+    }
+    System.out.println(sum);
+  }
+}
+
+
 -------
 
 
