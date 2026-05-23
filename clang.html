@@ -31,6 +31,60 @@
 
 
 
+-----
+
+
+#include <stdio.h>
+#define MAX_SIZE 5
+int stack[MAX_SIZE];
+int p = -1;
+int isEmpty() {
+  if (p == -1) return 1;
+  return 0;
+}
+int isFull() {
+  if(p == MAX_SIZE - 1) return 1;
+  return 0;
+}
+void push(int num) {
+  if (isFull()) {
+    printf("Full");
+    return;
+  }
+  stack[++p] = num;
+}
+int pop() {
+  if (isEmpty() == 1) {
+    printf("Empty");
+    return 0;
+  }
+  return stack[p--];
+}
+int main(int argc, char const* argv[]) {
+  push(1); push(2);
+
+  while (!isEmpty()) {
+    printf("%d", pop());
+    push(3); push(4); push(5);
+    printf("%d", pop());
+    printf("%d", pop()); printf("%d", pop());
+    push(6); printf("%d", pop()); printf("%d", pop());
+  }
+  return 0;
+}
+/*
+push(1) ==> p == 0 ==> stack[0] == 1
+push(2) ==> p == 1 ==> stack[1] == 2
+p == 0
+push(3) ==> p == 1 ==> stack[1] == 3
+push(4) ==> p == 2 ==> stack[2] == 4
+push(5) ==> p == 3 ==> stack[3] == 5
+p == 0
+push(6) ==> p == 1 ==> stack[1] == 6
+최종값 254361
+*/
+
+-----
 
 #include <stdio.h>
 int len(char*); //여기에 빈칸채우기
