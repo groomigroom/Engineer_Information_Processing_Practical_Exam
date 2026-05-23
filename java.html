@@ -31,8 +31,37 @@
 
 
 
+-------
 
 
+
+class A {
+ private int a;
+ 
+ public A(int a) {
+ this.a = a;
+ }
+ 
+ public void display() {
+ System.out.println("a=" + a);
+ }
+}
+
+class B extends A {
+ public B (int a) {
+ super(a);
+ display();
+ //super.display()도 가능하지만 this.display()가 더 자연스럽다.
+ }
+}
+//a=10
+
+public class Main {
+ public static void main(String[] args) {
+ B obj = new B(10);
+ //a=10
+ }
+}
 
 
 
