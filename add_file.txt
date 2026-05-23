@@ -345,108 +345,11 @@ int len(char* p) {
   }
   return cnt;
 }"	
-clang	https://www.youtube.com/watch?v=fHAeP0yfjR4&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=29	"#include <stdio.h>
-int calc(int (*q)(int, int)) {
-  int result;
-  result = (q)(3, 5);
-  printf(""%d"", result);
-  return 0;
-}
-int p(int a, int b) {
-  return (a + b);
-}
-int q(int a, int b) {
-  return (a - b);
-}
-int main() {
-  calc(p);
-  return 0;
-}
-"	
 			
 			
 			
-sql		"create table groomi
-(
-    chacha varchar(50),
-    chacha2 varchar(50),
-    chacha3 varchar(50)
-);
-
-insert into groomi
-values
-(""groom"", ""oogroomoo"", ""groom""),
-(""grooom"", ""oogroooomooo"", ""grooom""),
-(""gruoom"", ""oogruuumoo"", ""gruuum"");
-
-select replace(chacha, ""o"", ""e""), reverse(chacha), substr(chacha, 3, 3), substring(chacha, 2, 2), mid(chacha, 3, 3), trim(leading 'o' from chacha2), trim(trailing 'o' from chacha2), trim(both 'o' from chacha2), strcmp(chacha, chacha3);
-
-
-
-
-
-
-
-
-
-REPLACE(str, from_str, to_
-str)
-str 문자열에서 from_str 문자열을 찾아to
-_str로 변경
-REPLACE('NaNaNa', 'a', 'b') → 'NbNbNb'
-REVERSE(str) str 문자열을 거꾸로 반환 REVERSE('abcdefg') →'gfedcba'
-SPACE(N) N개의 공백 문자 반환 SPACE(3) → ' '
-SUBSTR(str, pos, len)
-SUBSTRING(str, pos, len)
-MID(str, pos, len)
-str 문자열의 pos 위치에서 len 길이만큼 문자를 잘라서 반환
-SUBSTR('ABCD', 3, 1)→ 'C'
-TRIM([{BOTH|LEADING|T
-RAILING} [remstr] FROM]
-str)
-str 문자열에서 remstr 문자를 앞(LEADIN
-G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
-에서 제거
-TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
-STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
-1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"	"create table groomi
-(
-    chacha varchar(50),
-    chacha2 varchar(50),
-    chacha3 varchar(50)
-);
-
-insert into groomi
-values
-(""groom"", ""oogroomoo"", ""groom""),
-(""grooom"", ""oogroooomooo"", ""grooom""),
-(""gruoom"", ""oogruuumoo"", ""gruuum"");
-
-select replace(chacha, ""o"", ""e""), reverse(chacha), substr(chacha, 3, 3), substring(chacha, 2, 2), mid(chacha, 3, 3), trim(leading 'o' from chacha2), trim(trailing 'o' from chacha2), trim(both 'o' from chacha2), strcmp(chacha, chacha3);
-
-replace(chacha, ""o"", ""e"") | reverse(chacha) | substr(chacha, 3, 3)
-greem                         | moorg             | oom
-greeem                        | mooorg           | ooo
-grueem                        | moourg           | uoo
-                                                            -- SUBSTR(str, pos, len) SUBSTRING(str, pos, len)
-
-SPACE(N) N개의 공백 문자 반환 SPACE(3) → ' '
-SUBSTR(str, pos, len)
-
-MID(str, pos, len)
-str 문자열의 pos 위치에서 len 길이만큼 문자를 잘라서 반환
-SUBSTR('ABCD', 3, 1)→ 'C'
-TRIM([{BOTH|LEADING|T
-RAILING} [remstr] FROM]
-str)
-str 문자열에서 remstr 문자를 앞(LEADIN
-G)이나 뒤(TRAILING) 또는 앞뒤(BOTH)
-에서 제거
-TRIM(LEADING 'x' FROM 'xxSQLxx') → 'SQLxx'
-STRCMP (str1, str2) str1과 str2 문자열을 비교해 같으면0, str
-1이 str2보다 크면 1, 작으면 -1을 반환STRCMP('A', 'B') → -1
-"
+			
+			
 sql		"create table groomi
 (
     chacha varchar(50),
@@ -529,257 +432,6 @@ MAKEDATE(year, dayofyear) year에 dayofyear에 해당하는 일수를 더한 날
 MAKEDATE(2021,100) → 2021-04-10
 SYSDATE() 현재 날짜 반환 SYSDATE()→ 2021-01-31 12:39:20
 WEEK(date, mode) date가 몇 주차인지 반환 YEARWEEK('2021-10-01') →39"	
-파이썬		"students = []
-
-def add_data(stud) :
-    students.append(stud)
-    stu_len = len(students)
-    students[stu_len - 1] = stud
-
-def del_data(position) :
-    if position < 0 or position >= len(students) :
-        print(""데이터 삭제 범위 초과함"")
-        return
-    #함수 내부에서 사용된 return은 ""현재 실행 중인 함수를 즉시 종료하고 호출한 곳으로 돌아가라""는 의미입니다.
-    
-    stu_len = len(students)
-    students[position] = None
-
-    
-
-
-add_data(""김구름"")
-add_data(""구름김"")
-add_data(""김구르음"")
-add_data(""구름음"")
-add_data(""름"")
-
-print(students)"	"students = []
-
-def add_data(stud) :
-    students.append(stud)
-    stu_len = len(students)
-    students[stu_len - 1] = stud
-
-def del_data(position) :
-    if position < 0 or position >= len(students) :
-        print(""데이터 삭제 범위 초과함"")
-        return
-    #함수 내부에서 사용된 return은 ""현재 실행 중인 함수를 즉시 종료하고 호출한 곳으로 돌아가라""는 의미입니다.
-    
-    stu_len = len(students)
-    students[position] = None
-
-    
-
-
-add_data(""김구름"")
-add_data(""구름김"")
-add_data(""김구르음"")
-add_data(""구름음"")
-add_data(""름"")
-
-print(students)
-#[""김구름"", ""구름김"", ""김구르음"", ""구름음"", ""름""]"
-java		"class Human {
-    int age;
-    String name;
-
-    void intro() {
-        System.out.println(""안녕"" + age + ""살"" + name + ""이다."");
-    }
-}
-
-class JavaLast {
-    public static void main(String[] args) {
-        Human groom = new Human();
-        groom.age = 9;
-        groom.name = ""김구름"";
-        groom.intro();
-    }
-}"	"class Human {
-    int age;
-    String name;
-
-    void intro() {
-        System.out.println(""안녕"" + age + ""살"" + name + ""이다."");
-    }
-}
-
-class JavaLast {
-    public static void main(String[] args) {
-        Human groom = new Human();
-        groom.age = 9;
-        groom.name = ""김구름"";
-        groom.intro();
-    }
-}
-
-/*
-안녕9살김구름이다.
-*/"
-java		"class Groom {
-  String name;
-  boolean favorite;
-
-  Groom(String aName, boolean aFavorite) {
-    name = aName;
-    favorite = aFavorite;
-  }
-
-  void run() {
-    if (favorite) {
-      System.out.println(""김구름 멍멍"");
-    } else {
-      System.out.println(""멍멍 김구름"");
-    }
-  }
-
-  void stop() {
-    System.out.println(""구르음"");
-  }
-}
-
-class JavaLast {
-  public static void main(String[] args) {
-    Groom groomii = new Groom(""김구름"", true);
-
-    groomii.run();
-    groomii.stop();
-  }
-}"	"class Groom {
-  String name;
-  boolean favorite;
-
-  Groom(String aName, boolean aFavorite) {
-    name = aName;
-    favorite = aFavorite;
-  }
-
-  void run() {
-    if (favorite) {
-      System.out.println(""김구름 멍멍"");
-    } else {
-      System.out.println(""멍멍 김구름"");
-    }
-  }
-
-  void stop() {
-    System.out.println(""구르음"");
-  }
-}
-
-class JavaLast {
-  public static void main(String[] args) {
-    Groom groomii = new Groom(""김구름"", true);
-
-    groomii.run();
-    groomii.stop();
-  }
-}
-
-/*
-김구름 멍멍
-구르음
-*/"
-java		"class Time {
-  boolean am;
-  int hour;
-  int minute;
-  int second;
-  
-  Time(boolean am, int hour, int minute, int second) {
-    this.am = am;
-    this.hour = hour;
-    this.minute = minute;
-    this.second = second;
-  }
-  
-  void whatTime() {
-    System.out.print(am ? ""오전"" : ""오후"");
-    System.out.println(hour + ""시"" + minute + ""분"" + second + ""초"");
-  }
-}
-
-class JavaTest {
-  public static void main(String[] args) {
-    Time now = new Time(true, 12, 34, 56);
-    now.whatTime();
-  }
-}
-
-/*
-제시된 자바 코드에서 this 키워드를 사용하는 핵심 이유는 매개변수(Parameter)와 멤버 변수(Field)의 이름이 같을 때 발생하는 이름 충돌을 해결하기 위함입니다.상세한 이유와 작동 원리는 다음과 같습니다.1. 이름이 같을 때 변수 은닉(Shadowing) 발생Time 생성자 정의를 보면, 입력받는 매개변수 이름(am, hour, minute, second)과 클래스가 가진 멤버 변수 이름이 정확히 일치합니다.자바는 블록 안에서 이름이 같으면 더 가까운 변수(이 경우 매개변수)를 우선시합니다.따라서 this 없이 hour = hour;라고 쓰면 멤버 변수가 아니라 매개변수 자기 자신에게 값을 다시 대입하는 의미 없는 코드가 됩니다.2. this의 역할과 작동 방식this는 메서드나 생성자를 호출한 현재 객체 자신을 가리키는 참조 변수입니다.변수 앞에 this.을 붙이면 자바 컴파일러에게 ""이것은 매개변수가 아니라 이 객체의 멤버 변수다""라고 명확히 알려주게 됩니다.this.hour = hour; 코드는 **""현재 객체의 멤버 변수 hour에 매개변수로 들어온 hour 값을 넣겠다""**는 의미가 됩니다.3. this 사용의 장점클래스의 속성을 정의하는 멤버 변수 명칭을 생성자에서도 그대로 유지할 수 있습니다.데이터의 가독성이 높아지며, 변수의 목적이 명확해져 유지보수가 쉬워집니다.코드가 정상적으로 동작하게 만드는 과정이나 자바의 다른 키워드에 대해 더 알고 싶으시다면, 아래 항목 중 진행하고 싶은 작업을 알려주세요:이 클래스에 객체를 생성하는 다른 형태의 생성자(Overloading) 추가법자바에서 this의 또 다른 용도인 this() 생성자 호출법클래스의 변수를 안전하게 숨기는 접근 제어자(private)와 Getter/Setter 적용법
-
-
-질문하신 코드를 기존 Time 클래스 내부에 그대로 집어넣으면 컴파일 오류가 발생합니다. 오류가 뜨는 근본적인 이유는 '메서드 오버로딩(Method Overloading)' 규칙 위반으로 인한 중복 선언 때문입니다.컴파일 에러가 발생하는 구체적인 원인과 메커니즘은 다음과 같습니다.1. 메서드 이름과 매개변수가 모두 중복됨 (whatTime)자바에서는 한 클래스 내에 이름이 같은 메서드를 여러 개 선언할 수 있습니다(오버로딩). 하지만 오버로딩이 성립하려면 매개변수의 개수나 타입이 서로 달라야 합니다.기존 메서드: void whatTime() (매개변수 0개)새로 작성한 메서드: void whatTime(boolean am, int hour, int minute, int second) (매개변수 4개)여기까지만 보면 매개변수 개수가 달라 오버로딩 조건에 맞아 문제가 없어 보입니다. 하지만 오류의 핵심은 호출부인 main 메서드에 있습니다.2. 호출부(main)와의 불일치 에러JavaTest 클래스의 main 메서드를 보면 다음과 같이 호출하고 있습니다.javaTime now = new Time(true, 12, 34, 56);
-now.whatTime(); // 인자(Argument)를 아무것도 전달하지 않음!
-코드를 사용할 때는 주의가 필요합니다.만약 기존의 매개변수가 없던 void whatTime()을 완전히 지우고 질문하신 매개변수가 있는 코드로 대체한 것이라면, 컴파일러는 now.whatTime(); 코드를 만났을 때 다음과 같은 에러를 던집니다.에러 메시지 예시: method whatTime in class Time cannot be applied to given types; (argument mismatch; no arguments)이유: 메서드는 데이터를 달라고 요구(boolean am, int hour...)하고 있는데, 정작 호출할 때는 now.whatTime() 형태로 아무것도 주지 않았기 때문에 일치하는 메서드를 찾지 못해 발생합니다.3. 멤버 변수(Field)의 은닉화 문제질문하신 메서드 내부를 보면 인스턴스가 가진 시간 데이터 대신, 매개변수로 넘어온 값들만 가지고 출력을 하고 있습니다.javavoid whatTime(boolean am, int hour, int minute, int second) {
-    System.out.print(am ? ""오전"" : ""오후""); // 객체의 am이 아닌 매개변수 am을 사용
-    System.out.println(hour + ""시"" + minute + ""분"" + second + ""초""); 
-}
-코드를 사용할 때는 주의가 필요합니다.이렇게 작성하면 객체가 생성될 때 저장한 now 객체의 데이터(true, 12, 34, 56)를 출력하는 것이 아니라, 메서드를 호출할 때 괄호 안에 넣는 새로운 인자값에 의존하게 됩니다. 객체지향 프로그래밍 관점에서 객체 내부 속성을 스스로 출력한다는 whatTime() 본연의 역할과 어긋나게 됩니다.이 문제를 해결하고 코드를 올바르게 수정하는 방향에 대해 더 알고 싶으시다면, 아래 항목 중 원하시는 것을 알려주세요:main 메서드에서 새로운 whatTime 메서드를 올바르게 호출하는 코드 수정법객체의 본래 데이터를 유지하면서 외부 데이터도 출력할 수 있게 하는 올바른 메서드 오버로딩 구현법
---->의 문제 때문에 this 사용함.
-*/"	
-자바	https://roadtofree.tistory.com/entry/31	"public class Groom {
-  public static void main(String[] args){
-    int[] a = {0, 1, 2, 3};
-    
-    for (int i = 0; i < 4; i++) {
-      System.out.print(a[i] + "" "");
-    }
-  }
-}"	0 1 2 3
-자바		"class A {
-  private int a;
-  
-  public A(int a) {
-    this.a = a;
-  }
-  
-  public void display() {
-    System.out.println(""a="" + a);
-  }
-}
-
-class B extends A {
-  public B (int a) {
-    super(a);
-    display();
-    //super.display()도 가능하지만 this.display()가 더 자연스럽다.
-  }
-}
-
-public class Groom {
-  public static void main(String[] args) {
-    B obj = new B(10);
-  }
-}"	"class A {
- private int a;
- 
- public A(int a) {
- this.a = a;
- }
- 
- public void display() {
- System.out.println(""a="" + a);
- }
-}
-
-class B extends A {
- public B (int a) {
- super(a);
- display();
- //super.display()도 가능하지만 this.display()가 더 자연스럽다.
- }
-}
-#####a=10
-
-public class Groom {
- public static void main(String[] args) {
- B obj = new B(10);
- }
-}"
 자바		"class Parent {
   public void show() {
     System.out.println(""Parent"");
@@ -802,21 +454,6 @@ public class Groom {
 빈칸 채우기
 출력갑 Child
 */"	빈칸
-자바		"public class Groom {
-  public static void main(String[] args) {
-    int i = 0;
-    int sum = 0;
-    
-    while (i < 10) {
-      i++;
-      if (i % 2 == 1)
-        continue;
-      sum += i;
-    }
-    System.out.println(sum);
-  }
-}"	
-			
 파이썬	"a = [10, 11, 12, 13]
 a.pop(1)
 #해당 위치에 있는 값을 삭제하는게 .pop()
@@ -834,31 +471,32 @@ print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
 d.add(4)
 print(d)
 e = {""김"": ""구름"", ""age"" : 9}
-print(e.values()) #dict_values(['구름', 9])로 나옴? #####"		
-자바		"public class Groom {
-  public static void main(String[] args) {
-    int a = 3;
-    float b = 7.0F;
-    double c = a + b;
-    System.out.print(c);
-  }
-}
-
-/*
-출력값
-10.0
-*/"	
-자바		"public class Groom {
-  public static void main(String[] args) {
-    int[] Data = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; i++)
-      System.out.printf(""%d"", Data[i]);
-  }
-}
-
-/*
-12345
-*/"	
+print(e.values()) #dict_values(['구름', 9])로 나옴? #####"	"a = [10, 11, 12, 13]
+a.pop(1)
+#해당 위치에 있는 값을 삭제하는게 .pop()
+print(a)
+#10 12 13
+print(len(a))
+#3
+a.extend([14])
+#10 12 13 14
+a.extend([15, 16])
+#10 12 13 14 15 16
+print(a)
+#####
+b = a.reverse()
+print(b)
+#16 15 14 13 12 10
+c = [1, 2, 1, 1, 3, 1]
+d = set(c)
+print(d) #set()는 중복 제거하고, 집합으로 만들어 주는거? #####
+d.add(4)
+print(d)
+#1 2 3 4
+e = {""김"": ""구름"", ""age"" : 9}
+print(e.values()) #dict_values(['구름', 9])로 나옴? #####"	
+			
+			
 sql		"create table groomi
 (
     groo1 integer,
@@ -890,130 +528,7 @@ delete from groomi
 where groo2 = 5;
 
 "	
-java		"public class Main {
-  public static void main(String[] args) {
-    int[] Evens = {0, 2, 4, 6, 8};
-    System.out.println(Evens[3]);
-    String[] Spring = {""March"", ""April"", ""May""};
-    
-    for (int i = 0; i < Spring.length; i++)
-      System.out.println(Spring[i]);
-  }
-}
-/*
-6
-March
-April
-May
-*/"	
-java		"public class Main {
-  public static void main(String[] args) {
-    int[][] Data = {{1, 2, 3}, {4, 5, 6}};
-    
-    for (int y = 0; y < 2; y++)
-      for (int x = 0; x < 3; x++)
-        System.out.printf(""%d"", Data[y][x]);
-        
-    System.out.println();
-        
-    int Datalen = Data.length;
-    System.out.println(Datalen);
-    int DataZero = Data[0].length;
-    System.out.println(DataZero);
-  }
-}
-/*
-123456
-2
-3
-*/"	
-java		"public class Main {
-  public static void main(String[] args) {
-    int[][] Data = {{1, 2, 3}, {4, 5}, {6}, {8, 9, 10, 11}};
-    for (int y = 0; y < Data.length; y++) {
-      for (int x = 0; x < Data[y].length; x++)
-        System.out.printf(""%d"", Data[y][x]);
-      System.out.printf(""\n"");
-    }
-  }
-}
-/*
-
-*/"	
-java		"public class Main {
-  public static void main(String[] args) {
-    String[] weAreAt = {""김"", ""구"", ""름""};
-    for (String now: weAreAt) 
-      System.out.println(now);
-  }
-}
-/*
-김
-구
-름
-*/"	
-java		"public class Main {
-  static String say() {
-    return ""김구름"";
-  }
-  public static void main(String[] args) {
-    String a = say();
-    System.out.println(a);
-  }
-}
-
-//출력값 == 김구름"	
-java		"public class Main {
-  static void printThis() {
-    int i = 1;
-    while (i < 4) {
-      System.out.printf(""%d"", i);
-      i++;
-    }
-  }
-  public static void main(String[] args) {
-   printThis(); 
-  }
-}
-
-//출력값 == 123"	
-java		"public class Main {
-  static void printThis() {
-    int i = 1;
-    while (i < 4) {
-      System.out.printf(""%d"", i);
-      i++;
-    }
-    System.out.printf(""\n"");
-  }
-  public static void main(String[] args) {
-   printThis(); 
-   printThis(); 
-   printThis(); 
-  }
-}
-
-/*
-출력값
-123
-123
-123
-*/"	
-java		"import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-      int SUM = 0, N1, N2, N;
-      Scanner StdInput = new Scanner(System.in);
-      N1 = StdInput.nextInt();
-      N2 = StdInput.nextInt();
-      for (N = N1; N <= N2; N++)
-        SUM = SUM + N;
-      System.out.print(N1 + ""부터"" + N2 + ""까지의"");
-      System.out.println(""정수의 합은"" + SUM + ""이다."");
-    }
-}"	
-자바			"abstract class vehicle
+자바		"abstract class vehicle
 {
     private String name;
     abstract public String getName(String val);
@@ -1042,7 +557,7 @@ public class good {
         vehicle obj = new Car(""Spark"");
         System.out.print(obj.getName());
     }
-}"
+}"	vehiclr name spark
 자바			"class Parent {
     public int compute (int num) {
         if (num <= 1) return num;
@@ -1350,19 +865,446 @@ int main() {
         }
     }
 }"
-		https://roadtofree.tistory.com/entry/31	
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		https://youtu.be/ilH0irP5VQo?si=nN5hK1PoZt8UaYMO	
+자바			"public class Main {
+    public static void main(String[] args) {
+
+        int a = 0;
+        for (int i = 1; i < 999; i++) {
+            if (i % 3 == 0 && i % 2 != 0)
+                a = i;
+        }
+
+        System.out.print(a);
+    }
+}"
+자바			"class Static {
+    public int a = 20;     
+    static int b = 0;    
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a;
+        a = 10;
+        Static.b = a;           
+
+        Static st = new Static();  
+
+        System.out.println(Static.b++);  
+        System.out.println(st.b);       
+        System.out.println(a);         
+        System.out.print(st.a);        
+    }
+}"
+자바			"class Parent {
+    int x = 100;
+
+    Parent() {
+        this(500);     
+    }
+
+    Parent(int x) {
+        this.x = x;   
+    }
+
+    int getX() {
+        return x;   
+    }
+}
+
+class Child extends Parent {
+    int x = 4000;
+
+    Child() {
+        this(5000);    
+    }
+
+    Child(int x) {
+        this.x = x;     
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        System.out.println(obj.getX()); 
+    }
+}"
+자바			"public class Sort {
+
+    public static void swap(int[] arr, int idx1, int idx2){
+        int temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[____(1)____] = temp; // ← (1): idx2
+    }
+
+    public static void Usort(int[] array, int length){
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] item = new int[] { 5, 3, 8, 1, 2, 7 };
+        int nx = 6;
+        Usort(item, ____(2)____); //
+
+        for (int data : item) {
+            System.out.print(data + "" "");
+        }
+    }
+}
+답) 
+
+(1) idx2
+
+(2) nx"
+자바			"abstract class Vehicle {  // (오타) abstact → abstract 로 수정
+
+    String name;
+
+    abstract public String getName(String val);  // 추상 메서드
+
+    public String getName() {
+        return ""Vehicle name: "" + name;  // 기본 name 출력용 메서드
+    }
+}
+
+class Car extends Vehicle {
+
+    public Car(String val) {
+        name = super.name = val;  // name에 ""Spark"" 저장
+    }
+
+    @Override
+    public String getName(String val) {
+        return ""Car name:"" + val;  // 오버라이딩된 메서드
+    }
+
+    // 오버로딩 (byte 배열 버전)
+    public String getName(byte[] val) {
+        return ""Car name:"" + new String(val);  // 보기 좋게 출력
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Vehicle obj = new Car(""Spark"");
+        System.out.println(obj.getName());  // 인자 없는 메서드 호출
+    }
+}"
+자바			"public class Problem{
+    public static void main(String[] args){
+ m = 4620;
+ 
+ a = (              );
+ b = (              );
+ c = (              );
+ d = (              );
+ 
+ System.out.println(a); //천원짜리     4장 출력
+ System.out.println(b); //오백원짜리  1개 출력
+ System.out.println(c); //백원짜리     1개 출력
+ System.out.println(d); //십원짜리     2개 출력
+    }
+}
+답)
+
+ int a = m / 1000;            // 천원짜리 개수: 4620 / 1000 = 4
+ int b = (m % 1000) / 500;    // 오백원: 남은 620 / 500 = 1
+ int c = (m % 500) / 100;     // 백원: 남은 120 / 100 = 1
+ int d = (m % 100) / 10;      // 십원: 남은 20 / 10 = 2"
+자바			"public class Main {
+    public static void main(String[] args) {
+
+        String str1 = ""Programming"";              // """" 문자열 리터럴
+        String str2 = ""Programming"";              // 
+        String str3 = new String(""Programming"");  // new → 새로운 객체 생성
+
+        System.out.println(str1 == str2);         // true (동일한 리터럴, 같은 참조)
+        System.out.println(str1 == str3);         // false (다른 객체 참조)
+        System.out.println(str1.equals(str3));    // true (내용은 같음)
+        System.out.print(str2.equals(str3));      // true (내용은 같음)
+    }
+}"
+자바			"class Connection {
+ 
+    private static Connection _inst = null;
+    private int count = 0;
+    
+    static public Connection get() {
+        if(_inst == null) {
+            _inst = new Connection();
+            return _inst;
+        }
+        return _inst;
+    }
+    
+    public void count() {
+         count++; 
+    }
+    
+    public int getCount() {
+         return count; 
+    }
+}
+ 
+ 
+public class Main {  
+ 
+    public static void main(String[] args) {
+ 
+        Connection conn1 = Connection.get();
+        conn1.count();
+ 
+        Connection conn2 = Connection.get();
+        conn2.count();
+ 
+        Connection conn3 = Connection.get();
+        conn3.count();
+        
+        conn1.count();
+        System.out.print(conn1.getCount());
+    }
+ 
+}"
+자바			"class Parent {
+    int x, y;
+
+    Parent(int x, int y) {            // 1.
+        this.x = x;
+        this.y = y;
+    }
+
+    int getT() {                      // 2.
+        return x * y;
+    }
+}
+
+class Child extends Parent {         // 
+    int x;
+
+    Child(int x) {                   // 3.
+        super(x + 1, x);             // → 호출됨: Parent(4, 3)
+        this.x = x;
+    }
+
+    int getT(int n) {               // 4.
+        return super.getT() + n;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {  // 5.
+        Parent parent = new Child(3);         // 6.
+        System.out.println(parent.getT());    // 7.
+    }
+}
+답) ⑤ → ⑥ → ③ → ① → ⑦ → ②"
+자바			"class classOne {
+    int a, b;
+
+    public classOne(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public void print() {
+        System.out.println(a + b);
+    }
+}
+
+class classTwo extends classOne {
+    int po = 3;
+
+    public classTwo(int i) {
+        super(i, i + 1);  // 부모 생성자 호출 → classOne(i, i+1)
+    }
+
+    @Override
+    public void print() {
+        System.out.println(po * po);  // 3 * 3 = 9
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        classOne one = new classTwo(10);
+        one.print();
+    }
+}"
+자바			"class Main {
+    public static void main(String[] args) {
+        int[] a = new int[]{1, 2, 3, 4};
+        int[] b = new int[]{1, 2, 3, 4};
+        int[] c = new int[]{1, 2, 3};
+
+        check(a, b);  // → a와 b는 내용이 같지만 다른 객체
+        check(a, c);  // → 내용도 다르고 객체도 다름
+        check(b, c);  // → 내용 다르고 객체 다름
+    }
+
+    public static void check(int[] a, int[] b) {
+        if (a == b) {
+            System.out.print(""O"");
+        } else {
+            System.out.print(""N"");
+        }
+    }
+}"
+자바			"interface Number {
+    int sum(int[] a, boolean odd); // odd가 true면 홀수 합, false면 짝수 합
+}
+
+class ODDNumber implements Number {
+    public int sum(int[] a, boolean odd) {
+        int result = 0;
+        for (int i = 0; i < a.length; i++) {
+            if ((odd && a[i] % 2 != 0) || (!odd && a[i] % 2 == 0)) {
+                result += a[i];
+            }
+        }
+        return result;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        ODDNumber OE = new ODDNumber();
+
+        System.out.print(OE.sum(a, true) + "", "" + OE.sum(a, false));
+    }
+}"
+자바			"class Main {
+    public static void main(String[] args) {
+        String str = ""abacabcd"";
+        boolean[] seen = new boolean[256];
+        System.out.print(calculFn(str, str.length() - 1, seen));
+    }
+
+    public static String calculFn(String str, int index, boolean[] seen) {
+        if (index < 0) return """";
+
+        char c = str.charAt(index);
+        String result = calculFn(str, index - 1, seen);
+
+        if (!seen[c]) {
+            seen[c] = true;
+            return result + c;  // ← 현재 문자를 뒤에 붙이기
+        }
+
+        return result;
+    }
+}"
+자바			"class Main {
+    public static void main(String[] args) {
+        String str = ""ITISTESTSTRING"";
+        String[] result = str.split(""T"");
+        System.out.print(result[3]);
+    }
+}"
+자바			"public class Main {
+    static String[] s = new String[3];
+
+    static void func(String[] s, int size) {
+        for (int i = 1; i < size; i++) {
+            if (s[i - 1].equals(s[i])) {
+                System.out.print(""O"");
+            } else {
+                System.out.print(""N"");
+            }
+        }
+        for (String m : s) {
+            System.out.print(m);
+        }
+    }
+
+    public static void main(String[] args) {
+        s[0] = ""A"";                   // 문자열 리터럴
+        s[1] = ""A"";                   // 동일한 리터럴 → 같은 객체
+        s[2] = new String(""A"");       // 새 객체 → 다른 주소지만 equals는 true
+
+        func(s, 3);
+    }
+}"
+자바			"public class Main {
+    public static void main(String[] args) {
+        Base a = new Derivate();  // 업캐스팅 (다형성)
+        Derivate b = new Derivate();
+
+        System.out.print(a.getX() + a.x + b.getX() + b.x);
+    }
+}
+
+class Base {
+    int x = 3;
+
+    int getX() {
+        return x * 2;
+    }
+}
+
+class Derivate extends Base {
+    int x = 7;
+
+    int getX() {
+        return x * 3;
+    }
+}"
+자바			"public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        try {
+            func();  // NullPointerException 발생
+        } catch (NullPointerException e) {
+            sum = sum + 1;  // 이 블록이 실행됨
+        } catch (Exception e) {
+            sum = sum + 10; // 이 블록은 실행되지 않음
+        } finally {
+            sum = sum + 100; // 무조건 실행
+        }
+        System.out.print(sum);  // 결과 출력
+    }
+
+    static void func() throws Exception {
+        throw new NullPointerException(); 
+    }
+}"
+자바			"class Main {
+
+    public static class Collection<T> {
+        T value;
+
+        public Collection(T t) {
+            value = t;
+        }
+
+        public void print() {
+            new Printer().print(value);
+        }
+
+        class Printer {
+            void print(Integer a) {
+                System.out.print(""A"" + a);
+            }
+
+            void print(Object a) {
+                System.out.print(""B"" + a);
+            }
+
+            void print(Number a) {
+                System.out.print(""C"" + a);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new Collection<>(0).print();
+    }
+}"
