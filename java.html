@@ -30,6 +30,34 @@
 
 
 
+
+
+class Human {
+    int age;
+    String name;
+
+    void intro() {
+        System.out.println("안녕" + age + "살" + name + "이다.");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Human groom = new Human();
+        groom.age = 9;
+        groom.name = "김구름";
+        groom.intro();
+    }
+}
+
+/*
+안녕9살김구름이다.
+*/
+
+
+------
+
+
 class Time {
   boolean am;
   int hour;
