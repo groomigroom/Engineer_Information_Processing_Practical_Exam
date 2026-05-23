@@ -34,6 +34,38 @@
 
 
 
+
+
+
+ -----
+
+
+class Parent {
+    public int compute (int num) {
+        if (num <= 1) return num;
+        return compute(num - 1) + compute(num - 2);
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public int compute(int num) {
+        //compute(4)
+        if (num <= 1) return num;
+        //compute(4) ==> compute(3) + compute(1) ==> compute(2) + compute(0) + compute(1) ==> compute(1) + compute(-1) + compute(0) + compute(1) ==> 1
+        return compute(num - 1) + compute(num - 3);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        System.out.print(obj.compute(4));
+        //최종값 1
+    }
+}
+
+
  -----
 
 
