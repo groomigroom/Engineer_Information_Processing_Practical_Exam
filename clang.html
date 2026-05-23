@@ -32,7 +32,27 @@
 
 
 
+#include <stdio.h>
+int len(char*); //여기에 빈칸채우기
+int main()
+{
+  char* s1 = "1234";
+  char* s2 = "abcdef";
+  printf("%d", len(s1) + len(s2));
+}
+int len(char* p) {
+  int cnt = 0;
+  while (*p != 0) {
+    p++;
+    cnt++;//여기에 빈칸채우기
+  }
+  return cnt;
+}
+//물자열의 길이 구하는 프로그램
+//결과값 10
 
+
+---------
 
 
 #include <stdio.h>
