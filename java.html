@@ -31,6 +31,36 @@
 
 
 
+
+
+
+ -----
+
+
+class Parent {
+  public void show() {
+    System.out.println("Parent");
+  }
+}
+
+class Child extends Parent {
+  public void show() {
+    System.out.println("Child");
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Parent pa = new Child(); //여기에 빈칸채우기
+    pa.show();
+  }
+}
+/*
+빈칸 채우기
+출력갑 Child
+*/
+
+
  -----
 
 
