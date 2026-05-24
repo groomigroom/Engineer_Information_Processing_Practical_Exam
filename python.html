@@ -35,10 +35,31 @@
 
 
 
+-----
 
 
+class Cal{
+    int cc(int a, int b) {
+        return a + b;
+    }
+    int c (char a, char b) {
+        return a - b;
+    }
+}
 
-
+public class Main {
+    public static void main(String[] args) {
+        Cal cal = new Cal();
+        int x1 = cal.cc(4, 5);
+        //9
+        int x2 = cal.c('C', 'A');
+        //2
+        String x3 = "3";
+        
+        System.out.println(x1 + x2 + "2" + x3);
+        //1123
+    }
+}
 
 
 
