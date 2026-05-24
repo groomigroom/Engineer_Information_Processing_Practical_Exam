@@ -35,6 +35,40 @@
 
 
 
+
+
+
+
+-----
+
+
+#include <stdio.h>
+double arr1(int p[], int len) {
+    double av = 0;
+    int i;
+    for (i = 0; i < len; i++)
+        av += (double)p[i];
+    return av / len;
+    //80 + 20 + 50 + 55 + 45 + 95 + 55 + 10 + 40 + 80 == 530 ==> 530 / 10 == 53.00
+}
+double arr2(int *p, int len) {
+    double av = 0;
+    int i;
+    for (i = 0; i < len; i++)
+        av += (double)(*(p + 1));
+    return av / len;
+    //20.00
+}
+int main() {
+    int arr[10] = {80, 20, 50, 55, 45, 95, 55, 10, 40, 80};
+    int len = 10;
+    printf("%.2f", arr1(arr, len) + arr2(arr, len));
+    //73.00
+    return 0;
+}
+    
+
+
 -----
 
 
