@@ -35,6 +35,38 @@
 
 
 
+public class Groom {
+    int a;
+
+    public Groom(int a) {
+        this.a = a;
+    }
+
+    int func() {
+        int b = 1;
+        for (int i = 1; i < a; i++) {
+            b = a * i + b;
+        }
+        return a + b;
+    }
+    //i = 1, i < 5, i++ => i = 1 => b = 5 * 1 + 1 == 6
+    //i = 2 b = 5 * 2 + 6 == 16
+    //i = 3 ==> b = 5 * 3 + 16 == 31
+    //i = 4 ==> b = 5 * 4 + 31 == 51
+    
+    //5 + 51 == 56
+
+    public static void main(String[] args) {
+        Groom obj = new Groom(3);
+        obj.a = 5; 
+        int b = obj.func();
+        System.out.print(obj.a + b); 
+        //5 + 56 == 61
+    }
+}
+
+-----
+
 
 public static void main(String args[]) { 
     int i = 3;
