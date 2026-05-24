@@ -33,6 +33,68 @@
 
 
 
+
+
+-----
+
+
+#include <stdio.h>
+int isprime (int number) {
+  int i;
+  for (i = 2; i < number; i++)
+    if (number % i == 0) return 0; //여기 if 조건식이 빈칸 채우기
+  return 1;
+}
+int main() {
+  int number = 20;
+  int cnt = 0, i;
+  for (i = 2; i < number; i++)
+    cnt = cnt + isprime(i);
+    //i = 2 ==> cnt = 0 + isprime(2) ==> cnt = 1
+    //i = 3 ==> cnt = 1 + isprime(3) ==> cnt = 2
+    //i = 4 ==> cnt = 2 + isprime(4) ==> cnt = 2
+    //i = 5 ==> cnt = 2 + isprime(5) ==> cnt = 3
+    //i = 7 ==> cnt = 3 + isprime(7) ==> cnt = 4
+    //i = 11 ==> cnt = 4 + isprime(11) ==> cnt = 5
+    //i = 13 ==> cnt = 5 + isprime(13) ==> cnt = 6
+    //i = 17과 19도 해서 8개
+  printf("소수는 개수 : %d개\n", cnt);
+  //최종값 소수는 개수 : 8개
+  return 0;
+}
+
+
+-----
+
+#include <stdio.h>
+void main()
+{
+  int number = 4321;
+  int div = 10;
+  int result = 0;
+  while(number > 0) {
+    result = result * div;
+    //result = 0 * 10
+    //result = 1 * 10
+    //result = 12 * 10 ==> 120
+    //result = 123 * 10 ==> 1230
+    result = result + number % div; //여기가 빈칸 채우기
+    //result = 0 + 4321 % 10 ==> 1
+    //result = 10 + 432 % 10 ==> 12
+    //result = 120 + 43 % 10 ==> 123
+    //result = 1230 + 4 & 10 ==> 1234
+    number = number / div; //여기가 빈칸 채우기
+    //number = 4321 / 10 ==> 432
+    //number = 432 / 10 ==> 43
+    //number = 43 / 10 ==> 4
+    //number = 4 / 10 ==> 0
+  }
+  printf("%d", result);
+  //최종값 1234
+}
+
+-----
+
 #include <stdio.h>
 
 struct A {
