@@ -40,12 +40,12 @@ class Parent {
     int x, y;
 
     Parent(int x, int y) {            // 1.
-        this.x = x;
-        this.y = y;
+        this.x = x;    //x == 4
+        this.y = y;    // y == 3
     }
 
     int getT() {                      // 2.
-        return x * y;
+        return x * y; // 4 * 3 == 12
     }
 }
 
@@ -54,7 +54,7 @@ class Child extends Parent {         //
 
     Child(int x) {                   // 3.
         super(x + 1, x);             // → 호출됨: Parent(4, 3)
-        this.x = x;
+        this.x = x;  //x == 3
     }
 
     int getT(int n) {               // 4.
@@ -68,8 +68,7 @@ class Main {
         System.out.println(parent.getT());    // 7.
     }
 }
-답) ⑤ → ⑥ → ③ → ① → ⑦ → ②
-
+//답) ⑤ → ⑥ → ③ → ① → ⑦ → ②
 
 
 -------
