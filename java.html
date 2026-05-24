@@ -40,6 +40,50 @@
 
 
 
+
+
+------
+
+abstract class Vehicle {  
+
+    String name;
+
+    abstract public String getName(String val);  // 추상 메서드
+
+    public String getName() {
+        return "Vehicle name: " + name;  // 기본 name 출력용 메서드
+    }
+}
+
+class Car extends Vehicle {
+
+    public Car(String val) {
+        name = super.name = val;  // name에 "Spark" 저장
+    }
+
+    @Override
+    public String getName(String val) {
+        return "Car name:" + val;  // 오버라이딩된 메서드
+    }
+
+    // 오버로딩 (byte 배열 버전)
+    public String getName(byte[] val) {
+        return "Car name:" + new String(val);  // 보기 좋게 출력
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Vehicle obj = new Car("Spark");
+        System.out.println(obj.getName());  // 인자 없는 메서드 호출
+    }
+}
+//Vehicle name: Spark
+
+
+------
+
 class MyObj {
   int value = 0;
   void count(MyObj c) {
