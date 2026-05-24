@@ -1,0 +1,18 @@
+kimgroom = ["김", "구", "름"]
+
+kimgroom.append("kim")
+kimgroom.insert(0, "goo")
+kimgroom.extend(["김구름", "멍멍이"])
+print(kimgroom)
+kimgroom.pop()
+kimgroom.pop(1)
+print(kimgroom)
+"""
+["김", "구", "름"]
+["김", "구", "름", "kim"]
+["goo", "김", "구", "름", "kim"]
+["goo", "김", "구", "름", "kim", "김구름", "멍멍이"]
+
+["goo", "김", "구", "름", "kim", "김구름"]
+["goo", "구", "름", "kim", "김구름"]
+"""
