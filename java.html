@@ -37,6 +37,31 @@
 
 
 
+
+
+
+class MyObj {
+  int value = 0;
+  void count(MyObj c) {
+    c.value = c.value + 100;
+  }
+}
+public class Main {
+  public static void main(String[] args) {
+    MyObj test = new MyObj();
+    System.out.println(test.value);
+    test.count(test); //여기가 빈칸 채우기
+    System.out.println(test.value);
+  }
+}
+/*
+test.count(test);에서 매개변수로 전달되는 (test)의 실제 값은 객체의 메모리 주소(참조값)입니다.자바의 메모리 구조와 동작 원리로 보면 다음과 같습니다.1. 실제 전달되는 값: 참조값 (Reference)MyObj test = new MyObj();가 실행되면 메모리(Heap 영역)에 실제 객체가 생성됩니다.변수 test는 그 객체가 어디 있는지 가리키는 메모리 주소(참조값)를 가지고 있습니다.따라서 (test)를 넣는 것은 "이 객체의 주소를 보낼 테니 찾아가라"는 뜻입니다.2. 메서드 내부에서의 동작count(MyObj c) 메서드가 호출되면, 매개변수 c는 test가 주었던 똑같은 메모리 주소를 복사받습니다.결국 c와 test는 메모리상에서 동일한 하나의 객체를 가리키게 됩니다.이 때문에 c.value = c.value + 100;을 하면 실제 test 객체의 value가 100으로 바뀝니다.쉽게 비유하자면, test는 실제 집(객체)이 아니라 "집 주소가 적힌 종이"입니다. 메서드에 종이를 복사해서 넘겨주었기 때문에, 메서드 안에서도 그 주소를 보고 찾아가서 집을 수리(값 변경)할 수 있는 것입니다.
+*/
+
+
+-----
+
+
 public class Main {
     public static void main(String[] args) {
         int a = 3, b = 4, c = 3, d = 5;
