@@ -334,7 +334,42 @@ public class Main {
         Vehicle obj = new Car(""Spark"");
         System.out.println(obj.getName());  // 인자 없는 메서드 호출
     }
-}"		
+}"	"abstract class Vehicle {  // (오타) abstact → abstract 로 수정
+
+    String name;
+
+    abstract public String getName(String val);  // 추상 메서드
+
+    public String getName() {
+        return ""Vehicle name: "" + name;  // 기본 name 출력용 메서드
+    }
+}
+
+class Car extends Vehicle {
+
+    public Car(String val) {
+        name = super.name = val;  // name에 ""Spark"" 저장
+    }
+
+    @Override
+    public String getName(String val) {
+        return ""Car name:"" + val;  // 오버라이딩된 메서드
+    }
+
+    // 오버로딩 (byte 배열 버전)
+    public String getName(byte[] val) {
+        return ""Car name:"" + new String(val);  // 보기 좋게 출력
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Vehicle obj = new Car(""Spark"");
+        System.out.println(obj.getName());  // 인자 없는 메서드 호출
+    }
+}
+//Vehicle name: Spark"	
 자바			"public class Problem{
     public static void main(String[] args){
  m = 4620;
@@ -368,7 +403,19 @@ public class Main {
         System.out.println(str1.equals(str3));    // true (내용은 같음)
         System.out.print(str2.equals(str3));      // true (내용은 같음)
     }
-}"		
+}"	"public class Main {
+    public static void main(String[] args) {
+
+        String str1 = ""Programming"";              // """" 문자열 리터럴
+        String str2 = ""Programming"";              // 
+        String str3 = new String(""Programming"");  // new → 새로운 객체 생성
+
+        System.out.println(str1 == str2);         // true
+        System.out.println(str1 == str3);         // false
+        System.out.println(str1.equals(str3));    // true
+        System.out.print(str2.equals(str3));      // true
+    }
+}"	
 자바			"class Connection {
  
     private static Connection _inst = null;
@@ -409,7 +456,8 @@ public class Main {
         System.out.print(conn1.getCount());
     }
  
-}"		
+}
+//4"		
 자바			"class Parent {
     int x, y;
 
@@ -462,7 +510,26 @@ class Main {
             System.out.print(""N"");
         }
     }
-}"		
+}"	"class Main {
+    public static void main(String[] args) {
+        int[] a = new int[]{1, 2, 3, 4};
+        int[] b = new int[]{1, 2, 3, 4};
+        int[] c = new int[]{1, 2, 3};
+
+        check(a, b);
+        check(a, c);
+        check(b, c);
+        //NNN
+    }
+
+    public static void check(int[] a, int[] b) {
+        if (a == b) {
+            System.out.print(""O"");
+        } else {
+            System.out.print(""N"");
+        }
+    }
+}"	
 자바			"interface Number {
     int sum(int[] a, boolean odd); // odd가 true면 홀수 합, false면 짝수 합
 }
@@ -851,7 +918,7 @@ $$32 = 16 \times 2 + 0$$
 
 
 int* (*fn)(int*); (핵심 멤버)(*fn): fn이라는 이름의 함수 포인터 변수입니다.(int*): 이 함수는 int형 포인터(int*)를 매개변수(입력)로 받습니다.int* (맨 앞): 이 함수는 실행 결과로 int형 포인터(int*)를 반환(리턴)합니다.종합: int*를 받아서 계산한 뒤 int*를 돌려주는 어떤 함수의 '주소값'을 저장하는 칸입니다.2. struct fns { ... }; (구조체 정의)위에서 말한 함수 포인터(fn)를 멤버로 가지는 fns라는 이름의 구조체(틀)를 만듭니다.3. } mine; (변수 선언)구조체의 틀을 정의함과 동시에, 그 구조체 타입의 실제 변수인 mine을 메모리에"	
-					
+		자바	https://youtu.be/AiquVwHyeGQ?si=PPBGhc7TE4Q0oZFo		
 파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	24min21s	"def f(a) :
     m = [[x] for x in a]
     b = m[:]
