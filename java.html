@@ -36,7 +36,79 @@
 
 
 
+public class Main {
+    static int[] MakeArray() {
+        int[] tempArr = new int[4];
 
+        for (int i = 0; i < tempArr.length; i++) {  
+            tempArr[i] = i;
+        }
+
+        return tempArr;
+    }
+    //tempArr[0] = 0;
+    //tempArr[1] = 1;
+    //tempArr[2] = 2;
+    //tempArr[3] = 3;
+
+    public static void main(String[] args) {
+        int[] intArr;
+        intArr = MakeArray();
+
+        for (int i = 0; i < intArr.length; i++) {   
+            System.out.print(intArr[i]);
+            //0123
+        }
+    }
+}
+
+
+
+-------
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        int a = 0;
+        for (int i = 1; i < 999; i++) {
+            if (i % 3 == 0 && i % 2 != 0)
+                a = i;
+        }
+        //i가 3의 배수이면서 짝수가 아닌 수 중에 가장 큰거
+        //993
+        System.out.print(a);
+        //993
+    }
+}
+
+
+-------
+
+
+class Static {
+    public int a = 20;     
+    static int b = 0;    
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a;
+        a = 10;
+        Static.b = a;           
+
+        Static st = new Static();  
+
+        System.out.println(Static.b++);  
+        //10
+        System.out.println(st.b);  
+        //11
+        System.out.println(a);   
+        //10
+        System.out.print(st.a);   
+        //20
+    }
+}
 
 
 -------
