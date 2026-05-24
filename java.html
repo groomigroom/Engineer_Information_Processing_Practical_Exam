@@ -33,10 +33,42 @@
 
 
 
+-------
 
 
+class Parent {
+    int x, y;
 
+    Parent(int x, int y) {            // 1.
+        this.x = x;
+        this.y = y;
+    }
 
+    int getT() {                      // 2.
+        return x * y;
+    }
+}
+
+class Child extends Parent {         // 
+    int x;
+
+    Child(int x) {                   // 3.
+        super(x + 1, x);             // → 호출됨: Parent(4, 3)
+        this.x = x;
+    }
+
+    int getT(int n) {               // 4.
+        return super.getT() + n;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {  // 5.
+        Parent parent = new Child(3);         // 6.
+        System.out.println(parent.getT());    // 7.
+    }
+}
+답) ⑤ → ⑥ → ③ → ① → ⑦ → ②
 
 
 
