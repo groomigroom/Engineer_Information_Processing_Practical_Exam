@@ -30,9 +30,36 @@
 
 
 
+------
 
 
+public class Main {
+    static String[] s = new String[3];
 
+    static void func(String[] s, int size) {
+        for (int i = 1; i < size; i++) {
+            if (s[i - 1].equals(s[i])) {
+                System.out.print("O");
+                //OO
+            } else {
+                System.out.print("N");
+            }
+        }
+        for (String m : s) {
+            System.out.print(m);
+        }
+        //리스트에서 하나씩 꺼내는 향상된 for 문
+    }
+
+    public static void main(String[] args) {
+        s[0] = "A";                   // 문자열 리터럴
+        s[1] = "A";                   // 동일한 리터럴 → 같은 객체
+        s[2] = new String("A");       // 새 객체 → 다른 주소지만 equals는 true
+
+        func(s, 3);
+    }
+}
+// 결과는 OOAAA
 
 		
 
