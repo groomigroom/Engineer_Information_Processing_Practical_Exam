@@ -33,6 +33,52 @@
 
 
 
+
+
+-------
+
+interface Number {
+    //인터페이스(Interface)는 클래스가 반드시 구현해야 하는 '설계도'이자 '표준 규약'입니다. 객체가 어떤 동작을 해야 하는지 껍데기(메서드 시그니처)만 정의하고, 구체적인 동작 내용은 인터페이스를 구현하는 클래스에서 작성합니다
+    int sum(int[] a, boolean odd); // odd가 true면 홀수 합, false면 짝수 합
+}
+
+class ODDNumber implements Number {
+    //implements는 클래스가 인터페이스(Interface)를 구현할 때 사용하는 키워드입니다. 인터페이스에 정의된 추상 메서드를 클래스가 물려받아 실제 작동하는 코드({})로 완성(구현)하도록 강제하는 역할을 합니다.
+    public int sum(int[] a, boolean odd) {
+        int result = 0;
+        //a.length == 9
+        for (int i = 0; i < a.length; i++) {
+            //i = 0 ==> 0 < 9
+            if ((odd && a[i] % 2 != 0) || (!odd && a[i] % 2 == 0)) {
+                result += a[i];
+            }
+            //true && a[0] % 2 != 0 ==> true ===> result += a[0] ==> result = 1
+            //i = 1 ==> 0 < 9
+            //true && a[1] % 2 == 0 ==> false , false //
+            //i = 2 ==> 0 < 9
+            //true && a[2] % 2 != 0 ==> true ===> result += a[2] ==> result = 4
+            //i = 3 ==> 0 < 9
+            //true && false , false //
+            //i = 4 ==> 0 < 9
+            //true && true ===> result += a[4] ===> result = 9 ===> 7과 9도 더하면 25
+            
+            //i = 0 ==> 0 < 9
+            //false || true && false ====> 짝수일 때만 가능함. ===> 2, 4, 6, 8 더하면 ===> 20
+         }
+        return result;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        ODDNumber OE = new ODDNumber();
+
+        System.out.print(OE.sum(a, true) + ", " + OE.sum(a, false));
+        //25, 20
+    }
+}
+
 -------
 
 
