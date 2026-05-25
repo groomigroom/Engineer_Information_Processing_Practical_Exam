@@ -40,6 +40,45 @@
 
 
 
+
+
+
+-------
+
+
+
+public class Main {
+    public static void main () {
+        int[] intArray = new int[3];
+        intArray[0] = 1;
+        intArray[1] = 2;
+        intArray[2] = 3;
+        
+        String[] strArray = {"김", "구름", "멍멍"};
+        System.out.println(intArray[0]);
+        System.out.println(intArray[1]);
+        System.out.println(intArray[2]);
+        System.out.println(strArray[0]);
+        System.out.println(strArray[1]);
+        System.out.println(strArray[2]);
+        
+        strArray[1] = "김구름이";
+        
+        System.out.println(strArray[1]);
+    }
+}
+/*
+1
+2
+3
+김
+구름
+멍멍
+김구름이
+*/
+
+
+
 -------
 
 
