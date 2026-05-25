@@ -678,8 +678,24 @@ int main() {
         free(ptr);
     }
 }"
-					
-		c언어 4분 51초	https://www.youtube.com/watch?v=RaUrw9YX7lY		
+		c언어 4분 51초	https://www.youtube.com/watch?v=RaUrw9YX7lY	"#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *arr;
+    int size = 10;
+    arr = (int*)malloc(size * sizeof(int));
+    
+    for(int i = 0; i < size; i++) {
+        arr[i] = i + 1;
+    }
+    for(int i = 0; i < size; i++) {
+        printf(""%d"", arr[i]);
+    }
+    free(arr);
+}
+"	
 		자바 빈칸으로		"public class Main {
     static String groom(String goo) {
       goo = ""김구름"";
@@ -750,7 +766,57 @@ static const char __func__[] = ""function-name"";
 = *= /= %= += -= <<= >>= &= ^= |=
 , # ##
 <: :> <% %> %: %:%:"	
-		파이썬 얕은 복사 깊은 복사		https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
+		파이썬 얕은 복사 깊은 복사	"#얕은 복사
+
+#분할 [:]
+
+x = [1, 2, 3]
+y = x
+y.append(4)
+print(x)
+print(y is x)
+#출력값 [1, 2, 3, 4]
+#True
+z = []
+z is x #이건 false가 됩니다.
+z.append(5)
+print(x)
+#출력값 [1, 2, 3, 4]
+
+x[-2] = 4
+print(x)
+print(y)
+#위 두개 다 출력값 [1, 2, 4, 4]
+
+print()
+
+#####6분 20초 https://www.youtube.com/watch?v=MIkKcTjtnpw
+zz = x[:]
+print(zz)
+print(z is x)
+#이거는 false 나옴
+zz.append(5)
+print(x)
+
+""""""
+복잡자료형 copy 메소드 
+list.copy()
+dict.copy()
+set.copy()
+""""""
+
+
+""""""
+복합자료형 생성자
+list(순회형)
+dict(순회형)
+set(순회형)
+""""""
+
+""""""
+copy 모듈의 copy 함수
+copy.copy()
+"""""""	https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
 		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
 
 void oddOrEven(int n){
