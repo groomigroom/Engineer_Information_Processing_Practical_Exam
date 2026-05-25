@@ -36,11 +36,106 @@
 
 
 
+-----
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Data {
+    int value;
+    struct Data *next;
+} Data;
+
+Data *insert(Data *head, int value) {
+    Data *n = (Data*)malloc(sizeof(Data));
+    n->value = value;
+    n->next = NULL;
+    if(head == NULL) return n;
+    n->next = head;
+    head = n;
+    return head;
+}
+
+Data *reaconnect(Data *head, int x) {
+    Data *prev = head, *curr = head->next;
+    while(curr && curr->value != x) {
+        prev = curr;
+        curr = curr->next;
+    }
+    if(curr == NULL) return head;
+    prev->next = curr->next;
+    curr->next = head;
+    return curr;
+}
+
+int main()
+{
+    Data *head = NULL, *curr = NULL, *tmp = NULL;
+    int i;
+    for (i = 1; i <= 5; i++)
+        head = insert(head, i);
+    
+    head = reaconnect(head, 3);
+    
+    for(curr = head; curr != NULL; curr = curr->next)
+        printf("%d", curr->value);
+        
+    while(head) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+    return 0;
+}
+/*
+malloc은 C 언어에서 프로그램 실행 중에 필요한 만큼 메모리를 할당(예약)하는 동적 메모리 할당 함수입니다. 'Memory Allocation'의 약자로, 메모리 공간이 고정되어 있지 않고 유연하게 관리되어야 할 때 사용됩니다.
+free
+
+함수 원형
+void malloc(void* _Block);
+
+헤더 파일
+stdlib.h
+
+리턴값
+리턴값은 없습니다.
+
+설명
+malloc함수로 동적한 메모리를 해제할 떄 사용합니다.
+제시하신 C언어 코드는 자기 참조 구조체를 사용해 연결 리스트(Linked List)의 노드를 정의한 것입니다.
+🔍 핵심 의미 분석
+struct Data: value라는 정수 데이터와, 다음 노드의 주소를 가리키는 포인터 변수 next를 묶어 Data라는 이름의 구조체로 설계했습니다.
+struct Data *next;: 자기 자신과 동일한 타입의 구조체를 가리키는 포인터입니다. 이 포인터를 통해 여러 개의 노드를 한 줄로 연결할 수 있습니다.
+typedef struct Data { ... } Data;: 매번 struct Data 변수명;이라고 길게 쓰는 번거로움을 줄이기 위해, 앞으로는 간단히 Data 변수명;으로 선언할 수 있도록 별칭(Alias)을 지정한 것입니다.
+🧱 시각적 구조 보기
+이 코드가 실행되면 메모리 상에 다음과 같은 형태의 '노드(상자)'를 만들 수 있는 틀이 완성됩니다.
+text
+[ Data 노드 ]
+┌───────────────┬───────────────┐
+│     value     │     next      │
+│  (정수 값 저장) │ (다음 노드 주소)│
+└───────────────┴───────────────┘
+코드를 사용할 때는 주의가 필요합니다.
+이 상자들이 포인터(next)를 통해 서로를 가리키며 기차처럼 길게 연결되는 구조가 바로 연결 리스트입니다.
+추가로 구조체를 활용하는 방법이 궁금하신가요? 알고 싶으신 내용을 선택해 주시면 바로 안내해 드리겠습니다.
+이 구조체로 첫 번째 노드를 생성하고 값을 넣는 코드 예시 보기
+두 개의 노드를 서로 연결하는 방법 알아보기
+AI 대답에는 오류가 있을 수 있습니다. 자세히 알아보기
 
 
 
 
+제시하신 코드는 Data 구조체 크기만큼 메모리를 동적으로 할당하고, 그 주소를 포인터 변수 n에 저장하는 코드입니다.
+연결 리스트에서 "새로운 노드(상자)를 하나 만드는 행위"로 이해하시면 됩니다.
+🔍 코드 쪼개기 분석
+malloc(sizeof(Data)): 메모리(Heap 영역)에서 Data 구조체 크기(일반적으로 32비트 환경에서 8바이트, 64비트 환경에서 16바이트)만큼의 공간을 확보합니다.
+(Data*): malloc이 반환한 주소(void*)를 Data 구조체를 가리키는 포인터 타입으로 강제 변환(Casting)합니다.
+Data *n = ...: 새로 생성된 메모리 공간의 시작 주소를 포인터 변수 n에 대입합니다. 이제 n을 통해 이 메모리에 접근할 수 있습니다.
 
+struct Data: value라는 정수 데이터와, 다음 노드의 주소를 가리키는 포인터 변수 next를 묶어 Data라는 이름의 구조체로 설계했습니다.struct Data *next;: 자기 자신과 동일한 타입의 구조체를 가리키는 포인터입니다. 이 포인터를 통해 여러 개의 노드를 한 줄로 연결할 수 있습니다.
+*/
 
 
 
