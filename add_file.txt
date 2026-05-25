@@ -160,7 +160,74 @@ public class Groom {
 
         return result;
     }
-}"		
+}"	"class Main {
+    public static void main(String[] args) {
+        String str = ""abacabcd"";
+        boolean[] seen = new boolean[256];
+        System.out.print(calculFn(str, str.length() - 1, seen));
+    }
+
+    public static String calculFn(String str, int index, boolean[] seen) {
+        if (index < 0) return """";
+
+        char c = str.charAt(index);
+        //charAt()은 문자열(String)에서 특정 위치(인덱스)에 있는 문자(char)를 하나만 추출할 때 사용하는 메서드입니다.
+        String result = calculFn(str, index - 1, seen);
+
+        if (!seen[c]) {
+            seen[c] = true;
+            return result + c;  // ← 현재 문자를 뒤에 붙이기
+        }
+
+        return result;
+    }
+}
+/*
+제시된 자바 코드는 **재귀 호출(Recursion)**과 **방문 배열(boolean[])**을 사용하여 문자열의 중복 문자를 제거하는 프로그램입니다.
+이 코드의 핵심 동작 원리는 문자열을 앞에서부터 순차적으로 탐색하면서, 처음 등장한 문자만 결과 문자열에 누적시키는 것입니다.
+------------------------------
+## 1. 주요 구성 요소의 역할
+
+* index (문자열 탐색 위치): str.length() - 1(마지막 인덱스)부터 시작하여 0을 거쳐 -1이 될 때까지 감소합니다.
+* seen (중복 체크 배열): 아스키코드 크기(256)의 배열입니다. 문자가 등장하면 해당 인덱스를 true로 바꿔 중복을 방지합니다.
+* result + c (문자 결합): 재귀 호출이 끝에서부터 풀려나오면서 기존 결과(result)의 뒤에 현재 문자(c)를 붙입니다.
+
+------------------------------
+## 2. 단계별 작동 과정 (Call Stack)
+calculFn 메서드는 index가 -1이 될 때까지 자기 자신을 계속 호출하며 스택(Stack)을 쌓은 후, 역순으로 연산을 수행합니다.
+## 단계 1: 재귀 호출 쌓기 (인덱스 감소)
+
+* calculFn(""abacabcd"", 7, seen) 호출 ➔ index 6 호출
+* calculFn(""abacabcd"", 6, seen) 호출 ➔ index 5 호출
+* ...
+* calculFn(""abacabcd"", 0, seen) 호출 ➔ index -1 호출
+* calculFn(""abacabcd"", -1, seen) 호출 ➔ if (index < 0) 조건에 걸려 빈 문자열 """"을 반환하며 재귀가 종료됩니다.
+
+## 단계 2: 재귀 풀기 및 문자열 조합 (역순 진행)
+이제 스택의 가장 위에 있던 index 0부터 차례대로 연산이 처리됩니다.
+
+| 인덱스 | 문자(c) | seen[c] 상태 | 동작 및 결과 | 최종 반환값 (result) |
+|---|---|---|---|---|
+| 0 | 'a' | false | seen['a'] = true 변경 후 """" + 'a' | ""a"" |
+| 1 | 'b' | false | seen['b'] = true 변경 후 ""a"" + 'b' | ""ab"" |
+| 2 | 'a' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""ab"" |
+| 3 | 'c' | false | seen['c'] = true 변경 후 ""ab"" + 'c' | ""abc"" |
+| 4 | 'a' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
+| 5 | 'b' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
+| 6 | 'c' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
+| 7 | 'd' | false | seen['d'] = true 변경 후 ""abc"" + 'd' | ""abcd"" |
+
+------------------------------
+## 3. 최종 출력 결과
+
+abcd
+
+코드의 시작은 마지막 인덱스(7)부터 호출되었지만, 실제 문자열이 만들어지는 과정은 index 0의 결과에 index 1, index 2... 순서대로 살을 붙여나가는 형태가 됩니다. 결과적으로 중복이 제거된 순수 알파벳 순서대로 출력됩니다.
+------------------------------
+이 재귀 함수의 동작 흐름을 표나 다이어그램으로 더 자세히 확인하고 싶으신가요, 아니면 동일한 기능을 수행하는 반복문(for문) 기반의 더 효율적인 코드가 필요하신가요?
+
+
+*/"	
 					
 자바			"class Main {
 
@@ -258,72 +325,7 @@ public class Main {
     }
  
 }"	
-파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	24min21s	"def f(a) :
-    m = [[x] for x in a]
-    b = m[:]
-    for i in range(len(b) - 1) :
-        b[i + 1] += b[i]
-    return sum(len(x) for x in m)
-print(f([1, 2, 3, 4]))"	"def f(a) :
-    m = [[x] for x in a]
-    #[[1], [2], [3], [4]]
-    b = m[:]
-    #전체요소 복사
-    for i in range(len(b) - 1) :
-        b[i + 1] += b[i]
-    return sum(len(x) for x in m)
-print(f([1, 2, 3, 4]))
-""""""
-제시하신 코드에서 sum(len(x) for x in m)의 최종 반환 값은 4이며, 그 의미는 초기 생성된 리스트 m 내부 요소들의 개수 합입니다.
-중요한 점은 이 코드가 얕은 복사(Shallow Copy)의 특성 때문에 직관과 다르게 작동한다는 것입니다.
-그 구체적인 이유와 코드의 흐름을 단계별로 설명해 드리겠습니다.
-------------------------------
-## 코드 실행 단계별 분석 (a = [1, 2, 3, 4] 일 때)## 1. m 배열 생성
-
-m = [[x] for x in a]
-
-
-* m은 이차원 리스트가 됩니다: [[1], [2], [3], [4]]
-
-## 2. b = m[:] (얕은 복사 실행)
-
-b = m[:]
-
-
-* m[:]은 바깥쪽 리스트만 새로 복사하고, 내부의 주소(참조)는 그대로 공유합니다.
-* 즉, b와 m은 서로 다른 바깥 껍데기를 가지지만, b[0]과 m[0], b[1]과 m[1] 등 내부 리스트는 완전히 같은 객체를 가리킵니다.
-
-## 3. for 루프 내에서의 연산 (+=)
-
-for i in range(len(b) - 1) :
-    b[i + 1] += b[i]
-
-
-* 파이썬 리스트에서 += 연산(__iadd__)은 새로운 리스트를 만들지 않고, 기존 리스트 객체의 내부를 직접 수정(In-place modification)합니다.
-* 주소를 공유하고 있으므로, b[i+1]을 수정하면 m 내부의 리스트도 동시에 수정됩니다.
-* i = 0 일 때: b[1] += b[0] $\rightarrow$ b[1]은 [2, 1]이 됨 (동시에 m[1]도 [2, 1]로 변경)
-* i = 1 일 때: b[2] += b[1] $\rightarrow$ b[2]는 [3, 2, 1]이 됨 (동시에 m[2]도 [3, 2, 1]로 변경)
-* i = 2 일 때: b[3] += b[2] $\rightarrow$ b[3]는 [4, 3, 2, 1]이 됨 (동시에 m[3]도 [4, 3, 2, 1]로 변경)
-
-이 과정이 끝나면 m은 다음과 같이 변합니다:
-m = [[1], [2, 1], [3, 2, 1], [4, 3, 2, 1]]
-## 4. sum(len(x) for x in m) 계산
-이제 변형된 m의 각 요소(리스트)들의 길이를 더합니다.
-
-* len(m[0]) = 1
-* len(m[1]) = 2
-* len(m[2]) = 3
-* len(m[3]) = 4
-
-따라서 1 + 2 + 3 + 4가 되어 최종 출력값은 10이 됩니다.
-------------------------------
-## 결론 및 요약
-이 코드에서 sum(len(x) for x in m)은 b를 수정하는 과정에서 의도치 않게(또는 의도적으로) 함께 늘어난 m 내부 리스트들의 총 길이 합을 구하는 의미를 가집니다.
-만약 b를 바꿨을 때 m이 변하지 않게 하려면 b = m[:] 대신 copy.deepcopy()를 사용해야 합니다.
-이 현상의 원인인 파이썬의 주소 공유(얕은 복사) 개념이나 += 연산자의 특성에 대해 더 자세히 알고 싶으신가요?
-
-
-"""""""	
+					
 		파이썬	https://youtu.be/GCMrf7wThT4?si=qdFpswc7xq9dXrvq		
 	[C 언어 기초 정리 06] 포인터 :: 곰곰의 일지 https://share.google/EBp4gKZX4piuwHIE5				
 			자바 참조타입		
@@ -356,11 +358,11 @@ print(z)"
 					
 		c언어	https://youtube.com/shorts/3-o9JnrMOPo?si=XcU9ryvqn-2jkHii		
 		파이썬	https://share.google/ILNpIK5QFKMgqOhWu	"orders = [
-    {""product"": ""apple"", ""qty"": 3, ""price"": 1000},
-    {""product"": ""banana"", ""qty"": 5, ""price"": 500},
-    {""product"": ""apple"", ""qty"": 2, ""price"": 1000},
-    {""product"": ""orange"", ""qty"": 4, ""price"": 800},
-    {""product"": ""banana"", ""qty"": 3, ""price"": 500}
+    {""product"": ""bbang"", ""qty"": 3, ""price"": 1000},
+    {""product"": ""mincho"", ""qty"": 5, ""price"": 500},
+    {""product"": ""bbang"", ""qty"": 2, ""price"": 1000},
+    {""product"": ""orion"", ""qty"": 4, ""price"": 800},
+    {""product"": ""mincho"", ""qty"": 3, ""price"": 500}
 ]
 
 sales = {}
@@ -387,7 +389,101 @@ total_sales = sum(sales.values())
 print(""상품별 매출:"", sales)
 print(""최다 매출 상품:"", top_product)
 print(""매출 순 정렬:"", sorted_sales)
-print(""총 매출:"", total_sales)"	
+print(""총 매출:"", total_sales)
+/*
+제시된 파이썬 코드는 주문 데이터 목록을 바탕으로 상품별 매출액을 계산하고, 통계를 내어 정렬하는 데이터 처리 프로그램입니다.
+코드의 각 줄이 수행하는 역할을 순서대로 명확하게 설명해 드리겠습니다.
+------------------------------
+## 1. 초기 데이터 및 변수 선언
+
+orders = [
+    {""product"": ""bbang"", ""qty"": 3, ""price"": 1000},
+    {""product"": ""mincho"", ""qty"": 5, ""price"": 500},
+    {""product"": ""bbang"", ""qty"": 2, ""price"": 1000},
+    {""product"": ""orion"", ""qty"": 4, ""price"": 800},
+    {""product"": ""mincho"", ""qty"": 3, ""price"": 500}
+]
+
+
+* 역할: 분석할 주문 데이터 리스트를 생성합니다.
+* 설명: 각 주문은 딕셔너리 형태이며 상품명(product), 수량(qty), 단가(price) 정보를 담고 있습니다.
+
+sales = {}
+
+
+* 역할: 상품별 총매출을 누적하여 저장할 빈 딕셔너리를 만듭니다.
+* 형태: 나중에 {""상품명"": 총매출액} 구조로 데이터가 쌓이게 됩니다.
+
+------------------------------
+## 2. 상품별 매출 집계 (반복문)
+
+for order in orders:
+
+
+* 역할: orders 리스트에 있는 5개의 주문 딕셔너리를 하나씩 꺼내어 반복 루프를 돌립니다.
+
+    product = order[""product""]
+
+
+* 역할: 현재 주문의 상품명(예: ""bbang"")을 추출하여 product 변수에 저장합니다.
+
+    revenue = order[""qty""] * order[""price""]
+
+
+* 역할: 현재 주문의 수량(qty)과 단가(price)를 곱해 해당 주문의 매출액을 계산합니다.
+
+    if product not in sales:
+        sales[product] = 0
+
+
+* 역할: sales 딕셔너리에 현재 상품명이 등록되어 있는지 확인합니다.
+* 설명: 처음 등장한 상품이라면, 더하기 연산(+=) 시 에러가 나지 않도록 값을 0으로 초기화해 둡니다.
+
+    sales[product] += revenue
+
+
+* 역할: 계산된 매출액(revenue)을 해당 상품의 기존 누적 매출에 더해줍니다.
+
+------------------------------
+## 3. 매출 데이터 분석 및 정렬
+
+top_product = max(sales, key=sales.get)
+
+
+* 역할: 가장 많은 매출을 기록한 상품명을 찾습니다.
+* 설명: max() 함수가 sales 딕셔너리의 키(상품명)들을 검사할 때, 기준(key)을 sales.get(매출액 값)으로 잡아 가장 큰 값을 가진 상품명을 뽑아냅니다.
+
+sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
+
+
+* 역할: 매출액이 높은 순서대로 상품을 정렬합니다.
+* 설명:
+* sales.items()를 통해 (상품명, 매출액) 쌍을 가져옵니다.
+   * key=lambda x: x[1]은 정렬 기준을 1번째 인덱스인 '매출액'으로 지정하겠다는 의미입니다.
+   * reverse=True를 설정하여 오름차순이 아닌 내림차순(큰 값부터)으로 정렬합니다.
+
+total_sales = sum(sales.values())
+
+
+* 역할: 모든 상품의 매출액을 더해 총매출을 구합니다.
+* 설명: sales.values()로 모든 상품의 매출액 숫자만 모은 뒤, sum() 함수로 모두 더합니다.
+
+------------------------------
+## 4. 결과 출력
+
+print(""상품별 매출:"", sales) # {'bbang': 5000, 'mincho': 4000, 'orion': 3200} 출력
+print(""최다 매출 상품:"", top_product) # bbang 출력
+print(""매출 순 정렬:"", sorted_sales) # [('bbang', 5000), ('mincho', 4000), ('orion', 3200)] 출력
+print(""총 매출:"", total_sales) # 12200 출력
+
+
+* 역할: 앞서 연산하고 분석한 결과치들을 콘솔창에 보기 좋게 출력합니다. (코드 끝의 //는 파이썬 문법이 아니므로 실제 실행 시에는 제외해야 합니다.)
+
+------------------------------
+혹시 코드를 작성하다가 lambda 표현식의 원리가 더 궁금하시거나, 딕셔너리를 다룰 때 if not in 대신 defaultdict를 사용하여 코드를 줄이는 방법이 알고 싶으신가요?
+
+
+*/"	
 		자바	https://share.google/P7AQNSz8pAcFQcnJY		
 		자바	https://youtu.be/YUinFIexEQ4?si=N9H1tVnowH0o2DLM	"public class Main {
     public static void main(String[] args) {
@@ -558,18 +654,7 @@ for i in range (0, 8, 1) :
         continue
     sum += i
 print(sum)"	
-		c언어 직접 빈칸으로		"#include <stdio.h>
-int new(int x) {
-    while (x < 5) {
-      x++;
-    }
-    return x;
-}
-int main()
-{
-    printf(""%d"", new(1));
-    
-}"	
+					
 		자바 빈칸으로		"public class Main {
     static String groom(String goo) {
       goo = ""김구름"";
@@ -624,4 +709,24 @@ int main()
 		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
 		자바		https://youtu.be/V_taqJlZeeE?si=Hk9j8ci7-FKP7wK0	
 					
+					
+		파이썬 얕은 복사 깊은 복사			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 파이썬 문법	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95	2.2. 리스트(List), 튜플(Tuple)			
+자바 문법	https://namu.wiki/w/Java/%EB%AC%B8%EB%B2%95	6. 변수 선언			
