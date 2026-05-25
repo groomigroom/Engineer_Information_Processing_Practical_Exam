@@ -77,10 +77,6 @@ public class Main {
         B obj = new B();
     }
 }"		
-					
-					
-					
-		자바 참조값			
 자바	https://www.youtube.com/watch?v=NUR4I0Fn8R4&list=PLYdThbnQN0eKKUh6eUbuqzD1M_ukkxSM2&index=29	"class Parent {
   int x, y;
   Parent(int x, int y) { //1.
@@ -108,165 +104,9 @@ public class Groom {
   }
 }"	"실행순서 맞추기 312
 567도 "		
-					
-					
-					
-					
-자바			"class Good {
-    public static void main(String[] args) {
-        int[] a = new int[8];
-        int i = 0;
-        int n = 10;
-
-        while (_____(1)______) {           // (1.)
-            a[i++] = ______(2)_______;       // (2.)
-            n /= 2;
-        }
-
-        for (i = 7; i >= 0; i--) {
-            System.out.print(a[i]);
-        }
-    }
-}
-출력결과 : 00001010
-
- 
-
-답) 
-(1) n>0 or n>= 1 or i<8 or i <=7 (넷중 아무거나 써도 정답)
-
-(2) n%2"		
+		파이썬	https://youtu.be/t5sB69gIJUc?si=0PtRNud1pLZw0uHN		
 			자바 Connection 타입		
-자바	12		"public class Test {
-    public static void main(String[] args) {
-        System.out.print(Test.check(1));
-    }
-
-   (_____________) String check(int num) {
-        return (num >= 0) ? ""positive"" : ""negative"";
-    }
-}
-[출력결과] positive
-
- 
-
-답) public static"		
-					
-					
-자바	15		"class Car implements Runnable {
-    int a;
-
-    public void run() {
-        System.out.println(""message""); 
-    }
-}
-
-public class Main {
-    public static void main(String args[]) {
-        Thread t1 = new Thread(new _________________());  
-        t1.start();
-    }
-}
-답) Car"	"class Car implements Runnable {
-    int a;
-
-    public void run() {
-        System.out.println(""message""); 
-    }
-}
-
-public class Main {
-    public static void main(String args[]) {
-        Thread t1 = new Thread(new Car());  
-        t1.start();
-    }
-}
-
-/*
-이 코드는 자바에서 Runnable 인터페이스를 구현하여 멀티스레드(Multi-thread)를 생성하고 실행하는 가장 표준적인 방법을 보여줍니다.프로그램이 실행되면 백그라운드에서 새로운 스레드가 생성되어 독립적으로 작동하며, 최종적으로 화면에 message를 출력합니다. 단계별 동작 원리는 다음과 같습니다.1. Runnable 인터페이스 구현class Car implements RunnableCar 클래스는 스레드가 실행할 작업 내용을 정의하기 위해 Runnable 인터페이스를 구현합니다.인터페이스의 규칙에 따라 실제 스레드가 수행할 작업을 run() 메서드 안에 오버라이딩(재정의) 합니다. 여기서는 ""message""를 출력하도록 설정되었습니다.2. 스레드 객체 생성 (main 메서드)Thread t1 = new Thread(new Car());new Car()를 통해 작업 내용이 담긴 인스턴스를 만듭니다.자바에서 실제 스레드를 제어하는 것은 Thread 클래스이므로, Thread 생성자의 매개변수로 new Car()를 넘겨주며 스레드 객체(t1)를 생성합니다.3. 스레드 시작 (t1.start())t1.start();이 명령은 내부적으로 운영체제(OS)에게 ""새로운 스레드를 하나 만들어서 실행해 달라""고 요청합니다.핵심 원리: 개발자가 t1.run()을 직접 호출하는 것이 아니라, t1.start()를 호출해야만 자바 가상 머신(JVM)이 새로운 독립 스레드를 생성하고, 그 스레드가 백그라운드에서 Car 클래스의 run() 메서드를 자동으로 실행합니다.💡 요약 구조도new Car() : 할 일(작업) 정의new Thread(할 일) : 작업을 수행할 일꾼(스레드) 생성t1.start() : 일꾼에게 작업 시작 신호를 보냄 ➔ 독립된 스레드에서 ""message"" 출력정보처리기사 시험 등에서 t1.start() 대신 t1.run()을 넣어서 오답을 유도하는 함정 문제가 자주 출제됩니다. 혹시 start()와 run()의 결정적인 차이점이나, 스레드를 만드는 또 다른 방법인 Thread 클래스 상속 방식에 대해 더 알아보고 싶으신가요?*/"	
-					
-					
-					
-					
-					
-					
-자바			"class Parent {
-    int x = 100;
-
-    Parent() {
-        this(500);     
-    }
-
-    Parent(int x) {
-        this.x = x;   
-    }
-
-    int getX() {
-        return x;   
-    }
-}
-
-class Child extends Parent {
-    int x = 4000;
-
-    Child() {
-        this(5000);    
-    }
-
-    Child(int x) {
-        this.x = x;     
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Child obj = new Child();
-        System.out.println(obj.getX()); 
-    }
-}
-/*
-이 코드는 자바의 상속(Inheritance), 생성자 체이닝(Constructor Chaining), 그리고 인스턴스 변수 오버라이딩(변수 가림 현상)의 핵심 원리를 보여주는 아주 좋은 문제입니다.
-최종 출력값은 500이 되며, 프로그램이 실행되는 구체적인 원리는 다음과 같습니다.
-------------------------------
-## 1. new Child() 호출과 생성자 체이닝 (가장 중요)
-자바에서 자식 클래스의 생성자가 호출될 때, 내부적으로는 부모 클래스의 생성자까지 순서대로 호출됩니다.
-
-   1. main 메서드에서 new Child()를 호출하면 Child() 기본 생성자로 이동합니다.
-   2. Child() 내부에 this(5000);이 있으므로, 자기 자신의 또 다른 생성자인 Child(int x)를 호출합니다. (이때 매개변수 x는 5000이 됩니다.)
-   3. Child(int x) 생성자 첫 줄에는 눈에 보이지 않지만 부모의 기본 생성자를 호출하는 super();가 컴파일러에 의해 자동으로 삽입되어 있습니다.
-   4. 따라서 Child 객체의 변수를 채우기 전에 부모 클래스의 Parent() 기본 생성자로 거슬러 올라갑니다.
-
-------------------------------
-## 2. 부모 생성자 실행 및 변수 초기화
-부모 클래스로 올라간 흐름은 다음과 같이 처리됩니다.
-
-   1. Parent() 기본 생성자 내부의 this(500);에 의해 변수를 받는 Parent(int x) 생성자가 실행됩니다.
-   2. Parent(int x)에서 this.x = x;가 실행되면서, 부모(Parent)가 가진 인스턴스 변수 x에 500이 저장됩니다.
-   3. 부모 생성자 실행이 끝났으므로 다시 자식 생성자로 돌아와 Child(int x) 내부의 this.x = x;를 실행합니다. 이에 따라 자식(Child)이 가진 인스턴스 변수 x에는 5000이 저장됩니다.
-
-------------------------------
-## 3. 변수 오버라이딩의 특징과 obj.getX() 호출
-현재 메모리에 생성된 하나의 객체 내부에는 부모의 x (500)와 자식의 x (4000에서 5000으로 변경됨)가 각각 독립된 공간에 모두 존재합니다. (자바에서 메서드는 오버라이딩 되지만, 변수는 오버라이딩 되지 않고 서로 독립적입니다.)
-
-* main 메서드에서 obj.getX()를 호출합니다.
-* Child 클래스에는 getX() 메서드가 없으므로, 부모 클래스(Parent)에 정의된 getX() 메서드가 실행됩니다.
-* 부모 클래스의 getX() 메서드 코드는 다음과 같습니다.
-
-int getX() {
-    return x; // 이 x는 자신이 속한 Parent 클래스의 x를 뜻합니다!
-}
-
-* Parent 클래스의 메서드 안에서 선언된 x는 당연히 부모 영역에 있는 x를 바라보기 때문에, 자식의 5000이 아닌 부모의 x 값인 500을 반환하게 됩니다.
-
-------------------------------
-## 💡 한 줄 요약
-
-Child 객체를 만들면서 부모 생성자도 함께 실행되어 부모 영역의 x는 500이 되었고, getX() 메서드는 부모 클래스에 위치해 있으므로 부모 영역의 x 값인 500을 꺼내와 출력한 것입니다.
-
-이 문제는 변수의 접근 범위와 상속 시 메모리 구조를 정확히 알아야 풀 수 있는 오답률이 높은 유형입니다. 혹시 만약 Child 클래스 안에도 getX()를 똑같이 적어두었다면(메서드 오버라이딩) 결과가 어떻게 바뀌는지, 혹은 super 키워드의 명시적 사용법에 대해 더 궁금한 점이 있으신가요?
-
-
-*/"		
+			자바 Thread implements Runnable run() start()		
 자바			"public class Sort {
 
     public static void swap(int[] arr, int idx1, int idx2){
@@ -300,89 +140,6 @@ Child 객체를 만들면서 부모 생성자도 함께 실행되어 부모 영�
 (1) idx2
 
 (2) nx"		
-					
-자바			"public class Problem{
-    public static void main(String[] args){
- m = 4620;
- 
- a = (              );
- b = (              );
- c = (              );
- d = (              );
- 
- System.out.println(a); //천원짜리     4장 출력
- System.out.println(b); //오백원짜리  1개 출력
- System.out.println(c); //백원짜리     1개 출력
- System.out.println(d); //십원짜리     2개 출력
-    }
-}
-답)
-
- int a = m / 1000;            // 천원짜리 개수: 4620 / 1000 = 4
- int b = (m % 1000) / 500;    // 오백원: 남은 620 / 500 = 1
- int c = (m % 500) / 100;     // 백원: 남은 120 / 100 = 1
- int d = (m % 100) / 10;      // 십원: 남은 20 / 10 = 2"		
-					
-					
-자바			"class Parent {
-    int x, y;
-
-    Parent(int x, int y) {            // 1.
-        this.x = x;
-        this.y = y;
-    }
-
-    int getT() {                      // 2.
-        return x * y;
-    }
-}
-
-class Child extends Parent {         // 
-    int x;
-
-    Child(int x) {                   // 3.
-        super(x + 1, x);             // → 호출됨: Parent(4, 3)
-        this.x = x;
-    }
-
-    int getT(int n) {               // 4.
-        return super.getT() + n;
-    }
-}
-
-class Main {
-    public static void main(String[] args) {  // 5.
-        Parent parent = new Child(3);         // 6.
-        System.out.println(parent.getT());    // 7.
-    }
-}
-답) ⑤ → ⑥ → ③ → ① → ⑦ → ②"		
-					
-					
-자바			"interface Number {
-    int sum(int[] a, boolean odd); // odd가 true면 홀수 합, false면 짝수 합
-}
-
-class ODDNumber implements Number {
-    public int sum(int[] a, boolean odd) {
-        int result = 0;
-        for (int i = 0; i < a.length; i++) {
-            if ((odd && a[i] % 2 != 0) || (!odd && a[i] % 2 == 0)) {
-                result += a[i];
-            }
-        }
-        return result;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        ODDNumber OE = new ODDNumber();
-
-        System.out.print(OE.sum(a, true) + "", "" + OE.sum(a, false));
-    }
-}"		
 자바			"class Main {
     public static void main(String[] args) {
         String str = ""abacabcd"";
@@ -405,27 +162,6 @@ public class Main {
     }
 }"		
 					
-					
-					
-자바			"public class Main {
-    public static void main(String[] args) {
-        int sum = 0;
-        try {
-            func();  // NullPointerException 발생
-        } catch (NullPointerException e) {
-            sum = sum + 1;  // 이 블록이 실행됨
-        } catch (Exception e) {
-            sum = sum + 10; // 이 블록은 실행되지 않음
-        } finally {
-            sum = sum + 100; // 무조건 실행
-        }
-        System.out.print(sum);  // 결과 출력
-    }
-
-    static void func() throws Exception {
-        throw new NullPointerException(); 
-    }
-}"		
 자바			"class Main {
 
     public static class Collection<T> {
@@ -475,105 +211,53 @@ Collection<T>에서 <T>는 상한선(Bounded wildcard)이 지정되지 않았으
 이 제네릭 타입 소거(Type Erasure) 과정이나, 원하는 타입(Integer, Number)으로 올바르게 메서드를 호출하는 해결 방법이 궁금하시면 말씀해 주세요. 구체적인 예시 코드로 설명해 드리겠습니다.
 
 */"		
-씨언어	https://youtu.be/ilH0irP5VQo?si=nN5hK1PoZt8UaYMO	14분 43초꺼	"#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct Data {
-    int value;
-    struct Data *next;
-} Data;
-
-Data *insert(Data *head, int value) {
-    Data *n = (Data*)malloc(sizeof(Data));
-    n->value = value;
-    n->next = NULL;
-    if(head == NULL) return n;
-    n->next = head;
-    head = n;
-    return head;
-}
-
-Data *reaconnect(Data *head, int x) {
-    Data *prev = head, *curr = head->next;
-    while(curr && curr->value != x) {
-        prev = curr;
-        curr = curr->next;
+					
+		자바	https://youtu.be/AiquVwHyeGQ?si=PPBGhc7TE4Q0oZFo	"class C1{
+    static int static_variable = 1;
+    int instance_variable = 2;
+    static void static_static(){
+        System.out.println(static_variable);
     }
-    if(curr == NULL) return head;
-    prev->next = curr->next;
-    curr->next = head;
-    return curr;
-}
-
-int main()
-{
-    Data *head = NULL, *curr = NULL, *tmp = NULL;
-    int i;
-    for (i = 1; i <= 5; i++)
-        head = insert(head, i);
-    
-    head = reaconnect(head, 3);
-    
-    for(curr = head; curr != NULL; curr = curr->next)
-        printf(""%d"", curr->value);
-        
-    while(head) {
-        tmp = head;
-        head = head->next;
-        free(tmp);
+    static void static_instance(){
+        // 클래스 메소드에서는 인스턴스 변수에 접근 할 수 없다. 
+        //System.out.println(instance_variable);
     }
-    return 0;
+    void instance_static(){
+        // 인스턴스 메소드에서는 클래스 변수에 접근 할 수 있다.
+        System.out.println(static_variable);
+    }
+    void instance_instance(){        
+        System.out.println(instance_variable);
+    }
 }
-"		
-					
-					
-파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC		"i = input()
-x = []
-
-for word in i.split():
-    x.append(word)
-    
-# 1. 따옴표를 """"로 정확히 닫아줍니다.
-y = """".join(x) 
-
-# 2. 뒤집은 문자열에서 'o', 'n', 'g'를 제외합니다.
-z = """".join(c for c in y[::-1] if c not in 'ong')
-
-print(z)"	HumanDev 입력	"주어진 코드에서 z = """".join(c for c in y[::-1] if c not in 'ong') 문장은 문자열을 뒤집은 뒤, 특정 글자('o', 'n', 'g')를 제거하는 동작을 합니다.
-이 한 줄은 세 가지 파이썬 문법이 결합되어 작동합니다. 순서대로 풀어서 설명해 드릴게요.
-## 1. y[::-1] : 문자열 뒤집기
-
-* 원리: 문자열 슬라이싱([시작:끝:증감값])을 사용한 방법입니다.
-* 동작: 증감값이 -1이므로 문자열을 맨 뒤에서부터 거꾸로 읽습니다.
-* 결과: ""HumanDev""가 ""veDnamuH""로 뒤집힙니다.
-
-## 2. c for c in ... if c not in 'ong' : 필터링 (리스트 컴프리헨션 형태)
-
-* 원리: 거꾸로 뒤집힌 문자열에서 글자를 하나씩(c) 꺼내며 조건을 검사합니다.
-* 조건: if c not in 'ong' (만약 그 글자가 'o', 'n', 'g' 중 하나가 아니라면)
-* 동작 단계:
-1. 'v', 'e', 'D' ➡️ 조건 만족 (통과)
-   2. 'n' ➡️ 조건 탈락 (제외)
-   3. 'a', 'm', 'u' ➡️ 조건 만족 (통과)
-   4. 'h' ➡️ 대문자 'H'이므로 조건 만족 (소문자 'o', 'n', 'g'만 걸러냅니다)
-* 결과: 조건에 살아남은 글자들만 순서대로 추출됩니다.
-
-## 3. """".join(...) : 문자 연결
-
-* 원리: 조건에 맞아 살아남은 글자들을 공백 없이 하나의 문자열로 다시 합칩니다.
-* 최종 출력: ""veDamuH"" ('n'이 제거됨)
-
-------------------------------
-이 코드의 작동 방식과 관련해서 더 궁금한 점이 있으신가요?
-
-* 대소문자 구분 없이 'H'나 'N'까지 모두 지우는 방법
-* for ... if 문을 줄이지 않고 여러 줄로 길게 풀어서 쓰는 방법
-
-원하시는 추가 코드 수정 방향을 말씀해 주시면 자세히 안내해 드리겠습니다.
-
-"
-					
-		자바	https://youtu.be/AiquVwHyeGQ?si=PPBGhc7TE4Q0oZFo		
+public class Main {  
+    public static void main(String[] args) {
+        C1 c = new C1();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 정적 변수에 접근 -> 성공
+        c.static_static();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 정적 메소드가 인스턴스 변수에 접근 -> 실패
+        c.static_instance();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 클래스 변수에 접근 -> 성공
+        c.instance_static();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공 
+        // 인스턴스 메소드가 인스턴스 변수에 접근 -> 성공
+        c.instance_instance();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 클래스 변수에 접근 -> 성공
+        C1.static_static();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 인스턴스 변수에 접근 -> 실패
+        C1.static_instance();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_static();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_instance();
+    }
+ 
+}"	
 파이	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	24min21s	"def f(a) :
     m = [[x] for x in a]
     b = m[:]
@@ -640,28 +324,10 @@ m = [[1], [2, 1], [3, 2, 1], [4, 3, 2, 1]]
 
 
 """""""	
-jajva	https://www.youtube.com/watch?v=1D39IPB9nDk&list=PLraQPczZnB1rX5zw29jQ6qMVa7J_uDUJC	28min4sec	"class Cal{
-    int cc(int a, int b) {
-        return a + b;
-    }
-    int c (char a, char b) {
-        return a - b;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Cal cal = new Cal();
-        int x1 = cal.cc(4, 5);
-        int x2 = cal.c('C', 'A');
-        String x3 = ""3"";
-        
-        System.out.println(x1 + x2 + ""2"" + x3);
-    }
-}"		
+		파이썬	https://youtu.be/GCMrf7wThT4?si=qdFpswc7xq9dXrvq		
 	[C 언어 기초 정리 06] 포인터 :: 곰곰의 일지 https://share.google/EBp4gKZX4piuwHIE5				
 			자바 참조타입		
-					
+			자바 char의 return		
 	35분 26초 자바	https://youtu.be/Jf1ujccvdTc?si=NHQyho2u1gluj0iS			
 	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk			
 			"public class Groom {
@@ -680,7 +346,7 @@ public class Main {
         System.out.print(Groom(1, 2));
     }
 }
-"		
+"	3	
 			"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
 코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."		
 			☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		
@@ -689,14 +355,40 @@ z = """".join(c for c in i if c not in 'ong')
 print(z)"		
 					
 		c언어	https://youtube.com/shorts/3-o9JnrMOPo?si=XcU9ryvqn-2jkHii		
-		파이썬	https://share.google/ILNpIK5QFKMgqOhWu		
+		파이썬	https://share.google/ILNpIK5QFKMgqOhWu	"orders = [
+    {""product"": ""apple"", ""qty"": 3, ""price"": 1000},
+    {""product"": ""banana"", ""qty"": 5, ""price"": 500},
+    {""product"": ""apple"", ""qty"": 2, ""price"": 1000},
+    {""product"": ""orange"", ""qty"": 4, ""price"": 800},
+    {""product"": ""banana"", ""qty"": 3, ""price"": 500}
+]
+
+sales = {}
+
+# 1. 상품별 매출 집계
+for order in orders:
+    product = order[""product""]
+    revenue = order[""qty""] * order[""price""]
+
+    if product not in sales:
+        sales[product] = 0
+
+    sales[product] += revenue
+
+# 2. 가장 많이 팔린 상품
+top_product = max(sales, key=sales.get)
+
+# 3. 매출 순 정렬
+sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
+
+# 4. 총 매출
+total_sales = sum(sales.values())
+
+print(""상품별 매출:"", sales)
+print(""최다 매출 상품:"", top_product)
+print(""매출 순 정렬:"", sorted_sales)
+print(""총 매출:"", total_sales)"	
 		자바	https://share.google/P7AQNSz8pAcFQcnJY		
-					
-					
-					
-					
-					
-					
 		자바	https://youtu.be/YUinFIexEQ4?si=N9H1tVnowH0o2DLM	"public class Main {
     public static void main(String[] args) {
         Person<String> p1 = new Person<String>();
@@ -704,29 +396,232 @@ print(z)"
         
     }
 }"	
-		c언어	https://wowon.tistory.com/16	"#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char a[100] = ""kimgroom"";
-    printf(""%d\n"", strlen(a));
-    char b[100] = ""groomgroom"";
-    printf(""%s\n"", strcpy(a, b));
-    if (strcmp(a, b) == 0) {
-        printf(""a와 b는 같다\n"");
-    }
-    else {
-        printf(""a와 b는 다르다\n"");
-    }
-    strcat(a, b);
-    printf(""%s\n"", a);
-    
-    char* r = strchr(a, 'r');
-    printf(""%s\n"", r);
-    
-    
-}"	
-					
-					
 		c언ㅇ	https://youtu.be/NtOrHRCytfg?si=dAIOEoNIyElPoeqL		
 		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm		
+		자바	https://youtu.be/fAQPPf4CEOE?si=WPxDOU2m5nxm_i12	"class StudentInfo{
+    public int grade;
+    StudentInfo(int grade){ this.grade = grade; }
+}
+class StudentPerson{
+    public StudentInfo info;
+    StudentPerson(StudentInfo info){ this.info = info; }
+}
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class EmployeePerson{
+    public EmployeeInfo info;
+    EmployeePerson(EmployeeInfo info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        StudentInfo si = new StudentInfo(2);
+        StudentPerson sp = new StudentPerson(si);
+        System.out.println(sp.info.grade); // 2
+        EmployeeInfo ei = new EmployeeInfo(1);
+        EmployeePerson ep = new EmployeePerson(ei);
+        System.out.println(ep.info.rank); // 1
+    }
+}"	
+		자바		"class StudentInfo{
+    public int grade;
+    StudentInfo(int grade){ this.grade = grade; }
+}
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
+        EmployeeInfo ei1 = p1.info;
+        System.out.println(ei1.rank); // 성공
+         
+        Person<String> p2 = new Person<String>(""부장"");
+        String ei2 = p2.info;
+        System.out.println(ei2.rank); // 컴파일 실패
+    }
+}"	
+		자바		"class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T, S>{
+    public T info;
+    public S id;
+    Person(T info, S id){ 
+        this.info = info; 
+        this.id = id;
+    }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person<EmployeeInfo, int> p1 = new Person<EmployeeInfo, int>(new EmployeeInfo(1), 1);
+    }
+}"	
+		자바		"class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T, S>{
+    public T info;
+    public S id;
+    Person(T info, S id){ 
+        this.info = info;
+        this.id = id;
+    }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        EmployeeInfo e = new EmployeeInfo(1);
+        Integer i = new Integer(10);
+        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, i);
+        System.out.println(p1.id.intValue());
+    }
+}"	
+		자바		"class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T, S>{
+    public T info;
+    public S id;
+    Person(T info, S id){ 
+        this.info = info;
+        this.id = id;
+    }
+    public <U> void printInfo(U info){
+        System.out.println(info);
+    }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        EmployeeInfo e = new EmployeeInfo(1);
+        Integer i = new Integer(10);
+        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, i);
+        p1.<EmployeeInfo>printInfo(e);
+        p1.printInfo(e);
+    }
+}"	
+		자바		"abstract class Info{
+    public abstract int getLevel();
+}
+class EmployeeInfo extends Info{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+    public int getLevel(){
+        return this.rank;
+    }
+}
+class Person<T extends Info>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person p1 = new Person(new EmployeeInfo(1));
+        Person<String> p2 = new Person<String>(""부장"");
+    }
+}"	
+		자바		"interface Info{
+    int getLevel();
+}
+class EmployeeInfo implements Info{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+    public int getLevel(){
+        return this.rank;
+    }
+}
+class Person<T extends Info>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person p1 = new Person(new EmployeeInfo(1));
+        Person<String> p2 = new Person<String>(""부장"");
+    }
+}"	
+		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	
+		자바		https://youtu.be/9_5_bAVHd8c?si=MtcKf24T4KA9gjGk	
+		c언어		https://youtu.be/RaUrw9YX7lY?si=cxam5qyshK4IvvLG	
+			파이직접	"a = 0
+sum = 0
+for i in range (0, 8, 1) :
+    if i % 2 == 0 : #여기 빈칸으로
+        continue
+    sum += i
+print(sum)"	
+		c언어 직접 빈칸으로		"#include <stdio.h>
+int new(int x) {
+    while (x < 5) {
+      x++;
+    }
+    return x;
+}
+int main()
+{
+    printf(""%d"", new(1));
+    
+}"	
+		자바 빈칸으로		"public class Main {
+    static String groom(String goo) {
+      goo = ""김구름"";
+      return goo;
+    }
+    
+    
+    static char groom (char gu) {
+      gu = 'g';
+      return gu;
+    }
+  
+    static int groom (int x) {
+      int y = 10;
+      x += x + y;
+      return x;
+    }
+    
+    public static void main(String[] args) {
+      int z = groom(4);
+      System.out.println(z);
+    }
+}"	
+		python 직접		"def one (on) :
+  on += 2
+  return on
+  
+def two (on) :
+  on += one(on)
+  return on
+
+def three (on) :
+  on += two(on)
+  return on
+  
+a = three(4)
+print(a)"	
+		c언어		"#include <stdio.h>
+int one(int x, int y) {
+  while (x < y) {
+    x++;
+  }
+  x += y;
+  return x;
+}
+
+int main()
+{
+  int z = one(3, 11);
+  printf(""%d"", z);
+}"	
+		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
+		자바		https://youtu.be/V_taqJlZeeE?si=Hk9j8ci7-FKP7wK0	
+					
+파이썬 문법	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95	2.2. 리스트(List), 튜플(Tuple)			
