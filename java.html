@@ -37,6 +37,50 @@
 
 
 
+
+
+
+-------
+
+
+public class Main {
+    public static void main () {
+        String a = "goo";
+        String b = a;
+        a += "rem";
+        System.out.println(b);
+        System.out.println(a);
+    }
+}
+/*
+출력값
+goo
+goorem
+*/
+
+-------
+
+
+public class Main {
+    public static void main () {
+        String a = new String("groom");
+        String b = "groom";
+        System.out.println(a + " " + b);
+    }
+}
+//출력값 groom groom
+
+
+
+-------
+
+
+public class Main {
+    void main() {
+        System.out.println(this.getClass());
+    }
+}
+//이 클래스의 이름을 출력하는 거 class Main
 		
 
 -------
