@@ -35,6 +35,40 @@
 
 
 
+
+
+		
+
+-------
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        try {
+            func();  // NullPointerException 발생
+        } catch (NullPointerException e) {
+            //NullPointerException(NPE)은 '아무것도 참조하고 있지 않은 상태(null)'의 객체에 접근하거나 조작하려 할 때 발생하는 런타임 예외입니다.
+            sum = sum + 1;  // 이 블록이 실행됨
+        } catch (Exception e) {
+            //Exception(예외)이란, 프로그램 실행 중에 개발자의 실수나 사용자의 잘못된 조작 등으로 인해 발생하는 예기치 못한 오류를 말합니다.
+            sum = sum + 10; // 이 블록은 실행되지 않음
+            //첫 번째 매칭에서 종료 (위에서 아래로 검사)자바는 예외가 발생하면 catch 블록을 위에서부터 순서대로 검사합니다.func()에서 NullPointerException이 던져졌을 때, 가장 위에 있는 catch (NullPointerException e)가 이를 정확히 잡아냈습니다.예외를 한 번 잡으면 나머지 catch 블록들은 모두 건너뛰고 실행을 종료합니다.
+        } finally {
+            sum = sum + 100; // 무조건 실행
+        }
+        System.out.print(sum);  // 결과 출력
+        //101
+        
+    }
+
+    static void func() throws Exception {
+        //이 메서드를 호출하는 곳에서는 반드시 예외 처리(try-catch 등)를 해야 한다고 문법적으로 경고(선언)하는 것입니다.최상위 예외 클래스인 Exception을 선언했기 때문에, 어떤 예외든 발생하면 상위 메서드로 던지겠다는 의미입니다.
+        throw new NullPointerException(); 
+        //throw 키워드를 사용해 의도적으로 NullPointerException(컴파일러가 강제하지 않는 실행 예외) 객체를 생성하고 발생시켰습니다.
+    }
+}
+
+
 -------
 
 interface Number {
