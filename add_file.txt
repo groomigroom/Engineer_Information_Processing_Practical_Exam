@@ -356,7 +356,25 @@ public class Main {
 z = """".join(c for c in i if c not in 'ong')
 print(z)"		
 					
-		c언어	https://youtube.com/shorts/3-o9JnrMOPo?si=XcU9ryvqn-2jkHii		
+		c언어	https://youtube.com/shorts/3-o9JnrMOPo?si=XcU9ryvqn-2jkHii	"#include <stdio.h>
+
+int main()
+{
+    int *a; //Pointer to int
+    int a[]; //array of int
+    int *a[]; //array of pointer to int
+    int (*a)(); //pointer to function returning int
+    int (*a)[]; //pointer to array of int
+    int **a; //pointer to pointer to int
+    int *(*a)[]; //pointer to array of pointer to int
+    int main(int arc, char *argv[]) //function(int, array of pointer to char) returning int
+    char *argv[] //array of pointer to char
+    int(*(*example)())[] //pointer to function returning pointer to array of int
+    printf(""Hello World"");
+
+    return 0;
+}
+"	
 		파이썬	https://share.google/ILNpIK5QFKMgqOhWu	"orders = [
     {""product"": ""bbang"", ""qty"": 3, ""price"": 1000},
     {""product"": ""mincho"", ""qty"": 5, ""price"": 500},
@@ -646,15 +664,46 @@ public class GenericDemo {
 }"	
 		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	
 		자바		https://youtu.be/9_5_bAVHd8c?si=MtcKf24T4KA9gjGk	
-		c언어		https://youtu.be/RaUrw9YX7lY?si=cxam5qyshK4IvvLG	
+		c언어		https://youtu.be/RaUrw9YX7lY?si=cxam5qyshK4IvvLG	"#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int *ptr;
+    ptr = (int *)malloc(sizeof(int));
+    if(ptr == NULL) {
+        printf(""메모리 할당 안됨"");
+    }
+    else {
+        *ptr = 123;
+        printf(""%d"", *ptr);
+        free(ptr);
+    }
+}"
 			파이직접	"a = 0
 sum = 0
 for i in range (0, 8, 1) :
     if i % 2 == 0 : #여기 빈칸으로
         continue
     sum += i
-print(sum)"	
-					
+print(sum)"	"a = 0
+sum = 0
+for i in range (0, 8, 1) :
+    if ________ : //빈칸채우기 
+        continue
+    sum += i
+print(sum)
+#16
+""""""
+a = 0
+sum = 0
+for i in range (0, 8, 1) :
+    if i % 2 == 0 : #여기 빈칸으로
+        continue
+    sum += i
+    #1 3 5 7 다 더하면, 16
+print(sum)
+#16
+"""""""
+		c언어 4분 51초	https://www.youtube.com/watch?v=RaUrw9YX7lY		
 		자바 빈칸으로		"public class Main {
     static String groom(String goo) {
       goo = ""김구름"";
@@ -708,11 +757,508 @@ int main()
 }"	
 		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
 		자바		https://youtu.be/V_taqJlZeeE?si=Hk9j8ci7-FKP7wK0	
-					
-					
-		파이썬 얕은 복사 깊은 복사			
-					
-					
+		c언어		"식별자(identifier)[편집]
+식별자는 영어 대소문자, 숫자, 밑줄문자(underscore)로 이루어져야 한다. 대소문자는 서로 구분된다. 식별자의 길이에 특별한 제한은 없으나 실질적으로는 컴파일러에 따라 한계치가 정해진다.
+
+미리 정해진 식별자로 __func__ 가 있다. 이는 각 함수 내부에서 다음과 같이 취급된다.
+
+static const char __func__[] = ""function-name"";
+
+이를 이용하면 각 함수 내부에서 함수의 이름을 문자열로 얻거나 출력할 수 있다."	
+		c언어		"구두점(punctuator)[편집]
+독립된 의미를 갖는 심볼들을 뜻한다. C99 기준으로 다음과 같은 것들이 있다.
+[ ] ( ) { } . ->
+++ -- & * + - ~ !
+/ % << >> < > <= >= == != ^ | && ||
+? : ; ...
+= *= /= %= += -= <<= >>= &= ^= |=
+, # ##
+<: :> <% %> %: %:%:"	
+		파이썬 얕은 복사 깊은 복사		https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
+		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
+
+void oddOrEven(int n){
+    if (n & 1){
+        printf(""홀수\n"");
+    }
+    else {
+        printf(""짝수\n"");
+    }
+}
+
+int main () {
+    oddOrEven(2);
+    oddOrEven(1);
+    
+}"		
+		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
+
+void printBit(int n){
+    for (int i = 1 << 7; i >= 1; i >>= 1){
+    if (n & i){
+      printf(""1"");
+    }
+    else {
+      printf(""0"");
+    }
+  }
+  printf(""\n"");
+}
+
+int main () {
+    printBit(2);
+    printBit(11);
+    
+}"		
+		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
+
+int min(int a, int b){
+    return b ^ ((a ^ b) & -(a < b));
+}
+
+int main () {
+    int a = min(2, 5);
+    printf(""%d\n"", a);
+    int b = min(11, 2);
+    printf(""%d"", b);
+}"		
+		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
+
+int max(int a, int b){
+    return a ^ ((a ^ b) & -(a < b));
+}
+
+int main () {
+    int a = max(2, 5);
+    printf(""%d\n"", a);
+    int b = max(11, 2);
+    printf(""%d"", b);
+}"		
+			"enum Lights {
+  GREEN = 1 << 0, //0b1
+  YELLOW = 1 << 1, //0b10
+  RED = 1 << 2, //0b100
+};
+int main(void){
+  int flag = 0; //모두 꺼져있는 상태
+  flag |= (RED | GREEN); //빨간불과 초록불 켜기
+  flag &= ~(RED | GREEN); //빨간불과 초록불 끄기
+  flag = ~0; //모든 불 켜기
+  flag = 0; //모든 불 끄기
+  flag ^= RED; //빨간불의 상태를 바꾸기
+  flag = ~flag; //모든 불들의 상태를 바꾸기
+  if ((flag & (RED | GREEN)) == (RED | GREEN)){
+    //빨간불과 초록불이 동시에 켜져있는지 확인
+  }
+  if (flag & (RED | GREEN)){
+    //빨간불과 초록불 둘 중 하나라도 켜져있는지 확인
+  }
+//...etc."		
+		"c언어 3항 연산자
+"	"#include <stdio.h>
+
+int main () {
+    int a = 3;
+    int b = a != 3 ? 3 : 2;
+    printf(""%d"", b);
+}"		
+		c언어 sizeof	"#include <stdio.h>
+
+int a[1000];
+
+int main()
+{
+	printf(""%d\n"", sizeof(a));
+	return 0;
+}"		
+		char, signed char, unsigned char	"har형은 정수형이면서 문자형이다. '문자'를 정수형으로 처리하는 C언어의 특성 때문이다.
+
+C언어에서 char형은 무조건 1byte여야 한다. 즉 sizeof(char)의 값은 항상 1이다. 하지만 이것이 char형이 모든 하드웨어에서 똑같은 크기인 것을 의미하지는 않는다. C언어에서는 1byte란 8bits 이상의 크기를 가지는, 주소지정 가능한 메모리의 최소 단위일 뿐이기 때문이다.[5]"		
+	파리	리스트(List), 튜플(Tuple)	"list_one = [1, 2, 3]
+tutu = tuple(list_one)
+print(tutu)
+tutu = list(tutu)
+print(tutu)
+""""""
+(1, 2, 3)
+[1, 2, 3]
+"""""""		
+	파리	2.4 딕셔너리(Dictionary)	"groom_d = {'name' : '김구름', '특징' : '멍멍이', '집' : '구름이집'}
+print(groom_d)
+groom_d['favorite'] = '엄마'
+print(groom_d)
+groom_d['groom'] = [1, 2, 3]
+print(groom_d['name'])
+
+""""""
+출력값
+{'name': '김구름', '특징': '멍멍이', '집': '구름이집'}
+{'name': '김구름', '특징': '멍멍이', '집': '구름이집', 'favorite': '엄마'}
+김구름
+"""""""		
+	파리	2.5.1.Truthy/Falsy	"string = ''
+if string :
+    print(""문자 있음"")
+else :
+    print(""문자 없음"")
+#문자 없음
+#문자열 유효성 검사로 if 조건에 넣을 수 있음."	"class Value:
+    def __init__(self):
+        self.valid = False
+    def __bool__(self):
+        return self.valid
+    def setValidity(self, validity):
+        self.valid = validity
+
+var = Value()
+print(bool(var))  # False
+var.setValidity(True)
+print(bool(var))  # True
+
+class Stack:
+    def __init__(self):
+        self.stack = list()
+    def __len__(self):
+        return len(self.stack)
+    def push(self, x):
+        self.stack.append(x)
+    def pop(self):
+        return self.stack.pop()
+
+stack = Stack()
+print(len(stack))   # 0
+print(bool(stack))  # False
+
+stack.push(100)     # 100 입력
+print(len(stack))   # 1
+print(bool(stack))  # True
+
+stack.pop()         # 100 출력
+print(len(stack))   # 0
+print(bool(stack))  # False"	
+	파리	2.6 Data Type(자료형 변환)[	"inum1 = 12
+num2 = str(inum1)
+print(type(num2))
+
+num3 = complex(inum1)
+print(num3)
+
+""""""
+출력값
+<class 'str'>
+(12+0j)
+"""""""		
+	파리	3. 입출력	"a = 10
+b = 20
+print(""%d, %d"" % (a, b))
+#10, 20
+
+print(""{}, {}"".format(a, b))
+#10, 20
+
+print(""김"", ""구"", ""름"", sep = "" 구름 "")
+#김 구름 구 구름 름
+
+import sys
+a = sys.stdin.readline()
+#입력에서 걸리는 시간 줄여주는 거
+
+print(a)"		
+	파리	5.1. match-case	"groom = ""김구름이""
+match groom :
+    case ""김구름이"" :
+        print(""멍멍이 안녕"")
+        pass
+    #이게 출력됨.
+    case ""김굴흠이"" :
+        print(""멍멍이야"")
+        pass
+    case _ :
+        print(""멍멍"")
+        pass
+    #이게 default 느낌으로"		
+	파리	5.2. 2항 연산자	"kimgroom = ""김구름"" or ""구름""
+print(kimgroom)
+#문자열은 다 참이라서 김구름 출력
+
+kimgroom = ""김구름"" and ""굴흠""
+print(kimgroom)
+#최종적으로 참으로 나오는 굴흠 출력"		
+	파리	5.3. 3항 연산자	"kimgroom = ""김구름""
+last = 1 if len(kimgroom) > 2 else 2
+print(last)
+#참이라서 if 앞의 값인 1이 출력 거짓일 때는 else 뒤의 값 출력
+"		
+	파리	7. 함수 8 . 모듈			
+	파리	"10 map
+
+"	"map_obj = map(lambda x, y: x + y, ""Hello"", ""World"")
+
+result_list = list(map_obj)
+# 또는
+print(result_list)
+result_list = [*map_obj] # *을 이용한 unpack
+print(result_list)
+
+result_tuple = tuple(map_obj)
+# 또는
+print(result_tuple)
+
+result_tuple = (*map_obj,) # *을 이용한 unpack
+print(result_tuple)"	"input_list = list(map(str, input().split()))
+print(input_list)
+
+input_list = list(map(int, input().split()))
+print(input_list)"	
+	파리	11 예외 처리 12 13도			
+		c언어 오류 뜨는 이유 찾기	"#include <stdio.h>
+
+int main()
+{
+	short a;
+	a = 32768;
+	printf(""%d"", a);
+	return 0;
+}"		
+	c언어		"#include <stdio.h>
+
+int main()
+{
+	short a;
+	a = 33;
+	printf(""%d"", sizeof(a));
+	return 0;
+}
+//2바이트라서 2"		
+	c언어		"6.5. 문자 자료형[편집]
+여러 가지 자료형이 있다. 가장 기본이 되는 것은 char이며, 이외 자료형의 사용법을 아래 표에 간략히 정리하였다.
+자료형
+리터럴 문법
+필요 헤더
+인코딩
+컴파일러 의존성
+printf/scanf 호환
+비고
+char
+""...""
+없음
+ASCII
+MBCS
+비의존
+O
+기본 자료형
+u8""...""
+uchar.h
+UTF-8
+비의존
+X
+wchar_t
+L""...""
+wchar.h
+와이드 문자(UCS-2/4)
+의존
+X[8]
+TCHAR
+_T(""..."")
+tchar.h
+MBCS
+와이드 문자(UCS-2)
+비의존[9]
+X[10]
+비표준 (Windows SDK)
+char16_t
+u""...""
+uchar.h
+UTF-16
+비의존
+X
+char32_t
+U""...""
+uchar.h
+UTF-32
+비의존
+X
+int
+'...'
+없음
+ASCII
+의존
+X[11]
+ISO/IEC 9899:TC3 §6.4.4.4"		
+	c언어		"#include <stdio.h>
+
+int main()
+{
+	char a;
+	scanf(""%c"", &a);
+	printf(""%d"", a);
+	return 0;
+}"		
+	c언어		"#include <stdio.h>
+
+int main()
+{
+	char a;
+	a = 97;
+	printf(""%c"", a + 1);
+	return 0;
+}"		
+	c언어		"#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+	char a[20];
+
+	printf(u8""입력해주세요.\n"");
+	scanf(u8""%[^\n]"", a);
+	printf(u8""%s(이)라고 입력하셨습니다.\n"", a);
+
+	return 0;
+}"		
+	c언어		"#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+	char a[]=u8""가"";
+
+	printf(u8""%s\n"", a);
+	printf(u8""총 %ld 바이트\n"", sizeof(a));
+
+	return 0;
+}"		
+	c언어		6.5.1.2. 인코딩 방식		
+	c언어		"6.5.2. wchar_t[편집]
+과거 C언어의 char 자료형이 ASCII 인코딩만 지원함으로 인해서 다국어 입출력이 불가능함을 해결하기 위하여 등장한 문자 자료형이다. 와이드 캐릭터 방식으로 인코딩되며 윈도우의 경우에는 UCS-2 인코딩을 통해 한 글자당 기본 2바이트+a, 유닉스 및 리눅스의 경우에는 UCS-4 인코딩을 통해 한글자 당 기본 4바이트로 인코딩된다.
+
+C11 표준으로 u8 리터럴과 char16_t, char32_t 자료형이 나오기 전까지는 다국어 호환성이 뛰어나기 때문에 어느 정도 쓰였다. 그러나 플랫폼 의존적인 자료형이기 때문에 환경에 따라서 인코딩 결과가 달라진다는 점으로 인해 많은 개발자들이 사용하기 꺼리는 자료형이다.
+
+printf / scanf 함수로 출력할 수 없으며 wprintf / wscanf 함수를 사용하여 출력한다. 그런데 로컬 설정의 영향을 받기에 영문자 외의 글자의 경우 아예 나오지 않거나 깨져서 나오는 문제가 있어서 로컬 설정을 해줘야 한다.
+
+Windows API에서는 모든 문자열을 wchar_t로 처리하기에 십중팔구 윈도우 프로그래밍에서는 wchar_t를 사용해야 한다.
+
+L""..."" 리터럴을 사용한다. wchar.h 헤더를 include해야 한다.
+#include <stdio.h>
+#include <wchar.h>
+
+int main()
+{
+	wchar_t a[20];
+	wscanf(L""%s"", a);
+	wprintf(L""%s"", a);
+	return 0;
+}"		
+	c언어		"6.5.3. TCHAR[편집]
+Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
+UNICODE 매크로가 활성화되면 매크로로 TCHAR은 wchar_t로 선언되며, 선언되지 않으면 char로 선언되게 된다. _T(x) x 매크로도 마찬가지로 선언되면 L로, 선언되지 않으면 제거된다.
+
+_T(""..."") 리터럴을 사용하고 tchar.h 헤더를 include해야 한다.
+#include <stdio.h>
+#include <tchar.h>
+#include <Wincon.h>
+
+int _tmain(int argc, TCHAR **argv)
+{
+	TCHAR a[20];
+        SetConsoleTitle(_T(""tchar test""));
+	_tscanf(_T(""%s""), a);
+	_tprintf(_T(""%s""), a);
+	return 0;
+}
+
+위와 같은 코드는 UNICODE 가 선언되어 있지 않으면 프리프로세서에서 다음과 같이 변환된다.
+
+#include <stdio.h>
+#include <tchar.h>
+#include <Wincon.h>
+
+int main(int argc, char **argv)
+{
+	char a[20];
+        SetConsoleTitleA(""tchar test"");
+	scanf(""%s"", a);
+	printf(""%s"", a);
+	return 0;
+}
+
+
+그리고 UNICODE가 선언되면 다음과 같이 변환된다.
+
+#include <stdio.h>
+#include <tchar.h>
+#include <Wincon.h>
+
+int wmain(int argc, wchar_t **argv)
+{
+	wchar_t a[20];
+        SetConsoleTitleW(L""tchar test"");
+	wscanf(L""%s"", a);
+	wprintf(L""%s"", a);
+	return 0;
+}
+"		
+	c언어		"6.5.4. char16_t[편집]
+UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
+
+u""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
+#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+	char16_t a[]=u""나무위키 프로그래밍 프로젝트"";
+	return 0;
+}"		
+	c언어		"6.5.5. char32_t[편집]
+UTF-32 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 4바이트로 저장되고 컴파일러에 의존적이지 않다.
+
+U""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
+#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+        char32_t a[]=U""안녕, 나무위키."";
+        return 0;
+}
+"		
+	c언어		"6.7. register[편집]
+변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
+register <자료형> <변수 이름> = <넣을 값>;
+register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
+
+CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
+
+C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		
+	c언어		"이 배열을 2차원으로도 만들 수 있다.
+변수의 이름[변수의 개수][변수의 개수] = {{넣을 값, 넣을 값, 넣을 값....}, {넣을 값, 넣을 값, 넣을 값....}};
+
+이건 이렇게 생겼다.
+arr[0][0]
+arr[0][1]
+arr[0][2]
+arr[1][0]
+arr[1][1]
+arr[1][2]
+arr[2][0]
+arr[2][1]
+arr[2][2]
+"		
+	c언어		"#include <stdio.h>
+
+int main()
+{
+	int arr[5] = {1,2,3,4,5};
+        printf(""%d"", arr[2]);
+}
+
+출력 결과는 3이다. 첨자는 0부터를 반드시 기억하자.
+
+선언과 달리 접근은 반대로 할 수 있다.
+즉 arr[2]와 2[arr]는 같다.
+이는 배열에 대한 접근 문법은 문법적 설탕이며 arr[2]는 arr부터 2의 오프셋을 가리키고 있다는 것을 의미하는 *(arr+2)와 같기 때문이며 *(2+arr)라고 쓴다고 오류가 아닌 것과 같다.
+이는 문법적 오류가 아닌 표준에서도 언급되는 문법이긴 하나[19] 가독성이나 관례상 혼란만 일으키므로 사용되지는 않는다."		
 					
 					
 					
@@ -730,3 +1276,4 @@ int main()
 					
 파이썬 문법	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95	2.2. 리스트(List), 튜플(Tuple)			
 자바 문법	https://namu.wiki/w/Java/%EB%AC%B8%EB%B2%95	6. 변수 선언			
+c언어 문법	https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%EB%AC%B8%EB%B2%95	6.10 포인터			
