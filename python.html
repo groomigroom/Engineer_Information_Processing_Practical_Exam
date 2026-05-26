@@ -34,9 +34,155 @@
 
 
 
+----------
+
+orders = [
+    {"product": "bbang", "qty": 3, "price": 1000},
+    {"product": "mincho", "qty": 5, "price": 500},
+    {"product": "bbang", "qty": 2, "price": 1000},
+    {"product": "orion", "qty": 4, "price": 800},
+    {"product": "mincho", "qty": 3, "price": 500}
+]
+
+sales = {}
+
+# 1. 상품별 매출 집계
+for order in orders:
+    product = order["product"]
+    #product는 5개
+    revenue = order["qty"] * order["price"]
+    """
+    3000
+    2500
+    2000
+    3200
+    1500
+    """
+
+    if product not in sales:
+        sales[product] = 0
+
+    sales[product] += revenue
+"""
+print(sales['bbang']) == 5000
+print(sales['mincho']) == 4000
+print(sales['orion']) == 3200
+"""
+
+# 2. 가장 많이 팔린 상품
+top_product = max(sales, key=sales.get)
+#.get()을 쓸까요?예를 들어 sales = {'bbang': 5000} 이라는 딕셔너리가 있다고 가정해 봅시다. 여기에 없는 상품인 'mincho'를 꺼내려고 할 때 두 방식은 다르게 작동합니다.❌ 대괄호 방식 (sales['mincho'])결과: KeyError 에러 발생 및 프로그램 강제 종료특징: "없으면 죽는다"는 식으로 작동하기 때문에 매우 위험합니다. (이전 질문에서 확인하지 못했던 원인입니다.)⭕ .get() 방식 (sales.get('mincho'))결과: 에러 없이 None(아무것도 없음)을 반환하고 프로그램이 계속 실행됨특징: "없으면 없는 대로 알려줘"라는 안전장치가 되어 있습니다.
+#bbang
+
+# 3. 매출 순 정렬
+sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
+"""
+sales.items(): 딕셔너리의 키(상품명)와 값(매출액)을 묶어서 (키, 값) 형태의 쌍으로 모두 꺼내줍니다.예: [('bbang', 5000), ('mincho', 4000), ('orion', 3200)]key=lambda x: x[1]: 정렬의 '기준'을 정하는 익명 함수(Lambda)입니다.여기서 x는 앞서 꺼낸 데이터 한 쌍 ('bbang', 5000)을 뜻합니다.파이썬 인덱스에서 x[0]은 상품명('bbang'), x[1]은 매출액(5000)입니다.즉, "상품 이름 말고 두 번째 자리에 있는 매출액(숫자)을 기준으로 정렬해라"라는 의미입니다.reverse=True: 정렬 방식을 거꾸로 뒤집는 옵션입니다.기본 정렬은 오름차순(작은 숫자 ➡️ 큰 숫자)이지만, reverse=True를 붙이면 내림차순(큰 숫자 ➡️ 작은 숫자)으로 정렬됩니다.sorted(...): 이 모든 기준을 가지고 정렬된 새로운 리스트를 만들어 반환합니다.
+"""
+
+# 4. 총 매출
+total_sales = sum(sales.values())
+#12200
+
+print("상품별 매출:", sales)
+print("최다 매출 상품:", top_product)
+print("매출 순 정렬:", sorted_sales)
+#[('bbang', 5000), ('mincho', 4000), ('orion', 3200)]
+print("총 매출:", total_sales)
+"""
+제시된 파이썬 코드는 주문 데이터 목록을 바탕으로 상품별 매출액을 계산하고, 통계를 내어 정렬하는 데이터 처리 프로그램입니다.
+코드의 각 줄이 수행하는 역할을 순서대로 명확하게 설명해 드리겠습니다.
+------------------------------
+## 1. 초기 데이터 및 변수 선언
+
+orders = [
+    {"product": "bbang", "qty": 3, "price": 1000},
+    {"product": "mincho", "qty": 5, "price": 500},
+    {"product": "bbang", "qty": 2, "price": 1000},
+    {"product": "orion", "qty": 4, "price": 800},
+    {"product": "mincho", "qty": 3, "price": 500}
+]
 
 
+* 역할: 분석할 주문 데이터 리스트를 생성합니다.
+* 설명: 각 주문은 딕셔너리 형태이며 상품명(product), 수량(qty), 단가(price) 정보를 담고 있습니다.
 
+sales = {}
+
+
+* 역할: 상품별 총매출을 누적하여 저장할 빈 딕셔너리를 만듭니다.
+* 형태: 나중에 {"상품명": 총매출액} 구조로 데이터가 쌓이게 됩니다.
+
+------------------------------
+## 2. 상품별 매출 집계 (반복문)
+
+for order in orders:
+
+
+* 역할: orders 리스트에 있는 5개의 주문 딕셔너리를 하나씩 꺼내어 반복 루프를 돌립니다.
+
+    product = order["product"]
+
+
+* 역할: 현재 주문의 상품명(예: "bbang")을 추출하여 product 변수에 저장합니다.
+
+    revenue = order["qty"] * order["price"]
+
+
+* 역할: 현재 주문의 수량(qty)과 단가(price)를 곱해 해당 주문의 매출액을 계산합니다.
+
+    if product not in sales:
+        sales[product] = 0
+
+
+* 역할: sales 딕셔너리에 현재 상품명이 등록되어 있는지 확인합니다.
+* 설명: 처음 등장한 상품이라면, 더하기 연산(+=) 시 에러가 나지 않도록 값을 0으로 초기화해 둡니다.
+
+    sales[product] += revenue
+
+
+* 역할: 계산된 매출액(revenue)을 해당 상품의 기존 누적 매출에 더해줍니다.
+
+------------------------------
+## 3. 매출 데이터 분석 및 정렬
+
+top_product = max(sales, key=sales.get)
+
+
+* 역할: 가장 많은 매출을 기록한 상품명을 찾습니다.
+* 설명: max() 함수가 sales 딕셔너리의 키(상품명)들을 검사할 때, 기준(key)을 sales.get(매출액 값)으로 잡아 가장 큰 값을 가진 상품명을 뽑아냅니다.
+
+sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
+
+
+* 역할: 매출액이 높은 순서대로 상품을 정렬합니다.
+* 설명:
+* sales.items()를 통해 (상품명, 매출액) 쌍을 가져옵니다.
+   * key=lambda x: x[1]은 정렬 기준을 1번째 인덱스인 '매출액'으로 지정하겠다는 의미입니다.
+   * reverse=True를 설정하여 오름차순이 아닌 내림차순(큰 값부터)으로 정렬합니다.
+
+total_sales = sum(sales.values())
+
+
+* 역할: 모든 상품의 매출액을 더해 총매출을 구합니다.
+* 설명: sales.values()로 모든 상품의 매출액 숫자만 모은 뒤, sum() 함수로 모두 더합니다.
+
+------------------------------
+## 4. 결과 출력
+
+print("상품별 매출:", sales) # {'bbang': 5000, 'mincho': 4000, 'orion': 3200} 출력
+print("최다 매출 상품:", top_product) # bbang 출력
+print("매출 순 정렬:", sorted_sales) # [('bbang', 5000), ('mincho', 4000), ('orion', 3200)] 출력
+print("총 매출:", total_sales) # 12200 출력
+
+
+* 역할: 앞서 연산하고 분석한 결과치들을 콘솔창에 보기 좋게 출력합니다. (코드 끝의 //는 파이썬 문법이 아니므로 실제 실행 시에는 제외해야 합니다.)
+
+------------------------------
+혹시 코드를 작성하다가 lambda 표현식의 원리가 더 궁금하시거나, 딕셔너리를 다룰 때 if not in 대신 defaultdict를 사용하여 코드를 줄이는 방법이 알고 싶으신가요?
+
+
+"""
 
 
 -----
