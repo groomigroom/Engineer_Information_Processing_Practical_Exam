@@ -36,10 +36,25 @@
 
 
 
+-------
 
 
-
-		
+public class Main {
+    public static void main(String[] args) {
+        int NUM[] = {70, 60, 50, 80, 90};
+        int MIN = 9999, N;
+        for (N = 0; N < NUM.length; N++) {
+            //N < 5
+            if (MIN > NUM[N]) {
+                MIN = NUM[N];
+                //따라서 MIN = 50
+            }
+        }
+        System.out.print("배열 NUM의 원소들 중에서 최소값은 ");
+        System.out.print(MIN + "입니다.");
+        //50
+    }
+}
 
 
 
