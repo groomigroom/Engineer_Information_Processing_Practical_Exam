@@ -30,6 +30,46 @@
 
 
 
+
+
+
+
+
+-------------
+
+
+class StudentInfo{
+    public int grade;
+    StudentInfo(int grade){ this.grade = grade; }
+}
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T>{
+    //타입 매개변수
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
+        EmployeeInfo ei1 = p1.info;
+        //1
+        System.out.println(ei1.rank); // 성공
+         
+        Person<String> p2 = new Person<String>("부장");
+        String ei2 = p2.info;
+        System.out.println(ei2.rank); // 컴파일 실패
+    }
+}
+/*
+p2.info의 타입은 String입니다.Person<String> p2로 객체를 생성했기 때문에, p2.info 변수는 String 타입이 됩니다.따라서 String ei2 = p2.info; 코드를 통해 
+	ei2 변수 또한 String 타입이 됩니다.String 클래스에는 rank 필드가 없습니다.ei2.rank를 호출하는 것은 자바의 표준 String 클래스 내부에 public int rank; 
+	같은 변수가 정의되어 있는지 찾는 과정입니다.하지만 String 클래스에는 rank라는 멤버 변수가 전혀 없기 때문에, 컴파일러가 이를 찾아내지 못하고 "Symbol을 찾을 수 없다(Cannot find symbol)"는 컴파일 에러를 발생시킵니다.
+*/
+
+
 --------
 
 
