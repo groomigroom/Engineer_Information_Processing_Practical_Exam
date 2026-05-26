@@ -34,6 +34,29 @@
 
 
 
+------
+
+#include <stdio.h>
+
+struct MyStruct {
+    int GroomInt;
+    int GroomIntwo;
+};
+
+int main() {
+    
+    struct MyStruct mydata = { .GroomInt = 1234, .GroomIntwo = 1234};
+    struct MyStruct *ptr = &mydata;
+    
+    printf("%d", mydata.GroomInt);
+    //포인터로 접근할 때는 아래와 같이 하기
+    printf("%d", ptr->GroomInt);
+    printf("%d", (*ptr).GroomInt);
+    //123412341234
+}
+
+
+
 
 ------
 
