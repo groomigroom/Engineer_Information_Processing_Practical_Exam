@@ -45,7 +45,7 @@ int main() {
 
 */"	모두다 출력 같게 됨.		
 c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G				
-자바	https://youtu.be/utSPt0ybCVQ?si=NGsNtEq5UJl0ckSM				
+					
 파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
 new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
 
@@ -104,7 +104,42 @@ public class Groom {
   }
 }"	"실행순서 맞추기 312
 567도 "		
-		파이썬	https://youtu.be/t5sB69gIJUc?si=0PtRNud1pLZw0uHN		
+		파이썬		"def groomi1(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return l2
+    
+def groomi2(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    print(l2)
+
+def groomi3(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return ''.join(str(i) for i in l2)
+    
+def groomi4(l) :
+    d = {}
+    for i in l :
+        d[i] = i * 2
+    print(d)
+    
+l = [1, 2, 3]
+
+print(groomi1(l))
+
+groomi2(l)
+
+print(groomi3(l))
+
+groomi4(l)
+
+#함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
+"	
 			자바 Connection 타입		
 			자바 Thread implements Runnable run() start()		
 자바			"public class Sort {
@@ -140,199 +175,6 @@ public class Groom {
 (1) idx2
 
 (2) nx"		
-자바			"class Main {
-    public static void main(String[] args) {
-        String str = ""abacabcd"";
-        boolean[] seen = new boolean[256];
-        System.out.print(calculFn(str, str.length() - 1, seen));
-    }
-
-    public static String calculFn(String str, int index, boolean[] seen) {
-        if (index < 0) return """";
-
-        char c = str.charAt(index);
-        String result = calculFn(str, index - 1, seen);
-
-        if (!seen[c]) {
-            seen[c] = true;
-            return result + c;  // ← 현재 문자를 뒤에 붙이기
-        }
-
-        return result;
-    }
-}"	"class Main {
-    public static void main(String[] args) {
-        String str = ""abacabcd"";
-        boolean[] seen = new boolean[256];
-        System.out.print(calculFn(str, str.length() - 1, seen));
-    }
-
-    public static String calculFn(String str, int index, boolean[] seen) {
-        if (index < 0) return """";
-
-        char c = str.charAt(index);
-        //charAt()은 문자열(String)에서 특정 위치(인덱스)에 있는 문자(char)를 하나만 추출할 때 사용하는 메서드입니다.
-        String result = calculFn(str, index - 1, seen);
-        /*
-        index 6에서 index 0까지 호출
-        */
-
-        if (!seen[c]) {
-            seen[c] = true;
-            return result + c;  // ← 현재 문자를 뒤에 붙이기
-        }
-        //abcd만 붙어짐. 
-
-        return result;
-    }
-}
-/*
-제시된 자바 코드는 **재귀 호출(Recursion)**과 **방문 배열(boolean[])**을 사용하여 문자열의 중복 문자를 제거하는 프로그램입니다.
-이 코드의 핵심 동작 원리는 문자열을 앞에서부터 순차적으로 탐색하면서, 처음 등장한 문자만 결과 문자열에 누적시키는 것입니다.
-------------------------------
-## 1. 주요 구성 요소의 역할
-
-* index (문자열 탐색 위치): str.length() - 1(마지막 인덱스)부터 시작하여 0을 거쳐 -1이 될 때까지 감소합니다.
-* seen (중복 체크 배열): 아스키코드 크기(256)의 배열입니다. 문자가 등장하면 해당 인덱스를 true로 바꿔 중복을 방지합니다.
-* result + c (문자 결합): 재귀 호출이 끝에서부터 풀려나오면서 기존 결과(result)의 뒤에 현재 문자(c)를 붙입니다.
-
-------------------------------
-## 2. 단계별 작동 과정 (Call Stack)
-calculFn 메서드는 index가 -1이 될 때까지 자기 자신을 계속 호출하며 스택(Stack)을 쌓은 후, 역순으로 연산을 수행합니다.
-## 단계 1: 재귀 호출 쌓기 (인덱스 감소)
-
-* calculFn(""abacabcd"", 7, seen) 호출 ➔ index 6 호출
-* calculFn(""abacabcd"", 6, seen) 호출 ➔ index 5 호출
-* ...
-* calculFn(""abacabcd"", 0, seen) 호출 ➔ index -1 호출
-* calculFn(""abacabcd"", -1, seen) 호출 ➔ if (index < 0) 조건에 걸려 빈 문자열 """"을 반환하며 재귀가 종료됩니다.
-
-//기본값이 false임.
-## 단계 2: 재귀 풀기 및 문자열 조합 (역순 진행)
-이제 스택의 가장 위에 있던 index 0부터 차례대로 연산이 처리됩니다.
-
-| 인덱스 | 문자(c) | seen[c] 상태 | 동작 및 결과 | 최종 반환값 (result) |
-|---|---|---|---|---|
-| 0 | 'a' | false | seen['a'] = true 변경 후 """" + 'a' | ""a"" |
-| 1 | 'b' | false | seen['b'] = true 변경 후 ""a"" + 'b' | ""ab"" |
-| 2 | 'a' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""ab"" |
-| 3 | 'c' | false | seen['c'] = true 변경 후 ""ab"" + 'c' | ""abc"" |
-| 4 | 'a' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
-| 5 | 'b' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
-| 6 | 'c' | true | 이미 방문했으므로 현재 문자 건너뜀 | ""abc"" |
-| 7 | 'd' | false | seen['d'] = true 변경 후 ""abc"" + 'd' | ""abcd"" |
-
-------------------------------
-## 3. 최종 출력 결과
-
-abcd
-
-코드의 시작은 마지막 인덱스(7)부터 호출되었지만, 실제 문자열이 만들어지는 과정은 index 0의 결과에 index 1, index 2... 순서대로 살을 붙여나가는 형태가 됩니다. 결과적으로 중복이 제거된 순수 알파벳 순서대로 출력됩니다.
-------------------------------
-이 재귀 함수의 동작 흐름을 표나 다이어그램으로 더 자세히 확인하고 싶으신가요, 아니면 동일한 기능을 수행하는 반복문(for문) 기반의 더 효율적인 코드가 필요하신가요?
-
-
-*/"	
-					
-자바			"class Main {
-
-    public static class Collection<T> {
-        T value;
-
-        public Collection(T t) {
-            value = t;
-        }
-
-        public void print() {
-            new Printer().print(value);
-        }
-
-        class Printer {
-            void print(Integer a) {
-                System.out.print(""A"" + a);
-            }
-
-            void print(Object a) {
-                System.out.print(""B"" + a);
-            }
-
-            void print(Number a) {
-                System.out.print(""C"" + a);
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        new Collection<>(0).print();
-    }
-}
-/*
-제시해주신 코드 내부의 new Collection<>(0)에서 사용된 <>의 의미는 **다이아몬드 연산자(Diamond Operator)**라고 하며, **제네릭 타입 추론(Generic Type Inference)**을 수행합니다.
-자바 컴파일러가 앞의 선언이나 생성자에 전달된 인수를 보고 타입을 자동으로 알아내기 때문에, 꺾쇠괄호 안의 타입을 생략할 수 있게 해주는 기능입니다.
-## 🔍 동작 원리
-
-* 원래 표현: new Collection<Integer>(0)라고 적어야 합니다. 컴파일러가 매개변수 0을 보고 Integer 타입임을 알기 때문입니다.
-* 생략 표현: <>만 적어주면 컴파일러가 인자의 실제 타입(0 $\rightarrow$ Integer)을 추론하여 Collection<Integer>로 알아서 처리합니다.
-
-------------------------------
-## ⚠️ 주의할 점: 위 코드의 실행 결과는 'B0'입니다
-이 코드에서 print() 메서드가 실행될 때 오버로딩(Overloading) 규칙에 의해 A0이나 C0이 출력될 것 같지만, 실제로는 B0이 출력됩니다.
-그 이유는 **자바의 제네릭은 컴파일 시점에 타입이 지워지기 때문(Type Erasure)**입니다.
-Collection<T>에서 <T>는 상한선(Bounded wildcard)이 지정되지 않았으므로, 컴파일 이후 일반 Object 타입으로 변환됩니다. 따라서 new Printer().print(value);를 호출할 때 value 변수의 컴파일 시점 타입은 Object가 되어 print(Object a) 메서드가 매칭됩니다.
-------------------------------
-이 제네릭 타입 소거(Type Erasure) 과정이나, 원하는 타입(Integer, Number)으로 올바르게 메서드를 호출하는 해결 방법이 궁금하시면 말씀해 주세요. 구체적인 예시 코드로 설명해 드리겠습니다.
-
-*/"	"class Main {
-
-    public static class Collection<T> {
-        T value;
-
-        public Collection(T t) {
-            value = t;
-        }
-
-        public void print() {
-            new Printer().print(value);
-        }
-
-        class Printer {
-            void print(Integer a) {
-                System.out.print(""A"" + a);
-            }
-
-            void print(Object a) {
-                System.out.print(""B"" + a);
-            }
-
-            void print(Number a) {
-                System.out.print(""C"" + a);
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        new Collection<>(0).print();
-        //Integer로 알아서 알아냄
-    }
-}
-/*
-제시해주신 코드 내부의 new Collection<>(0)에서 사용된 <>의 의미는 **다이아몬드 연산자(Diamond Operator)**라고 하며, **제네릭 타입 추론(Generic Type Inference)**을 수행합니다.
-자바 컴파일러가 앞의 선언이나 생성자에 전달된 인수를 보고 타입을 자동으로 알아내기 때문에, 꺾쇠괄호 안의 타입을 생략할 수 있게 해주는 기능입니다.
-## 🔍 동작 원리
-
-* 원래 표현: new Collection<Integer>(0)라고 적어야 합니다. 컴파일러가 매개변수 0을 보고 Integer 타입임을 알기 때문입니다.
-* 생략 표현: <>만 적어주면 컴파일러가 인자의 실제 타입(0 $\rightarrow$ Integer)을 추론하여 Collection<Integer>로 알아서 처리합니다.
-
-------------------------------
-## ⚠️ 주의할 점: 위 코드의 실행 결과는 'B0'입니다
-이 코드에서 print() 메서드가 실행될 때 오버로딩(Overloading) 규칙에 의해 A0이나 C0이 출력될 것 같지만, 실제로는 B0이 출력됩니다.
-그 이유는 **자바의 제네릭은 컴파일 시점에 타입이 지워지기 때문(Type Erasure)**입니다.
-Collection<T>에서 <T>는 상한선(Bounded wildcard)이 지정되지 않았으므로, 컴파일 이후 일반 Object 타입으로 변환됩니다. 따라서 new Printer().print(value);를 호출할 때 value 변수의 컴파일 시점 타입은 Object가 되어 print(Object a) 메서드가 매칭됩니다.
-------------------------------
-이 제네릭 타입 소거(Type Erasure) 과정이나, 원하는 타입(Integer, Number)으로 올바르게 메서드를 호출하는 해결 방법이 궁금하시면 말씀해 주세요. 구체적인 예시 코드로 설명해 드리겠습니다.
-
-*/"	
-					
 		자바	https://youtu.be/AiquVwHyeGQ?si=PPBGhc7TE4Q0oZFo	"class C1{
     static int static_variable = 1;
     int instance_variable = 2;
@@ -390,52 +232,58 @@ int main() {
 	[C 언어 기초 정리 06] 포인터 :: 곰곰의 일지 https://share.google/EBp4gKZX4piuwHIE5 void 포인터부터		https://share.google/EBp4gKZX4piuwHIE5		
 			자바 참조타입		
 			자바 char의 return		
-	35분 26초 자바	https://youtu.be/Jf1ujccvdTc?si=NHQyho2u1gluj0iS	"public class Main {
-    public static void main(String[] args) {
-        int NUM[] = {70, 60, 50, 80, 90};
-        int MIN = 9999, N;
-        for (N = 0; N < NUM.length; N++) {
-            if (MIN > NUM[N]) {
-                MIN = NUM[N];
-            }
-        }
-        System.out.print(""배열 NUM의 원소들 중에서 최소값은 "");
-        System.out.print(MIN + ""입니다."");
+					
+	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk	"class Factorial2 {
+    int Fact = 1;
+    public in CalFact(int n) {
+        return (n > 0) ? n * CalFact(n - 1) : 1;
     }
-}"	"public class Main {
-    public static void main(String[] args) {
-        int NUM[] = {70, 60, 50, 80, 90};
-        int MIN = 9999, N;
-        for (N = 0; N < NUM.length; N++) {
-            //N < 5
-            if (MIN > NUM[N]) {
-                MIN = NUM[N];
-                //따라서 MIN = 50
-            }
-        }
-        System.out.print(""배열 NUM의 원소들 중에서 최소값은 "");
-        System.out.print(MIN + ""입니다."");
-        //50
-    }
-}"	
-	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk			
-			"public class Groom {
-    int x;
-    int y;
-    
-    public int Groom(int x, int y) {
-        x = x + y;
-        return x;
-    }
-}
+}"		
+	mysql		"BINARY
+BINARY 연산자는 뒤에 오는 문자열을 바이너리 문자열로 변환합니다.
+BINARY 연산자를 이용하면 문자가 아닌 바이트를 기준으로 하여 비교나 검색 작업을 수행할 수 있습니다.
+sqlSELECT BINARY 'a' = 'A'; -- false
+SELECT 'a' = 'A'; -- trueCopy
+위의 예제처럼 BINARY 연산자를 이용하면, 비교하려는 문자의 바이트 값을 비교합니다.
+따라서 문자 'a'와 'A'가 서로 다른 값으로 인식됩니다.
 
-public class Main {
-    public static Main (String[] args) {
-        Groom m = new Groom();
-        System.out.print(Groom(1, 2));
-    }
-}
-"	3	
+CAST
+CAST() 함수는 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
+이때 변환하고자 하는 타입을 AS 절을 이용하여 직접 명시할 수 있습니다.
+sqlCAST(expr AS type)Copy
+AS 절에서 사용할 수 있는 타입은 다음과 같습니다.
+
+BINARY
+CHAR
+DATE
+DATETIME
+TIME
+DECIMAL
+JSON (MySQL 5.7.8부터 제공됨)
+NCHAR
+SIGNED [INTEGER]
+UNSIGNED [INTEGER]
+
+sqlSELECT 4 / '2',
+4 / 2,
+4 / CAST('2' AS UNSIGNED);
+
+/*
+실행 결과
+2
+2.0000
+2.0000
+*/Copy
+
+CONVERT
+CONVERT() 함수도 CAST() 함수처럼 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
+CONVERT() 함수는 두 번째 인수로 변환하고자 하는 타입을 직접 전달할 수 있습니다.
+sqlCONVERT(expr, type) == CAST(expr as type)
+CONVERT(expr USING transcoding_name)Copy
+USING 절은 서로 다른 문자셋(character set) 간의 데이터 변환을 위해 사용됩니다.
+이때 사용할 수 있는 타입은 CAST() 함수와 같습니다.
+sqlSELECT CONVERT('abc' USING utf8);
+출처: https://inpa.tistory.com/entry/MYSQL-📚-타입-변환-cast-convert [Inpa Dev 👨‍💻:티스토리]"		
 			"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
 코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."		
 			☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		
@@ -462,153 +310,7 @@ int main()
     return 0;
 }
 "	
-		파이썬	https://share.google/ILNpIK5QFKMgqOhWu	"orders = [
-    {""product"": ""bbang"", ""qty"": 3, ""price"": 1000},
-    {""product"": ""mincho"", ""qty"": 5, ""price"": 500},
-    {""product"": ""bbang"", ""qty"": 2, ""price"": 1000},
-    {""product"": ""orion"", ""qty"": 4, ""price"": 800},
-    {""product"": ""mincho"", ""qty"": 3, ""price"": 500}
-]
-
-sales = {}
-
-# 1. 상품별 매출 집계
-for order in orders:
-    product = order[""product""]
-    #product는 5개
-    revenue = order[""qty""] * order[""price""]
-    """"""
-    3000
-    2500
-    2000
-    3200
-    1500
-    """"""
-
-    if product not in sales:
-        sales[product] = 0
-
-    sales[product] += revenue
-""""""
-print(sales['bbang']) == 5000
-print(sales['mincho']) == 4000
-print(sales['orion']) == 3200
-""""""
-
-# 2. 가장 많이 팔린 상품
-top_product = max(sales, key=sales.get)
-#.get()을 쓸까요?예를 들어 sales = {'bbang': 5000} 이라는 딕셔너리가 있다고 가정해 봅시다. 여기에 없는 상품인 'mincho'를 꺼내려고 할 때 두 방식은 다르게 작동합니다.❌ 대괄호 방식 (sales['mincho'])결과: KeyError 에러 발생 및 프로그램 강제 종료특징: ""없으면 죽는다""는 식으로 작동하기 때문에 매우 위험합니다. (이전 질문에서 확인하지 못했던 원인입니다.)⭕ .get() 방식 (sales.get('mincho'))결과: 에러 없이 None(아무것도 없음)을 반환하고 프로그램이 계속 실행됨특징: ""없으면 없는 대로 알려줘""라는 안전장치가 되어 있습니다.
-#bbang
-
-# 3. 매출 순 정렬
-sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
-""""""
-sales.items(): 딕셔너리의 키(상품명)와 값(매출액)을 묶어서 (키, 값) 형태의 쌍으로 모두 꺼내줍니다.예: [('bbang', 5000), ('mincho', 4000), ('orion', 3200)]key=lambda x: x[1]: 정렬의 '기준'을 정하는 익명 함수(Lambda)입니다.여기서 x는 앞서 꺼낸 데이터 한 쌍 ('bbang', 5000)을 뜻합니다.파이썬 인덱스에서 x[0]은 상품명('bbang'), x[1]은 매출액(5000)입니다.즉, ""상품 이름 말고 두 번째 자리에 있는 매출액(숫자)을 기준으로 정렬해라""라는 의미입니다.reverse=True: 정렬 방식을 거꾸로 뒤집는 옵션입니다.기본 정렬은 오름차순(작은 숫자 ➡️ 큰 숫자)이지만, reverse=True를 붙이면 내림차순(큰 숫자 ➡️ 작은 숫자)으로 정렬됩니다.sorted(...): 이 모든 기준을 가지고 정렬된 새로운 리스트를 만들어 반환합니다.
-""""""
-
-# 4. 총 매출
-total_sales = sum(sales.values())
-#12200
-
-print(""상품별 매출:"", sales)
-print(""최다 매출 상품:"", top_product)
-print(""매출 순 정렬:"", sorted_sales)
-#[('bbang', 5000), ('mincho', 4000), ('orion', 3200)]
-print(""총 매출:"", total_sales)
-""""""
-제시된 파이썬 코드는 주문 데이터 목록을 바탕으로 상품별 매출액을 계산하고, 통계를 내어 정렬하는 데이터 처리 프로그램입니다.
-코드의 각 줄이 수행하는 역할을 순서대로 명확하게 설명해 드리겠습니다.
-------------------------------
-## 1. 초기 데이터 및 변수 선언
-
-orders = [
-    {""product"": ""bbang"", ""qty"": 3, ""price"": 1000},
-    {""product"": ""mincho"", ""qty"": 5, ""price"": 500},
-    {""product"": ""bbang"", ""qty"": 2, ""price"": 1000},
-    {""product"": ""orion"", ""qty"": 4, ""price"": 800},
-    {""product"": ""mincho"", ""qty"": 3, ""price"": 500}
-]
-
-
-* 역할: 분석할 주문 데이터 리스트를 생성합니다.
-* 설명: 각 주문은 딕셔너리 형태이며 상품명(product), 수량(qty), 단가(price) 정보를 담고 있습니다.
-
-sales = {}
-
-
-* 역할: 상품별 총매출을 누적하여 저장할 빈 딕셔너리를 만듭니다.
-* 형태: 나중에 {""상품명"": 총매출액} 구조로 데이터가 쌓이게 됩니다.
-
-------------------------------
-## 2. 상품별 매출 집계 (반복문)
-
-for order in orders:
-
-
-* 역할: orders 리스트에 있는 5개의 주문 딕셔너리를 하나씩 꺼내어 반복 루프를 돌립니다.
-
-    product = order[""product""]
-
-
-* 역할: 현재 주문의 상품명(예: ""bbang"")을 추출하여 product 변수에 저장합니다.
-
-    revenue = order[""qty""] * order[""price""]
-
-
-* 역할: 현재 주문의 수량(qty)과 단가(price)를 곱해 해당 주문의 매출액을 계산합니다.
-
-    if product not in sales:
-        sales[product] = 0
-
-
-* 역할: sales 딕셔너리에 현재 상품명이 등록되어 있는지 확인합니다.
-* 설명: 처음 등장한 상품이라면, 더하기 연산(+=) 시 에러가 나지 않도록 값을 0으로 초기화해 둡니다.
-
-    sales[product] += revenue
-
-
-* 역할: 계산된 매출액(revenue)을 해당 상품의 기존 누적 매출에 더해줍니다.
-
-------------------------------
-## 3. 매출 데이터 분석 및 정렬
-
-top_product = max(sales, key=sales.get)
-
-
-* 역할: 가장 많은 매출을 기록한 상품명을 찾습니다.
-* 설명: max() 함수가 sales 딕셔너리의 키(상품명)들을 검사할 때, 기준(key)을 sales.get(매출액 값)으로 잡아 가장 큰 값을 가진 상품명을 뽑아냅니다.
-
-sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
-
-
-* 역할: 매출액이 높은 순서대로 상품을 정렬합니다.
-* 설명:
-* sales.items()를 통해 (상품명, 매출액) 쌍을 가져옵니다.
-   * key=lambda x: x[1]은 정렬 기준을 1번째 인덱스인 '매출액'으로 지정하겠다는 의미입니다.
-   * reverse=True를 설정하여 오름차순이 아닌 내림차순(큰 값부터)으로 정렬합니다.
-
-total_sales = sum(sales.values())
-
-
-* 역할: 모든 상품의 매출액을 더해 총매출을 구합니다.
-* 설명: sales.values()로 모든 상품의 매출액 숫자만 모은 뒤, sum() 함수로 모두 더합니다.
-
-------------------------------
-## 4. 결과 출력
-
-print(""상품별 매출:"", sales) # {'bbang': 5000, 'mincho': 4000, 'orion': 3200} 출력
-print(""최다 매출 상품:"", top_product) # bbang 출력
-print(""매출 순 정렬:"", sorted_sales) # [('bbang', 5000), ('mincho', 4000), ('orion', 3200)] 출력
-print(""총 매출:"", total_sales) # 12200 출력
-
-
-* 역할: 앞서 연산하고 분석한 결과치들을 콘솔창에 보기 좋게 출력합니다. (코드 끝의 //는 파이썬 문법이 아니므로 실제 실행 시에는 제외해야 합니다.)
-
-------------------------------
-혹시 코드를 작성하다가 lambda 표현식의 원리가 더 궁금하시거나, 딕셔너리를 다룰 때 if not in 대신 defaultdict를 사용하여 코드를 줄이는 방법이 알고 싶으신가요?
-
-
-"""""""	
+					
 		자바	https://share.google/P7AQNSz8pAcFQcnJY		
 		자바	https://youtu.be/YUinFIexEQ4?si=N9H1tVnowH0o2DLM	"public class Main {
     public static void main(String[] args) {
@@ -619,108 +321,35 @@ print(""총 매출:"", total_sales) # 12200 출력
 }"	
 		c언ㅇ	https://youtu.be/NtOrHRCytfg?si=dAIOEoNIyElPoeqL		
 		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm		
-자바	https://youtu.be/fAQPPf4CEOE?si=WPxDOU2m5nxm_i12	"class StudentInfo{
-    public int grade;
-    StudentInfo(int grade){ this.grade = grade; }
+		c언어 포인터 함수 컴	https://youtu.be/xxb8jTdBNag?si=MPJNR4tfi5WIBCYM		
+		c언어	https://youtube.com/shorts/YmZQwMwQUV0?si=Uvy-DWzMO_2YX5xN	"#include <stdio.h>
+
+static int field[4][4] = {{0, 1, 0, 1}, {0, 0, 0, 1}, {1, 1, 1, 0}, {0, 1, 1, 1}};
+static int mines[4][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+void calculate (int w, int h, int j, int i) {
+    if (i >= 0 && i < w && j >= 0 && j < h) mines[i][j]++;
 }
-class StudentPerson{
-    public StudentInfo info;
-    StudentPerson(StudentInfo info){ this.info = info; }
-}
-class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class EmployeePerson{
-    public EmployeeInfo info;
-    EmployeePerson(EmployeeInfo info){ this.info = info; }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        StudentInfo si = new StudentInfo(2);
-        StudentPerson sp = new StudentPerson(si);
-        System.out.println(sp.info.grade); // 2
-        EmployeeInfo ei = new EmployeeInfo(1);
-        EmployeePerson ep = new EmployeePerson(ei);
-        System.out.println(ep.info.rank); // 1
+void main() {
+    int x, y, j, i, w = 4, h = 4;
+    for (y = 0; y < h; y++) {
+        for (x = 0; x < w; x++) {
+            if (field[x][y] == 0) continue;
+            for (j = y - 1; j <= y + 1; j++) {
+                for (i = x - 1; i <= x + 1; i++) {
+                    calculate(w, h, j, i);
+                }
+            }
+        }
     }
-}"	"class StudentInfo{
-    public int grade;
-    StudentInfo(int grade){ this.grade = grade; }
-}
-class StudentPerson{
-    public StudentInfo info;
-    StudentPerson(StudentInfo info){ this.info = info; }
-}
-class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class EmployeePerson{
-    public EmployeeInfo info;
-    EmployeePerson(EmployeeInfo info){ this.info = info; }
-}
-public class Main {
-    public static void main(String[] args) {
-        StudentInfo si = new StudentInfo(2);
-        StudentPerson sp = new StudentPerson(si);
-        System.out.println(sp.info.grade); // 2
-        EmployeeInfo ei = new EmployeeInfo(1);
-        EmployeePerson ep = new EmployeePerson(ei);
-        System.out.println(ep.info.rank); // 1
+    int r, c;
+    for (r = 0; r < h; r++) {
+        for (c = 0; c < w; c++) {
+            printf(""%d"", mines[r][c]);
+        }
+        printf(""\n"");
     }
 }
-//sp StudentPerson(si) <== grade == 2"		
-		자바		"class StudentInfo{
-    public int grade;
-    StudentInfo(int grade){ this.grade = grade; }
-}
-class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class Person<T>{
-    public T info;
-    Person(T info){ this.info = info; }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
-        EmployeeInfo ei1 = p1.info;
-        System.out.println(ei1.rank); // 성공
-         
-        Person<String> p2 = new Person<String>(""부장"");
-        String ei2 = p2.info;
-        System.out.println(ei2.rank); // 컴파일 실패
-    }
-}"	"class StudentInfo{
-    public int grade;
-    StudentInfo(int grade){ this.grade = grade; }
-}
-class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class Person<T>{
-    //타입 매개변수
-    public T info;
-    Person(T info){ this.info = info; }
-}
-public class Main {
-    public static void main(String[] args) {
-        Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
-        EmployeeInfo ei1 = p1.info;
-        //1
-        System.out.println(ei1.rank); // 성공
-         
-        Person<String> p2 = new Person<String>(""부장"");
-        String ei2 = p2.info;
-        System.out.println(ei2.rank); // 컴파일 실패
-    }
-}
-/*
-p2.info의 타입은 String입니다.Person<String> p2로 객체를 생성했기 때문에, p2.info 변수는 String 타입이 됩니다.따라서 String ei2 = p2.info; 코드를 통해 ei2 변수 또한 String 타입이 됩니다.String 클래스에는 rank 필드가 없습니다.ei2.rank를 호출하는 것은 자바의 표준 String 클래스 내부에 public int rank; 같은 변수가 정의되어 있는지 찾는 과정입니다.하지만 String 클래스에는 rank라는 멤버 변수가 전혀 없기 때문에, 컴파일러가 이를 찾아내지 못하고 ""Symbol을 찾을 수 없다(Cannot find symbol)""는 컴파일 에러를 발생시킵니다.
-*/"
+"	
 		자바	"class EmployeeInfo{
     public int rank;
     EmployeeInfo(int rank){ this.rank = rank; }
@@ -931,7 +560,11 @@ int main()
   printf(""%d"", z);
 }"	
 		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
-		자바		https://youtu.be/V_taqJlZeeE?si=Hk9j8ci7-FKP7wK0	
+		자바			"|=는 비트 OR(OR) 연산 후 대입(Bitwise OR assignment)을 수행하는 복합 대입 연산자입니다.x |= y;는 x = x | y;와 완벽히 동일한 의미를 가집니다.1. 동작 원리x와 y의 각 비트를 비교하여 둘 중 하나라도 1이면 1을 반환합니다.그렇게 계산된 결과를 다시 좌측 변수인 x에 저장(대입)합니다.2. 코드 예시javaint a = 5;  // 2진수: 0101
+int b = 3;  // 2진수: 0011
+
+a |= b;     // a = a | b 와 같음 
+^= 도 있음"
 		c언어		"식별자(identifier)[편집]
 식별자는 영어 대소문자, 숫자, 밑줄문자(underscore)로 이루어져야 한다. 대소문자는 서로 구분된다. 식별자의 길이에 특별한 제한은 없으나 실질적으로는 컴파일러에 따라 한계치가 정해진다.
 
@@ -1025,39 +658,11 @@ https://www.youtube.com/watch?v=MIkKcTjtnpw 12분 30초
 copy 모듈의 copy 함수
 copy.copy()
 """""""	https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
-		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
-
-void oddOrEven(int n){
-    if (n & 1){
-        printf(""홀수\n"");
-    }
-    else {
-        printf(""짝수\n"");
-    }
-}
-
-int main () {
-    oddOrEven(2);
-    oddOrEven(1);
-    
-}"	"#include <stdio.h>
-
-void oddOrEven(int n){
-    if (n & 1){
-        printf(""홀수\n"");
-    }
-    else {
-        printf(""짝수\n"");
-    }
-}
-
-int main () {
-    oddOrEven(2);
-    oddOrEven(1);
-    
-}
-//짝수
-//홀수"	
+		mysql		"IF(expr1, expr2, expr3)
+- expr1은 조건식, expr1이 참(TRUE)이면 expr2, 그렇지 않으면expr3 반환• IFNULL(expr1, expr2)
+- expr1이 NULL이 아니면 expr1, NULL이면 expr2 반환
+- 기본으로 expr1 반환, 이 값이 NULL이면 두 번째 매개변수 반환• NULLIF(expr1, expr2)
+- expr1과 expr2 값이 같으면 NULL, 같지 않으면 expr1 반환"	
 		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
 
 void printBit(int n){
@@ -1127,100 +732,6 @@ int main(void){
 		char, signed char, unsigned char	"har형은 정수형이면서 문자형이다. '문자'를 정수형으로 처리하는 C언어의 특성 때문이다.
 
 C언어에서 char형은 무조건 1byte여야 한다. 즉 sizeof(char)의 값은 항상 1이다. 하지만 이것이 char형이 모든 하드웨어에서 똑같은 크기인 것을 의미하지는 않는다. C언어에서는 1byte란 8bits 이상의 크기를 가지는, 주소지정 가능한 메모리의 최소 단위일 뿐이기 때문이다.[5]"		
-	파리	2.5.1.Truthy/Falsy	"string = ''
-if string :
-    print(""문자 있음"")
-else :
-    print(""문자 없음"")
-#문자 없음
-#문자열 유효성 검사로 if 조건에 넣을 수 있음."	"class Value:
-    def __init__(self):
-        self.valid = False
-    def __bool__(self):
-        return self.valid
-    def setValidity(self, validity):
-        self.valid = validity
-
-var = Value()
-print(bool(var))  # False
-var.setValidity(True)
-print(bool(var))  # True
-
-class Stack:
-    def __init__(self):
-        self.stack = list()
-    def __len__(self):
-        return len(self.stack)
-    def push(self, x):
-        self.stack.append(x)
-    def pop(self):
-        return self.stack.pop()
-
-stack = Stack()
-print(len(stack))   # 0
-print(bool(stack))  # False
-
-stack.push(100)     # 100 입력
-print(len(stack))   # 1
-print(bool(stack))  # True
-
-stack.pop()         # 100 출력
-print(len(stack))   # 0
-print(bool(stack))  # False"	"class Value:
-    def __init__(self):
-        self.valid = False
-    def __bool__(self):
-        return self.valid
-    def setValidity(self, validity):
-        self.valid = validity
-
-var = Value()
-print(bool(var))  # False
-var.setValidity(True)
-print(bool(var))  # True
-""""""
-#include <stdio.h> struct MyStruct { int GroomInt; int GroomIntwo; }; int main() { struct MyStruct mydata = { .GroomInt = 1234, .GroomIntwo = 1234}; printf(""%d"", mydata.GroomInt); printf(""%d"", mydata->GroomInt); } 위 c언어에서 -> 방식이 안되는 이유?구조체 변수에 직접 접근할 때는 점(.) 연산자를 사용해야 하며, 화살표(->) 연산자는 구조체 포인터 변수일 때만 사용할 수 있기 때문입니다.❌ 오류의 원인mydata는 구조체 인스턴스(일반 변수)입니다.화살표(->) 연산자는 포인터가 가리키는 주소로 이동하여 멤버에 접근하는 기능입니다.따라서 일반 변수인 mydata에 ->를 쓰면 컴파일 에러가 발생합니다.💡 올바른 사용법 비교1. 일반 변수로 접근할 때 (점 연산자)cstruct MyStruct mydata = {1234, 1234};
-printf(""%d"", mydata.GroomInt); // 올바른 표현
-코드를 사용할 때는 주의가 필요합니다.2. 포인터 변수로 접근할 때 (화살표 연산자)cstruct MyStruct mydata = {1234, 1234};
-struct MyStruct *ptr = &mydata; // 구조체의 주소를 포인터에 저장
-
-printf(""%d"", ptr->GroomInt);  // 올바른 표현
-printf(""%d"", (*ptr).GroomInt); // 위 문장과 완전히 같은 표현
-코드를 사용할 때는 주의가 필요합니다.C언어의 포인터 개념이나 메모리 주소 접근 방식에 대해 더 자세한 설명이 필요하신가요? 알고 싶으신 내용을 알려주시면 맞춤형으로 설명해 드리겠습니다.AI 대답에는 오류가 있을 수 있습니다. 자세히 알아보기You said: class Value:
-    def __init__(self):
-        self.valid = False
-    def __bool__(self):
-        return self.valid
-    def setValidity(self, validity):
-        self.valid = validity
-
-var = Value()
-print(bool(var))  # False
-var.setValidity(True)
-print(bool(var))  # True 위 파이썬을 해석해줘제공해주신 파이썬 코드는 클래스의 매직 메서드(Magic Method)인 __bool__을 활용하여, 사용자 정의 객체가 조건문이나 bool() 함수에서 어떻게 참(True) 또는 거짓(False)으로 평가될지 직접 정의하는 예제입니다.코드의 동작을 한 줄씩 풀어서 설명해 드리겠습니다.🛠️ 클래스 정의 부분class Value:Value라는 이름의 새로운 클래스를 만듭니다.def __init__(self):객체가 처음 생성될 때 실행되는 생성자 메서드입니다.생성 시점에 self.valid라는 인스턴스 변수를 만들고 기본값으로 False를 저장합니다.def __bool__(self):이 객체를 bool(객체)로 변환하거나 if 객체:와 같은 조건문에 넣었을 때 호출되는 특수 메서드입니다.여기서는 내부 변수인 self.valid의 값(True 또는 False)을 그대로 반환하도록 설정했습니다.def setValidity(self, validity):외부에서 값을 받아 self.valid 변수의 상태를 변경하는 메서드입니다.🏃 실제 실행 부분var = Value()Value 클래스의 인스턴스(객체)를 생성하여 var 변수에 할당합니다.이때 내부적으로 self.valid는 False가 됩니다.print(bool(var)) # Falsevar 객체를 불리언 타입으로 변환하려고 시도합니다.파이썬은 내부적으로 var.__bool__()을 호출하고, 이 메서드는 현재 self.valid 값인 False를 반환합니다.var.setValidity(True)setValidity 메서드를 호출하여 내부 self.valid 변수의 값을 True로 변경합니다.print(bool(var)) # True다시 var 객체를 불리언 타입으로 변환합니다.이번에는 self.valid 값이 업데이트되었으므로 var.__bool__()이 True를 반환합니다.
-""""""
-
-class Stack:
-    def __init__(self):
-        self.stack = list()
-    def __len__(self):
-        return len(self.stack)
-    def push(self, x):
-        self.stack.append(x)
-    def pop(self):
-        return self.stack.pop()
-
-stack = Stack()
-print(len(stack))   # 0
-print(bool(stack))  # False
-
-stack.push(100)     # 100 입력
-print(len(stack))   # 1
-print(bool(stack))  # True
-
-stack.pop()         # 100 출력
-print(len(stack))   # 0
-print(bool(stack))  # False"
 	파이썬			"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
 async def my_async_generator():
@@ -1302,22 +813,23 @@ print(bool(0))
 	파이썬			breakpoint() 사용법	
 	파이썬			bytearray() 사용법	
 	파이썬			bytes()	
-	파이썬			"def groom () :
-    print(""groom"")
-    
-a = callable(groom)
-print(a)
-#callable()은 객체 뒤에 괄호 ()를 붙여서 호출할 수 있는지(실행 가능한지) 여부를 확인하는 내장 함수입니다"	
-	파이썬			"print(chr(65))
-print(chr(97))
-print(chr(44032))
-""""""
-chr() 함수는 유니코드 코드 포인트(정수)를 인자로 받아, 해당 정수에 대응하는 문자(Character)를 반환하는 내장 함수입니다.
-출력값
-A
-a
-가
-"""""""	
+	mysql		"흐름 제어 함수
+• CASE - 구문 1
+CASE value WHEN compare_value1 THEN result1
+WHEN compare_value2 THEN result2
+…
+ELSE result
+END …; - 구문 2
+CASE WHEN 조건1 THEN result1
+WHEN 조건2 THEN result2
+...
+ELSE result
+END ...;"		
+	mysql		"SLEEP(duration) - 매개변수 duration초 동안 잠시 대기하다가 0을 반환
+• DATABASE(), SCHEMA()
+- 현재 접속해 있는 데이터베이스 이름 반환
+• USER()
+- 현재 로그인한 사용자 이름 반환"		
 	파이썬			"@classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
     school_name = ""Seoul High School""  # 클래스 변수
 
@@ -1393,30 +905,8 @@ print(bichhon)
 print(dir(math))
 # ['acos', 'acosh', 'asin', 'asinh', ..., 'pi', 'pow', 'sqrt', ...]
 코드를 사용할 때는 주의가 필요합니다.객체가 제공하는 내부 속성과 메서드를 파악하거나, 현재 정의된 변수 목록을 점검하는 데 매우 유용합니다. 보다 상세한 내용과 실습 코드는 파이썬 내장 함수 dir 사용법 및 위키독스 파이썬 dir 함수 가이드에서 확인하실 수 있습니"	
-	파이썬			"divmodd = divmod(7, 3)
-print(divmodd)
-#몫과 나머지를 튜플 형태로 출력하는거 (2, 1)
-
-a, b = divmod(7, 3)
-print(a, b)
-#2 1 
-#각각 대입하기"	
-	파이썬			"result = eval(""10 + 1 + 2"")
-print(result)
-#출력값 13
-
-result = eval(""'groom' + 'groomi'"")
-print(result)
-#groomgroomi
-
-result = eval(""4 ** 2"")
-print(result)
-#16
-
-result = eval(""len([1, 2, 3, 4])"")
-print(result)
-#4
-#eval() 함수는 문자열로 된 파이썬 표현식(expression)을 직접 실행하여 그 결과를 반환하는 함수입니다."	
+					
+					
 	파이썬			"파이썬에서 exec()는 문자열로 작성된 파이썬 코드를 프로그램 실행 중에 동적으로 실행(execute)하는 내장 함수입니다. 여러 줄의 코드나 복잡한 문장도 한 번에 실행할 수 있습니다.주요 특징반환값 없음: eval()과 달리 코드를 실행할 뿐, 별도의 결괏값을 반환하지 않습니다(항상 None 반환).코드 조작: 코드 블록, 루프, 함수 정의, 변수 할당 등 파이썬에서 가능한 모든 구문을 수행할 수 있습니다.기본 문법 및 동작 방식pythoncode = """"""
 for i in range(2):
     print(f""동적 실행: {i}"")
@@ -1518,14 +1008,7 @@ print(hash(100))
 # 리스트는 Unhashable이므로 에러 발생
 # print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'"	
 			파이썬 help()	https://m.blog.naver.com/regenesis90/222342030086	
-		파이썬		"print(hex(10))
-#출력값 16진수라서 0xa
-
-print(hex(255))
-#0xff
-
-print(hex(-42))
-#-0x2a"	
+					
 		파이썬		"id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드pythona = 10
 b = 10
 
@@ -1625,31 +1108,12 @@ f.append(d)
 f.append(e)
 print(max(f))
 print(min(f))"	
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+		c언어포인터 심화	어려운 C언어 포인터 예제 4개로 마스터하기 https://share.google/sYgpqU2Ao20Ea5x7h		
+		자바		Java 객관식 개념 문제(30문항) v1.2 https://share.google/HjgweXWHUCL1Bz4vi	
+		파이썬		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0	
+		파이		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE	
+		파이		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt	
+		자바		[Java] Generic 정리 https://share.google/u49sksodIEymYDppz	
 파이썬	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98	next()	부터		
 	c언어	"typedef union _MyUnion
 {
@@ -1967,25 +1431,7 @@ ptr = malloc (배열의 길이 * sizeof *ptr);
 메모리 해제는 free 함수로 할 수 있다.
 
 free (ptr);"		
-	씨언어		"#include <stdio.h>
-
-struct MyStruct {
-    int GroomInt;
-    int GroomIntwo;
-};
-
-int main() {
-    
-    struct MyStruct mydata = { .GroomInt = 1234, .GroomIntwo = 1234};
-    struct MyStruct *ptr = &mydata;
-    
-    printf(""%d"", mydata.GroomInt);
-    //포인터로 접근할 때는 아래와 같이 하기
-    printf(""%d"", ptr->GroomInt);
-    printf(""%d"", (*ptr).GroomInt);
-    //123412341234
-}
-"		
+					
 	자바 오류뜨는 이유 찾기 문제		"public class Main {
     public static void main () {
         final int groom = 3;
@@ -1994,14 +1440,7 @@ int main() {
     }
 }
 //final을 붙이면 불변하는 변수라서 +=가 안됨"		
-	자바 		"public class Main {
-    public static void main () {
-        var groom = ""김구름이"";
-        System.out.print(groom);
-    }
-}
-
-//타입 추론"		
+					
 	자바 		"6.2. 가변/불변 변수와 상수[편집]
 일반적으로 만들어진 변수는 가변 변수로, 수정 및 재대입이 가능하다.
 반면 불변 변수는 final이 붙어 재대입이 불가능하다.
@@ -2033,7 +1472,7 @@ String str = sc.nextLine();
 
 String str = IO.readln();
 자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."		
-					
+	리눅스	https://takeknowledge.tistory.com/65#google_vignette	https://copy.sh/v86/?profile=linux26		
 					
 					
 					
@@ -2114,12 +1553,10 @@ const app = http.createServer(async (request, response) => {
 app.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
-"			
-					
+"	https://nodejs.org/docs/latest/api/		
+자바스크립트	https://jnoony-code.tistory.com/19	룰렛			
 					
 			학번		
 			A001		
 			A002		
 			A00		
-					
-					
