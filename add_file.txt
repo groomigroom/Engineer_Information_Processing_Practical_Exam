@@ -721,7 +721,7 @@ public class Main {
 /*
 p2.info의 타입은 String입니다.Person<String> p2로 객체를 생성했기 때문에, p2.info 변수는 String 타입이 됩니다.따라서 String ei2 = p2.info; 코드를 통해 ei2 변수 또한 String 타입이 됩니다.String 클래스에는 rank 필드가 없습니다.ei2.rank를 호출하는 것은 자바의 표준 String 클래스 내부에 public int rank; 같은 변수가 정의되어 있는지 찾는 과정입니다.하지만 String 클래스에는 rank라는 멤버 변수가 전혀 없기 때문에, 컴파일러가 이를 찾아내지 못하고 ""Symbol을 찾을 수 없다(Cannot find symbol)""는 컴파일 에러를 발생시킵니다.
 */"
-		자바		"class EmployeeInfo{
+		자바	"class EmployeeInfo{
     public int rank;
     EmployeeInfo(int rank){ this.rank = rank; }
 }
@@ -737,7 +737,30 @@ public class GenericDemo {
     public static void main(String[] args) {
         Person<EmployeeInfo, int> p1 = new Person<EmployeeInfo, int>(new EmployeeInfo(1), 1);
     }
-}"	
+}"	"class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T, S>{
+    public T info;
+    public S id;
+    Person(T info, S id){ 
+        this.info = info; 
+        this.id = id;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person<EmployeeInfo, int> p1 = new Person<EmployeeInfo, int>(new EmployeeInfo(1), 1);
+    }
+}
+
+
+
+
+/*
+제네릭(Generic)에서 <S>는 임의의 타입(Type)을 의미하는 타입 매개변수(Type Parameter)입니다. 주로 '두 번째' 또는 '추가적인' 타입을 나타낼 때 관례적으로 사용되며, 객체를 생성하거나 메서드를 호출할 때 실제 타입으로 대체됩니다.1. 주요 쓰임새제네릭 메서드: 호출 시 전달되는 매개변수의 타입에 따라 동적으로 타입이 결정됩니다.제네릭 인터페이스: 구현부에서 구체적인 타입을 지정합니다.2. 관례적인 타입 문자<S> 외에도 자바에서는 의미에 따라 아래와 같은 대문자 알파벳을 주로 사용합니다.<T>: Type (가장 대표적인 제네릭 타입)<E>: Element (주로 컬렉션의 요소 타입)<K>: Key (맵의 키 타입)<V>: Value (맵의 값 타입)<N>: Number (숫자 타입)<S>, <U>, <V>: 두 번째, 세 번째, 네 번째 타입
+*/"	강좌보기
 		자바		"class EmployeeInfo{
     public int rank;
     EmployeeInfo(int rank){ this.rank = rank; }
@@ -957,6 +980,9 @@ print(z is x)
 #이거는 false 나옴
 zz.append(5)
 print(x)
+#[1, 2, 4, 4]
+print(zz)
+#[1, 2, 4, 4, 5]
 
 """"""
 복잡자료형 copy 메소드 
@@ -964,6 +990,14 @@ list.copy()
 dict.copy()
 set.copy()
 """"""
+print()
+x = [1, 2, 3, 4, 5]
+z = x.copy()
+z is x
+print(z)
+#[1, 2, 3, 4, 5]
+print(x)
+#[1, 2, 3, 4, 5]
 
 
 """"""
@@ -973,7 +1007,21 @@ dict(순회형)
 set(순회형)
 """"""
 
+print()
+x = [1, 2, 3, 4, 5]
+z = list(x)
+print(z)
+#[1, 2, 3, 4, 5]
+print(x)
+#[1, 2, 3, 4, 5]
+z[0] = 2
+print(x)
+#[1, 2, 3, 4, 5]
+print(z)
+#[2, 2, 3, 4, 5]
+
 """"""
+https://www.youtube.com/watch?v=MIkKcTjtnpw 12분 30초
 copy 모듈의 copy 함수
 copy.copy()
 """""""	https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
@@ -992,7 +1040,24 @@ int main () {
     oddOrEven(2);
     oddOrEven(1);
     
-}"		
+}"	"#include <stdio.h>
+
+void oddOrEven(int n){
+    if (n & 1){
+        printf(""홀수\n"");
+    }
+    else {
+        printf(""짝수\n"");
+    }
+}
+
+int main () {
+    oddOrEven(2);
+    oddOrEven(1);
+    
+}
+//짝수
+//홀수"	
 		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
 
 void printBit(int n){
@@ -2056,3 +2121,5 @@ app.listen(3000, () => {
 			A001		
 			A002		
 			A00		
+					
+					
