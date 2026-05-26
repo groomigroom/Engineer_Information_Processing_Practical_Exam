@@ -319,9 +319,71 @@ int main()
         
     }
 }"	
-		c언ㅇ	https://youtu.be/NtOrHRCytfg?si=dAIOEoNIyElPoeqL		
-		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm		
-		c언어 포인터 함수 컴	https://youtu.be/xxb8jTdBNag?si=MPJNR4tfi5WIBCYM		
+		c언ㅇ		"#include <stdio.h>
+
+int main()
+{
+    char c1 = 'a';
+    char *s1 = ""groom"";
+    
+    printf(""%c\n"", c1);
+    printf(""%s\n"", s1);
+
+    return 0;
+}
+"	
+		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm	"@singledispatch
+@process.register"	
+				"#include <stdio.h>
+int add(int, int);
+int sub(int, int);
+
+int main()
+{
+    int result;
+    int (*pf) (int, int);
+    
+    pf = add;
+    result = (*pf)(10, 20);
+    printf(""10+20=%d \n"", result);
+    pf = sub;
+    result = pf(10, 20);
+    printf(""10-20=%d \n"", result);
+    pf = mult;
+    result = pf(10, 20);
+    printf(""10*20=%d \n"", result);
+
+    return 0;
+}
+int add (int x, int y) {
+    return x + y;
+}
+int sub (int x, int y) {
+    return x - y;
+}
+int mult(int x, int y) {
+    return x * y;
+}"	
+		c언어 포인터 함수 컴	{		"#include <stdio.h>
+int main(void)
+{
+    int x = 10;
+    int *px = &x;
+    int **ppx = &px;
+    
+    *px = 20;
+    printf(""x = %d\n"", x);
+    printf(""*px = %d\n"", *px);
+    
+    **ppx = 60;
+    printf(""x = %d\n"", x);
+    printf(""*px = %d\n"", *px);
+    printf(""**ppx = %d\n"", **ppx);
+    
+    
+    return 0;
+}
+"
 		c언어	https://youtube.com/shorts/YmZQwMwQUV0?si=Uvy-DWzMO_2YX5xN	"#include <stdio.h>
 
 static int field[4][4] = {{0, 1, 0, 1}, {0, 0, 0, 1}, {1, 1, 1, 0}, {0, 1, 1, 1}};
@@ -474,7 +536,7 @@ public class GenericDemo {
         Person<String> p2 = new Person<String>(""부장"");
     }
 }"	
-		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	
+		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	제네릭 강좌 보기
 		자바		https://youtu.be/9_5_bAVHd8c?si=MtcKf24T4KA9gjGk	
 		c언어		https://youtu.be/RaUrw9YX7lY?si=cxam5qyshK4IvvLG	"#include<stdio.h>
 #include<stdlib.h>
