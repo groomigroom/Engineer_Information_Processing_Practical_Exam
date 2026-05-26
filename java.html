@@ -39,8 +39,63 @@
 
 
 
+		
 
 
+
+-------
+
+
+class Main {
+
+    public static class Collection<T> {
+        T value;
+
+        public Collection(T t) {
+            value = t;
+        }
+
+        public void print() {
+            new Printer().print(value);
+        }
+
+        class Printer {
+            void print(Integer a) {
+                System.out.print("A" + a);
+            }
+
+            void print(Object a) {
+                System.out.print("B" + a);
+            }
+
+            void print(Number a) {
+                System.out.print("C" + a);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new Collection<>(0).print();
+        //Integer로 알아서 알아냄
+    }
+}
+/*
+제시해주신 코드 내부의 new Collection<>(0)에서 사용된 <>의 의미는 **다이아몬드 연산자(Diamond Operator)**라고 하며, **제네릭 타입 추론(Generic Type Inference)**을 수행합니다.
+자바 컴파일러가 앞의 선언이나 생성자에 전달된 인수를 보고 타입을 자동으로 알아내기 때문에, 꺾쇠괄호 안의 타입을 생략할 수 있게 해주는 기능입니다.
+## 🔍 동작 원리
+
+* 원래 표현: new Collection<Integer>(0)라고 적어야 합니다. 컴파일러가 매개변수 0을 보고 Integer 타입임을 알기 때문입니다.
+* 생략 표현: <>만 적어주면 컴파일러가 인자의 실제 타입(0 $\rightarrow$ Integer)을 추론하여 Collection<Integer>로 알아서 처리합니다.
+
+------------------------------
+## ⚠️ 주의할 점: 위 코드의 실행 결과는 'B0'입니다
+이 코드에서 print() 메서드가 실행될 때 오버로딩(Overloading) 규칙에 의해 A0이나 C0이 출력될 것 같지만, 실제로는 B0이 출력됩니다.
+그 이유는 **자바의 제네릭은 컴파일 시점에 타입이 지워지기 때문(Type Erasure)**입니다.
+Collection<T>에서 <T>는 상한선(Bounded wildcard)이 지정되지 않았으므로, 컴파일 이후 일반 Object 타입으로 변환됩니다. 따라서 new Printer().print(value);를 호출할 때 value 변수의 컴파일 시점 타입은 Object가 되어 print(Object a) 메서드가 매칭됩니다.
+------------------------------
+이 제네릭 타입 소거(Type Erasure) 과정이나, 원하는 타입(Integer, Number)으로 올바르게 메서드를 호출하는 해결 방법이 궁금하시면 말씀해 주세요. 구체적인 예시 코드로 설명해 드리겠습니다.
+
+*/
 
 
 
