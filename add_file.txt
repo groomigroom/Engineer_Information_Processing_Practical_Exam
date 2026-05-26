@@ -173,11 +173,15 @@ public class Groom {
         char c = str.charAt(index);
         //charAt()은 문자열(String)에서 특정 위치(인덱스)에 있는 문자(char)를 하나만 추출할 때 사용하는 메서드입니다.
         String result = calculFn(str, index - 1, seen);
+        /*
+        index 6에서 index 0까지 호출
+        */
 
         if (!seen[c]) {
             seen[c] = true;
             return result + c;  // ← 현재 문자를 뒤에 붙이기
         }
+        //abcd만 붙어짐. 
 
         return result;
     }
@@ -203,6 +207,7 @@ calculFn 메서드는 index가 -1이 될 때까지 자기 자신을 계속 호�
 * calculFn(""abacabcd"", 0, seen) 호출 ➔ index -1 호출
 * calculFn(""abacabcd"", -1, seen) 호출 ➔ if (index < 0) 조건에 걸려 빈 문자열 """"을 반환하며 재귀가 종료됩니다.
 
+//기본값이 false임.
 ## 단계 2: 재귀 풀기 및 문자열 조합 (역순 진행)
 이제 스택의 가장 위에 있던 index 0부터 차례대로 연산이 처리됩니다.
 
@@ -397,7 +402,22 @@ int main() {
         System.out.print(""배열 NUM의 원소들 중에서 최소값은 "");
         System.out.print(MIN + ""입니다."");
     }
-}"		
+}"	"public class Main {
+    public static void main(String[] args) {
+        int NUM[] = {70, 60, 50, 80, 90};
+        int MIN = 9999, N;
+        for (N = 0; N < NUM.length; N++) {
+            //N < 5
+            if (MIN > NUM[N]) {
+                MIN = NUM[N];
+                //따라서 MIN = 50
+            }
+        }
+        System.out.print(""배열 NUM의 원소들 중에서 최소값은 "");
+        System.out.print(MIN + ""입니다."");
+        //50
+    }
+}"	
 	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk			
 			"public class Groom {
     int x;
@@ -469,20 +489,31 @@ for order in orders:
         sales[product] = 0
 
     sales[product] += revenue
-    #####
+""""""
+print(sales['bbang']) == 5000
+print(sales['mincho']) == 4000
+print(sales['orion']) == 3200
+""""""
 
 # 2. 가장 많이 팔린 상품
 top_product = max(sales, key=sales.get)
+#.get()을 쓸까요?예를 들어 sales = {'bbang': 5000} 이라는 딕셔너리가 있다고 가정해 봅시다. 여기에 없는 상품인 'mincho'를 꺼내려고 할 때 두 방식은 다르게 작동합니다.❌ 대괄호 방식 (sales['mincho'])결과: KeyError 에러 발생 및 프로그램 강제 종료특징: ""없으면 죽는다""는 식으로 작동하기 때문에 매우 위험합니다. (이전 질문에서 확인하지 못했던 원인입니다.)⭕ .get() 방식 (sales.get('mincho'))결과: 에러 없이 None(아무것도 없음)을 반환하고 프로그램이 계속 실행됨특징: ""없으면 없는 대로 알려줘""라는 안전장치가 되어 있습니다.
+#bbang
 
 # 3. 매출 순 정렬
 sorted_sales = sorted(sales.items(), key=lambda x: x[1], reverse=True)
+""""""
+sales.items(): 딕셔너리의 키(상품명)와 값(매출액)을 묶어서 (키, 값) 형태의 쌍으로 모두 꺼내줍니다.예: [('bbang', 5000), ('mincho', 4000), ('orion', 3200)]key=lambda x: x[1]: 정렬의 '기준'을 정하는 익명 함수(Lambda)입니다.여기서 x는 앞서 꺼낸 데이터 한 쌍 ('bbang', 5000)을 뜻합니다.파이썬 인덱스에서 x[0]은 상품명('bbang'), x[1]은 매출액(5000)입니다.즉, ""상품 이름 말고 두 번째 자리에 있는 매출액(숫자)을 기준으로 정렬해라""라는 의미입니다.reverse=True: 정렬 방식을 거꾸로 뒤집는 옵션입니다.기본 정렬은 오름차순(작은 숫자 ➡️ 큰 숫자)이지만, reverse=True를 붙이면 내림차순(큰 숫자 ➡️ 작은 숫자)으로 정렬됩니다.sorted(...): 이 모든 기준을 가지고 정렬된 새로운 리스트를 만들어 반환합니다.
+""""""
 
 # 4. 총 매출
 total_sales = sum(sales.values())
+#12200
 
 print(""상품별 매출:"", sales)
 print(""최다 매출 상품:"", top_product)
 print(""매출 순 정렬:"", sorted_sales)
+#[('bbang', 5000), ('mincho', 4000), ('orion', 3200)]
 print(""총 매출:"", total_sales)
 """"""
 제시된 파이썬 코드는 주문 데이터 목록을 바탕으로 상품별 매출액을 계산하고, 통계를 내어 정렬하는 데이터 처리 프로그램입니다.
@@ -588,7 +619,7 @@ print(""총 매출:"", total_sales) # 12200 출력
 }"	
 		c언ㅇ	https://youtu.be/NtOrHRCytfg?si=dAIOEoNIyElPoeqL		
 		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm		
-		자바	https://youtu.be/fAQPPf4CEOE?si=WPxDOU2m5nxm_i12	"class StudentInfo{
+자바	https://youtu.be/fAQPPf4CEOE?si=WPxDOU2m5nxm_i12	"class StudentInfo{
     public int grade;
     StudentInfo(int grade){ this.grade = grade; }
 }
@@ -613,7 +644,33 @@ public class GenericDemo {
         EmployeePerson ep = new EmployeePerson(ei);
         System.out.println(ep.info.rank); // 1
     }
-}"	
+}"	"class StudentInfo{
+    public int grade;
+    StudentInfo(int grade){ this.grade = grade; }
+}
+class StudentPerson{
+    public StudentInfo info;
+    StudentPerson(StudentInfo info){ this.info = info; }
+}
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class EmployeePerson{
+    public EmployeeInfo info;
+    EmployeePerson(EmployeeInfo info){ this.info = info; }
+}
+public class Main {
+    public static void main(String[] args) {
+        StudentInfo si = new StudentInfo(2);
+        StudentPerson sp = new StudentPerson(si);
+        System.out.println(sp.info.grade); // 2
+        EmployeeInfo ei = new EmployeeInfo(1);
+        EmployeePerson ep = new EmployeePerson(ei);
+        System.out.println(ep.info.rank); // 1
+    }
+}
+//sp StudentPerson(si) <== grade == 2"		
 		자바		"class StudentInfo{
     public int grade;
     StudentInfo(int grade){ this.grade = grade; }
@@ -636,7 +693,34 @@ public class GenericDemo {
         String ei2 = p2.info;
         System.out.println(ei2.rank); // 컴파일 실패
     }
-}"	
+}"	"class StudentInfo{
+    public int grade;
+    StudentInfo(int grade){ this.grade = grade; }
+}
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T>{
+    //타입 매개변수
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
+        EmployeeInfo ei1 = p1.info;
+        //1
+        System.out.println(ei1.rank); // 성공
+         
+        Person<String> p2 = new Person<String>(""부장"");
+        String ei2 = p2.info;
+        System.out.println(ei2.rank); // 컴파일 실패
+    }
+}
+/*
+p2.info의 타입은 String입니다.Person<String> p2로 객체를 생성했기 때문에, p2.info 변수는 String 타입이 됩니다.따라서 String ei2 = p2.info; 코드를 통해 ei2 변수 또한 String 타입이 됩니다.String 클래스에는 rank 필드가 없습니다.ei2.rank를 호출하는 것은 자바의 표준 String 클래스 내부에 public int rank; 같은 변수가 정의되어 있는지 찾는 과정입니다.하지만 String 클래스에는 rank라는 멤버 변수가 전혀 없기 때문에, 컴파일러가 이를 찾아내지 못하고 ""Symbol을 찾을 수 없다(Cannot find symbol)""는 컴파일 에러를 발생시킵니다.
+*/"
 		자바		"class EmployeeInfo{
     public int rank;
     EmployeeInfo(int rank){ this.rank = rank; }
@@ -975,13 +1059,9 @@ int main(void){
     }
 }
 //...etc."		
-					
-					
 		char, signed char, unsigned char	"har형은 정수형이면서 문자형이다. '문자'를 정수형으로 처리하는 C언어의 특성 때문이다.
 
 C언어에서 char형은 무조건 1byte여야 한다. 즉 sizeof(char)의 값은 항상 1이다. 하지만 이것이 char형이 모든 하드웨어에서 똑같은 크기인 것을 의미하지는 않는다. C언어에서는 1byte란 8bits 이상의 크기를 가지는, 주소지정 가능한 메모리의 최소 단위일 뿐이기 때문이다.[5]"		
-					
-					
 	파리	2.5.1.Truthy/Falsy	"string = ''
 if string :
     print(""문자 있음"")
@@ -1021,7 +1101,61 @@ print(bool(stack))  # True
 
 stack.pop()         # 100 출력
 print(len(stack))   # 0
-print(bool(stack))  # False"	
+print(bool(stack))  # False"	"class Value:
+    def __init__(self):
+        self.valid = False
+    def __bool__(self):
+        return self.valid
+    def setValidity(self, validity):
+        self.valid = validity
+
+var = Value()
+print(bool(var))  # False
+var.setValidity(True)
+print(bool(var))  # True
+""""""
+#include <stdio.h> struct MyStruct { int GroomInt; int GroomIntwo; }; int main() { struct MyStruct mydata = { .GroomInt = 1234, .GroomIntwo = 1234}; printf(""%d"", mydata.GroomInt); printf(""%d"", mydata->GroomInt); } 위 c언어에서 -> 방식이 안되는 이유?구조체 변수에 직접 접근할 때는 점(.) 연산자를 사용해야 하며, 화살표(->) 연산자는 구조체 포인터 변수일 때만 사용할 수 있기 때문입니다.❌ 오류의 원인mydata는 구조체 인스턴스(일반 변수)입니다.화살표(->) 연산자는 포인터가 가리키는 주소로 이동하여 멤버에 접근하는 기능입니다.따라서 일반 변수인 mydata에 ->를 쓰면 컴파일 에러가 발생합니다.💡 올바른 사용법 비교1. 일반 변수로 접근할 때 (점 연산자)cstruct MyStruct mydata = {1234, 1234};
+printf(""%d"", mydata.GroomInt); // 올바른 표현
+코드를 사용할 때는 주의가 필요합니다.2. 포인터 변수로 접근할 때 (화살표 연산자)cstruct MyStruct mydata = {1234, 1234};
+struct MyStruct *ptr = &mydata; // 구조체의 주소를 포인터에 저장
+
+printf(""%d"", ptr->GroomInt);  // 올바른 표현
+printf(""%d"", (*ptr).GroomInt); // 위 문장과 완전히 같은 표현
+코드를 사용할 때는 주의가 필요합니다.C언어의 포인터 개념이나 메모리 주소 접근 방식에 대해 더 자세한 설명이 필요하신가요? 알고 싶으신 내용을 알려주시면 맞춤형으로 설명해 드리겠습니다.AI 대답에는 오류가 있을 수 있습니다. 자세히 알아보기You said: class Value:
+    def __init__(self):
+        self.valid = False
+    def __bool__(self):
+        return self.valid
+    def setValidity(self, validity):
+        self.valid = validity
+
+var = Value()
+print(bool(var))  # False
+var.setValidity(True)
+print(bool(var))  # True 위 파이썬을 해석해줘제공해주신 파이썬 코드는 클래스의 매직 메서드(Magic Method)인 __bool__을 활용하여, 사용자 정의 객체가 조건문이나 bool() 함수에서 어떻게 참(True) 또는 거짓(False)으로 평가될지 직접 정의하는 예제입니다.코드의 동작을 한 줄씩 풀어서 설명해 드리겠습니다.🛠️ 클래스 정의 부분class Value:Value라는 이름의 새로운 클래스를 만듭니다.def __init__(self):객체가 처음 생성될 때 실행되는 생성자 메서드입니다.생성 시점에 self.valid라는 인스턴스 변수를 만들고 기본값으로 False를 저장합니다.def __bool__(self):이 객체를 bool(객체)로 변환하거나 if 객체:와 같은 조건문에 넣었을 때 호출되는 특수 메서드입니다.여기서는 내부 변수인 self.valid의 값(True 또는 False)을 그대로 반환하도록 설정했습니다.def setValidity(self, validity):외부에서 값을 받아 self.valid 변수의 상태를 변경하는 메서드입니다.🏃 실제 실행 부분var = Value()Value 클래스의 인스턴스(객체)를 생성하여 var 변수에 할당합니다.이때 내부적으로 self.valid는 False가 됩니다.print(bool(var)) # Falsevar 객체를 불리언 타입으로 변환하려고 시도합니다.파이썬은 내부적으로 var.__bool__()을 호출하고, 이 메서드는 현재 self.valid 값인 False를 반환합니다.var.setValidity(True)setValidity 메서드를 호출하여 내부 self.valid 변수의 값을 True로 변경합니다.print(bool(var)) # True다시 var 객체를 불리언 타입으로 변환합니다.이번에는 self.valid 값이 업데이트되었으므로 var.__bool__()이 True를 반환합니다.
+""""""
+
+class Stack:
+    def __init__(self):
+        self.stack = list()
+    def __len__(self):
+        return len(self.stack)
+    def push(self, x):
+        self.stack.append(x)
+    def pop(self):
+        return self.stack.pop()
+
+stack = Stack()
+print(len(stack))   # 0
+print(bool(stack))  # False
+
+stack.push(100)     # 100 입력
+print(len(stack))   # 1
+print(bool(stack))  # True
+
+stack.pop()         # 100 출력
+print(len(stack))   # 0
+print(bool(stack))  # False"
 	파이썬			"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
 async def my_async_generator():
@@ -1308,13 +1442,185 @@ print(hasattr(person, ""name""))  # 출력: True
 # 'age' 속성이 있는지 확인
 print(hasattr(person, ""age""))   # 출력: False
 코드를 사용할 때는 주의가 필요합니다.3. 주요 활용 목적오류 방지: 객체가 특정 속성이나 메서드를 가졌는지 확실하지 않을 때, hasattr()로 먼저 검사하여 AttributeError 예외를 방지할 수 있습니다.유연한 처리: getattr()을 함께 사용하여 객체에 속성이 존재할 때만 안전하게 해당 값을 가져오는 방식으로 자주 활용됩니다."	
-	파이썬	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98		hash()	
+	파이썬			"hash()는 임의의 데이터를 고정된 길이의 정수값(해시값)으로 변환해 주는 내장 함수입니다.이 함수는 데이터를 빠르게 탐색하거나(딕셔너리, 세트 등), 데이터의 동일성을 비교하는 등 다양한 목적을 위해 사용됩니다.💡 hash()의 주요 특징빠른 데이터 탐색 (해시 테이블): 딕셔너리(dict)나 세트(set)는 내부적으로 데이터를 저장할 때 hash() 값을 인덱스로 사용합니다. 데이터가 많아도 해시값을 통해 즉시 위치를 찾으므로 검색 속도가 매우 빠릅니다.고정된 길이의 정수 반환: 입력값의 크기에 상관없이 항상 정수형 해시값을 반환합니다.단방향성: 출력된 해시값을 보고 원래의 데이터를 역산하는 것은 불가능합니다.🔒 해시 가능(Hashable) 객체 vs 불가능(Unhashable) 객체해시 가능한 객체 (Hashable): 값이 변하지 않는 불변(Immutable) 객체만 hash() 함수를 사용할 수 있습니다.예: 문자열(str), 숫자(int, float), 튜플(tuple) 등해시 불가능한 객체 (Unhashable): 값이 변경될 수 있는 가변(Mutable) 객체는 에러(TypeError)가 발생합니다. 값이 바뀌면 해시값도 달라져야 하는데, 자료구조 전체가 엉망이 될 수 있기 때문입니다.예: 리스트(list), 딕셔너리(dict), 세트(set) 등💻 사용 예시python# 문자열의 해시값 구하기
+print(hash(""hello""))
+# 출력 예시: -9223372036854775808 (실행할 때마다 달라질 수 있음)
+
+# 정수의 해시값 (정수 자체는 항상 같은 값을 가짐)
+print(hash(100))
+# 출력: 100
+
+# 리스트는 Unhashable이므로 에러 발생
+# print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'"	
+			파이썬 help()	https://m.blog.naver.com/regenesis90/222342030086	
+		파이썬		"print(hex(10))
+#출력값 16진수라서 0xa
+
+print(hex(255))
+#0xff
+
+print(hex(-42))
+#-0x2a"	
+		파이썬		"id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드pythona = 10
+b = 10
+
+print(id(a))  # 예: 140728987654321
+print(id(b))  # 예: 140728987654321 (a와 동일한 주소)
+
+b = 20
+print(id(b))  # 예: 140728987654400 (새로운 값 할당으로 주소 변경)
+코드를 사용할 때는 주의가 필요합니다.이 함수는 파이썬이 데이터를 메모리에 어떻게 저장하고 관리하는지(객체 모델) 이해하거나 메모리 누수 등의 버그를 디버깅할 때 주로 활용됩니"	
+		파이썬		"isinstance()는 특정 객체(변수 등)가 주어진 클래스(데이터 타입)의 인스턴스인지 검사하는 내장 함수입니다.1. 기본 개념문법: isinstance(객체, 클래스/타입)반환값: 객체가 해당 클래스의 인스턴스이면 True, 아니면 False를 반환합니다.상속 지원: 검사 대상이 하위 클래스(자식 클래스)이거나 튜플 형태의 여러 타입((int, float, str)) 중 하나에 해당해도 True를 반환하는 유연한 검사가 가능합니다.2. 활용 예시pythonnum = 10
+name = ""파이썬""
+
+# 기본 타입 검사
+print(isinstance(num, int))       # True
+print(isinstance(name, str))      # True
+print(isinstance(num, str))      # False
+
+# 다중 타입 검사 (튜플 형태 사용)
+# 튜플에 포함된 타입 중 하나라도 일치하면 True를 반환합니다.
+print(isinstance(num, (int, float))) # True
+코드를 사용할 때는 주의가 필요합니다.3. isinstance vs type객체의 타입을 확인할 때 type() 함수도 사용할 수 있지만, 상속 관계를 고려할 때는 isinstance()를 사용하는 것이 권장됩니다.type(): 객체가 정확히 특정 클래스인지만 엄격하게 검사합니다.isinstance(): 객체의 부모 클래스(상속)까지 고려하여 검사합니다."	
+		파이썬		" issubclass()는 어떤 클래스가 다른 클래스의 자식 클래스(하위 클래스)인지 검사하는 내장 함수입니다. 상속 관계를 확인하여 True 또는 False를 반환합니다.1. 기본 문법pythonissubclass(class, classinfo)
+코드를 사용할 때는 주의가 필요합니다.class: 검사할 대상 클래스classinfo: 기준이 되는 부모 클래스 (또는 클래스들의 튜플)2. 주요 특징상속 관계 확인: class가 classinfo를 직접 또는 간접적으로 상속받았다면 True를 반환합니다.자기 자신 검사: 파이썬에서는 자기 자신을 검사해도 True를 반환합니다.튜플 지원: classinfo 자리에 클래스들의 tuple을 전달하면, 그중 하나라도 상속 관계에 만족할 경우 True를 반환합니다.3. 예제 코드pythonclass Parent:
+    pass
+
+class Child(Parent):
+    pass
+
+class Other:
+    pass
+
+# 1. 자식 클래스가 부모 클래스를 상속받은 경우
+print(issubclass(Child, Parent))  # True
+
+# 2. 상속 관계가 아닌 경우
+print(issubclass(Child, Other))   # False
+
+# 3. 자기 자신을 검사하는 경우
+print(issubclass(Parent, Parent)) # True
+
+# 4. 튜플을 활용하여 여러 클래스 중 하나라도 상속받았는지 확인하는 경우
+print(issubclass(Child, (Other, Parent))) # True"	
+		파이썬	iter()	https://dojang.io/mod/page/view.php?id=2408	
+		파이썬		"locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 딕셔너리 데이터를 동적으로 처리할 때 사용합니다.💡 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 전역 네임스페이스를 반환합니다.💻 활용 예시1. 지역 변수 확인 (디버깅)pythondef my_function(a, b):
+    local_var = ""Hello""
+    print(locals())
+
+my_function(10, 20)
+# 출력: {'a': 10, 'b': 20, 'local_var': 'Hello'}
+코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 관리변수 이름을 문자열로 참조하거나 여러 변수의 상태를 한 번에 딕셔너리 형태로 조작할 때 유용합니다.pythondef calculate_area(width, height):
+    # locals()를 통해 지역 변수들을 딕셔너리로 쉽게 가져올 수 있음
+    variables = locals()
+    print(f""계산에 사용된 가로: {variables['width']}"")
+    return width * height
+
+calculate_area(5, 10)"	
+		파이썬		"map()은 반복 가능한 객체(리스트, 튜플 등)의 모든 요소에 동일한 함수를 일괄 적용하여 새로운 데이터를 반환하는 내장 함수입니다.주요 특징기본 문법: map(적용할_함수, 반복_가능한_객체)간결성: for 반복문 없이도 데이터를 일괄 처리하여 코드가 매우 간결해집니다.지연 연산: 메모리 효율을 높이기 위해 실행 시점에 결과를 계산하는 map 객체를 반환합니다. 보통 list()나 tuple()로 변환하여 사용합니다.자주 사용하는 예시1. 모든 요소를 정수형으로 변환입력받은 문자열 리스트나 사용자 입력을 한 번에 변환할 때 주로 쓰입니다.pythonstr_list = ['1', '2', '3', '4']
+int_list = list(map(int, str_list))
+
+# 출력: [1, 2, 3, 4]
+코드를 사용할 때는 주의가 필요합니다.2. 사용자 입력 여러 개 받기python# 공백으로 구분된 여러 숫자를 한 번에 정수로 입력받기
+a, b = map(int, input().split())
+코드를 사용할 때는 주의가 필요합니다.3. 사용자 정의 함수 적용lambda(익명 함수)를 활용해 복잡한 연산도 한 줄로 처리할 수 있습니다.pythonnumbers = [1, 2, 3, 4]
+squared = list(map(lambda x: x**2, numbers))
+
+# 출력: [1, 4, 9, 16]"	
+		파이썬		"max() 함수는 주어진 데이터(반복 가능한 객체)나 여러 인수 중 가장 큰 값을 반환하는 내장 함수입니다. 숫자뿐만 아니라 문자열 등 다양한 자료형에서 최댓값을 찾을 수 있습니다.기본적인 사용법은 다음과 같습니다.1. 여러 인수에서 최댓값 찾기pythonprint(max(1, 5, 3, 9, 2))  # 출력: 9
+코드를 사용할 때는 주의가 필요합니다.2. 리스트나 튜플 등에서 최댓값 찾기 (Iterable)pythonnumbers = [10, 50, 20, 40]
+print(max(numbers))  # 출력: 50
+코드를 사용할 때는 주의가 필요합니다.3. 문자열에서 최댓값 찾기문자열은 알파벳 순서(유니코드 값)를 기준으로 비교합니다.pythonprint(max(""apple""))  # 출력: p (가장 뒤에 오는 알파벳)
+코드를 사용할 때는 주의가 필요합니다.4. key 매개변수 활용 (특정 조건으로 비교)문자열의 길이나, 딕셔너리의 특정 값을 기준으로 최댓값을 찾고 싶을 때 key 속성을 사용합니다.pythonwords = [""cat"", ""elephant"", ""dog""]
+print(max(words, key=len))  # 출력: elephant (길이가 가장 긴 문자열)
+코드를 사용할 때는 주의가 필요합니다.함수에 대한 더 자세한 기술 문서와 활용법은 파이썬 max함수 설명을 참고해 주세요.사이트 4개[python] 파이썬 max함수, min함수에 대해서 - 가면 뒤의 기록2020. 8. 21. — 2-1) python max 함수 설명. max 함수는 min 함수와 설명이 동일합니다. 똑같이 iterab...Tistory[Python] max(str, ...)에 대해서 - Legacy - 티스토리2020. 8. 25. — 보통 max()에 대해서 설명한다면 다음과 같다. 'iterable한 object를 받아서 그 중 최댓값을 ...티스토리max() / min()_ 자료 중 최대값, 최소값 - python_ Cheat - 위키독스2019. 4. 1. — max(iterable, *[, key, default]). iterable 에서 가장 큰 항목이나 두 개 ...위키독스"	
+		파이썬		"memoryview()는 데이터 복사 없이 메모리 버퍼를 직접 조작할 수 있게 해주는 내장 함수입니다. 대용량 데이터를 다룰 때 메모리 사용량을 획기적으로 줄이고 처리 속도를 높이는 데 사용됩니다.1. 주요 특징 및 핵심 의미데이터 복사(Copy) 방지: 일반적인 파이썬 객체를 슬라이싱하면 메모리에 새로운 객체가 생성되지만, memoryview는 원본 메모리의 특정 위치를 가리키는 뷰(View)만 생성합니다.양방향 조작: memoryview를 통해 데이터를 수정하면 원본 객체의 데이터도 함께 변경됩니다.지원 대상: 바이트 버퍼 프로토콜을 지원하는 객체(bytes, bytearray, array.array 등)만 사용할 수 있습니다.2. 메모리 절약 효과 (예시)큰 크기의 바이너리 데이터를 잘라서 처리해야 할 때, 데이터를 복사하지 않고 주소만 참조하므로 메모리 낭비와 불필요한 연산을 막을 수 있습니다.python# bytearray 객체 생성
+data = bytearray(b'ABCDEFGHIJ')
+
+# memoryview 생성
+mv = memoryview(data)
+
+# 데이터 복사 없이 'CDE' 부분에 접근 가능
+print(mv[2:5])  # <memory at 0x...>
+
+# 변경 시 원본 데이터도 함께 수정됨
+mv[2:5] = b'XYZ'
+print(data)     # b'ABXYZFGHIJ'
+코드를 사용할 때는 주의가 필요합니다.3. 유용한 활용 분야대용량 파일 I/O 및 네트워크 스트리밍: 대형 파일을 읽거나 네트워크로 패킷을 주고받을 때 버퍼를 효율적으로 처리.C 언어 라이브러리 연동: NumPy 배열이나 C 언어 수준의 구조체 데이터와 데이터를 주고받을 때 사용."	
+		파이썬		"a = 1
+b = 2
+c = 3
+d = 4
+e = 5
+f = []
+f.append(a)
+f.append(b)
+f.append(c)
+f.append(d)
+f.append(e)
+print(max(f))
+print(min(f))"	
 					
 					
 					
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+파이썬	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98	next()	부터		
+	c언어	"typedef union _MyUnion
+{
+    int MyInt;
+    struct
+    {
+        short Low;
+        short High;
+    };
+} MyUnion;"	"#include <stdio.h>
+struct MyStruct {
+    int i;
+    char c;
+}; //구조체 크기: 8바이트 (패딩 포함)
+
+union MyUnion {
+    int i; //4바이트
+    char c; //1바이트
+}; //공용체 크기: 4바이트 (가장 큰 멩법의 크기)
+
+int main() {
+    
+}
+/*
+struct: 학생 정보(이름, 학번, 성적)나 좌표(\(x, y\))처럼 서로 다른 종류의 데이터를 한꺼번에 묶어서 다뤄야 할 때 사용합니다.union: 상황에 따라 변수의 타입이 달라질 수 있는 경우 메모리를 절약하기 위해 사용합니다. 네트워크 패킷 처리나 임베디드 레지스터 제어 등 하드웨어 레벨의 프로그래밍에서 유용합니다.
+*/"		
+	c언어		"7.1.1. wmain 함수[편집]
+Windows CRT에서만 사용되는 main 함수의 유니코드 버전이다. 차이점은 argv, evp 배열의 자료형이 wchar_t*인 점만 빼면 main 함수와 동일하다.
+
+참고로 유니코드 링커 옵션이 지정되어 있을 경우 wmain 함수만을 사용하지만 main 함수만 있을 경우 컴파일 과정에서 wmain 함수가 자동으로 생성되며 해당 wmain 함수 내부에서 main 함수를 호출하므로 문제가 없다.
+int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
+{
+        [함수 내용]
+        return 0;
+}"		
+	c언어		7.4. 표준 라이브러리 함수 일람		
 					
 	파리	7. 함수 8 . 모듈	https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95	"a = -3
 b = abs(a)
@@ -1448,11 +1754,11 @@ _T(""..."") 리터럴을 사용하고 tchar.h 헤더를 include해야 한다.
 
 int _tmain(int argc, TCHAR **argv)
 {
-	TCHAR a[20];
+        TCHAR a[20];
         SetConsoleTitle(_T(""tchar test""));
-	_tscanf(_T(""%s""), a);
-	_tprintf(_T(""%s""), a);
-	return 0;
+        _tscanf(_T(""%s""), a);
+        _tprintf(_T(""%s""), a);
+        return 0;
 }
 
 위와 같은 코드는 UNICODE 가 선언되어 있지 않으면 프리프로세서에서 다음과 같이 변환된다.
@@ -1463,11 +1769,11 @@ int _tmain(int argc, TCHAR **argv)
 
 int main(int argc, char **argv)
 {
-	char a[20];
+        char a[20];
         SetConsoleTitleA(""tchar test"");
-	scanf(""%s"", a);
-	printf(""%s"", a);
-	return 0;
+        scanf(""%s"", a);
+        printf(""%s"", a);
+        return 0;
 }
 
 
@@ -1479,11 +1785,11 @@ int main(int argc, char **argv)
 
 int wmain(int argc, wchar_t **argv)
 {
-	wchar_t a[20];
+        wchar_t a[20];
         SetConsoleTitleW(L""tchar test"");
-	wscanf(L""%s"", a);
-	wprintf(L""%s"", a);
-	return 0;
+        wscanf(L""%s"", a);
+        wprintf(L""%s"", a);
+        return 0;
 }
 "		
 	c언어		"6.5.4. char16_t[편집]
@@ -1571,6 +1877,98 @@ desc kimgroom;
 코드를 사용할 때는 주의가 필요합니다.2. CHANGE 사용컬럼명 자체를 바꾸거나(새로운 컬럼명 추가), 데이터 타입/속성을 함께 변경할 때 사용합니다.sqlALTER TABLE kimgroom CHANGE iname iname VARCHAR(30) NOT NULL;
 코드를 사용할 때는 주의가 필요합니다.더 자세한 컬럼 수정 문법은 MySQL 공식 문서를 참고해 주세요.
 */"	58쪽 164번부터	
+c언어 문법	https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%EB%AC%B8%EB%B2%95	6.10 포인터			
+	c언어 문법		"ptr = (자료형*)malloc(할당할 크기);
+
+할당할 크기는 byte 단위이다. 안전하게 사용하기 위해서는 할당할 크기를 자료형 크기의 정수 배로 하는 것이 좋다.
+
+int *ptr;
+ptr = (int*)malloc(배열의 길이 * sizeof(int));
+
+이렇게 할당하고 나면 ptr[5]와 같이 사용할 수 있다.
+
+사실 동적 할당에서 형변환은 필요하지 않다. 아래처럼 쓰는 것이 보통이다.
+ptr = malloc(배열의 길이 * sizeof(int));
+
+과거에는 void *라는, 모든 포인터를 포괄하는 포인터 자료형이 없었기 때문에 malloc의 반환 자료형은 char *였고, 다른 타입의 변수에 대입하기 위해 명시적으로 형변환을 해야 했다. 이후 1989년에 void *가 추가되고 malloc의 반환 자료형이 void *로 변경되면서 형변환이 필요 없게 되었다.
+
+그러나 예전부터 써온 관습도 있고, 컴파일러에 따라 경고 수준이 높을 경우 경고를 출력하는 데다, C++은 C와 다르게 void *형에게도 명시적인 형변환을 요구하기 때문에, 대부분의 C 교재나 강의에서는 malloc 함수의 값을 형변환해서 쓰도록 가르치고 있다.[20]
+
+위의 예제에서 ptr의 자료형이 변경된다면(예를 들어 int에서 double로) sizeof의 피연산자도 바꿔야 하는 번거로움이 생긴다.(sizeof(int)에서 sizeof(double)로) 이 문제를 해결하는 근본적인 방법은 sizeof의 피연산자를 자료형 대신 변수로 하는 것이다.
+ptr = malloc (배열의 길이 * sizeof *ptr);
+
+
+동적 할당된 공간은 자동으로 해제되지 않기 때문에, 더 이상 필요 없으면 프로그래머가 직접 해제해야 한다. 필요할 때마다 메모리를 계속 받으면서 해제하는 작업을 하지 않으면, 할당받았지만 접근할 수 없는 메모리 공간이 점점 늘어나면서 심할 경우 프로그램이 그대로 뻗는 경우도 있다.[21][22]
+메모리 해제는 free 함수로 할 수 있다.
+
+free (ptr);"		
+	씨언어		"#include <stdio.h>
+
+struct MyStruct {
+    int GroomInt;
+    int GroomIntwo;
+};
+
+int main() {
+    
+    struct MyStruct mydata = { .GroomInt = 1234, .GroomIntwo = 1234};
+    struct MyStruct *ptr = &mydata;
+    
+    printf(""%d"", mydata.GroomInt);
+    //포인터로 접근할 때는 아래와 같이 하기
+    printf(""%d"", ptr->GroomInt);
+    printf(""%d"", (*ptr).GroomInt);
+    //123412341234
+}
+"		
+	자바 오류뜨는 이유 찾기 문제		"public class Main {
+    public static void main () {
+        final int groom = 3;
+        groom += 1;
+        System.out.print(groom);
+    }
+}
+//final을 붙이면 불변하는 변수라서 +=가 안됨"		
+	자바 		"public class Main {
+    public static void main () {
+        var groom = ""김구름이"";
+        System.out.print(groom);
+    }
+}
+
+//타입 추론"		
+	자바 		"6.2. 가변/불변 변수와 상수[편집]
+일반적으로 만들어진 변수는 가변 변수로, 수정 및 재대입이 가능하다.
+반면 불변 변수는 final이 붙어 재대입이 불가능하다.
+상수는 크게 2개로 나뉘는데 static final이 붙은 변수와 거기에 더해 원시 타입 또는 String이라는 조건이 붙은 경우이다.
+
+불변 변수와 상수의 차이는 컴파일 시점에서 값을 알 수 있는지로 구분할 수 있다.
+public class A {
+    public final int someIntValue;
+    public static final int SOME_INT_VALUE = 2;
+
+    public A(int i) {
+        someIntValue = i;
+    }
+}"		
+	자바 		System.err.println("Error message");		
+	자바 		"8. 입력[편집]
+표준 입력 스트림(System.in)에서 입력 받는 방법이다.
+
+int i = System.in.read();
+가장 기본적인 입력이다. 바이트 하나를 읽는다. 예를 들어 ""ABCn""을 입력하면 A의 아스키코드인 65를 반환한다. 이후 한번 더 read()를 호출하면 B의 아스키코드인 66이 반환되는 식. 한글의 경우 3바이트로 이루어져 있어서 한번으로는 완전히 읽을 수 없다. 매우 불편하기에 특수한 경우가 아니면 아래 방식들을 사용하는 편.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String str = br.readLine();
+Scanner 추가 전에 주로 사용된 방식이다. 속도가 Scanner보다 빨라서 사용된다.
+
+Scanner sc = new Scanner(System.in);
+String str = sc.nextLine();
+자바 24 까지 간단히 사용되는 입력 방식이다. sc.nextInt(); 같은 메서드로 바로 타입을 바꿀 수 있다.[17]
+
+String str = IO.readln();
+자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."		
+					
 					
 					
 					
@@ -1652,3 +2050,9 @@ app.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
 "			
+					
+					
+			학번		
+			A001		
+			A002		
+			A00		
