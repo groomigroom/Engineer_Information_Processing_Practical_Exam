@@ -34,6 +34,49 @@
 
 
 
+
+
+
+
+
+---------
+
+class Value:
+    def __init__(self):
+        self.valid = False
+    def __bool__(self):
+        return self.valid
+    def setValidity(self, validity):
+        self.valid = validity
+
+var = Value()
+print(bool(var))  # False
+var.setValidity(True)
+print(bool(var))  # True 위 파이썬을 해석해줘제공해주신 파이썬 코드는 클래스의 매직 메서드(Magic Method)인 __bool__을 활용하여, 사용자 정의 객체가 조건문이나 bool() 함수에서 어떻게 참(True) 또는 거짓(False)으로 평가될지 직접 정의하는 예제입니다.코드의 동작을 한 줄씩 풀어서 설명해 드리겠습니다.🛠️ 클래스 정의 부분class Value:Value라는 이름의 새로운 클래스를 만듭니다.def __init__(self):객체가 처음 생성될 때 실행되는 생성자 메서드입니다.생성 시점에 self.valid라는 인스턴스 변수를 만들고 기본값으로 False를 저장합니다.def __bool__(self):이 객체를 bool(객체)로 변환하거나 if 객체:와 같은 조건문에 넣었을 때 호출되는 특수 메서드입니다.여기서는 내부 변수인 self.valid의 값(True 또는 False)을 그대로 반환하도록 설정했습니다.def setValidity(self, validity):외부에서 값을 받아 self.valid 변수의 상태를 변경하는 메서드입니다.🏃 실제 실행 부분var = Value()Value 클래스의 인스턴스(객체)를 생성하여 var 변수에 할당합니다.이때 내부적으로 self.valid는 False가 됩니다.print(bool(var)) # Falsevar 객체를 불리언 타입으로 변환하려고 시도합니다.파이썬은 내부적으로 var.__bool__()을 호출하고, 이 메서드는 현재 self.valid 값인 False를 반환합니다.var.setValidity(True)setValidity 메서드를 호출하여 내부 self.valid 변수의 값을 True로 변경합니다.print(bool(var)) # True다시 var 객체를 불리언 타입으로 변환합니다.이번에는 self.valid 값이 업데이트되었으므로 var.__bool__()이 True를 반환합니다.
+"""
+
+class Stack:
+    def __init__(self):
+        self.stack = list()
+    def __len__(self):
+        return len(self.stack)
+    def push(self, x):
+        self.stack.append(x)
+    def pop(self):
+        return self.stack.pop()
+
+stack = Stack()
+print(len(stack))   # 0
+print(bool(stack))  # False
+
+stack.push(100)     # 100 입력
+print(len(stack))   # 1
+print(bool(stack))  # True
+
+stack.pop()         # 100 출력
+print(len(stack))   # 0
+print(bool(stack))  # False
+
 ----------
 
 orders = [
