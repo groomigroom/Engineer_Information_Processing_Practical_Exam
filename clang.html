@@ -32,6 +32,30 @@
 
 
 
+------
+
+
+
+#include <stdio.h>
+
+void printBit(int n){
+    for (int i = 1 << 7; i >= 1; i >>= 1){
+    if (n & i){
+      printf("1");
+    }
+    else {
+      printf("0");
+    }
+  }
+  printf("\n");
+}
+
+int main () {
+    printBit(2);
+    printBit(11);
+}
+//00000010
+//00001011
 
 
 ------
