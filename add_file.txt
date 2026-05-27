@@ -104,84 +104,7 @@ public class Groom {
   }
 }"	"실행순서 맞추기 312
 567도 "		
-		파이썬	"def groomi1(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    return l2
-    
-def groomi2(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    print(l2)
-
-def groomi3(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    return ''.join(str(i) for i in l2)
-    
-def groomi4(l) :
-    d = {}
-    for i in l :
-        d[i] = i * 2
-    print(d)
-    
-l = [1, 2, 3]
-
-print(groomi1(l))
-
-groomi2(l)
-
-print(groomi3(l))
-
-groomi4(l)
-
-#함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
-"	"def groomi1(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    return l2
-    
-def groomi2(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    print(l2)
-
-def groomi3(l) :
-    l2 = []
-    for i in l :
-        l2.append(i * 2)
-    return ''.join(str(i) for i in l2)
-#'.join()은 리스트나 튜플처럼 여러 개의 문자열 요소로 이루어진 데이터를 하나의 문자열로 결합할 때 사용하는 메서드입니다.
-#str(i) for i in l2는 리스트 l2에 있는 모든 요소 i를 문자열(String) 형태로 변환하는 반복문(for 문)을 의미합니다.
-    
-def groomi4(l) :
-    d = {}
-    for i in l :
-        d[i] = i * 2
-    print(d)
-#딕셔너리
-    
-l = [1, 2, 3]
-
-print(groomi1(l))
-#[2, 4, 6]
-
-groomi2(l)
-#[2, 4, 6]
-
-print(groomi3(l))
-#246
-
-groomi4(l)
-#{1: 2, 2: 4, 3: 6}
-
-#함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
-"	
+					
 			자바 Connection 타입		
 			자바 Thread implements Runnable run() start()		
 자바			"public class Sort {
@@ -275,65 +198,9 @@ int main() {
 			자바 참조타입		
 			자바 char의 return		
 					
-	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk	"class Factorial2 {
-    int Fact = 1;
-    public int CalFact(int n) {
-        return (n > 0) ? n * CalFact(n - 1) : 1;
-    }
-}
-public class Main {  
-    public static void main(String[] args) {
-        Factorial2 fac = new Factorial2();
-        int cc = fac.CalFact(5);
-        System.out.println(cc);
-    }
-}
-//5 * 4 * 3 * 2 * 1 == 120"		
-	mysql			"CAST
-CAST() 함수는 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
-이때 변환하고자 하는 타입을 AS 절을 이용하여 직접 명시할 수 있습니다.
-sqlCAST(expr AS type)Copy
-AS 절에서 사용할 수 있는 타입은 다음과 같습니다.
-
-BINARY
-CHAR
-DATE
-DATETIME
-TIME
-DECIMAL
-JSON (MySQL 5.7.8부터 제공됨)
-NCHAR
-SIGNED [INTEGER]
-UNSIGNED [INTEGER]
-
-select 4 / cast('2' as unsigned)
-
-/*
-+---------------------------+
-| 4 / cast('2' as unsigned) |
-+---------------------------+
-|                    2.0000 |
-+---------------------------+
-*/
-"	
-	mysql			"CONVERT
-CONVERT() 함수도 CAST() 함수처럼 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
-CONVERT() 함수는 두 번째 인수로 변환하고자 하는 타입을 직접 전달할 수 있습니다.
-sqlCONVERT(expr, type) == CAST(expr as type)
-CONVERT(expr USING transcoding_name)Copy
-USING 절은 서로 다른 문자셋(character set) 간의 데이터 변환을 위해 사용됩니다.
-이때 사용할 수 있는 타입은 CAST() 함수와 같습니다.
-SELECT CONVERT('abc' USING utf8);
-
-select convert('12', signed);
-
-/*
-+-----------------------+
-| convert('12', signed) |
-+-----------------------+
-|                    12 |
-+-----------------------+
-*/"	
+					
+					
+					
 	mysql	"BINARY
 BINARY 연산자는 뒤에 오는 문자열을 바이너리 문자열로 변환합니다.
 BINARY 연산자를 이용하면 문자가 아닌 바이트를 기준으로 하여 비교나 검색 작업을 수행할 수 있습니다.
@@ -765,57 +632,9 @@ int main()
     free(arr);
 }
 "	
-		자바 빈칸으로		"public class Main {
-    static String groom(String goo) {
-      goo = ""김구름"";
-      return goo;
-    }
-    
-    
-    static char groom (char gu) {
-      gu = 'g';
-      return gu;
-    }
-  
-    static int groom (int x) {
-      int y = 10;
-      x += x + y;
-      return x;
-    }
-    
-    public static void main(String[] args) {
-      int z = groom(4);
-      System.out.println(z);
-    }
-}"	
-		python 직접		"def one (on) :
-  on += 2
-  return on
-  
-def two (on) :
-  on += one(on)
-  return on
-
-def three (on) :
-  on += two(on)
-  return on
-  
-a = three(4)
-print(a)"	
-		c언어		"#include <stdio.h>
-int one(int x, int y) {
-  while (x < y) {
-    x++;
-  }
-  x += y;
-  return x;
-}
-
-int main()
-{
-  int z = one(3, 11);
-  printf(""%d"", z);
-}"	
+					
+					
+					
 		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
 		자바			"|=는 비트 OR(OR) 연산 후 대입(Bitwise OR assignment)을 수행하는 복합 대입 연산자입니다.x |= y;는 x = x | y;와 완벽히 동일한 의미를 가집니다.1. 동작 원리x와 y의 각 비트를 비교하여 둘 중 하나라도 1이면 1을 반환합니다.그렇게 계산된 결과를 다시 좌측 변수인 x에 저장(대입)합니다.2. 코드 예시javaint a = 5;  // 2진수: 0101
 int b = 3;  // 2진수: 0011
@@ -915,28 +734,8 @@ https://www.youtube.com/watch?v=MIkKcTjtnpw 12분 30초
 copy 모듈의 copy 함수
 copy.copy()
 """""""	https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
-		mysql		"IF(expr1, expr2, expr3)
-- expr1은 조건식, expr1이 참(TRUE)이면 expr2, 그렇지 않으면expr3 반환• IFNULL(expr1, expr2)
-- expr1이 NULL이 아니면 expr1, NULL이면 expr2 반환
-- 기본으로 expr1 반환, 이 값이 NULL이면 두 번째 매개변수 반환• NULLIF(expr1, expr2)
-- expr1과 expr2 값이 같으면 NULL, 같지 않으면 expr1 반환
-
-create table groomi (
-    ione integer,
-    itwo integer,
-    ithree integer,
-    ifour integer
-);
-
-insert into groomi
-values
-(1, 2, 1, null),
-(2, 3, 4, 9),
-(5, 6, 2, null);
-
-select if(ione > (itwo + ithree), 222, 333), ifnull(ifour, ithree), nullif(ione, ithree)
-from groomi;"	
-		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
+					
+		 	"#include <stdio.h>
 
 void printBit(int n){
     for (int i = 1 << 7; i >= 1; i >>= 1){
@@ -955,18 +754,7 @@ int main () {
     printBit(11);
     
 }"		
-		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
-
-int min(int a, int b){
-    return b ^ ((a ^ b) & -(a < b));
-}
-
-int main () {
-    int a = min(2, 5);
-    printf(""%d\n"", a);
-    int b = min(11, 2);
-    printf(""%d"", b);
-}"		
+					
 		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
 
 int max(int a, int b){
@@ -1027,40 +815,8 @@ async def main():
 
 asyncio.run(main())
 코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."	
-	파이썬			"print(all([True, True, True]))
-#all()은 모든 요소가 True인지 판단하는 거 출력값 True
-
-print(all([True, False, True]))
-#False
-
-print(all([1, 2, 3, 4]))
-#True
-
-print(all([1, 2, 3, 0]))
-#False
-
-print(all([""김구름"", ""구름이"", ""구름씨""]))
-#True
-
-print(all([""김구름"", ""구름이"", """"]))
-#False"	
-	파이썬			"print(any([True, True, True]))
-#any()는 요소 중에 하나로 참이 있으면 True이다.
-
-print(any([True, False, True]))
-
-
-print(any([1, 2, 3, 4]))
-
-
-print(any([1, 2, 3, 0]))
-
-
-print(any([""김구름"", ""구름이"", ""구름씨""]))
-
-
-print(any([""김구름"", ""구름이"", """"]))
-#6개 다 True"	
+					
+					
 	파이썬			"text = 'a'
 print(ascii(text))
 #ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
@@ -1125,35 +881,7 @@ Student.change_school(""Korea High School"")
 
 # 2. 대체 생성자를 활용해 객체 생성
 student_1 = Student.from_string(""Kim,18"")"	
-	파이썬			"compile()은 문자열 형태의 소스 코드를 파이썬 가상 머신이 실행할 수 있는 '코드 객체(Code Object)'로 미리 변환해 주는 내장 함수입니다. 동적으로 코드를 생성하고 실행할 때 주로 사용됩니다.주요 특징과 사용법은 다음과 같습니다.1. 주요 모드 (Mode)compile(source, filename, mode) 형태로 사용하며, mode 인자에 따라 변환 방식이 달라집니다.'exec': 여러 줄의 문장(Statements)을 컴파일할 때 사용합니다. (exec() 함수로 실행)'eval': 단일 표현식(Expression) 하나를 컴파일할 때 사용합니다. (eval() 함수로 실행)'single': 단일 대화형 문장을 컴파일할 때 사용합니다.2. 활용 예시python# 1. 'eval' 모드: 간단한 수식 계산
-code_str = ""x + y""
-compiled_code = compile(code_str, ""<string>"", ""eval"")
-
-x, y = 10, 20
-result = eval(compiled_code)
-print(result) # 출력: 30
-
-# 2. 'exec' 모드: 여러 줄의 코드 블록 실행
-code_str2 = """"""
-for i in range(2):
-    print(""파이썬 컴파일:"", i)
-""""""
-compiled_code2 = compile(code_str2, ""<string>"", ""exec"")
-exec(compiled_code2)"	
-	파이썬			"print(complex(4, 3)) #복소수로 실수부와 허수부 직접 지정
-#출력값 (4 + 3j)
-
-print(complex(5))
-#출력값 (5 + 0j)
-
-zz = complex(""2+3j"")
-print(zz.real)
-#출력값 2.0
-
-print(zz.imag)
-#출력값 3.0
-
-#j는 '허수 단위(Imaginary unit)'를 의미합니다."	
+					
 	파이썬			"delattr()은 파이썬의 내장 함수로, 객체에서 특정 속성(attribute)을 동적으로 삭제할 때 사용합니다.기본적으로 del 객체.속성을 사용하는 것과 동일한 역할을 하지만, 속성의 이름을 문자열로 지정할 수 있다는 점이 다릅니다.기본 문법pythondelattr(object, name)
 코드를 사용할 때는 주의가 필요합니다.object: 속성을 삭제할 객체 (클래스 또는 인스턴스)name: 삭제할 속성의 이름을 나타내는 문자열활용 예시pythonclass Person:
     def __init__(self, name, age):
@@ -1178,12 +906,8 @@ print(a)
 delattr(a, ""age"")
 
 print(a)"	
-	파이썬			"bichon = dict(name = ""구름이"", house = ""광주광역시"")
-print(bichon)
-#출력값 {'name': '구름이', 'house': '광주광역시'}
-bichhon = dict([('이름', '김구름'), ('최애', '과자')])
-print(bichhon)
-#{'이름': '김구름', '최애': '과자'}"	
+					
+					
 	파이썬			"dir()은 객체가 가지고 있는 변수와 메서드(함수)의 목록을 리스트로 반환하는 내장 함수입니다. 코드 작성 중 특정 모듈, 클래스, 혹은 변수가 어떤 속성과 기능을 제공하는지 확인할 때 주로 사용합니다.1. 주요 활용법인자 없이 호출 시: 현재 프로그램의 네임스페이스(현재 스코프)에 등록된 변수 및 모듈의 이름들을 반환합니다.객체 인자 전달 시 (dir(객체)): 해당 객체가 사용할 수 있는 모든 속성(attribute)과 메서드 이름을 알파벳 순서대로 정렬하여 반환합니다.2. 활용 예시pythonimport math
 
 print(dir(math))
@@ -1217,14 +941,7 @@ print(list(result))  # [2, 4, 6]
 result = list(filter(lambda x: x % 2 == 0, numbers))
 
 print(result)  # [2, 4, 6]"	
-	파이썬			"format() 메서드는 문자열 내의 특정한 위치에 동적으로 값을 삽입하거나 형식을 지정해 주는 문자열 포매팅(String Formatting) 기능입니다.자세한 활용법과 차이는 아래에서 확인할 수 있습니다.1. 기본 개념문자열 안에 중괄호 {}를 자리 표시자(placeholder)로 두고, format() 메서드 괄호 안에 전달한 값으로 이를 대체합니다.python# 기본 사용법
-print(""저는 {}살 입니다."".format(20))
-# 출력: 저는 20살 입니다.
-코드를 사용할 때는 주의가 필요합니다.2. 주요 사용 방식인덱스 활용: {} 안에 숫자를 넣어 괄호 안의 값을 순서대로 지정할 수 있습니다.pythonprint(""{1}과 {0}을 좋아합니다."".format(""사과"", ""딸기""))
-# 출력: 딸기와 사과을 좋아합니다.
-코드를 사용할 때는 주의가 필요합니다.이름(키워드) 활용: {} 안에 이름을 지정하고 이름=값 형태로 명확하게 매칭할 수 있습니다.pythonprint(""{name}님 안녕하세요. 접속 지역은 {location}입니다."".format(name=""홍길동"", location=""서울""))
-# 출력: 홍길동님 안녕하세요. 접속 지역은 서울입니다.
-코드를 사용할 때는 주의가 필요합니다.3. 유용한 형식 지정자(Format Specifier)콜론(:)을 함께 사용하면 숫자 정렬, 소수점 자릿수 제한 등 다양한 서식을 적용할 수 있습니다.{:0.2f}: 소수점 2자리까지만 표현{:>10}: 오른쪽 정렬 (10칸 공간 확보){: <10}: 왼쪽 정렬{:^10}: 가운데 정렬"	
+					
 	파이썬			"frozenset()은 변경 불가능한(immutable) 집합 객체를 생성하는 내장 함수입니다. 일반적인 집합(set)과는 달리, 생성 후 요소를 추가하거나 삭제할 수 없습니다.주요 특징불변성(Immutability): 한 번 생성되면 내부 요소를 변경할 수 없어 안정성이 높습니다.해시 가능(Hashable): 변경이 불가능하므로 딕셔너리(dict)의 키(key)나 다른 set 또는 frozenset의 요소로 사용할 수 있습니다.활용 사례딕셔너리 키: 여러 개의 값을 집합 단위로 묶어 딕셔너리의 키로 활용할 때.값 보호: 데이터가 중간에 수정되는 것을 방지해야 하는 고정된 데이터를 다룰 때.집합 연산: 요소 추가/삭제는 불가능하지만, 교집합, 합집합, 차집합 등의 집합 연산은 그대로 지원합니다.💡 set vs frozenset구분setfrozenset요소 변경가능 (Mutable)불가능 (Immutable)딕셔너리 키사용 불가사용 가능예제 코드python# 리스트를 받아 frozenset 생성
 my_frozenset = frozenset([1, 2, 3, 3, 4])
 print(my_frozenset)  # frozenset({1, 2, 3, 4})
@@ -1379,19 +1096,7 @@ print(mv[2:5])  # <memory at 0x...>
 mv[2:5] = b'XYZ'
 print(data)     # b'ABXYZFGHIJ'
 코드를 사용할 때는 주의가 필요합니다.3. 유용한 활용 분야대용량 파일 I/O 및 네트워크 스트리밍: 대형 파일을 읽거나 네트워크로 패킷을 주고받을 때 버퍼를 효율적으로 처리.C 언어 라이브러리 연동: NumPy 배열이나 C 언어 수준의 구조체 데이터와 데이터를 주고받을 때 사용."	
-		파이썬		"a = 1
-b = 2
-c = 3
-d = 4
-e = 5
-f = []
-f.append(a)
-f.append(b)
-f.append(c)
-f.append(d)
-f.append(e)
-print(max(f))
-print(min(f))"	
+					
 		c언어포인터 심화	어려운 C언어 포인터 예제 4개로 마스터하기 https://share.google/sYgpqU2Ao20Ea5x7h		
 		자바		Java 객관식 개념 문제(30문항) v1.2 https://share.google/HjgweXWHUCL1Bz4vi	
 		파이썬		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0	
@@ -1435,23 +1140,10 @@ int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
 }"		
 	c언어		7.4. 표준 라이브러리 함수 일람		
 					
-	파리	7. 함수 8 . 모듈	https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95	"a = -3
-b = abs(a)
-print(b)
-#절댓값이라서 3
-
-"	
+	파리	7. 함수 8 . 모듈	https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95		
 					
 	파리	11 예외 처리 12 13도			
-		c언어 오류 뜨는 이유 찾기	"#include <stdio.h>
-
-int main()
-{
-	short a;
-	a = 32768;
-	printf(""%d"", a);
-	return 0;
-}"		
+					
 					
 	c언어		"6.5. 문자 자료형[편집]
 여러 가지 자료형이 있다. 가장 기본이 되는 것은 char이며, 이외 자료형의 사용법을 아래 표에 간략히 정리하였다.
@@ -1551,10 +1243,10 @@ L""..."" 리터럴을 사용한다. wchar.h 헤더를 include해야 한다.
 
 int main()
 {
-	wchar_t a[20];
-	wscanf(L""%s"", a);
-	wprintf(L""%s"", a);
-	return 0;
+        wchar_t a[20];
+        wscanf(L""%s"", a);
+        wprintf(L""%s"", a);
+        return 0;
 }"		
 	c언어		"6.5.3. TCHAR[편집]
 Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
@@ -1652,44 +1344,9 @@ arr[2][0]
 arr[2][1]
 arr[2][2]
 "		
-	c언어		"#include <stdio.h>
-
-int main()
-{
-	int arr[5] = {1,2,3,4,5};
-        printf(""%d"", arr[2]);
-}
-
-출력 결과는 3이다. 첨자는 0부터를 반드시 기억하자.
-
-선언과 달리 접근은 반대로 할 수 있다.
-즉 arr[2]와 2[arr]는 같다.
-이는 배열에 대한 접근 문법은 문법적 설탕이며 arr[2]는 arr부터 2의 오프셋을 가리키고 있다는 것을 의미하는 *(arr+2)와 같기 때문이며 *(2+arr)라고 쓴다고 오류가 아닌 것과 같다.
-이는 문법적 오류가 아닌 표준에서도 언급되는 문법이긴 하나[19] 가독성이나 관례상 혼란만 일으키므로 사용되지는 않는다."		
+					
 	mysql		create index on 54page		
-	mysql		"create table kimgroom (
-  innum integer primary key,
-  iname varchar(50),
-  innum2 integer
-);
-
-alter table kimgroom
-drop primary key, add primary key (iname);
-
-alter table kimgroom
-add igrade integer;
-
-
-desc kimgroom;
-/*
-제시해주신 MySQL 문법이 틀린 이유는 MySQL에서 ALTER TABLE ... ALTER COLUMN 구문은 컬럼의 '기본값(DEFAULT)'을 변경할 때만 사용하기 때문입니다.컬럼의 NOT NULL 제약조건을 추가하거나 수정하려면 CHANGE 또는 MODIFY를 사용해야 합니다.올바른 수정 방법은 다음과 같습니다.1. MODIFY 사용 (추천)컬럼명이나 데이터 타입을 변경하지 않고 제약조건만 수정할 때 가장 직관적인 방법입니다.sqlALTER TABLE kimgroom MODIFY igrade INT NOT NULL;
-코드를 사용할 때는 주의가 필요합니다.(참고: INT 부분에는 원래 igrade 컬럼에 설정된 정확한 데이터 타입을 적어주셔야 합니다.)2. CHANGE 사용컬럼의 이름(기존 컬럼명을 유지하려면 동일하게 작성)과 데이터 타입, 제약조건을 한 번에 변경할 때 사용합니다.sqlALTER TABLE kimgroom CHANGE igrade igrade INT NOT NULL;
-코드를 사용할 때는 주의가 필요합니다.자세한 문법 구조는 MySQL 공식 문서를 참고하시면 더욱 다양한 예제를 확인하실 수 있습니다.
-
-1. MODIFY 사용 (추천)컬럼명은 그대로 두고 데이터 타입과 속성만 변경할 때 사용합니다.sqlALTER TABLE kimgroom MODIFY iname VARCHAR(30) NOT NULL;
-코드를 사용할 때는 주의가 필요합니다.2. CHANGE 사용컬럼명 자체를 바꾸거나(새로운 컬럼명 추가), 데이터 타입/속성을 함께 변경할 때 사용합니다.sqlALTER TABLE kimgroom CHANGE iname iname VARCHAR(30) NOT NULL;
-코드를 사용할 때는 주의가 필요합니다.더 자세한 컬럼 수정 문법은 MySQL 공식 문서를 참고해 주세요.
-*/"	58쪽 164번부터	
+					
 c언어 문법	https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%EB%AC%B8%EB%B2%95	6.10 포인터			
 	c언어 문법		"ptr = (자료형*)malloc(할당할 크기);
 
@@ -1716,14 +1373,7 @@ ptr = malloc (배열의 길이 * sizeof *ptr);
 
 free (ptr);"		
 					
-	자바 오류뜨는 이유 찾기 문제		"public class Main {
-    public static void main () {
-        final int groom = 3;
-        groom += 1;
-        System.out.print(groom);
-    }
-}
-//final을 붙이면 불변하는 변수라서 +=가 안됨"		
+					
 					
 	자바 		"6.2. 가변/불변 변수와 상수[편집]
 일반적으로 만들어진 변수는 가변 변수로, 수정 및 재대입이 가능하다.
@@ -1757,31 +1407,7 @@ String str = sc.nextLine();
 String str = IO.readln();
 자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."		
 	리눅스	https://takeknowledge.tistory.com/65#google_vignette	https://copy.sh/v86/?profile=linux26		
-	파이썬 직접	10중 for 문	"sum = 0
-min = 0
-for i in range (1, 8, 2) :
-    for j in range (1, 9) :
-        for k in range (11) :
-            for l in range (2, 11, 3) :
-                for m in range (3, 12, 2) :
-                    for n in range (2, 10, 1) :
-                        for o in range (10, 1, -1) :
-                            for p in range (0, 11, 2) :
-                                for q in range (0, 11) :
-                                    for r in range (1, 12, 4) :
-                                        min -= 1
-                                    sum += 1
-                                min -= 1
-                            sum += 1
-                        min -= 1
-                    sum += 1
-                min -= 1
-            sum += 1
-        min -= 1
-    sum += 1
-
-print(sum)
-print(min)"		
+					
 					
 					
 					
