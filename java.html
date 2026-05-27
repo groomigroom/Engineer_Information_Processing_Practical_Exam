@@ -32,8 +32,67 @@
 
 
 
+	
 
 
+-------------
+
+
+public class Main {
+
+    public static void swap(int[] arr, int idx1, int idx2){
+        int temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = temp; // ← (1): idx2
+    }
+
+    public static void Usort(int[] array, int length){
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] item = new int[] { 5, 3, 8, 1, 2, 7 };
+        int nx = 6; 
+        Usort(item, nx); //
+
+        for (int data : item) {
+            System.out.print(data + " ");
+            //1 2 3 5 7 8
+        }
+    }
+}
+/*
+답) 
+
+(1) idx2
+
+(2) nx*/
+/*
+item { 5, 3, 8, 1, 2, 7 }  nx == 6
+i == 0
+j == 0    j < 6 - 0 -1
+item { 3, 5, 8, 1, 2, 7 }
+
+j == 1
+item { 3, 5, 8, 1, 2, 7 }
+
+j == 2
+item { 3, 5, 1, 8, 2, 7 }
+
+j == 3
+item { 3, 5, 1, 2, 8, 7 }
+
+j == 4
+item { 3, 5, 1, 2, 7, 8 }
+
+이런식으로 반복하면 1 2 3 5 7 8
+*/
 
 
 -------------
