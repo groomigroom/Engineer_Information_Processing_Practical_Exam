@@ -104,7 +104,7 @@ public class Groom {
   }
 }"	"실행순서 맞추기 312
 567도 "		
-		파이썬		"def groomi1(l) :
+		파이썬	"def groomi1(l) :
     l2 = []
     for i in l :
         l2.append(i * 2)
@@ -137,6 +137,48 @@ groomi2(l)
 print(groomi3(l))
 
 groomi4(l)
+
+#함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
+"	"def groomi1(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return l2
+    
+def groomi2(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    print(l2)
+
+def groomi3(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return ''.join(str(i) for i in l2)
+#'.join()은 리스트나 튜플처럼 여러 개의 문자열 요소로 이루어진 데이터를 하나의 문자열로 결합할 때 사용하는 메서드입니다.
+#str(i) for i in l2는 리스트 l2에 있는 모든 요소 i를 문자열(String) 형태로 변환하는 반복문(for 문)을 의미합니다.
+    
+def groomi4(l) :
+    d = {}
+    for i in l :
+        d[i] = i * 2
+    print(d)
+#딕셔너리
+    
+l = [1, 2, 3]
+
+print(groomi1(l))
+#[2, 4, 6]
+
+groomi2(l)
+#[2, 4, 6]
+
+print(groomi3(l))
+#246
+
+groomi4(l)
+#{1: 2, 2: 4, 3: 6}
 
 #함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
 "	
@@ -220,7 +262,7 @@ public class Main {
         //C1.instance_instance();
     }
  
-}"	
+}"	강좌보기
 					
 				"#include <stdio.h>
 
@@ -235,19 +277,19 @@ int main() {
 					
 	자비	https://youtu.be/sSBD32-kzjU?si=y2avzB837QYai8Wk	"class Factorial2 {
     int Fact = 1;
-    public in CalFact(int n) {
+    public int CalFact(int n) {
         return (n > 0) ? n * CalFact(n - 1) : 1;
     }
-}"		
-	mysql		"BINARY
-BINARY 연산자는 뒤에 오는 문자열을 바이너리 문자열로 변환합니다.
-BINARY 연산자를 이용하면 문자가 아닌 바이트를 기준으로 하여 비교나 검색 작업을 수행할 수 있습니다.
-sqlSELECT BINARY 'a' = 'A'; -- false
-SELECT 'a' = 'A'; -- trueCopy
-위의 예제처럼 BINARY 연산자를 이용하면, 비교하려는 문자의 바이트 값을 비교합니다.
-따라서 문자 'a'와 'A'가 서로 다른 값으로 인식됩니다.
-
-CAST
+}
+public class Main {  
+    public static void main(String[] args) {
+        Factorial2 fac = new Factorial2();
+        int cc = fac.CalFact(5);
+        System.out.println(cc);
+    }
+}
+//5 * 4 * 3 * 2 * 1 == 120"		
+	mysql			"CAST
 CAST() 함수는 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
 이때 변환하고자 하는 타입을 AS 절을 이용하여 직접 명시할 수 있습니다.
 sqlCAST(expr AS type)Copy
@@ -264,26 +306,44 @@ NCHAR
 SIGNED [INTEGER]
 UNSIGNED [INTEGER]
 
-sqlSELECT 4 / '2',
-4 / 2,
-4 / CAST('2' AS UNSIGNED);
+select 4 / cast('2' as unsigned)
 
 /*
-실행 결과
-2
-2.0000
-2.0000
-*/Copy
-
-CONVERT
++---------------------------+
+| 4 / cast('2' as unsigned) |
++---------------------------+
+|                    2.0000 |
++---------------------------+
+*/
+"	
+	mysql			"CONVERT
 CONVERT() 함수도 CAST() 함수처럼 인수로 전달받은 값을 명시된 타입으로 변환하여 반환합니다.
 CONVERT() 함수는 두 번째 인수로 변환하고자 하는 타입을 직접 전달할 수 있습니다.
 sqlCONVERT(expr, type) == CAST(expr as type)
 CONVERT(expr USING transcoding_name)Copy
 USING 절은 서로 다른 문자셋(character set) 간의 데이터 변환을 위해 사용됩니다.
 이때 사용할 수 있는 타입은 CAST() 함수와 같습니다.
-sqlSELECT CONVERT('abc' USING utf8);
-출처: https://inpa.tistory.com/entry/MYSQL-📚-타입-변환-cast-convert [Inpa Dev 👨‍💻:티스토리]"		
+SELECT CONVERT('abc' USING utf8);
+
+select convert('12', signed);
+
+/*
++-----------------------+
+| convert('12', signed) |
++-----------------------+
+|                    12 |
++-----------------------+
+*/"	
+	mysql	"BINARY
+BINARY 연산자는 뒤에 오는 문자열을 바이너리 문자열로 변환합니다.
+BINARY 연산자를 이용하면 문자가 아닌 바이트를 기준으로 하여 비교나 검색 작업을 수행할 수 있습니다.
+sqlSELECT BINARY 'a' = 'A'; -- false
+SELECT 'a' = 'A'; -- trueCopy
+위의 예제처럼 BINARY 연산자를 이용하면, 비교하려는 문자의 바이트 값을 비교합니다.
+따라서 문자 'a'와 'A'가 서로 다른 값으로 인식됩니다.
+
+
+"			
 			"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
 코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."		
 			☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		
@@ -310,7 +370,134 @@ int main()
     return 0;
 }
 "	
-					
+		자바직접	"public class Main {
+    public static void main (String[] args) {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = 44;
+        if (a > b) {
+            b += 1;
+            if (a > c) {
+                c += 1;
+                if (a > d) {
+                    d += 1;
+                }
+                else if (a < d) {
+                    a += 1;
+                }
+                else {
+                    a += 12;
+                }
+            }
+            else if (c > a) {
+                a += 1;
+                if (a < d) {
+                    a += 1;
+                }
+                else if (a == d) {
+                    a += 1;
+                }
+                else {
+                    d += 21;
+                }
+            }
+            else {
+                a += 0;
+                if (a == d) {
+                    a += 1;
+                }
+                else if (a < d) {
+                    a += 1;
+                }
+                else {
+                    d += 1;
+                }
+            }
+        }
+        else if (a == b) {
+            a += 0;
+            if (a == c) {
+                c += 0;
+                if (a > d) {
+                    d += 1;
+                }
+                else if (a < d) {
+                    a += 1;
+                }
+                else {
+                    a += 12;
+                }
+            }
+            else if (a > c) {
+                c += 1;
+                if (a == d) {
+                    a += 1;
+                }
+                else if (a < d) {
+                    a += 1;
+                }
+                else {
+                    d += 1;
+                }
+            }
+            else {
+                a += 1;
+                if (a < d) {
+                    a += 1;
+                }
+                else if (a == d) {
+                    a += 1;
+                }
+                else {
+                    d += 21;
+                }
+            }
+        }
+        else {
+            a += 1;
+            if (a < c) {
+                a += 1;
+                if (a < d) {
+                    a += 1;
+                }
+                else if (a == d) {
+                    a += 1;
+                }
+                else {
+                    d += 21;
+                }
+            }
+            else if (a == c) {
+                c += 2;
+                if (a < d) {
+                    a += 12;
+                }
+                else if (a == d) {
+                    a += 11;
+                }
+                else {
+                    d += 121;
+                }
+            }
+            else {
+                c += 1;
+                if (a < d) {
+                    a += 11;
+                }
+                else if (a == d) {
+                    a += 122;
+                }
+                else {
+                    d += 211;
+                }
+            }
+        }
+        System.out.print(a + b + c + d);
+    }
+}
+//38번줄
+"	직접	
 		자바	https://share.google/P7AQNSz8pAcFQcnJY		
 		자바	https://youtu.be/YUinFIexEQ4?si=N9H1tVnowH0o2DLM	"public class Main {
     public static void main(String[] args) {
@@ -411,7 +598,7 @@ void main() {
         printf(""\n"");
     }
 }
-"	
+"	일러스트로 풀기
 		자바	"class EmployeeInfo{
     public int rank;
     EmployeeInfo(int rank){ this.rank = rank; }
@@ -442,7 +629,10 @@ class Person<T, S>{
 }
 public class Main {
     public static void main(String[] args) {
-        Person<EmployeeInfo, int> p1 = new Person<EmployeeInfo, int>(new EmployeeInfo(1), 1);
+        Integer id = new Integer(1);
+        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(new EmployeeInfo(1), id);
+        //print해보기
+        System.out.println
     }
 }
 
@@ -537,7 +727,12 @@ public class GenericDemo {
     }
 }"	
 		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	제네릭 강좌 보기
-		자바		https://youtu.be/9_5_bAVHd8c?si=MtcKf24T4KA9gjGk	
+		자바		https://youtu.be/9_5_bAVHd8c?si=MtcKf24T4KA9gjGk	"class Calculator {
+    static double PI = 3.14;
+    int left, right;
+    
+    public void 
+}"
 		c언어		https://youtu.be/RaUrw9YX7lY?si=cxam5qyshK4IvvLG	"#include<stdio.h>
 #include<stdlib.h>
 int main() {
@@ -724,7 +919,23 @@ copy.copy()
 - expr1은 조건식, expr1이 참(TRUE)이면 expr2, 그렇지 않으면expr3 반환• IFNULL(expr1, expr2)
 - expr1이 NULL이 아니면 expr1, NULL이면 expr2 반환
 - 기본으로 expr1 반환, 이 값이 NULL이면 두 번째 매개변수 반환• NULLIF(expr1, expr2)
-- expr1과 expr2 값이 같으면 NULL, 같지 않으면 expr1 반환"	
+- expr1과 expr2 값이 같으면 NULL, 같지 않으면 expr1 반환
+
+create table groomi (
+    ione integer,
+    itwo integer,
+    ithree integer,
+    ifour integer
+);
+
+insert into groomi
+values
+(1, 2, 1, null),
+(2, 3, 4, 9),
+(5, 6, 2, null);
+
+select if(ione > (itwo + ithree), 222, 333), ifnull(ifour, ithree), nullif(ione, ithree)
+from groomi;"	
 		c언어 나무위키 비트 연산자 부분	"#include <stdio.h>
 
 void printBit(int n){
@@ -955,7 +1166,18 @@ p = Person(""홍길동"", 25)
 del p.age 
 
 # 2. delattr()을 사용하여 속성 삭제
-delattr(p, ""name"") "	
+delattr(p, ""name"") 
+
+def groomi (self, age, name) :
+    self.name = name
+    self.age = age
+
+a = groomi(1, ""김구름"")
+print(a)
+
+delattr(a, ""age"")
+
+print(a)"	
 	파이썬			"bichon = dict(name = ""구름이"", house = ""광주광역시"")
 print(bichon)
 #출력값 {'name': '구름이', 'house': '광주광역시'}
@@ -1535,7 +1757,31 @@ String str = sc.nextLine();
 String str = IO.readln();
 자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."		
 	리눅스	https://takeknowledge.tistory.com/65#google_vignette	https://copy.sh/v86/?profile=linux26		
-					
+	파이썬 직접	10중 for 문	"sum = 0
+min = 0
+for i in range (1, 8, 2) :
+    for j in range (1, 9) :
+        for k in range (11) :
+            for l in range (2, 11, 3) :
+                for m in range (3, 12, 2) :
+                    for n in range (2, 10, 1) :
+                        for o in range (10, 1, -1) :
+                            for p in range (0, 11, 2) :
+                                for q in range (0, 11) :
+                                    for r in range (1, 12, 4) :
+                                        min -= 1
+                                    sum += 1
+                                min -= 1
+                            sum += 1
+                        min -= 1
+                    sum += 1
+                min -= 1
+            sum += 1
+        min -= 1
+    sum += 1
+
+print(sum)
+print(min)"		
 					
 					
 					
@@ -1616,9 +1862,46 @@ app.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
 "	https://nodejs.org/docs/latest/api/		
-자바스크립트	https://jnoony-code.tistory.com/19	룰렛			
+자바스크립트	https://jnoony-code.tistory.com/19	룰렛	"let normal = 1; //노말
+let fighting = 2; //격투
+let flying = 3; //비행
+let poison = 4; //독
+let land = 5; //땅
+let rock = 6; //바위
+let bug = 7; //벌레
+let ghost = 8; //고스트
+let steel = 9; //강철
+let fire = 10; //불꽃
+let water = 11; //물
+let grass = 12; //풀
+let electric = 13; //전기
+let esper = 14; //에스퍼
+let ice = 15; //얼음
+let dragon = 16; //드래곤
+let evil = 17; //악
+let fairy = 18; //페어리
+
+let one = ""user"";
+let two = ""com"";
+
+if (user == normal) {
+    if (com == normal || com == fighting || com == flying || com == poison || com == land || com == bug || com == fire || com == water || com == grass || com == electric || com == esper || com == ice || com == dragon || com == evil || com == fairy) {
+        데미지 4분의 1
+    }
+    else if (com == rock || com == steel) {
+    바위 강철은 8분의 1
+    }
+    else {//고스트
+    고스트는 0
+    }
+}
+else if (user == fighting) {
+노말, 얼음, 바위, 악, 강철에 2분의 1
+
+}"		
 					
 			학번		
 			A001		
 			A002		
 			A00		
+					
