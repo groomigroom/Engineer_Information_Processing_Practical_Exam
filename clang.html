@@ -37,6 +37,26 @@
 ------
 
 
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int *ptr;
+    ptr = (int *)malloc(sizeof(int));
+    if(ptr == NULL) {
+        printf("메모리 할당 안됨");
+    }
+    else {
+        *ptr = 123;
+        printf("%d", *ptr);
+        free(ptr);
+    }
+    //123
+}
+
+
+------
+
+
 #include <stdio.h>
 int add(int, int);
 int sub(int, int);
