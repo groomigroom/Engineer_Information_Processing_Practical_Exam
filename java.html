@@ -36,6 +36,23 @@
 
 
 
+-------------
+
+class Factorial2 {
+    int Fact = 1;
+    public int CalFact(int n) {
+        return (n > 0) ? n * CalFact(n - 1) : 1;
+    }
+}
+public class Main {  
+    public static void main(String[] args) {
+        Factorial2 fac = new Factorial2();
+        int cc = fac.CalFact(5);
+        System.out.println(cc);
+    }
+}
+//5 * 4 * 3 * 2 * 1 == 120
+
 
 -------------
 
