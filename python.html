@@ -34,6 +34,28 @@
 
 
 
+
+---------
+
+
+print(all([True, True, True]))
+#all()은 모든 요소가 True인지 판단하는 거 출력값 True
+
+print(all([True, False, True]))
+#False
+
+print(all([1, 2, 3, 4]))
+#True
+
+print(all([1, 2, 3, 0]))
+#False
+
+print(all(["김구름", "구름이", "구름씨"]))
+#True
+
+print(all(["김구름", "구름이", ""]))
+#False
+
 ---------
 
 print(any([True, True, True]))
