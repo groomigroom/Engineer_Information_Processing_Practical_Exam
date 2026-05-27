@@ -41,6 +41,33 @@
 
 
 
+
+
+---------
+
+
+
+"""
+max() 함수는 주어진 데이터(반복 가능한 객체)나 여러 인수 중 가장 큰 값을 반환하는 내장 함수입니다. 숫자뿐만 아니라 문자열 등 다양한 자료형에서 최댓값을 찾을 수 있습니다.기본적인 사용법은 다음과 같습니다.1. 여러 인수에서 최댓값 찾기pythonprint(max(1, 5, 3, 9, 2))  # 출력: 9
+코드를 사용할 때는 주의가 필요합니다.2. 리스트나 튜플 등에서 최댓값 찾기 (Iterable)pythonnumbers = [10, 50, 20, 40]
+print(max(numbers))  # 출력: 50
+코드를 사용할 때는 주의가 필요합니다.3. 문자열에서 최댓값 찾기문자열은 알파벳 순서(유니코드 값)를 기준으로 비교합니다.pythonprint(max("apple"))  # 출력: p (가장 뒤에 오는 알파벳)
+코드를 사용할 때는 주의가 필요합니다.4. key 매개변수 활용 (특정 조건으로 비교)문자열의 길이나, 딕셔너리의 특정 값을 기준으로 최댓값을 찾고 싶을 때 key 속성을 사용합니다.pythonwords = ["cat", "elephant", "dog"]
+print(max(words, key=len))  # 출력: elephant (길이가 가장 긴 문자열)
+코드를 사용할 때는 주의가 필요합니다.함수에 대한 더 자세한 기술 문서와 활용법은 파이썬 max함수 설명을 참고해 주세요.사이트 4개[python] 파이썬 max함수, min함수에 대해서 - 가면 뒤의 기록2020. 8. 21. — 2-1) python max 함수 설명. max 함수는 min 함수와 설명이 동일합니다. 똑같이 iterab...Tistory[Python] max(str, ...)에 대해서 - Legacy - 티스토리2020. 8. 25. — 보통 max()에 대해서 설명한다면 다음과 같다. 'iterable한 object를 받아서 그 중 최댓값을 ...티스토리max() / min()_ 자료 중 최대값, 최소값 - python_ Cheat - 위키독스2019. 4. 1. — max(iterable, *[, key, default]). iterable 에서 가장 큰 항목이나 두 개 ...위키독스
+"""
+
+numbers = [10, 20, 30, 40]
+print(max(numbers))
+#40
+print(max("kimgroom"))
+#r
+names = ["kimgroom", "groom", "mungmung"]
+print(max(names, key = len))
+#kimgroom
+
+
+
 ---------
 
 pythonstr_list = ['1', '2', '3', '4']
