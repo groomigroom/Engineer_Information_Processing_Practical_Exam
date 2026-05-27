@@ -32,6 +32,26 @@
 
 
 
+
+------
+
+
+#include <stdio.h>
+
+int max(int a, int b){
+    return a ^ ((a ^ b) & -(a < b));
+}
+
+int main () {
+    int a = max(2, 5);
+    printf("%d\n", a);
+    int b = max(11, 2);
+    printf("%d", b);
+    //5
+    //11
+}
+
+
 ------
 
 
