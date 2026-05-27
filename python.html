@@ -35,6 +35,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+---------
+
+
+def groomi1(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return l2
+    
+def groomi2(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    print(l2)
+
+def groomi3(l) :
+    l2 = []
+    for i in l :
+        l2.append(i * 2)
+    return ''.join(str(i) for i in l2)
+#'.join()은 리스트나 튜플처럼 여러 개의 문자열 요소로 이루어진 데이터를 하나의 문자열로 결합할 때 사용하는 메서드입니다.
+#str(i) for i in l2는 리스트 l2에 있는 모든 요소 i를 문자열(String) 형태로 변환하는 반복문(for 문)을 의미합니다.
+    
+def groomi4(l) :
+    d = {}
+    for i in l :
+        d[i] = i * 2
+    print(d)
+#딕셔너리
+    
+l = [1, 2, 3]
+
+print(groomi1(l))
+#[2, 4, 6]
+
+groomi2(l)
+#[2, 4, 6]
+
+print(groomi3(l))
+#246
+
+groomi4(l)
+#{1: 2, 2: 4, 3: 6}
+
+#함수에서 반환값이 없으면 함수 자체의 자료형 타입은 NoneType
+
+
+
 ---------
 
 
