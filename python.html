@@ -35,13 +35,28 @@
 
 
 
+---------
 
+"""
 
+compile()은 문자열 형태의 소스 코드를 파이썬 가상 머신이 실행할 수 있는 '코드 객체(Code Object)'로 미리 변환해 주는 내장 함수입니다. 동적으로 코드를 생성하고 실행할 때 주로 사용됩니다.주요 특징과 사용법은 다음과 같습니다.1. 주요 모드 (Mode)compile(source, filename, mode) 형태로 사용하며, mode 인자에 따라 변환 방식이 달라집니다.'exec': 여러 줄의 문장(Statements)을 컴파일할 때 사용합니다. (exec() 함수로 실행)'eval': 단일 표현식(Expression) 하나를 컴파일할 때 사용합니다. (eval() 함수로 실행)'single': 단일 대화형 문장을 컴파일할 때 사용합니다.2. 활용 예시python# 1. 'eval' 모드: 간단한 수식 계산
+code_str = "x + y"
+compiled_code = compile(code_str, "<string>", "eval")
 
+x, y = 10, 20
+result = eval(compiled_code)
+print(result) # 출력: 30
 
+# 2. 'exec' 모드: 여러 줄의 코드 블록 실행
+code_str2 = """
+for i in range(2):
+    print("파이썬 컴파일:", i)
+"""
+compiled_code2 = compile(code_str2, "<string>", "exec")
+exec(compiled_code2)
 
-
-
+"""
+    
 ---------
 
 
