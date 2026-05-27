@@ -36,9 +36,24 @@
 
 
 
+---------
 
 
+#frozenset()은 변경 불가능한(immutable) 집합 객체를 생성하는 내장 함수입니다. 일반적인 집합(set)과는 달리, 생성 후 요소를 추가하거나 삭제할 수 없습니다.주요 특징불변성(Immutability): 한 번 생성되면 내부 요소를 변경할 수 없어 안정성이 높습니다.해시 가능(Hashable): 변경이 불가능하므로 딕셔너리(dict)의 키(key)나 다른 set 또는 frozenset의 요소로 사용할 수 있습니다.활용 사례딕셔너리 키: 여러 개의 값을 집합 단위로 묶어 딕셔너리의 키로 활용할 때.값 보호: 데이터가 중간에 수정되는 것을 방지해야 하는 고정된 데이터를 다룰 때.집합 연산: 요소 추가/삭제는 불가능하지만, 교집합, 합집합, 차집합 등의 집합 연산은 그대로 지원합니다.💡 set vs frozenset구분setfrozenset요소 변경가능 (Mutable)불가능 (Immutable)딕셔너리 키사용 불가사용 가능예제 코드python# 리스트를 받아 frozenset 생성
+my_frozenset = frozenset([1, 2, 3, 3, 4])
+print(my_frozenset)  # frozenset({1, 2, 3, 4})
 
+# 값 추가 및 삭제 시도 (에러 발생)
+# my_frozenset.add(5)          # AttributeError
+# my_frozenset.remove(1)       # AttributeError
+
+# 집합 연산은 가능
+other_set = frozenset([3, 4, 5, 6])
+print(my_frozenset.intersection(other_set))
+#.intersection()은 두 개 이상의 세트(집합, set)에서 공통으로 숫자가 담긴 요소(교집합)를 찾는 메서드입니다.
+#frozenset과 일반 set을 교집합하면 메서드를 먼저 호출한 기준(왼쪽 객체)의 자료형으로 결과가 반환되기 때문입니다.
+
+#frozenset({3, 4})
 
 
 
