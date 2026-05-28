@@ -31,6 +31,37 @@
 
 
 
+
+
+
+------
+
+
+#include <stdio.h>
+int main(void)
+{
+    int x = 10;
+    int *px = &x;
+    int **ppx = &px;
+    
+    *px = 20;
+    printf("x = %d\n", x);
+    printf("*px = %d\n", *px);
+    //20
+    //20
+    
+    **ppx = 60;
+    printf("x = %d\n", x);
+    printf("*px = %d\n", *px);
+    printf("**ppx = %d\n", **ppx);
+    //60 3개
+    
+    
+    return 0;
+}
+
+
+
 ------
 
 
