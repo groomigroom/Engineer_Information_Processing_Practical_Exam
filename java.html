@@ -35,6 +35,41 @@
 
 
 
+
+		
+
+
+
+		
+-------------
+
+abstract class A {
+    //추상클래스는 반드시 상속을 해서 사용을 해야함.
+    public abstract int b();
+    public abstract int c();
+    public void d() {
+        System.out.println("world");
+    }
+}
+class B extends A {
+    public int b() {
+        return 1;
+    }
+    
+    public int c() {
+        System.out.println("groom");
+        return 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+        System.out.println(obj.b());
+    }
+}
+//1
+
 		
 -------------
 class GenericClass<T> {
