@@ -34,6 +34,144 @@
 
 
 
+
+
+
+
+
+
+
+---------
+
+
+"""
+issubclass()는 어떤 클래스가 다른 클래스의 자식 클래스(하위 클래스)인지 검사하는 내장 함수입니다. 상속 관계를 확인하여 True 또는 False를 반환합니다.1. 기본 문법pythonissubclass(class, classinfo)
+코드를 사용할 때는 주의가 필요합니다.class: 검사할 대상 클래스classinfo: 기준이 되는 부모 클래스 (또는 클래스들의 튜플)2. 주요 특징상속 관계 확인: class가 classinfo를 직접 또는 간접적으로 상속받았다면 True를 반환합니다.자기 자신 검사: 파이썬에서는 자기 자신을 검사해도 True를 반환합니다.튜플 지원: classinfo 자리에 클래스들의 tuple을 전달하면, 그중 하나라도 상속 관계에 만족할 경우 True를 반환합니다.3. 예제 코드python
+"""
+
+class Parent:
+    pass
+
+class Child(Parent):
+    pass
+
+class Other:
+    pass
+
+# 1. 자식 클래스가 부모 클래스를 상속받은 경우
+print(issubclass(Child, Parent))  # True
+
+# 2. 상속 관계가 아닌 경우
+print(issubclass(Child, Other))   # False
+
+# 3. 자기 자신을 검사하는 경우
+print(issubclass(Parent, Parent)) # True
+
+# 4. 튜플을 활용하여 여러 클래스 중 하나라도 상속받았는지 확인하는 경우
+print(issubclass(Child, (Other, Parent))) # True
+
+
+
+---------
+
+
+#isinstance()는 특정 객체(변수 등)가 주어진 클래스(데이터 타입)의 인스턴스인지 검사하는 내장 함수입니다.1. 기본 개념문법: isinstance(객체, 클래스/타입)반환값: 객체가 해당 클래스의 인스턴스이면 True, 아니면 False를 반환합니다.상속 지원: 검사 대상이 하위 클래스(자식 클래스)이거나 튜플 형태의 여러 타입((int, float, str)) 중 하나에 해당해도 True를 반환하는 유연한 검사가 가능합니다.2. 활용 예시python
+
+num = 10
+name = "파이썬"
+
+# 기본 타입 검사
+print(isinstance(num, int))       # True
+print(isinstance(name, str))      # True
+print(isinstance(num, str))      # False
+
+
+
+# 다중 타입 검사 (튜플 형태 사용)
+# 튜플에 포함된 타입 중 하나라도 일치하면 True를 반환합니다.
+print(isinstance(num, (int, float))) # True
+#코드를 사용할 때는 주의가 필요합니다.3. isinstance vs type객체의 타입을 확인할 때 type() 함수도 사용할 수 있지만, 상속 관계를 고려할 때는 isinstance()를 사용하는 것이 권장됩니다.type(): 객체가 정확히 특정 클래스인지만 엄격하게 검사합니다.isinstance(): 객체의 부모 클래스(상속)까지 고려하여 검사합니다.
+
+---------
+
+
+#hash()는 임의의 데이터를 고정된 길이의 정수값(해시값)으로 변환해 주는 내장 함수입니다.이 함수는 데이터를 빠르게 탐색하거나(딕셔너리, 세트 등), 데이터의 동일성을 비교하는 등 다양한 목적을 위해 사용됩니다.💡 hash()의 주요 특징빠른 데이터 탐색 (해시 테이블): 딕셔너리(dict)나 세트(set)는 내부적으로 데이터를 저장할 때 hash() 값을 인덱스로 사용합니다. 데이터가 많아도 해시값을 통해 즉시 위치를 찾으므로 검색 속도가 매우 빠릅니다.고정된 길이의 정수 반환: 입력값의 크기에 상관없이 항상 정수형 해시값을 반환합니다.단방향성: 출력된 해시값을 보고 원래의 데이터를 역산하는 것은 불가능합니다.🔒 해시 가능(Hashable) 객체 vs 불가능(Unhashable) 객체해시 가능한 객체 (Hashable): 값이 변하지 않는 불변(Immutable) 객체만 hash() 함수를 사용할 수 있습니다.예: 문자열(str), 숫자(int, float), 튜플(tuple) 등해시 불가능한 객체 (Unhashable): 값이 변경될 수 있는 가변(Mutable) 객체는 에러(TypeError)가 발생합니다. 값이 바뀌면 해시값도 달라져야 하는데, 자료구조 전체가 엉망이 될 수 있기 때문입니다.예: 리스트(list), 딕셔너리(dict), 세트(set) 등💻 사용 예시python# 문자열의 해시값 구하기
+print(hash("hello"))
+# 출력 예시: -9223372036854775808 (실행할 때마다 달라질 수 있음)
+
+# 정수의 해시값 (정수 자체는 항상 같은 값을 가짐)
+print(hash(100))
+# 출력: 100
+
+# 리스트는 Unhashable이므로 에러 발생
+# print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'
+
+---------
+
+
+"""
+hasattr()은 파이썬의 내장 함수로, 특정 객체(object)가 지정된 이름의 속성(attribute)이나 메서드를 가지고 있는지 확인하는 역할을 합니다.1. 기본 문법 및 동작 방식pythonhasattr(object, name)
+코드를 사용할 때는 주의가 필요합니다.object: 확인할 객체나 클래스name: 찾고자 하는 속성이나 메서드의 이름 (문자열 형태)반환값: 속성이 존재하면 True, 존재하지 않으면 False를 반환2. 사용 예시python
+"""
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+person = Person("김구름")
+
+# 'name' 속성이 있는지 확인
+print(hasattr(person, "name"))  # 출력: True
+
+# 'age' 속성이 있는지 확인
+print(hasattr(person, "age"))   # 출력: False
+"""
+코드를 사용할 때는 주의가 필요합니다.3. 주요 활용 목적오류 방지: 객체가 특정 속성이나 메서드를 가졌는지 확실하지 않을 때, hasattr()로 먼저 검사하여 AttributeError 예외를 방지할 수 있습니다.유연한 처리: getattr()을 함께 사용하여 객체에 속성이 존재할 때만 안전하게 해당 값을 가져오는 방식으로 자주 활용됩니다.
+"""
+
+---------
+
+
+"""
+"id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드python
+"""
+a = 10
+b = 10
+
+print(id(a))  # 예: 140728987654321
+print(id(b))  # 예: 140728987654321 (a와 동일한 주소)
+
+b = 20
+print(id(b))  # 예: 140728987654400 (새로운 값 할당으로 주소 변경)
+"""
+코드를 사용할 때는 주의가 필요합니다.이 함수는 파이썬이 데이터를 메모리에 어떻게 저장하고 관리하는지(객체 모델) 이해하거나 메모리 누수 등의 버그를 디버깅할 때 주로 활용됩니"
+"""
+
+
+
+---------
+
+
+"""
+globals()는 현재 모듈의 전역 변수(Global Variable) 및 함수들의 이름과 값을 딕셔너리(Dictionary) 형태로 
+반환하는 파이썬 내장 함수입니다.핵심 요약기능: 전역 네임스페이스(Namespace)에 접근하여 모든 전역 변수를 조회하거나 
+수정할 수 있습니다.반환값: { '변수명': 값 } 형태의 딕셔너리.주요 활용 방법1. 전역 변수 전체 확인현재 선언된 모든 전역 변수를 한눈에 확인하거나 필터링할 수 있습니다.
+"""
+a = 10
+b = 'hello'
+
+print(globals()) 
+# {'a': 10, 'b': 'hello', ... (기본 내장 변수들 포함) }
+"""
+코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 생성 및 접근문자열을 이용해 전역 변수를 동적으로 만들거나 값을 가져올 수 있습니다.python# 동적 변수 생성
+"""
+globals()['target_variable'] = 100
+print(target_variable) # 출력: 100
+
+# 동적 변수 값 조회
+var_name = 'target_variable'
+print(globals()[var_name]) # 출력: 100
+
+
 ---------
 
 #getattr()은 객체(Object)에서 특정 속성(변수나 메서드)의 값을 동적으로 가져올 때 사용하는 내장 함수입니다.1. 기본 구문getattr(object, name[, default])object: 속성을 가져올 객체name: 가져올 속성의 이름을 나타내는 문자열default (선택): 해당 속성이 없을 때 반환할 기본값. 이 값이 없으면 속성 에러(AttributeError)가 발생합니다.2. 예제 코드pythonclass Person:
