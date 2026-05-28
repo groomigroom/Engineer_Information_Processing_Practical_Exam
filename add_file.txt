@@ -19,18 +19,7 @@ print(mv[2:5])  # <memory at 0x...>
 # 변경 시 원본 데이터도 함께 수정됨
 mv[2:5] = b'XYZ'
 print(data)     # b'ABXYZFGHIJ'
-코드를 사용할 때는 주의가 필요합니다.3. 유용한 활용 분야대용량 파일 I/O 및 네트워크 스트리밍: 대형 파일을 읽거나 네트워크로 패킷을 주고받을 때 버퍼를 효율적으로 처리.C 언어 라이브러리 연동: NumPy 배열이나 C 언어 수준의 구조체 데이터와 데이터를 주고받을 때 사용."		[Java] Generic 정리 https://share.google/u49sksodIEymYDppz		"흐름 제어 함수
-• CASE - 구문 1
-CASE value WHEN compare_value1 THEN result1
-WHEN compare_value2 THEN result2
-…
-ELSE result
-END …; - 구문 2
-CASE WHEN 조건1 THEN result1
-WHEN 조건2 THEN result2
-...
-ELSE result
-END ...;"		"이거랑 아래꺼 리눅스
+코드를 사용할 때는 주의가 필요합니다.3. 유용한 활용 분야대용량 파일 I/O 및 네트워크 스트리밍: 대형 파일을 읽거나 네트워크로 패킷을 주고받을 때 버퍼를 효율적으로 처리.C 언어 라이브러리 연동: NumPy 배열이나 C 언어 수준의 구조체 데이터와 데이터를 주고받을 때 사용."						"이거랑 아래꺼 리눅스
 https://copy.sh/v86/?profile=linux26"																	
 "6.5.2. wchar_t[편집]
 과거 C언어의 char 자료형이 ASCII 인코딩만 지원함으로 인해서 다국어 입출력이 불가능함을 해결하기 위하여 등장한 문자 자료형이다. 와이드 캐릭터 방식으로 인코딩되며 윈도우의 경우에는 UCS-2 인코딩을 통해 한 글자당 기본 2바이트+a, 유닉스 및 리눅스의 경우에는 UCS-4 인코딩을 통해 한글자 당 기본 4바이트로 인코딩된다.
@@ -51,36 +40,7 @@ int main()
         wscanf(L""%s"", a);
         wprintf(L""%s"", a);
         return 0;
-}"		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0		"""8. 입력[편집]
-표준 입력 스트림(System.in)에서 입력 받는 방법이다.
-
-int i = System.in.read();
-가장 기본적인 입력이다. 바이트 하나를 읽는다. 예를 들어 """"ABCn""""을 입력하면 A의 아스키코드인 65를 반환한다. 이후 한번 더 read()를 호출하면 B의 아스키코드인 66이 반환되는 식. 한글의 경우 3바이트로 이루어져 있어서 한번으로는 완전히 읽을 수 없다. 매우 불편하기에 특수한 경우가 아니면 아래 방식들을 사용하는 편.
-
-BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-String str = br.readLine();
-Scanner 추가 전에 주로 사용된 방식이다. 속도가 Scanner보다 빨라서 사용된다.
-
-Scanner sc = new Scanner(System.in);
-String str = sc.nextLine();
-자바 24 까지 간단히 사용되는 입력 방식이다. sc.nextInt(); 같은 메서드로 바로 타입을 바꿀 수 있다.[17]
-
-String str = IO.readln();
-자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."""		"SELECT 
-    user_id,
-    total_amount,
-    CASE 
-        WHEN total_amount >= 100000 THEN 'VIP'
-        WHEN total_amount >= 50000 THEN '우수고객'
-        ELSE '일반고객'
-    END AS customer_grade
-FROM users;
-
-CASE 
-    WHEN 조건1 THEN 결과값1
-    WHEN 조건2 THEN 결과값2
-    ELSE 결과값3
-END AS 새로운_컬럼명"		https://takeknowledge.tistory.com/65#google_vignette																	
+}"		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0						https://takeknowledge.tistory.com/65#google_vignette																	
 "6.5.3. TCHAR[편집]
 Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
 UNICODE 매크로가 활성화되면 매크로로 TCHAR은 wchar_t로 선언되며, 선언되지 않으면 char로 선언되게 된다. _T(x) x 매크로도 마찬가지로 선언되면 L로, 선언되지 않으면 제거된다.
@@ -129,7 +89,50 @@ int wmain(int argc, wchar_t **argv)
         wprintf(L""%s"", a);
         return 0;
 }
-"		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE		"abstract class Info{
+"		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE																							
+"6.5.4. char16_t[편집]
+UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
+
+u""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
+#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+	char16_t a[]=u""나무위키 프로그래밍 프로젝트"";
+	return 0;
+}"		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt		"""8. 입력[편집]
+표준 입력 스트림(System.in)에서 입력 받는 방법이다.
+
+int i = System.in.read();
+가장 기본적인 입력이다. 바이트 하나를 읽는다. 예를 들어 """"ABCn""""을 입력하면 A의 아스키코드인 65를 반환한다. 이후 한번 더 read()를 호출하면 B의 아스키코드인 66이 반환되는 식. 한글의 경우 3바이트로 이루어져 있어서 한번으로는 완전히 읽을 수 없다. 매우 불편하기에 특수한 경우가 아니면 아래 방식들을 사용하는 편.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String str = br.readLine();
+Scanner 추가 전에 주로 사용된 방식이다. 속도가 Scanner보다 빨라서 사용된다.
+
+Scanner sc = new Scanner(System.in);
+String str = sc.nextLine();
+자바 24 까지 간단히 사용되는 입력 방식이다. sc.nextInt(); 같은 메서드로 바로 타입을 바꿀 수 있다.[17]
+
+String str = IO.readln();
+자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."""																					
+"6.5.5. char32_t[편집]
+UTF-32 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 4바이트로 저장되고 컴파일러에 의존적이지 않다.
+
+U""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
+#include <stdio.h>
+#include <uchar.h>
+
+int main()
+{
+        char32_t a[]=U""안녕, 나무위키."";
+        return 0;
+}
+"		"text = 'a'
+print(ascii(text))
+#ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
+#출력값 'a'"		"abstract class Info{
     public abstract int getLevel();
 }
 class EmployeeInfo extends Info{
@@ -149,18 +152,14 @@ public class GenericDemo {
         Person<String> p2 = new Person<String>(""부장"");
     }
 }"																					
-"6.5.4. char16_t[편집]
-UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
+"6.7. register[편집]
+변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
+register <자료형> <변수 이름> = <넣을 값>;
+register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
 
-u""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
-#include <stdio.h>
-#include <uchar.h>
+CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
 
-int main()
-{
-	char16_t a[]=u""나무위키 프로그래밍 프로젝트"";
-	return 0;
-}"		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt		"interface Info{
+C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		breakpoint() 사용법		"interface Info{
     int getLevel();
 }
 class EmployeeInfo implements Info{
@@ -180,31 +179,19 @@ public class GenericDemo {
         Person<String> p2 = new Person<String>(""부장"");
     }
 }"																					
-"6.5.5. char32_t[편집]
-UTF-32 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 4바이트로 저장되고 컴파일러에 의존적이지 않다.
+		bytearray() 사용법		"super - 하한 경계
 
-U""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
-#include <stdio.h>
-#include <uchar.h>
+하한 경계 역시 두 가지 구조로 나누어 살펴보겠습니다. 큰 틀은 상한 경계와 같으나 제네릭 제한의 기준이 다르다고 보면 되겠습니다.
 
-int main()
-{
-        char32_t a[]=U""안녕, 나무위키."";
-        return 0;
-}
-"		"text = 'a'
-print(ascii(text))
-#ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
-#출력값 'a'"																							
-"6.7. register[편집]
-변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
-register <자료형> <변수 이름> = <넣을 값>;
-register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
+하한 경계란 아래 예시에서 T타입과 T타입이 상속받은 부모 멤버만 가능하도록 하한선을 두는 것을 의미합니다.
 
-CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
+<E super T> : E는 T 타입 자신과, T 타입이 상속받은 부모 멤버가 될 수 있다. 찾아보니 super의 경우 참조 타입을 지정하여 사용할 수 없고, 와일드 카드와 함께 사용해야 합니다. 
+<? super T> : ? 타입은 T 타입 자신과 T 타입이 상속받은 부모 멤버가 될 수 있으나, 와일드 카드의 특성상 <?> 가 특정 타입으로 변환되지는 않는다. 
+ 
 
-C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		breakpoint() 사용법																							
-		bytearray() 사용법																							
+● ? - 와일드 카드
+
+  와일드 카드 <?>는 타입의 제한을 두지 않는 것을 의미합니다. 자바의 최상위 클래스인 Object의 상한경계를 의미하는 <? extends Object> 와 동일합니다. 즉 타입이 어떤 것이든 올 수 있다는 개념으로 보시면 될 것 같습니다. (any type의 의미보다는 unknown - 알수없음 에 가까운 것 같습니다.)"																					
 		bytes()																							
 		"강좌찾기
 @classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
@@ -280,57 +267,6 @@ print(list(result))  # [2, 4, 6]
 result = list(filter(lambda x: x % 2 == 0, numbers))
 
 print(result)  # [2, 4, 6]"																							
-		"""""""
-globals()는 현재 모듈의 전역 변수(Global Variable) 및 함수들의 이름과 값을 딕셔너리(Dictionary) 형태로 
-반환하는 파이썬 내장 함수입니다.핵심 요약기능: 전역 네임스페이스(Namespace)에 접근하여 모든 전역 변수를 조회하거나 
-수정할 수 있습니다.반환값: { '변수명': 값 } 형태의 딕셔너리.주요 활용 방법1. 전역 변수 전체 확인현재 선언된 모든 전역 변수를 한눈에 확인하거나 필터링할 수 있습니다.
-""""""
-a = 10
-b = 'hello'
-
-print(globals()) 
-# {'a': 10, 'b': 'hello', ... (기본 내장 변수들 포함) }
-""""""
-코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 생성 및 접근문자열을 이용해 전역 변수를 동적으로 만들거나 값을 가져올 수 있습니다.python# 동적 변수 생성
-""""""
-globals()['target_variable'] = 100
-print(target_variable) # 출력: 100
-
-# 동적 변수 값 조회
-var_name = 'target_variable'
-print(globals()[var_name]) # 출력: 100"																							
-		"""""""
-""id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드python
-""""""
-a = 10
-b = 10
-
-print(id(a))  # 예: 140728987654321
-print(id(b))  # 예: 140728987654321 (a와 동일한 주소)
-
-b = 20
-print(id(b))  # 예: 140728987654400 (새로운 값 할당으로 주소 변경)
-""""""
-코드를 사용할 때는 주의가 필요합니다.이 함수는 파이썬이 데이터를 메모리에 어떻게 저장하고 관리하는지(객체 모델) 이해하거나 메모리 누수 등의 버그를 디버깅할 때 주로 활용됩니""
-"""""""																							
-		"""""""
-hasattr()은 파이썬의 내장 함수로, 특정 객체(object)가 지정된 이름의 속성(attribute)이나 메서드를 가지고 있는지 확인하는 역할을 합니다.1. 기본 문법 및 동작 방식pythonhasattr(object, name)
-코드를 사용할 때는 주의가 필요합니다.object: 확인할 객체나 클래스name: 찾고자 하는 속성이나 메서드의 이름 (문자열 형태)반환값: 속성이 존재하면 True, 존재하지 않으면 False를 반환2. 사용 예시python
-""""""
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-person = Person(""김구름"")
-
-# 'name' 속성이 있는지 확인
-print(hasattr(person, ""name""))  # 출력: True
-
-# 'age' 속성이 있는지 확인
-print(hasattr(person, ""age""))   # 출력: False
-""""""
-코드를 사용할 때는 주의가 필요합니다.3. 주요 활용 목적오류 방지: 객체가 특정 속성이나 메서드를 가졌는지 확실하지 않을 때, hasattr()로 먼저 검사하여 AttributeError 예외를 방지할 수 있습니다.유연한 처리: getattr()을 함께 사용하여 객체에 속성이 존재할 때만 안전하게 해당 값을 가져오는 방식으로 자주 활용됩니다.
-"""""""																							
 		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
 async def my_async_generator():
@@ -353,58 +289,6 @@ async def main():
 
 asyncio.run(main())
 코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."																							
-		"#hash()는 임의의 데이터를 고정된 길이의 정수값(해시값)으로 변환해 주는 내장 함수입니다.이 함수는 데이터를 빠르게 탐색하거나(딕셔너리, 세트 등), 데이터의 동일성을 비교하는 등 다양한 목적을 위해 사용됩니다.💡 hash()의 주요 특징빠른 데이터 탐색 (해시 테이블): 딕셔너리(dict)나 세트(set)는 내부적으로 데이터를 저장할 때 hash() 값을 인덱스로 사용합니다. 데이터가 많아도 해시값을 통해 즉시 위치를 찾으므로 검색 속도가 매우 빠릅니다.고정된 길이의 정수 반환: 입력값의 크기에 상관없이 항상 정수형 해시값을 반환합니다.단방향성: 출력된 해시값을 보고 원래의 데이터를 역산하는 것은 불가능합니다.🔒 해시 가능(Hashable) 객체 vs 불가능(Unhashable) 객체해시 가능한 객체 (Hashable): 값이 변하지 않는 불변(Immutable) 객체만 hash() 함수를 사용할 수 있습니다.예: 문자열(str), 숫자(int, float), 튜플(tuple) 등해시 불가능한 객체 (Unhashable): 값이 변경될 수 있는 가변(Mutable) 객체는 에러(TypeError)가 발생합니다. 값이 바뀌면 해시값도 달라져야 하는데, 자료구조 전체가 엉망이 될 수 있기 때문입니다.예: 리스트(list), 딕셔너리(dict), 세트(set) 등💻 사용 예시python# 문자열의 해시값 구하기
-print(hash(""hello""))
-# 출력 예시: -9223372036854775808 (실행할 때마다 달라질 수 있음)
-
-# 정수의 해시값 (정수 자체는 항상 같은 값을 가짐)
-print(hash(100))
-# 출력: 100
-
-# 리스트는 Unhashable이므로 에러 발생
-# print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'"																							
-		"#isinstance()는 특정 객체(변수 등)가 주어진 클래스(데이터 타입)의 인스턴스인지 검사하는 내장 함수입니다.1. 기본 개념문법: isinstance(객체, 클래스/타입)반환값: 객체가 해당 클래스의 인스턴스이면 True, 아니면 False를 반환합니다.상속 지원: 검사 대상이 하위 클래스(자식 클래스)이거나 튜플 형태의 여러 타입((int, float, str)) 중 하나에 해당해도 True를 반환하는 유연한 검사가 가능합니다.2. 활용 예시python
-
-num = 10
-name = ""파이썬""
-
-# 기본 타입 검사
-print(isinstance(num, int))       # True
-print(isinstance(name, str))      # True
-print(isinstance(num, str))      # False
-
-
-
-# 다중 타입 검사 (튜플 형태 사용)
-# 튜플에 포함된 타입 중 하나라도 일치하면 True를 반환합니다.
-print(isinstance(num, (int, float))) # True
-#코드를 사용할 때는 주의가 필요합니다.3. isinstance vs type객체의 타입을 확인할 때 type() 함수도 사용할 수 있지만, 상속 관계를 고려할 때는 isinstance()를 사용하는 것이 권장됩니다.type(): 객체가 정확히 특정 클래스인지만 엄격하게 검사합니다.isinstance(): 객체의 부모 클래스(상속)까지 고려하여 검사합니다."																							
-		"""""""
-issubclass()는 어떤 클래스가 다른 클래스의 자식 클래스(하위 클래스)인지 검사하는 내장 함수입니다. 상속 관계를 확인하여 True 또는 False를 반환합니다.1. 기본 문법pythonissubclass(class, classinfo)
-코드를 사용할 때는 주의가 필요합니다.class: 검사할 대상 클래스classinfo: 기준이 되는 부모 클래스 (또는 클래스들의 튜플)2. 주요 특징상속 관계 확인: class가 classinfo를 직접 또는 간접적으로 상속받았다면 True를 반환합니다.자기 자신 검사: 파이썬에서는 자기 자신을 검사해도 True를 반환합니다.튜플 지원: classinfo 자리에 클래스들의 tuple을 전달하면, 그중 하나라도 상속 관계에 만족할 경우 True를 반환합니다.3. 예제 코드python
-""""""
-
-class Parent:
-    pass
-
-class Child(Parent):
-    pass
-
-class Other:
-    pass
-
-# 1. 자식 클래스가 부모 클래스를 상속받은 경우
-print(issubclass(Child, Parent))  # True
-
-# 2. 상속 관계가 아닌 경우
-print(issubclass(Child, Other))   # False
-
-# 3. 자기 자신을 검사하는 경우
-print(issubclass(Parent, Parent)) # True
-
-# 4. 튜플을 활용하여 여러 클래스 중 하나라도 상속받았는지 확인하는 경우
-print(issubclass(Child, (Other, Parent))) # True"																							
-																									
 		파이썬 help()																							
 		https://m.blog.naver.com/regenesis90/222342030086																							
 		"iter()
@@ -513,6 +397,15 @@ x = [1, 2, []]
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
 https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"																							
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
 																									
 																									
 																									
