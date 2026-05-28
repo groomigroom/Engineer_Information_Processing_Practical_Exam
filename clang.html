@@ -36,6 +36,31 @@
 
 
 
+
+------
+
+
+#include <stdio.h>
+
+void printGroom(void) {
+    printf("구름이 안녕\n");
+}
+
+int main(void) {
+    void (*funcPtr)(void) = &printGroom; //&는 옵션
+    (*funcPtr)();
+    return 0;
+}
+
+/*
+출력값
+구름이 안녕
+
+함수 포인터를 사용할 때 선언문을 빼면 * 또는 &을 붙여 줄 필요가 없다. funcPtr()나 (*funcPtr)()나 (****funcPtr)()나 다 똑같다.
+&&printNamuWiki는 컴파일 오류를 일으킨다. c언어에서 주소값의 주소값을 직접 구하는 것은 문법에 어긋나기 때문.
+*/
+
+
 ------
 
 
