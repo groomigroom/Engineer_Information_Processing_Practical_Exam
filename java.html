@@ -29,9 +29,33 @@
 
 
 
+		
 
 
+-------------
 
+class EmployeeInfo{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+}
+class Person<T, S>{
+    public T info;
+    public S id;
+    Person(T info, S id){ 
+        this.info = info;
+        this.id = id;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        EmployeeInfo e = new EmployeeInfo(1);
+        Integer i = new Integer(10);
+        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, i);
+        System.out.println(p1.id.intValue());
+        //Integer, Double, Long 같은 래퍼(Wrapper) 객체에 포함된 값을 기본형(Primitive) int 타입으로 변환(추출)하는 메서드입니다. 주로 객체를 기본형으로 바꾸는 언박싱(Unboxing)에 사용됩니다.
+        //10
+    }
+}
 
 
 -------------
