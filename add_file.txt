@@ -1,5 +1,13 @@
-c언어		파이썬		자바		sql		이론
-어려운 C언어 포인터 예제 4개로 마스터하기 https://share.google/sYgpqU2Ao20Ea5x7h		"memoryview()는 데이터 복사 없이 메모리 버퍼를 직접 조작할 수 있게 해주는 내장 함수입니다. 대용량 데이터를 다룰 때 메모리 사용량을 획기적으로 줄이고 처리 속도를 높이는 데 사용됩니다.1. 주요 특징 및 핵심 의미데이터 복사(Copy) 방지: 일반적인 파이썬 객체를 슬라이싱하면 메모리에 새로운 객체가 생성되지만, memoryview는 원본 메모리의 특정 위치를 가리키는 뷰(View)만 생성합니다.양방향 조작: memoryview를 통해 데이터를 수정하면 원본 객체의 데이터도 함께 변경됩니다.지원 대상: 바이트 버퍼 프로토콜을 지원하는 객체(bytes, bytearray, array.array 등)만 사용할 수 있습니다.2. 메모리 절약 효과 (예시)큰 크기의 바이너리 데이터를 잘라서 처리해야 할 때, 데이터를 복사하지 않고 주소만 참조하므로 메모리 낭비와 불필요한 연산을 막을 수 있습니다.python# bytearray 객체 생성
+c언어		파이썬		자바		sql		이론																	
+"7.1.1. wmain 함수[편집]
+Windows CRT에서만 사용되는 main 함수의 유니코드 버전이다. 차이점은 argv, evp 배열의 자료형이 wchar_t*인 점만 빼면 main 함수와 동일하다.
+
+참고로 유니코드 링커 옵션이 지정되어 있을 경우 wmain 함수만을 사용하지만 main 함수만 있을 경우 컴파일 과정에서 wmain 함수가 자동으로 생성되며 해당 wmain 함수 내부에서 main 함수를 호출하므로 문제가 없다.
+int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
+{
+        [함수 내용]
+        return 0;
+}"		"memoryview()는 데이터 복사 없이 메모리 버퍼를 직접 조작할 수 있게 해주는 내장 함수입니다. 대용량 데이터를 다룰 때 메모리 사용량을 획기적으로 줄이고 처리 속도를 높이는 데 사용됩니다.1. 주요 특징 및 핵심 의미데이터 복사(Copy) 방지: 일반적인 파이썬 객체를 슬라이싱하면 메모리에 새로운 객체가 생성되지만, memoryview는 원본 메모리의 특정 위치를 가리키는 뷰(View)만 생성합니다.양방향 조작: memoryview를 통해 데이터를 수정하면 원본 객체의 데이터도 함께 변경됩니다.지원 대상: 바이트 버퍼 프로토콜을 지원하는 객체(bytes, bytearray, array.array 등)만 사용할 수 있습니다.2. 메모리 절약 효과 (예시)큰 크기의 바이너리 데이터를 잘라서 처리해야 할 때, 데이터를 복사하지 않고 주소만 참조하므로 메모리 낭비와 불필요한 연산을 막을 수 있습니다.python# bytearray 객체 생성
 data = bytearray(b'ABCDEFGHIJ')
 
 # memoryview 생성
@@ -23,8 +31,27 @@ WHEN 조건2 THEN result2
 ...
 ELSE result
 END ...;"		"이거랑 아래꺼 리눅스
-https://copy.sh/v86/?profile=linux26"
-https://share.google/sYgpqU2Ao20Ea5x7h		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0		"""8. 입력[편집]
+https://copy.sh/v86/?profile=linux26"																	
+"6.5.2. wchar_t[편집]
+과거 C언어의 char 자료형이 ASCII 인코딩만 지원함으로 인해서 다국어 입출력이 불가능함을 해결하기 위하여 등장한 문자 자료형이다. 와이드 캐릭터 방식으로 인코딩되며 윈도우의 경우에는 UCS-2 인코딩을 통해 한 글자당 기본 2바이트+a, 유닉스 및 리눅스의 경우에는 UCS-4 인코딩을 통해 한글자 당 기본 4바이트로 인코딩된다.
+
+C11 표준으로 u8 리터럴과 char16_t, char32_t 자료형이 나오기 전까지는 다국어 호환성이 뛰어나기 때문에 어느 정도 쓰였다. 그러나 플랫폼 의존적인 자료형이기 때문에 환경에 따라서 인코딩 결과가 달라진다는 점으로 인해 많은 개발자들이 사용하기 꺼리는 자료형이다.
+
+printf / scanf 함수로 출력할 수 없으며 wprintf / wscanf 함수를 사용하여 출력한다. 그런데 로컬 설정의 영향을 받기에 영문자 외의 글자의 경우 아예 나오지 않거나 깨져서 나오는 문제가 있어서 로컬 설정을 해줘야 한다.
+
+Windows API에서는 모든 문자열을 wchar_t로 처리하기에 십중팔구 윈도우 프로그래밍에서는 wchar_t를 사용해야 한다.
+
+L""..."" 리터럴을 사용한다. wchar.h 헤더를 include해야 한다.
+#include <stdio.h>
+#include <wchar.h>
+
+int main()
+{
+        wchar_t a[20];
+        wscanf(L""%s"", a);
+        wprintf(L""%s"", a);
+        return 0;
+}"		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0		"""8. 입력[편집]
 표준 입력 스트림(System.in)에서 입력 받는 방법이다.
 
 int i = System.in.read();
@@ -53,41 +80,7 @@ CASE
     WHEN 조건1 THEN 결과값1
     WHEN 조건2 THEN 결과값2
     ELSE 결과값3
-END AS 새로운_컬럼명"		https://takeknowledge.tistory.com/65#google_vignette
-4번째꺼부터		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE						
-		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt						
-"7.1.1. wmain 함수[편집]
-Windows CRT에서만 사용되는 main 함수의 유니코드 버전이다. 차이점은 argv, evp 배열의 자료형이 wchar_t*인 점만 빼면 main 함수와 동일하다.
-
-참고로 유니코드 링커 옵션이 지정되어 있을 경우 wmain 함수만을 사용하지만 main 함수만 있을 경우 컴파일 과정에서 wmain 함수가 자동으로 생성되며 해당 wmain 함수 내부에서 main 함수를 호출하므로 문제가 없다.
-int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
-{
-        [함수 내용]
-        return 0;
-}"		"text = 'a'
-print(ascii(text))
-#ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
-#출력값 'a'"						
-"6.5.2. wchar_t[편집]
-과거 C언어의 char 자료형이 ASCII 인코딩만 지원함으로 인해서 다국어 입출력이 불가능함을 해결하기 위하여 등장한 문자 자료형이다. 와이드 캐릭터 방식으로 인코딩되며 윈도우의 경우에는 UCS-2 인코딩을 통해 한 글자당 기본 2바이트+a, 유닉스 및 리눅스의 경우에는 UCS-4 인코딩을 통해 한글자 당 기본 4바이트로 인코딩된다.
-
-C11 표준으로 u8 리터럴과 char16_t, char32_t 자료형이 나오기 전까지는 다국어 호환성이 뛰어나기 때문에 어느 정도 쓰였다. 그러나 플랫폼 의존적인 자료형이기 때문에 환경에 따라서 인코딩 결과가 달라진다는 점으로 인해 많은 개발자들이 사용하기 꺼리는 자료형이다.
-
-printf / scanf 함수로 출력할 수 없으며 wprintf / wscanf 함수를 사용하여 출력한다. 그런데 로컬 설정의 영향을 받기에 영문자 외의 글자의 경우 아예 나오지 않거나 깨져서 나오는 문제가 있어서 로컬 설정을 해줘야 한다.
-
-Windows API에서는 모든 문자열을 wchar_t로 처리하기에 십중팔구 윈도우 프로그래밍에서는 wchar_t를 사용해야 한다.
-
-L""..."" 리터럴을 사용한다. wchar.h 헤더를 include해야 한다.
-#include <stdio.h>
-#include <wchar.h>
-
-int main()
-{
-        wchar_t a[20];
-        wscanf(L""%s"", a);
-        wprintf(L""%s"", a);
-        return 0;
-}"		breakpoint() 사용법						
+END AS 새로운_컬럼명"		https://takeknowledge.tistory.com/65#google_vignette																	
 "6.5.3. TCHAR[편집]
 Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
 UNICODE 매크로가 활성화되면 매크로로 TCHAR은 wchar_t로 선언되며, 선언되지 않으면 char로 선언되게 된다. _T(x) x 매크로도 마찬가지로 선언되면 L로, 선언되지 않으면 제거된다.
@@ -136,7 +129,26 @@ int wmain(int argc, wchar_t **argv)
         wprintf(L""%s"", a);
         return 0;
 }
-"		bytearray() 사용법						
+"		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE		"abstract class Info{
+    public abstract int getLevel();
+}
+class EmployeeInfo extends Info{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+    public int getLevel(){
+        return this.rank;
+    }
+}
+class Person<T extends Info>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person p1 = new Person(new EmployeeInfo(1));
+        Person<String> p2 = new Person<String>(""부장"");
+    }
+}"																					
 "6.5.4. char16_t[편집]
 UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
 
@@ -148,7 +160,26 @@ int main()
 {
 	char16_t a[]=u""나무위키 프로그래밍 프로젝트"";
 	return 0;
-}"		bytes()						
+}"		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt		"interface Info{
+    int getLevel();
+}
+class EmployeeInfo implements Info{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+    public int getLevel(){
+        return this.rank;
+    }
+}
+class Person<T extends Info>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person p1 = new Person(new EmployeeInfo(1));
+        Person<String> p2 = new Person<String>(""부장"");
+    }
+}"																					
 "6.5.5. char32_t[편집]
 UTF-32 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 4바이트로 저장되고 컴파일러에 의존적이지 않다.
 
@@ -161,7 +192,22 @@ int main()
         char32_t a[]=U""안녕, 나무위키."";
         return 0;
 }
-"		"@classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
+"		"text = 'a'
+print(ascii(text))
+#ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
+#출력값 'a'"																							
+"6.7. register[편집]
+변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
+register <자료형> <변수 이름> = <넣을 값>;
+register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
+
+CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
+
+C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		breakpoint() 사용법																							
+		bytearray() 사용법																							
+		bytes()																							
+		"강좌찾기
+@classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
     school_name = ""Seoul High School""  # 클래스 변수
 
     def __init__(self, name, age):
@@ -182,15 +228,9 @@ int main()
 Student.change_school(""Korea High School"")
 
 # 2. 대체 생성자를 활용해 객체 생성
-student_1 = Student.from_string(""Kim,18"")"						
-"6.7. register[편집]
-변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
-register <자료형> <변수 이름> = <넣을 값>;
-register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
-
-CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
-
-C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		"delattr()은 파이썬의 내장 함수로, 객체에서 특정 속성(attribute)을 동적으로 삭제할 때 사용합니다.기본적으로 del 객체.속성을 사용하는 것과 동일한 역할을 하지만, 속성의 이름을 문자열로 지정할 수 있다는 점이 다릅니다.기본 문법pythondelattr(object, name)
+student_1 = Student.from_string(""Kim,18"")
+"																							
+		"delattr()은 파이썬의 내장 함수로, 객체에서 특정 속성(attribute)을 동적으로 삭제할 때 사용합니다.기본적으로 del 객체.속성을 사용하는 것과 동일한 역할을 하지만, 속성의 이름을 문자열로 지정할 수 있다는 점이 다릅니다.기본 문법pythondelattr(object, name)
 코드를 사용할 때는 주의가 필요합니다.object: 속성을 삭제할 객체 (클래스 또는 인스턴스)name: 삭제할 속성의 이름을 나타내는 문자열활용 예시pythonclass Person:
     def __init__(self, name, age):
         self.name = name
@@ -213,7 +253,7 @@ print(a)
 
 delattr(a, ""age"")
 
-print(a)"						
+print(a)"																							
 		"파이썬에서 exec()는 문자열로 작성된 파이썬 코드를 프로그램 실행 중에 동적으로 실행(execute)하는 내장 함수입니다. 여러 줄의 코드나 복잡한 문장도 한 번에 실행할 수 있습니다.주요 특징반환값 없음: eval()과 달리 코드를 실행할 뿐, 별도의 결괏값을 반환하지 않습니다(항상 None 반환).코드 조작: 코드 블록, 루프, 함수 정의, 변수 할당 등 파이썬에서 가능한 모든 구문을 수행할 수 있습니다.기본 문법 및 동작 방식pythoncode = """"""
 for i in range(2):
     print(f""동적 실행: {i}"")
@@ -221,7 +261,7 @@ for i in range(2):
 exec(code)
 코드를 사용할 때는 주의가 필요합니다.[출력]text동적 실행: 0
 동적 실행: 1
-코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."						
+코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."																							
 		"filter() 함수는 반복 가능한(iterable) 객체의 데이터 중 특정 조건에 맞는 요소들만 골라내어 반환하는 내장 함수입니다.1. 기본 문법pythonfilter(함수, 반복_가능한_객체)
 코드를 사용할 때는 주의가 필요합니다.첫 번째 인수 (함수): 각 요소를 검사할 조건 함수(또는 람다 함수). True 또는 False를 반환해야 합니다.두 번째 인수 (반복_가능한_객체): 리스트, 튜플 등 순회 가능한 데이터.2. 작동 방식두 번째 인수의 각 요소를 첫 번째 인수인 함수에 대입합니다.함수의 결과가 True인 요소들만 추출하여 filter 객체로 반환합니다.보통 결과를 확인하기 위해 list() 등으로 변환하여 사용합니다.3. 예시 코드짝수만 골라내는 대표적인 예시입니다.python# 1. 조건 함수 정의
 def is_even(n):
@@ -239,382 +279,150 @@ print(list(result))  # [2, 4, 6]
 # 람다 함수 사용
 result = list(filter(lambda x: x % 2 == 0, numbers))
 
-print(result)  # [2, 4, 6]"						
-		"globals()는 현재 모듈의 전역 변수(Global Variable) 및 함수들의 이름과 값을 딕셔너리(Dictionary) 형태로 반환하는 파이썬 내장 함수입니다.핵심 요약기능: 전역 네임스페이스(Namespace)에 접근하여 모든 전역 변수를 조회하거나 수정할 수 있습니다.반환값: { '변수명': 값 } 형태의 딕셔너리.주요 활용 방법1. 전역 변수 전체 확인현재 선언된 모든 전역 변수를 한눈에 확인하거나 필터링할 수 있습니다.pythona = 10
+print(result)  # [2, 4, 6]"																							
+		"""""""
+globals()는 현재 모듈의 전역 변수(Global Variable) 및 함수들의 이름과 값을 딕셔너리(Dictionary) 형태로 
+반환하는 파이썬 내장 함수입니다.핵심 요약기능: 전역 네임스페이스(Namespace)에 접근하여 모든 전역 변수를 조회하거나 
+수정할 수 있습니다.반환값: { '변수명': 값 } 형태의 딕셔너리.주요 활용 방법1. 전역 변수 전체 확인현재 선언된 모든 전역 변수를 한눈에 확인하거나 필터링할 수 있습니다.
+""""""
+a = 10
 b = 'hello'
 
 print(globals()) 
 # {'a': 10, 'b': 'hello', ... (기본 내장 변수들 포함) }
+""""""
 코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 생성 및 접근문자열을 이용해 전역 변수를 동적으로 만들거나 값을 가져올 수 있습니다.python# 동적 변수 생성
+""""""
 globals()['target_variable'] = 100
 print(target_variable) # 출력: 100
 
 # 동적 변수 값 조회
 var_name = 'target_variable'
-print(globals()[var_name]) # 출력: 100
-코드를 사용할 때는 주의가 필요합니다.💡 사용 시 주의사항globals()를 사용해 전역 변수를 동적으로 제어하면 편리하지만, 코드의 가독성을 떨어뜨리고 디버깅을 어렵게 만들 수 있어 일반적인 프로그래밍에서는 사용을 지양하는 것이 좋습니다."						
-								
-								
-								
-								
-								
+print(globals()[var_name]) # 출력: 100"																							
+		"""""""
+""id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드python
+""""""
+a = 10
+b = 10
 
-c	https://youtu.be/DFBcfRSk39U?si=iIhKCy86DEAEfb2N	"#include <stdio.h>
-char n[20];
-char* getname() {
-  printf(""input data : "");
-  gets(n);
-  return n;
-}
-int main() {
-  char* n1 = getname();
-  char* n2 = getname();
-  char* n3 = getname();
-  printf(""$s"", n1);
-  printf(""$s"", n2);
-  printf(""$s"", n3);
-  return 0;
-}
+print(id(a))  # 예: 140728987654321
+print(id(b))  # 예: 140728987654321 (a와 동일한 주소)
 
-/*
-char* getname()의 의미이 코드는 함수의 정의를 나타냅니다.char* (반환 타입): 이 함수가 실행을 마치고 자신을 호출한 곳으로 문자열(정확히는 char형 배열)의 첫 번째 주소를 돌려주겠다는 의미입니다.getname (함수 이름): 개발자가 임의로 지정한 함수의 이름입니다.작동 원리: 함수 내부에서 전역 변수 n에 이름을 입력받은 뒤, return n;을 통해 전역 변수 배열 n이 저장된 메모리의 주소(char*)를 리턴합니다.2. gets(n)의 의미이 코드는 표준 입력(키보드)으로 문자열을 받는 함수 호출입니다.의미: 키보드로 글자를 입력받아 배열 n에 저장합니다.특징: scanf와 달리 공백(스페이스바)을 포함한 한 줄 전체를 입력받을 수 있으며, 엔터키(\n)를 입력할 때까지의 모든 문자를 가져옵니다.
-#include <stdio.h>
+b = 20
+print(id(b))  # 예: 140728987654400 (새로운 값 할당으로 주소 변경)
+""""""
+코드를 사용할 때는 주의가 필요합니다.이 함수는 파이썬이 데이터를 메모리에 어떻게 저장하고 관리하는지(객체 모델) 이해하거나 메모리 누수 등의 버그를 디버깅할 때 주로 활용됩니""
+"""""""																							
+		"""""""
+hasattr()은 파이썬의 내장 함수로, 특정 객체(object)가 지정된 이름의 속성(attribute)이나 메서드를 가지고 있는지 확인하는 역할을 합니다.1. 기본 문법 및 동작 방식pythonhasattr(object, name)
+코드를 사용할 때는 주의가 필요합니다.object: 확인할 객체나 클래스name: 찾고자 하는 속성이나 메서드의 이름 (문자열 형태)반환값: 속성이 존재하면 True, 존재하지 않으면 False를 반환2. 사용 예시python
+""""""
+class Person:
+    def __init__(self, name):
+        self.name = name
 
-// 매번 새로운 메모리에 입력받기 위해 main 안으로 배열을 분리하거나 복사해야 합니다.
-void getname(char* dest, int size) {
-  printf(""input data : "");
-  // gets 대신 안전한 fgets 사용 (엔터값 제거 로직 생략)
-  fgets(dest, size, stdin); 
-}
+person = Person(""김구름"")
 
-int main() {
-  char n1[20], n2[20], n3[20]; // 3개의 독립된 공간 확보
-  
-  getname(n1, sizeof(n1));
-  getname(n2, sizeof(n2));
-  getname(n3, sizeof(n3));
-  
-  // $s를 %s로 수정
-  printf(""%s"", n1);
-  printf(""%s"", n2);
-  printf(""%s"", n3);
-  
-  return 0;
-}
+# 'name' 속성이 있는지 확인
+print(hasattr(person, ""name""))  # 출력: True
 
-요즘 구조는 위와 같음. #####
+# 'age' 속성이 있는지 확인
+print(hasattr(person, ""age""))   # 출력: False
+""""""
+코드를 사용할 때는 주의가 필요합니다.3. 주요 활용 목적오류 방지: 객체가 특정 속성이나 메서드를 가졌는지 확실하지 않을 때, hasattr()로 먼저 검사하여 AttributeError 예외를 방지할 수 있습니다.유연한 처리: getattr()을 함께 사용하여 객체에 속성이 존재할 때만 안전하게 해당 값을 가져오는 방식으로 자주 활용됩니다.
+"""""""																							
+		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
-*/"	모두다 출력 같게 됨.		
-c이론	https://youtu.be/m6zM9Gdg2I0?si=okvT_pQKb2Uhlw_G				
-					
-파이썬		"비파괴적 함수는 원본 데이터를 변경하지 않고 결과값만 새로 반환하는 반면, 파괴적 함수는 원본 데이터 자체를 직접 수정합니다.1. 비파괴적 함수 (Non-destructive)원본을 훼손하지 않기 때문에 결과를 변수에 저장해야 사용할 수 있습니다. 주로 문자열, 숫자, 튜플 등 변경 불가능한(immutable) 자료형을 다룰 때 사용됩니다.특징: 원본은 그대로 유지, 새로운 값을 반환예시: upper(), lower(), replace()코드 예시:pythontext = ""hello""
-new_text = text.upper() # 원본은 그대로 두고 대문자로 바뀐 결과를 새 변수에 저장
+async def my_async_generator():
+    for i in range(3):
+        await asyncio.sleep(1)  # 비동기 I/O 대기
+        yield i
 
-print(text)     # 출력: hello (원본 유지)
-print(new_text) # 출력: HELLO
-코드를 사용할 때는 주의가 필요합니다.2. 파괴적 함수 (Destructive)원본 메모리 위치의 값을 직접 변경하기 때문에 실행 후 원본 자체가 바뀝니다. 주로 리스트, 딕셔너리 등 변경 가능한(mutable) 자료형을 다룰 때 효율성을 위해 사용됩니다.특징: 원본을 직접 변경, 반환값은 보통 없음(None)예시: append(), insert(), extend(), remove(), sort()코드 예시:pythonnumbers = [3, 1, 2]
-numbers.sort() # 원본 리스트를 직접 오름차순으로 정렬함
-
-print(numbers) # 출력: [1, 2, 3] (원본이 변경됨)"			
-자바		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/flLJt4VJ1lkMWLyc1			
-		강좌	"abstract class A {
-    //추상클래스는 반드시 상속을 해서 사용을 해야함.
-    public abstract int b();
-    public abstract int c(){
-        System.out.println(""Hello"");
-    };
-    public void d() {
-        System.out.println(""world"");
-    }
-}
-class B extends A {
-    public int b() {
-        return 1;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        B obj = new B();
-    }
-}"		
-					
-					
-			자바 Connection 타입		
-			자바 Thread implements Runnable run() start()		
-					
-		자바	https://youtu.be/AiquVwHyeGQ?si=PPBGhc7TE4Q0oZFo	"class C1{
-    static int static_variable = 1;
-    int instance_variable = 2;
-    static void static_static(){
-        System.out.println(static_variable);
-    }
-    static void static_instance(){
-        // 클래스 메소드에서는 인스턴스 변수에 접근 할 수 없다. 
-        //System.out.println(instance_variable);
-    }
-    void instance_static(){
-        // 인스턴스 메소드에서는 클래스 변수에 접근 할 수 있다.
-        System.out.println(static_variable);
-    }
-    void instance_instance(){        
-        System.out.println(instance_variable);
-    }
-}
-public class Main {  
-    public static void main(String[] args) {
-        C1 c = new C1();
-        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
-        // 인스턴스 메소드가 정적 변수에 접근 -> 성공
-        c.static_static();
-        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
-        // 정적 메소드가 인스턴스 변수에 접근 -> 실패
-        c.static_instance();
-        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공
-        // 인스턴스 메소드가 클래스 변수에 접근 -> 성공
-        c.instance_static();
-        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공 
-        // 인스턴스 메소드가 인스턴스 변수에 접근 -> 성공
-        c.instance_instance();
-        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
-        // 클래스 메소드가 클래스 변수에 접근 -> 성공
-        C1.static_static();
-        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
-        // 클래스 메소드가 인스턴스 변수에 접근 -> 실패
-        C1.static_instance();
-        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
-        //C1.instance_static();
-        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
-        //C1.instance_instance();
-    }
- 
-}"	강좌보기
-					
-				"#include <stdio.h>
-
-int main() {
-    int n = 100; //변수의 선언
-    int *ptr = &n; //포인터의 선언
-    printf(""%d"", *ptr);
-}"	
-	[C 언어 기초 정리 06] 포인터 :: 곰곰의 일지 https://share.google/EBp4gKZX4piuwHIE5 void 포인터부터		https://share.google/EBp4gKZX4piuwHIE5		
-			자바 참조타입		
-			자바 char의 return		
-					
-					
-					
-					
-	mysql	"BINARY
-BINARY 연산자는 뒤에 오는 문자열을 바이너리 문자열로 변환합니다.
-BINARY 연산자를 이용하면 문자가 아닌 바이트를 기준으로 하여 비교나 검색 작업을 수행할 수 있습니다.
-sqlSELECT BINARY 'a' = 'A'; -- false
-SELECT 'a' = 'A'; -- trueCopy
-위의 예제처럼 BINARY 연산자를 이용하면, 비교하려는 문자의 바이트 값을 비교합니다.
-따라서 문자 'a'와 'A'가 서로 다른 값으로 인식됩니다.
-
-
-"			
-			"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
-코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."		
-			☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		
-					
-					
-		c언어	https://youtube.com/shorts/3-o9JnrMOPo?si=XcU9ryvqn-2jkHii	"#include <stdio.h>
-
-int main()
-{
-    int *a; //Pointer to int
-    int a[]; //array of int
-    int *a[]; //array of pointer to int
-    int (*a)(); //pointer to function returning int
-    int (*a)[]; //pointer to array of int
-    int **a; //pointer to pointer to int
-    int *(*a)[]; //pointer to array of pointer to int
-    int main(int arc, char *argv[]) //function(int, array of pointer to char) returning int
-    char *argv[] //array of pointer to char
-    int(*(*example)())[] //pointer to function returning pointer to array of int
-    printf(""Hello World"");
-
-    return 0;
-}
-"	
-					
-		자바	https://share.google/P7AQNSz8pAcFQcnJY		
-		자바	https://youtu.be/YUinFIexEQ4?si=N9H1tVnowH0o2DLM	"public class Main {
-    public static void main(String[] args) {
-        Person<String> p1 = new Person<String>();
-        Person<StringBuilder> p2 = new Person<StringBuilder>();
-        
-    }
-}"	
-					
-		파이썬	https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm	"@singledispatch
-@process.register"	
-					
-		c언어 포인터 함수 컴	{		"#include <stdio.h>
-int main(void)
-{
-    int x = 10;
-    int *px = &x;
-    int **ppx = &px;
+async def main():
+    # 비동기 반복자 생성
+    async_iter = my_async_generator()
     
-    *px = 20;
-    printf(""x = %d\n"", x);
-    printf(""*px = %d\n"", *px);
-    
-    **ppx = 60;
-    printf(""x = %d\n"", x);
-    printf(""*px = %d\n"", *px);
-    printf(""**ppx = %d\n"", **ppx);
-    
-    
-    return 0;
-}
-"
-		c언어	https://youtube.com/shorts/YmZQwMwQUV0?si=Uvy-DWzMO_2YX5xN	"#include <stdio.h>
+    # anext()로 직접 하나씩 가져오기
+    try:
+        while True:
+            # 반환되는 것이 코루틴이므로 await를 사용해야 합니다.
+            value = await anext(async_iter)
+            print(f""가져온 값: {value}"")
+    except StopAsyncIteration:
+        print(""반복이 모두 끝났습니다."")
 
-static int field[4][4] = {{0, 1, 0, 1}, {0, 0, 0, 1}, {1, 1, 1, 0}, {0, 1, 1, 1}};
-static int mines[4][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
-void calculate (int w, int h, int j, int i) {
-    if (i >= 0 && i < w && j >= 0 && j < h) mines[i][j]++;
-}
-void main() {
-    int x, y, j, i, w = 4, h = 4;
-    for (y = 0; y < h; y++) {
-        for (x = 0; x < w; x++) {
-            if (field[x][y] == 0) continue;
-            for (j = y - 1; j <= y + 1; j++) {
-                for (i = x - 1; i <= x + 1; i++) {
-                    calculate(w, h, j, i);
-                }
-            }
-        }
-    }
-    int r, c;
-    for (r = 0; r < h; r++) {
-        for (c = 0; c < w; c++) {
-            printf(""%d"", mines[r][c]);
-        }
-        printf(""\n"");
-    }
-}
-"	일러스트로 풀기
-					
-		자바		"class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class Person<T, S>{
-    public T info;
-    public S id;
-    Person(T info, S id){ 
-        this.info = info;
-        this.id = id;
-    }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        EmployeeInfo e = new EmployeeInfo(1);
-        Integer i = new Integer(10);
-        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, i);
-        System.out.println(p1.id.intValue());
-    }
-}"	
-		자바		"class EmployeeInfo{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-}
-class Person<T, S>{
-    public T info;
-    public S id;
-    Person(T info, S id){ 
-        this.info = info;
-        this.id = id;
-    }
-    public <U> void printInfo(U info){
-        System.out.println(info);
-    }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        EmployeeInfo e = new EmployeeInfo(1);
-        Integer i = new Integer(10);
-        Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(e, i);
-        p1.<EmployeeInfo>printInfo(e);
-        p1.printInfo(e);
-    }
-}"	
-		자바		"abstract class Info{
-    public abstract int getLevel();
-}
-class EmployeeInfo extends Info{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-    public int getLevel(){
-        return this.rank;
-    }
-}
-class Person<T extends Info>{
-    public T info;
-    Person(T info){ this.info = info; }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        Person p1 = new Person(new EmployeeInfo(1));
-        Person<String> p2 = new Person<String>(""부장"");
-    }
-}"	
-		자바		"interface Info{
-    int getLevel();
-}
-class EmployeeInfo implements Info{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-    public int getLevel(){
-        return this.rank;
-    }
-}
-class Person<T extends Info>{
-    public T info;
-    Person(T info){ this.info = info; }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        Person p1 = new Person(new EmployeeInfo(1));
-        Person<String> p2 = new Person<String>(""부장"");
-    }
-}"	
-		자바		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX	제네릭 강좌 보기
-					
-					
-					
-					
-					
-					
-		자바		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj	
-		자바			"|=는 비트 OR(OR) 연산 후 대입(Bitwise OR assignment)을 수행하는 복합 대입 연산자입니다.x |= y;는 x = x | y;와 완벽히 동일한 의미를 가집니다.1. 동작 원리x와 y의 각 비트를 비교하여 둘 중 하나라도 1이면 1을 반환합니다.그렇게 계산된 결과를 다시 좌측 변수인 x에 저장(대입)합니다.2. 코드 예시javaint a = 5;  // 2진수: 0101
-int b = 3;  // 2진수: 0011
+asyncio.run(main())
+코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."																							
+		"#hash()는 임의의 데이터를 고정된 길이의 정수값(해시값)으로 변환해 주는 내장 함수입니다.이 함수는 데이터를 빠르게 탐색하거나(딕셔너리, 세트 등), 데이터의 동일성을 비교하는 등 다양한 목적을 위해 사용됩니다.💡 hash()의 주요 특징빠른 데이터 탐색 (해시 테이블): 딕셔너리(dict)나 세트(set)는 내부적으로 데이터를 저장할 때 hash() 값을 인덱스로 사용합니다. 데이터가 많아도 해시값을 통해 즉시 위치를 찾으므로 검색 속도가 매우 빠릅니다.고정된 길이의 정수 반환: 입력값의 크기에 상관없이 항상 정수형 해시값을 반환합니다.단방향성: 출력된 해시값을 보고 원래의 데이터를 역산하는 것은 불가능합니다.🔒 해시 가능(Hashable) 객체 vs 불가능(Unhashable) 객체해시 가능한 객체 (Hashable): 값이 변하지 않는 불변(Immutable) 객체만 hash() 함수를 사용할 수 있습니다.예: 문자열(str), 숫자(int, float), 튜플(tuple) 등해시 불가능한 객체 (Unhashable): 값이 변경될 수 있는 가변(Mutable) 객체는 에러(TypeError)가 발생합니다. 값이 바뀌면 해시값도 달라져야 하는데, 자료구조 전체가 엉망이 될 수 있기 때문입니다.예: 리스트(list), 딕셔너리(dict), 세트(set) 등💻 사용 예시python# 문자열의 해시값 구하기
+print(hash(""hello""))
+# 출력 예시: -9223372036854775808 (실행할 때마다 달라질 수 있음)
 
-a |= b;     // a = a | b 와 같음 
-^= 도 있음"
-		c언어		"식별자(identifier)[편집]
-식별자는 영어 대소문자, 숫자, 밑줄문자(underscore)로 이루어져야 한다. 대소문자는 서로 구분된다. 식별자의 길이에 특별한 제한은 없으나 실질적으로는 컴파일러에 따라 한계치가 정해진다.
+# 정수의 해시값 (정수 자체는 항상 같은 값을 가짐)
+print(hash(100))
+# 출력: 100
 
-미리 정해진 식별자로 __func__ 가 있다. 이는 각 함수 내부에서 다음과 같이 취급된다.
+# 리스트는 Unhashable이므로 에러 발생
+# print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'"																							
+		"#isinstance()는 특정 객체(변수 등)가 주어진 클래스(데이터 타입)의 인스턴스인지 검사하는 내장 함수입니다.1. 기본 개념문법: isinstance(객체, 클래스/타입)반환값: 객체가 해당 클래스의 인스턴스이면 True, 아니면 False를 반환합니다.상속 지원: 검사 대상이 하위 클래스(자식 클래스)이거나 튜플 형태의 여러 타입((int, float, str)) 중 하나에 해당해도 True를 반환하는 유연한 검사가 가능합니다.2. 활용 예시python
 
-static const char __func__[] = ""function-name"";
+num = 10
+name = ""파이썬""
 
-이를 이용하면 각 함수 내부에서 함수의 이름을 문자열로 얻거나 출력할 수 있다."	
-		c언어		"구두점(punctuator)[편집]
-독립된 의미를 갖는 심볼들을 뜻한다. C99 기준으로 다음과 같은 것들이 있다.
-[ ] ( ) { } . ->
-++ -- & * + - ~ !
-/ % << >> < > <= >= == != ^ | && ||
-? : ; ...
-= *= /= %= += -= <<= >>= &= ^= |=
-, # ##
-<: :> <% %> %: %:%:"	
-		파이썬 얕은 복사 깊은 복사	"#얕은 복사
+# 기본 타입 검사
+print(isinstance(num, int))       # True
+print(isinstance(name, str))      # True
+print(isinstance(num, str))      # False
+
+
+
+# 다중 타입 검사 (튜플 형태 사용)
+# 튜플에 포함된 타입 중 하나라도 일치하면 True를 반환합니다.
+print(isinstance(num, (int, float))) # True
+#코드를 사용할 때는 주의가 필요합니다.3. isinstance vs type객체의 타입을 확인할 때 type() 함수도 사용할 수 있지만, 상속 관계를 고려할 때는 isinstance()를 사용하는 것이 권장됩니다.type(): 객체가 정확히 특정 클래스인지만 엄격하게 검사합니다.isinstance(): 객체의 부모 클래스(상속)까지 고려하여 검사합니다."																							
+		"""""""
+issubclass()는 어떤 클래스가 다른 클래스의 자식 클래스(하위 클래스)인지 검사하는 내장 함수입니다. 상속 관계를 확인하여 True 또는 False를 반환합니다.1. 기본 문법pythonissubclass(class, classinfo)
+코드를 사용할 때는 주의가 필요합니다.class: 검사할 대상 클래스classinfo: 기준이 되는 부모 클래스 (또는 클래스들의 튜플)2. 주요 특징상속 관계 확인: class가 classinfo를 직접 또는 간접적으로 상속받았다면 True를 반환합니다.자기 자신 검사: 파이썬에서는 자기 자신을 검사해도 True를 반환합니다.튜플 지원: classinfo 자리에 클래스들의 tuple을 전달하면, 그중 하나라도 상속 관계에 만족할 경우 True를 반환합니다.3. 예제 코드python
+""""""
+
+class Parent:
+    pass
+
+class Child(Parent):
+    pass
+
+class Other:
+    pass
+
+# 1. 자식 클래스가 부모 클래스를 상속받은 경우
+print(issubclass(Child, Parent))  # True
+
+# 2. 상속 관계가 아닌 경우
+print(issubclass(Child, Other))   # False
+
+# 3. 자기 자신을 검사하는 경우
+print(issubclass(Parent, Parent)) # True
+
+# 4. 튜플을 활용하여 여러 클래스 중 하나라도 상속받았는지 확인하는 경우
+print(issubclass(Child, (Other, Parent))) # True"																							
+																									
+		파이썬 help()																							
+		https://m.blog.naver.com/regenesis90/222342030086																							
+		"iter()
+https://dojang.io/mod/page/view.php?id=2408"																							
+		"locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 딕셔너리 데이터를 동적으로 처리할 때 사용합니다.💡 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 전역 네임스페이스를 반환합니다.💻 활용 예시1. 지역 변수 확인 (디버깅)pythondef my_function(a, b):
+    local_var = ""Hello""
+    print(locals())
+
+my_function(10, 20)
+# 출력: {'a': 10, 'b': 20, 'local_var': 'Hello'}
+코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 관리변수 이름을 문자열로 참조하거나 여러 변수의 상태를 한 번에 딕셔너리 형태로 조작할 때 유용합니다.pythondef calculate_area(width, height):
+    # locals()를 통해 지역 변수들을 딕셔너리로 쉽게 가져올 수 있음
+    variables = locals()
+    print(f""계산에 사용된 가로: {variables['width']}"")
+    return width * height
+
+calculate_area(5, 10)"																							
+		"#얕은 복사
 
 #분할 [:]
 
@@ -700,715 +508,982 @@ print(x)
 부터
 
 x = [1, 2, []]
-"""""""	https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy	https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS
-					
-					
-					
-					
-			"enum Lights {
-//enum은 열거형(Enumerated Type)을 의미하며, 정수형 상수들에 이름을 붙여 가독성을 높이고 코드의 유지보수를 쉽게 만드는 사용자 정의 데이터 타입입니다.
-    GREEN = 1 << 0, //0b1
-    YELLOW = 1 << 1, //0b10
-    RED = 1 << 2, //0b100
-};
-int main(void){
-    
-    int flag = 0; //모두 꺼져있는 상태
-    flag |= (RED | GREEN); //빨간불과 초록불 켜기
-    flag &= ~(RED | GREEN); //빨간불과 초록불 끄기
-    flag = ~0; //모든 불 켜기
-    flag = 0; //모든 불 끄기
-    flag ^= RED; //빨간불의 상태를 바꾸기
-    flag = ~flag; //모든 불들의 상태를 바꾸기
-    if ((flag & (RED | GREEN)) == (RED | GREEN)){
-    //빨간불과 초록불이 동시에 켜져있는지 확인
-    }
-    if (flag & (RED | GREEN)){
-    //빨간불과 초록불 둘 중 하나라도 켜져있는지 확인
-    }
-}
-//...etc."		
-		char, signed char, unsigned char	"har형은 정수형이면서 문자형이다. '문자'를 정수형으로 처리하는 C언어의 특성 때문이다.
-
-C언어에서 char형은 무조건 1byte여야 한다. 즉 sizeof(char)의 값은 항상 1이다. 하지만 이것이 char형이 모든 하드웨어에서 똑같은 크기인 것을 의미하지는 않는다. C언어에서는 1byte란 8bits 이상의 크기를 가지는, 주소지정 가능한 메모리의 최소 단위일 뿐이기 때문이다.[5]"		
-	파이썬			"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
-
-async def my_async_generator():
-    for i in range(3):
-        await asyncio.sleep(1)  # 비동기 I/O 대기
-        yield i
-
-async def main():
-    # 비동기 반복자 생성
-    async_iter = my_async_generator()
-    
-    # anext()로 직접 하나씩 가져오기
-    try:
-        while True:
-            # 반환되는 것이 코루틴이므로 await를 사용해야 합니다.
-            value = await anext(async_iter)
-            print(f""가져온 값: {value}"")
-    except StopAsyncIteration:
-        print(""반복이 모두 끝났습니다."")
-
-asyncio.run(main())
-코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."	
-					
-					
-	파이썬			"text = 'a'
-print(ascii(text))
-#ascii()는 객체를 사람이 읽을 수 있는 문자열로 반환하되, 아스키(ASCII) 코드 범위를 벗어나는 유니코드 문자들은 이스케이프 시퀀스(\x, \u, \U)로 변환하는 내장 함수입니다.
-#출력값 'a'"	
-					
-					
-	파이썬			breakpoint() 사용법	
-	파이썬			bytearray() 사용법	
-	파이썬			bytes()	
-	mysql		"흐름 제어 함수
-• CASE - 구문 1
-CASE value WHEN compare_value1 THEN result1
-WHEN compare_value2 THEN result2
-…
-ELSE result
-END …; - 구문 2
-CASE WHEN 조건1 THEN result1
-WHEN 조건2 THEN result2
-...
-ELSE result
-END ...;"		
-	mysql		"SLEEP(duration) - 매개변수 duration초 동안 잠시 대기하다가 0을 반환
-• DATABASE(), SCHEMA()
-- 현재 접속해 있는 데이터베이스 이름 반환
-• USER()
-- 현재 로그인한 사용자 이름 반환"		
-	파이썬			"@classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
-    school_name = ""Seoul High School""  # 클래스 변수
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    @classmethod
-    def change_school(cls, new_name):
-        cls.school_name = new_name  # 클래스 변수 수정
-
-    @classmethod
-    def from_string(cls, data_str):
-        # 콤마로 구분된 문자열을 받아 객체를 생성하는 대체 생성자
-        name, age = data_str.split(',')
-        return cls(name, int(age))
-
-# 1. 클래스 메서드로 클래스 변수 변경
-Student.change_school(""Korea High School"")
-
-# 2. 대체 생성자를 활용해 객체 생성
-student_1 = Student.from_string(""Kim,18"")"	
-					
-	파이썬			"delattr()은 파이썬의 내장 함수로, 객체에서 특정 속성(attribute)을 동적으로 삭제할 때 사용합니다.기본적으로 del 객체.속성을 사용하는 것과 동일한 역할을 하지만, 속성의 이름을 문자열로 지정할 수 있다는 점이 다릅니다.기본 문법pythondelattr(object, name)
-코드를 사용할 때는 주의가 필요합니다.object: 속성을 삭제할 객체 (클래스 또는 인스턴스)name: 삭제할 속성의 이름을 나타내는 문자열활용 예시pythonclass Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-p = Person(""홍길동"", 25)
-
-# 1. 일반적인 방법으로 속성 삭제
-del p.age 
-
-# 2. delattr()을 사용하여 속성 삭제
-delattr(p, ""name"") 
-
-def groomi (self, age, name) :
-    self.name = name
-    self.age = age
-
-a = groomi(1, ""김구름"")
-print(a)
-
-delattr(a, ""age"")
-
-print(a)"	
-					
-					
-					
-					
-					
-	파이썬			"파이썬에서 exec()는 문자열로 작성된 파이썬 코드를 프로그램 실행 중에 동적으로 실행(execute)하는 내장 함수입니다. 여러 줄의 코드나 복잡한 문장도 한 번에 실행할 수 있습니다.주요 특징반환값 없음: eval()과 달리 코드를 실행할 뿐, 별도의 결괏값을 반환하지 않습니다(항상 None 반환).코드 조작: 코드 블록, 루프, 함수 정의, 변수 할당 등 파이썬에서 가능한 모든 구문을 수행할 수 있습니다.기본 문법 및 동작 방식pythoncode = """"""
-for i in range(2):
-    print(f""동적 실행: {i}"")
 """"""
-exec(code)
-코드를 사용할 때는 주의가 필요합니다.[출력]text동적 실행: 0
-동적 실행: 1
-코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."	
-	파이썬			"filter() 함수는 반복 가능한(iterable) 객체의 데이터 중 특정 조건에 맞는 요소들만 골라내어 반환하는 내장 함수입니다.1. 기본 문법pythonfilter(함수, 반복_가능한_객체)
-코드를 사용할 때는 주의가 필요합니다.첫 번째 인수 (함수): 각 요소를 검사할 조건 함수(또는 람다 함수). True 또는 False를 반환해야 합니다.두 번째 인수 (반복_가능한_객체): 리스트, 튜플 등 순회 가능한 데이터.2. 작동 방식두 번째 인수의 각 요소를 첫 번째 인수인 함수에 대입합니다.함수의 결과가 True인 요소들만 추출하여 filter 객체로 반환합니다.보통 결과를 확인하기 위해 list() 등으로 변환하여 사용합니다.3. 예시 코드짝수만 골라내는 대표적인 예시입니다.python# 1. 조건 함수 정의
-def is_even(n):
-    return n % 2 == 0
 
-numbers = [1, 2, 3, 4, 5, 6]
-
-# 2. filter 적용
-result = filter(is_even, numbers)
-
-# 3. 리스트 변환
-print(list(result))  # [2, 4, 6]
-코드를 사용할 때는 주의가 필요합니다.4. 람다(lambda) 함수 활용매번 함수를 정의하는 대신 lambda를 사용하면 더욱 간결하게 코드를 작성할 수 있습니다.pythonnumbers = [1, 2, 3, 4, 5, 6]
-
-# 람다 함수 사용
-result = list(filter(lambda x: x % 2 == 0, numbers))
-
-print(result)  # [2, 4, 6]"	
-					
-					
-	파이썬			"getattr()은 객체(Object)에서 특정 속성(변수나 메서드)의 값을 동적으로 가져올 때 사용하는 내장 함수입니다.1. 기본 구문getattr(object, name[, default])object: 속성을 가져올 객체name: 가져올 속성의 이름을 나타내는 문자열default (선택): 해당 속성이 없을 때 반환할 기본값. 이 값이 없으면 속성 에러(AttributeError)가 발생합니다.2. 예제 코드pythonclass Person:
-    def __init__(self, name):
-        self.name = name
-        
-    def greet(self):
-        return ""안녕하세요!""
-
-p = Person(""홍길동"")
-
-# 1. 속성 값 가져오기
-print(getattr(p, ""name""))  # 출력: 홍길동 (p.name 과 동일)
-
-# 2. 메서드 가져오기 및 실행
-method = getattr(p, ""greet"")
-print(method())  # 출력: 안녕하세요! (p.greet() 와 동일)
-
-# 3. 존재하지 않는 속성에 대한 기본값 설정
-# 만약 기본값이 없으면 에러가 발생합니다.
-print(getattr(p, ""age"", 20))  # 출력: 20"	
-	파이썬			"globals()는 현재 모듈의 전역 변수(Global Variable) 및 함수들의 이름과 값을 딕셔너리(Dictionary) 형태로 반환하는 파이썬 내장 함수입니다.핵심 요약기능: 전역 네임스페이스(Namespace)에 접근하여 모든 전역 변수를 조회하거나 수정할 수 있습니다.반환값: { '변수명': 값 } 형태의 딕셔너리.주요 활용 방법1. 전역 변수 전체 확인현재 선언된 모든 전역 변수를 한눈에 확인하거나 필터링할 수 있습니다.pythona = 10
-b = 'hello'
-
-print(globals()) 
-# {'a': 10, 'b': 'hello', ... (기본 내장 변수들 포함) }
-코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 생성 및 접근문자열을 이용해 전역 변수를 동적으로 만들거나 값을 가져올 수 있습니다.python# 동적 변수 생성
-globals()['target_variable'] = 100
-print(target_variable) # 출력: 100
-
-# 동적 변수 값 조회
-var_name = 'target_variable'
-print(globals()[var_name]) # 출력: 100
-코드를 사용할 때는 주의가 필요합니다.💡 사용 시 주의사항globals()를 사용해 전역 변수를 동적으로 제어하면 편리하지만, 코드의 가독성을 떨어뜨리고 디버깅을 어렵게 만들 수 있어 일반적인 프로그래밍에서는 사용을 지양하는 것이 좋습니다."	
-	파이썬			"hasattr()은 파이썬의 내장 함수로, 특정 객체(object)가 지정된 이름의 속성(attribute)이나 메서드를 가지고 있는지 확인하는 역할을 합니다.1. 기본 문법 및 동작 방식pythonhasattr(object, name)
-코드를 사용할 때는 주의가 필요합니다.object: 확인할 객체나 클래스name: 찾고자 하는 속성이나 메서드의 이름 (문자열 형태)반환값: 속성이 존재하면 True, 존재하지 않으면 False를 반환2. 사용 예시pythonclass Person:
-    def __init__(self, name):
-        self.name = name
-
-person = Person(""홍길동"")
-
-# 'name' 속성이 있는지 확인
-print(hasattr(person, ""name""))  # 출력: True
-
-# 'age' 속성이 있는지 확인
-print(hasattr(person, ""age""))   # 출력: False
-코드를 사용할 때는 주의가 필요합니다.3. 주요 활용 목적오류 방지: 객체가 특정 속성이나 메서드를 가졌는지 확실하지 않을 때, hasattr()로 먼저 검사하여 AttributeError 예외를 방지할 수 있습니다.유연한 처리: getattr()을 함께 사용하여 객체에 속성이 존재할 때만 안전하게 해당 값을 가져오는 방식으로 자주 활용됩니다."	
-	파이썬			"hash()는 임의의 데이터를 고정된 길이의 정수값(해시값)으로 변환해 주는 내장 함수입니다.이 함수는 데이터를 빠르게 탐색하거나(딕셔너리, 세트 등), 데이터의 동일성을 비교하는 등 다양한 목적을 위해 사용됩니다.💡 hash()의 주요 특징빠른 데이터 탐색 (해시 테이블): 딕셔너리(dict)나 세트(set)는 내부적으로 데이터를 저장할 때 hash() 값을 인덱스로 사용합니다. 데이터가 많아도 해시값을 통해 즉시 위치를 찾으므로 검색 속도가 매우 빠릅니다.고정된 길이의 정수 반환: 입력값의 크기에 상관없이 항상 정수형 해시값을 반환합니다.단방향성: 출력된 해시값을 보고 원래의 데이터를 역산하는 것은 불가능합니다.🔒 해시 가능(Hashable) 객체 vs 불가능(Unhashable) 객체해시 가능한 객체 (Hashable): 값이 변하지 않는 불변(Immutable) 객체만 hash() 함수를 사용할 수 있습니다.예: 문자열(str), 숫자(int, float), 튜플(tuple) 등해시 불가능한 객체 (Unhashable): 값이 변경될 수 있는 가변(Mutable) 객체는 에러(TypeError)가 발생합니다. 값이 바뀌면 해시값도 달라져야 하는데, 자료구조 전체가 엉망이 될 수 있기 때문입니다.예: 리스트(list), 딕셔너리(dict), 세트(set) 등💻 사용 예시python# 문자열의 해시값 구하기
-print(hash(""hello""))
-# 출력 예시: -9223372036854775808 (실행할 때마다 달라질 수 있음)
-
-# 정수의 해시값 (정수 자체는 항상 같은 값을 가짐)
-print(hash(100))
-# 출력: 100
-
-# 리스트는 Unhashable이므로 에러 발생
-# print(hash([1, 2, 3])) # TypeError: unhashable type: 'list'"	
-			파이썬 help()	https://m.blog.naver.com/regenesis90/222342030086	
-					
-		파이썬		"id() 함수는 객체의 고유 식별자(메모리 주소)를 정수로 반환하는 내장 함수입니다. 파이썬 프로그램이 실행되는 동안 생성된 객체는 저마다 고유한 ID를 가지며, 객체가 메모리에서 삭제되기 전까지는 변하지 않습니다.💡 주요 기능 및 활용동일 객체 확인: 두 변수가 메모리상의 동일한 객체를 가리키고 있는지 확인할 때 사용합니다 (예: id(a) == id(b)).값의 할당 방식 이해: 동일한 값을 가지더라도 파이썬이 객체를 재사용하는지(immutable), 새로 생성하는지(mutable) 메모리 주소를 통해 추적할 수 있습니다.💻 예제 코드pythona = 10
-b = 10
-
-print(id(a))  # 예: 140728987654321
-print(id(b))  # 예: 140728987654321 (a와 동일한 주소)
-
-b = 20
-print(id(b))  # 예: 140728987654400 (새로운 값 할당으로 주소 변경)
-코드를 사용할 때는 주의가 필요합니다.이 함수는 파이썬이 데이터를 메모리에 어떻게 저장하고 관리하는지(객체 모델) 이해하거나 메모리 누수 등의 버그를 디버깅할 때 주로 활용됩니"	
-		파이썬		"isinstance()는 특정 객체(변수 등)가 주어진 클래스(데이터 타입)의 인스턴스인지 검사하는 내장 함수입니다.1. 기본 개념문법: isinstance(객체, 클래스/타입)반환값: 객체가 해당 클래스의 인스턴스이면 True, 아니면 False를 반환합니다.상속 지원: 검사 대상이 하위 클래스(자식 클래스)이거나 튜플 형태의 여러 타입((int, float, str)) 중 하나에 해당해도 True를 반환하는 유연한 검사가 가능합니다.2. 활용 예시pythonnum = 10
-name = ""파이썬""
-
-# 기본 타입 검사
-print(isinstance(num, int))       # True
-print(isinstance(name, str))      # True
-print(isinstance(num, str))      # False
-
-# 다중 타입 검사 (튜플 형태 사용)
-# 튜플에 포함된 타입 중 하나라도 일치하면 True를 반환합니다.
-print(isinstance(num, (int, float))) # True
-코드를 사용할 때는 주의가 필요합니다.3. isinstance vs type객체의 타입을 확인할 때 type() 함수도 사용할 수 있지만, 상속 관계를 고려할 때는 isinstance()를 사용하는 것이 권장됩니다.type(): 객체가 정확히 특정 클래스인지만 엄격하게 검사합니다.isinstance(): 객체의 부모 클래스(상속)까지 고려하여 검사합니다."	
-		파이썬		" issubclass()는 어떤 클래스가 다른 클래스의 자식 클래스(하위 클래스)인지 검사하는 내장 함수입니다. 상속 관계를 확인하여 True 또는 False를 반환합니다.1. 기본 문법pythonissubclass(class, classinfo)
-코드를 사용할 때는 주의가 필요합니다.class: 검사할 대상 클래스classinfo: 기준이 되는 부모 클래스 (또는 클래스들의 튜플)2. 주요 특징상속 관계 확인: class가 classinfo를 직접 또는 간접적으로 상속받았다면 True를 반환합니다.자기 자신 검사: 파이썬에서는 자기 자신을 검사해도 True를 반환합니다.튜플 지원: classinfo 자리에 클래스들의 tuple을 전달하면, 그중 하나라도 상속 관계에 만족할 경우 True를 반환합니다.3. 예제 코드pythonclass Parent:
-    pass
-
-class Child(Parent):
-    pass
-
-class Other:
-    pass
-
-# 1. 자식 클래스가 부모 클래스를 상속받은 경우
-print(issubclass(Child, Parent))  # True
-
-# 2. 상속 관계가 아닌 경우
-print(issubclass(Child, Other))   # False
-
-# 3. 자기 자신을 검사하는 경우
-print(issubclass(Parent, Parent)) # True
-
-# 4. 튜플을 활용하여 여러 클래스 중 하나라도 상속받았는지 확인하는 경우
-print(issubclass(Child, (Other, Parent))) # True"	
-		파이썬	iter()	https://dojang.io/mod/page/view.php?id=2408	
-		파이썬		"locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 딕셔너리 데이터를 동적으로 처리할 때 사용합니다.💡 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 전역 네임스페이스를 반환합니다.💻 활용 예시1. 지역 변수 확인 (디버깅)pythondef my_function(a, b):
-    local_var = ""Hello""
-    print(locals())
-
-my_function(10, 20)
-# 출력: {'a': 10, 'b': 20, 'local_var': 'Hello'}
-코드를 사용할 때는 주의가 필요합니다.2. 동적 변수 관리변수 이름을 문자열로 참조하거나 여러 변수의 상태를 한 번에 딕셔너리 형태로 조작할 때 유용합니다.pythondef calculate_area(width, height):
-    # locals()를 통해 지역 변수들을 딕셔너리로 쉽게 가져올 수 있음
-    variables = locals()
-    print(f""계산에 사용된 가로: {variables['width']}"")
-    return width * height
-
-calculate_area(5, 10)"	
-					
-					
-		파이썬		"memoryview()는 데이터 복사 없이 메모리 버퍼를 직접 조작할 수 있게 해주는 내장 함수입니다. 대용량 데이터를 다룰 때 메모리 사용량을 획기적으로 줄이고 처리 속도를 높이는 데 사용됩니다.1. 주요 특징 및 핵심 의미데이터 복사(Copy) 방지: 일반적인 파이썬 객체를 슬라이싱하면 메모리에 새로운 객체가 생성되지만, memoryview는 원본 메모리의 특정 위치를 가리키는 뷰(View)만 생성합니다.양방향 조작: memoryview를 통해 데이터를 수정하면 원본 객체의 데이터도 함께 변경됩니다.지원 대상: 바이트 버퍼 프로토콜을 지원하는 객체(bytes, bytearray, array.array 등)만 사용할 수 있습니다.2. 메모리 절약 효과 (예시)큰 크기의 바이너리 데이터를 잘라서 처리해야 할 때, 데이터를 복사하지 않고 주소만 참조하므로 메모리 낭비와 불필요한 연산을 막을 수 있습니다.python# bytearray 객체 생성
-data = bytearray(b'ABCDEFGHIJ')
-
-# memoryview 생성
-mv = memoryview(data)
-
-# 데이터 복사 없이 'CDE' 부분에 접근 가능
-print(mv[2:5])  # <memory at 0x...>
-
-# 변경 시 원본 데이터도 함께 수정됨
-mv[2:5] = b'XYZ'
-print(data)     # b'ABXYZFGHIJ'
-코드를 사용할 때는 주의가 필요합니다.3. 유용한 활용 분야대용량 파일 I/O 및 네트워크 스트리밍: 대형 파일을 읽거나 네트워크로 패킷을 주고받을 때 버퍼를 효율적으로 처리.C 언어 라이브러리 연동: NumPy 배열이나 C 언어 수준의 구조체 데이터와 데이터를 주고받을 때 사용."	
-					
-		c언어포인터 심화	어려운 C언어 포인터 예제 4개로 마스터하기 https://share.google/sYgpqU2Ao20Ea5x7h		
-		자바		Java 객관식 개념 문제(30문항) v1.2 https://share.google/HjgweXWHUCL1Bz4vi	
-		파이썬		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0	
-		파이		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE	
-		파이		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt	
-		자바		[Java] Generic 정리 https://share.google/u49sksodIEymYDppz	
-파이썬	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95/%ED%95%A8%EC%88%98	next()	부터		
-					
-	c언어		"7.1.1. wmain 함수[편집]
-Windows CRT에서만 사용되는 main 함수의 유니코드 버전이다. 차이점은 argv, evp 배열의 자료형이 wchar_t*인 점만 빼면 main 함수와 동일하다.
-
-참고로 유니코드 링커 옵션이 지정되어 있을 경우 wmain 함수만을 사용하지만 main 함수만 있을 경우 컴파일 과정에서 wmain 함수가 자동으로 생성되며 해당 wmain 함수 내부에서 main 함수를 호출하므로 문제가 없다.
-int wmain(int argc, wchar_t* argv[], wchar_t* envp[])
-{
-        [함수 내용]
-        return 0;
-}"		
-	c언어		7.4. 표준 라이브러리 함수 일람		
-					
-	파리	7. 함수 8 . 모듈	https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95		
-					
-	파리	11 예외 처리 12 13도			
-					
-					
-	c언어		"6.5. 문자 자료형[편집]
-여러 가지 자료형이 있다. 가장 기본이 되는 것은 char이며, 이외 자료형의 사용법을 아래 표에 간략히 정리하였다.
-자료형
-리터럴 문법
-필요 헤더
-인코딩
-컴파일러 의존성
-printf/scanf 호환
-비고
-char
-""...""
-없음
-ASCII
-MBCS
-비의존
-O
-기본 자료형
-u8""...""
-uchar.h
-UTF-8
-비의존
-X
-wchar_t
-L""...""
-wchar.h
-와이드 문자(UCS-2/4)
-의존
-X[8]
-TCHAR
-_T(""..."")
-tchar.h
-MBCS
-와이드 문자(UCS-2)
-비의존[9]
-X[10]
-비표준 (Windows SDK)
-char16_t
-u""...""
-uchar.h
-UTF-16
-비의존
-X
-char32_t
-U""...""
-uchar.h
-UTF-32
-비의존
-X
-int
-'...'
-없음
-ASCII
-의존
-X[11]
-ISO/IEC 9899:TC3 §6.4.4.4"		
-					
-					
-	c언어		"#include <stdio.h>
-#include <uchar.h>
-
-int main()
-{
-        char a[20];
-
-        printf(u8""입력해주세요.\n"");
-        scanf(u8""%[^\n]"", a);
-        printf(u8""%s(이)라고 입력하셨습니다.\n"", a);
-
-        return 0;
-}"		
-	c언어		"#include <stdio.h>
-#include <uchar.h>
-
-int main()
-{
-        char a[]=u8""가"";
-
-        printf(u8""%s\n"", a);
-        printf(u8""총 %ld 바이트\n"", sizeof(a));
-
-        return 0;
-}"		
-	c언어		6.5.1.2. 인코딩 방식		
-	c언어		"6.5.2. wchar_t[편집]
-과거 C언어의 char 자료형이 ASCII 인코딩만 지원함으로 인해서 다국어 입출력이 불가능함을 해결하기 위하여 등장한 문자 자료형이다. 와이드 캐릭터 방식으로 인코딩되며 윈도우의 경우에는 UCS-2 인코딩을 통해 한 글자당 기본 2바이트+a, 유닉스 및 리눅스의 경우에는 UCS-4 인코딩을 통해 한글자 당 기본 4바이트로 인코딩된다.
-
-C11 표준으로 u8 리터럴과 char16_t, char32_t 자료형이 나오기 전까지는 다국어 호환성이 뛰어나기 때문에 어느 정도 쓰였다. 그러나 플랫폼 의존적인 자료형이기 때문에 환경에 따라서 인코딩 결과가 달라진다는 점으로 인해 많은 개발자들이 사용하기 꺼리는 자료형이다.
-
-printf / scanf 함수로 출력할 수 없으며 wprintf / wscanf 함수를 사용하여 출력한다. 그런데 로컬 설정의 영향을 받기에 영문자 외의 글자의 경우 아예 나오지 않거나 깨져서 나오는 문제가 있어서 로컬 설정을 해줘야 한다.
-
-Windows API에서는 모든 문자열을 wchar_t로 처리하기에 십중팔구 윈도우 프로그래밍에서는 wchar_t를 사용해야 한다.
-
-L""..."" 리터럴을 사용한다. wchar.h 헤더를 include해야 한다.
-#include <stdio.h>
-#include <wchar.h>
-
-int main()
-{
-        wchar_t a[20];
-        wscanf(L""%s"", a);
-        wprintf(L""%s"", a);
-        return 0;
-}"		
-	c언어		"6.5.3. TCHAR[편집]
-Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
-UNICODE 매크로가 활성화되면 매크로로 TCHAR은 wchar_t로 선언되며, 선언되지 않으면 char로 선언되게 된다. _T(x) x 매크로도 마찬가지로 선언되면 L로, 선언되지 않으면 제거된다.
-
-_T(""..."") 리터럴을 사용하고 tchar.h 헤더를 include해야 한다.
-#include <stdio.h>
-#include <tchar.h>
-#include <Wincon.h>
-
-int _tmain(int argc, TCHAR **argv)
-{
-        TCHAR a[20];
-        SetConsoleTitle(_T(""tchar test""));
-        _tscanf(_T(""%s""), a);
-        _tprintf(_T(""%s""), a);
-        return 0;
-}
-
-위와 같은 코드는 UNICODE 가 선언되어 있지 않으면 프리프로세서에서 다음과 같이 변환된다.
-
-#include <stdio.h>
-#include <tchar.h>
-#include <Wincon.h>
-
-int main(int argc, char **argv)
-{
-        char a[20];
-        SetConsoleTitleA(""tchar test"");
-        scanf(""%s"", a);
-        printf(""%s"", a);
-        return 0;
-}
-
-
-그리고 UNICODE가 선언되면 다음과 같이 변환된다.
-
-#include <stdio.h>
-#include <tchar.h>
-#include <Wincon.h>
-
-int wmain(int argc, wchar_t **argv)
-{
-        wchar_t a[20];
-        SetConsoleTitleW(L""tchar test"");
-        wscanf(L""%s"", a);
-        wprintf(L""%s"", a);
-        return 0;
-}
-"		
-	c언어		"6.5.4. char16_t[편집]
-UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
-
-u""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
-#include <stdio.h>
-#include <uchar.h>
-
-int main()
-{
-	char16_t a[]=u""나무위키 프로그래밍 프로젝트"";
-	return 0;
-}"		
-	c언어		"6.5.5. char32_t[편집]
-UTF-32 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 4바이트로 저장되고 컴파일러에 의존적이지 않다.
-
-U""..."" 리터럴을 사용하고 uchar.h 헤더를 include해야 한다. 다만, printf()나 scanf() 함수와의 호환이 되지 않고 변수 초기화 이후에는 C++의 std::cin 및 std::cout 객체를 사용하지 않고서는 입출력이 거의 불가능하다.
-#include <stdio.h>
-#include <uchar.h>
-
-int main()
-{
-        char32_t a[]=U""안녕, 나무위키."";
-        return 0;
-}
-"		
-	c언어		"6.7. register[편집]
-변수 값을 CPU 레지스터에 저장하도록 컴파일러에 지시하는 키워드로 지역 변수에만 사용할 수 있으며 다음과 같이 사용할 수 있다.
-register <자료형> <변수 이름> = <넣을 값>;
-register을 변수에 붙으면 컴파일 시 컴파일러가 해당 변수의 값이 CPU 레지스터에 넣는 게 성능상 이익이 크다고 판단하면 레지스터를 사용하여 쓰기 및 읽기를 하게 된다. 레지스터는 캐시 메모리보다 훨씬 빠르기 때문에 자주 사용되는 변수에 붙는 게 좋다.
-
-CPU 성능이 낮고 컴파일러의 최적화 기능이 좋지 않았던 시절에는 자주 사용되었지만 요즘에는 컴파일러의 최적화 기능이 좋아져서 register 키워드를 붙지 않아도 스스로 판단하여 레지스터에 변수 값을 넣는 게 성능상 이익이 크다고 보면 레지스터를 사용하므로 register 키워드가 쓰여지는 일은 크게 적어졌다. 심지어 최신 컴파일러의 경우 아예 register 키워드 자체를 무시한다.
-
-C++에서는 사용되지 않는다. 사용 시 경고가 나오며 C++17 이상의 표준에서는 아예 삭제되어서 컴파일 오류가 발생한다."		
-					
-					
-	mysql		create index on 54page		
-					
-c언어 문법	https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%EB%AC%B8%EB%B2%95	6.10 포인터			
-					
-					
-					
-					
-	자바 		"6.2. 가변/불변 변수와 상수[편집]
-일반적으로 만들어진 변수는 가변 변수로, 수정 및 재대입이 가능하다.
-반면 불변 변수는 final이 붙어 재대입이 불가능하다.
-상수는 크게 2개로 나뉘는데 static final이 붙은 변수와 거기에 더해 원시 타입 또는 String이라는 조건이 붙은 경우이다.
-
-불변 변수와 상수의 차이는 컴파일 시점에서 값을 알 수 있는지로 구분할 수 있다.
-public class A {
-    public final int someIntValue;
-    public static final int SOME_INT_VALUE = 2;
-
-    public A(int i) {
-        someIntValue = i;
-    }
-}"		
-	자바 		System.err.println("Error message");		
-	자바 		"8. 입력[편집]
-표준 입력 스트림(System.in)에서 입력 받는 방법이다.
-
-int i = System.in.read();
-가장 기본적인 입력이다. 바이트 하나를 읽는다. 예를 들어 ""ABCn""을 입력하면 A의 아스키코드인 65를 반환한다. 이후 한번 더 read()를 호출하면 B의 아스키코드인 66이 반환되는 식. 한글의 경우 3바이트로 이루어져 있어서 한번으로는 완전히 읽을 수 없다. 매우 불편하기에 특수한 경우가 아니면 아래 방식들을 사용하는 편.
-
-BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-String str = br.readLine();
-Scanner 추가 전에 주로 사용된 방식이다. 속도가 Scanner보다 빨라서 사용된다.
-
-Scanner sc = new Scanner(System.in);
-String str = sc.nextLine();
-자바 24 까지 간단히 사용되는 입력 방식이다. sc.nextInt(); 같은 메서드로 바로 타입을 바꿀 수 있다.[17]
-
-String str = IO.readln();
-자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."		
-	리눅스	https://takeknowledge.tistory.com/65#google_vignette	https://copy.sh/v86/?profile=linux26		
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-파이썬 문법	https://namu.wiki/w/Python/%EB%AC%B8%EB%B2%95	2.2. 리스트(List), 튜플(Tuple)			
-자바 문법	https://namu.wiki/w/Java/%EB%AC%B8%EB%B2%95	6. 변수 선언			
-c언어 문법	https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%EB%AC%B8%EB%B2%95	6.10 포인터			
-리액트 2강부터	https://www.youtube.com/watch?v=70w82P-KiVM&list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&index=2				
-노드js	https://www.youtube.com/watch?v=ibz2gaW-tyQ&list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm&index=30	"import http from 'http';
-import fs from 'fs/promises';
-import { URL } from 'url';
-
-const app = http.createServer(async (request, response) => {
-  try {
-    // 1. URL 분석 (최신 WHATWG URL API 사용)
-    const baseURL = `http://${request.headers.host}`;
-    const { pathname, searchParams } = new URL(request.url, baseURL);
-    const id = searchParams.get('id');
-
-    // 2. 라우팅 처리
-    if (pathname !== '/') {
-      response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      return response.end('Not found');
-    }
-
-    // 3. 파일 목록 읽기 (Promise 기반 fs.readdir)
-    const filelist = await fs.readdir('./data');
-    
-    // 배열 메서드(map, join)로 깔끔하게 HTML 리스트 생성
-    const list = `<ul>${filelist.map(file => `<li><a href=""/?id=${file}"">${file}</a></li>`).join('')}</ul>`;
-
-    // 4. 상황별 데이터 설정 (조건부 렌더링)
-    let title = 'Welcome';
-    let description = 'Hello, Node.js';
-
-    if (id) {
-      title = id;
-      // Promise 기반 fs.readFile 사용
-      description = await fs.readFile(`data/${id}`, 'utf8');
-    }
-
-    // 5. HTML 템플릿 생성 및 응답
-    const template = `
-      <!doctype html>
-      <html>
-      <head>
-        <title>WEB1 - ${title}</title>
-        <meta charset=""utf-8"">
-      </head>
-      <body>
-        <h1><a href=""/"">WEB</a></h1>
-        ${list}
-        <h2>${title}</h2>
-        <p>${description}</p>
-      </body>
-      </html>
-    `;
-
-    response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    response.end(template);
-
-  } catch (error) {
-    // 에러 발생 시 500 응답 처리
-    response.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
-    response.end('Internal Server Error');
-  }
-});
-
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
-});
-"	https://nodejs.org/docs/latest/api/		
-자바스크립트	https://jnoony-code.tistory.com/19	룰렛	"//타입들 변수 선언
-let types = [""normal"", ""fighting"", ""flying"", ""poison"", ""land"", ""rock"", ""bug"", ""ghost"", ""steel"", ""fire"", ""water"", ""grass"", ""electric"", ""esper"", ""ice"", ""dragon"", ""evil"", ""fairy""];
-/*
-let normal = 1; //노말
-let fighting = 2; //격투
-let flying = 3; //비행
-let poison = 4; //독
-let land = 5; //땅
-let rock = 6; //바위
-let bug = 7; //벌레
-let ghost = 8; //고스트
-let steel = 9; //강철
-let fire = 10; //불꽃
-let water = 11; //물
-let grass = 12; //풀
-let electric = 13; //전기
-let esper = 14; //에스퍼
-let ice = 15; //얼음
-let dragon = 16; //드래곤
-let evil = 17; //악
-let fairy = 18; //페어리
-*/
-
-let one = ""user"";
-let two = ""com"";
-
-//상성 계산 ==> 일반 4분의 1
-
-//노말 타입일 때 상성
-if (user == types[0]) {
-    if (com == ghost) {
-        //고스트는 0
-    }
-    else if (com == rock || com == steel) {
-        //바위 강철은 8분의 1
-    }
-    else {
-        //데미지 4분의 1
-    }
-}
-
-//격투 타입일 때 생성
-else if (user == fighting) {
-    if (com == normal || com == ice || com == rock) {
-        //노말, 얼음, 바위에 2분의 1
-    }
-    else if (com == poison || com == bug || com == flying || com == esper) {
-        //독, 벌레, 비행, 에스퍼 8분의 1
-    }
-    else if (com == ghost) {
-        //고스트는 0
-    }
-    else {//나머지는 4분의 1
-    
-    }
-}
-
-//비행 타입일 때 상성
-else if (user == flying) {
-    if (com == grass || com == fighting || com == bug) {
-        //풀, 격투, 벌레에 2분의 1
-    }
-    else if (com == electric || com == rock) {
-        //전기, 바위에 8분의 1
-    }
-    else {
-        //나머지 4분의 1
-    }       
-}
-
-//독 타입일 때 상성
-else if (user == )
-    //풀, 벌레에 2분의 1
-    //독, 땅, 바위, 고스트 8분의 1
-    //나머지 4분의 1
-
-//땅 타입일 때 상성
-
-//불꽃, 전기, 독, 바위 2분의 1
-//풀, 벌레 8분의 1
-//비행에 0
-
-//바위 타입일 때 상성
-
-//불꽃, 얼음, 비행, 벌레 2분의 1
-//격투, 땅 8분의 1"		
-					
-			학번		
-			A001		
-			A002		
-			A00		
+https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
+
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"																							
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
