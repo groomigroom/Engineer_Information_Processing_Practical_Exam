@@ -30,6 +30,50 @@
 
 
 
+
+
+
+
+
+------
+
+#include <stdio.h>
+
+static int field[4][4] = {{0, 1, 0, 1}, {0, 0, 0, 1}, {1, 1, 1, 0}, {0, 1, 1, 1}};
+static int mines[4][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+void calculate (int w, int h, int j, int i) {
+    if (i >= 0 && i < w && j >= 0 && j < h) mines[i][j]++;
+}
+void main() {
+    int x, y, j, i, w = 4, h = 4;
+    for (y = 0; y < h; y++) {
+        for (x = 0; x < w; x++) {
+            if (field[x][y] == 0) continue;
+            for (j = y - 1; j <= y + 1; j++) {
+                for (i = x - 1; i <= x + 1; i++) {
+                    calculate(w, h, j, i);
+                }
+            }
+        }
+    }
+    int r, c;
+    for (r = 0; r < h; r++) {
+        for (c = 0; c < w; c++) {
+            printf("%d", mines[r][c]);
+        }
+        printf("\n");
+    }
+}
+/*
+출력값
+1132
+3453
+3564
+3553
+*/
+
+
+
 ------
 
 
