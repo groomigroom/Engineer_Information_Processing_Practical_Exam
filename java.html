@@ -32,6 +32,26 @@
 
 
 
+
+
+-------------
+
+
+가변/불변 변수와 상수
+일반적으로 만들어진 변수는 가변 변수로, 수정 및 재대입이 가능하다.
+반면 불변 변수는 final이 붙어 재대입이 불가능하다.
+상수는 크게 2개로 나뉘는데 static final이 붙은 변수와 거기에 더해 원시 타입 또는 String이라는 조건이 붙은 경우이다.
+
+불변 변수와 상수의 차이는 컴파일 시점에서 값을 알 수 있는지로 구분할 수 있다.
+public class A {
+    public final int someIntValue;
+    public static final int SOME_INT_VALUE = 2;
+
+    public A(int i) {
+        someIntValue = i;
+    }
+}
+
 -------------
 
 
