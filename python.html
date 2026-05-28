@@ -34,6 +34,32 @@
 
 
 
+---------
+
+#getattr()은 객체(Object)에서 특정 속성(변수나 메서드)의 값을 동적으로 가져올 때 사용하는 내장 함수입니다.1. 기본 구문getattr(object, name[, default])object: 속성을 가져올 객체name: 가져올 속성의 이름을 나타내는 문자열default (선택): 해당 속성이 없을 때 반환할 기본값. 이 값이 없으면 속성 에러(AttributeError)가 발생합니다.2. 예제 코드pythonclass Person:
+class Person :
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        return "안녕하세요!"
+
+p = Person("김구름")
+
+# 1. 속성 값 가져오기
+print(getattr(p, "name"))  # 출력: 김구름 (p.name 과 동일)
+
+# 2. 메서드 가져오기 및 실행
+method = getattr(p, "greet")
+print(method())  # 출력: 안녕하세요! (p.greet() 와 동일)
+
+# 3. 존재하지 않는 속성에 대한 기본값 설정
+# 만약 기본값이 없으면 에러가 발생합니다.
+print(getattr(p, "age", 20))  # 출력: 20
+
+"""
+print(getattr(p, "age", 20)) 코드는 p 객체에 age라는 속성이 없더라도 에러를 내지 말고, 미리 지정한 기본값인 20을 반환하라는 뜻입니다.🔍 코드 상세 분석getattr(object, name, default) 함수는 세 번째 인자인 default(기본값)를 설정할 수 있는 기능을 제공합니다.p: 속성을 찾을 대상 객체입니다."age": 가져오려고 하는 속성의 이름(문자열)입니다.20: 핵심 포인트입니다. p 객체 안에 "age"라는 속성이 존재하지 않을 때, 프로그램이 멈추지 않도록 대신 전달할 기본값입니다.💡 왜 이렇게 사용하나요?만약 세 번째 인자인 20을 적지 않고 print(getattr(p, "age"))라고만 쓰면 어떻게 될까요?현재 p 객체에는 name 속성만 있고 age 속성은 없기 때문에, 파이썬은 아래와 같은 에러를 발생시키며 프로그램을 강제로 종료합니다.
+"""
 
 
 ---------
