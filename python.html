@@ -38,6 +38,37 @@
 
 
 
+
+
+
+
+
+
+---------
+
+
+class Calc():
+    def set_number(self, a, b):
+        self.a = a
+        self.b = b
+    def plus(self):
+        return self.a + self.b   
+    def minus(self):
+        return self.a - self.b
+    def multiple(self):
+        return self.a * self.b
+    def divide(self):
+        return self.a / self.b
+
+
+calc = Calc()
+calc.set_number(20,10)
+print(calc.plus()) # 더한 값 : 30
+print(calc.minus()) # 뺀 값 : 10
+print(calc.multiple()) # 곱한 값 : 200
+print(calc.divide()) # 나눈 값 : 2.0
+
+
 ---------
 
 
