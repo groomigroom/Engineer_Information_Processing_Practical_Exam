@@ -942,7 +942,47 @@ def _(v) :
 																									
 																									
 																									
-																									
+let puppy: string = 'groomi';
+let age: number = 3;
+age = 9;
+let real: boolean = true;
+let a_list: number[] = [1, 2, 3];
+let b_list: Array<number> = [4, 5, 6];
+let c_list: string[] = ["김구름", "멍멍이", "비숑"];
+let d_list: Array<string> = ["구름킴", "멍멍왈왈", "비숑프리제"];
+d_list.push("김구름구름");
+let e_list: [string, number];
+
+e_list = ['g', 1];
+e_list[0].toUpperCase();
+//#####
+
+puppy = "김구름";
+
+function sayHello(): void {
+  console.log("김구름이");
+}
+
+function App() {
+  sayHello()
+  return (
+    <>
+      <p>{puppy}<br />{age}<br />
+        `{real} ? "김구름" : "구름이"`<br />
+        {a_list}<br />
+        {b_list}<br />
+        {c_list}<br />
+        {d_list}<br />
+        {e_list}
+      </p>
+
+    </>
+  )
+}
+
+export default App
+//https://www.youtube.com/watch?v=70w82P-KiVM&t=63s
+//2분 58초																					
 																									
 																									
 																									
