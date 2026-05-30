@@ -47,7 +47,7 @@ int main()
         wscanf(L""%s"", a);
         wprintf(L""%s"", a);
         return 0;
-}"		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0		https://youtu.be/j2I0UkvVtKQ?si=hDTvNFzoGPrQPyeX				https://takeknowledge.tistory.com/65#google_vignette																	
+}"		[이것이 코딩 테스트다 with Python] 15강 구현 유형 문제 풀이 https://share.google/u7dRh72mfXqUMViu0						https://takeknowledge.tistory.com/65#google_vignette																	
 "6.5.3. TCHAR[편집]
 Windows SDK에서 지원하는 호환성을 최대한 유지하면서 코드의 형태를 유지하기 위한 매크로이다. 컴파일러 설정에 따라서 MBCS 인코딩이나 와이드 캐릭터 (UTF-16) 인코딩 방식으로 해당 문자열을 인코딩하며 Windows에서만 사용되는 특성상 플랫폼 의존적인 자료형이다.[16] Windows는 기본 로캘이 각 언어별로 설정되기 때문. 간단한 매크로 함수 선언을 통해서 Windows에서 유니코드(Windows에서 유니코드는 보통 UTF-16을 의미한다)를 지원하면서 호환성이 있는 코드를 작성할 수 있도록 한 개념이다.
 UNICODE 매크로가 활성화되면 매크로로 TCHAR은 wchar_t로 선언되며, 선언되지 않으면 char로 선언되게 된다. _T(x) x 매크로도 마찬가지로 선언되면 L로, 선언되지 않으면 제거된다.
@@ -97,7 +97,7 @@ int wmain(int argc, wchar_t **argv)
         return 0;
 }
 "		[실버 5] 백준 31738 - 매우 어려운 문제 (파이썬) https://share.google/BE1jQRYcsGMpGFlZE		"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
-코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."				10쪽 19번																	
+코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다."				11p 20n																	
 "6.5.4. char16_t[편집]
 UTF-16 방식으로 인코딩하는 문자 자료형이다. C11 표준으로 등장하였다. 한 글자당 기본 2바이트+a로 저장되고 컴파일러에 의존적이지 않다.
 
@@ -668,7 +668,20 @@ int main(void){
     //빨간불과 초록불 둘 중 하나라도 켜져있는지 확인
     }
 }
-//...etc."		https://youtube.com/shorts/Lx_ivcB1vJ0?si=9_QYJZfPw1OyTgkm		"9.11. instanceof[편집]
+//...etc."		"from functools import singledispatch
+
+@singledispatch
+def process(value) :
+  return f""기본: {value}""
+  
+@process.register(int)
+def _(v) :
+  return ""정수 처리""
+  
+@process.register(str)
+def _(v) :
+  return ""문자열 처리""
+  "		"9.11. instanceof[편집]
 obj instanceof T
 obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
 즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다."																					
@@ -713,7 +726,23 @@ void main() {
     System.out.println(iint + ""만큼 "" + nname + ""이 "" + ffav + ""을"" + dnum + ""개 구매할 예정입니다."");
   }
 }"																					
-		https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95																							
+"#include <stdio.h>
+int main()
+{
+  int i, a[5], cnt = 0;
+  for (i = 0; i < 5; i++) {
+    scanf(""%d"", _______);
+  }
+  for (i = 0; i < 5; i++) {
+    if (a[i] % 2 _______ 1) {
+      cnt = cnt + 1;
+    }
+  }
+  printf(""짝수의 개수: %d개"", cnt);
+  return 0;
+}
+//짝수의 개수 구하는 프로그램
+//https://www.youtube.com/watch?v=5g_H1iAclas&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=37"		https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95																							
 																									
 																									
 																									
