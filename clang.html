@@ -30,9 +30,11 @@
 
 
 
+------
 
-
-
+wmain은 프로그램의 진입점(Entry Point)인 main 함수의 와이드 문자(Wide Character, 유니코드) 버전입니다. 주로 유니코드 환경에서 다국어 지원이 필수적인 윈도우(Windows) 
+        기반 프로그램을 작성할 때 사용됩니다.구분mainwmain문자열 형태멀티바이트 문자 (char)와이드 문자 (wchar_t)명령줄 인수char* argv[]wchar_t* argv[]특징표준 C 환경에 
+        적합Windows API, 유니코드 환경에 최적화핵심 상세 정보매개변수 형태: main 함수와 동일하게 argc (인자 개수)와 argv (인자 배열)를 받지만, 인자가 char형 대신 2바이트 유니코드인 wchar_t형으로 처리됩니다.cint wmain(int argc, wchar_t *argv[])
 
 
 
