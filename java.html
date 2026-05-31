@@ -36,6 +36,43 @@
 
 
 
+
+
+
+-------------
+
+public class Main {
+    static void swap (char[] arr, int len) {
+        char v;
+        int i = 0;
+        int j = len - 1;
+        while (i < j) {
+            v = arr[i];
+            arr[i] = arr[j];
+            arr[j] = v;
+            i++;
+            j--;
+        }
+    }
+    
+    public static void main(String[] args) {
+        String str = "ABCDEFGH";
+        int len = str.length();
+        char[] arr = str.toCharArray();
+        
+        swap(arr, len);
+        String str2 = new String(arr);
+        int k;
+        for (k = 1; k < len; k += 2) {
+            System.out.print(str2.charAt(k));
+        }
+    }
+}
+//GECA
+
+
+
+
 -------------		
 
 public class Main
