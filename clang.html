@@ -37,6 +37,79 @@
 
 
 
+
+        
+
+
+
+------
+
+struct 객체자료형 {
+    변수자료형 *변수포인터이름;
+    함수반환값자료형 (*함수포인터이름)(매개변수자료형1, 매개변수자료형2);
+    struct 객체자료형 (*초기화)(struct 객체자료형*);
+};
+
+함수반환값자료형 삽입할함수(매개변수자료형1 매개변수1, 매개변수자료형2 매개변수2) {
+    반환값 = 매개변수1 + 매개변수2;
+    return 반환값;
+}
+
+struct 객체자료형 초기화함수(struct 객체자료형 *인스턴스) {
+    인스턴스->변수포인터이름 = malloc(sizeof(변수자료형)*변수개수);
+    /* C++에서는 '인스턴스->변수포인터이름 = (변수자료형 *)malloc(sizeof(변수자료형)*변수개수);'으로 해야 한다. */
+    인스턴스->함수포인터이름 = 삽입할함수;
+    /* 과거에는 '인스턴스->함수포인터이름 = &삽입할함수;'로 &삽입할함수의 주소를 입력해야 하나, 함수를 함수 포인터로 암묵적으로 변환해주므로 함수로 입력할 수 있다. */
+    return 인스턴스;
+}
+
+int main() {
+    struct 객체자료형 *인스턴스 = malloc(sizeof(struct 객체자료형));
+    /* C++에서는 'struct 객체자료형 *인스턴스 = (struct 객체자료형 *)malloc(sizeof(struct 객체자료형));'으로 해야 한다. */
+    /* 객체 초기화 시작 */
+    인스턴스->초기화 = 초기화함수;
+    /* 과거에는 'a->초기화 = &초기화함수;'로 &초기화함수의 주소를 입력해야 하나, 함수를 함수 포인터로 암묵적으로 변환해주므로 함수로 입력할 수 있다. */
+    *인스턴스 = (인스턴스->초기화(인스턴스));
+    /* 객체 초기화 끝 */
+    free(인스턴스);
+    return 0;
+}
+
+예제는 아래와 같습니다.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct A {
+    int *B;
+    int (*C)(int, int);
+    struct A (*init)(struct A*);
+};
+
+int add(int a, int b) {
+    return a + b;
+}
+
+struct A initA(struct A *a) {
+    a->B = (int*) malloc(sizeof(int)*99);
+    a->C = add;
+    return *a;
+}
+
+int main() {
+    struct A *a = (struct A *) malloc(sizeof(struct A));
+    //struct A만큼의 사이즈를 할당하기
+    a->init = initA;
+    *a = (a->init(a));
+    
+    printf("%d\n", a->C(1, 1)); // 구조체포인터 안에 있는 함수 포인터 활용
+    free(a);
+    return 0;
+}
+
+//C 함수를 불러와서 2가 됨.
+
+
 ------
 
 
