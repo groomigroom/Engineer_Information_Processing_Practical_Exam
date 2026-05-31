@@ -38,8 +38,38 @@
 
 
 
-        
 
+
+
+
+
+
+
+
+------
+
+        
+식별자(identifier)[편집]
+식별자는 영어 대소문자, 숫자, 밑줄문자(underscore)로 이루어져야 한다. 대소문자는 서로 구분된다. 식별자의 길이에 특별한 제한은 없으나 실질적으로는 컴파일러에 따라 한계치가 정해진다.
+
+미리 정해진 식별자로 __func__ 가 있다. 이는 각 함수 내부에서 다음과 같이 취급된다.
+
+static const char __func__[] = "function-name";
+
+이를 이용하면 각 함수 내부에서 함수의 이름을 문자열로 얻거나 출력할 수 있다.
+
+#include <stdio.h>
+
+void my_function() {
+    // __func__를 사용하여 현재 함수 이름 출력
+    printf("현재 실행 중인 함수: %s\n", __func__);
+}
+
+int main() {
+    printf("현재 실행 중인 함수: %s\n", __func__);
+    my_function();
+    return 0;
+}
 
 
 ------
