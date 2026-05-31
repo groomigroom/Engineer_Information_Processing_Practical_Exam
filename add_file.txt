@@ -67,28 +67,25 @@ int main()
         }
         
     }
-}"	"data = input()
-result = []
-value = 0
+}"	"# 현재 나이트의 위치 입력받기
+input_data = input()
+row = int(input_data[1])
+column = int(ord(input_data[0])) - int(ord('a')) + 1
 
-# 문자를 하나씩 확인하며
-for x in data:
-    # 알파벳인 경우 결과 리스트에 삽입
-    if x.isalpha():
-        result.append(x)
-    # 숫자는 따로 더하기
-    else:
-        value += int(x)
+# 나이트가 이동할 수 있는 8가지 방향 정의
+steps = [(-2, -1), (-1, -2), (1, -2), (2, -1), (2, 1), (1, 2), (-1, 2), (-2, 1)]
 
-# 알파벳을 오름차순으로 정렬
-result.sort()
+# 8가지 방향에 대하여 각 위치로 이동이 가능한지 확인
+result = 0
+for step in steps:
+    # 이동하고자 하는 위치 확인
+    next_row = row + step[0]
+    next_column = column + step[1]
+    # 해당 위치로 이동이 가능하다면 카운트 증가
+    if next_row >= 1 and next_row <= 8 and next_column >= 1 and next_column <= 8:
+        result += 1
 
-# 숫자가 하나라도 존재하는 경우 가장 뒤에 삽입
-if value != 0:
-    result.append(str(value))
-
-# 최종 결과 출력(리스트를 문자열로 변환하여 출력)
-print(''.join(result))"	"inf = 1
+print(result)"	"inf = 1
 while (True) :
     cw = input(""이동할 방향을 입력하세요. u 또는 d"")
     if inf == 1 and cw == 'd' :
@@ -136,6 +133,7 @@ public class Main {
             // 숫자는 따로 더하기
             else {
                 value += str.charAt(i) - '0';
+                //#####
             }
         }
 
@@ -239,25 +237,15 @@ http://unixwiz.net/techtips/reading-cdecl.html	"while (1) {
                 printf(""%d층으로 이동하겠습니다.\n"", iwf);
                 inf = iwf;
                 break;
-            }"	"# 현재 나이트의 위치 입력받기
-input_data = input()
-row = int(input_data[1])
-column = int(ord(input_data[0])) - int(ord('a')) + 1
+            }"	"h = int(input())
 
-# 나이트가 이동할 수 있는 8가지 방향 정의
-steps = [(-2, -1), (-1, -2), (1, -2), (2, -1), (2, 1), (1, 2), (-1, 2), (-2, 1)]
-
-# 8가지 방향에 대하여 각 위치로 이동이 가능한지 확인
-result = 0
-for step in steps:
-    # 이동하고자 하는 위치 확인
-    next_row = row + step[0]
-    next_column = column + step[1]
-    # 해당 위치로 이동이 가능하다면 카운트 증가
-    if next_row >= 1 and next_row <= 8 and next_column >= 1 and next_column <= 8:
-        result += 1
-
-print(result)"		"import java.util.*;
+count = 0
+for i in range(h + 1) :
+    for j in range(60) :
+        for k in range(60):
+            if '3' in str(i) + str(j) + str(k):
+                count += 1
+print(count)"		"import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -283,7 +271,29 @@ public class Main {
         }
         System.out.println(result);
     }
-}"		[MYSQL] 📚 WITH ROLLUP & Grouping 함수 https://share.google/kUFiymGIU3qMu62JD		https://takeknowledge.tistory.com/65#google_vignette																	
+}"		[MYSQL] 📚 WITH ROLLUP & Grouping 함수 https://share.google/kUFiymGIU3qMu62JD	"create table 가게정보
+(
+  지역 varchar(50),
+  이름 varchar(50),
+  가격 integer
+);
+
+insert into 가게정보
+values
+(""광주"", ""구름이네"", 2000),
+(""광주"", ""구구네"", 250),
+(""광주"", ""구름이네"", 400),
+(""서울"", ""wifi"", 500);
+
+select 이름, sum(가격)
+from 가게정보
+group by 이름;
+
+select 이름, sum(가격)
+from 가게정보
+group by 이름 with rollup;
+
+"	https://takeknowledge.tistory.com/65#google_vignette																	
 "struct 객체자료형 {
     변수자료형 *변수포인터이름;
     함수반환값자료형 (*함수포인터이름)(매개변수자료형1, 매개변수자료형2);
@@ -342,15 +352,20 @@ int main() {
     printf(""%d\n"", a->C(1, 1)); // 구조체포인터 안에 있는 함수 포인터 활용
     free(a);
     return 0;
-}"		"h = int(input())
+}"		"# 백준 31738 - 매우 어려운 문제
+# 분류 : 수학
+N, M = map(int, input().split())
 
-count = 0
-for i in range(h + 1) :
-    for j in range(60) :
-        for k in range(60):
-            if '3' in str(i) + str(j) + str(k):
-                count += 1
-print(count)"		"import java.util.*;
+if N >= M :
+    print(0)
+else :
+    d = 1
+    for i in range(1, N + 1) :
+        d *= i
+        d %= M
+        
+    print(d)
+"		"import java.util.*;
 
 public class Main {
     // 특정한 시각 안에 '3'이 포함되어 있는지의 여부
@@ -375,20 +390,7 @@ public class Main {
         System.out.println(cnt);
     }
 }"		https://youtube.com/shorts/qTuZ1tiUAAI?si=zE_EhYAfeu9GmI_0		11p 20n																	
-https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		"# 백준 31738 - 매우 어려운 문제
-# 분류 : 수학
-N, M = map(int, input().split())
-
-if N >= M :
-    print(0)
-else :
-    d = 1
-    for i in range(1, N + 1) :
-        d *= i
-        d %= M
-        
-    print(d)
-"		"public class Main {
+https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0				"public class Main {
     public static void main(String[] args) {
       ArrayList<LinkedList<String>> list = new ArrayList<LinkedList<String>>();
       
@@ -438,7 +440,7 @@ https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%
 ? : ; ...
 = *= /= %= += -= <<= >>= &= ^= |=
 , # ##
-<: :> <% %> %: %:%:"				"""8. 입력[편집]
+<: :> <% %> %: %:%:"		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt		"""8. 입력[편집]
 표준 입력 스트림(System.in)에서 입력 받는 방법이다.
 
 int i = System.in.read();
@@ -508,7 +510,14 @@ int
 ASCII
 의존
 X[11]
-ISO/IEC 9899:TC3 §6.4.4.4"		실제 면접 코딩테스트 문제 (Python) https://share.google/7Dp08SABweFXCPedt		"abstract class Info{
+ISO/IEC 9899:TC3 §6.4.4.4"		"breakpoint()는 코드 실행을 일시 중단하고 대화형 디버거(pdb)를 실행하는 내장 함수입니다(Python 3.7+). 터미널이나 명령 프롬프트에서 변수 값을 확인하고 코드를 한 줄씩 실행하며 디버깅할 수 있습니다.
+
+def add(a, b):
+    result = a + b
+    breakpoint()  # 이 지점에서 실행이 멈춥니다.
+    return result
+
+add(3, 5)"		"abstract class Info{
     public abstract int getLevel();
 }
 class EmployeeInfo extends Info{
@@ -550,14 +559,7 @@ int main(void){
     //빨간불과 초록불 둘 중 하나라도 켜져있는지 확인
     }
 }
-//...etc."		"breakpoint()는 코드 실행을 일시 중단하고 대화형 디버거(pdb)를 실행하는 내장 함수입니다(Python 3.7+). 터미널이나 명령 프롬프트에서 변수 값을 확인하고 코드를 한 줄씩 실행하며 디버깅할 수 있습니다.
-
-def add(a, b):
-    result = a + b
-    breakpoint()  # 이 지점에서 실행이 멈춥니다.
-    return result
-
-add(3, 5)"		"interface Info{
+//...etc."		bytearray() 사용법		"interface Info{
     int getLevel();
 }
 class EmployeeInfo implements Info{
@@ -597,7 +599,31 @@ void main() {
   for (int i = 1; i < len; i += 2) {
     printf(""%c"", str[i]);
   }
-}"		bytearray() 사용법		"super - 하한 경계
+}"	"#include <stdio.h>
+#include <string.h>
+void swap(char* str, int len) {
+  char v;
+  char* fr = str;
+  char* ed = str + len - 1;
+  //str + 7
+  while (fr < ed) {
+    v = *fr;
+    *fr = *ed;
+    *ed = v;
+    //*fr = *ed, *ed = *fr
+    fr++;
+    ed--;
+  }
+}
+void main() {
+  char str[10] = ""ABCDEFGH"";
+  int len = strlen(str);
+  //8
+  swap(str, len);
+  for (int i = 1; i < len; i += 2) {
+    printf(""%c"", str[i]);
+  }
+}"	bytes()		"super - 하한 경계
 
 하한 경계 역시 두 가지 구조로 나누어 살펴보겠습니다. 큰 틀은 상한 경계와 같으나 제네릭 제한의 기준이 다르다고 보면 되겠습니다.
 
@@ -626,8 +652,7 @@ int main()
   return 0;
 }
 //짝수의 개수 구하는 프로그램
-//https://www.youtube.com/watch?v=5g_H1iAclas&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=37"		bytes()		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re																					
-		"강좌찾기
+//https://www.youtube.com/watch?v=5g_H1iAclas&list=PLYdThbnQN0eK9dT2o-oACQpaIGjTswCSK&index=37"		"강좌찾기
 @classmethod는 인스턴스가 아닌 클래스 자체(cls)에 접근하고 조작하는 메서드를 정의할 때 사용합니다. 주로 객체를 여러 방식으로 생성하는 대체 생성자(Alternative Constructor)를 만들거나 클래스 변수(class variable)를 다룰 때 활용됩니다.주요 특징과 자주 쓰이는 목적은 다음과 같습니다.1. 주요 특징첫 번째 인자: 클래스 객체를 의미하는 cls를 받습니다.호출 대상: 인스턴스와 클래스 모두에서 호출 가능합니다.접근 범위: 인스턴스 변수에는 접근할 수 없으며, 클래스 변수나 다른 클래스 메서드에 접근할 수 있습니다.2. 왜 사용할까? (활용 목적)대체 생성자 생성: 기본 __init__ 메서드 외에 다양한 형태로 객체를 초기화해야 할 때 유용합니다. (예: 텍스트 파일이나 딕셔너리 데이터를 받아 객체 생성).클래스 상태 관리: 모든 인스턴스가 공유하는 클래스 변수의 값을 수정하거나 조회할 때 사용합니다.3. 코드 예시pythonclass Student:
     school_name = ""Seoul High School""  # 클래스 변수
 
@@ -650,7 +675,7 @@ Student.change_school(""Korea High School"")
 
 # 2. 대체 생성자를 활용해 객체 생성
 student_1 = Student.from_string(""Kim,18"")
-"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj																					
+"		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re																					
 		"delattr()은 파이썬의 내장 함수로, 객체에서 특정 속성(attribute)을 동적으로 삭제할 때 사용합니다.기본적으로 del 객체.속성을 사용하는 것과 동일한 역할을 하지만, 속성의 이름을 문자열로 지정할 수 있다는 점이 다릅니다.기본 문법pythondelattr(object, name)
 코드를 사용할 때는 주의가 필요합니다.object: 속성을 삭제할 객체 (클래스 또는 인스턴스)name: 삭제할 속성의 이름을 나타내는 문자열활용 예시pythonclass Person:
     def __init__(self, name, age):
@@ -674,7 +699,7 @@ print(a)
 
 delattr(a, ""age"")
 
-print(a)"		https://m.blog.naver.com/seek316/223341255150																					
+print(a)"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj																					
 		"파이썬에서 exec()는 문자열로 작성된 파이썬 코드를 프로그램 실행 중에 동적으로 실행(execute)하는 내장 함수입니다. 여러 줄의 코드나 복잡한 문장도 한 번에 실행할 수 있습니다.주요 특징반환값 없음: eval()과 달리 코드를 실행할 뿐, 별도의 결괏값을 반환하지 않습니다(항상 None 반환).코드 조작: 코드 블록, 루프, 함수 정의, 변수 할당 등 파이썬에서 가능한 모든 구문을 수행할 수 있습니다.기본 문법 및 동작 방식pythoncode = """"""
 for i in range(2):
     print(f""동적 실행: {i}"")
@@ -682,7 +707,7 @@ for i in range(2):
 exec(code)
 코드를 사용할 때는 주의가 필요합니다.[출력]text동적 실행: 0
 동적 실행: 1
-코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."		자바 Connection 타입																					
+코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."		https://m.blog.naver.com/seek316/223341255150																					
 		"filter() 함수는 반복 가능한(iterable) 객체의 데이터 중 특정 조건에 맞는 요소들만 골라내어 반환하는 내장 함수입니다.1. 기본 문법pythonfilter(함수, 반복_가능한_객체)
 코드를 사용할 때는 주의가 필요합니다.첫 번째 인수 (함수): 각 요소를 검사할 조건 함수(또는 람다 함수). True 또는 False를 반환해야 합니다.두 번째 인수 (반복_가능한_객체): 리스트, 튜플 등 순회 가능한 데이터.2. 작동 방식두 번째 인수의 각 요소를 첫 번째 인수인 함수에 대입합니다.함수의 결과가 True인 요소들만 추출하여 filter 객체로 반환합니다.보통 결과를 확인하기 위해 list() 등으로 변환하여 사용합니다.3. 예시 코드짝수만 골라내는 대표적인 예시입니다.python# 1. 조건 함수 정의
 def is_even(n):
@@ -700,7 +725,7 @@ print(list(result))  # [2, 4, 6]
 # 람다 함수 사용
 result = list(filter(lambda x: x % 2 == 0, numbers))
 
-print(result)  # [2, 4, 6]"		자바 Thread implements Runnable run() start()																					
+print(result)  # [2, 4, 6]"		자바 Connection 타입																					
 		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
 async def my_async_generator():
@@ -722,7 +747,8 @@ async def main():
         print(""반복이 모두 끝났습니다."")
 
 asyncio.run(main())
-코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		"class C1{
+코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		자바 Thread implements Runnable run() start()																					
+		파이썬 help()		"class C1{
     static int static_variable = 1;
     int instance_variable = 2;
     static void static_static(){
@@ -768,13 +794,9 @@ public class Main {
     }
  
 }"																					
-		파이썬 help()		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/ZXqDH9dqgBQ5arscC																					
-		https://m.blog.naver.com/regenesis90/222342030086		a >>> b는 부호 비트를 포함하여 변수 a의 모든 비트를 오른쪽으로 b칸만큼 이동(Shift)시키는 '부호 없는 우측 시프트(Unsigned Right Shift)' 연산자입니다.이 연산의 핵심 특징은 다음과 같습니다.💡 핵심 요약빈자리를 무조건 0으로 채우기 때문에, 음수를 처리할 때 최상위 비트(부호 비트)를 유지하는 일반 시프트(>>)와 달리 결과값이 항상 양수가 됩니다.🔍 일반 시프트(>>)와의 차이점>> (부호 있는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 기존의 부호 비트(0 또는 1)로 채웁니다.>>> (부호 없는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 무조건 0으로 채웁니다.📝 동작 예시 (8비트 기준)음수 -8 (이진수: 1111 1000)을 2칸씩 이동할 경우:>> 연산 시:빈자리를 부호 비트인 1로 채워 음수가 유지됩니다.1111 1000 >> 2 \(\rightarrow \) 1111 1110 (십진수: -2)>>> 연산 시:빈자리를 무조건 0으로 채워 양수가 됩니다.1111 1000 >>> 2 \(\rightarrow \) 0011 1110 (십진수: 62)																					
+		https://m.blog.naver.com/regenesis90/222342030086		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/ZXqDH9dqgBQ5arscC																					
 		"iter()
-https://dojang.io/mod/page/view.php?id=2408"		"9.10. 형변환[편집]
-(T) a;
-a의 타입을 T로 변환한다. 변환할 수 없는 경우 예외가 발생한다.
-숫자 타입을 크기가 작은 타입으로 변환시키거나[26], 부모 클래스 타입의 객체를 자식 클래스로 변환시킬 때 사용된다."																					
+https://dojang.io/mod/page/view.php?id=2408"		a >>> b는 부호 비트를 포함하여 변수 a의 모든 비트를 오른쪽으로 b칸만큼 이동(Shift)시키는 '부호 없는 우측 시프트(Unsigned Right Shift)' 연산자입니다.이 연산의 핵심 특징은 다음과 같습니다.💡 핵심 요약빈자리를 무조건 0으로 채우기 때문에, 음수를 처리할 때 최상위 비트(부호 비트)를 유지하는 일반 시프트(>>)와 달리 결과값이 항상 양수가 됩니다.🔍 일반 시프트(>>)와의 차이점>> (부호 있는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 기존의 부호 비트(0 또는 1)로 채웁니다.>>> (부호 없는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 무조건 0으로 채웁니다.📝 동작 예시 (8비트 기준)음수 -8 (이진수: 1111 1000)을 2칸씩 이동할 경우:>> 연산 시:빈자리를 부호 비트인 1로 채워 음수가 유지됩니다.1111 1000 >> 2 \(\rightarrow \) 1111 1110 (십진수: -2)>>> 연산 시:빈자리를 무조건 0으로 채워 양수가 됩니다.1111 1000 >>> 2 \(\rightarrow \) 0011 1110 (십진수: 62)																					
 		"locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 딕셔너리 데이터를 동적으로 처리할 때 사용합니다.💡 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 전역 네임스페이스를 반환합니다.💻 활용 예시1. 지역 변수 확인 (디버깅)pythondef my_function(a, b):
     local_var = ""Hello""
     print(locals())
@@ -787,10 +809,10 @@ my_function(10, 20)
     print(f""계산에 사용된 가로: {variables['width']}"")
     return width * height
 
-calculate_area(5, 10)"		"9.11. instanceof[편집]
-obj instanceof T
-obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
-즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다."																					
+calculate_area(5, 10)"		"9.10. 형변환[편집]
+(T) a;
+a의 타입을 T로 변환한다. 변환할 수 없는 경우 예외가 발생한다.
+숫자 타입을 크기가 작은 타입으로 변환시키거나[26], 부모 클래스 타입의 객체를 자식 클래스로 변환시킬 때 사용된다."																					
 		"#얕은 복사
 
 #분할 [:]
@@ -881,7 +903,11 @@ x = [1, 2, []]
 
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
-https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"class Kimgroom {
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"9.11. instanceof[편집]
+obj instanceof T
+obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
+즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다."																					
+				"class Kimgroom {
   boolean aa;
   int iint;
   String nname;
@@ -901,7 +927,20 @@ https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"class Kimgroom {
     System.out.println(iint + ""만큼 "" + nname + ""이 "" + ffav + ""을"" + dnum + ""개 구매할 예정입니다."");
   }
 }"																					
-				"interface Number_part {
+		"from functools import singledispatch
+
+@singledispatch
+def process(value) :
+  return f""기본: {value}""
+  
+@process.register(int)
+def _(v) :
+  return ""정수 처리""
+  
+@process.register(str)
+def _(v) :
+  return ""문자열 처리""
+  "		"interface Number_part {
   int sso(int a, boolean dd);
 }
 
@@ -922,67 +961,14 @@ public class Main {
 }
 //12
 직접 만듦"																					
-		"from functools import singledispatch
-
-@singledispatch
-def process(value) :
-  return f""기본: {value}""
-  
-@process.register(int)
-def _(v) :
-  return ""정수 처리""
-  
-@process.register(str)
-def _(v) :
-  return ""문자열 처리""
-  "																							
 		"@singledispatch
-@process.register"																							
+@process.register"		Character.getNumericValue()																					
 		https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95																							
 																									
 																									
 																									
-let puppy: string = 'groomi';
-let age: number = 3;
-age = 9;
-let real: boolean = true;
-let a_list: number[] = [1, 2, 3];
-let b_list: Array<number> = [4, 5, 6];
-let c_list: string[] = ["김구름", "멍멍이", "비숑"];
-let d_list: Array<string> = ["구름킴", "멍멍왈왈", "비숑프리제"];
-d_list.push("김구름구름");
-let e_list: [string, number];
-
-e_list = ['g', 1];
-e_list[0].toUpperCase();
-//#####
-
-puppy = "김구름";
-
-function sayHello(): void {
-  console.log("김구름이");
-}
-
-function App() {
-  sayHello()
-  return (
-    <>
-      <p>{puppy}<br />{age}<br />
-        `{real} ? "김구름" : "구름이"`<br />
-        {a_list}<br />
-        {b_list}<br />
-        {c_list}<br />
-        {d_list}<br />
-        {e_list}
-      </p>
-
-    </>
-  )
-}
-
-export default App
-//https://www.youtube.com/watch?v=70w82P-KiVM&t=63s
-//2분 58초																					
+																									
+																									
 																									
 																									
 																									
