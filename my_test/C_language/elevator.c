@@ -26,18 +26,15 @@ int main()
                 scanf(" %d", &iwf);
                 if (iwf == inf) {
                     printf("현재 층을 입력했습니다.\n");
-                    continue;
                 }
                 else if (iwf > 18 || iwf < 1) {
                     printf("1 ~ 18층 사이의 숫자를 입력하세요\n");
                 }
                 else if (cw == 'u' && inf > iwf) {
                     printf("현재 층보다 낮은 층으로 올라갈 수 없습니다.\n");
-                    continue;
                 }
                 else if (cw == 'd' && inf < iwf) {
                     printf("현재 층보다 높은 층으로 내려갈 수 없습니다.\n");
-                    continue;
                 }
                 else {
                     printf("%d층으로 이동하겠습니다.\n", iwf);
