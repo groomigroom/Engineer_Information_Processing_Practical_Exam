@@ -49,15 +49,22 @@ def getDuplicateNums(a, b, c):
         elif min([a_val, b_val, c_val]) == c_val:
             c_index = c_index + 1
         
-    return answer"	"def f(b) :
+    return answer"	"def f(a) :
   m = [[x] for x in a]
   b = m[:]
   c = []
-  for i in range (0, len(b)) :
-    c = b[i]
-    b[i] = 
     
-  #이렇게 해서 서로 바꿔서 최종적으로 m 리스트 값 바뀌게 얕은 복사"	"import java.util.*;
+  for i in range(0, len(b)) :
+    c.append(b[(i + 1) % len(b)])
+  return c
+  
+  
+y = [1, 2, 3, 4]
+
+d= f(y)
+print(int(d[2][0]) + int(d[3][0]))
+
+#5"	"import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -525,16 +532,19 @@ create table 부서1
     showing_num int,
     showing_count integer,
     listening_num int,
-    screen_num smallint,
+    screen_num integer,
     listen_country varchar(50),
     countries varchar(50),
     composition varchar(50),
     song_type varchar(50),
     genre varchar(50),
-    direc_time varchar(50)  
+    direc_time integer
 );
 
-
+insert into 부서1
+values
+(1, 1, 22, 데뷔년도(year)로, 2(1~24까지), ""곡이름"", ""곡등록날짜"", 3.33, 33.333, 27, 28, 22, 41, 22, ""korea"", ""korea"", ""작곡"", ""곡타입"", ""장르"", 곡시간분으로),
+(1, 2, 24, 데뷔년도(year)로, 2, ""곡이름"", ""곡등록날짜"", 3.33, 33.333, 27, 28, 22, 41, 22, ""korea"", ""korea"", ""작곡"", ""곡타입"", ""장르"", 곡시간분으로),
 
 
 
