@@ -28,9 +28,24 @@
 
 
 
+-------------
 
+입력
+표준 입력 스트림(System.in)에서 입력 받는 방법이다.
 
+int i = System.in.read();
+가장 기본적인 입력이다. 바이트 하나를 읽는다. 예를 들어 ""ABCn""을 입력하면 A의 아스키코드인 65를 반환한다. 이후 한번 더 read()를 호출하면 B의 아스키코드인 66이 반환되는 식. 한글의 경우 3바이트로 이루어져 있어서 한번으로는 완전히 읽을 수 없다. 매우 불편하기에 특수한 경우가 아니면 아래 방식들을 사용하는 편.
 
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String str = br.readLine();
+Scanner 추가 전에 주로 사용된 방식이다. 속도가 Scanner보다 빨라서 사용된다.
+
+Scanner sc = new Scanner(System.in);
+String str = sc.nextLine();
+자바 24 까지 간단히 사용되는 입력 방식이다. sc.nextInt(); 같은 메서드로 바로 타입을 바꿀 수 있다.[17]
+
+String str = IO.readln();
+자바 25부터 사용 가능한 입력 방식이다. 내부적으로 BufferedReader를 사용하므로 사용도 쉽고, 속도도 빠르다."
 
 -------------
 
