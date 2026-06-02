@@ -49,22 +49,7 @@ def getDuplicateNums(a, b, c):
         elif min([a_val, b_val, c_val]) == c_val:
             c_index = c_index + 1
         
-    return answer"	"def f(a) :
-  m = [[x] for x in a]
-  b = m[:]
-  c = []
-    
-  for i in range(0, len(b)) :
-    c.append(b[(i + 1) % len(b)])
-  return c
-  
-  
-y = [1, 2, 3, 4]
-
-d= f(y)
-print(int(d[2][0]) + int(d[3][0]))
-
-#5"	"import java.util.*;
+    return answer"		"import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -118,7 +103,58 @@ public class Main {
         scanner.close();
     }
 }
-*/"		https://youtube.com/shorts/qTuZ1tiUAAI?si=zE_EhYAfeu9GmI_0		"이거랑 아래꺼 리눅스
+*/"	"public class Main {
+  String[] new_unit = []; //이거 확인
+  int select = -1;
+  
+  void add_member(String mem) {
+    new_unit.add(None); //이거 수정
+    int ulen = new_unit.length();
+    new_unit[ulen - 1] = mem;
+  }
+  
+  void insert_member (int pos, String mem) {
+    if (pos < 0 || pos > new_unit.length()) {
+      System.out.println(""멤버 추가 불가능"");
+    }
+    
+    new_unit.add(None); //이거 수정
+    int ulen = new_unit.length();
+    for(int i = ulen - 1; i < pos; i -= i) {
+      new_unit[i] = new_unit[i - 1];
+      new_unit[i - 1] = None; //이거 수정
+    }
+    new_unit[pos] = mem;
+  }
+  
+  void del_member(int pos) {
+    if (pos < 0 || pos > new_unit.length()) {
+      System.out.println(""멤버 삭제 불가능"");
+    }
+    int ulen = new_unit.length();
+    new_unit[pos] = None //이거 수정
+    
+    for (int i = pos + 1; i < ulen; i++) {
+      new_unit[i - 1] = new_unit[i];
+      new_unit[i] = None //이거 수정
+    }
+    del(new_unit[ueln - 1])//이거 수정
+  }
+  
+  public static void main(String[] args) {
+    while(select != 4) {
+      System.out.println(""선택하세요: 1.추가 2.삽입 3.삭제 4.종료"");
+      scanner; //이거 수정
+      
+      if (select == 1) {
+        mem = scanner; //이거 수정
+        add_member(mem);
+        System.out.println(new_unit);
+      }
+    }
+  }
+}
+"	https://youtube.com/shorts/qTuZ1tiUAAI?si=zE_EhYAfeu9GmI_0		"이거랑 아래꺼 리눅스
 https://copy.sh/v86/?profile=linux26"																	
 http://unixwiz.net/techtips/reading-cdecl.html		"bytearray()는 파이썬에서 변경 가능한(Mutable) 이진 데이터를 다룰 때 사용하는 자료형입니다. 일반적인 리스트처럼 요소를 수정, 추가, 삭제할 수 있으면서도 바이트 단위(\(0 \sim 255\) 사이의 정수)로 메모리를 효율적으로 관리합니다.다음은 bytearray()의 주요 생성 방법과 활용법입니다.1. 주요 객체 생성 방법빈 바이트 배열 생성: bytearray()길이 지정 생성: bytearray(길이) (지정된 길이만큼 0으로 채워짐)반복 가능한 객체(리스트 등)로 생성: bytearray([10, 20, 30])문자열로 생성 (인코딩 필수): bytearray(""Hello"", 'utf-8')2. 주요 활용법 및 특징값 수정 및 리스트 메서드 사용bytearray의 각 요소는 \(0 \sim 255\) 사이의 정수로 취급되며, 리스트처럼 인덱싱과 슬라이싱을 통해 값을 변경할 수 있습니다.python# 리스트 형태의 데이터로 생성
 arr = bytearray([65, 66, 67])
@@ -233,7 +269,7 @@ public class Main{
 		s.name = ""김유신"";
 		s.check = ""check!"";
 	}
-}"		18쪽 46번		41쪽부터 보기																	
+}"		18쪽 46번		187번부터 보 66쩍																	
 "6.5. 문자 자료형[편집]
 여러 가지 자료형이 있다. 가장 기본이 되는 것은 char이며, 이외 자료형의 사용법을 아래 표에 간략히 정리하였다.
 자료형
@@ -366,7 +402,7 @@ exec(code)
 코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."		"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
 코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다.
 
-https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85-%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85-%ED%95%9C%EB%B0%A9-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"		슈퍼키																			
+https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85-%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85-%ED%95%9C%EB%B0%A9-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"		슈퍼키		51쪽 147번																	
 "#include <stdio.h>
 #define test(a, b, c) a + b * c
 
@@ -411,141 +447,7 @@ public class GenericDemo {
         Person p1 = new Person(new EmployeeInfo(1));
         Person<String> p2 = new Person<String>(""부장"");
     }
-}"		"create table triples
-(
-    s_id integer primary key,
-    name_bar varchar(50),
-    nation varchar(50),
-    birthy year
-);
-
-insert into triples
-values
-(1, ""윤서연"", ""대한민국"", 2003),
-(2, ""정혜린"", ""대한민국"", 2007),
-(3, ""이지우"", ""대한민국"", 2005),
-(4, ""김채연"", ""대한민국"", 2004),
-(5, ""김유연"", ""대한민국"", 2001),
-(6, ""김수민"", ""대한민국"", 2007),
-(7, ""김나경"", ""대한민국"", 2002),
-(8, ""공유빈"", ""대한민국"", 2005),
-(9, ""카에데"", ""일본"", 2005),
-(10, ""서다현"", ""대한민국"", 2003),
-(11, ""코토네"", ""일본"", 2004),
-(12, ""곽연지"", ""대한민국"", 2008),
-(13, ""니엔"", ""대만"", 2003),
-(14, ""박소현"", ""대한민국"", 2002),
-(15, ""신위"", ""중국"", 2002),
-(16, ""마유"", ""일본"", 2002),
-(17, ""린"", ""일본"", 2006),
-(18, ""주빈"", ""대한민국"", 2009),
-(19, ""정하연"", ""대한민국"", 2007),
-(20, ""박시온"", ""대한민국"", 2006),
-(21, ""김채원"", ""대한민국"", 2007),
-(22, ""설린"", ""태국"", 2006),
-(23, ""서아"", ""대한민국"", 2010),
-(24, ""지연"", ""대한민국"", 2004);
-
-create table triples_start_unit
-(
-    s_id integer primary key,
-    name_bar varchar(50),
-    unit varchar(50)
-);
-
-insert into triples_start_unit
-values
-(1, ""윤서연"", ""+(KR)ystal Eyes""),
-(2, ""정혜린"", ""Acid Angel from Asia""),
-(3, ""이지우"", ""+(KR)ystal Eyes""),
-(4, ""김채연"", ""+(KR)ystal Eyes""),
-(5, ""김유연"", ""Acid Angel from Asia""),
-(6, ""김수민"", ""+(KR)ystal Eyes""),
-(7, ""김나경"", ""Acid Angel from Asia""),
-(8, ""공유빈"", ""Acid Angel from Asia""),
-(9, ""카에데"", ""LOVElution""),
-(10, ""서다현"", ""LOVElution""),
-(11, ""코토네"", ""EVOLution""),
-(12, ""곽연지"", ""EVOLution""),
-(13, ""니엔"", ""LOVElution""),
-(14, ""박소현"", ""LOVElution""),
-(15, ""신위"", ""LOVElution""),
-(16, ""마유"", ""EVOLution""),
-(17, ""린"", ""NXT""),
-(18, ""주빈"", ""NXT""),
-(19, ""정하연"", ""NXT""),
-(20, ""박시온"", ""NXT""),
-(21, ""김채원"", ""Glow""),
-(22, ""설린"", ""Glow""),
-(23, ""서아"", ""Glow""),
-(24, ""지연"", ""Glow"");
-
-
-create table 부서
-(
-    b_id integer primary key,
-    b_name varchar(50),
-    from_date date,
-    to_date date
-);
-
-insert into 부서
-values
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(1, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(2, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31""),
-(3, """", ""200"", ""2100-12-31"");
-
-
-create table 부서1
-(
-    b_sebu integer ,
-    s_id integer primary key,
-    seq_no integer,
-    start_year integer,
-    lyric_rank integer,
-    song_name varchar(50),
-    song_release datetime,
-    song_amt double,
-    song_rate?? double,
-    listening_num int,
-    showing_num int,
-    showing_count integer,
-    listening_num int,
-    screen_num integer,
-    listen_country varchar(50),
-    countries varchar(50),
-    composition varchar(50),
-    song_type varchar(50),
-    genre varchar(50),
-    direc_time integer
-);
-
-insert into 부서1
-values
-(1, 1, 22, 데뷔년도(year)로, 2(1~24까지), ""곡이름"", ""곡등록날짜"", 3.33, 33.333, 27, 28, 22, 41, 22, ""korea"", ""korea"", ""작곡"", ""곡타입"", ""장르"", 곡시간분으로),
-(1, 2, 24, 데뷔년도(year)로, 2, ""곡이름"", ""곡등록날짜"", 3.33, 33.333, 27, 28, 22, 41, 22, ""korea"", ""korea"", ""작곡"", ""곡타입"", ""장르"", 곡시간분으로),
-
+}"		"
 
 
 
@@ -654,7 +556,31 @@ public class GenericDemo {
         // p2 자체를 출력하면 주소값이 나오므로 내부 값을 출력합니다.
         System.out.println(p2.info); // 출력 결과: 부장
     }
-}"																					
+}"		"윤서연 2023년대뷔Picton Blue (#22aeff)
+정혜린 2022년 데뷔Electric Violet (#9200ff)
+
+이지우 2023년 대뷔Lemon (#fff800)
+김채연 2023년 Atlantis (#98f21d)
+김유연 2022년Razzmatazz (#db0c74)
+김수민 2023년 Mauvelous(#fc83a4)
+김나경 2022년 Cadet Blue(#6799a0)
+공유빈 2022년 Misty Rose(#ffe3e2)
+카에데 2023년 Sunglow(#ffc935)
+서다현 2023년 Lavender Rose(#ff9ad6)
+코토네 2023년 Golden Yellow(#ffde00)
+곽연지 2023년 Royal Blue(#5974ff)
+니엔 2023년 Neon Carrot(#ff953f)
+박소현 2023년 Egyptian Blue(#1222b5)
+신위 2023년 Lava Red(#d51313)
+마유 2023년 Salmon (#fe8e76)
+린 2023년 Violet Blue(#ac62b7)
+주빈 2023년Conifer (#b7f54c)
+정하연 2023년 Medium Turquoise(#52d9bb)
+박시온 2023년 French Rose(#ff428a)
+김채원 2024년 Wisteria(#c7a3e0)
+설린 2024년 Bay Leaf(#7bba8d)
+서아 2024년 Pattens Blue(#cff3ff)
+지연 2024년 Apricot (#ffab62)"																			
 		파이썬 help()		"super - 하한 경계
 
 하한 경계 역시 두 가지 구조로 나누어 살펴보겠습니다. 큰 틀은 상한 경계와 같으나 제네릭 제한의 기준이 다르다고 보면 되겠습니다.
@@ -667,7 +593,14 @@ public class GenericDemo {
 
 ● ? - 와일드 카드
 
-  와일드 카드 <?>는 타입의 제한을 두지 않는 것을 의미합니다. 자바의 최상위 클래스인 Object의 상한경계를 의미하는 <? extends Object> 와 동일합니다. 즉 타입이 어떤 것이든 올 수 있다는 개념으로 보시면 될 것 같습니다. (any type의 의미보다는 unknown - 알수없음 에 가까운 것 같습니다.)"																					
+  와일드 카드 <?>는 타입의 제한을 두지 않는 것을 의미합니다. 자바의 최상위 클래스인 Object의 상한경계를 의미하는 <? extends Object> 와 동일합니다. 즉 타입이 어떤 것이든 올 수 있다는 개념으로 보시면 될 것 같습니다. (any type의 의미보다는 unknown - 알수없음 에 가까운 것 같습니다.)"		"1번 229 00:02:42
+2번 109 00:01:01
+3번 31000 00:03:08
+4번 159 00:03:09
+5번 151 00:02:31
+6번 142 00:02:16
+7번 147 00:02:19
+"																			
 		https://m.blog.naver.com/regenesis90/222342030086		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re																					
 		"iter()
 https://dojang.io/mod/page/view.php?id=2408"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj																					
