@@ -17,7 +17,36 @@ int main()
 
     return 0;
 }
-"		"a = [ 1, 3, 5, 7, 9, 13, 15 ]
+"	"#include <stdio.h>
+
+int field[4][4] = {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}};
+
+int main()
+{
+  //field에서 for문으로 i j 로 불러서 1씩 증가 등등 복잡하게 만들기
+  /*
+  int *arr;
+    int size = 10;
+    arr = (int*)malloc(size * sizeof(int));
+    
+    for(int i = 0; i < size; i++) {
+        arr[i] = i + 1;
+         
+    }
+    for(int i = 0; i < size; i++) {
+        printf(""%d"", arr[i]);
+    }
+    free(arr);
+    이거 참고해서 할당하기
+    564번줄
+    nion MyUnion {
+    int i; //4바이트
+    char c; //1바이트
+}; //공용체 크기: 4바이트 (가장 큰 멩법의 크기)
+    */
+  
+  
+}"	"a = [ 1, 3, 5, 7, 9, 13, 15 ]
 b = [ 4, 5, 6, 8, 13 ]
 c = [ 5, 8, 13, 19 ]
 
@@ -49,7 +78,22 @@ def getDuplicateNums(a, b, c):
         elif min([a_val, b_val, c_val]) == c_val:
             c_index = c_index + 1
         
-    return answer"		"import java.util.*;
+    return answer"	"str = [""k"", ""g"", ""r""]
+text = 12
+
+def soo (str) :
+  str[0] = str[1]
+  str[1] = str[2]
+  str[0] = str[2]
+
+
+soo(str)
+str2 = """".join(str[0])
+print(str2, end="""")
+print(bin(text))
+boo1 = len(str) < 2
+boo2 = str[0] == ""g""
+print(any([boo1, boo2]))"	"import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -189,7 +233,29 @@ public class Main {
         }
         System.out.println(cnt);
     }
-}"		https://youtube.com/shorts/MSFv_fNqSgA?si=eE_VcFzQs-zNmwEH		https://takeknowledge.tistory.com/65#google_vignette																	
+}"	"abstract class AA {
+  public abstract int b();
+  public abstract int c();
+}
+class B extends AA {
+  public int b() {
+    return 11;
+  }
+  
+  public int c() {
+    return 13;
+  }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+      AA obj = new AA();
+      System.out.println(obj.b() + obj.c());
+    }
+} //일단 에러뜸
+169번줄
+325번줄"	https://youtube.com/shorts/MSFv_fNqSgA?si=eE_VcFzQs-zNmwEH		https://takeknowledge.tistory.com/65#google_vignette																	
 https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		bytes()		"public class Main {
     public static void main(String[] args) {
       ArrayList<LinkedList<String>> list = new ArrayList<LinkedList<String>>();
@@ -269,7 +335,7 @@ public class Main{
 		s.name = ""김유신"";
 		s.check = ""check!"";
 	}
-}"		18쪽 46번		187번부터 보 66쩍																	
+}"		18쪽 46번		71쪽 211부터																	
 "6.5. 문자 자료형[편집]
 여러 가지 자료형이 있다. 가장 기본이 되는 것은 char이며, 이외 자료형의 사용법을 아래 표에 간략히 정리하였다.
 자료형
@@ -489,7 +555,39 @@ address varchar(50)
 date_bir datetime
 lik_num varchar(50)
 "																			
-		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
+"#include <stdio.h>
+void groomgroom(void) {
+  printf(""김구름 멍멍"");
+}
+
+void charpri() {
+  char a[8];
+  char *ptr;
+  a[0] = 'k';
+  a[1] = 'i';
+  a[2] = 'm';
+  a[3] = 'g';
+  a[4] = 'r';
+  a[5] = 'o';
+  a[6] = 'o';
+  a[7] = 'm';
+  
+  ptr = a;
+  printf(""%s"", ptr);
+}
+
+void main()
+{
+  void (*funcptr)(void) = &groomgroom;
+  (*funcptr)();
+  int x = 100;
+  int *px = &x;
+  int **ppx = &px;
+  **ppx = 25;
+  printf(""%d"", *px);
+  charpri();
+}
+//직접"		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
 
 async def my_async_generator():
     for i in range(3):
@@ -581,7 +679,39 @@ public class GenericDemo {
 설린 2024년 Bay Leaf(#7bba8d)
 서아 2024년 Pattens Blue(#cff3ff)
 지연 2024년 Apricot (#ffab62)"																			
-		파이썬 help()		"super - 하한 경계
+"#include <stdio.h>
+void groomgroom(void) {
+printf(""김구름 멍멍"");
+}
+
+void charpri() {
+char a[8];
+char *ptr;
+a[0] = 'k';
+a[1] = 'i';
+a[2] = 'm';
+a[3] = 'g';
+a[4] = 'r';
+a[5] = 'o';
+a[6] = 'o';
+a[7] = 'm';
+
+ptr = a;
+printf(""%s"", ptr);
+}
+
+void main()
+{
+void (*funcptr)(void) = &groomgroom;
+(*funcptr)();
+int x = 100;
+int *px = &x;
+int **ppx = &px;
+**ppx = 25;
+printf(""%d"", *px);
+charpri();
+}
+//김구름멍멍25kimgroom"		파이썬 help()		"super - 하한 경계
 
 하한 경계 역시 두 가지 구조로 나누어 살펴보겠습니다. 큰 틀은 상한 경계와 같으나 제네릭 제한의 기준이 다르다고 보면 되겠습니다.
 
@@ -601,9 +731,9 @@ public class GenericDemo {
 6번 142 00:02:16
 7번 147 00:02:19
 "																			
-		https://m.blog.naver.com/regenesis90/222342030086		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re																					
+		https://m.blog.naver.com/regenesis90/222342030086		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		조건이 없어서 값이 겹쳐버림																			
 		"iter()
-https://dojang.io/mod/page/view.php?id=2408"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj																					
+https://dojang.io/mod/page/view.php?id=2408"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj		109번줄 s_id로 inner join																			
 		"locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 딕셔너리 데이터를 동적으로 처리할 때 사용합니다.💡 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 전역 네임스페이스를 반환합니다.💻 활용 예시1. 지역 변수 확인 (디버깅)pythondef my_function(a, b):
     local_var = ""Hello""
     print(locals())
@@ -616,7 +746,156 @@ my_function(10, 20)
     print(f""계산에 사용된 가로: {variables['width']}"")
     return width * height
 
-calculate_area(5, 10)"		https://m.blog.naver.com/seek316/223341255150																					
+calculate_area(5, 10)"		https://m.blog.naver.com/seek316/223341255150		"윤서연 2023년대뷔Picton Blue (#22aeff)
+정혜린 2022년 데뷔Electric Violet (#9200ff)
+
+이지우 2023년 대뷔Lemon (#fff800)
+김채연 2023년 Atlantis (#98f21d)
+김유연 2022년Razzmatazz (#db0c74)
+김수민 2023년 Mauvelous(#fc83a4)
+김나경 2022년 Cadet Blue(#6799a0)
+공유빈 2022년 Misty Rose(#ffe3e2)
+카에데 2023년 Sunglow(#ffc935)
+서다현 2023년 Lavender Rose(#ff9ad6)
+코토네 2023년 Golden Yellow(#ffde00)
+곽연지 2023년 Royal Blue(#5974ff)
+니엔 2023년 Neon Carrot(#ff953f)
+박소현 2023년 Egyptian Blue(#1222b5)
+신위 2023년 Lava Red(#d51313)
+마유 2023년 Salmon (#fe8e76)
+린 2023년 Violet Blue(#ac62b7)
+주빈 2023년Conifer (#b7f54c)
+정하연 2023년 Medium Turquoise(#52d9bb)
+박시온 2023년 French Rose(#ff428a)
+김채원 2024년 Wisteria(#c7a3e0)
+설린 2024년 Bay Leaf(#7bba8d)
+서아 2024년 Pattens Blue(#cff3ff)
+지연 2024년 Apricot (#ffab62)
+
+음원 좋아요 수
+유튜브 조회수
+
+pop
+1번 229 2분42초
+2번 109 1분1초
+3번 31000 3분8초
+4번 159 3분9초
+5번 151 2분 31초
+6번 142 2분 16초
+7번 147 2분 19초
+
+la 도
+
+https://kko.to/3JafoPW4wi
+
+create table toki???
+    ();
+
+create table toki
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into toki
+values
+(""타이틀"", 1, ""00:02:45"", 219, 2100),
+(""타이틀"", 2, ""00:03:04"", 106, 861),
+(""타이틀"", 3, ""00:01:04"", 89, 2100);
+이거만 시간 적은거
+
+<table>
+<thead>
+<tr>
+<td>title</td>
+<td>track_num</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>1</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+<tr>
+<td>title</td>
+<td>2</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+<tr>
+<td>title</td>
+<td>3</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+
+</tbody>
+</table>
+
+------------------------------------------------------
+https://kko.to/sB9iwqAYPP
+
+create table 4study
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into 4study
+values
+(""타이틀"", 1, ""00:03:04"", 156, ), 
+(""타이틀"", 2, ""00:03:20"", 120, ),
+(""타이틀"", 3, ""00:03:08"", 108, ), 
+(""타이틀"", 4, ""00:03:01"", 97, ), 
+(""타이틀"", 5, ""00:03:02"", 93, ), 
+(""타이틀"", 6, ""00:03:21"", 101, ), 
+(""타이틀"", 7, ""00:03:20"", 104, ), 
+(""타이틀"", 8, ""00:03:17"", 98, ), 
+(""타이틀"", 9, ""00:03:10"", 96, ), 
+(""타이틀"", 10, ""00:02:40"", 98, ), 
+(""타이틀"", 11, ""00:02:35"", 116, ), 
+(""타이틀"", 12, ""00:02:48"", 91, ), m
+(""타이틀"", 13, ""00:01:04"", 89, ),
+(""타이틀"", 14, ""00:01:04"", 89, );
+
+-------------------------------
+
+msnz
+beyond 
+
+https://kko.to/xK1mawGTxB
+
+create table msnz
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into toki
+values
+(""타이틀"", 1, ""00:02:45"", 219, ),
+(""타이틀"", 2, ""00:03:04"", 106, ),
+(""타이틀"", 3, ""00:01:04"", 89, ),
+(""타이틀"", 4, ""00:01:04"", 89, ),
+(""타이틀"", 5, ""00:01:04"", 89, ),
+(""타이틀"", 6, ""00:01:04"", 89, );"																			
 		"#얕은 복사
 
 #분할 [:]
@@ -707,7 +986,226 @@ x = [1, 2, []]
 
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
-https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		자바 Connection 타입																					
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		자바 Connection 타입		"윤서연 2023년대뷔Picton Blue (#22aeff)
+정혜린 2022년 데뷔Electric Violet (#9200ff)
+
+이지우 2023년 대뷔Lemon (#fff800)
+김채연 2023년 Atlantis (#98f21d)
+김유연 2022년Razzmatazz (#db0c74)
+김수민 2023년 Mauvelous(#fc83a4)
+김나경 2022년 Cadet Blue(#6799a0)
+공유빈 2022년 Misty Rose(#ffe3e2)
+카에데 2023년 Sunglow(#ffc935)
+서다현 2023년 Lavender Rose(#ff9ad6)
+코토네 2023년 Golden Yellow(#ffde00)
+곽연지 2023년 Royal Blue(#5974ff)
+니엔 2023년 Neon Carrot(#ff953f)
+박소현 2023년 Egyptian Blue(#1222b5)
+신위 2023년 Lava Red(#d51313)
+마유 2023년 Salmon (#fe8e76)
+린 2023년 Violet Blue(#ac62b7)
+주빈 2023년Conifer (#b7f54c)
+정하연 2023년 Medium Turquoise(#52d9bb)
+박시온 2023년 French Rose(#ff428a)
+김채원 2024년 Wisteria(#c7a3e0)
+설린 2024년 Bay Leaf(#7bba8d)
+서아 2024년 Pattens Blue(#cff3ff)
+지연 2024년 Apricot (#ffab62)
+
+음원 좋아요 수
+유튜브 조회수
+
+pop
+1번 229 2분42초
+2번 109 1분1초
+3번 31000 3분8초
+4번 159 3분9초
+5번 151 2분 31초
+6번 142 2분 16초
+7번 147 2분 19초
+
+la 도
+
+https://kko.to/3JafoPW4wi
+
+create table toki???
+    ();
+
+create table toki
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into toki
+values
+(""타이틀"", 1, ""00:02:45"", 219, 2100),
+Tokimetique
+
+(""타이틀"", 2, ""00:03:04"", 106, 861),
+02
+Tokimetique -Shin Sakiura Remix-
+
+(""타이틀"", 3, ""00:01:04"", 89, 2100);
+03
+Tokimetique TV Edit
+
+이거만 시간 적은거
+
+<table>
+<thead>
+<tr>
+<td>title</td>
+<td>track_num</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>1</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+<tr>
+<td>title</td>
+<td>2</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+<tr>
+<td>title</td>
+<td>3</td>
+<td>song_len</td>
+<td>melon_like</td>
+<td>youtube_like</td>
+</tr>
+
+</tbody>
+</table>
+
+------------------------------------------------------
+https://kko.to/sB9iwqAYPP
+
+create table 4study
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into 4study
+values
+(""타이틀"", 1, ""00:03:04"", 156, ), 
+01
+타이틀
+깨어 (Are You Alive) (Inst.)
+
+(""타이틀"", 2, ""00:03:20"", 120, ),
+02
+추리소설 (Detective Soseol) (Inst.)
+
+(""타이틀"", 3, ""00:03:08"", 108, ), 
+03
+어제 우리 불꽃놀이 (Firework Diary) (Inst.)
+
+(""타이틀"", 4, ""00:03:01"", 97, ), 
+04
+Love Child (Inst.)
+
+(""타이틀"", 5, ""00:03:02"", 93, ), 
+05
+Persona (Inst.)
+
+(""타이틀"", 6, ""00:03:21"", 101, ), 
+06
+Too Hot (Inst.)
+
+(""타이틀"", 7, ""00:03:20"", 104, ), 
+07
+Diablo (Inst.)
+
+(""타이틀"", 8, ""00:03:17"", 98, ), 
+08
+Friend Zone (Inst.)
+
+(""타이틀"", 9, ""00:03:10"", 96, ), 
+09
+Love2Love (Inst.)
+
+(""타이틀"", 10, ""00:02:40"", 98, ), 
+10
+Fly Up (Inst.)
+
+(""타이틀"", 11, ""00:02:35"", 116, ), 
+11
+Cameo Love (Inst.)
+
+(""타이틀"", 12, ""00:02:48"", 91, ), m
+12
+Bubble Gum Girl (Inst.)
+
+(""타이틀"", 13, ""00:01:04"", 89, ),
+13
+Q&A (Inst.)
+
+(""타이틀"", 14, ""00:01:04"", 89, );
+14
+Christmas Alone (Inst.)
+
+-------------------------------
+
+msnz <Beyond Beauty>
+
+beyond  msnz <Beyond msnz <Beyond Beauty>
+Beauty>
+
+https://kko.to/xK1mawGTxB
+
+create table msnz
+(
+title varchar(50),
+track_num integer,
+song_len time,
+melon_like integer,
+youtube_like integer
+);
+
+insert into toki
+values
+(""타이틀"", 1, ""00:02:45"", 219, ),
+01
+Magic Shine New Zone
+
+(""타이틀"", 2, ""00:03:04"", 106, ),
+02
+Fly Up
+
+(""타이틀"", 3, ""00:01:04"", 89, ),
+03
+Cameo Love
+
+(""타이틀"", 4, ""00:01:04"", 89, ),
+04
+Bubble Gum Girl
+
+(""타이틀"", 5, ""00:01:04"", 89, ),
+05
+Q&A
+
+(""타이틀"", 6, ""00:01:04"", 89, );
+06
+타이틀
+Christmas Alone"																			
 		"from functools import singledispatch
 
 @singledispatch
@@ -1084,7 +1582,7 @@ public void print(String... args) {
     println();
 }
 매개변수를 int 하나만 주면 1번째가, 2개 이상 주면 2번째가 호출된다. 하나도 안 줄 경우 2번째와 3번째를 구분할 수 없어서 호출할 수 없다."																					
-																									
+				https://youtu.be/IrZMBMnNXog?si=gEC0uzcbkSklqDtO																					
 																									
 																									
 																									
