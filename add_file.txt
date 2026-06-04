@@ -1,5 +1,9 @@
 c언어		파이썬		자바		sql		이론																	
 "#include <stdio.h>
+int groom(){
+  return 1;
+}
+
 
 int main()
 {
@@ -29,13 +33,26 @@ int main()
     printf(""%d\n"", ce[0][0]); // 1 출력
     printf(""%d\n"", ce[1][2]); // 6 출력
     
+    int (*d)() = groom;
+    int dd = d();
+    printf(""%d\n"", dd);
+    //출력값 1
+    
+    int earr[2][3] = {
+      {10, 20, 30},
+      {40, 50, 60}
+    };
+    
 
-
+    int (*e)[3] = earr;
+    
+    printf(""%d\n"", e[0][1]); //20
+    printf(""%d\n"", *(*(e + 1))); //40
+    printf(""%d\n"", *(*(e + 1) + 2)); //60
+    
     /*
 
 
-    int (*a)(); //pointer to function returning int
-    int (*a)[]; //pointer to array of int
     int **a; //pointer to pointer to int
     int *(*a)[]; //pointer to array of pointer to int
     int main(int arc, char *argv[]) //function(int, array of pointer to char) returning int
@@ -112,136 +129,43 @@ print(str2, end="""")
 print(bin(text))
 boo1 = len(str) < 2
 boo2 = str[0] == ""g""
-print(any([boo1, boo2]))"	"import java.util.ArrayList;
-import java.util.LinkedList;
-
-public class Main {
-    public static void main(String[] args) {
-      ArrayList<LinkedList<String>> list = new ArrayList<LinkedList<String>>();
-      
-
-      LinkedList<String> node1 = new LinkedList<>();
-      node1.add(""aa""); 
-      node1.add(""bb""); 
-      
-      LinkedList<String> node2 = new LinkedList<>(); 
-      node2.add(""11"");
-      node2.add(""22""); 
-      
-      list.add(node1);
-      list.add(node2);
-      System.out.println(list);
-    }
-}
-/*
-제공해주신 자바(Java) 코드는 ArrayList 내부에 여러 개의 LinkedList를 담는 2차원 형태의 자료구조를 만들고 출력하는 코드입니다.
-코드의 각 줄이 어떤 의미를 가지는지 순서대로 해석해 드릴게요.
-------------------------------
-## 💻 자바 코드 한 줄씩 해석
-
-import java.util.ArrayList;
-
-
-* 해석: 자바에서 기본으로 제공하는 동적 배열 클래스인 ArrayList를 사용하기 위해 가져옵니다(Import).
-
-import java.util.LinkedList;
-
-
-* 해석: 데이터가 양방향으로 연결된 선형 자료구조인 LinkedList 클래스를 사용하기 위해 가져옵니다.
-
-public class Main {
-
-
-* 해석: Main이라는 이름의 공개(public) 클래스를 정의합니다. (자바 프로그램의 기본 단위입니다.)
-
-    public static void main(String[] args) {
-
-
-* 해석: 자바 프로그램이 실행될 때 가장 먼저 자동으로 호출되는 시작점(main 메서드)입니다.
-
-      // 1. 필요한 라이브러리(Import) 자동 추가 필요
-
-
-* 해석: 개발자를 위한 주석(설명글)으로, 프로그램 실행에는 아무런 영향을 주지 않습니다.
-
-      ArrayList<LinkedList<String>> list = new ArrayList<LinkedList<String>>();
-
-
-* 해석: 문자열(String)을 담는 LinkedList들을 여러 개 저장할 수 있는, 큰 주머니인 ArrayList(이름: list)를 새로 생성합니다.
-
-      // 첫 번째 LinkedList 객체 생성 및 데이터 추가
-
-
-* 해석: 첫 번째 하위 리스트를 만들고 값을 넣겠다는 의미의 설명 주석입니다.
-
-      LinkedList<String> node1 = new LinkedList<>();
-
-
-* 해석: 문자열(String)을 줄줄이 이어 붙여 저장할 수 있는 첫 번째 내부 리스트 객체(node1)를 생성합니다.
-
-      node1.add(""aa""); // node -> node1 수정
-
-
-* 해석: node1 리스트의 맨 뒤에 ""aa""라는 문자열 데이터를 추가합니다.
-
-      node1.add(""bb""); // node -> node1 수정
-
-
-* 해석: node1 리스트의 맨 뒤에 ""bb""라는 문자열 데이터를 추가합니다. (이제 node1은 [""aa"", ""bb""]가 됩니다.)
-
-      // 2. 두 번째 LinkedList는 중복된 node1 대신 node2로 선언
-
-
-* 해석: 변수명 충돌을 피해 두 번째 리스트를 만들겠다는 설명 주석입니다.
-
-      LinkedList<String> node2 = new LinkedList<>(); // node1 -> node2 수정
-
-
-* 해석: 문자열(String)을 담을 두 번째 내부 리스트 객체(node2)를 생성합니다.
-
-      node2.add(""11""); // node -> node2 수정
-
-
-* 해석: node2 리스트의 맨 뒤에 ""11""이라는 문자열 데이터를 추가합니다.
-
-      node2.add(""22""); // node -> node2 수정
-
-
-* 해석: node2 리스트의 맨 뒤에 ""22""라는 문자열 데이터를 추가합니다. (이제 node2는 [""11"", ""22""]가 됩니다.)
-
-      list.add(node1);
-
-
-* 해석: 큰 주머니인 list의 첫 번째 칸(인덱스 0)에 방금 만든 node1 리스트를 통째로 집어넣습니다.
-
-      list.add(node2);
-
-
-* 해석: 큰 주머니인 list의 두 번째 칸(인덱스 1)에 방금 만든 node2 리스트를 통째로 집어넣습니다.
-
-      System.out.println(list);
-
-
-* 해석: 콘솔 창에 전체 list의 내용을 시각적으로 출력합니다.
-
-    }
+print(any([boo1, boo2]))"	"class Person{
+        String name;
+        Person(String name){
+                this.name = name;
+        }
 }
 
+class Student extends Person{
+        String check;
+        Student(String name){
+                super(name);
+        }
+}
 
-* 해석: main 메서드와 Main 클래스의 중괄호를 닫아 프로그램의 끝을 알립니다.
+public class Main{
+        public static void main(String[] args){
+                Person p = new Student(""홍길동"");
+        
+                Student s = (Student)p;        // 다운캐스팅
+                s.name = ""김유신"";
+                s.check = ""check!"";
+        }
+}
 
-------------------------------
-## 🖥️ 최종 출력 결과
-이 코드가 정상적으로 실행되면 콘솔창에는 다음과 같이 2차원 배열 형태로 출력됩니다.
-
-[[aa, bb], [11, 22]]
-
-------------------------------
-이 코드와 관련해서 특정 데이터를 가져오는 방법(get)이나 수정/삭제하는 방법 등 추가로 궁금한 점이 있으신가요? 편하게 말씀해 주세요!
-
-
-*/
-"	"public class Main {
+s.name과 s.check를 출력하는 가장 정확한 방법은 System.out.println() 메서드를 사용하는 것입니다.자바에서는 모니터 화면에 문자열이나 변수 값을 출력할 때 System.out.println()을 표준으로 사용합니다. 아래 코드를 참고하여 main 메서드 안에 출력 코드를 추가하시면 됩니다.1. 코드 수정 방법기존 Main 클래스의 main 메서드 하단에 다음과 같이 출력 문장을 추가합니다.javapublic class Main{
+        public static void main(String[] args){
+                Person p = new Student(""홍길동"");
+        
+                Student s = (Student)p;        // 다운캐스팅
+                s.name = ""김유신"";
+                s.check = ""check!"";
+                
+                // 🔴 이 부분에 출력 코드를 추가합니다.
+                System.out.println(""이름: "" + s.name);
+                System.out.println(""체크: "" + s.check);
+        }
+}"	"public class Main {
   String[] new_unit = []; //이거 확인
   int select = -1;
   
@@ -333,25 +257,11 @@ class Student extends Person{
 
 public class Main{
         public static void main(String[] args){
-                Person p = new Student(""홍길동"");
-        
-                Student s = (Student)p;        // 다운캐스팅
-                s.name = ""김유신"";
-                s.check = ""check!"";
-        }
-}
+                Student s = new Student(""홍길동"");
+                Person p = s;        // 업캐스팅
+                p.name = ""이름이다."";
 
-s.name과 s.check를 출력하는 가장 정확한 방법은 System.out.println() 메서드를 사용하는 것입니다.자바에서는 모니터 화면에 문자열이나 변수 값을 출력할 때 System.out.println()을 표준으로 사용합니다. 아래 코드를 참고하여 main 메서드 안에 출력 코드를 추가하시면 됩니다.1. 코드 수정 방법기존 Main 클래스의 main 메서드 하단에 다음과 같이 출력 문장을 추가합니다.javapublic class Main{
-        public static void main(String[] args){
-                Person p = new Student(""홍길동"");
-        
-                Student s = (Student)p;        // 다운캐스팅
-                s.name = ""김유신"";
-                s.check = ""check!"";
-                
-                // 🔴 이 부분에 출력 코드를 추가합니다.
-                System.out.println(""이름: "" + s.name);
-                System.out.println(""체크: "" + s.check);
+                p.check = ""컴파일 에러 발생"";        // 컴파일 에러 발생
         }
 }"	"abstract class AA {
   public abstract int b();
@@ -383,29 +293,10 @@ for i in range(2):
 exec(code)
 코드를 사용할 때는 주의가 필요합니다.[출력]text동적 실행: 0
 동적 실행: 1
-코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."		"class Person{
-        String name;
-        Person(String name){
-                this.name = name;
-        }
-}
+코드를 사용할 때는 주의가 필요합니다.eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: ""1 + 2"" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다."		"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
+코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다.
 
-class Student extends Person{
-        String check;
-        Student(String name){
-                super(name);
-        }
-}
-
-public class Main{
-        public static void main(String[] args){
-                Student s = new Student(""홍길동"");
-                Person p = s;        // 업캐스팅
-                p.name = ""이름이다."";
-
-                p.check = ""컴파일 에러 발생"";        // 컴파일 에러 발생
-        }
-}"		"후보키는 데이터베이스 테이블에서 각 행(튜플)을 유일하게 식별할 수 있는 컬럼(또는 컬럼 조합)입니다. 유일성과 최소성을 만족해야 하며, 이 중 실제로 데이터 관리를 위해 선택된 대표 후보키를 기본키(Primary Key)라 부르고, 선택받지 못한 나머지 후보키를 대체키(Alternate Key)라고 합니다.MySQL에서 후보키의 사용법은 기본키(Primary Key)와 유니크 제약조건(Unique Key)을 설정하는 것으로 구현됩니다.1. 기본키 (Primary Key) 지정법가장 대표적으로 사용하고 싶은 후보키는 PRIMARY KEY로 지정합니다.테이블당 오직 1개만 지정 가능합니다.해당 컬럼은 자동으로 중복이 방지되며 NULL 값이 허용되지 않습니다.테이블 생성 시 설정:sqlCREATE TABLE users (
+https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85-%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85-%ED%95%9C%EB%B0%A9-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"		"후보키는 데이터베이스 테이블에서 각 행(튜플)을 유일하게 식별할 수 있는 컬럼(또는 컬럼 조합)입니다. 유일성과 최소성을 만족해야 하며, 이 중 실제로 데이터 관리를 위해 선택된 대표 후보키를 기본키(Primary Key)라 부르고, 선택받지 못한 나머지 후보키를 대체키(Alternate Key)라고 합니다.MySQL에서 후보키의 사용법은 기본키(Primary Key)와 유니크 제약조건(Unique Key)을 설정하는 것으로 구현됩니다.1. 기본키 (Primary Key) 지정법가장 대표적으로 사용하고 싶은 후보키는 PRIMARY KEY로 지정합니다.테이블당 오직 1개만 지정 가능합니다.해당 컬럼은 자동으로 중복이 방지되며 NULL 값이 허용되지 않습니다.테이블 생성 시 설정:sqlCREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY, -- 기본키(후보키 중 메인)
     email VARCHAR(100) NOT NULL UNIQUE       -- 대체키(또 다른 후보키)
 );
@@ -435,10 +326,88 @@ print(list(result))  # [2, 4, 6]
 # 람다 함수 사용
 result = list(filter(lambda x: x % 2 == 0, numbers))
 
-print(result)  # [2, 4, 6]"		"자바(Java)에서 classOne one = new classTwo(10); 처럼 부모 클래스 타입의 변수에 자식 클래스의 생성자를 호출하여 대입하는 문법은 다형성(Polymorphism)을 활용한 업캐스팅(Upcasting)이라고 부릅니다.이 문법의 핵심 개념과 특징은 다음과 같습니다.1. 용어 정리업캐스팅 (Upcasting): 자식 객체(classTwo)를 부모 클래스(classOne) 타입으로 형변환(타입 캐스팅)하는 것을 의미합니다. 부모 타입으로 올리는 것이기 때문에 형변환 연산자(예: (classOne))를 생략할 수 있습니다.다형성 (Polymorphism): 하나의 변수가 다양한 형태(자식 객체들)를 가질 수 있는 객체 지향 프로그래밍의 핵심 특징입니다.2. 코드 동작 방식javaclassOne one = new classTwo(10);
-코드를 사용할 때는 주의가 필요합니다.참조 변수 타입 (classOne): 변수 one은 classOne 타입입니다. 따라서 one을 통해서는 부모 클래스에 정의된 멤버(변수, 메서드)에만 접근할 수 있습니다. 자식 클래스에만 있는 고유한 메서드나 변수는 호출할 수 없습니다.실제 생성된 객체 (new classTwo(10)): 메모리에는 자식 클래스의 인스턴스가 완전히 생성됩니다.3. 왜 이렇게 사용하나요?유연한 프로그래밍: 코드를 부모 타입(예: classOne) 기준으로 작성해 두면, 나중에 classTwo 대신 같은 부모를 상속받는 classThree, classFour 등으로 객체를 변경해야 할 때 앞의 선언부 수정 없이 new 부분만 변경하면 되므로 유지보수가 매우 쉬워집니다.매개변수 통합: 메서드의 매개변수를 부모 타입으로 받으면, 해당 부모를 상속받는 모든 자식 객체들을 하나의 메서드로 처리할 수 있습니다. (예: public void doSomething(classOne obj))⚠️ 주의할 점 (오버라이딩과 타입)부모 타입의 변수로 자식 객체를 다루더라도, 메서드 오버라이딩(Overriding)이 되어 있다면 실제 메모리에 생성된 자식 객체의 오버라이딩된 메서드가 우선적으로 실행됩니다.자세한 활용 예시는 Oracle Java 객체지향 프로그래밍 튜토리얼에서 확인하실 수 있습니다.
+print(result)  # [2, 4, 6]"		"abstract class Info{
+    public abstract int getLevel();
+}
+class EmployeeInfo extends Info{
+    public int rank;
+    EmployeeInfo(int rank){ this.rank = rank; }
+    public int getLevel(){
+        return this.rank;
+    }
+}
+class Person<T extends Info>{
+    public T info;
+    Person(T info){ this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        Person p1 = new Person(new EmployeeInfo(1));
+        Person<String> p2 = new Person<String>(""부장"");
+    }
+}
 
-https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%97%85%EC%BA%90%EC%8A%A4%ED%8C%85-%EB%8B%A4%EC%9A%B4%EC%BA%90%EC%8A%A4%ED%8C%85-%ED%95%9C%EB%B0%A9-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"		18쪽 46번																			
+#####
+제시하신 자바 코드에서 오류가 발생하는 이유는 제네릭 클래스의 타입 제한(Bounded Type Parameter)을 위반했기 때문입니다.
+## ❌ 오류가 발생하는 코드 라인
+
+Person<String> p2 = new Person<String>(""부장""); // ⚠️ 컴파일 에러 발생!
+
+## 🔍 원인 분석
+
+   1. Person 클래스는 <T extends Info>로 선언되어 있습니다. 이는 Info 클래스나 이를 상속받은 자식 클래스만 타입 매개변수 T로 지정할 수 있다는 뜻입니다.
+   2. 하지만 p2를 생성할 때 T 위치에 String을 넣었습니다. String은 Info를 상속받지 않았으므로 타입 제한 조건에 위배되어 컴파일 에러가 발생합니다.
+
+------------------------------
+## ⭕ 올바른 수정 방법
+Person 객체를 생성할 때는 반드시 Info를 상속받은 클래스(EmployeeInfo 등)만 타입 인자로 전달해야 합니다. 만약 문자열(부장)을 다루고 싶다면, Info를 상속받는 새로운 클래스를 만들거나 기존 클래스를 활용해야 합니다.
+## 방법 1: Info를 상속받는 클래스로 올바르게 사용하기
+
+// EmployeeInfo는 Info를 상속받았으므로 제한 조건을 충족합니다.
+Person<EmployeeInfo> p2 = new Person<EmployeeInfo>(new EmployeeInfo(1)); 
+System.out.println(p2.info.getLevel()); // 1 출력
+
+## 방법 2: 문자열(직급)을 다루는 Info 자식 클래스 정의하기
+만약 ""부장""과 같은 직급 정보를 다루고 싶다면 아래와 같이 클래스를 설계해야 합니다.
+
+abstract class Info {
+    public abstract int getLevel();
+}
+class EmployeeInfo extends Info {
+    public int rank;
+    EmployeeInfo(int rank) { this.rank = rank; }
+    public int getLevel() { return this.rank; }
+}
+// 문자열 직급을 처리할 수 있는 새로운 Info 자식 클래스 추가class StringInfo extends Info {
+    public String rankName;
+    StringInfo(String rankName) { this.rankName = rankName; }
+    
+    @Override
+    public int getLevel() {
+        // 직급에 따른 레벨 반환 로직 예시
+        if (this.rankName.equals(""부장"")) return 3;
+        return 1;
+    }
+}
+class Person<T extends Info> {
+    public T info;
+    Person(T info) { this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        // 정상 작동 (생략 시 다이아몬드 연산자 <> 권장)
+        Person<EmployeeInfo> p1 = new Person<>(new EmployeeInfo(1));
+        
+        // String 대신 Info를 상속받은 StringInfo를 전달하여 정상 작동
+        Person<StringInfo> p2 = new Person<>(new StringInfo(""부장""));
+        
+        System.out.println(p2.info.getLevel()); // 3 출력
+    }
+}
+
+이외에도 자바의 제네릭 제한자(extends, super)나 다형성 활용법에 대해 더 궁금한 점이 있으시다면 언제든 질문해 주세요!
+
+"		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
 "구두점(punctuator)[편집]
 ? : ; ...
 = *= /= %= += -= <<= >>= &= ^= |=
@@ -464,27 +433,7 @@ async def main():
         print(""반복이 모두 끝났습니다."")
 
 asyncio.run(main())
-코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		"abstract class Info{
-    public abstract int getLevel();
-}
-class EmployeeInfo extends Info{
-    public int rank;
-    EmployeeInfo(int rank){ this.rank = rank; }
-    public int getLevel(){
-        return this.rank;
-    }
-}
-class Person<T extends Info>{
-    public T info;
-    Person(T info){ this.info = info; }
-}
-public class GenericDemo {
-    public static void main(String[] args) {
-        Person p1 = new Person(new EmployeeInfo(1));
-        Person<String> p2 = new Person<String>(""부장"");
-    }
-}"		18쪽 47번 48번 49번 50번 51번 52번 53번		106쪽 259번																	
-		파이썬 help()		"interface Info{
+코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		"interface Info{
     int getLevel();
 }
 class EmployeeInfo implements Info{
@@ -530,30 +479,8 @@ public class GenericDemo {
         // p2 자체를 출력하면 주소값이 나오므로 내부 값을 출력합니다.
         System.out.println(p2.info); // 출력 결과: 부장
     }
-}"		슈퍼키		51쪽 147번																	
-"enum Lights {
-//enum은 열거형(Enumerated Type)을 의미하며, 정수형 상수들에 이름을 붙여 가독성을 높이고 코드의 유지보수를 쉽게 만드는 사용자 정의 데이터 타입입니다.
-    GREEN = 1 << 0, //0b1
-    YELLOW = 1 << 1, //0b10
-    RED = 1 << 2, //0b100
-};
-int main(void){
-    
-    int flag = 0; //모두 꺼져있는 상태
-    flag |= (RED | GREEN); //빨간불과 초록불 켜기
-    flag &= ~(RED | GREEN); //빨간불과 초록불 끄기
-    flag = ~0; //모든 불 켜기
-    flag = 0; //모든 불 끄기
-    flag ^= RED; //빨간불의 상태를 바꾸기
-    flag = ~flag; //모든 불들의 상태를 바꾸기
-    if ((flag & (RED | GREEN)) == (RED | GREEN)){
-    //빨간불과 초록불이 동시에 켜져있는지 확인
-    }
-    if (flag & (RED | GREEN)){
-    //빨간불과 초록불 둘 중 하나라도 켜져있는지 확인
-    }
-}
-//...etc."		https://m.blog.naver.com/regenesis90/222342030086		"super - 하한 경계
+}"		18쪽 47번 48번 49번 50번 51번 52번 53번		110쪽 274번																	
+		파이썬 help()		"super - 하한 경계
 https://youtu.be/Y89JGKhRiBc?si=21iLjQviY9Po09mr
 
 하한 경계 역시 두 가지 구조로 나누어 살펴보겠습니다. 큰 틀은 상한 경계와 같으나 제네릭 제한의 기준이 다르다고 보면 되겠습니다.
@@ -567,7 +494,62 @@ https://youtu.be/Y89JGKhRiBc?si=21iLjQviY9Po09mr
 ● ? - 와일드 카드
 https://www.youtube.com/live/c6h7K7g-5GE?si=41o-DUCl5Ci_hXew
 
-  와일드 카드 <?>는 타입의 제한을 두지 않는 것을 의미합니다. 자바의 최상위 클래스인 Object의 상한경계를 의미하는 <? extends Object> 와 동일합니다. 즉 타입이 어떤 것이든 올 수 있다는 개념으로 보시면 될 것 같습니다. (any type의 의미보다는 unknown - 알수없음 에 가까운 것 같습니다.)"		"
+  와일드 카드 <?>는 타입의 제한을 두지 않는 것을 의미합니다. 자바의 최상위 클래스인 Object의 상한경계를 의미하는 <? extends Object> 와 동일합니다. 즉 타입이 어떤 것이든 올 수 있다는 개념으로 보시면 될 것 같습니다. (any type의 의미보다는 unknown - 알수없음 에 가까운 것 같습니다.)"		슈퍼키		51쪽 147번																	
+"#include <stdio.h>
+int groom(){
+  return 1;
+}
+
+
+int main()
+{
+    int i = 9;
+    int *a;
+    a = &i;
+    printf(""%d\n"", *a);
+    //9
+    int b[] = {1, 2, 3};
+    printf(""%d\n"", b[0]);
+    
+    int ca = 10, cb = 20, cd = 30;
+    int *c[] = {&ca, &cb, &cd}; 
+    printf(""%d\n"", *c[0]); // a의 값인 10 출력
+    printf(""%d\n"", *c[1]); // b의 값인 20 출력
+    printf(""%d\n"", *c[2]); // d의 값인 30 출력
+
+    
+    int arr[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    int (*ce)[3]; 
+    
+    ce = arr; 
+    printf(""%d\n"", ce[0][0]); // 1 출력
+    printf(""%d\n"", ce[1][2]); // 6 출력
+    
+    int (*d)() = groom;
+    int dd = d();
+    printf(""%d\n"", dd);
+    //출력값 1
+    
+
+    int (*e)[3] = earr;
+    /*
+
+
+    int (*a)[]; //pointer to array of int
+    int **a; //pointer to pointer to int
+    int *(*a)[]; //pointer to array of pointer to int
+    int main(int arc, char *argv[]) //function(int, array of pointer to char) returning int
+    char *argv[] //array of pointer to char
+    int(*(*example)())[] //pointer to function returning pointer to array of int
+    */
+
+    return 0;
+}
+"		https://m.blog.naver.com/regenesis90/222342030086		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		"
 
 
 
@@ -618,7 +600,7 @@ void main()
     s = test(3, 4, 5) / 6;
     printf(""%d"", s);
 }"		"iter()
-https://dojang.io/mod/page/view.php?id=2408"		☕ JAVA 업캐스팅 & 다운캐스팅 - 완벽 이해하기 https://share.google/aQ8rklOb51zzLO5Re		"윤서연 2023년대뷔Picton Blue (#22aeff)
+https://dojang.io/mod/page/view.php?id=2408"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj		"윤서연 2023년대뷔Picton Blue (#22aeff)
 정혜린 2022년 데뷔Electric Violet (#9200ff)
 
 이지우 2023년 대뷔Lemon (#fff800)
@@ -687,14 +669,14 @@ my_function(10, 20)
     print(f""계산에 사용된 가로: {variables['width']}"")
     return width * height
 
-calculate_area(5, 10)"		https://youtu.be/pgiecZ2c6BQ?si=Paj8D-9tqma7JTvj		"1번 229 00:02:42
+calculate_area(5, 10)"		https://m.blog.naver.com/seek316/223341255150		"1번 229 00:02:42
 2번 109 00:01:01
 3번 31000 00:03:08
 4번 159 00:03:09
 5번 151 00:02:31
 6번 142 00:02:16
 7번 147 00:02:19
-"																			
+"		106쪽 260번																	
 "#include <stdio.h>
 void groomgroom(void) {
 printf(""김구름 멍멍"");
@@ -817,7 +799,7 @@ x = [1, 2, []]
 
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
-https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		https://m.blog.naver.com/seek316/223341255150		조건이 없어서 값이 겹쳐버림																			
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		자바 Connection 타입		109번줄 s_id로 inner join																			
 C언어에는 쉼표(,) 연산자처럼 유연성은 높지만 가독성을 해치거나 실수를 유발하기 쉬워 실무에서는 잘 쓰이지 않는 문법들이 있습니다.가독성 저하와 유지보수 문제로 인해 사용을 지양하거나 제한적으로만 사용하는 대표적인 문법들은 다음과 같습니다.1. 조건 연산자 (삼항 연산자)의 중첩문법: 조건 ? (조건2 ? 참값2 : 거짓값2) : 거짓값특징: if-else 문을 한 줄로 줄일 수 있지만, 중첩해서 사용할 경우 코드를 읽기 매우 어렵게 만듭니다.2. goto 문문법: goto 레이블; ... 레이블:특징: 코드의 흐름을 강제로 이동시키는 문법입니다. 프로그램의 흐름을 파악하기 어렵게 만드는 '스파게티 코드'의 주원인이 되며, 현대 프로그래밍에서는 거의 사용하지 않습니다. (단, 에러 처리나 깊은 중첩 루프 탈출 시 예외적으로 제한 사용)3. 비트 연산자 (Bitwise Operators)문법: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >> (Shift)특징: 하드웨어 제어나 임베디드 시스템, 특정 알고리즘(암호화, 압축 등)이 아니면 일반적인 응용 프로그램 개발에서는 메모리 절약이나 성능 최적화를 위해 직접 사용하는 경우가 드뭅니다.4. register 키워드문법: register int count;특징: 변수를 CPU 레지스터에 저장하여 접근 속도를 높이라는 힌트를 컴파일러에게 주는 문법입니다. 하지만 현대의 컴파일러는 최적화(Optimization) 기능이 매우 뛰어나 프로그래머가 직접 지정하는 것보다 컴파일러가 알아서 최적화하는 편이 훨씬 효율적이라 사실상 무의미해진 문법입니다.5. volatile 키워드문법: volatile int sensor_value;특징: 컴파일러의 최적화를 방지하고, 해당 변수의 값이 프로그램 외부(하드웨어 등)에 의해 언제든지 변경될 수 있음을 알리는 키워드입니다. 일반적인 프로그래밍에서는 전혀 쓰이지 않고, 임베디드 시스템이나 OS 커널 개발 등 특수한 환경에서만 사용됩니다.6. 쉼표 연산자(Comma Operator)의 복합 사용문법: int a = 1, b = 2; (O, 변수 선언/초기화 시 일반적)특징: 변수 구분자가 아닌, a = (b++, b + 2); 처럼 한 줄에 여러 연산을 수행하고 맨 마지막 연산의 결과값을 반환하게 하는 문법입니다. 코드가 함축되어 디버깅과 유지보수가 극도로 어려워지기 때문에 단순한 for문 초기화문 이외에는 거의 쓰이지 않습니다.		"from functools import singledispatch
 
 @singledispatch
@@ -831,22 +813,7 @@ def _(v) :
 @process.register(str)
 def _(v) :
   return ""문자열 처리""
-  "		자바 Connection 타입		109번줄 s_id로 inner join																			
-"7.4.1. assert.h[편집]
-Assertion. 디버그 시 사용된다. 주로 런타임 디버그 시 사용하며 컴파일시 NDEBUG가 선언되어 있지 않고 조건을 만족하지 못했다면 런타임에서 오류가 출력된다. 이때 동작하는 방식은 런타임 라이브러리마다 다르지만 보통 런타임 오류와 해당 라인과 소스코드 파일명과 조건식을 출력하고 종료된다. Windows 시스템의 경우 디버그 가능한 툴이 설치되어 있다면 (drmingw, MSVC) 런타임 라이브러리에서 해당 프로세스에 디버거를 붙이는 옵션을 제공하기도 한다.
-assert([조건식]);
-#ifdef NDEBUG
-#undef NDEBUG
-#endif // NDEBUG
-#include <assert.h>
-#include <stdio.h>
-
-int main(int argc, const char* argv[])
-{
-    assert(argc > 1); // argc가 1보다 작다면 런타임 라이브러리에서 오류 메세지를, 그렇지 않으면 그대로 진행한다.
-    return 0;
-}"		"@singledispatch
-@process.register"		자바 Thread implements Runnable run() start()		"윤서연 2023년대뷔Picton Blue (#22aeff)
+  "		자바 Thread implements Runnable run() start()		"윤서연 2023년대뷔Picton Blue (#22aeff)
 정혜린 2022년 데뷔Electric Violet (#9200ff)
 
 이지우 2023년 대뷔Lemon (#fff800)
@@ -996,66 +963,21 @@ values
 (""타이틀"", 4, ""00:01:04"", 89, ),
 (""타이틀"", 5, ""00:01:04"", 89, ),
 (""타이틀"", 6, ""00:01:04"", 89, );"																			
-"7.4.2. 입/출력 함수 (stdio.h)[편집]
-7.4.2.1. printf[편집]
-int printf(const char *format, ...)
+"7.4.1. assert.h[편집]
+Assertion. 디버그 시 사용된다. 주로 런타임 디버그 시 사용하며 컴파일시 NDEBUG가 선언되어 있지 않고 조건을 만족하지 못했다면 런타임에서 오류가 출력된다. 이때 동작하는 방식은 런타임 라이브러리마다 다르지만 보통 런타임 오류와 해당 라인과 소스코드 파일명과 조건식을 출력하고 종료된다. Windows 시스템의 경우 디버그 가능한 툴이 설치되어 있다면 (drmingw, MSVC) 런타임 라이브러리에서 해당 프로세스에 디버거를 붙이는 옵션을 제공하기도 한다.
+assert([조건식]);
+#ifdef NDEBUG
+#undef NDEBUG
+#endif // NDEBUG
+#include <assert.h>
+#include <stdio.h>
 
-printf는 문자열(문장) 이나 변수를 화면에 출력하는 함수이다. 여기서 f는 format으로, 형식을 줘서 출력한다는 뜻이다. printf 함수는 리터럴과 출력에 들어갈 변수의 두 가지를 입력 받는다.
-7.4.2.1.1. 기본 문법[편집]
-printf의 기본 문법은 다음과 같다.
-printf(리터럴[문자열 + 서식 지정자], 변수1, 변수2, ...);
-이때 서식 지정자(format specifier)가 있는 자리에 변수가 차례로 들어간다.
-
-예를 들어, a가 4라면,
-printf(""a의 값은 %d 입니다."", a);
-a의 값은 4 입니다.
-이런 식이다. 이때 %d가 서식 지정자이다. 옵션과 변수의 위치가 바뀌는 셈.
-7.4.2.1.2. 리터럴[편집]
-ASCII 인코딩의 char 자료형은 리터럴이 필요없으나, char 자료형을 UTF-8 인코딩으로 출력하는 경우에는 u8 리터럴을 사용해야 한다.
-없음: ASCII 인코딩
-u8: UTF-8 인코딩
-
-wchar_t 자료형에서는 L""..."" 리터럴을, tchar 자료형에서는 _T(...) 리터럴을 사용한다.
-7.4.2.1.3. 서식 지정자[편집]
-자세한 서식 지정자 문법은 영문 위키백과를 참조하면 된다.
-
-대소문자가 따로 있는 서식 지정자의 경우 출력 결과의 대문자/소문자 여부가 바뀐다.
-%%: '%' 문자. 문자열에 % 하나만 써 놓으면 서식 지정자로 취급되어 출력되지 않기 때문에 이렇게 써야 한다.
-정수
-%d: 부호 있는 정수를 10진수(decimal)로 출력. 아래와 같이 별도 설정을 하지 않으면 int형의 범위 내에서 출력된다.
-%hhd: char형
-%hd: short형
-%ld: long int형
-%lld: long long int형
-%u: 부호 없는(unsigned) 정수를 10진수로 출력. %d처럼 자료형의 길이를 지정할 수 있다.
-%x/%X: 부호 없는 정수를 16진수(hexadecimal)로 출력.
-%o: 부호 없는 정수를 8진수(octal)로 출력.
-소수
-%f/%F: xxx.xxxx... 형태로 출력. 아래와 같이 별도 설정을 하지 않으면 double형으로 취급된다. 무한대나 NaN이 저장되어 있을 경우 %f와 %F 중 무엇을 쓰느냐에 따라 대소문자가 바뀐다.
-%lf: %f와 같다.
-%Lf: long double형
-%g: 뒤의 의미없는 0을 생략한다.
-%e/%E: 지수 표기법(x.xxxE[+/-]xx)으로 출력. 예를 들어 150은 1.5e02로 출력된다.
-%a/%A: 16진수로 출력. 0x로 시작한다.
-문자열
-%c: 문자 하나(char)를 출력
-%s: 문자열(char[])을 출력
-
-위 서식 지정자에 추가로 옵션을 붙일 수 있다. %f를 예로 들면 다음과 같다.
-%+f: 양수일 경우 왼쪽에 +를 붙인다.
-% f: 양수일 경우 왼쪽에 띄어쓰기를 1칸 붙인다. +가 있을 경우 무시한다.
-%(숫자)f: 최소한 (숫자)만큼의 길이로 출력한다. 길이가 짧을 경우 왼쪽에 부족한 만큼 띄어쓰기를 한다. 예를 들어 5를 %3d로 출력하면 __5(띄어쓰기 대신 언더바를 붙였음)가 된다.
-숫자가 올 자리에 *를 쓰면 인자로 받은 변수만큼의 길이로 출력한다. 예를 들어 printf(""%*d"", 4, 12);의 출력값은 __12이다.
-%0(숫자)f: 위와 같지만, 왼쪽에 부족한 만큼 0을 붙인다. 예를 들어 5를 %03d로 출력하면 005가 된다. 위와 같이 *를 쓸 수 있다.
-%.(숫자)f: 소수점 아래 (숫자)자리에서 반올림해서 출력한다. 문자열에 사용할 경우 (숫자)글자만큼만 출력된다. 예를 들어 0.1234를 %.2f로 출력하면 0.12가 된다. 위와 같이 *를 쓸 수 있다.
-
-서식 지정자의 동작은 다소 기묘한 면이 많다. 예를 들어 printf 함수에서는 char형 변수와 int형 변수를 모두 %d 서식자로 출력 가능하나, scanf 함수에서는 char형 변수를 문자로 입력받을 때는 %c, 숫자로 입력받을 때는 %hhi, int형 변수를 입력받을 때는 %d를 사용한다. 이러한 차이점들은 가변인자 함수의 동작 방식(좀 더 정확히는 가변인자함수의 매개변수에 적용되는 기본인자진급 규칙)을 깊이있게 공부하면 이해가 가능해진다.
-7.4.2.2. scanf[편집]
-int scanf(const char *format, ...)
-
-scanf는 값을 입력받는 함수이다. scanf 함수는 옵션과 입력값을 저장할 변수의 포인터, 즉 그 변수의 주소 두 가지를 입력 받는다. 쉽게 설명하기 위해 택배에 비유하자면 입력값은 택배 내용물, 변수의 주소 값은 택배에 쓸 주소이다.
-
-보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."		https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95		"class C1{
+int main(int argc, const char* argv[])
+{
+    assert(argc > 1); // argc가 1보다 작다면 런타임 라이브러리에서 오류 메세지를, 그렇지 않으면 그대로 진행한다.
+    return 0;
+}"		"@singledispatch
+@process.register"		"class C1{
     static int static_variable = 1;
     int instance_variable = 2;
     static void static_static(){
@@ -1135,6 +1057,66 @@ https://kko.to/sB9iwqAYPP
 
 
 "																			
+"7.4.2. 입/출력 함수 (stdio.h)[편집]
+7.4.2.1. printf[편집]
+int printf(const char *format, ...)
+
+printf는 문자열(문장) 이나 변수를 화면에 출력하는 함수이다. 여기서 f는 format으로, 형식을 줘서 출력한다는 뜻이다. printf 함수는 리터럴과 출력에 들어갈 변수의 두 가지를 입력 받는다.
+7.4.2.1.1. 기본 문법[편집]
+printf의 기본 문법은 다음과 같다.
+printf(리터럴[문자열 + 서식 지정자], 변수1, 변수2, ...);
+이때 서식 지정자(format specifier)가 있는 자리에 변수가 차례로 들어간다.
+
+예를 들어, a가 4라면,
+printf(""a의 값은 %d 입니다."", a);
+a의 값은 4 입니다.
+이런 식이다. 이때 %d가 서식 지정자이다. 옵션과 변수의 위치가 바뀌는 셈.
+7.4.2.1.2. 리터럴[편집]
+ASCII 인코딩의 char 자료형은 리터럴이 필요없으나, char 자료형을 UTF-8 인코딩으로 출력하는 경우에는 u8 리터럴을 사용해야 한다.
+없음: ASCII 인코딩
+u8: UTF-8 인코딩
+
+wchar_t 자료형에서는 L""..."" 리터럴을, tchar 자료형에서는 _T(...) 리터럴을 사용한다.
+7.4.2.1.3. 서식 지정자[편집]
+자세한 서식 지정자 문법은 영문 위키백과를 참조하면 된다.
+
+대소문자가 따로 있는 서식 지정자의 경우 출력 결과의 대문자/소문자 여부가 바뀐다.
+%%: '%' 문자. 문자열에 % 하나만 써 놓으면 서식 지정자로 취급되어 출력되지 않기 때문에 이렇게 써야 한다.
+정수
+%d: 부호 있는 정수를 10진수(decimal)로 출력. 아래와 같이 별도 설정을 하지 않으면 int형의 범위 내에서 출력된다.
+%hhd: char형
+%hd: short형
+%ld: long int형
+%lld: long long int형
+%u: 부호 없는(unsigned) 정수를 10진수로 출력. %d처럼 자료형의 길이를 지정할 수 있다.
+%x/%X: 부호 없는 정수를 16진수(hexadecimal)로 출력.
+%o: 부호 없는 정수를 8진수(octal)로 출력.
+소수
+%f/%F: xxx.xxxx... 형태로 출력. 아래와 같이 별도 설정을 하지 않으면 double형으로 취급된다. 무한대나 NaN이 저장되어 있을 경우 %f와 %F 중 무엇을 쓰느냐에 따라 대소문자가 바뀐다.
+%lf: %f와 같다.
+%Lf: long double형
+%g: 뒤의 의미없는 0을 생략한다.
+%e/%E: 지수 표기법(x.xxxE[+/-]xx)으로 출력. 예를 들어 150은 1.5e02로 출력된다.
+%a/%A: 16진수로 출력. 0x로 시작한다.
+문자열
+%c: 문자 하나(char)를 출력
+%s: 문자열(char[])을 출력
+
+위 서식 지정자에 추가로 옵션을 붙일 수 있다. %f를 예로 들면 다음과 같다.
+%+f: 양수일 경우 왼쪽에 +를 붙인다.
+% f: 양수일 경우 왼쪽에 띄어쓰기를 1칸 붙인다. +가 있을 경우 무시한다.
+%(숫자)f: 최소한 (숫자)만큼의 길이로 출력한다. 길이가 짧을 경우 왼쪽에 부족한 만큼 띄어쓰기를 한다. 예를 들어 5를 %3d로 출력하면 __5(띄어쓰기 대신 언더바를 붙였음)가 된다.
+숫자가 올 자리에 *를 쓰면 인자로 받은 변수만큼의 길이로 출력한다. 예를 들어 printf(""%*d"", 4, 12);의 출력값은 __12이다.
+%0(숫자)f: 위와 같지만, 왼쪽에 부족한 만큼 0을 붙인다. 예를 들어 5를 %03d로 출력하면 005가 된다. 위와 같이 *를 쓸 수 있다.
+%.(숫자)f: 소수점 아래 (숫자)자리에서 반올림해서 출력한다. 문자열에 사용할 경우 (숫자)글자만큼만 출력된다. 예를 들어 0.1234를 %.2f로 출력하면 0.12가 된다. 위와 같이 *를 쓸 수 있다.
+
+서식 지정자의 동작은 다소 기묘한 면이 많다. 예를 들어 printf 함수에서는 char형 변수와 int형 변수를 모두 %d 서식자로 출력 가능하나, scanf 함수에서는 char형 변수를 문자로 입력받을 때는 %c, 숫자로 입력받을 때는 %hhi, int형 변수를 입력받을 때는 %d를 사용한다. 이러한 차이점들은 가변인자 함수의 동작 방식(좀 더 정확히는 가변인자함수의 매개변수에 적용되는 기본인자진급 규칙)을 깊이있게 공부하면 이해가 가능해진다.
+7.4.2.2. scanf[편집]
+int scanf(const char *format, ...)
+
+scanf는 값을 입력받는 함수이다. scanf 함수는 옵션과 입력값을 저장할 변수의 포인터, 즉 그 변수의 주소 두 가지를 입력 받는다. 쉽게 설명하기 위해 택배에 비유하자면 입력값은 택배 내용물, 변수의 주소 값은 택배에 쓸 주소이다.
+
+보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."		https://python101.tistory.com/entry/Python-aiter-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/ZXqDH9dqgBQ5arscC		[MySQL] 서브 쿼리, 파생(Derived) 테이블 및 뷰 참조 최적화 https://share.google/xr2jNyDHQRjO2NASY																			
 "7.4.2.2.1. 서식 지정자[편집]
 printf와 같은 서식 지정자를 쓰지만, *의 의미가 '해당하는 값 하나를 읽은 다음 저장하지 않고 버리는 것'으로 바뀌는 등 소소한 변화가 있다. 예를 들어 scanf(""%*d %d"", &a);에서 3 5를 입력받았을 경우 3을 버리고 a에 5를 저장한다.
 
@@ -1208,7 +1190,7 @@ int main()
 # 다른 언어: x > 0 and x < 20
 # 파이썬:
 if 0 < x < 20:
-    print(""x는 0과 20 사이에 있습니다."")"		☕ 추상 클래스(Abstract) 용도 완벽 이해하기 https://share.google/ZXqDH9dqgBQ5arscC		[MySQL] 서브 쿼리, 파생(Derived) 테이블 및 뷰 참조 최적화 https://share.google/xr2jNyDHQRjO2NASY																			
+    print(""x는 0과 20 사이에 있습니다."")"		a >>> b는 부호 비트를 포함하여 변수 a의 모든 비트를 오른쪽으로 b칸만큼 이동(Shift)시키는 '부호 없는 우측 시프트(Unsigned Right Shift)' 연산자입니다.이 연산의 핵심 특징은 다음과 같습니다.💡 핵심 요약빈자리를 무조건 0으로 채우기 때문에, 음수를 처리할 때 최상위 비트(부호 비트)를 유지하는 일반 시프트(>>)와 달리 결과값이 항상 양수가 됩니다.🔍 일반 시프트(>>)와의 차이점>> (부호 있는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 기존의 부호 비트(0 또는 1)로 채웁니다.>>> (부호 없는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 무조건 0으로 채웁니다.📝 동작 예시 (8비트 기준)음수 -8 (이진수: 1111 1000)을 2칸씩 이동할 경우:>> 연산 시:빈자리를 부호 비트인 1로 채워 음수가 유지됩니다.1111 1000 >> 2 \(\rightarrow \) 1111 1110 (십진수: -2)>>> 연산 시:빈자리를 무조건 0으로 채워 양수가 됩니다.1111 1000 >>> 2 \(\rightarrow \) 0011 1110 (십진수: 62)																					
 "8.3. do-while[편집]
 do{(statement)}while(expression 또는 declaration)
 while과 비슷하지만 do 안의 statement를 1회 실행 후 while 안의 조건이 참이라면 재반복, 거짓이라면 통과하는 코드이다."		"여느 프로그래밍 언어와 비슷하게 예외 처리를 지원한다. 예외를 던질 때에는 raise 키워드를 사용한다.
@@ -1232,7 +1214,10 @@ class CustomException(Exception):
 try:
     raise CustomException(""Error!!"")
 except CustomException as e:
-    print(e) # ""Error!!""이 출력된다."		a >>> b는 부호 비트를 포함하여 변수 a의 모든 비트를 오른쪽으로 b칸만큼 이동(Shift)시키는 '부호 없는 우측 시프트(Unsigned Right Shift)' 연산자입니다.이 연산의 핵심 특징은 다음과 같습니다.💡 핵심 요약빈자리를 무조건 0으로 채우기 때문에, 음수를 처리할 때 최상위 비트(부호 비트)를 유지하는 일반 시프트(>>)와 달리 결과값이 항상 양수가 됩니다.🔍 일반 시프트(>>)와의 차이점>> (부호 있는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 기존의 부호 비트(0 또는 1)로 채웁니다.>>> (부호 없는 우측 시프트): 우측으로 이동하면서 생기는 빈자리를 무조건 0으로 채웁니다.📝 동작 예시 (8비트 기준)음수 -8 (이진수: 1111 1000)을 2칸씩 이동할 경우:>> 연산 시:빈자리를 부호 비트인 1로 채워 음수가 유지됩니다.1111 1000 >> 2 \(\rightarrow \) 1111 1110 (십진수: -2)>>> 연산 시:빈자리를 무조건 0으로 채워 양수가 됩니다.1111 1000 >>> 2 \(\rightarrow \) 0011 1110 (십진수: 62)																					
+    print(e) # ""Error!!""이 출력된다."		"9.10. 형변환[편집]
+(T) a;
+a의 타입을 T로 변환한다. 변환할 수 없는 경우 예외가 발생한다.
+숫자 타입을 크기가 작은 타입으로 변환시키거나[26], 부모 클래스 타입의 객체를 자식 클래스로 변환시킬 때 사용된다."																					
 "https://namu.wiki/w/GOTO
 goto
 
@@ -1275,10 +1260,10 @@ class 자식클래스(부모클래스):
     추가할내용
 상속받으면 부모 클래스의 기능을 자식 클래스에서도 쓸 수 있다.
 객체변수는 각 객체가 가진 변수로, 클래스 내의 함수에서 생성/변경하려면 self.변수명을 사용하면 된다.
-클래스변수는 모든 객체가 공유하는 변수로, 함수 밖에서 선언한다."		"9.10. 형변환[편집]
-(T) a;
-a의 타입을 T로 변환한다. 변환할 수 없는 경우 예외가 발생한다.
-숫자 타입을 크기가 작은 타입으로 변환시키거나[26], 부모 클래스 타입의 객체를 자식 클래스로 변환시킬 때 사용된다."																					
+클래스변수는 모든 객체가 공유하는 변수로, 함수 밖에서 선언한다."		"9.11. instanceof[편집]
+obj instanceof T
+obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
+즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다."																					
 "11. 기타 표준 라이브러리의 기능[편집]
 11.1. stdbool.h[편집]
 C++에서처럼 1바이트 크기의 bool 자료형을 사용할 수 있게 해 준다. 그리고 '0 아닌 수'와 0 대신 true와 false로 값을 적을 수 있다."		"13. 팁[편집]
@@ -1357,11 +1342,7 @@ list(range(10))
 error: Microsoft Visual C++ 14.0 is required. Get it with ""Microsoft Visual C++ Build Tools
 Boilerplate 코드가 적고, 리스트와 셋, 해시 등의 자료구조를 간단한 기호로 표기할 수 있어 코딩 테스트 시 많이 사용되는 언어이기도 하다. Python으로 코드를 작성하면 같은 알고리즘을 C++, Java 등으로 구현했을 때보다 전체적인 코드 길이가 비약적으로 짧아진다.
 파이썬 인터프리터라도 열어서 아무 모듈이나 임포트하거나, print 함수에 대해 dir(print)를 입력해 보면 파이썬의 구조를 좀 더 잘 알게 된다. 우리가 사용했던 함수가 다르게 보일 것이다.
-과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"9.11. instanceof[편집]
-obj instanceof T
-obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
-즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다."																					
-				"class Kimgroom {
+과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"class Kimgroom {
   boolean aa;
   int iint;
   String nname;
@@ -2753,6 +2734,7 @@ void main() {
     }
 }
 1초마다 Hello, World!를 출력하는 동시에 사용자가 입력한 값을 그대로 출력한다."																					
+																									
 																									
 																									
 																									
