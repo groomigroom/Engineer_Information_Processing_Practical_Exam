@@ -32,6 +32,44 @@
 
 
 
+
+
+
+
+
+
+
+-------------
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Main {
+    public static void main(String[] args) {
+      ArrayList<LinkedList<String>> list = new ArrayList<LinkedList<String>>();
+      //문자열(String)을 담는 LinkedList들을 여러 개 저장할 수 있는, 큰 주머니인 ArrayList(이름: list)를 새로 생성합니다.
+
+      LinkedList<String> node1 = new LinkedList<>();
+      // 첫 번째 LinkedList 객체 생성 및 데이터 추가
+      //문자열(String)을 줄줄이 이어 붙여 저장할 수 있는 첫 번째 내부 리스트 객체(node1)를 생성합니다.
+      node1.add("aa"); 
+      node1.add("bb"); 
+      
+      LinkedList<String> node2 = new LinkedList<>(); 
+      node2.add("11");
+      node2.add("22"); 
+      
+      list.add(node1);
+      list.add(node2);
+      System.out.println(list);
+    }
+}
+/*
+[[aa, bb], [11, 22]]
+*/
+
+
+
 -------------
 
 이건 너무 복잡한 예제이긴 합니다.
