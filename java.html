@@ -31,7 +31,42 @@
 
 
 
+		
 
+
+-------------
+
+
+class Main {
+  boolean aa;
+  int iint;
+  String nname;
+  char ffav;
+  double dnum;
+  
+  // 1. 생성자 이름을 클래스 이름(Main)과 일치시킵니다.
+  Main(boolean aa, int iint, String nname, char ffav, double dnum) {
+    this.aa = aa;
+    this.iint = iint;
+    this.nname = nname;
+    this.ffav = ffav;
+    this.dnum = dnum;
+  }
+  
+  // 2. 표준 main 메서드 형식(String[] args)을 맞춥니다.
+  public static void main(String[] args) {
+    // 3. 객체를 생성하여 인스턴스 변수에 값을 할당합니다.
+    Main myMain = new Main(true, 5, "구름이", '공', 3.5);
+    
+    // 4. 생성한 객체의 참조 변수(myMain)를 통해 인스턴스 변수에 접근합니다.
+    System.out.println(myMain.aa ? "구름" : "김구름");
+    System.out.println(myMain.iint + "만큼 " + myMain.nname + "이 " + myMain.ffav + "을 " + myMain.dnum + "개 구매할 예정입니다.");
+  }
+}
+/*
+구름
+5만큼 구름이이 공을 3.5개 구매할 예정입니다.
+*/
 
 
 
