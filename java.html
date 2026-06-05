@@ -31,6 +31,51 @@
 
 
 
+
+
+
+
+-------------
+
+
+
+ instanceof
+obj instanceof T
+obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
+즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다.
+자바에서 obj instanceof T는 obj 객체가 T 타입(클래스, 인터페이스)의 인스턴스이거나 이를 상속/구현한 자식 
+타입인지 확인하는 연산자입니다. 결과는 true 또는 false(boolean)로 반환됩니다.instanceof의 주요 특징과 
+작동 원리는 다음과 같습니다.안전한 다운캐스팅: 부모 클래스 타입을 자식 클래스로 강제 형변환(다운캐스팅)할 때, 
+ClassCastException 에러를 방지하기 위해 사용합니다.null 처리: obj가 null인 경우, 타입에 관계없이 무조건 false를 반환합니다.
+제네릭(Generics) 타입 제한: 자바의 타입 소거(Type Erasure) 특성 때문에 T에 구체적인 제네릭 타입(예: List<String>)은 
+올 수 없습니다. 
+instanceof List<?>와 같이 와일드카드는 사용할 수 있습니다
+
+class Animal {
+  int Animal() {
+    System.out.println("김구름");
+    return 1;
+  }
+}
+class Dog extends Animal {
+  int Dog() {
+    System.out.println("김구름이");
+    return 2;
+  }
+}
+
+public class Main {
+  public static void main(){
+    Animal myDog = new Dog();
+
+    System.out.println(myDog instanceof Animal); // true
+    System.out.println(myDog instanceof Dog);    // true
+  }
+}
+
+
+
+
 -------------
 
 
