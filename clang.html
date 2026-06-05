@@ -35,7 +35,31 @@
 
 
 
+------------------------------------------------
 
+assert.h
+Assertion. 디버그 시 사용된다. 주로 런타임 디버그 시 사용하며 컴파일시 NDEBUG가 선언되어 있지 않고 조건을 만족하지 못했다면 런타임에서 오류가 출력된다. 이때 동작하는 방식은 런타임 라이브러리마다 다르지만 보통 런타임 오류와 해당 라인과 소스코드 파일명과 조건식을 출력하고 종료된다. Windows 시스템의 경우 디버그 가능한 툴이 설치되어 있다면 (drmingw, MSVC) 런타임 라이브러리에서 해당 프로세스에 디버거를 붙이는 옵션을 제공하기도 한다.
+#ifdef NDEBUG
+#undef NDEBUG
+#endif // NDEBUG
+
+#include <assert.h> // assert 함수를 사용하기 위한 헤더
+#include <stdio.h>
+
+int main(int argc, const char* argv[])
+{
+    // 프로그램을 실행할 때 인자(Argument)를 주지 않으면 여기서 런타임 에러가 발생합니다.
+    assert(argc > 1); 
+    
+    printf("인자가 정상적으로 전달되었습니다.\n");
+    return 0;
+}
+
+/*
+이렇게 출력됨.
+main: Main.c:11: main: Assertion `argc > 1` failed.
+Aborted (core dumped)
+*/
 
 
 
