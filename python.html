@@ -36,6 +36,38 @@
 
 
 
+
+
+
+---------
+
+
+locals()는 호출된 시점의 지역 스코프(Local Scope)에 존재하는 모든 변수와 그 값들을 딕셔너리 형태로 반환하는 내장 함수입니다.
+주로 현재 실행 중인 함수 내부에서 어떤 변수들이 선언되고 사용되고 있는지 확인하거나(디버깅), 
+딕셔너리 데이터를 동적으로 처리할 때 사용합니다.
+ 핵심 요약기능: 현재 지역(Local) 네임스페이스의 이름-값 매핑 정보를 반환.반환 타입: 
+ dict (사전 객체)주의점: 모듈(최상위) 레벨에서 호출하면 globals()와 동일한 
+ 전역 네임스페이스를 반환합니다.
+ 활용 예시1. 지역 변수 확인 (디버깅)python
+ 
+def my_function(a, b):
+    local_var = "Hello"
+    print(locals())
+
+my_function(10, 20)
+# 출력: {'a': 10, 'b': 20, 'local_var': 'Hello'}
+2. 동적 변수 관리변수 이름을 문자열로 참조하거나 여러 변수의 상태를 
+한 번에 딕셔너리 형태로 조작할 때 유용합니다.
+
+def calculate_area(width, height):
+    variables = locals()
+    print(f"계산에 사용된 가로: {variables['width']}")
+    return width * height
+
+ccd = calculate_area(5, 10)
+print(ccd)
+
+
 ---------
 
 
