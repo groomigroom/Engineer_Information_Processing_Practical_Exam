@@ -31,11 +31,31 @@
 
 
 
+-------------
 
 
+이거는 딱히
 
-
-
+자바 Connection 타입
+자바에서 Connection Type은 크게 데이터베이스 연결(JDBC)과
+네트워크 통신 두 가지 관점으로 나눌 수 있습니다.
+1. 데이터베이스 연결 (JDBC Connection)자바에서 DB에 접근하기 위한 표준 API인 
+java.sql.Connection 인터페이스를 의미합니다. DB 연결 방식(드라이버)은 크게 4가지 
+타입(Type 1 ~ Type 4)으로 분류됩니다.타입명칭 및 설명특징Type 1JDBC-ODBC 
+브리지 드라이버ODBC를 거쳐 DB에 연결. 클라이언트 PC에 별도 설정이 필요해 
+현재는 거의 사용 안 함.
+Type 2네이티브 API 드라이버DB 클라이언트 라이브러리(C/C++)를 활용해 통신.
+ OS에 종속적임.Type 3네트워크 프로토콜 드라이버미들웨어(WAS 등)의 네트워크 
+서버를 거쳐 DB와 통신. 플랫폼 독립적임.Type 4네이티브 프로토콜 드라이버 
+(Thin Driver)가장 널리 쓰임. 자바 언어로만 구성되어 DB 서버와 직접 통신하며 성능이 우수함.
+실무 핵심: 커넥션 풀(DBCP)매번 DriverManager로 DB 연결을 맺고 끊는 것은 비용이 크기 때문에, 
+실무에서는 미리 연결 객체를 만들어두고 재사용하는 커넥션 풀(Connection Pool, 
+예: HikariCP)을 주로 사용합니다.2. 네트워크 및 통신 연결 (Network Connection)
+웹 애플리케이션이나 소켓 통신에서 사용하는 다양한 연결 방식입니다.
+java.net.HttpURLConnection: HTTP 프로토콜을 사용해 웹 서버와 데이터를 주고받을 때 
+사용하는 표준 Connection 클래스입니다.java.net.URLConnection: 다양한 프로토콜(HTTP, FTP 등)을 
+지원하는 네트워크 연결의 추상 클래스입니다.javax.net.ssl.HttpsURLConnection: 보안이 적용된 
+HTTPS 통신을 위한 Connection 타입입니다.
 
 
 
