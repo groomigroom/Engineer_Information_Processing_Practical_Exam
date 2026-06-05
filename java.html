@@ -31,7 +31,47 @@
 
 
 
-		
+
+
+
+
+-------------
+
+
+
+class Person {
+    String name;
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+class Student extends Person {
+    String check;
+    Student(String name) {
+        super(name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("김구름");
+        Person p = s;        // 업캐스팅
+        p.name = "이름이다.";
+
+        // 1. 다운캐스팅 후 자식 필드에 값 대입
+        Student downcastedS = (Student) p; 
+        downcastedS.check = "컴파일 에러 해결!";
+
+        // 2. 결과 출력
+        System.out.println("이름: " + p.name);
+        System.out.println("체크: " + downcastedS.check);
+    }
+}
+/*
+이름: 이름이다.
+체크: 컴파일 에러 해결!
+*/
 
 
 -------------
