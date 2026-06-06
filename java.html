@@ -43,6 +43,31 @@
 
 
 
+
+
+
+
+
+-------------
+
+
+class Person<T>{ 
+    public T info;
+    Person(T info){ this.info = info; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person<String> p2 = new Person<String>("부장");
+        
+        // p2 자체를 출력하면 주소값이 나오므로 내부 값을 출력합니다.
+        System.out.println(p2.info); // 출력 결과: 부장
+    }
+}
+//부장
+
+
+
 -------------
 
 
