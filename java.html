@@ -48,6 +48,25 @@
 
 
 
+
+
+
+
+
+-------------
+
+Character.getNumericValue()는 자바에서 유니코드 문자(char)를 해당하는 숫자(int)로 변환하는 메서드입니다. 일반적인 숫자 문자뿐만 아니라 로마 숫자, 분수 등 다양한 형태의 문자를 정수로 파악하여 변환해 줍니다.💡 주요 특징 및 반환값숫자 문자 ('0' ~ '9'): 해당 정수 값(0~9)을 반환합니다.알파벳 ('A'~'Z', 'a'~'z'): 'A'는 10, 'B'는 11, ... 'Z'는 35 순으로 값을 반환합니다.숫자가 아닌 문자: -1을 반환합니다.분수 등 정수로 표현 불가능한 문자: -2를 반환합니다.
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Character.getNumericValue('5')); // 출력: 5
+        System.out.println(Character.getNumericValue('A')); // 출력: 10
+        System.out.println(Character.getNumericValue('a')); // 출력: 10
+        System.out.println(Character.getNumericValue('$')); // 출력: -1
+    }
+}
+
+
+
 -------------
 
 
