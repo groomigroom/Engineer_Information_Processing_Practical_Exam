@@ -35,6 +35,69 @@
 
 
 
+
+
+
+
+
+
+
+
+-------------
+
+
+abstract class Info {
+    public abstract int getLevel();
+}
+class EmployeeInfo extends Info {
+    public int rank;
+    EmployeeInfo(int rank) { this.rank = rank; }
+    public int getLevel() { return this.rank; }
+}
+// 문자열 직급을 처리할 수 있는 새로운 Info 자식 클래스 추가
+//Person 객체를 생성할 때는 반드시 Info를 상속받은 클래스(EmployeeInfo 등)만 타입 인자로 전달해야 합니다. 만약 문자열(부장)을 다루고 싶다면, Info를 상속받는 새로운 클래스를 만들거나 기존 클래스를 활용해야 합니다.
+class StringInfo extends Info {
+    public String rankName;
+    StringInfo(String rankName) { this.rankName = rankName; }
+    
+    @Override
+    public int getLevel() {
+        // 직급에 따른 레벨 반환 로직 예시
+        if (this.rankName.equals("부장")) return 3;
+        return 1;
+    }
+}
+class Person<T extends Info> {
+    public T info;
+    Person(T info) { this.info = info; }
+}
+public class GenericDemo {
+    public static void main(String[] args) {
+        // 정상 작동 (생략 시 다이아몬드 연산자 <> 권장)
+        Person<EmployeeInfo> p1 = new Person<>(new EmployeeInfo(1));
+        
+        // String 대신 Info를 상속받은 StringInfo를 전달하여 정상 작동
+        Person<StringInfo> p2 = new Person<>(new StringInfo("부장"));
+        
+        System.out.println(p2.info.getLevel()); // 3 출력
+    }
+}
+//3 문법 찾기
+
+/*
+자바에서 <> 기호는 다이아몬드 연산자(Diamond Operator)라고 부르며, 제네릭(Generics) 타입을 지정할 때 사용합니다. 객체 생성 시 타입 추론(Type Inference)을 통해 중복되는 제네릭 타입을 생략하여 코드를 간결하게 작성할 수 있게 해주는 편의 문법입니다.1. 주요 역할 및 사용법자바 7 이전에는 제네릭 클래스를 인스턴스화할 때 양쪽 모두에 타입을 명시해야 했습니다. 하지만 자바 7부터는 좌변에 타입을 선언했다면 우변 객체 생성 시 빈 다이아몬드 연산자 <>만 작성해도 컴파일러가 좌변의 타입을 유추합니다.기본 예시:java// Java 7 이전 (타입 중복)
+List<String> list = new ArrayList<String>();
+
+// Java 7 이후 (다이아몬드 연산자 사용)
+List<String> list = new ArrayList<>();
+코드를 사용할 때는 주의가 필요합니다.2. 장점코드 가독성 향상: 길고 복잡한 제네릭 타입(예: Map<String, List<Integer>>)을 두 번 작성하지 않아도 됩니다.입력 실수 방지: 반복되는 타입 작성으로 인한 오타를 줄여줍니다.3. 제약 사항반드시 좌변에 제네릭 타입이 명시되어 있어야 컴파일러가 타입을 추론할 수 있습니다.Java 9 이전 버전에서는 익명 클래스(Anonymous Class) 내부에서 사용할 수 없었으나, Java 9부터는 제약이 개선되어 익명 클래스와도 함께 사용할 수 있습니다.
+
+자바에서 <> 연산자는 다이아몬드 연산자(Diamond Operator)라고 부르며, 제네릭(Generics)의 타입 추론(Type Inference)을 의미합니다. 컴파일러가 좌변의 선언부를 보고 우변 객체의 타입을 스스로 유추하여 중복되는 타입을 생략할 수 있게 해줍니다.
+*/
+
+
+
+
 -------------
 
 
