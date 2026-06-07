@@ -35,10 +35,31 @@
 
 
 
+-------------
 
 
+record User(
+    Long id,
+    String email,
+    String name
+) {}
 
-
+// Main.java
+public class Main {
+  public static void main(String[] args) { // String[] args 추가
+    User user = new User(1L, "test@naver.com", "김구름");
+    
+    // record의 Getter는 getXXX()가 아니라 필드명()을 그대로 사용합니다.
+    System.out.println(user.id());    
+    System.out.println(user.email()); 
+    System.out.println(user.name());  
+  }
+}
+/*
+1
+test@naver.com
+김구름
+*/
 
 
 
