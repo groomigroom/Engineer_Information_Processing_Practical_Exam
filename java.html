@@ -48,6 +48,40 @@
 
 
 
+/*라벨
+문(statement)에 사용할 수 있다. 해당 문에 이름을 붙여 즉시 빠져나가거나(break), 다음 반복으로 넘어간다.(continue. 단, 반복문에 라벨을 붙여야 한다.) 보통은 반복문에서 사용한다.
+*/
+public class LabelExample {
+    public static void main(String[] args) {
+        // 'outerLoop' 라벨 지정
+        outerLoop: 
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 1 && j == 1) {
+                    // i와 j가 모두 1일 때 outerLoop 전체를 종료
+                    System.out.println("라벨로 인해 전체 반복문 종료!");
+                    break outerLoop; 
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+    }
+}
+/*
+i: 0, j: 0
+i: 0, j: 1
+i: 0, j: 2
+i: 1, j: 0
+라벨로 인해 전체 반복문 종료!
+*/
+
+
+
+
+-------------
+
+
+
 public class ShiftOperatorExample {
     public static void main(String[] args) {
         int a = -8; // 2진수: 11111111 11111111 11111111 11111000
