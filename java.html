@@ -35,6 +35,63 @@
 
 
 
+
+
+
+
+-------------
+
+
+abstract class Shape {
+    public String type;
+    
+    // 추상 클래스 생성자
+    public Shape(String type) {
+        this.type = type;
+    }
+    
+    // 추상 메서드
+    public abstract void draw();
+}
+
+class Figure extends Shape {
+    public String name;
+    
+    public Figure(String type1, String type2) {
+        super(type1); // 부모 추상 클래스 생성자 호출
+        name = type2;
+    }
+    
+    @Override
+    public void draw() {
+        // 추상 메서드 구현 및 출력문 추가
+        System.out.println("[그리기] 형태: " + type + ", 모양: " + name);
+    }
+}
+
+public class main {
+    public static void main(String[] args) {
+        Figure f = new Figure("polygon", "square");
+        
+        // 1. 변수의 값을 직접 화면에 출력
+        System.out.println("도형 이름 (f.name): " + f.name); // "square"
+        System.out.println("도형 타입 (f.type): " + f.type); // "polygon"
+        
+        System.out.println(); // 줄바꿈용
+        
+        // 2. 구현된 추상 메서드 호출하여 출력
+        f.draw();
+    }
+}
+/*
+도형 이름 (f.name): square
+도형 타입 (f.type): polygon
+
+[그리기] 형태: polygon, 모양: square
+*/
+
+
+
 -------------
 
 
