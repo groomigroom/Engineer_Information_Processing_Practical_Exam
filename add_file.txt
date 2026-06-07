@@ -193,115 +193,7 @@ https://www.youtube.com/live/c6h7K7g-5GE?si=41o-DUCl5Ci_hXew
 }
 "	https://youtube.com/shorts/qTuZ1tiUAAI?si=zE_EhYAfeu9GmI_0		"이거랑 아래꺼 리눅스
 https://copy.sh/v86/?profile=linux26"																	
-				"class SuperObject {
-  protected String name;
-  public void paint() {
-    draw();
-  }
-  public void draw() {
-    System.out.println(name);
-  }
-}
-public class SubObject extends SuperObject {
-  protected String name;
-  public void draw() {
-    name = ""Sub"";
-    super.name = ""Super"";
-    super.draw();
-    System.out.println(name);
-  }
-  public static void main(String[] args) {
-    SuperObject b = new SubObject();
-    b.paint();
-  }
-}
-
-/*
-이 코드는 자바의 객체 지향 특징(다형성, 메서드 오버라이딩, 상속, 멤버 변수 가리기)을 모두 담고 있습니다. 
-한 줄씩 실행되는 순서대로 설명해 드리겠습니다.🚀 main 메서드 시작 
-(프로그램 실행)SuperObject b = new SubObject();SubObject 인스턴스를 메모리에 생성하고, 
-부모 타입인 SuperObject 변수 b에 저장합니다. (다형성)이때 메모리에는 부모의 name(null)과 
-자식의 name(null)이 각각 독립된 공간에 따로 존재합니다.b.paint();부모 타입 변수로 paint() 메서드를 호출합니다. 
-자식에는 paint()가 없으므로 부모(SuperObject)의 paint()가 실행됩니다.
-🎨 paint() 메서드 내부 진입public void paint() { 
-➡️ 부모의 paint() 메서드로 들어왔습니다.
-draw();변수 b가 실제로 가리키는 대상은 자식 객체(SubObject)이므로, 
-자식 객체에서 재정의(오버라이딩)한 draw() 메서드가 호출됩니다. (자바의 동적 바인딩)
-✏️ 자식(SubObject)의 draw() 메서드 실행name = ""Sub""; 
-➡️ 자식 객체의 name 변수에 ""Sub""를 저장합니다.super.name = ""Super""; 
-➡️ 부모 객체의 name 변수에 ""Super""를 저장합니다.super.draw(); 
-➡️ 부모 클래스에 정의된 원래 draw() 메서드를 강제로 호출합니다.
-🏛️ 부모(SuperObject)의 draw() 메서드 실행 (super.draw())System.out.println(name);
-부모의 draw() 안에서 name을 호출하면 부모 클래스의 name을 바라봅니다.앞에서 부모 name에 
-""Super""를 넣어두었으므로, 화면에 Super가 첫 번째로 출력됩니다.출력을 마치고 다시 자식의 draw() 메서드로 돌아갑니다.
-🏁 자식(SubObject)의 draw() 메서드 마무리 및 종료System.out.println(name);자식의 draw() 안에서 
-name을 호출하면 자신(자식)의 name이 부모의 변수를 가리기 때문에 자식 클래스의 name을 바라봅니다.
-자식 name에는 ""Sub""가 들어있으므로, 화면에 Sub가 두 번째로 출력됩니다.📊 최종 출력 결과
-Super
-Sub
-
-*/"																					
-http://unixwiz.net/techtips/reading-cdecl.html	71쪽 211부터	eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: "1 + 2" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다.		"record User(
-    Long id,
-    String email,
-    String name
-) {}
-
-// Main.java
-public class Main {
-  public static void main(String[] args) { // String[] args 추가
-    User user = new User(1L, ""test@naver.com"", ""김구름"");
-    
-    // record의 Getter는 getXXX()가 아니라 필드명()을 그대로 사용합니다.
-    System.out.println(user.id());    
-    System.out.println(user.email()); 
-    System.out.println(user.name());  
-  }
-}"	"abstract class AA {
-  public abstract int b();
-  public abstract int c();
-}
-class B extends AA {
-  public int b() {
-    return 11;
-  }
-  
-  public int c() {
-    return 13;
-  }
-}
-
-
-public class Main {
-    public static void main(String[] args) {
-      AA obj = new AA();
-      System.out.println(obj.b() + obj.c());
-    }
-} //일단 에러뜸
-169번줄
-325번줄"	https://youtube.com/shorts/MSFv_fNqSgA?si=eE_VcFzQs-zNmwEH		https://takeknowledge.tistory.com/65#google_vignette																	
-		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
-
-async def my_async_generator():
-    for i in range(3):
-        await asyncio.sleep(1)  # 비동기 I/O 대기
-        yield i
-
-async def main():
-    # 비동기 반복자 생성
-    async_iter = my_async_generator()
-    
-    # anext()로 직접 하나씩 가져오기
-    try:
-        while True:
-            # 반환되는 것이 코루틴이므로 await를 사용해야 합니다.
-            value = await anext(async_iter)
-            print(f""가져온 값: {value}"")
-    except StopAsyncIteration:
-        print(""반복이 모두 끝났습니다."")
-
-asyncio.run(main())
-코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		"final class User {
+				"final class User {
   private final Long id;
   private final String email;
   private final String name;
@@ -356,11 +248,131 @@ public class Main {
     System.out.println(user.getName());
   }
 }"																					
-https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		파이썬 help()		"자바 Thread 
+http://unixwiz.net/techtips/reading-cdecl.html	71쪽 211부터	eval()과의 차이점eval(): 단일 '식(Expression)'을 실행하고 그 결과를 반환 (예: "1 + 2" -> 3).exec(): 여러 줄의 '문(Statement)'을 실행하며 결과는 반환하지 않음 (변수 생성, 제어문 등).주의사항 및 보안exec()는 외부 입력(사용자 입력, 네트워크 등)에 의해 코드가 변조될 수 있는 환경에서는 심각한 보안 취약점(시스템 명령어 실행 등)을 유발할 수 있으므로 사용을 지양해야 합니다.		"자바 Thread 
 [Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly 
 https://share.google/sputuhpfnyk1xs9Xb
 
-implements Runnable run() start()"		"후보키는 데이터베이스 테이블에서 각 행(튜플)을 유일하게 식별할 수 있는 컬럼(또는 컬럼 조합)입니다. 유일성과 최소성을 만족해야 하며, 이 중 실제로 데이터 관리를 위해 선택된 대표 후보키를 기본키(Primary Key)라 부르고, 선택받지 못한 나머지 후보키를 대체키(Alternate Key)라고 합니다.MySQL에서 후보키의 사용법은 기본키(Primary Key)와 유니크 제약조건(Unique Key)을 설정하는 것으로 구현됩니다.1. 기본키 (Primary Key) 지정법가장 대표적으로 사용하고 싶은 후보키는 PRIMARY KEY로 지정합니다.테이블당 오직 1개만 지정 가능합니다.해당 컬럼은 자동으로 중복이 방지되며 NULL 값이 허용되지 않습니다.테이블 생성 시 설정:sqlCREATE TABLE users (
+implements Runnable run() start()"	"abstract class AA {
+  public abstract int b();
+  public abstract int c();
+}
+class B extends AA {
+  public int b() {
+    return 11;
+  }
+  
+  public int c() {
+    return 13;
+  }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+      AA obj = new AA();
+      System.out.println(obj.b() + obj.c());
+    }
+} //일단 에러뜸
+169번줄
+325번줄"	https://youtube.com/shorts/MSFv_fNqSgA?si=eE_VcFzQs-zNmwEH		https://takeknowledge.tistory.com/65#google_vignette																	
+		"anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.pythonimport asyncio
+
+async def my_async_generator():
+    for i in range(3):
+        await asyncio.sleep(1)  # 비동기 I/O 대기
+        yield i
+
+async def main():
+    # 비동기 반복자 생성
+    async_iter = my_async_generator()
+    
+    # anext()로 직접 하나씩 가져오기
+    try:
+        while True:
+            # 반환되는 것이 코루틴이므로 await를 사용해야 합니다.
+            value = await anext(async_iter)
+            print(f""가져온 값: {value}"")
+    except StopAsyncIteration:
+        print(""반복이 모두 끝났습니다."")
+
+asyncio.run(main())
+코드를 사용할 때는 주의가 필요합니다.3. async for와의 관계파이썬의 async for 루프는 내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.anext에 대한 더 자세한 기술 문서 및 가이드는 Python 공식 문서에서 확인할 수 있습니다."		"class C1{
+    static int static_variable = 1;
+    int instance_variable = 2;
+    static void static_static(){
+        System.out.println(static_variable);
+    }
+    static void static_instance(){
+        // 클래스 메소드에서는 인스턴스 변수에 접근 할 수 없다. 
+        //System.out.println(instance_variable);
+    }
+    void instance_static(){
+        // 인스턴스 메소드에서는 클래스 변수에 접근 할 수 있다.
+        System.out.println(static_variable);
+    }
+    void instance_instance(){        
+        System.out.println(instance_variable);
+    }
+}
+public class Main {  
+    public static void main(String[] args) {
+        C1 c = new C1();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 정적 변수에 접근 -> 성공
+        c.static_static();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 정적 메소드가 인스턴스 변수에 접근 -> 실패
+        c.static_instance();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 클래스 변수에 접근 -> 성공
+        c.instance_static();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공 
+        // 인스턴스 메소드가 인스턴스 변수에 접근 -> 성공
+        c.instance_instance();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 클래스 변수에 접근 -> 성공
+        C1.static_static();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 인스턴스 변수에 접근 -> 실패
+        C1.static_instance();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_static();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_instance();
+    }
+ 
+}"																					
+https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		파이썬 help()		"public class Test1 {
+    public static void main(String[] args) {
+        Unit[] group = new Unit[3];
+        group[0] = new Marine();
+        group[1] = new Tank();
+        group[2] = new DropShip();
+
+        for(Unit u : group) {
+            u.move(100, 200);
+        }
+    }
+}Copy
+이때 만일 스펙이 추가되어, Battlecruiser 클래스를 추가하게 되었고 여타 자식 클래스와 똑같이 Unit 부모 클래스에 상속 시킨다고 가정하자.
+javaabstract class Unit {
+    int x, y;
+    abstract void move(int x, int y); // 지정된 위치로 이동
+    void stop() {} // 현재 위치에 정지
+}
+
+class Battlecruiser extends Unit {
+    void yamato() {} // 고유 능력 야마토 사용
+}
+
+class Marine extends Unit { ... }
+
+class Tank extends Unit { ... }
+
+class DropShip extends Unit { ... }Copy
+그런데 개발자가 깜빡하고 배틀크루저의 이동에 관한 메소드를 정의를 안해버렸다고 해보자. 유닛의 치명적인 버그가 일어 날 수 있는 상황임에도 불구하고 만일 추상 클래스의 추상 메소드로 상속 관계를 맺었다면 이는 큰 문제가 되지 않는다.
+에디터에서 미리 다음과 같이 빨간줄을 통해 추상 메서드 move() 를 재정의 하지 않았다면서 오류를 보여주어 바로 수정이 가능하기 때문이다.
+출처: https://inpa.tistory.com/entry/JAVA-☕-추상-클래스Abstract-용도-완벽-이해하기 [Inpa Dev 👨‍💻:티스토리]"		"후보키는 데이터베이스 테이블에서 각 행(튜플)을 유일하게 식별할 수 있는 컬럼(또는 컬럼 조합)입니다. 유일성과 최소성을 만족해야 하며, 이 중 실제로 데이터 관리를 위해 선택된 대표 후보키를 기본키(Primary Key)라 부르고, 선택받지 못한 나머지 후보키를 대체키(Alternate Key)라고 합니다.MySQL에서 후보키의 사용법은 기본키(Primary Key)와 유니크 제약조건(Unique Key)을 설정하는 것으로 구현됩니다.1. 기본키 (Primary Key) 지정법가장 대표적으로 사용하고 싶은 후보키는 PRIMARY KEY로 지정합니다.테이블당 오직 1개만 지정 가능합니다.해당 컬럼은 자동으로 중복이 방지되며 NULL 값이 허용되지 않습니다.테이블 생성 시 설정:sqlCREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY, -- 기본키(후보키 중 메인)
     email VARCHAR(100) NOT NULL UNIQUE       -- 대체키(또 다른 후보키)
 );
@@ -425,52 +437,50 @@ str(문자열) 타입 인스턴스에 대한 capitalize 메서드 도움말을 �
 help(str.capitalize)
 (2) str 타입 문자열 'Andrea'에 대한 capitalize() 메서드 도움말 보기
 
-help('Andrea'.capitalize)"		"class C1{
-    static int static_variable = 1;
-    int instance_variable = 2;
-    static void static_static(){
-        System.out.println(static_variable);
+help('Andrea'.capitalize)"		"class Unit {
+    int x, y;
+    void move(int x, int y) {} 
+    void stop() {}
+}
+
+class Marine extends Unit {
+    void move(int x, int y) {
+        System.out.println(""걸어서 이동"");
     }
-    static void static_instance(){
-        // 클래스 메소드에서는 인스턴스 변수에 접근 할 수 없다. 
-        //System.out.println(instance_variable);
+    void stimPack() {} 
+}
+
+class Tank extends Unit {
+    void move(int x, int y) {
+        System.out.println(""굴러서 이동"");
     }
-    void instance_static(){
-        // 인스턴스 메소드에서는 클래스 변수에 접근 할 수 있다.
-        System.out.println(static_variable);
+    void siegeMode() {} 
+}
+
+class DropShip extends Unit {
+    void move(int x, int y) {
+        System.out.println(""날아서 이동"");
     }
-    void instance_instance(){        
-        System.out.println(instance_variable);
+    void loadUnload() {} 
+}
+
+// 🚀 실행을 위한 Main 클래스 추가
+public class Main {
+    public static void main(String[] args) {
+        // 1. 다형성을 활용하여 부모 타입 배열로 유닛들을 묶어서 관리합니다.
+        Unit[] group = new Unit[3];
+        group[0] = new Marine();
+        group[1] = new Tank();
+        group[2] = new DropShip();
+
+        // 2. 모든 유닛을 좌표 (100, 200) 위치로 이동시킵니다.
+        // 부모 타입(Unit)으로 메서드를 호출하지만, 자식들이 재정의(오버라이딩)한 메서드가 실행됩니다.
+        for (int i = 0; i < group.length; i++) {
+            group[i].move(100, 200);
+        }
     }
 }
-public class Main {  
-    public static void main(String[] args) {
-        C1 c = new C1();
-        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
-        // 인스턴스 메소드가 정적 변수에 접근 -> 성공
-        c.static_static();
-        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
-        // 정적 메소드가 인스턴스 변수에 접근 -> 실패
-        c.static_instance();
-        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공
-        // 인스턴스 메소드가 클래스 변수에 접근 -> 성공
-        c.instance_static();
-        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공 
-        // 인스턴스 메소드가 인스턴스 변수에 접근 -> 성공
-        c.instance_instance();
-        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
-        // 클래스 메소드가 클래스 변수에 접근 -> 성공
-        C1.static_static();
-        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
-        // 클래스 메소드가 인스턴스 변수에 접근 -> 실패
-        C1.static_instance();
-        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
-        //C1.instance_static();
-        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
-        //C1.instance_instance();
-    }
- 
-}"		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
+"		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
 "#include <stdio.h>
 int groom(){
   return 1;
@@ -593,37 +603,68 @@ next(반복가능한객체, 기본값)
 10
 0, 1, 2까지 나온 뒤에도 next(it, 10)을 호출하면 예외가 발생하지 않고 계속 10이 나옵니다.
 
-지금까지 반복 가능한 객체의 개념과 이터레이터를 만드는 방법을 배웠습니다. 여기서는 이터레이터를 만들 때 __iter__, __next__ 메서드 또는 __getitem__ 메서드를 구현해야 한다는 점만 기억하면 됩니다."		"public class Test1 {
-    public static void main(String[] args) {
-        Unit[] group = new Unit[3];
-        group[0] = new Marine();
-        group[1] = new Tank();
-        group[2] = new DropShip();
-
-        for(Unit u : group) {
-            u.move(100, 200);
-        }
-    }
-}Copy
-이때 만일 스펙이 추가되어, Battlecruiser 클래스를 추가하게 되었고 여타 자식 클래스와 똑같이 Unit 부모 클래스에 상속 시킨다고 가정하자.
-javaabstract class Unit {
+지금까지 반복 가능한 객체의 개념과 이터레이터를 만드는 방법을 배웠습니다. 여기서는 이터레이터를 만들 때 __iter__, __next__ 메서드 또는 __getitem__ 메서드를 구현해야 한다는 점만 기억하면 됩니다."		"abstract class Unit {
     int x, y;
     abstract void move(int x, int y); // 지정된 위치로 이동
     void stop() {} // 현재 위치에 정지
 }
 
-class Battlecruiser extends Unit {
-    void yamato() {} // 고유 능력 야마토 사용
+class Marine extends Unit{
+    void move(int x, int y) {
+        System.out.println(""걸어서 이동"");
+    }
+    void stimPack() {
+        System.out.println(""아드레날린 주사! 스팀팩 사용!"");
+    } 
 }
 
-class Marine extends Unit { ... }
+class Tank extends Unit{
+    void move(int x, int y) {
+        System.out.println(""굴러서 이동"");
+    }
+    void siegeMode() {
+        System.out.println(""시즈 모드 변형! 포격 준비!"");
+    } 
+}
 
-class Tank extends Unit { ... }
+class DropShip extends Unit{
+    void move(int x, int y) {
+        System.out.println(""날아서 이동"");
+    }
+    void loadUnload() {
+        System.out.println(""유닛 승하차 실행"");
+    } 
+}
 
-class DropShip extends Unit { ... }Copy
-그런데 개발자가 깜빡하고 배틀크루저의 이동에 관한 메소드를 정의를 안해버렸다고 해보자. 유닛의 치명적인 버그가 일어 날 수 있는 상황임에도 불구하고 만일 추상 클래스의 추상 메소드로 상속 관계를 맺었다면 이는 큰 문제가 되지 않는다.
-에디터에서 미리 다음과 같이 빨간줄을 통해 추상 메서드 move() 를 재정의 하지 않았다면서 오류를 보여주어 바로 수정이 가능하기 때문이다.
-출처: https://inpa.tistory.com/entry/JAVA-☕-추상-클래스Abstract-용도-완벽-이해하기 [Inpa Dev 👨‍💻:티스토리]"		18쪽 47번 48번 49번 50번 51번 52번 53번		110쪽 274번																	
+// 🚀 실행을 위한 Main 클래스
+public class Main {
+    public static void main(String[] args) {
+        // 1. 추상 클래스인 Unit 타입 배열로 서로 다른 유닛들을 묶어 줍니다.
+        Unit[] army = new Unit[3];
+        army[0] = new Marine();
+        army[1] = new Tank();
+        army[2] = new DropShip();
+
+        System.out.println(""=== 1. 모든 유닛 이동 명령 ==="");
+        // 2. 공통 기능인 move()를 호출하면 각 자식 객체의 오버라이딩된 메서드가 작동합니다.
+        for (Unit unit : army) {
+            unit.move(50, 70);
+        }
+
+        System.out.println(""\n=== 2. 유닛별 고유 능력 사용 ==="");
+        // 3. 부모(Unit) 타입에서는 자식의 고유 기술을 모르기 때문에 타입 체크 후 다운캐스팅합니다.
+        for (Unit unit : army) {
+            if (unit instanceof Marine marine) {
+                marine.stimPack();
+            } else if (unit instanceof Tank tank) {
+                tank.siegeMode();
+            } else if (unit instanceof DropShip dropShip) {
+                dropShip.loadUnload();
+            }
+        }
+    }
+}
+"		18쪽 47번 48번 49번 50번 51번 52번 53번		110쪽 274번																	
 "#include <stdio.h>
 #define test(a, b, c) a + b * c
 
@@ -722,325 +763,7 @@ x = [1, 2, []]
 
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
-https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"class Unit {
-    int x, y;
-    void move(int x, int y) {} 
-    void stop() {}
-}
-
-class Marine extends Unit {
-    void move(int x, int y) {
-        System.out.println(""걸어서 이동"");
-    }
-    void stimPack() {} 
-}
-
-class Tank extends Unit {
-    void move(int x, int y) {
-        System.out.println(""굴러서 이동"");
-    }
-    void siegeMode() {} 
-}
-
-class DropShip extends Unit {
-    void move(int x, int y) {
-        System.out.println(""날아서 이동"");
-    }
-    void loadUnload() {} 
-}
-
-// 🚀 실행을 위한 Main 클래스 추가
-public class Main {
-    public static void main(String[] args) {
-        // 1. 다형성을 활용하여 부모 타입 배열로 유닛들을 묶어서 관리합니다.
-        Unit[] group = new Unit[3];
-        group[0] = new Marine();
-        group[1] = new Tank();
-        group[2] = new DropShip();
-
-        // 2. 모든 유닛을 좌표 (100, 200) 위치로 이동시킵니다.
-        // 부모 타입(Unit)으로 메서드를 호출하지만, 자식들이 재정의(오버라이딩)한 메서드가 실행됩니다.
-        for (int i = 0; i < group.length; i++) {
-            group[i].move(100, 200);
-        }
-    }
-}
-"		슈퍼키		51쪽 147번																	
-"#include <stdio.h>
-void groomgroom(void) {
-  printf(""김구름 멍멍"");
-}
-
-void charpri() {
-  char a[8];
-  char *ptr;
-  a[0] = 'k';
-  a[1] = 'i';
-  a[2] = 'm';
-  a[3] = 'g';
-  a[4] = 'r';
-  a[5] = 'o';
-  a[6] = 'o';
-  a[7] = 'm';
-  
-  ptr = a;
-  printf(""%s"", ptr);
-}
-
-void main()
-{
-  void (*funcptr)(void) = &groomgroom;
-  (*funcptr)();
-  int x = 100;
-  int *px = &x;
-  int **ppx = &px;
-  **ppx = 25;
-  printf(""%d"", *px);
-  charpri();
-}
-//직접"		"from functools import singledispatch
-
-@singledispatch
-def process(value) :
-  return f""기본: {value}""
-  
-@process.register(int)
-def _(v) :
-  return ""정수 처리""
-  
-@process.register(str)
-def _(v) :
-  return ""문자열 처리""
-  "		"abstract class Unit {
-    int x, y;
-    abstract void move(int x, int y); // 지정된 위치로 이동
-    void stop() {} // 현재 위치에 정지
-}
-
-class Marine extends Unit{
-    void move(int x, int y) {
-        System.out.println(""걸어서 이동"");
-    }
-    void stimPack() {
-        System.out.println(""아드레날린 주사! 스팀팩 사용!"");
-    } 
-}
-
-class Tank extends Unit{
-    void move(int x, int y) {
-        System.out.println(""굴러서 이동"");
-    }
-    void siegeMode() {
-        System.out.println(""시즈 모드 변형! 포격 준비!"");
-    } 
-}
-
-class DropShip extends Unit{
-    void move(int x, int y) {
-        System.out.println(""날아서 이동"");
-    }
-    void loadUnload() {
-        System.out.println(""유닛 승하차 실행"");
-    } 
-}
-
-// 🚀 실행을 위한 Main 클래스
-public class Main {
-    public static void main(String[] args) {
-        // 1. 추상 클래스인 Unit 타입 배열로 서로 다른 유닛들을 묶어 줍니다.
-        Unit[] army = new Unit[3];
-        army[0] = new Marine();
-        army[1] = new Tank();
-        army[2] = new DropShip();
-
-        System.out.println(""=== 1. 모든 유닛 이동 명령 ==="");
-        // 2. 공통 기능인 move()를 호출하면 각 자식 객체의 오버라이딩된 메서드가 작동합니다.
-        for (Unit unit : army) {
-            unit.move(50, 70);
-        }
-
-        System.out.println(""\n=== 2. 유닛별 고유 능력 사용 ==="");
-        // 3. 부모(Unit) 타입에서는 자식의 고유 기술을 모르기 때문에 타입 체크 후 다운캐스팅합니다.
-        for (Unit unit : army) {
-            if (unit instanceof Marine marine) {
-                marine.stimPack();
-            } else if (unit instanceof Tank tank) {
-                tank.siegeMode();
-            } else if (unit instanceof DropShip dropShip) {
-                dropShip.loadUnload();
-            }
-        }
-    }
-}
-"		"
-
-
-
-
-
-
-create table 부서2
-
-create table 부서3
-
-
-seq_no int
-years smallint
-ranks int
-movie_name varchar(201)
-release_date datetime
-sale_amt double
-share_rate double
-audience_num int
-screen_num smallint
-showing_count int
-rep_country varchar(50)
-countries varchar(100)
-distributor varchar(300)
-movie_type varchar(100)
-genre varchar(100)
-director varchar(1000)
-
-emp_no int
-birth_date date
-first_name varchar(14)
-last_name varchar(16)
-gender enum('M','F')
-hire_date date
-
-id int
-name_bar varchar(50)
-address varchar(50)
-date_bir datetime
-lik_num varchar(50)
-"		254번확인하기																	
-C언어에는 쉼표(,) 연산자처럼 유연성은 높지만 가독성을 해치거나 실수를 유발하기 쉬워 실무에서는 잘 쓰이지 않는 문법들이 있습니다.가독성 저하와 유지보수 문제로 인해 사용을 지양하거나 제한적으로만 사용하는 대표적인 문법들은 다음과 같습니다.1. 조건 연산자 (삼항 연산자)의 중첩문법: 조건 ? (조건2 ? 참값2 : 거짓값2) : 거짓값특징: if-else 문을 한 줄로 줄일 수 있지만, 중첩해서 사용할 경우 코드를 읽기 매우 어렵게 만듭니다.2. goto 문문법: goto 레이블; ... 레이블:특징: 코드의 흐름을 강제로 이동시키는 문법입니다. 프로그램의 흐름을 파악하기 어렵게 만드는 '스파게티 코드'의 주원인이 되며, 현대 프로그래밍에서는 거의 사용하지 않습니다. (단, 에러 처리나 깊은 중첩 루프 탈출 시 예외적으로 제한 사용)3. 비트 연산자 (Bitwise Operators)문법: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >> (Shift)특징: 하드웨어 제어나 임베디드 시스템, 특정 알고리즘(암호화, 압축 등)이 아니면 일반적인 응용 프로그램 개발에서는 메모리 절약이나 성능 최적화를 위해 직접 사용하는 경우가 드뭅니다.4. register 키워드문법: register int count;특징: 변수를 CPU 레지스터에 저장하여 접근 속도를 높이라는 힌트를 컴파일러에게 주는 문법입니다. 하지만 현대의 컴파일러는 최적화(Optimization) 기능이 매우 뛰어나 프로그래머가 직접 지정하는 것보다 컴파일러가 알아서 최적화하는 편이 훨씬 효율적이라 사실상 무의미해진 문법입니다.5. volatile 키워드문법: volatile int sensor_value;특징: 컴파일러의 최적화를 방지하고, 해당 변수의 값이 프로그램 외부(하드웨어 등)에 의해 언제든지 변경될 수 있음을 알리는 키워드입니다. 일반적인 프로그래밍에서는 전혀 쓰이지 않고, 임베디드 시스템이나 OS 커널 개발 등 특수한 환경에서만 사용됩니다.6. 쉼표 연산자(Comma Operator)의 복합 사용문법: int a = 1, b = 2; (O, 변수 선언/초기화 시 일반적)특징: 변수 구분자가 아닌, a = (b++, b + 2); 처럼 한 줄에 여러 연산을 수행하고 맨 마지막 연산의 결과값을 반환하게 하는 문법입니다. 코드가 함축되어 디버깅과 유지보수가 극도로 어려워지기 때문에 단순한 for문 초기화문 이외에는 거의 쓰이지 않습니다.				"abstract class Shape {
-    public String type;
-    
-    // 추상 클래스 생성자
-    public Shape(String type) {
-        this.type = type;
-    }
-    
-    // 추상 메서드
-    public abstract void draw();
-}
-
-class Figure extends Shape {
-    public String name;
-    
-    public Figure(String type1, String type2) {
-        super(type1); // 부모 추상 클래스 생성자 호출
-        name = type2;
-    }
-    
-    @Override
-    public void draw() {
-        // 추상 메서드 구현 및 출력문 추가
-        System.out.println(""[그리기] 형태: "" + type + "", 모양: "" + name);
-    }
-}
-
-public class main {
-    public static void main(String[] args) {
-        Figure f = new Figure(""polygon"", ""square"");
-        
-        // 1. 변수의 값을 직접 화면에 출력
-        System.out.println(""도형 이름 (f.name): "" + f.name); // ""square""
-        System.out.println(""도형 타입 (f.type): "" + f.type); // ""polygon""
-        
-        System.out.println(); // 줄바꿈용
-        
-        // 2. 구현된 추상 메서드 호출하여 출력
-        f.draw();
-    }
-}
-"		"윤서연 2023년대뷔Picton Blue (#22aeff)
-정혜린 2022년 데뷔Electric Violet (#9200ff)
-
-이지우 2023년 대뷔Lemon (#fff800)
-김채연 2023년 Atlantis (#98f21d)
-김유연 2022년Razzmatazz (#db0c74)
-김수민 2023년 Mauvelous(#fc83a4)
-김나경 2022년 Cadet Blue(#6799a0)
-공유빈 2022년 Misty Rose(#ffe3e2)
-카에데 2023년 Sunglow(#ffc935)
-서다현 2023년 Lavender Rose(#ff9ad6)
-코토네 2023년 Golden Yellow(#ffde00)
-곽연지 2023년 Royal Blue(#5974ff)
-니엔 2023년 Neon Carrot(#ff953f)
-박소현 2023년 Egyptian Blue(#1222b5)
-신위 2023년 Lava Red(#d51313)
-마유 2023년 Salmon (#fe8e76)
-린 2023년 Violet Blue(#ac62b7)
-주빈 2023년Conifer (#b7f54c)
-정하연 2023년 Medium Turquoise(#52d9bb)
-박시온 2023년 French Rose(#ff428a)
-김채원 2024년 Wisteria(#c7a3e0)
-설린 2024년 Bay Leaf(#7bba8d)
-서아 2024년 Pattens Blue(#cff3ff)
-지연 2024년 Apricot (#ffab62)"		256번실습																	
-"7.4.2. 입/출력 함수 (stdio.h)[편집]
-7.4.2.1. printf[편집]
-int printf(const char *format, ...)
-
-printf는 문자열(문장) 이나 변수를 화면에 출력하는 함수이다. 여기서 f는 format으로, 형식을 줘서 출력한다는 뜻이다. printf 함수는 리터럴과 출력에 들어갈 변수의 두 가지를 입력 받는다.
-7.4.2.1.1. 기본 문법[편집]
-printf의 기본 문법은 다음과 같다.
-printf(리터럴[문자열 + 서식 지정자], 변수1, 변수2, ...);
-이때 서식 지정자(format specifier)가 있는 자리에 변수가 차례로 들어간다.
-
-예를 들어, a가 4라면,
-printf(""a의 값은 %d 입니다."", a);
-a의 값은 4 입니다.
-이런 식이다. 이때 %d가 서식 지정자이다. 옵션과 변수의 위치가 바뀌는 셈.
-7.4.2.1.2. 리터럴[편집]
-ASCII 인코딩의 char 자료형은 리터럴이 필요없으나, char 자료형을 UTF-8 인코딩으로 출력하는 경우에는 u8 리터럴을 사용해야 한다.
-없음: ASCII 인코딩
-u8: UTF-8 인코딩
-
-wchar_t 자료형에서는 L""..."" 리터럴을, tchar 자료형에서는 _T(...) 리터럴을 사용한다.
-7.4.2.1.3. 서식 지정자[편집]
-자세한 서식 지정자 문법은 영문 위키백과를 참조하면 된다.
-
-대소문자가 따로 있는 서식 지정자의 경우 출력 결과의 대문자/소문자 여부가 바뀐다.
-%%: '%' 문자. 문자열에 % 하나만 써 놓으면 서식 지정자로 취급되어 출력되지 않기 때문에 이렇게 써야 한다.
-정수
-%d: 부호 있는 정수를 10진수(decimal)로 출력. 아래와 같이 별도 설정을 하지 않으면 int형의 범위 내에서 출력된다.
-%hhd: char형
-%hd: short형
-%ld: long int형
-%lld: long long int형
-%u: 부호 없는(unsigned) 정수를 10진수로 출력. %d처럼 자료형의 길이를 지정할 수 있다.
-%x/%X: 부호 없는 정수를 16진수(hexadecimal)로 출력.
-%o: 부호 없는 정수를 8진수(octal)로 출력.
-소수
-%f/%F: xxx.xxxx... 형태로 출력. 아래와 같이 별도 설정을 하지 않으면 double형으로 취급된다. 무한대나 NaN이 저장되어 있을 경우 %f와 %F 중 무엇을 쓰느냐에 따라 대소문자가 바뀐다.
-%lf: %f와 같다.
-%Lf: long double형
-%g: 뒤의 의미없는 0을 생략한다.
-%e/%E: 지수 표기법(x.xxxE[+/-]xx)으로 출력. 예를 들어 150은 1.5e02로 출력된다.
-%a/%A: 16진수로 출력. 0x로 시작한다.
-문자열
-%c: 문자 하나(char)를 출력
-%s: 문자열(char[])을 출력
-
-위 서식 지정자에 추가로 옵션을 붙일 수 있다. %f를 예로 들면 다음과 같다.
-%+f: 양수일 경우 왼쪽에 +를 붙인다.
-% f: 양수일 경우 왼쪽에 띄어쓰기를 1칸 붙인다. +가 있을 경우 무시한다.
-%(숫자)f: 최소한 (숫자)만큼의 길이로 출력한다. 길이가 짧을 경우 왼쪽에 부족한 만큼 띄어쓰기를 한다. 예를 들어 5를 %3d로 출력하면 __5(띄어쓰기 대신 언더바를 붙였음)가 된다.
-숫자가 올 자리에 *를 쓰면 인자로 받은 변수만큼의 길이로 출력한다. 예를 들어 printf(""%*d"", 4, 12);의 출력값은 __12이다.
-%0(숫자)f: 위와 같지만, 왼쪽에 부족한 만큼 0을 붙인다. 예를 들어 5를 %03d로 출력하면 005가 된다. 위와 같이 *를 쓸 수 있다.
-%.(숫자)f: 소수점 아래 (숫자)자리에서 반올림해서 출력한다. 문자열에 사용할 경우 (숫자)글자만큼만 출력된다. 예를 들어 0.1234를 %.2f로 출력하면 0.12가 된다. 위와 같이 *를 쓸 수 있다.
-
-서식 지정자의 동작은 다소 기묘한 면이 많다. 예를 들어 printf 함수에서는 char형 변수와 int형 변수를 모두 %d 서식자로 출력 가능하나, scanf 함수에서는 char형 변수를 문자로 입력받을 때는 %c, 숫자로 입력받을 때는 %hhi, int형 변수를 입력받을 때는 %d를 사용한다. 이러한 차이점들은 가변인자 함수의 동작 방식(좀 더 정확히는 가변인자함수의 매개변수에 적용되는 기본인자진급 규칙)을 깊이있게 공부하면 이해가 가능해진다.
-7.4.2.2. scanf[편집]
-int scanf(const char *format, ...)
-
-scanf는 값을 입력받는 함수이다. scanf 함수는 옵션과 입력값을 저장할 변수의 포인터, 즉 그 변수의 주소 두 가지를 입력 받는다. 쉽게 설명하기 위해 택배에 비유하자면 입력값은 택배 내용물, 변수의 주소 값은 택배에 쓸 주소이다.
-
-보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."		"@singledispatch
-@process.register"		"9.10. 형변환[편집]
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"9.10. 형변환[편집]
 (T) a;
 a의 타입을 T로 변환한다. 변환할 수 없는 경우 예외가 발생한다.
 숫자 타입을 크기가 작은 타입으로 변환시키거나[26], 부모 클래스 타입의 객체를 자식 클래스로 변환시킬 때 사용된다.
@@ -1148,7 +871,235 @@ Copy
 int i_num = 10;
         
 double d_num = (double)i_num; --Int -> Double
-float f_num = (float)i_num; --Int -> Float"		"1번 229 00:02:42
+float f_num = (float)i_num; --Int -> Float"		슈퍼키		51쪽 147번																	
+"#include <stdio.h>
+void groomgroom(void) {
+  printf(""김구름 멍멍"");
+}
+
+void charpri() {
+  char a[8];
+  char *ptr;
+  a[0] = 'k';
+  a[1] = 'i';
+  a[2] = 'm';
+  a[3] = 'g';
+  a[4] = 'r';
+  a[5] = 'o';
+  a[6] = 'o';
+  a[7] = 'm';
+  
+  ptr = a;
+  printf(""%s"", ptr);
+}
+
+void main()
+{
+  void (*funcptr)(void) = &groomgroom;
+  (*funcptr)();
+  int x = 100;
+  int *px = &x;
+  int **ppx = &px;
+  **ppx = 25;
+  printf(""%d"", *px);
+  charpri();
+}
+//직접"		"from functools import singledispatch
+
+@singledispatch
+def process(value) :
+  return f""기본: {value}""
+  
+@process.register(int)
+def _(v) :
+  return ""정수 처리""
+  
+@process.register(str)
+def _(v) :
+  return ""문자열 처리""
+  "		"9.12. 기타 특수 연산자[편집]
+arr[i];
+method();
+new Class();
+obj.field;
+(a, b) -> a + b;
+obj::method;
+순서대로 배열 접근, 메서드 호출, 생성자 호출 및 객체 생성, 멤버 접근, 람다, 메서드 참조이다.
+arr는 배열, i는 정수, method는 메서드, Class는 클래스, obj는 객체 또는 클래스, field는 obj의 메서드 또는 변수이다.
+반환 타입은 순서대로 원소의 타입, method의 반환 타입, Class 객체, field의 타입 또는 반환 타입, 나머지 2개는 컴파일러가 추론한 함수형 인터페이스를 구현한 객체이다."		"
+
+
+
+
+
+
+create table 부서2
+
+create table 부서3
+
+
+seq_no int
+years smallint
+ranks int
+movie_name varchar(201)
+release_date datetime
+sale_amt double
+share_rate double
+audience_num int
+screen_num smallint
+showing_count int
+rep_country varchar(50)
+countries varchar(100)
+distributor varchar(300)
+movie_type varchar(100)
+genre varchar(100)
+director varchar(1000)
+
+emp_no int
+birth_date date
+first_name varchar(14)
+last_name varchar(16)
+gender enum('M','F')
+hire_date date
+
+id int
+name_bar varchar(50)
+address varchar(50)
+date_bir datetime
+lik_num varchar(50)
+"		254번확인하기																	
+C언어에는 쉼표(,) 연산자처럼 유연성은 높지만 가독성을 해치거나 실수를 유발하기 쉬워 실무에서는 잘 쓰이지 않는 문법들이 있습니다.가독성 저하와 유지보수 문제로 인해 사용을 지양하거나 제한적으로만 사용하는 대표적인 문법들은 다음과 같습니다.1. 조건 연산자 (삼항 연산자)의 중첩문법: 조건 ? (조건2 ? 참값2 : 거짓값2) : 거짓값특징: if-else 문을 한 줄로 줄일 수 있지만, 중첩해서 사용할 경우 코드를 읽기 매우 어렵게 만듭니다.2. goto 문문법: goto 레이블; ... 레이블:특징: 코드의 흐름을 강제로 이동시키는 문법입니다. 프로그램의 흐름을 파악하기 어렵게 만드는 '스파게티 코드'의 주원인이 되며, 현대 프로그래밍에서는 거의 사용하지 않습니다. (단, 에러 처리나 깊은 중첩 루프 탈출 시 예외적으로 제한 사용)3. 비트 연산자 (Bitwise Operators)문법: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >> (Shift)특징: 하드웨어 제어나 임베디드 시스템, 특정 알고리즘(암호화, 압축 등)이 아니면 일반적인 응용 프로그램 개발에서는 메모리 절약이나 성능 최적화를 위해 직접 사용하는 경우가 드뭅니다.4. register 키워드문법: register int count;특징: 변수를 CPU 레지스터에 저장하여 접근 속도를 높이라는 힌트를 컴파일러에게 주는 문법입니다. 하지만 현대의 컴파일러는 최적화(Optimization) 기능이 매우 뛰어나 프로그래머가 직접 지정하는 것보다 컴파일러가 알아서 최적화하는 편이 훨씬 효율적이라 사실상 무의미해진 문법입니다.5. volatile 키워드문법: volatile int sensor_value;특징: 컴파일러의 최적화를 방지하고, 해당 변수의 값이 프로그램 외부(하드웨어 등)에 의해 언제든지 변경될 수 있음을 알리는 키워드입니다. 일반적인 프로그래밍에서는 전혀 쓰이지 않고, 임베디드 시스템이나 OS 커널 개발 등 특수한 환경에서만 사용됩니다.6. 쉼표 연산자(Comma Operator)의 복합 사용문법: int a = 1, b = 2; (O, 변수 선언/초기화 시 일반적)특징: 변수 구분자가 아닌, a = (b++, b + 2); 처럼 한 줄에 여러 연산을 수행하고 맨 마지막 연산의 결과값을 반환하게 하는 문법입니다. 코드가 함축되어 디버깅과 유지보수가 극도로 어려워지기 때문에 단순한 for문 초기화문 이외에는 거의 쓰이지 않습니다.				"10.2. switch[편집]
+
+
+
+exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
+
+switch (exp) {
+    case value1 -> stmt1;
+    case value2 -> {
+        stmt2;
+        stmt3;
+    }
+    case value3, value4 -> stmt4
+    default -> stmt5;
+}
+자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
+
+var a = switch (exp1) {
+    case value1:
+        yield exp2;
+    case value2:
+        stmt1;
+        yield exp3;
+    default:
+        yield exp4;
+}
+표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
+개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
+
+switch (exp) {
+    case ""hello"" -> stmt1;
+    case String s -> stmt2;
+    case Integer i when i > 0 -> stmt3;
+    case Integer i -> stmt4;
+    case null -> stmt5;
+    default -> stmt5;
+}
+자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
+기존 switch에서도 쓸 수 있다."		"윤서연 2023년대뷔Picton Blue (#22aeff)
+정혜린 2022년 데뷔Electric Violet (#9200ff)
+
+이지우 2023년 대뷔Lemon (#fff800)
+김채연 2023년 Atlantis (#98f21d)
+김유연 2022년Razzmatazz (#db0c74)
+김수민 2023년 Mauvelous(#fc83a4)
+김나경 2022년 Cadet Blue(#6799a0)
+공유빈 2022년 Misty Rose(#ffe3e2)
+카에데 2023년 Sunglow(#ffc935)
+서다현 2023년 Lavender Rose(#ff9ad6)
+코토네 2023년 Golden Yellow(#ffde00)
+곽연지 2023년 Royal Blue(#5974ff)
+니엔 2023년 Neon Carrot(#ff953f)
+박소현 2023년 Egyptian Blue(#1222b5)
+신위 2023년 Lava Red(#d51313)
+마유 2023년 Salmon (#fe8e76)
+린 2023년 Violet Blue(#ac62b7)
+주빈 2023년Conifer (#b7f54c)
+정하연 2023년 Medium Turquoise(#52d9bb)
+박시온 2023년 French Rose(#ff428a)
+김채원 2024년 Wisteria(#c7a3e0)
+설린 2024년 Bay Leaf(#7bba8d)
+서아 2024년 Pattens Blue(#cff3ff)
+지연 2024년 Apricot (#ffab62)"		256번실습																	
+"7.4.2. 입/출력 함수 (stdio.h)[편집]
+7.4.2.1. printf[편집]
+int printf(const char *format, ...)
+
+printf는 문자열(문장) 이나 변수를 화면에 출력하는 함수이다. 여기서 f는 format으로, 형식을 줘서 출력한다는 뜻이다. printf 함수는 리터럴과 출력에 들어갈 변수의 두 가지를 입력 받는다.
+7.4.2.1.1. 기본 문법[편집]
+printf의 기본 문법은 다음과 같다.
+printf(리터럴[문자열 + 서식 지정자], 변수1, 변수2, ...);
+이때 서식 지정자(format specifier)가 있는 자리에 변수가 차례로 들어간다.
+
+예를 들어, a가 4라면,
+printf(""a의 값은 %d 입니다."", a);
+a의 값은 4 입니다.
+이런 식이다. 이때 %d가 서식 지정자이다. 옵션과 변수의 위치가 바뀌는 셈.
+7.4.2.1.2. 리터럴[편집]
+ASCII 인코딩의 char 자료형은 리터럴이 필요없으나, char 자료형을 UTF-8 인코딩으로 출력하는 경우에는 u8 리터럴을 사용해야 한다.
+없음: ASCII 인코딩
+u8: UTF-8 인코딩
+
+wchar_t 자료형에서는 L""..."" 리터럴을, tchar 자료형에서는 _T(...) 리터럴을 사용한다.
+7.4.2.1.3. 서식 지정자[편집]
+자세한 서식 지정자 문법은 영문 위키백과를 참조하면 된다.
+
+대소문자가 따로 있는 서식 지정자의 경우 출력 결과의 대문자/소문자 여부가 바뀐다.
+%%: '%' 문자. 문자열에 % 하나만 써 놓으면 서식 지정자로 취급되어 출력되지 않기 때문에 이렇게 써야 한다.
+정수
+%d: 부호 있는 정수를 10진수(decimal)로 출력. 아래와 같이 별도 설정을 하지 않으면 int형의 범위 내에서 출력된다.
+%hhd: char형
+%hd: short형
+%ld: long int형
+%lld: long long int형
+%u: 부호 없는(unsigned) 정수를 10진수로 출력. %d처럼 자료형의 길이를 지정할 수 있다.
+%x/%X: 부호 없는 정수를 16진수(hexadecimal)로 출력.
+%o: 부호 없는 정수를 8진수(octal)로 출력.
+소수
+%f/%F: xxx.xxxx... 형태로 출력. 아래와 같이 별도 설정을 하지 않으면 double형으로 취급된다. 무한대나 NaN이 저장되어 있을 경우 %f와 %F 중 무엇을 쓰느냐에 따라 대소문자가 바뀐다.
+%lf: %f와 같다.
+%Lf: long double형
+%g: 뒤의 의미없는 0을 생략한다.
+%e/%E: 지수 표기법(x.xxxE[+/-]xx)으로 출력. 예를 들어 150은 1.5e02로 출력된다.
+%a/%A: 16진수로 출력. 0x로 시작한다.
+문자열
+%c: 문자 하나(char)를 출력
+%s: 문자열(char[])을 출력
+
+위 서식 지정자에 추가로 옵션을 붙일 수 있다. %f를 예로 들면 다음과 같다.
+%+f: 양수일 경우 왼쪽에 +를 붙인다.
+% f: 양수일 경우 왼쪽에 띄어쓰기를 1칸 붙인다. +가 있을 경우 무시한다.
+%(숫자)f: 최소한 (숫자)만큼의 길이로 출력한다. 길이가 짧을 경우 왼쪽에 부족한 만큼 띄어쓰기를 한다. 예를 들어 5를 %3d로 출력하면 __5(띄어쓰기 대신 언더바를 붙였음)가 된다.
+숫자가 올 자리에 *를 쓰면 인자로 받은 변수만큼의 길이로 출력한다. 예를 들어 printf(""%*d"", 4, 12);의 출력값은 __12이다.
+%0(숫자)f: 위와 같지만, 왼쪽에 부족한 만큼 0을 붙인다. 예를 들어 5를 %03d로 출력하면 005가 된다. 위와 같이 *를 쓸 수 있다.
+%.(숫자)f: 소수점 아래 (숫자)자리에서 반올림해서 출력한다. 문자열에 사용할 경우 (숫자)글자만큼만 출력된다. 예를 들어 0.1234를 %.2f로 출력하면 0.12가 된다. 위와 같이 *를 쓸 수 있다.
+
+서식 지정자의 동작은 다소 기묘한 면이 많다. 예를 들어 printf 함수에서는 char형 변수와 int형 변수를 모두 %d 서식자로 출력 가능하나, scanf 함수에서는 char형 변수를 문자로 입력받을 때는 %c, 숫자로 입력받을 때는 %hhi, int형 변수를 입력받을 때는 %d를 사용한다. 이러한 차이점들은 가변인자 함수의 동작 방식(좀 더 정확히는 가변인자함수의 매개변수에 적용되는 기본인자진급 규칙)을 깊이있게 공부하면 이해가 가능해진다.
+7.4.2.2. scanf[편집]
+int scanf(const char *format, ...)
+
+scanf는 값을 입력받는 함수이다. scanf 함수는 옵션과 입력값을 저장할 변수의 포인터, 즉 그 변수의 주소 두 가지를 입력 받는다. 쉽게 설명하기 위해 택배에 비유하자면 입력값은 택배 내용물, 변수의 주소 값은 택배에 쓸 주소이다.
+
+보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."		"@singledispatch
+@process.register"		"var a = switch (exp1) {
+    case value1:
+        yield exp2;
+    case value2:
+        stmt1;
+        yield exp3;
+    default:
+        yield exp4;
+}"		"1번 229 00:02:42
 2번 109 00:01:01
 3번 31000 00:03:08
 4번 159 00:03:09
@@ -1227,16 +1178,31 @@ async def consume():
 
 asyncio.run(consume())
 총평
-aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"9.12. 기타 특수 연산자[편집]
-arr[i];
-method();
-new Class();
-obj.field;
-(a, b) -> a + b;
-obj::method;
-순서대로 배열 접근, 메서드 호출, 생성자 호출 및 객체 생성, 멤버 접근, 람다, 메서드 참조이다.
-arr는 배열, i는 정수, method는 메서드, Class는 클래스, obj는 객체 또는 클래스, field는 obj의 메서드 또는 변수이다.
-반환 타입은 순서대로 원소의 타입, method의 반환 타입, Class 객체, field의 타입 또는 반환 타입, 나머지 2개는 컴파일러가 추론한 함수형 인터페이스를 구현한 객체이다."		109번줄 s_id로 inner join																			
+aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"11.2.1. for-each[편집]
+Collection<E> collection = ...
+
+for (E e : collection) {
+  stmt;
+}
+배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
+여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
+
+E[] arr = ...
+E[] temp = arr;
+
+for (int i = 0; i < temp.length; i++) {
+    E e = temp[i];
+    stmt;
+}
+
+
+Collection<E> collection = ...
+Iterator<E> iterator = collection.iterator();
+
+while (iterator.hasNext()) {
+    E e = (E) iterator.next();
+    stmt;
+}"		109번줄 s_id로 inner join																			
 		"여느 프로그래밍 언어와 비슷하게 예외 처리를 지원한다. 예외를 던질 때에는 raise 키워드를 사용한다.
 try:
     # 정상 작업
@@ -1258,53 +1224,20 @@ class CustomException(Exception):
 try:
     raise CustomException(""Error!!"")
 except CustomException as e:
-    print(e) # ""Error!!""이 출력된다."		"10.2. switch[편집]
-
-
-switch (exp) {
-    case value1:
-        stmt1;
-    case value2:
-    case value3:
-        stmt2;
-        break;
-    case value4:
-        stmt3;
-exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
-
-switch (exp) {
-    case value1 -> stmt1;
-    case value2 -> {
-        stmt2;
-        stmt3;
-    }
-    case value3, value4 -> stmt4
-    default -> stmt5;
+    print(e) # ""Error!!""이 출력된다."		"11.3. 분기[편집]
+for (var e : arr) {
+    if (e == null) continue;
+    IO.println(e.toString())
 }
-자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
+해당 코드는 배열 arr의 각 원소에 대하여 null이 아닐경우 문자열로 변환하여 출력하는 코드이다.
+continue는 현재 반복문에서 다음 반복으로 넘어간다. 당연히 다음 반복 전에 조건을 검사하며, for (exp1; exp2; exp3) stmt;에서 exp3를 정상적으로 실행한다.
 
-var a = switch (exp1) {
-    case value1:
-        yield exp2;
-    case value2:
-        stmt1;
-        yield exp3;
-    default:
-        yield exp4;
+while (true) {
+    var str = IO.readln(""비밀번호:"");
+    if (str.equals(""pass"")) break;
 }
-표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
-개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
-
-switch (exp) {
-    case ""hello"" -> stmt1;
-    case String s -> stmt2;
-    case Integer i when i > 0 -> stmt3;
-    case Integer i -> stmt4;
-    case null -> stmt5;
-    default -> stmt5;
-}
-자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
-기존 switch에서도 쓸 수 있다."																					
+해당 코드는 pass를 입력받을 때까지 계속 입력을 받는 코드이다.
+break는 현재 반복문에서 탈출한다."																					
 		"13. 팁[편집]
 문자열을 합칠 때 join을 쓰자. range 함수와 str 함수를 같이 쓰면 매우 편해지는 경우가 있다.
 ''.join(str(x) for x in range(10))
@@ -1381,49 +1314,99 @@ list(range(10))
 error: Microsoft Visual C++ 14.0 is required. Get it with ""Microsoft Visual C++ Build Tools
 Boilerplate 코드가 적고, 리스트와 셋, 해시 등의 자료구조를 간단한 기호로 표기할 수 있어 코딩 테스트 시 많이 사용되는 언어이기도 하다. Python으로 코드를 작성하면 같은 알고리즘을 C++, Java 등으로 구현했을 때보다 전체적인 코드 길이가 비약적으로 짧아진다.
 파이썬 인터프리터라도 열어서 아무 모듈이나 임포트하거나, print 함수에 대해 dir(print)를 입력해 보면 파이썬의 구조를 좀 더 잘 알게 된다. 우리가 사용했던 함수가 다르게 보일 것이다.
-과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"switch (exp) {
-    case value1 -> stmt1;
-    case value2 -> {
-        stmt2;
-        stmt3;
+과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"public void print(int... args) {
+    for (var i : args) IO.print(i);
+    println();
+}
+//제시하신 자바 코드에서 ...은 가변 인자(Varargs, Variable-length arguments)를 의미합니다.💡 핵심 요약정의: 메서드를 호출할 때 매개변수의 개수를 동적으로 지정할 수 있게 해주는 기능입니다.동작 방식: 자바 컴파일러가 내부적으로 ... 구조를 배열로 변환하여 처리합니다.
+"																					
+				"// 1. 첫 번째 패키지 정의
+package packageOne;
+
+public class MyClass {
+    public void printMessage() {
+        System.out.println(""Hello from packageOne!"");
     }
-    case value3, value4 -> stmt4
-    default -> stmt5;
-}"																					
-				"var a = switch (exp1) {
-    case value1:
-        yield exp2;
-    case value2:
-        stmt1;
-        yield exp3;
-    default:
-        yield exp4;
-}"																					
-				"11.2.1. for-each[편집]
-Collection<E> collection = ...
-
-for (E e : collection) {
-  stmt;
-}
-배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
-여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
-
-E[] arr = ...
-E[] temp = arr;
-
-for (int i = 0; i < temp.length; i++) {
-    E e = temp[i];
-    stmt;
 }
 
+// 2. 두 번째 패키지 정의 (public 제외)
+package packageTwo;
 
-Collection<E> collection = ...
-Iterator<E> iterator = collection.iterator();
+class AnotherClass {
+    public void printInfo() {
+        System.out.println(""Hello from packageTwo!"");
+    }
+}
 
-while (iterator.hasNext()) {
-    E e = (E) iterator.next();
-    stmt;
-}"		"윤서연 2023년대뷔Picton Blue (#22aeff)
+// 3. 메인 클래스 및 패키지 사용(Import)
+package packageMain; // 메인 패키지 이름
+
+import packageOne.MyClass;
+import packageTwo.AnotherClass; // 또 다른 클래스 임포트
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        obj1.printMessage();
+        
+        AnotherClass obj2 = new AnotherClass();
+        obj2.printInfo();
+    }
+}
+
+#############
+제시하신 Java 코드가 JDoodle이나 OnlineGDB 같은 온라인 컴파일러(One Compiler)에서 오류가 발생하는 핵심 이유는 하나의 파일에 서로 다른 package 선언이 여러 개 존재하기 때문입니다.자바에서는 하나의 소스 파일(.java)당 단 하나의 package 문만 최상단에 선언할 수 있습니다. 온라인 컴파일러는 대개 입력한 전체 코드를 하나의 파일(예: Main.java)로 저장하고 컴파일하므로 문법 오류가 발생합니다.이 코드가 정상 동작하지 못하는 구체적인 3가지 원인과 해결 방법을 정리해 드립니다.1. 패키지 선언 중복 오류자바 소스 파일은 하나의 패키지에만 속할 수 있습니다.한 파일에 package packageOne;, package packageTwo;, package packageMain;을 동시에 작성하면 컴파일러가 인식하지 못합니다.2. 소스 파일명과 public 클래스명 불일치자바 규칙상 public class가 파일 내에 존재하면, 파일 이름은 반드시 해당 클래스 이름과 일치해야 합니다.현재 코드에는 public class MyClass와 public class Main이라는 두 개의 public 클래스가 한 파일에 섞여 있어 컴파일 오류를 유발합니다.3. 패키지 외부 접근 제한 (Access Control)package packageTwo; 아래에 있는 AnotherClass는 public 키워드가 없는 default(package-private) 접근 제한자를 가집니다.default 클래스는 같은 패키지 내부에서만 접근할 수 있습니다.따라서 설령 파일 분리를 잘하더라도 package packageMain;에 속한 Main 클래스에서는 packageTwo에 있는 AnotherClass를 import하거나 사용할 수 없습니다. AnotherClass에도 public을 붙여야 합니다.🛠️ 온라인 컴파일러에서 실행하는 해결 방법온라인 컴파일러는 단일 파일 구조로 작동하는 경우가 많으므로, 테스트를 하려면 패키지 선언을 모두 지우고 하나의 파일로 합쳐야 합니다. 아래 수정된 코드를 복사하여 실행해 보세요.java// 모든 package 선언과 무효한 import를 제거합니다.
+
+// 1. 첫 번째 클래스 정의 (하나의 파일이므로 public 제거)
+class MyClass {
+    public void printMessage() {
+        System.out.println(""Hello from packageOne!"");
+    }
+}
+
+// 2. 두 번째 클래스 정의 (public 제거)
+class AnotherClass {
+    public void printInfo() {
+        System.out.println(""Hello from packageTwo!"");
+    }
+}
+
+// 3. 메인 클래스 (온라인 컴파일러의 파일명과 일치해야 하므로 public 유지)
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        obj1.printMessage();
+        
+        AnotherClass obj2 = new AnotherClass();
+        obj2.printInfo();
+    }
+}
+코드를 사용할 때는 주의가 필요합니다.💻 로컬 PC(Eclipse, IntelliJ 등)에서 실행하는 해결 방법원래 의도대로 패키지를 나누어 실습하려면 파일을 반드시 3개의 별도 파일로 분리하고 폴더 구조를 맞춰야 합니다.packageOne 폴더 생성 후 MyClass.java 저장javapackage packageOne;
+public class MyClass { ... }
+코드를 사용할 때는 주의가 필요합니다.packageTwo 폴더 생성 후 AnotherClass.java 저장 (public 추가 필수)javapackage packageTwo;
+public class AnotherClass { ... } // 다른 패키지에서 쓰려면 public 필수!
+코드를 사용할 때는 주의가 필요합니다.packageMain 폴더 생성 후 Main.java 저장javapackage packageMain;
+import packageOne.MyClass;
+import packageTwo.AnotherClass;
+public class Main { ... }
+코드를 사용할 때는 주의가 필요합니다.✅ 요약하나의 파일에 여러 package 문을 넣은 구조적 결함과 접근 제한자(public 누락) 오류 때문에 컴파일되지 않는 것입니다.추가로 온라인 컴파일러 환경에서 다른 클래스 구조를 연습하고 싶거나, 접근 제한자(public, private, default)의 차이점에 대해 더 알고 싶으시면 언제든 질문해 주세요!"																					
+				"9.11. instanceof[편집]
+obj instanceof T
+obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
+즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다.
+
+obj instanceof T t
+자바 16부터 true인 경우 즉시 항변환하도록 할 수 있다. t는 타입이 T이고, obj가 저장된 변수이다. t는 컴파일러가 사용 가능하다고 추론한 범위 내에서만 사용 가능하다.
+9.12. 기타 특수 연산자[편집]
+arr[i];
+method();
+new Class();
+obj.field;
+(a, b) -> a + b;
+obj::method;
+순서대로 배열 접근, 메서드 호출, 생성자 호출 및 객체 생성, 멤버 접근, 람다, 메서드 참조이다.
+arr는 배열, i는 정수, method는 메서드, Class는 클래스, obj는 객체 또는 클래스, field는 obj의 메서드 또는 변수이다.
+반환 타입은 순서대로 원소의 타입, method의 반환 타입, Class 객체, field의 타입 또는 반환 타입, 나머지 2개는 컴파일러가 추론한 함수형 인터페이스를 구현한 객체이다."		"윤서연 2023년대뷔Picton Blue (#22aeff)
 정혜린 2022년 데뷔Electric Violet (#9200ff)
 
 이지우 2023년 대뷔Lemon (#fff800)
@@ -1573,20 +1556,66 @@ values
 (""타이틀"", 4, ""00:01:04"", 89, ),
 (""타이틀"", 5, ""00:01:04"", 89, ),
 (""타이틀"", 6, ""00:01:04"", 89, );"																			
-				"11.3. 분기[편집]
-for (var e : arr) {
-    if (e == null) continue;
-    IO.println(e.toString())
+				"10.2. switch[편집]
+switch (exp) {
+    case value1:
+        stmt1;
+        break;
+    case value2:
+        stmt2;
+        break;
+...
+    default:
+        stmtN;
 }
-해당 코드는 배열 arr의 각 원소에 대하여 null이 아닐경우 문자열로 변환하여 출력하는 코드이다.
-continue는 현재 반복문에서 다음 반복으로 넘어간다. 당연히 다음 반복 전에 조건을 검사하며, for (exp1; exp2; exp3) stmt;에서 exp3를 정상적으로 실행한다.
+exp의 값이 value1이면 stmt1을, value2면 stmt2를, ... 전부 아니면 stmtN을 실행한다. break는 switch문을 벗어나는 역할을 한다.
+exp의 반환 타입은 byte, short, char, int와 그 래퍼 클래스나, Enum 상수, String이어야 한다.
+case의 value들은 상수 표현식[29]이어야 한다.
 
-while (true) {
-    var str = IO.readln(""비밀번호:"");
-    if (str.equals(""pass"")) break;
+switch (exp) {
+    case value1:
+        stmt1;
+    case value2:
+    case value3:
+        stmt2;
+        break;
+    case value4:
+        stmt3;
+exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
+
+switch (exp) {
+    case value1 -> stmt1;
+    case value2 -> {
+        stmt2;
+        stmt3;
+    }
+    case value3, value4 -> stmt4
+    default -> stmt5;
 }
-해당 코드는 pass를 입력받을 때까지 계속 입력을 받는 코드이다.
-break는 현재 반복문에서 탈출한다."		"
+자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
+
+var a = switch (exp1) {
+    case value1:
+        yield exp2;
+    case value2:
+        stmt1;
+        yield exp3;
+    default:
+        yield exp4;
+}
+표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
+개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
+
+switch (exp) {
+    case ""hello"" -> stmt1;
+    case String s -> stmt2;
+    case Integer i when i > 0 -> stmt3;
+    case Integer i -> stmt4;
+    case null -> stmt5;
+    default -> stmt5;
+}
+자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
+기존 switch에서도 쓸 수 있다."		"
 음원 좋아요 수
 유튜브 조회수
 
@@ -1690,84 +1719,39 @@ int main()
       MyFile); // 파일을 읽어 buffer에 쓴다.
   fclose(MyFile); // 파일 객체를 닫는다.
   printf(""%s\n"", buffer); // 파일을 읽을때 사용한 버퍼의 내용을 출력
-}"				"public void print(int... args) {
-    for (var i : args) IO.print(i);
-    println();
-}
-//제시하신 자바 코드에서 ...은 가변 인자(Varargs, Variable-length arguments)를 의미합니다.💡 핵심 요약정의: 메서드를 호출할 때 매개변수의 개수를 동적으로 지정할 수 있게 해주는 기능입니다.동작 방식: 자바 컴파일러가 내부적으로 ... 구조를 배열로 변환하여 처리합니다.
-"		[MySQL] 서브 쿼리, 파생(Derived) 테이블 및 뷰 참조 최적화 https://share.google/xr2jNyDHQRjO2NASY																			
+}"				"11.1.1. do-while[편집]
+do {
+    stmt;
+} while (exp)
+stmt를 한번 실행 후, exp가 true면 반복을 하며, 아니라면 그대로 넘어간다."		[MySQL] 서브 쿼리, 파생(Derived) 테이블 및 뷰 참조 최적화 https://share.google/xr2jNyDHQRjO2NASY																			
 "8.3. do-while[편집]
 do{(statement)}while(expression 또는 declaration)
-while과 비슷하지만 do 안의 statement를 1회 실행 후 while 안의 조건이 참이라면 재반복, 거짓이라면 통과하는 코드이다."				"// 1. 첫 번째 패키지 정의
-package packageOne;
+while과 비슷하지만 do 안의 statement를 1회 실행 후 while 안의 조건이 참이라면 재반복, 거짓이라면 통과하는 코드이다."				"11.2.1. for-each[편집]
+Collection<E> collection = ...
 
-public class MyClass {
-    public void printMessage() {
-        System.out.println(""Hello from packageOne!"");
-    }
+for (E e : collection) {
+  stmt;
+}
+배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
+여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
+
+E[] arr = ...
+E[] temp = arr;
+
+for (int i = 0; i < temp.length; i++) {
+    E e = temp[i];
+    stmt;
 }
 
-// 2. 두 번째 패키지 정의 (public 제외)
-package packageTwo;
 
-class AnotherClass {
-    public void printInfo() {
-        System.out.println(""Hello from packageTwo!"");
-    }
+Collection<E> collection = ...
+Iterator<E> iterator = collection.iterator();
+
+while (iterator.hasNext()) {
+    E e = (E) iterator.next();
+    stmt;
 }
-
-// 3. 메인 클래스 및 패키지 사용(Import)
-package packageMain; // 메인 패키지 이름
-
-import packageOne.MyClass;
-import packageTwo.AnotherClass; // 또 다른 클래스 임포트
-
-public class Main {
-    public static void main(String[] args) {
-        MyClass obj1 = new MyClass();
-        obj1.printMessage();
-        
-        AnotherClass obj2 = new AnotherClass();
-        obj2.printInfo();
-    }
-}
-
-#############
-제시하신 Java 코드가 JDoodle이나 OnlineGDB 같은 온라인 컴파일러(One Compiler)에서 오류가 발생하는 핵심 이유는 하나의 파일에 서로 다른 package 선언이 여러 개 존재하기 때문입니다.자바에서는 하나의 소스 파일(.java)당 단 하나의 package 문만 최상단에 선언할 수 있습니다. 온라인 컴파일러는 대개 입력한 전체 코드를 하나의 파일(예: Main.java)로 저장하고 컴파일하므로 문법 오류가 발생합니다.이 코드가 정상 동작하지 못하는 구체적인 3가지 원인과 해결 방법을 정리해 드립니다.1. 패키지 선언 중복 오류자바 소스 파일은 하나의 패키지에만 속할 수 있습니다.한 파일에 package packageOne;, package packageTwo;, package packageMain;을 동시에 작성하면 컴파일러가 인식하지 못합니다.2. 소스 파일명과 public 클래스명 불일치자바 규칙상 public class가 파일 내에 존재하면, 파일 이름은 반드시 해당 클래스 이름과 일치해야 합니다.현재 코드에는 public class MyClass와 public class Main이라는 두 개의 public 클래스가 한 파일에 섞여 있어 컴파일 오류를 유발합니다.3. 패키지 외부 접근 제한 (Access Control)package packageTwo; 아래에 있는 AnotherClass는 public 키워드가 없는 default(package-private) 접근 제한자를 가집니다.default 클래스는 같은 패키지 내부에서만 접근할 수 있습니다.따라서 설령 파일 분리를 잘하더라도 package packageMain;에 속한 Main 클래스에서는 packageTwo에 있는 AnotherClass를 import하거나 사용할 수 없습니다. AnotherClass에도 public을 붙여야 합니다.🛠️ 온라인 컴파일러에서 실행하는 해결 방법온라인 컴파일러는 단일 파일 구조로 작동하는 경우가 많으므로, 테스트를 하려면 패키지 선언을 모두 지우고 하나의 파일로 합쳐야 합니다. 아래 수정된 코드를 복사하여 실행해 보세요.java// 모든 package 선언과 무효한 import를 제거합니다.
-
-// 1. 첫 번째 클래스 정의 (하나의 파일이므로 public 제거)
-class MyClass {
-    public void printMessage() {
-        System.out.println(""Hello from packageOne!"");
-    }
-}
-
-// 2. 두 번째 클래스 정의 (public 제거)
-class AnotherClass {
-    public void printInfo() {
-        System.out.println(""Hello from packageTwo!"");
-    }
-}
-
-// 3. 메인 클래스 (온라인 컴파일러의 파일명과 일치해야 하므로 public 유지)
-public class Main {
-    public static void main(String[] args) {
-        MyClass obj1 = new MyClass();
-        obj1.printMessage();
-        
-        AnotherClass obj2 = new AnotherClass();
-        obj2.printInfo();
-    }
-}
-코드를 사용할 때는 주의가 필요합니다.💻 로컬 PC(Eclipse, IntelliJ 등)에서 실행하는 해결 방법원래 의도대로 패키지를 나누어 실습하려면 파일을 반드시 3개의 별도 파일로 분리하고 폴더 구조를 맞춰야 합니다.packageOne 폴더 생성 후 MyClass.java 저장javapackage packageOne;
-public class MyClass { ... }
-코드를 사용할 때는 주의가 필요합니다.packageTwo 폴더 생성 후 AnotherClass.java 저장 (public 추가 필수)javapackage packageTwo;
-public class AnotherClass { ... } // 다른 패키지에서 쓰려면 public 필수!
-코드를 사용할 때는 주의가 필요합니다.packageMain 폴더 생성 후 Main.java 저장javapackage packageMain;
-import packageOne.MyClass;
-import packageTwo.AnotherClass;
-public class Main { ... }
-코드를 사용할 때는 주의가 필요합니다.✅ 요약하나의 파일에 여러 package 문을 넣은 구조적 결함과 접근 제한자(public 누락) 오류 때문에 컴파일되지 않는 것입니다.추가로 온라인 컴파일러 환경에서 다른 클래스 구조를 연습하고 싶거나, 접근 제한자(public, private, default)의 차이점에 대해 더 알고 싶으시면 언제든 질문해 주세요!"		"SELECT a.dept_no, a.dept_name,
+"		"SELECT a.dept_no, a.dept_name,
 COUNT(*) cnt, SUM(c.salary) salary,
  AVG(c.salary) dept_avg
 음원 전체 테이블 만들고,
@@ -1791,34 +1775,20 @@ label:
 
 goto label;
 
-label 위치로 무조건 점프한다. 다만 label 위치와 goto 문이 같은 함수에 있어야 한다. 코드의 가독성을 해치기 좋으므로 사용을 최소화하자. 자세한 것은 문서참조."				"class Person {
-  String name;
-  static int population;
-  
-  Person(String name){
-    this.name = name;
-    population++;
-  }
+label 위치로 무조건 점프한다. 다만 label 위치와 goto 문이 같은 함수에 있어야 한다. 코드의 가독성을 해치기 좋으므로 사용을 최소화하자. 자세한 것은 문서참조."				"11.3. 분기[편집]
+for (var e : arr) {
+    if (e == null) continue;
+    IO.println(e.toString())
 }
-public class Main {
-  public static void main(String[] args) {
-    Person p1 = new Person(""A"");
-    System.out.println(p1.population);
-    Person p2 = new Person(""B"");
-    System.out.println(p2.population);
-    Person p3 = new Person(""C"");
-    System.out.println(p3.population);
+해당 코드는 배열 arr의 각 원소에 대하여 null이 아닐경우 문자열로 변환하여 출력하는 코드이다.
+continue는 현재 반복문에서 다음 반복으로 넘어간다. 당연히 다음 반복 전에 조건을 검사하며, for (exp1; exp2; exp3) stmt;에서 exp3를 정상적으로 실행한다.
 
-    p3.population = 5;
-    System.out.println(p1.population);
-  }
+while (true) {
+    var str = IO.readln(""비밀번호:"");
+    if (str.equals(""pass"")) break;
 }
-/*
-1
-2
-3
-5
-*/"		"-- 1. 앨범 테이블 생성 (처음부터 auto_increment 적용)
+해당 코드는 pass를 입력받을 때까지 계속 입력을 받는 코드이다.
+break는 현재 반복문에서 탈출한다."		"-- 1. 앨범 테이블 생성 (처음부터 auto_increment 적용)
 create table all_song_album
 (
   so_id int not null auto_increment primary key,
@@ -2006,129 +1976,7 @@ join all_song_album b on a.so_id = b.so_id
 group by b.album;"																			
 "11. 기타 표준 라이브러리의 기능[편집]
 11.1. stdbool.h[편집]
-C++에서처럼 1바이트 크기의 bool 자료형을 사용할 수 있게 해 준다. 그리고 '0 아닌 수'와 0 대신 true와 false로 값을 적을 수 있다."				"9.11. instanceof[편집]
-obj instanceof T
-obj가 null이 아니면서 그 타입이 T의 하위 타입이거나, T 자체인 경우 true를 반환한다. 피연산자는 객체 타입이다.
-즉, obj가 T로 항변환될 수 있는지를 확인하는 용도다.
-
-obj instanceof T t
-자바 16부터 true인 경우 즉시 항변환하도록 할 수 있다. t는 타입이 T이고, obj가 저장된 변수이다. t는 컴파일러가 사용 가능하다고 추론한 범위 내에서만 사용 가능하다.
-9.12. 기타 특수 연산자[편집]
-arr[i];
-method();
-new Class();
-obj.field;
-(a, b) -> a + b;
-obj::method;
-순서대로 배열 접근, 메서드 호출, 생성자 호출 및 객체 생성, 멤버 접근, 람다, 메서드 참조이다.
-arr는 배열, i는 정수, method는 메서드, Class는 클래스, obj는 객체 또는 클래스, field는 obj의 메서드 또는 변수이다.
-반환 타입은 순서대로 원소의 타입, method의 반환 타입, Class 객체, field의 타입 또는 반환 타입, 나머지 2개는 컴파일러가 추론한 함수형 인터페이스를 구현한 객체이다."																					
-				"10.2. switch[편집]
-switch (exp) {
-    case value1:
-        stmt1;
-        break;
-    case value2:
-        stmt2;
-        break;
-...
-    default:
-        stmtN;
-}
-exp의 값이 value1이면 stmt1을, value2면 stmt2를, ... 전부 아니면 stmtN을 실행한다. break는 switch문을 벗어나는 역할을 한다.
-exp의 반환 타입은 byte, short, char, int와 그 래퍼 클래스나, Enum 상수, String이어야 한다.
-case의 value들은 상수 표현식[29]이어야 한다.
-
-switch (exp) {
-    case value1:
-        stmt1;
-    case value2:
-    case value3:
-        stmt2;
-        break;
-    case value4:
-        stmt3;
-exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
-
-switch (exp) {
-    case value1 -> stmt1;
-    case value2 -> {
-        stmt2;
-        stmt3;
-    }
-    case value3, value4 -> stmt4
-    default -> stmt5;
-}
-자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
-
-var a = switch (exp1) {
-    case value1:
-        yield exp2;
-    case value2:
-        stmt1;
-        yield exp3;
-    default:
-        yield exp4;
-}
-표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
-개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
-
-switch (exp) {
-    case ""hello"" -> stmt1;
-    case String s -> stmt2;
-    case Integer i when i > 0 -> stmt3;
-    case Integer i -> stmt4;
-    case null -> stmt5;
-    default -> stmt5;
-}
-자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
-기존 switch에서도 쓸 수 있다."																					
-				"11.1.1. do-while[편집]
-do {
-    stmt;
-} while (exp)
-stmt를 한번 실행 후, exp가 true면 반복을 하며, 아니라면 그대로 넘어간다."																					
-				"11.2.1. for-each[편집]
-Collection<E> collection = ...
-
-for (E e : collection) {
-  stmt;
-}
-배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
-여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
-
-E[] arr = ...
-E[] temp = arr;
-
-for (int i = 0; i < temp.length; i++) {
-    E e = temp[i];
-    stmt;
-}
-
-
-Collection<E> collection = ...
-Iterator<E> iterator = collection.iterator();
-
-while (iterator.hasNext()) {
-    E e = (E) iterator.next();
-    stmt;
-}
-"																					
-				"11.3. 분기[편집]
-for (var e : arr) {
-    if (e == null) continue;
-    IO.println(e.toString())
-}
-해당 코드는 배열 arr의 각 원소에 대하여 null이 아닐경우 문자열로 변환하여 출력하는 코드이다.
-continue는 현재 반복문에서 다음 반복으로 넘어간다. 당연히 다음 반복 전에 조건을 검사하며, for (exp1; exp2; exp3) stmt;에서 exp3를 정상적으로 실행한다.
-
-while (true) {
-    var str = IO.readln(""비밀번호:"");
-    if (str.equals(""pass"")) break;
-}
-해당 코드는 pass를 입력받을 때까지 계속 입력을 받는 코드이다.
-break는 현재 반복문에서 탈출한다."																					
-				"16. 클래스[편집]
+C++에서처럼 1바이트 크기의 bool 자료형을 사용할 수 있게 해 준다. 그리고 '0 아닌 수'와 0 대신 true와 false로 값을 적을 수 있다."				"16. 클래스[편집]
 클래스는 용도에 따라 크게 3가지로 볼 수 있다. 유틸리티 클래스와 데이터 클래스는 임의로 정한 명칭이다.
 유용한 정적 메서드 및 변수를 모아둔 클래스.[34]
 비정적 메서드 및 변수를 활용하여 여러 객체를 만들고 활용하는 클래스.[35][36]
@@ -2209,7 +2057,20 @@ void main() {
 
 이해를 위한 다른 비유도 많다. 클래스를 붕어빵 틀, 인스턴스를 만들어진 붕어빵, 필드를 반죽 및 속으로 비유하고, 객체는 붕어빵을 가리키는 용어로 설정하여 이해할 수 있다.
 
-자바는 객체간의 상호작용으로 프로그램을 구현한다. 단순히 사람이나 자전거 같이 물체를 구현한 객체 외에도 정말 많은 종류가 존재한다."																					
+자바는 객체간의 상호작용으로 프로그램을 구현한다. 단순히 사람이나 자전거 같이 물체를 구현한 객체 외에도 정말 많은 종류가 존재한다."		"select a.track, a.title, a.album, b.판매_억단위??
+from all_song_album a
+natural join all_song_selling b;
+
+-- natural right join도
+-- cross join도
+
+select *
+from all_song_album_one
+union
+select *
+from all_song_album_two;
+
+union all도"																			
 				"16.2.1. Getter와 Setter[편집]
 private 필드를 가져오는 메서드를 Getter, 설정하는 메서드를 Setter라고 한다.
 왜 사용하는가?
@@ -2277,7 +2138,16 @@ public class Car {
     void setLicensePlate(String licensePlate) { // 아무나 번호판을 변경할 수 없다.
         this.licensePlate = licensePlate;
     }
-}"																					
+}"		"SELECT d.dept_name, e.emp_name, e.salary
+FROM departments d
+JOIN LATERAL (
+    SELECT emp_name, salary
+    FROM employees e
+    WHERE e.dept_id = d.dept_id  -- d.dept_id 값 참조 가능
+    ORDER BY salary DESC
+    LIMIT 1
+) e ON TRUE;
+"																			
 				"16.3. 싱글톤 패턴[편집]
 하나의 객체만을 다루는 디자인 패턴이다.
 
@@ -2322,7 +2192,13 @@ public class Config {
 지연 초기화 방식이다. 단, 이 상태에서는 멀티 스레드 환경에서 문제가 발생할 수 있다.
 
 
-상태가 없이 순수 메서드와 상수들이 모여있다면 유틸리티 클래스, 상태와 동작을 가진 하나의 시스템 객체는 싱글톤이 적합하다."																					
+상태가 없이 순수 메서드와 상수들이 모여있다면 유틸리티 클래스, 상태와 동작을 가진 하나의 시스템 객체는 싱글톤이 적합하다."		"update table
+set column 변화값
+where 
+
+delete from table
+where 조건
+"																			
 				"https://namu.wiki/w/%EC%83%81%EC%86%8D(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 나무위키 상속"																					
 				"16.4. 상속[편집]
@@ -3115,6 +2991,11 @@ public class Main {
     }
 }
 출처: https://inpa.tistory.com/entry/JAVA-☕-업캐스팅-다운캐스팅-한방-이해하기 [Inpa Dev 👨‍💻:티스토리]"																					
+																									
+																									
+																									
+																									
+																									
 																									
 																									
 																									
