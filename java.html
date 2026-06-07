@@ -29,6 +29,31 @@
 
 
 
+-------------
+
+
+
+-------------
+
+
+public class Main {
+  public static void main(String[] args) {
+    int i = 0;
+    switch (i) {
+    case 1 -> System.out.println("1이다.");
+    case 0 -> {
+        System.out.println("0이다.");
+        System.out.println("양수가 아니다.");
+    }
+    case 2, 5 -> System.out.println("숫자다.");
+    default -> System.out.println("숫자인가?");
+    }
+  }
+}
+/*0이다.
+양수가 아니다.
+*/
+
 
 
 -------------
