@@ -48,9 +48,46 @@
 
 
 
+
+
+
+
+
+
+
 -------------
 
 
+
+-------------
+
+public class Main {
+  public static void main(String[] args) {
+    String s_num = "22";
+    int i_num1 = Integer.parseInt(s_num); //parseLong과 parseShort도 있음.
+    System.out.println(i_num1);
+    //22
+    int i_num2 = Integer.valueOf(s_num);
+    System.out.println(i_num2);
+    //22
+    Double d_num1 = Double.valueOf(s_num);
+    System.out.println(d_num1);
+    //22.0
+    float f_num = Float.valueOf(s_num);
+    System.out.println(d_num1);
+    //22.0
+    i_num1 = 11;
+    s_num = String.valueOf(i_num1);
+    System.out.println(s_num);
+    //11
+    s_num = Integer.toString(i_num1);
+    System.out.println(s_num);
+    //11
+    s_num = "" + i_num1;
+    System.out.println(s_num);
+    //11
+  }
+}
 
 -------------
 
