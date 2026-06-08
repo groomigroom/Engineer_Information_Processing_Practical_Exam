@@ -37,7 +37,95 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 -------------
+
+
+
+-------------
+
+abstract class Unit {
+    int x, y;
+    abstract void move(int x, int y); // 지정된 위치로 이동
+    void stop() {} // 현재 위치에 정지
+}
+
+class Marine extends Unit{
+    void move(int x, int y) {
+        System.out.println("걸어서 이동");
+    }
+    void stimPack() {
+        System.out.println("스팀팩 사용!");
+    } 
+}
+
+class Tank extends Unit{
+    void move(int x, int y) {
+        System.out.println("굴러서 이동");
+    }
+    void siegeMode() {
+        System.out.println("시즈 모드 변형! 포격 준비!");
+    } 
+}
+
+class DropShip extends Unit{
+    void move(int x, int y) {
+        System.out.println("날아서 이동");
+    }
+    void loadUnload() {
+        System.out.println("유닛 승하차 실행");
+    } 
+}
+
+// 🚀 실행을 위한 Main 클래스
+public class Main {
+    public static void main(String[] args) {
+        // 1. 추상 클래스인 Unit 타입 배열로 서로 다른 유닛들을 묶어 줍니다.
+        Unit[] army = new Unit[3];
+        army[0] = new Marine();
+        army[1] = new Tank();
+        army[2] = new DropShip();
+
+        System.out.println("=== 1. 모든 유닛 이동 명령 ===");
+        // 2. 공통 기능인 move()를 호출하면 각 자식 객체의 오버라이딩된 메서드가 작동합니다.
+        for (Unit unit : army) {
+            unit.move(50, 70);
+        }
+
+        System.out.println("\n=== 2. 유닛별 고유 능력 사용 ===");
+        // 3. 부모(Unit) 타입에서는 자식의 고유 기술을 모르기 때문에 타입 체크 후 다운캐스팅합니다.
+        for (Unit unit : army) {
+            if (unit instanceof Marine marine) {
+                marine.stimPack();
+            } else if (unit instanceof Tank tank) {
+                tank.siegeMode();
+            } else if (unit instanceof DropShip dropShip) {
+                dropShip.loadUnload();
+            }
+        }
+    }
+}
+/*
+=== 1. 모든 유닛 이동 명령 ===
+걸어서 이동
+굴러서 이동
+날아서 이동
+
+=== 2. 유닛별 고유 능력 사용 ===
+스팀팩 사용!
+시즈 모드 변형! 포격 준비!
+유닛 승하차 실행
+*/
 
 
 		
