@@ -213,80 +213,7 @@ https://www.youtube.com/live/c6h7K7g-5GE?si=41o-DUCl5Ci_hXew
 }
 "	https://youtube.com/shorts/qTuZ1tiUAAI?si=zE_EhYAfeu9GmI_0		"이거랑 아래꺼 리눅스
 https://copy.sh/v86/?profile=linux26"																	
-http://unixwiz.net/techtips/reading-cdecl.html	71쪽 211부터	"이번에는 파이썬 내장 함수 iter, next에 대해 알아보겠습니다. iter는 객체의 __iter__ 메서드를 호출해주고, next는 객체의 __next__ 메서드를 호출해줍니다. 그럼 range(3)에 iter와 next를 사용해보겠습니다.
-
->>> it = iter(range(3))
->>> next(it)
-0
->>> next(it)
-1
->>> next(it)
-2
->>> next(it)
-Traceback (most recent call last):
-  File ""<pyshell#6>"", line 1, in <module>
-    next(it)
-StopIteration
-반복 가능한 객체에서 __iter__를 호출하고 이터레이터에서 __next__ 메서드를 호출한 것과 똑같습니다. 즉, iter는 반복 가능한 객체에서 이터레이터를 반환하고, next는 이터레이터에서 값을 차례대로 꺼냅니다. iter와 next는 이런 기능 이외에도 다양한 방식으로 사용할 수 있습니다.
-
-39.4.1  iter
-iter는 반복을 끝낼 값을 지정하면 특정 값이 나올 때 반복을 끝냅니다. 이 경우에는 반복 가능한 객체 대신 호출 가능한 객체(callable)를 넣어줍니다. 참고로 반복을 끝낼 값은 sentinel이라고 부르는데 감시병이라는 뜻입니다. 즉, 반복을 감시하다가 특정 값이 나오면 반복을 끝낸다고 해서 sentinel입니다.
-
-iter(호출가능한객체, 반복을끝낼값)
-예를 들어 random.randint(0, 5)와 같이 0부터 5까지 무작위로 숫자를 생성할 때 2가 나오면 반복을 끝내도록 만들 수 있습니다. 이때 호출 가능한 객체를 넣어야 하므로 매개변수가 없는 함수 또는 람다 표현식으로 만들어줍니다.
-
->>> import random
->>> it = iter(lambda : random.randint(0, 5), 2)
->>> next(it)
-0
->>> next(it)
-3
->>> next(it)
-1
->>> next(it)
-Traceback (most recent call last):
-  File ""<pyshell#37>"", line 1, in <module>
-    next(it)
-StopIteration
-next(it)로 숫자를 계속 만들다가 2가 나오면 StopIteration이 발생합니다. 물론 숫자가 무작위로 생성되므로 next(it)를 호출하는 횟수도 매번 달라집니다. 물론 다음과 같이 for 반복문에 넣어서 사용할 수도 있습니다.
-
->>> import random
->>> for i in iter(lambda : random.randint(0, 5), 2):
-...     print(i, end=' ')
-...
-3 1 4 0 5 3 3 5 0 4 1 
-이렇게 iter 함수를 활용하면 if 조건문으로 매번 숫자가 2인지 검사하지 않아도 되므로 코드가 좀 더 간단해집니다. 즉, 다음 코드와 동작이 같습니다.
-
-import random
- 
-while True:
-    i = random.randint(0, 5)
-    if i == 2:
-        break
-    print(i, end=' ')
-39.4.2  next
-next는 기본값을 지정할 수 있습니다. 기본값을 지정하면 반복이 끝나더라도 StopIteration이 발생하지 않고 기본값을 출력합니다. 즉, 반복할 수 있을 때는 해당 값을 출력하고, 반복이 끝났을 때는 기본값을 출력합니다. 다음은 range(3)으로 0, 1, 2 세 번 반복하는데 next에 기본값으로 10을 지정했습니다.
-
-next(반복가능한객체, 기본값)
->>> it = iter(range(3))
->>> next(it, 10)
-0
->>> next(it, 10)
-1
->>> next(it, 10)
-2
->>> next(it, 10)
-10
->>> next(it, 10)
-10
-0, 1, 2까지 나온 뒤에도 next(it, 10)을 호출하면 예외가 발생하지 않고 계속 10이 나옵니다.
-
-지금까지 반복 가능한 객체의 개념과 이터레이터를 만드는 방법을 배웠습니다. 여기서는 이터레이터를 만들 때 __iter__, __next__ 메서드 또는 __getitem__ 메서드를 구현해야 한다는 점만 기억하면 됩니다."		"자바 Thread 
-[Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly 
-https://share.google/sputuhpfnyk1xs9Xb
-
-implements Runnable run() start()"																					
-		"#얕은 복사
+http://unixwiz.net/techtips/reading-cdecl.html	71쪽 211부터	"#얕은 복사
 
 #분할 [:]
 
@@ -376,7 +303,25 @@ x = [1, 2, []]
 
 https://youtu.be/MIkKcTjtnpw?si=5iJjZztgp6He-UDy
 
-https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"class C1{
+https://youtu.be/dI6wYLog3kI?si=C1aDtgTq0mYkAAzS"		"자바 Thread 
+[Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly 
+https://share.google/sputuhpfnyk1xs9Xb
+
+implements Runnable run() start()"																					
+		"from functools import singledispatch
+
+@singledispatch
+def process(value) :
+  return f""기본: {value}""
+  
+@process.register(int)
+def _(v) :
+  return ""정수 처리""
+  
+@process.register(str)
+def _(v) :
+  return ""문자열 처리""
+  "		"class C1{
     static int static_variable = 1;
     int instance_variable = 2;
     static void static_static(){
@@ -460,23 +405,10 @@ public class Main {
 } //일단 에러뜸
 169번줄
 325번줄"	https://youtube.com/shorts/MSFv_fNqSgA?si=eE_VcFzQs-zNmwEH		https://takeknowledge.tistory.com/65#google_vignette																	
-https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		"from functools import singledispatch
-
-@singledispatch
-def process(value) :
-  return f""기본: {value}""
-  
-@process.register(int)
-def _(v) :
-  return ""정수 처리""
-  
-@process.register(str)
-def _(v) :
-  return ""문자열 처리""
-  "		"public class Main {
+https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0				"public class Main {
   public static void main(String[] args) {
     String s_num = ""22"";
-    int i_num1 = Integer.parseInt(s_num);
+    int i_num1 = Integer.parseInt(s_num); //parseLong과 parseShort도 있음.
     System.out.println(i_num1);
     //22
     int i_num2 = Integer.valueOf(s_num);
@@ -488,6 +420,13 @@ def _(v) :
     float f_num = Float.valueOf(s_num);
     System.out.println(d_num1);
     //22.0
+    i_num1 = 11;
+    s_num = String.valueOf(i_num1);
+    System.out.println(s_num);
+    //11
+    s_num = Integer.toString(i_num1);
+    System.out.println(s_num);
+    //11
   }
 }
 
@@ -496,36 +435,7 @@ def _(v) :
 /*
 
 
-float f_num = Float.valueOf(s_num); --String -> Float
  
-
-3. String to Long, Short 
-잘쓰이진 않지만 필요하신분 있으실까봐 정리해둡니다.
-
-자바 Long, Short 클래스의 parseLong함수와 parseShort 함수로 변환 시켜줄 수 있습니다.
-
-Copy
---Long.parseLong(String값)
---Short.parseShort(String값)
-
-String s_num = ""10"";
-long l_num = Long.parseLong(s_num); --String -> Long
-short sh_num = Short.parseShort(s_num); --String -> Short
- 
-
- 숫자 -> 문자 
-1. Int to String
-자바 String클래스의 valueOf, toString 함수로 변환 시켜줄 수 있습니다.
-
-Copy
---String.valueOf(Int값)
---Integer.toString(Int값)
-
-int i_num = 10;
-String s_num;
-                
-s_num = String.valueOf(i_num); --문자 -> 숫자 1번방식
-s_num = Integer.toString(i_num); --문자 -> 숫자 2번방식
 s_num = """"+i_num; --문자 -> 숫자 3번방식
  
 
@@ -582,7 +492,8 @@ float f_num = (float)i_num; --Int -> Float
 ? : ; ...
 = *= /= %= += -= <<= >>= &= ^= |=
 , # ##
-<: :> <% %> %: %:%:"				"9.12. 기타 특수 연산자[편집]
+<: :> <% %> %: %:%:"		"@singledispatch
+@process.register"		"9.12. 기타 특수 연산자[편집]
 arr[i];
 method();
 new Class();
@@ -658,79 +569,7 @@ int main()
 
     return 0;
 }
-"		"@singledispatch
-@process.register"		"10.2. switch[편집]
-
-
-
-exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
-
-switch (exp) {
-    case value1 -> stmt1;
-    case value2 -> {
-        stmt2;
-        stmt3;
-    }
-    case value3, value4 -> stmt4
-    default -> stmt5;
-}
-자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
-
-var a = switch (exp1) {
-    case value1:
-        yield exp2;
-    case value2:
-        stmt1;
-        yield exp3;
-    default:
-        yield exp4;
-}
-표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
-개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
-
-switch (exp) {
-    case ""hello"" -> stmt1;
-    case String s -> stmt2;
-    case Integer i when i > 0 -> stmt3;
-    case Integer i -> stmt4;
-    case null -> stmt5;
-    default -> stmt5;
-}
-자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
-기존 switch에서도 쓸 수 있다."		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
-"#include <stdio.h>
-void groomgroom(void) {
-  printf(""김구름 멍멍"");
-}
-
-void charpri() {
-  char a[8];
-  char *ptr;
-  a[0] = 'k';
-  a[1] = 'i';
-  a[2] = 'm';
-  a[3] = 'g';
-  a[4] = 'r';
-  a[5] = 'o';
-  a[6] = 'o';
-  a[7] = 'm';
-  
-  ptr = a;
-  printf(""%s"", ptr);
-}
-
-void main()
-{
-  void (*funcptr)(void) = &groomgroom;
-  (*funcptr)();
-  int x = 100;
-  int *px = &x;
-  int **ppx = &px;
-  **ppx = 25;
-  printf(""%d"", *px);
-  charpri();
-}
-//직접"		"aiter()
+"		"aiter()
 aiter() 함수는 Python 3.10부터 도입된 비동기(iterable)의 이터레이터를 반환해주는 내장 함수입니다.
 주로 async for 반복문에서 사용되는 비동기 객체(asynchronous iterable)를 이터레이션 하고 싶을 때 사용합니다. 동기 버전인 iter()와 유사하지만, 비동기 iterable만 지원합니다.
 
@@ -801,7 +640,24 @@ async def consume():
 
 asyncio.run(consume())
 총평
-aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"var a = switch (exp1) {
+aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"10.2. switch[편집]
+
+
+
+exp의 값이 value1이면 stmt1과 stmt2를, value2또는 value3이면 stmt2를, value4면 stmt3를 실행하고 아무것도 아니면 그냥 넘어간다.
+
+switch (exp) {
+    case value1 -> stmt1;
+    case value2 -> {
+        stmt2;
+        stmt3;
+    }
+    case value3, value4 -> stmt4
+    default -> stmt5;
+}
+자바 14부터 사용 가능한 개선된 switch이다. exp의 값이 value1이면 stmt1을, value2면 stmt2와 stmt3를, value3 또는 value4면 stmt4를, 아무것도 아니면 stmt5를 실행한다.
+
+var a = switch (exp1) {
     case value1:
         yield exp2;
     case value2:
@@ -809,8 +665,53 @@ aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객�
         yield exp3;
     default:
         yield exp4;
-}"		18쪽 47번 48번 49번 50번 51번 52번 53번		110쪽 274번																	
-C언어에는 쉼표(,) 연산자처럼 유연성은 높지만 가독성을 해치거나 실수를 유발하기 쉬워 실무에서는 잘 쓰이지 않는 문법들이 있습니다.가독성 저하와 유지보수 문제로 인해 사용을 지양하거나 제한적으로만 사용하는 대표적인 문법들은 다음과 같습니다.1. 조건 연산자 (삼항 연산자)의 중첩문법: 조건 ? (조건2 ? 참값2 : 거짓값2) : 거짓값특징: if-else 문을 한 줄로 줄일 수 있지만, 중첩해서 사용할 경우 코드를 읽기 매우 어렵게 만듭니다.2. goto 문문법: goto 레이블; ... 레이블:특징: 코드의 흐름을 강제로 이동시키는 문법입니다. 프로그램의 흐름을 파악하기 어렵게 만드는 '스파게티 코드'의 주원인이 되며, 현대 프로그래밍에서는 거의 사용하지 않습니다. (단, 에러 처리나 깊은 중첩 루프 탈출 시 예외적으로 제한 사용)3. 비트 연산자 (Bitwise Operators)문법: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >> (Shift)특징: 하드웨어 제어나 임베디드 시스템, 특정 알고리즘(암호화, 압축 등)이 아니면 일반적인 응용 프로그램 개발에서는 메모리 절약이나 성능 최적화를 위해 직접 사용하는 경우가 드뭅니다.4. register 키워드문법: register int count;특징: 변수를 CPU 레지스터에 저장하여 접근 속도를 높이라는 힌트를 컴파일러에게 주는 문법입니다. 하지만 현대의 컴파일러는 최적화(Optimization) 기능이 매우 뛰어나 프로그래머가 직접 지정하는 것보다 컴파일러가 알아서 최적화하는 편이 훨씬 효율적이라 사실상 무의미해진 문법입니다.5. volatile 키워드문법: volatile int sensor_value;특징: 컴파일러의 최적화를 방지하고, 해당 변수의 값이 프로그램 외부(하드웨어 등)에 의해 언제든지 변경될 수 있음을 알리는 키워드입니다. 일반적인 프로그래밍에서는 전혀 쓰이지 않고, 임베디드 시스템이나 OS 커널 개발 등 특수한 환경에서만 사용됩니다.6. 쉼표 연산자(Comma Operator)의 복합 사용문법: int a = 1, b = 2; (O, 변수 선언/초기화 시 일반적)특징: 변수 구분자가 아닌, a = (b++, b + 2); 처럼 한 줄에 여러 연산을 수행하고 맨 마지막 연산의 결과값을 반환하게 하는 문법입니다. 코드가 함축되어 디버깅과 유지보수가 극도로 어려워지기 때문에 단순한 for문 초기화문 이외에는 거의 쓰이지 않습니다.		"여느 프로그래밍 언어와 비슷하게 예외 처리를 지원한다. 예외를 던질 때에는 raise 키워드를 사용한다.
+}
+표현식으로 쓸 수도 있다. 이 경우 switch가 모든 경우의 수를 다뤄야 한다.[30] yield로 반환값을 지정하기 때문에 break를 사용하지 않는다.
+개선된 switch로도 사용 가능하며, case에서 중괄호를 생략한 경우 yield 없이 바로 반환값을 쓴다.
+
+switch (exp) {
+    case ""hello"" -> stmt1;
+    case String s -> stmt2;
+    case Integer i when i > 0 -> stmt3;
+    case Integer i -> stmt4;
+    case null -> stmt5;
+    default -> stmt5;
+}
+자바 21부터 패턴 매칭을 사용할 수 있다. 이 여기에서 exp의 값이 ""hello""면 stmt1을, String으로 항변환 가능하면 변환한 변수 s를 만들고 stmt2를, Integer로 항변환 가능하고 그 값이 0보다 크면 stmt3, 0보다 같거나 작으면 stmt4를, null이거나 아무것도 아니면 stmt5를 실행한다.
+기존 switch에서도 쓸 수 있다."		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
+"#include <stdio.h>
+void groomgroom(void) {
+  printf(""김구름 멍멍"");
+}
+
+void charpri() {
+  char a[8];
+  char *ptr;
+  a[0] = 'k';
+  a[1] = 'i';
+  a[2] = 'm';
+  a[3] = 'g';
+  a[4] = 'r';
+  a[5] = 'o';
+  a[6] = 'o';
+  a[7] = 'm';
+  
+  ptr = a;
+  printf(""%s"", ptr);
+}
+
+void main()
+{
+  void (*funcptr)(void) = &groomgroom;
+  (*funcptr)();
+  int x = 100;
+  int *px = &x;
+  int **ppx = &px;
+  **ppx = 25;
+  printf(""%d"", *px);
+  charpri();
+}
+//직접"		"여느 프로그래밍 언어와 비슷하게 예외 처리를 지원한다. 예외를 던질 때에는 raise 키워드를 사용한다.
 try:
     # 정상 작업
 except BaseException as e:
@@ -831,7 +732,92 @@ class CustomException(Exception):
 try:
     raise CustomException(""Error!!"")
 except CustomException as e:
-    print(e) # ""Error!!""이 출력된다."		"11.2.1. for-each[편집]
+    print(e) # ""Error!!""이 출력된다."		"var a = switch (exp1) {
+    case value1:
+        yield exp2;
+    case value2:
+        stmt1;
+        yield exp3;
+    default:
+        yield exp4;
+}"		18쪽 47번 48번 49번 50번 51번 52번 53번		110쪽 274번																	
+C언어에는 쉼표(,) 연산자처럼 유연성은 높지만 가독성을 해치거나 실수를 유발하기 쉬워 실무에서는 잘 쓰이지 않는 문법들이 있습니다.가독성 저하와 유지보수 문제로 인해 사용을 지양하거나 제한적으로만 사용하는 대표적인 문법들은 다음과 같습니다.1. 조건 연산자 (삼항 연산자)의 중첩문법: 조건 ? (조건2 ? 참값2 : 거짓값2) : 거짓값특징: if-else 문을 한 줄로 줄일 수 있지만, 중첩해서 사용할 경우 코드를 읽기 매우 어렵게 만듭니다.2. goto 문문법: goto 레이블; ... 레이블:특징: 코드의 흐름을 강제로 이동시키는 문법입니다. 프로그램의 흐름을 파악하기 어렵게 만드는 '스파게티 코드'의 주원인이 되며, 현대 프로그래밍에서는 거의 사용하지 않습니다. (단, 에러 처리나 깊은 중첩 루프 탈출 시 예외적으로 제한 사용)3. 비트 연산자 (Bitwise Operators)문법: & (AND), | (OR), ^ (XOR), ~ (NOT), <<, >> (Shift)특징: 하드웨어 제어나 임베디드 시스템, 특정 알고리즘(암호화, 압축 등)이 아니면 일반적인 응용 프로그램 개발에서는 메모리 절약이나 성능 최적화를 위해 직접 사용하는 경우가 드뭅니다.4. register 키워드문법: register int count;특징: 변수를 CPU 레지스터에 저장하여 접근 속도를 높이라는 힌트를 컴파일러에게 주는 문법입니다. 하지만 현대의 컴파일러는 최적화(Optimization) 기능이 매우 뛰어나 프로그래머가 직접 지정하는 것보다 컴파일러가 알아서 최적화하는 편이 훨씬 효율적이라 사실상 무의미해진 문법입니다.5. volatile 키워드문법: volatile int sensor_value;특징: 컴파일러의 최적화를 방지하고, 해당 변수의 값이 프로그램 외부(하드웨어 등)에 의해 언제든지 변경될 수 있음을 알리는 키워드입니다. 일반적인 프로그래밍에서는 전혀 쓰이지 않고, 임베디드 시스템이나 OS 커널 개발 등 특수한 환경에서만 사용됩니다.6. 쉼표 연산자(Comma Operator)의 복합 사용문법: int a = 1, b = 2; (O, 변수 선언/초기화 시 일반적)특징: 변수 구분자가 아닌, a = (b++, b + 2); 처럼 한 줄에 여러 연산을 수행하고 맨 마지막 연산의 결과값을 반환하게 하는 문법입니다. 코드가 함축되어 디버깅과 유지보수가 극도로 어려워지기 때문에 단순한 for문 초기화문 이외에는 거의 쓰이지 않습니다.		"13. 팁[편집]
+문자열을 합칠 때 join을 쓰자. range 함수와 str 함수를 같이 쓰면 매우 편해지는 경우가 있다.
+''.join(str(x) for x in range(10))
+슬라이스(slice) 문법은 리스트/문자열의 부분을 잘라내는 것 이외에도 다양한 활용이 가능하다.
+# 문자열 뒤집기
+a = 'abc'
+print(a[::-1]) # 출력: cba
+
+# 리스트 복사
+a = [1, 2, 3]
+b = a[:]
+print(b)      # 출력: [1, 2, 3]
+print(a is b) # 출력: False
+
+c = [[1, 2], [3, 4]]
+d = c[:]
+c[0] = [5, 6] # 리스트 자체는 복사되지만
+c[1][0] = 7   # 리스트의 원소들까지 복사되지는 않으므로 주의해서 사용하자.
+print(c)      # 출력: [[5, 6], [7, 4]]
+print(d)      # 출력: [[1, 2], [7, 4]]
+print('%s, %s, %s' % (c is d, c[0] is d[0], c[1] is d[1])) # 출력: False, False, True
+숫자, 문자, 튜플은 변경 불가능(immutable)하며, 리스트, 집합, 딕셔너리는 변경 가능(mutable)하다. 이때 변경 가능한 자료형은 다른 변수에 대입하여도 그 내용이 공유된다. 그 예로, 아래와 같은 코드가 있다고 하자.
+a = (1, 2, 3)
+b = a
+b += (2, 1)
+print(a) # 출력: (1, 2, 3)
+print(b) # 출력: (1, 2, 3, 2, 1)
+우리가 예상한 대로, 튜플 b만 변경되고, a는 변경되지 않는다. 위의 코드에서 튜플(immutable)을 리스트(mutable)로 바꾸어 보자.
+a = [1, 2, 3]
+b = a
+b += [2, 1]
+print(a) # 출력: [1, 2, 3, 2, 1]
+print(b) # 출력: [1, 2, 3, 2, 1]
+출력을 보면 b만 변경했음에도 a가 변한다는 사실을 알 수 있다. 이것은 모든 변경 가능한 자료형에 적용되며, 심지어 리스트 안의 리스트 같은 것들까지도 공유가 된다. 그러니 원본을 변경하면 안 되는 경우에는 list(), set(), dict()나 copy 모듈 등을 이용해서 객체를 복제하고 작업하자. 변경 불가능한 자료형은 원본을 변경할 수 없기 때문에 해당 사항이 없다.
+특히 list나 dict 자체를 함수에 인자로 전달받을 때 내부에서 리스트를 변형하는 연산을 하면 함수 밖에서도 list나 dict가 변형되니 주의하도록 하자.
+list.insert(0) 와 list.append()는 각각 첫 번째 자리에 값을 추가하거나, 마지막 자리에 값을 추가하는 정도의 조그만한 차이일 뿐이지만, 계산 시간이 
+O
+(
+n
+)
+O(n)과 
+O
+(
+1
+)
+O(1) 수준으로 차이가 나기 때문에 첫 번째 방법은 쓰지 않는 것이 좋다.
+그래서 prepending에 의존하는 하는 알고리즘을 파이썬 리스트로 구현하려면, 알고리즘을 거꾸로 뒤집는 것이 좋고, 만약 알고리즘을 뒤집기 힘들다면, 파이썬 공식 라이브러리에서 제공하는 deque 같은 것을 써야 한다. 자료구조 개념에 대한 감각이 있으면 이해하기 쉽다.
+CPython같은 경우 JIT를 쓰지 않기 때문에 이런 것을 자동으로 최적화해 준다고 생각하지 말자.
+괄호 안에 for와 if, else를 넣을 시 주의하자.
+# 1
+list(x for x in range(10) if x%2 == 0)
+# 2
+list(x for x in range(10) if x%2 == 0 else 0)
+# 3
+list(x if x%2 == 0 else 0 for x in range(10))
+1은 되지만 2는 되지 않으며 3은 된다. if만 넣을 경우 for 뒤에 써야 하며, 조건을 충족하지 않는 원소들은 생략된다.(즉, 1의 결과물은 [0, 2, 4, 6, 8]이다.) if와 else 모두를 넣는다면 for 앞에 넣어야 하며 조건을 충족하면 맨 앞, 아니라면 else 다음이 반환된다.
+아래처럼 반복문을 돌 때 변수가 필요 없는 경우에는 변수 이름을 _로 한다.
+for _ in range(3):
+  print(""spam"")
+멀티프로세싱은 __main__ 블럭 안에 들어가야 한다. 네임스페이스 문제 때문이다. 들어가지 않으면 오류를 뿜는다.
+#if 대신 while도 가능.
+if __name__ == '__main__':
+반복문을 사용할 때 유도 변수 (i, j 등)을 사용하지 않고 for value in mylist와 같이 사용할 수 있는 것은 python의 큰 장점이다. 그럼에도 불구하고 인덱스를 사용해야 하는 경우 for i in range(len(mylist))처럼 쓰거나 count 변수를 임시로 생성하지 말고 enumerate를 사용하자.
+mylist = [10, 20, 30, 40]
+# 이렇게 하지 말고,
+for i, value in enumerate(mylist):
+    print(mylist[i])
+    ...
+파이썬 2와 3에서의 range는 리턴 형식이 다르다. 2에서는 리스트를 리턴하지만 3에서는 range 객체를 리턴한다. 따라서 3에서 range를 리스트로 바꾸려면 아래와 같은 방법들로 전환해야 한다. 파이썬 2에 익숙한 사람은, 파이썬 3의 range는 파이썬 2의 xrange와 동일한 역할을 한다고 생각하면 된다.
+list(range(10))
+[*range(10)]
+그 외에도 파이썬 2와 3은 정수 나눗셈, print 문법, 문자열 종류, import 방식 같은 데서 차이가 많이 나는 편이다. 일부는 __future__라는 라이브러리에서 파이썬 2에서도 3과 같은 문법을 쓸 수 있도록 해 주는 기능을 제공하고 있지만, 그렇지 않은 부분들은 stack overflow 등을 참고해서 직접 만들어서 쓰는 것이 좋다. 현재 많은 오픈 소스 라이브러리들이 __future__로 도배되어 있고 가내 수공업 식으로 호환성을 땜질해 있는 것을 보면 말이다. 파이썬 2.7이 공식적으로 지원이 중단되면 시점까지 많은 라이브러리들이 파이썬 2 지원을 철회할 계획을 가지고 있으므로, 그때가 되면 이런 호환성 문제에서 숨통이 트일 것이다.
+파이썬 암호화 라이브러리 pycrypto 설치를 시도하면 아래와 같은 에러가 발생한다. 이럴 때는 관련 도구를 추가로 설치해야 한다.[5]
+error: Microsoft Visual C++ 14.0 is required. Get it with ""Microsoft Visual C++ Build Tools
+Boilerplate 코드가 적고, 리스트와 셋, 해시 등의 자료구조를 간단한 기호로 표기할 수 있어 코딩 테스트 시 많이 사용되는 언어이기도 하다. Python으로 코드를 작성하면 같은 알고리즘을 C++, Java 등으로 구현했을 때보다 전체적인 코드 길이가 비약적으로 짧아진다.
+파이썬 인터프리터라도 열어서 아무 모듈이나 임포트하거나, print 함수에 대해 dir(print)를 입력해 보면 파이썬의 구조를 좀 더 잘 알게 된다. 우리가 사용했던 함수가 다르게 보일 것이다.
+과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"11.2.1. for-each[편집]
 Collection<E> collection = ...
 
 for (E e : collection) {
@@ -915,83 +901,7 @@ int scanf(const char *format, ...)
 
 scanf는 값을 입력받는 함수이다. scanf 함수는 옵션과 입력값을 저장할 변수의 포인터, 즉 그 변수의 주소 두 가지를 입력 받는다. 쉽게 설명하기 위해 택배에 비유하자면 입력값은 택배 내용물, 변수의 주소 값은 택배에 쓸 주소이다.
 
-보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."		"13. 팁[편집]
-문자열을 합칠 때 join을 쓰자. range 함수와 str 함수를 같이 쓰면 매우 편해지는 경우가 있다.
-''.join(str(x) for x in range(10))
-슬라이스(slice) 문법은 리스트/문자열의 부분을 잘라내는 것 이외에도 다양한 활용이 가능하다.
-# 문자열 뒤집기
-a = 'abc'
-print(a[::-1]) # 출력: cba
-
-# 리스트 복사
-a = [1, 2, 3]
-b = a[:]
-print(b)      # 출력: [1, 2, 3]
-print(a is b) # 출력: False
-
-c = [[1, 2], [3, 4]]
-d = c[:]
-c[0] = [5, 6] # 리스트 자체는 복사되지만
-c[1][0] = 7   # 리스트의 원소들까지 복사되지는 않으므로 주의해서 사용하자.
-print(c)      # 출력: [[5, 6], [7, 4]]
-print(d)      # 출력: [[1, 2], [7, 4]]
-print('%s, %s, %s' % (c is d, c[0] is d[0], c[1] is d[1])) # 출력: False, False, True
-숫자, 문자, 튜플은 변경 불가능(immutable)하며, 리스트, 집합, 딕셔너리는 변경 가능(mutable)하다. 이때 변경 가능한 자료형은 다른 변수에 대입하여도 그 내용이 공유된다. 그 예로, 아래와 같은 코드가 있다고 하자.
-a = (1, 2, 3)
-b = a
-b += (2, 1)
-print(a) # 출력: (1, 2, 3)
-print(b) # 출력: (1, 2, 3, 2, 1)
-우리가 예상한 대로, 튜플 b만 변경되고, a는 변경되지 않는다. 위의 코드에서 튜플(immutable)을 리스트(mutable)로 바꾸어 보자.
-a = [1, 2, 3]
-b = a
-b += [2, 1]
-print(a) # 출력: [1, 2, 3, 2, 1]
-print(b) # 출력: [1, 2, 3, 2, 1]
-출력을 보면 b만 변경했음에도 a가 변한다는 사실을 알 수 있다. 이것은 모든 변경 가능한 자료형에 적용되며, 심지어 리스트 안의 리스트 같은 것들까지도 공유가 된다. 그러니 원본을 변경하면 안 되는 경우에는 list(), set(), dict()나 copy 모듈 등을 이용해서 객체를 복제하고 작업하자. 변경 불가능한 자료형은 원본을 변경할 수 없기 때문에 해당 사항이 없다.
-특히 list나 dict 자체를 함수에 인자로 전달받을 때 내부에서 리스트를 변형하는 연산을 하면 함수 밖에서도 list나 dict가 변형되니 주의하도록 하자.
-list.insert(0) 와 list.append()는 각각 첫 번째 자리에 값을 추가하거나, 마지막 자리에 값을 추가하는 정도의 조그만한 차이일 뿐이지만, 계산 시간이 
-O
-(
-n
-)
-O(n)과 
-O
-(
-1
-)
-O(1) 수준으로 차이가 나기 때문에 첫 번째 방법은 쓰지 않는 것이 좋다.
-그래서 prepending에 의존하는 하는 알고리즘을 파이썬 리스트로 구현하려면, 알고리즘을 거꾸로 뒤집는 것이 좋고, 만약 알고리즘을 뒤집기 힘들다면, 파이썬 공식 라이브러리에서 제공하는 deque 같은 것을 써야 한다. 자료구조 개념에 대한 감각이 있으면 이해하기 쉽다.
-CPython같은 경우 JIT를 쓰지 않기 때문에 이런 것을 자동으로 최적화해 준다고 생각하지 말자.
-괄호 안에 for와 if, else를 넣을 시 주의하자.
-# 1
-list(x for x in range(10) if x%2 == 0)
-# 2
-list(x for x in range(10) if x%2 == 0 else 0)
-# 3
-list(x if x%2 == 0 else 0 for x in range(10))
-1은 되지만 2는 되지 않으며 3은 된다. if만 넣을 경우 for 뒤에 써야 하며, 조건을 충족하지 않는 원소들은 생략된다.(즉, 1의 결과물은 [0, 2, 4, 6, 8]이다.) if와 else 모두를 넣는다면 for 앞에 넣어야 하며 조건을 충족하면 맨 앞, 아니라면 else 다음이 반환된다.
-아래처럼 반복문을 돌 때 변수가 필요 없는 경우에는 변수 이름을 _로 한다.
-for _ in range(3):
-  print(""spam"")
-멀티프로세싱은 __main__ 블럭 안에 들어가야 한다. 네임스페이스 문제 때문이다. 들어가지 않으면 오류를 뿜는다.
-#if 대신 while도 가능.
-if __name__ == '__main__':
-반복문을 사용할 때 유도 변수 (i, j 등)을 사용하지 않고 for value in mylist와 같이 사용할 수 있는 것은 python의 큰 장점이다. 그럼에도 불구하고 인덱스를 사용해야 하는 경우 for i in range(len(mylist))처럼 쓰거나 count 변수를 임시로 생성하지 말고 enumerate를 사용하자.
-mylist = [10, 20, 30, 40]
-# 이렇게 하지 말고,
-for i, value in enumerate(mylist):
-    print(mylist[i])
-    ...
-파이썬 2와 3에서의 range는 리턴 형식이 다르다. 2에서는 리스트를 리턴하지만 3에서는 range 객체를 리턴한다. 따라서 3에서 range를 리스트로 바꾸려면 아래와 같은 방법들로 전환해야 한다. 파이썬 2에 익숙한 사람은, 파이썬 3의 range는 파이썬 2의 xrange와 동일한 역할을 한다고 생각하면 된다.
-list(range(10))
-[*range(10)]
-그 외에도 파이썬 2와 3은 정수 나눗셈, print 문법, 문자열 종류, import 방식 같은 데서 차이가 많이 나는 편이다. 일부는 __future__라는 라이브러리에서 파이썬 2에서도 3과 같은 문법을 쓸 수 있도록 해 주는 기능을 제공하고 있지만, 그렇지 않은 부분들은 stack overflow 등을 참고해서 직접 만들어서 쓰는 것이 좋다. 현재 많은 오픈 소스 라이브러리들이 __future__로 도배되어 있고 가내 수공업 식으로 호환성을 땜질해 있는 것을 보면 말이다. 파이썬 2.7이 공식적으로 지원이 중단되면 시점까지 많은 라이브러리들이 파이썬 2 지원을 철회할 계획을 가지고 있으므로, 그때가 되면 이런 호환성 문제에서 숨통이 트일 것이다.
-파이썬 암호화 라이브러리 pycrypto 설치를 시도하면 아래와 같은 에러가 발생한다. 이럴 때는 관련 도구를 추가로 설치해야 한다.[5]
-error: Microsoft Visual C++ 14.0 is required. Get it with ""Microsoft Visual C++ Build Tools
-Boilerplate 코드가 적고, 리스트와 셋, 해시 등의 자료구조를 간단한 기호로 표기할 수 있어 코딩 테스트 시 많이 사용되는 언어이기도 하다. Python으로 코드를 작성하면 같은 알고리즘을 C++, Java 등으로 구현했을 때보다 전체적인 코드 길이가 비약적으로 짧아진다.
-파이썬 인터프리터라도 열어서 아무 모듈이나 임포트하거나, print 함수에 대해 dir(print)를 입력해 보면 파이썬의 구조를 좀 더 잘 알게 된다. 우리가 사용했던 함수가 다르게 보일 것이다.
-과학 계산 시 numpy를 자주 이용하는데, for문을 이용하기보다는 배열을 이용해 처리하는 vectorize 테크닉을 사용하자. 이것조차 안 된다면 numba라는 JIT 컴파일 라이브러리를 이용해서 성능을 향상시킬 수 있다."		"11.3. 분기[편집]
+보안상 문제로 비쥬얼 스튜디오 2012까지는 scanf를 사용해도 경고가 나올 뿐 문제가 없었으나, 그 다음 버전부터는 아예 실행이 불가능하게 바뀌었다. 입력을 받거나 파일을 불러오는 코드를 사용할 시 scanf_s 를 사용하거나 두 번째 줄에 #define _CRT_SECURE_NO_WARNINGS를 추가해 주어야 한다. 소스 파일 속성 > C/C++ > 일반 설정으로 들어가서 SDL 검사를 '아니오'로 설정해 줘도 된다."				"11.3. 분기[편집]
 for (var e : arr) {
     if (e == null) continue;
     IO.println(e.toString())
@@ -1235,32 +1145,6 @@ do {
     stmt;
 } while (exp)
 stmt를 한번 실행 후, exp가 true면 반복을 하며, 아니라면 그대로 넘어간다."																					
-				"11.2.1. for-each[편집]
-Collection<E> collection = ...
-
-for (E e : collection) {
-  stmt;
-}
-배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
-여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
-
-E[] arr = ...
-E[] temp = arr;
-
-for (int i = 0; i < temp.length; i++) {
-    E e = temp[i];
-    stmt;
-}
-
-
-Collection<E> collection = ...
-Iterator<E> iterator = collection.iterator();
-
-while (iterator.hasNext()) {
-    E e = (E) iterator.next();
-    stmt;
-}
-"																					
 "7.4.2.2.1. 서식 지정자[편집]
 printf와 같은 서식 지정자를 쓰지만, *의 의미가 '해당하는 값 하나를 읽은 다음 저장하지 않고 버리는 것'으로 바뀌는 등 소소한 변화가 있다. 예를 들어 scanf(""%*d %d"", &a);에서 3 5를 입력받았을 경우 3을 버리고 a에 5를 저장한다.
 
@@ -1330,7 +1214,35 @@ int main()
       MyFile); // 파일을 읽어 buffer에 쓴다.
   fclose(MyFile); // 파일 객체를 닫는다.
   printf(""%s\n"", buffer); // 파일을 읽을때 사용한 버퍼의 내용을 출력
-}"				"11.3. 분기[편집]
+}"				"11.2.1. for-each[편집]
+Collection<E> collection = ...
+
+for (E e : collection) {
+  stmt;
+}
+배열과 Iterable을 구현간 객체에 대해 각 데이터를 순환하며 반복한다. 컴파일 시 그냥 for로 바뀐다.
+여기서 <E>는 E 타입의 원소만 허용한다고 이해하면 된다.
+
+E[] arr = ...
+E[] temp = arr;
+
+for (int i = 0; i < temp.length; i++) {
+    E e = temp[i];
+    stmt;
+}
+
+
+Collection<E> collection = ...
+Iterator<E> iterator = collection.iterator();
+
+while (iterator.hasNext()) {
+    E e = (E) iterator.next();
+    stmt;
+}
+"																					
+"8.3. do-while[편집]
+do{(statement)}while(expression 또는 declaration)
+while과 비슷하지만 do 안의 statement를 1회 실행 후 while 안의 조건이 참이라면 재반복, 거짓이라면 통과하는 코드이다."				"11.3. 분기[편집]
 for (var e : arr) {
     if (e == null) continue;
     IO.println(e.toString())
@@ -1493,9 +1405,16 @@ values
 (""타이틀"", 4, ""00:01:04"", 89, ),
 (""타이틀"", 5, ""00:01:04"", 89, ),
 (""타이틀"", 6, ""00:01:04"", 89, );"																			
-"8.3. do-while[편집]
-do{(statement)}while(expression 또는 declaration)
-while과 비슷하지만 do 안의 statement를 1회 실행 후 while 안의 조건이 참이라면 재반복, 거짓이라면 통과하는 코드이다."				"16. 클래스[편집]
+"https://namu.wiki/w/GOTO
+goto
+
+9.1. goto[편집]
+label:
+...
+
+goto label;
+
+label 위치로 무조건 점프한다. 다만 label 위치와 goto 문이 같은 함수에 있어야 한다. 코드의 가독성을 해치기 좋으므로 사용을 최소화하자. 자세한 것은 문서참조."				"16. 클래스[편집]
 클래스는 용도에 따라 크게 3가지로 볼 수 있다. 유틸리티 클래스와 데이터 클래스는 임의로 정한 명칭이다.
 유용한 정적 메서드 및 변수를 모아둔 클래스.[34]
 비정적 메서드 및 변수를 활용하여 여러 객체를 만들고 활용하는 클래스.[35][36]
@@ -1611,16 +1530,9 @@ https://kko.to/sB9iwqAYPP
 
 
 "																			
-"https://namu.wiki/w/GOTO
-goto
-
-9.1. goto[편집]
-label:
-...
-
-goto label;
-
-label 위치로 무조건 점프한다. 다만 label 위치와 goto 문이 같은 함수에 있어야 한다. 코드의 가독성을 해치기 좋으므로 사용을 최소화하자. 자세한 것은 문서참조."				"16.2.1. Getter와 Setter[편집]
+"11. 기타 표준 라이브러리의 기능[편집]
+11.1. stdbool.h[편집]
+C++에서처럼 1바이트 크기의 bool 자료형을 사용할 수 있게 해 준다. 그리고 '0 아닌 수'와 0 대신 true와 false로 값을 적을 수 있다."				"16.2.1. Getter와 Setter[편집]
 private 필드를 가져오는 메서드를 Getter, 설정하는 메서드를 Setter라고 한다.
 왜 사용하는가?
 캡슐화라던가 정보 은닉 같은 개념이 있지만 그래서 결론은, 개발자가 의도하지 않은 값이 들어가는 것을 방지하는 용도다.
@@ -1688,9 +1600,7 @@ public class Car {
         this.licensePlate = licensePlate;
     }
 }"		[MySQL] 서브 쿼리, 파생(Derived) 테이블 및 뷰 참조 최적화 https://share.google/xr2jNyDHQRjO2NASY																			
-"11. 기타 표준 라이브러리의 기능[편집]
-11.1. stdbool.h[편집]
-C++에서처럼 1바이트 크기의 bool 자료형을 사용할 수 있게 해 준다. 그리고 '0 아닌 수'와 0 대신 true와 false로 값을 적을 수 있다."				"16.3. 싱글톤 패턴[편집]
+				"16.3. 싱글톤 패턴[편집]
 하나의 객체만을 다루는 디자인 패턴이다.
 
 // Config.java
