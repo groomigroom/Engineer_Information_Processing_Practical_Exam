@@ -37,11 +37,59 @@
 
 
 
-
+-------------
 
 
 		
 -------------
+class Unit {
+    int x, y;
+    void move(int x, int y) {} 
+    void stop() {}
+}
+
+class Marine extends Unit {
+    void move(int x, int y) {
+        System.out.println("걸어서 이동");
+    }
+    void stimPack() {} 
+}
+
+class Tank extends Unit {
+    void move(int x, int y) {
+        System.out.println("굴러서 이동");
+    }
+    void siegeMode() {} 
+}
+
+class DropShip extends Unit {
+    void move(int x, int y) {
+        System.out.println("날아서 이동");
+    }
+    void loadUnload() {} 
+}
+
+// 🚀 실행을 위한 Main 클래스 추가
+public class Main {
+    public static void main(String[] args) {
+        // 1. 다형성을 활용하여 부모 타입 배열로 유닛들을 묶어서 관리합니다.
+        Unit[] group = new Unit[3];
+        group[0] = new Marine();
+        group[1] = new Tank();
+        group[2] = new DropShip();
+
+        // 2. 모든 유닛을 좌표 (100, 200) 위치로 이동시킵니다.
+        // 부모 타입(Unit)으로 메서드를 호출하지만, 자식들이 재정의(오버라이딩)한 메서드가 실행됩니다.
+        for (int i = 0; i < group.length; i++) {
+            group[i].move(100, 200);
+        }
+    }
+}
+/*
+걸어서 이동
+굴러서 이동
+날아서 이동
+*/
 
 
 -------------
