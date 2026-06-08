@@ -29,9 +29,85 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+		
 -------------
 
 
+-------------
+
+final class User {
+  private final Long id;
+  private final String email;
+  private final String name;
+
+  public User(Long id, String email, String name) {
+    this.id = id;
+    this.email = email;
+    this.name = name;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  @Override
+  public boolean equals(Object o) { // 1. 매개변수 이름을 o로 수정
+    if (this == o) return true;
+    if (!(o instanceof User user)) return false;
+    return id.equals(user.id)
+      && email.equals(user.email)
+      && name.equals(user.name);    // 2. email -> name 비교 오타 수정
+  }
+
+  @Override
+  public int hashCode() {
+    return java.util.Objects.hash(id, email, name);
+    //java.util.Objects.hash()는 자바에서 여러 개의 데이터를 합쳐서 하나의 숫자로 된 해시 코드(Hash Code)를 만들어주는 메서드입니다.
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+    "id=" + id +
+    ", email='" + email + '\'' +
+    ", name='" + name + '\'' +
+    '}';
+  }
+}
+
+public class Main {
+  public static void main(String[] args) { // 3. String[] args 매개변수 추가
+    User user = new User(1L, "test@naver.com", "김구름");
+    System.out.println(user.getId());
+    System.out.println(user.getEmail());
+    System.out.println(user.getName());
+  }
+}
+/*
+출력값
+1
+test@naver.com
+김구름
+*/
 
 -------------
 
