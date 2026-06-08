@@ -55,9 +55,37 @@
 
 
 
+
+
+
+
+
+
+
+
 -------------
 
-
+public class Main {
+    public static void main(String[] args) {
+        float f_num1 = 10.11f;
+        double d_num1 = 10.12;
+        String s_num1;
+        s_num1 = String.valueOf(f_num1);
+        System.out.println(s_num1);
+        //10.11
+        s_num1 = Double.toString(d_num1); //float랑 double이랑 방식 교환 가능
+        System.out.println(s_num1);
+        //10.12
+        int i_num1;
+        i_num1 = (int)d_num1;
+        System.out.println(i_num1);
+        //10
+        i_num1 = 2;
+        f_num1 = (float)i_num1;
+        System.out.println(f_num1);
+        //2.0
+    }
+}
 
 -------------
 
