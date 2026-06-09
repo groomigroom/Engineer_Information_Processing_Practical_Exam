@@ -72,10 +72,59 @@
 
 
 
+
+
+
+
+
 ---------
 
 
 
+
+---------
+
+
+"""
+anext()는 비동기 반복자(Asynchronous Iterator)에서 다음 값을 
+가져오는 내장 함수입니다. 동기 환경의 next() 함수와 동일한 역할을 하지만, 
+I/O 작업 중에도 프로그램이 블로킹되지 않도록 코루틴(Coroutine)을 반환하는 것이 특징입니다.
+1. 주요 특징 및 문법구문: anext(iterator) 또는 anext(iterator, default)
+동작 방식: 비동기 이터레이터의 __anext__() 메서드를 호출하여 다음 값을 반환합니다.
+종료: 더 이상 가져올 데이터가 없으면 StopAsyncIteration 예외가 발생합니다.
+기본값 설정: default 값을 제공하면, 반복자가 소진되었을 때 
+StopAsyncIteration 에러 대신 지정한 기본값을 반환합니다.
+2. 사용 예시anext()는 주로 웹소켓 스트림, 비동기 파일 읽기 등 
+데이터가 비동기적으로 도착하는 환경에서 직접 데이터를 소비해야 할 때 사용됩니다.
+"""
+
+import asyncio
+
+async def my_async_generator():
+    for i in range(3):
+        await asyncio.sleep(1)  # 비동기 I/O 대기
+        yield i
+
+async def main():
+    # 비동기 반복자 생성
+    async_iter = my_async_generator()
+    
+    # anext()로 직접 하나씩 가져오기
+    try:
+        while True:
+            # 반환되는 것이 코루틴이므로 await를 사용해야 합니다.
+            value = await anext(async_iter)
+            print(f"가져온 값: {value}")
+    except StopAsyncIteration:
+        print("반복이 모두 끝났습니다.")
+
+asyncio.run(main())
+
+"""
+async for와의 관계파이썬의 async for 루프는
+내부적으로 이 anext() 함수를 반복적으로 호출하며 StopAsyncIteration 예외가 
+발생할 때까지 값을 가져오는 작업을 단순화한 문법입니다.
+"""
 
 ---------
 
