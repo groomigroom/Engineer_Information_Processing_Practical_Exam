@@ -68,9 +68,31 @@
 
 
 
+
+
+
+
 ---------
 
 
+
+
+---------
+
+data_list = ['10', '20', 'invalid', '']
+for value in data_list:
+    try:
+        result = int(value)
+    except ValueError:
+        result = 0 # 변환 실패 시 기본값 0 으로 설정
+    print(result)
+
+"""
+10
+20
+0
+0
+"""
         
 
 ---------
