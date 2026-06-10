@@ -73,10 +73,37 @@
 
 
 
+
+
+
+
+
 -------------
 
 
 
+
+-------------
+
+
+public class Main {
+  public static void main(String[] args) {
+    int ii = 6;
+    switch (ii) {
+    case 5 -> System.out.println("5다");
+    case 6 -> {
+        System.out.println("6다");
+        System.out.println("66");
+    }
+    case 3, 4 -> System.out.println("3 4다");
+    default -> System.out.println("기본이이이이입니다다");
+    }
+  }
+}
+/*
+6다
+66
+*/
 
 -------------
 
