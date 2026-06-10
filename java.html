@@ -78,9 +78,39 @@
 
 
 
+
+
+
+
+
 -------------
 
 
+
+
+-------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int b = 2;
+      int a = switch (b) {
+      case 1:
+          yield 11;
+      case 2:
+          System.out.println("김구름");
+          yield 22;
+      default:
+          yield 33;
+      };
+      System.out.println(a);
+    }
+}
+/*
+김구름
+22
+*/
 
 
 -------------
