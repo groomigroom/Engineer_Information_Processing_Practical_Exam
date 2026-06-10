@@ -94,7 +94,30 @@
 -------------
 
 
+import java.util.*;
 
+public class Main {
+  public static void print(int... args) {
+    for (var i : args) System.out.print(i);
+    System.out.println();
+  }
+  public static void main(String[] args) {
+    
+    int iarr[] = {1, 2, 3, 4, 5};
+    print(iarr);
+    for(int i = 0; i < iarr.length; i++) {
+      System.out.println(iarr[i]);
+    } 
+  }
+}
+/*
+12345
+1
+2
+3
+4
+5
+*/
 
 
 -------------
