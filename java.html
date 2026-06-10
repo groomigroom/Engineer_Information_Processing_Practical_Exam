@@ -83,9 +83,44 @@
 
 
 
+
+
+		
+
+
+
+
+
 -------------
 
 
+
+
+
+-------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String b = "gugu";
+      // 1. 기존 String s 변수명을 지우거나 다른 이름으로 변경했습니다.
+      
+      switch (b) {
+          case "groom" -> System.out.println(b);
+          
+          // 2. 패턴 변수명을 str로 바꿨으며, 
+          // String을 여기서 모두 처리하므로 하단의 default는 제거했습니다.
+          case String str -> System.out.println("매칭된 문자열: " + str);
+          /*
+          case Integer i when i > 0 -> System.out.println(i);
+          case Integer j -> System.out.println(j);
+          */
+          case null -> System.out.println("kkk");
+      };
+    }
+}
+//매칭된 문자열: gugu
 
 
 -------------
