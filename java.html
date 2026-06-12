@@ -95,14 +95,43 @@
 
 
 
-	
+
+
+
+
+
+
+		
+
+
+
+-------------	
 
 
 
 
 -------------
 
+import java.util.*;
 
+public class over1 {
+    public static void main(String[] args) {
+      over1 a1 = new over1();
+      over2 a2 = new over2();
+      System.out.println(a1.result(3, 2) + a2.result(3, 2));
+      //3 + 2  6
+    }
+    int result(int x, int y) {
+      return x + y;
+    }
+}
+class over2 extends over1 {
+  int result(int x, int y) {
+    return x - y + super.result(x, y);
+    // 3 - 2 + 3 + 2
+  }
+}
+//11
 
 
 -------------
