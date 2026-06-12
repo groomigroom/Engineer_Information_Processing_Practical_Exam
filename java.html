@@ -95,6 +95,56 @@
 
 
 
+	
+
+
+
+
+-------------
+
+
+
+
+-------------
+
+
+// Parent.java
+public class Parent {
+    public int i = 1;
+
+    public void printHello() {
+        System.out.println("Hello");
+    }
+}
+
+// Child.java
+public class Child extends Parent {
+    public int i = 3;
+
+    @Override // 생략할 수 있지만 쓰는걸 추천한다.
+    public void printHello() {
+        System.out.println("Hello, World!");
+    }
+
+    public void print() {
+        System.out.println(i);
+        System.out.println(super.i);
+        printHello();
+        super.printHello();
+    }
+}
+
+// Main.java
+void main() {
+    Child c = new Child();
+    c.printHello(); // Hello, World!
+    System.out.println(c.i); // 3
+    Parent p = c;
+    p.printHello(); // Hello, World!
+    System.out.println(p.i); // 1
+    c.print(); // 순서대로 3, 1, "Hello, World!", "Hello" 출력
+}
+
 
 
 
