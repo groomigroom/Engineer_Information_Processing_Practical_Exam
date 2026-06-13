@@ -39,9 +39,39 @@
 
 
 
+
+
+
+
+
+
 ------------------------------------------------
 
 
+
+------------------------------------------------
+
+#include <stdio.h>
+int sq(int num, int ran);
+int main()
+{
+    int res;
+    res = sq(2, 10);
+    printf("%d", res);
+    return 0;
+}
+int sq(int num, int ran) {
+    //num == 2, ran == 10
+    int res = 1;
+    for(int i = 0; i < ran; i++) {
+        //i ==> 0~9
+        res = res * num;
+        //res = 1 * 2의 10승 
+    }
+    return res;
+}
+
+//1024
 
 ------------------------------------------------
 
