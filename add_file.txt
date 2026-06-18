@@ -249,6 +249,16 @@ public class Main {
         mainApp.printList(intList);
     }
 }
+/*
+--- 문자열 리스트 출력 ---
+안녕하세요
+리액트에서 자바로 오셨군요!
+와일드카드 테스트
+
+--- 숫자 리스트 출력 ---
+100
+200
+*/
 
 /*
 코드를 사용할 때는 주의가 필요합니다.2. 상한 경계 와일드카드 (Upper Bounded Wildcard): ? extends TT 또는 T의 하위 클래스들만 타입으로 허용합니다。핵심: 데이터를 읽기(Producer)만 할 때 주로 사용합니다。예제: Number와 그 하위 클래스(Integer, Double 등)만 허용javapublic void processNumbers(List<? extends Number> list) {
@@ -327,12 +337,56 @@ def _(v) :
 @process.register(str)
 def _(v) :
   return ""문자열 처리""
-  "		"자바 Thread 
-[Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly 
-https://share.google/sputuhpfnyk1xs9Xb
+  "		"// 1. ThreadA: java.lang.Thread를 상속받는 방식
+class ThreadA extends Thread {
+    // 클래스 바로 아래에는 실행 코드를 둘 수 없으므로, th.start() 등을 지우고 
+    // 오직 스레드가 실행할 로직만 run() 메서드에 작성합니다.
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(""ThreadA:"" + i);
+        }
+    }
+}
 
-implements Runnable run() start()
-책보기"																					
+// 부모 클래스로 사용할 가상의 클래스 A (ThreadB가 extends A를 해야 하므로 추가)
+class A {
+    // 필요한 경우 여기에 부모 클래스의 멤버를 정의할 수 있습니다.
+}
+
+// 2. ThreadB: 클래스 A를 상속받고, Runnable 인터페이스를 구현하는 방식
+// 오타 수정: extemds -> extends
+class ThreadB extends A implements Runnable {
+    // Runnable 인터페이스를 구현했으므로 run() 메서드를 반드시 오버라이딩해야 합니다.
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(""ThreadB:"" + i);
+        }
+    }
+}
+
+// 3. 메인 스레드 실행 클래스
+public class MainThread {
+    // 자바 프로그램의 시작점인 main 메서드는 반드시 String[] args 매개변수가 필요합니다.
+    public static void main(String[] args) {
+        
+        // ThreadA 객체 생성 및 실행 (Thread를 직접 상속받았으므로 바로 start 가능)
+        ThreadA th = new ThreadA();
+        th.start();
+
+        // ThreadB 객체 생성 및 실행 
+        // Runnable을 구현한 객체는 실제 Thread 객체의 생성자에 실어서 start해야 합니다.
+        Thread th2 = new Thread(new ThreadB());
+        th2.start();
+
+        // 메인 스레드의 반복문 실행
+        for (int i = 0; i < 10; i++) {
+            System.out.println(""main:"" + i);
+        }
+    }
+}
+//출력값 잘림"																					
 https://namu.wiki/w/C(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4)/%ED%8F%AC%EC%9D%B8%ED%84%B0		"aiter() 강좌찾기 https://youtu.be/w-Gi0woN_Hs?si=YNV5B2sAy3QKNLjZ
 aiter() 함수는 Python 3.10부터 도입된 비동기(iterable)의 이터레이터를 반환해주는 내장 함수입니다.
 주로 async for 반복문에서 사용되는 비동기 객체(asynchronous iterable)를 이터레이션 하고 싶을 때 사용합니다. 동기 버전인 iter()와 유사하지만, 비동기 iterable만 지원합니다.
@@ -404,9 +458,12 @@ async def consume():
 
 asyncio.run(consume())
 총평
-aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"obj::method;는 인스턴스 메서드 참조(Instance Method Reference)를 의미합니다. 이는 특정 객체의 메서드를 간결하게 가리키기 위해 자바 8에 도입된 문법입니다.기본적으로 람다식(Lambda Expression)인 (x) -> obj.method(x)를 더 짧고 직관적으로 작성하는 축약형 문법으로 이해하시면 됩니다.핵심 역할과 쓰임새이 문법은 주로 함수형 인터페이스(Functional Interface)를 인자로 받는 메서드에 특정 객체의 동작을 전달할 때 사용합니다.기호의 의미: ::는 메서드 참조 연산자(Method Reference)라고 부릅니다.좌측 (obj): 이미 생성된 특정 객체(인스턴스)의 참조값입니다.우측 (method): 해당 객체가 가지고 있는 메서드의 이름입니다.간단한 비교 예시예를 들어 System.out이라는 표준 출력 객체에 있는 println 메서드를 참조하는 상황을 보겠습니다.1. 일반적인 람다식 표현javaConsumer<String> consumer = (str) -> System.out.println(str);
-코드를 사용할 때는 주의가 필요합니다.2. 메서드 참조 (obj::method) 적용javaConsumer<String> consumer = System.out::println;
-코드를 사용할 때는 주의가 필요합니다.동작하는 원리는 동일하며, 코드가 훨씬 간결해져 가독성이 높아집니다."	"abstract class AA {
+aiter()는 Python의 비동기 프로그래밍에서 비동기 이터러블 객체를 다룰 때 매우 간편하게 사용할 수 있는 함수입니다. 특히, 비동기 제너레이터나 비동기형 커스텀 클래스와 함께 자주 쓰이며, 코드의 가독성과 일관성을 높여줍니다. 동기 iter()와 매우 유사한 역할을 하므로, 비동기 I/O 또는 코루틴 기반의 반복 작업이 필요할 때 메모해두면 좋습니다."		"자바 Thread 
+[Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly 
+https://share.google/sputuhpfnyk1xs9Xb
+
+implements Runnable run() start()
+책보기"	"abstract class AA {
   public abstract int b();
   public abstract int c();
 }
@@ -484,36 +541,17 @@ int main()
     return 0;
 }
 "		"a = ''.join(str(x) for x in range(10))
-print(a)"		"public class Utils {
-    // 1. PI는 소수점이므로 double 타입이어야 합니다.
-    public static final double PI = 3.14159;
+print(a)"	"a = [0, 0, 0, 0, 0]
+for i in range(5) :
+    a[i] = int(input())
 
-    public static int getAreaOfSquare(int width, int height) {
-        return width * height;
-    }
+print(a)
+b = 0
 
-    public static double getAreaOfTriangle(int base, int height) {
-        return base * height / 2.0;
-    }
-
-    // 2. 메서드명을 의미에 맞게 Cycle에서 Circle로 변경했습니다.
-    public static double getAreaOfCircle(int radius) {
-        return Math.pow(radius, 2) * PI;
-    }
-
-    // 3. 출력값 확인을 위한 main 메서드를 추가했습니다.
-    public static void main(String[] args) {
-        int squareArea = getAreaOfSquare(5, 5);
-        double triangleArea = getAreaOfTriangle(6, 4);
-        double circleArea = getAreaOfCircle(3);
-
-        // 콘솔 창에 결과를 출력합니다.
-        System.out.println(""사각형의 넓이 (5x5): "" + squareArea);
-        System.out.println(""삼각형의 넓이 (밑변6, 높이4): "" + triangleArea);
-        System.out.println(""원의 넓이 (반지름3): "" + circleArea);
-    }
-}
-"																					
+for i in range(5) :
+    버블정렬하기"	"obj::method;는 인스턴스 메서드 참조(Instance Method Reference)를 의미합니다. 이는 특정 객체의 메서드를 간결하게 가리키기 위해 자바 8에 도입된 문법입니다.기본적으로 람다식(Lambda Expression)인 (x) -> obj.method(x)를 더 짧고 직관적으로 작성하는 축약형 문법으로 이해하시면 됩니다.핵심 역할과 쓰임새이 문법은 주로 함수형 인터페이스(Functional Interface)를 인자로 받는 메서드에 특정 객체의 동작을 전달할 때 사용합니다.기호의 의미: ::는 메서드 참조 연산자(Method Reference)라고 부릅니다.좌측 (obj): 이미 생성된 특정 객체(인스턴스)의 참조값입니다.우측 (method): 해당 객체가 가지고 있는 메서드의 이름입니다.간단한 비교 예시예를 들어 System.out이라는 표준 출력 객체에 있는 println 메서드를 참조하는 상황을 보겠습니다.1. 일반적인 람다식 표현javaConsumer<String> consumer = (str) -> System.out.println(str);
+코드를 사용할 때는 주의가 필요합니다.2. 메서드 참조 (obj::method) 적용javaConsumer<String> consumer = System.out::println;
+코드를 사용할 때는 주의가 필요합니다.동작하는 원리는 동일하며, 코드가 훨씬 간결해져 가독성이 높아집니다."																					
 "#include <stdio.h>
 void groomgroom(void) {
   printf(""김구름 멍멍"");
@@ -655,9 +693,13 @@ public class Car {
 
         // 1. 초기값 출력
         System.out.println(""=== 초기 자동차 상태 ==="");
+        //=== 초기 자동차 상태 ===
         System.out.println(""번호판: "" + myCar.getLicensePlate());
+        //번호판: 12가 3456
         System.out.println(""현재 기어: "" + myCar.getGear());
+        //현재 기어: P
         System.out.println(""현재 속도: "" + myCar.getSpeed() + "" km/h"");
+        //현재 속도: 0 km/h
         System.out.println(""트렁크 상태: "" + myCar.getTrunk());
 
         // 2. 값 변경 및 물건 추가
@@ -671,6 +713,14 @@ public class Car {
         System.out.println(""변경 후 기어: "" + myCar.getGear());
         System.out.println(""변경 후 속도: "" + myCar.getSpeed() + "" km/h"");
         System.out.println(""트렁크 물건 목록: "" + myCar.getTrunk());
+        /*
+        트렁크 상태: []
+
+=== 자동차 상태 변경 ===
+변경 후 기어: D
+변경 후 속도: 60 km/h
+트렁크 물건 목록: [골프채, 캐리어]
+        */
     }
 }
 "		18쪽 46번		https://namu.wiki/w/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D																	
@@ -772,7 +822,7 @@ print(c)
 
 1은 되지만 2는 되지 않으며 3은 된다. if만 넣을 경우 for 뒤에 써야 하며, 조건을 충족하지 않는 원소들은 생략된다.(즉, 1의 결과물은 [0, 2, 4, 6, 8]이다.) if와 else 모두를 넣는다면 for 앞에 넣어야 하며 조건을 충족하면 맨 앞, 아니라면 else 다음이 반환된다.
 아래처럼 반복문을 돌 때 변수가 필요 없는 경우에는 변수 이름을 _로 한다."		"// Config.java
-public class Config {
+class Config {
     // 2번째 예시인 Lazy Initialization(게으른 초기화) 방식을 적용했습니다.
     private static Config instance; 
 
@@ -1290,31 +1340,40 @@ b = [*range(10)]
 
 print(a)
 print(b)"		"16.5. 추상 클래스[편집]
-#!syntax Java
-public abstract class Animal {
-    public abstract void sound();
+// 1. 추상 메서드가 있으므로 반드시 클래스 앞에 'abstract'를 붙여야 합니다.
+// 하나의 파일이므로 public 키워드는 제거합니다.
+abstract class Animal {
+    public abstract void sound(); // 추상 메서드
+    
     public void eat(String food) {
         System.out.println(food + ""을/를 먹습니다."");
     }
 
     public Animal() {
-        System.out.println(""객체 생성"")
+        System.out.println(""객체 생성"");
     }
 }
 
-// Dog.java
-public class Dog extends Animal {
+// 2. 하나의 파일이므로 public 키워드를 제거합니다.
+class Dog extends Animal {
     @Override
     public void sound() {
         System.out.println(""멍멍"");
     }
 }
 
+// 3. 파일 이름과 일치하는 메인 클래스에만 public을 붙입니다.
 public class Main {
-  public static void main(String[] args) {
-    
-  }
+    public static void main(String[] args) {
+        System.out.println(""=== 1. 객체 생성 시작 ==="");
+        Animal myDog = new Dog(); 
+        
+        System.out.println(""\n=== 2. 메서드 호출 ==="");
+        myDog.sound();            
+        myDog.eat(""사료"");        
+    }
 }
+
 메서드에 abstract를 붙이면 추상 메서드로 선언된다. 추상 메서드는 반드시 추상 클래스 내에 있어야 하므로 클래스에 abstract를 붙여 추상 클래스로 선언해야 한다.[47]
 추상 메서드는 구현을 부모 클래스가 하지 않고, 자식 클래스가 반드시 재정의해야 한다.
 추상 클래스는 생성자를 가질 수 있지만 인스턴스를 만들 수 없고 반드시 상속을 해야 한다. 추상 클래스의 생성자는 자식 클래스에 의해 호출된다.
@@ -2638,7 +2697,7 @@ default
 protected
 new
 */"																					
-																									
+				[Java] 자바 - Thread란? 스레드 개념 및 사용방법 :: KADOSHoly https://share.google/jyV2lQ4JN15HzSROg																					
 																									
 																									
 																									
