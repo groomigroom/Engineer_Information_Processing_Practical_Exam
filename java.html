@@ -101,13 +101,57 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+-------------
 		
 
 
 
 -------------	
 
+public class Utils {
+    // 1. PI는 소수점이므로 double 타입이어야 합니다.
+    public static final double PI = 3.14159;
 
+    public static int getAreaOfSquare(int width, int height) {
+        return width * height;
+    }
+
+    public static double getAreaOfTriangle(int base, int height) {
+        return base * height / 2.0;
+    }
+
+    // 2. 메서드명을 의미에 맞게 Cycle에서 Circle로 변경했습니다.
+    public static double getAreaOfCircle(int radius) {
+        return Math.pow(radius, 2) * PI;
+    }
+
+    // 3. 출력값 확인을 위한 main 메서드를 추가했습니다.
+    public static void main(String[] args) {
+        int squareArea = getAreaOfSquare(5, 5);
+        double triangleArea = getAreaOfTriangle(6, 4);
+        double circleArea = getAreaOfCircle(3);
+
+        // 콘솔 창에 결과를 출력합니다.
+        System.out.println("사각형의 넓이 (5x5): " + squareArea);
+        System.out.println("삼각형의 넓이 (밑변6, 높이4): " + triangleArea);
+        System.out.println("원의 넓이 (반지름3): " + circleArea);
+    }
+}
+/*
+사각형의 넓이 (5x5): 25
+삼각형의 넓이 (밑변6, 높이4): 12.0
+원의 넓이 (반지름3): 28.27431
+*/
 
 
 -------------
