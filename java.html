@@ -111,8 +111,81 @@
 
 
 
+
+
+
+
+
+
+		
+
+
+-------------
+
+
+
+
 -------------
 		
+class A {
+  A() {
+    System.out.println(10);
+  }
+}
+
+class B extends A {
+  B(int a) {
+    System.out.println(a);
+  }
+}
+
+class C extends B {
+  C(int a) {
+    super(a * 10);
+    System.out.println(a);
+  }
+}
+
+public class Main {
+  public static void main() {
+    A b = new C(1000);
+  }
+}
+
+/*
+자바에서 가장 처음에 10이 출력되는 이유는 자식 클래스의 생성자가 호출될 때 부모 클래스의 기본 생성자(super())가 자동으로 가장 먼저 실행되기 때문입니다.전체적인 실행 흐름과 원인은 다음과 같습니다.1. 객체 생성 시작main 메서드에서 new C(1000);을 호출하면서 C 클래스의 인스턴스를 생성합니다.2. 생성자 호출의 연쇄 반응 (Constructor Chaining)C(int a) 생성자가 실행되면 첫 줄에 명시된 super(a * 10);에 의해 부모 클래스인 B형의 생성자 B(10000)을 호출합니다.B(int a) 생성자로 제어가 이동합니다. 하지만 자바 컴파일러는 생성자의 첫 줄에 super()나 this()가 명시되어 있지 않으면, 부모 클래스의 기본 생성자인 super();를 자동으로 삽입합니다.따라서 B(int a)의 내부 코드가 실행되기 전, 최상위 부모 클래스인 A형의 기본 생성자 A()가 먼저 호출됩니다.3. 최종 실행 순서호출은 위에서 아래로 쌓이지만, 실행 완료 및 내부 코드 출력은 최상위 부모 클래스부터 순서대로 내려옵니다.A() 생성자 실행: System.out.println(10);이 작동하여 10이 가장 먼저 출력됩니다.B(int a) 생성자 실행: System.out.println(a);가 작동하여 10000이 출력됩니다.C(int a) 생성자 실행: System.out.println(a);가 작동하여 1000이 출력됩니다.
+*/
+/*
+10
+10000
+1000
+*/
+
+class A {
+  A() {
+    System.out.println(10);
+  }
+}
+
+class B extends A {
+  B(int a) {
+    System.out.println(a);
+  }
+}
+
+class C extends B {
+  C(int a) {
+    //컴파일러가 자동으로 super();를 삽입함
+    // super(a * 10); 아걸 없애면 B() 이렇게 된게 없으므로 오류 뜸.
+    System.out.println(a);
+  }
+}
+
+public class Main {
+  public static void main() {
+    A b = new C(1000);
+  }
+}
 
 
 
