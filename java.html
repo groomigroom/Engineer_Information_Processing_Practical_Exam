@@ -117,13 +117,90 @@
 
 
 
+
+
+
+
+
+
+
+
+
+		
+
+-------------
+
 		
 
 
 -------------
 
 
+/*자바 제네릭 와일드카드(?)는 타입 
+파라미터에 구체적인 타입 대신 어떤 타입이든 올 수 있음을 명시하거나, 
+올 수 있는 타입의 범위를 제한할 때 사용합니다。
+주요 와일드카드 3가지 형태와 예제는 다음과 같습니다。
+1. 무상한 와일드카드 (Unbounded Wildcard): 
+?모든 타입(Object 포함)을 허용합니다. 
+제네릭 타입에 의존하지 않는 범용 메서드를 작성할 때 사용합니다。
+의미: <? extends Object> 와 동일예제*/
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    // 제시해주신 메서드 (그대로 사용 가능합니다)
+    public void printList(List<?> list) {
+        for (Object obj : list) {
+            System.out.println(obj);
+        }
+    }
+
+    public static void main(String[] args) {
+        Main mainApp = new Main();
+
+        // 1. 문자열(String) 리스트를 만들고 데이터 추가
+        List<String> stringList = new ArrayList<>();
+        stringList.add("안녕하세요");
+        stringList.add("리액트에서 자바로 오셨군요!");
+        stringList.add("와일드카드 테스트");
+
+        // 2. 숫자(Integer) 리스트를 만들고 데이터 추가
+        List<Integer> intList = new ArrayList<>();
+        intList.add(100);
+        intList.add(200);
+
+        // 메서드 호출하여 출력하기
+        System.out.println("--- 문자열 리스트 출력 ---");
+        mainApp.printList(stringList);
+
+        System.out.println("\n--- 숫자 리스트 출력 ---");
+        mainApp.printList(intList);
+    }
+}
+/*
+--- 문자열 리스트 출력 ---
+안녕하세요
+리액트에서 자바로 오셨군요!
+와일드카드 테스트
+
+--- 숫자 리스트 출력 ---
+100
+200
+*/
+
+/*
+코드를 사용할 때는 주의가 필요합니다.2. 상한 경계 와일드카드 (Upper Bounded Wildcard): ? extends TT 또는 T의 하위 클래스들만 타입으로 허용합니다。핵심: 데이터를 읽기(Producer)만 할 때 주로 사용합니다。예제: Number와 그 하위 클래스(Integer, Double 등)만 허용javapublic void processNumbers(List<? extends Number> list) {
+    for (Number n : list) {
+        System.out.println(n);
+    }
+    // 컴파일 에러! list.add(10); 등 새로운 값을 넣는 것은 불가능합니다.
+}
+코드를 사용할 때는 주의가 필요합니다.3. 하한 경계 와일드카드 (Lower Bounded Wildcard): ? super TT 또는 T의 상위 클래스들만 타입으로 허용합니다。핵심: 데이터를 쓰기(Consumer)만 할 때 주로 사용합니다。예제: Integer와 그 상위 클래스(Number, Object 등)만 허용javapublic void addIntegers(List<? super Integer> list) {
+    list.add(10); // Integer 및 하위 타입의 값 추가 가능
+    // list.get(0)으로 값을 꺼내면 Object 타입으로만 반환됩니다.
+}
+*/
 
 -------------
 		
