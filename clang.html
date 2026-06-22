@@ -65,12 +65,39 @@
 
 
 
+
+
+
+
+
+
+------------------------------------------------
+
         
 
 
 ------------------------------------------------
         
+#include <stdio.h>
+int main() {
+    unsigned char bytes[3] = {0x1A, 0x2B, 0x3C};
+    unsigned char *p = bytes;
+    unsigned int packed = 0;
+    for (int i = 0; i < 3; i++) {
+        packed = (packed << 8) | *(p + i);
+    }
+    //0x0000001A
+    //-->0x001A2B3C
+    unsigned int mid = (packed >> 8) & 0xFF;
+    //0x00001A2B & 0xFF
+    printf("%X", mid);
+    //0x2B
+    //2B
+    return 0;
+}
 
+//2진수의 1글자가 1비트라서 16진수의 1글자는 4비트
+//!!!!!
 
 
 ------------------------------------------------
